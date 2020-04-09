@@ -1,0 +1,98 @@
+/*
+ * Just another hand crafted design for http://svenk.org
+ * Made at 2019-02-19, inspired by the style of my new CV
+ */
+
+html, body {
+	width: 100%; min-height: 100%;
+	margin: 0; padding: 0;
+}
+
+body {
+	background-color: #b5e8eb; /* from the picture */
+	/* Darker Color: 2aafb3 */	
+	
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* A nice sans-serif font */
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+/* doesn't work well for me
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+*/
+
+h1 {
+	font-weight: 900; /* Inter Black */
+	text-transform: uppercase;
+	font-size: 240%;
+	margin: 0; padding: 0;
+}
+
+p {
+	margin: .5em 0; padding: 0;
+	line-height: 140%;
+}
+
+#teaser {
+	display: block;
+}
+
+.mini { display: none; }
+
+a {
+	transition: color .4s ease;
+}
+
+a, a:link, a:visited {
+	color: #2E66BA;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: red;
+}
+
+
+@media screen and (max-width: 767px) {
+	body { 	background: linear-gradient(to bottom, rgb(181, 232, 235) 0%,rgba(42, 175, 179, 0.73) 100%); }
+	.mini { display: inline-block; }
+	#teaser img.mini {
+		width: 150px;
+		border-radius: 50%;
+		margin: 6% auto;
+		display: block;
+	}
+	#teaser h1 {
+		text-align: center;
+	}
+	#teaser p {
+		margin: 5% 10%;
+		font-size: 140%;
+		line-height: 180%;
+		font-weight: 500;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	body { background-image: url(/design/svenk-blue-1024.jpg); }
+	#teaser {
+		width: 30%;
+		margin: 10%;
+		font-size: 130%;
+	}
+	#teaser p {
+		line-height: 160%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	body { background-image: url(/design/svenk-blue-1920.jpg); }
+	#teaser {
+		font-size: 150%;
+	}
+}

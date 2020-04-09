@@ -1,0 +1,45 @@
+/* font source: http://int10h.org/oldschool-pc-fonts */
+
+@font-face {
+	font-family: ibmVGA8;
+	src: url("/design/PxPlus_IBM_VGA8.ttf");
+}
+
+ @import url('https://fonts.googleapis.com/css?family=PT+Mono|PT+Sans');
+
+body {
+	background-color: black;
+	color: #999;
+/*	font-family: ibmVGA8; */
+/*    font-family: 'PT Sans', sans-serif; */
+	font-family: 'PT Mono', monospace;
+}
+
+div.content {
+	max-width: 993px;
+	margin: 5% auto;
+}
+
+h1 {
+	font-size: 230%;
+	margin: .1em 0;
+	padding: 0 0 .05em 0;
+	color: #c60;
+	border-bottom: 1px solid #a00;	
+}
+
+a {
+	-moz-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+	-o-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+	-webkit-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+	text-decoration: none;
+}
+
+a, a:link, a:visited {
+	color: #0aa;
+}
+
+a:hover, a:active, a:focus {
+	color: #ff5;
+}
