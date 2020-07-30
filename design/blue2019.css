@@ -79,7 +79,7 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 768px) {
-	body { background-image: url(/design/svenk-blue-1024.jpg); }
+	body { background-image: url(svenk-blue-1024.jpg); }
 	#teaser {
 		width: 30%;
 		margin: 10%;
@@ -91,7 +91,7 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 1200px) {
-	body { background-image: url(/design/svenk-blue-1920.jpg); }
+	body { background-image: url(svenk-blue-1920.jpg); }
 	#teaser {
 		font-size: 150%;
 	}
