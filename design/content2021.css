@@ -1,0 +1,73 @@
+/*
+@font-face { font-family: "CMS"; src: url("https://fermatslibrary.com/assets/computer_modern_serif/cmunrm-4274e7dd4be9ed4e3811f5f45b04b67fdd787d381a2b38edd891e23157c6cff5.eot?#iefix") format("embedded-opentype"), url("https://fermatslibrary.com/assets/computer_modern_serif/cmunrm-32115abbbfb231586813333bfa5a234f4dc7f28b27df7260f42f81146ccd9097.woff") format("woff"), url("https://fermatslibrary.com/assets/computer_modern_serif/cmunrm-3deb3c529a46d391eaad2e2b896824013d4e1922419c91ab6cb75c40db97c3f2.ttf") format("truetype"), url("https://fermatslibrary.com/assets/computer_modern_serif/cmunrm-91501e128eb01500fdcd450261ecd929caacf18faac25797ce2ab1a9007d624b.svg#cmunrm") format("svg"); font-style: normal; font-weight: normal; }
+
+@font-face { font-family: "CMS"; src: url("https://fermatslibrary.com/assets/computer_modern_serif/cmunbx-cb1b5c051941b36b2886670ef76815c182fa0b49a29194d10831c9abe00565db.eot?#iefix") format("embedded-opentype"), url("https://fermatslibrary.com/assets/computer_modern_serif/cmunbx-3226e8a7068df32b96f2a80f7ad2ca306c8dfcc494ab2b337019cbb7d098db24.woff") format("woff"), url("https://fermatslibrary.com/assets/computer_modern_serif/cmunbx-643afcc8fc9a526cd060f37459f050f03156f0a593779d87b8ad21f937757a31.ttf") format("truetype"), url("https://fermatslibrary.com/assets/computer_modern_serif/cmunbx-7a45bcb8c585e7409787202298286c7a28c08450f55b346a699be65c55c67abd.svg#cmunbx") format("svg"); font-style: normal; font-weight: bold; }
+*/
+
+html {
+    width: 100%;
+    
+    font-family: "CMS", "Droid Serif", Georgia, "Times New Roman", "Times", serif;
+    font-size: 22px;
+    color: #333333;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+nav ul, nav li {
+    font-size: inherit;
+    display: inline;
+    font-weight: inherit;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 1em 0;
+    background-color: #f2f2f2;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: .8em;
+}
+
+nav li.active a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+/*
+nav h3::after,
+nav li::after {
+    content: "·";
+    padding: 0 .2em;
+    font-weight: bold;
+}
+
+nav li:last-child::after {
+    content: none;
+    padding: 0;
+}
+*/
+
+nav a:link, nav a:visited {
+    text-decoration: none;
+}
+
+
+section p, section li {
+    line-height: 1.4285;
+}
+
+a:link, a:visited {
+    text-decoration: underline;
+}
+
+a:hover, a:focus {
+    color: red;
+}
