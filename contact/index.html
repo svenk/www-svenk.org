@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<title>Sven Köppel: Get in contact</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="orig-date" content="2020-04-09">
+	<link href="/design/content2021.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">svenk.org</a>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/companies">Affiliations</a></li>
+        <li><a href="/social">Media</a></li>
+        <li class="active"><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+<section class="main" id="science">
+  <h1>Sven Köppel: Contact</h1>
+  <p>I'm most happy if you drop me a plain old E-Mail at <a href="mailto:svenk@svenk.org">svenk@svenk.org</a>.
+  
+  <h2>Or send something encrypted instead</h2>
+  <p>Since convenient  <a href="https://latacora.micro.blog/2020/02/19/stop-using-encrypted.html">encrypted mail
+  is somewhat dead</a>, why not roll out our own crypto instead in order to bootstrap for
+  some secure communication channel.
+  <p>Just go ahead, use things which are public available anways, such as 
+  <a href="https://github.com/svenk.keys">my SSH public keys at github</a>:
+  
+<pre>
+echo "Prepare some secret message" > secret.msg.txt
+wget https://github.com/svenk.keys
+tail -n1 svenk.keys > last.pub.key
+ssh-keygen -f last.pub.key -e -m PKCS8  > svenk.pub.pem
+echo "Hi Sven, I'm writing you an encrypted message using your SSH public key:" > msg.txt
+cat last.pub.key >> msg.txt
+echo "-----BEGIN SSH ENCRYPTED MESSAGE-----" >> msg.txt
+cat secret.msg.txt | openssl rsautl -encrypt -pubin -inkey svenk.pub.pem -ssl | openssl base64 >> msg.txt
+echo "-----END SSH ENCRYPTED MESSAGE-----" >> msg.txt
+echo "Now go on and write this mail to sven:"
+echo
+cat msg.txt
+</pre>
+
+  <p>The above most likely works on any standard unix-like system with OpenSSH
+  and OpenSSL installed.
+
+
+
+</section>
