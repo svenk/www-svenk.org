@@ -1,0 +1,11 @@
+main:
+  - title: svenk.org
+    url: /
+  - title: Research
+    url: /research/
+  - title: Affiliations
+    url: /companies/
+  - title: Media
+    url: /social/
+  - title: Contact
+    url: /contact/
