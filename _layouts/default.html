@@ -1,24 +1,44 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 	<title>{{ page.title }}</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<!-- Jekyll -->
-	<link href="/assets/content2021.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="generator" content="Jekyll/3">
+
+	<!--<link href="/assets/content2021.css" rel="stylesheet" type="text/css">-->
+	
+	<!-- Pure CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+	
+	<link rel="stylesheet" href="/assets/pure2021.css" rel="stylesheet" text="text/css">
 </head>
 <body>
-<nav>
-    <ul>
-    {% for item in site.data.nav.main %}
-        <li class="{% if item.url == page.url %}active{% endif %}">
-            <a href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a>
-        </li>
-    {% endfor %}
-    </ul>
-</nav>
-<section class="main">
-    {{ content }}
-</section>
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+            <h1 class="brand-title"><a href="/">svenk.org</a></h1>
+            <!--<h2 class="brand-tagline">Some subtitle</h2>-->
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    {% for item in site.data.nav.main %}
+                        <li class="nav-item {% if item.url == page.url %}active{% endif %}">
+                            <a class="pure-button"  href="{{ item.url }}">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div><!--/sidebar -->
+
+    
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+            {{ content }}
+        </div>
+    </div>
 </body>
 </html>
