@@ -7,5 +7,7 @@ main:
     url: /companies/
   - title: Media
     url: /social/
+  - title: Misc
+    url: /misc/
   - title: Contact
     url: /contact/
