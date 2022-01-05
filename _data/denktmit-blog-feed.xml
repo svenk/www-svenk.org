@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your awesome title</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+    <link>https://denktmit.de/</link>
+    <atom:link href="https://denktmit.de/blog-feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 03 Jan 2022 09:27:17 -0600</pubDate>
+    <lastBuildDate>Mon, 03 Jan 2022 09:27:17 -0600</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+     
+      <item>
+        <title>Release And Ship Your E2e Tests As Containers Alongside Your Product</title>
+        <author>Marius Schmidt</author>
+        <description>&lt;h1 id=&quot;e2e-testcontainers&quot;&gt;E2E Testcontainers&lt;/h1&gt;
+
+&lt;p&gt;Lets start with a short reminder on E2e-Tests. While unit and integration tests verify, that a system under test does
+things right, the E2E-Tests verify that a system does the right thing. They are therefore acceptance tests and should
+provide an every
+increasing &lt;a href=&quot;https://ronjeffries.com/xprog/articles/jatrtsmetric/&quot;&gt;Running tested features (Brought up by Ron Jeffries)&lt;/a&gt;
+metric understandable by business users.&lt;/p&gt;
+
+&lt;p&gt;Often those tests are run on the local developers machine and in the CI to pass the quality gates. This is usually
+enough for a centrally managed system existing in a single configuration. As soon as we talk about turnkey solutions,
+the system under tests might be living on many different environments and installations. Wouldn’t it be nice to have a
+uniform way to verify, the software is working as expected on those different environments? At least have some smoke
+tests running? Well, why not somehow release these E2E-Tests alongside the product and make them self-explanatory to be
+used on any environment whenever needed?&lt;/p&gt;
+
+&lt;p&gt;This is, what I propose to achieve with E2E Testcontainers. The rest of this post gives you a hands-on introduction of 
+the idea based on &lt;a href=&quot;https://github.com/DenktMit-eG/de.denktmit.blog.e2e-test-containers&quot;&gt;a sample I prepared on Github&lt;/a&gt;. 
+Make sure you clone it to your local machine to follow this text. At the end of this post, you will have your own base
+image for test containers as well as a fully working sample of some Selenium based browser testing wrapped in a 
+self-explanatory and CI friendly container.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;You will need to have a fully working Docker installation as well as at least a working Java 11+ JDK to run the full
+build.&lt;/p&gt;
+
+&lt;p&gt;By &lt;strong&gt;running the main build.sh&lt;/strong&gt; script of this project, you can locally create both the base image and the sample webgui
+image. In resemblance to most UNIX command line tools, the test containers are designed to reveal their features
+included by just using them.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./build.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It might take some time until docker pulled everything, but once the process is done, you are ready to go and explore
+your freshly baked docker images.&lt;/p&gt;
+
+&lt;h3 id=&quot;exploring-a-test-container&quot;&gt;Exploring a test-container&lt;/h3&gt;
+
+&lt;p&gt;The most basic thing you can do to a docker image is, to just run it. Run the container for the first time:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --rm e2e-test-base-image:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As a result, you will get some output reading like this&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;== cli.sh 2021-11-01T11:11:25Z Exporting config ...
+
+E2E Tests CLI CLI-Version: 1.0.0 Usage: /cli/cli.sh [command]
+
+Commands:
+e2etests Display e2etests Help
+
+*         Help
+
+Description:
+This is the e2e-test-base-image cli, that only contains a small sample setup. The base image is designed to be extended
+by product specific E2E-Test containers, overwriting behavior and usage instructions.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So basically, the container advises us to use the entry script /cli/cli.sh. We’ll end up with the message above again&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --rm e2e-test-base-image:latest /cli/cli.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But what can we do from here? Well obviously, the script helps us to recognise accidentally wrong input in showing the
+help page again for every argument, that does not map onto a command. Try it if you like:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --rm e2e-test-base-image:latest /cli/cli.sh unknown 
+docker run --rm e2e-test-base-image:latest /cli/cli.sh boring three params 
+docker run --rm e2e-test-base-image:latest /cli/cli.sh *
+docker run --rm e2e-test-base-image:latest /cli/cli.sh e2etests
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let’s get serious, how to use the actual tests? The last line of the former code block with the param e2etests gave us a
+different help text. So we are one steps further it seems.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;== cli.sh 2021-11-01T11:18:24Z Exporting config ... 
+== e2etests.sh 2021-11-01T11:18:24Z HELP
+
+Command: e2etests
+
+Usage:
+e2etests run [tags]     Runs all tests e2etests specs Prints defined specs e2etests * Help
+
+Description:
+This command executes Gauge specifications provided in the /tests/specs directory of this container when called with '
+run'. If you run the tests without providing tags, all tests will be run. Otherwise, if you submit a tags specification,
+only the tests that match it are run. For detailed explanation,
+visit https://docs.gauge.org/execution.html#tag-expressions. If all tests succeed, this script returns with exit code 0,
+otherwise with exit code 1.
+
+Configurable environment variables:
+This is an overview of configurable environment variables. Mandatory variables must be provided as docker env
+variables, otherwise the run command will fail. Optional variables on the other hand might be used if needed. If
+both lists are empty, it means, that your current test container does not need any setup to run the tests :).
+
+###################################
+# Mandatory environment variables #
+###################################
+(none for this sample)
+
+###################################
+# Optional environment variables  #
+###################################
+GAUGE_JVM_ARGS
+ - arguments provided to the JVM, that is started by the gauge-java test runner. Defaults to
+   &quot;-Dlogback.configurationFile=/common/logback.xml&quot; to provide a logging configuration
+GAUGE_LOG_LEVEL: enum
+ - The log level of the Gauge spec runner itself. Must be debug, info, warning, error or
+   critical (default &quot;info&quot;)
+
+
+Available test tags:
+The available tags and their purpose. For example a tag smoke might only run some quick tests to verify a system is
+ready.
+
+poems
+ - Sample E2E tests about poems. Includes all tests
+smoke
+ - Includes a single successful test
+failing
+ - Includes a single failing test
+
+Mount points of interest:
+The mount points of interests describe container paths you might want to mount to your host machine.
+
+/tests/reports
+ - The gauge tests generate a nice XML and HTML reports that end up here
+/tests/logs
+ - Logs created by gauge are available in
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;take-a-look-at-the-specs&quot;&gt;Take a look at the specs&lt;/h3&gt;
+
+&lt;p&gt;Since I built the test containers using the &lt;a href=&quot;https://gauge.org/&quot;&gt;gauge testing framework&lt;/a&gt;, there are specs. Specs are
+written in Markdown and describe a certain feature of the system under test in a human readable way. Show the 
+containered specs with&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --rm e2e-test-base-image:latest /cli/cli.sh e2etests specs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The specs command simply outputs the available spec&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;== cli.sh 2021-11-01T12:09:30Z Exporting config ... 
+== e2etests.sh 2021-11-01T12:09:30Z PRINT E2E SPECS Rose validity
+=============
+
+End the poem correctly
+----------------------
+tags: poems, smoke
+
+* A rose is a rose is a &quot;rose&quot;
+
+End the poem incorrectly
+------------------------
+tags: poems, failing
+
+* A rose is a rose is a &quot;lily flower&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;as we can see, we only defined a single feature here. The test is about a short quotation, sometimes considered a poem
+in its own by Gertrude Stein. Since the little poem can be read as a statement for validity and identity of things I
+found it very fitting. There are three tags across the specs: poems, smoke and failing. The first scenario is an always
+succeeding while the second one is always failing. If you ran the the smoke tests only, you end up with succeeding
+otherwise with failing tests Run all E2E tests&lt;/p&gt;
+
+&lt;p&gt;Since we do not need any additional setup, you can run the tests as easy as&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --rm e2e-test-base-image:latest /cli/cli.sh e2etests run
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After a short time, you should see this output&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;== cli.sh 2021-11-01T12:22:14Z Exporting config ... 
+== e2etests.sh 2021-11-01T12:22:14Z RUN E2E TESTS
+
+# Rose validity
+
+## End the poem correctly
+
+## End the poem incorrectly
+
+        Failed Step: A rose is a rose is a &quot;lily flower&quot;
+        Specification: specs/01-SayRose.spec:14
+        Error Message: java.lang.AssertionError: The answer 'lily flower' is wrong
+        Stacktrace: 
+        io.gec.example.RosePoemSteps.poemSuccessful(RosePoemSteps.java:10)
+        java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        com.thoughtworks.gauge.execution.MethodExecutor.execute(MethodExecutor.java:28)
+        com.thoughtworks.gauge.execution.StepExecutionStage.executeStepMethod(StepExecutionStage.java:66)
+        com.thoughtworks.gauge.execution.StepExecutionStage.executeStep(StepExecutionStage.java:59)
+        com.thoughtworks.gauge.execution.StepExecutionStage.execute(StepExecutionStage.java:41)
+        com.thoughtworks.gauge.execution.AbstractExecutionStage.executeNext(AbstractExecutionStage.java:14)
+        com.thoughtworks.gauge.execution.HookExecutionStage.execute(HookExecutionStage.java:33)
+        com.thoughtworks.gauge.execution.ExecutionPipeline.start(ExecutionPipeline.java:19)
+        com.thoughtworks.gauge.processor.ExecuteStepProcessor.process(ExecuteStepProcessor.java:44)
+        com.thoughtworks.gauge.RunnerServiceHandler.lambda$executeStep$7(RunnerServiceHandler.java:166)
+        java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+        java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+        java.base/java.lang.Thread.run(Thread.java:829)
+
+Successfully generated html-report to =&amp;gt; /tests/reports/html-report/index.html
+
+Successfully generated xml-report to =&amp;gt; /tests/reports/xml-report
+
+Specifications:    1 executed 0 passed 1 failed 0 skipped Scenarios:    2 executed 1 passed 1 failed 0 skipped
+
+Total time taken: 148ms
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;run-the-smoke-tests-only&quot;&gt;Run the smoke tests only&lt;/h3&gt;
+
+&lt;p&gt;If you run the smoke tests only, you can do so by adding “smoke” as parameter&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --rm e2e-test-base-image:latest /cli/cli.sh e2etests run smoke
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;the tests succeed&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;== cli.sh 2021-11-01T12:23:48Z Exporting config ... 
+== e2etests.sh 2021-11-01T12:23:48Z RUN E2E TESTS
+
+# Rose validity
+
+## End the poem correctly
+
+Successfully generated html-report to =&amp;gt; /tests/reports/html-report/index.html
+
+Successfully generated xml-report to =&amp;gt; /tests/reports/xml-report
+
+Specifications:    1 executed 1 passed 0 failed 0 skipped Scenarios:    1 executed 1 passed 0 failed 0 skipped
+
+Total time taken: 138ms
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;what-about-ci-integration&quot;&gt;What about CI integration?&lt;/h3&gt;
+
+&lt;p&gt;We can easily evaluate, if all tests succeeded in e.g. a CI process using by evaluating the return code.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Returns 'Smoke tests succeeded'
+
+docker run --rm e2e-test-base-image:latest /cli/cli.sh e2etests run smoke &amp;amp;&amp;amp; echo &quot;Smoke tests succeeded&quot; || echo &quot;Smoke
+tests failed&quot;
+
+# Returns 'All tests failed'
+
+docker run --rm e2e-test-base-image:latest /cli/cli.sh e2etests run &amp;amp;&amp;amp; echo &quot;All tests succeeded&quot; || echo &quot;All tests
+failed&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;a-more-sophisticated-example-webtests-using-selenium&quot;&gt;A more sophisticated example: Webtests using Selenium&lt;/h2&gt;
+
+&lt;p&gt;Lets see, what the sample Web GUI container has to offer in E2E tests an just run a webtest docker&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;run --rm e2e-test-sample-webgui:latest /cli/cli.sh e2etests
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The output is different than for the other container&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;== cli.sh 2021-11-01T11:27:55Z Exporting config ... 
+== e2etests.sh 2021-11-01T11:27:55Z HELP
+
+Command: e2etests
+
+Usage:
+e2etests run [tags]     Runs all tests e2etests specs Prints defined specs e2etests * Help
+
+Description:
+This command executes Gauge specifications provided in the /tests/specs directory of this container when called with '
+run'. If you run the tests without providing tags, all tests will be run. Otherwise, if you submit a tags specification,
+only the tests that match it are run. For detailed explanation,
+visit https://docs.gauge.org/execution.html#tag-expressions. If all tests succeed, this script returns with exit code 0,
+otherwise with exit code 1.
+
+Configurable environment variables:
+This is an overview of configurable environment variables. Mandatory variables must be provided as docker env
+variables, otherwise the run command will fail. Optional variables on the other hand might be used if needed. If
+both lists are empty, it means, that your current test container does not need any setup to run the tests :).
+
+###################################
+# Mandatory environment variables #
+###################################
+EXPECTED_RESULT_CONTAINS
+ - The text snippet expected to be part of the search results
+
+###################################
+# Optional environment variables  #
+###################################
+GAUGE_JVM_ARGS
+ - arguments provided to the JVM, that is started by the gauge-java test runner. Defaults to
+   &quot;-Dlogback.configurationFile=/common/logback.xml&quot; to provide a logging configuration
+GAUGE_LOG_LEVEL: enum
+ - The log level of the Gauge spec runner itself. Must be debug, info, warning, error or
+   critical (default &quot;info&quot;)
+HEADLESS_BROWSER: BOOLEAN
+ - Determines if to run a headless browsers. Defaults to true.
+SEARCH_TERM
+ - The term to be searched for
+
+Available test tags:
+The available tags and their purpose. For example a tag smoke might only run some quick tests to verify a system is
+ready.
+
+search
+ - Sample E2E tests. Includes all tests
+smoke
+ - Includes a single successful test, in this case
+custom
+ - Includes a single failing test
+
+Mount points of interest:
+The mount points of interests describe container paths you might want to mount to your host machine.
+
+/tests/reports
+ - The gauge tests generate a nice XML and HTML reports that end up here
+/tests/logs
+ - Logs created by gauge are available in
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;run-the-web-tests&quot;&gt;Run the web tests&lt;/h3&gt;
+
+&lt;p&gt;Okay, we need to setup a mandatory environment variables and might also want to change some optionals. This time, we’d
+also like to have a look at the generated reports. To make them more fun, we use a full-fledged browser and disable the
+headless mode. This leaves us with nice screenshots when a test fails and makes it easier to track down bugs. So, lets
+give it a first try. Lets run a failing webtest&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --rm  \
+-e &quot;SEARCH_TERM=denktmit.de&quot; \
+-e &quot;EXPECTED_RESULT_CONTAINS=denktmit.de is the coolest co-op in the world&quot; \
+-e &quot;HEADLESS_BROWSER=false&quot; \
+-v /home/&amp;lt;youruser&amp;gt;/reports:/tests/reports \
+e2e-test-sample-webgui:latest /cli/cli.sh e2etests run
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;evaluate-the-results-and-why-the-tests-are-failing&quot;&gt;Evaluate the results and why the tests are failing&lt;/h3&gt;
+
+&lt;p&gt;Once the test is completed, we might want to take a look at the HTML reports, we so wisely mounted into our file system.
+This is, what the Gauge generated reports look like
+&lt;img src=&quot;/files/sdm/images/release-your-e2e-containers-gauge-report-screenshot.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Clicking on the screenshot gives you a great inside into what the browser was seeing while running the tests. Obviously
+the DenktMit eG is not yet listed as the coolest co-op in the world, but at least we get the information what went wrong
+&lt;img src=&quot;/files/sdm/images/release-your-e2e-containers-search-results-screenshot.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Obviously, the search term is not giving us the expected result. Let’s do a query, this humble presenter knows to work
+most of the time.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --rm  \
+-e &quot;SEARCH_TERM=denktmit.de&quot; \
+-e &quot;EXPECTED_RESULT_CONTAINS=Zwischen Programmierergenossenschaft und Unternehmensberatung&quot; \
+-e &quot;HEADLESS_BROWSER=false&quot; \
+-v /home/&amp;lt;youruser&amp;gt;/reports:/tests/reports \
+e2e-test-sample-webgui:latest /cli/cli.sh e2etests run
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This time we have a more satisfying outcome, all the tests were successful. That is the end of this little tutorial,
+I hope you enjoyed it. Have fun building and releasing your own test containers.&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@brotandgames/build-a-custom-cli-with-bash-e3ce60cfb9a4&quot;&gt;Build a Custom CLI with Bash&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gauge.org/&quot;&gt;Gauge testing framework&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/getgauge/gauge-java&quot;&gt;Gauge java language bindings&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://denktmit.de/outreach.html&quot;&gt;DenktMit eG tech blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 21 Nov 2021 00:00:00 -0600</pubDate>
+        <link>https://denktmit.de/2021/11/21/release-and-ship-your-e2e-tests-as-containers-alongside-your-product.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2021/11/21/release-and-ship-your-e2e-tests-as-containers-alongside-your-product.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Show your Workspace! Der Auftakt</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;In einer neuen Reihe innerhalb dieses Blogs stellen die Mitglieder und Mitarbeiter von DenktMit
+ihren Arbeitsplatz (oder ihre Arbeitsplätze) vor. Als Menschen, die primär an einem Computer ihre
+Arbeit verrichten, ist die effiziente Ausgestaltung dieses Arbeitsplatzes für uns meist sehr wichtig.
+Als Vorlage dient etwa das wunderbare und sehr ausführliche Essay von Stephen Wolfram:
+&lt;a href=&quot;https://writings.stephenwolfram.com/2019/02/seeking-the-productive-life-some-details-of-my-personal-infrastructure/&quot;&gt;Seeking the Productive Life: Some Details of My Personal Infrastructure&lt;/a&gt; oder Webseiten, die sich der
+systematischen Erfassung von Computer-Arbeitsplätzen gewidmet haben, etwa
+&lt;a href=&quot;https://workspace.style/&quot;&gt;workspace.style&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;mobile-first-meine-arbeitsumgebung&quot;&gt;Mobile First: Meine Arbeitsumgebung&lt;/h2&gt;
+
+&lt;p&gt;Den Anfang mache ich mit der Vorstellung meines typischen Arbeitsortes. Und da fängt es auch
+schon an: Ich habe mir an meinem derzeitigen Wohnort in Münster/Westfalen ein schönes
+&lt;em&gt;Homeoffice&lt;/em&gt; eingerichtet, würde mich aber in einem mehrere Jahre andauernden Zustand 
+zum &lt;em&gt;digitalen Normadentum&lt;/em&gt; bezeichnen. So hatte ich diesen Sommer für längere Tage oder Wochen
+meine primären Arbeitsplätze sowohl im Urlaub auf Westerland/Sylt als auch auf Geschäftsreisen
+im Raum Frankfurt aufgebaut.&lt;/p&gt;
+
+&lt;p&gt;Absolutes Minimum für einen ernsthaften temporären Arbeitsplatz ist für mich ein großer
+(Schreib-)tisch, ein stationärer Monitor, eine USB-Webcam, eine richtige Maus und natürlich das
+Arbeitsgerät (Laptop). Die Webcam ermöglicht mir Flexibilität bei Videokonferenzen, der externe
+Monitor mehr Platz auf dem Bildschirm, die Maus die Möglichkeit, präzise Grafikbearbeitung 
+durchzuführen. Was ich gerne noch dazu habe, ist eine USB-Tastatur sowie ein erhöhter Aufbau
+(improvisierter Stehschreibtisch) für eine ergonomischere Arbeitshaltung. Natürlich ist gutes
+Internet wichtig, für wirklich abgelegene Arbeitsplätze schwöre ich dafür auf ein gutes
+LTE-Modem wie das &lt;em&gt;Huawei B618&lt;/em&gt;, welches etwa ein Standargerät bei den
+&lt;a href=&quot;https://www.vodafone.de/mobiles-internet/internet-auf-dem-land.html&quot;&gt;Vodafone GigaCube&lt;/a&gt;-Tarifen
+ist. Gegenüber Smartphone-Tethering benötigt ein solches Gerät mehr Platz im Gepäck, verfügt
+aber über eine überragende Antenne und hat an Orten guten Empfang, wo mein Handy längst aufgibt.&lt;/p&gt;
+
+&lt;h2 id=&quot;der-laptop-thinkpad&quot;&gt;Der Laptop: Thinkpad!&lt;/h2&gt;
+
+&lt;p&gt;Ich hatte bis ca. 2016 stets einen Tower-PC an meinem primären Arbeitsplatz stehen. Mein Professor
+während meiner Promotion hat mir dann vorgemacht, wie mobiles Arbeiten geht: Mit dem Notebook
+als primäres Arbeitsgerät und einer Docking-Station an verschiedenen Schreibtischen. So hat er
+die gesamte Arbeitsgruppe ausgestattet, was wirklich eine ganz andere Dynamik hervorbrachte, als
+ich es vorher gewohnt war. Menschen nahmen ihren leistungsfähigen “Firmen”-Laptop mit in Meetings,
+auf Konferenzen oder in den Urlaub. Ich hab damals mein privates betagtes Thinkpad T420 gegen ein
+Thinkpad Yoga X1 der ersten Generation ausgetauscht bekommen, damals mit formidablen 1TB SSD-Speicher.
+Diese Konfiguration fande ich derart brilliant, dass ich sie mir nach meiner Promotion (und Rückgabe
+der Geräte) nochmal privat zugelegt habe, dann mit einem Thinkpad X1 der vierten Generation und
+gleicher Speicherausstattung.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://windowsarea.de/wp-content/uploads/2019/01/Lenovo-ThinkPad-X1-Yoga-2019-1.jpg&quot; alt=&quot;Thinkpad&quot; style=&quot;max-width:100%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ein Festplattenspeicher von 1TB ermöglicht mir, so gut wie alle relevanten Files auf dem Notebook zu
+haben. Als Data Scientists kann ich so auch größere Analysen auf dem Laptop machen. Den
+Wacom-Digitizer (Stift) sowie Tabletmodus benutze ich kaum, was aber wohl vor allem an der schlechten
+Linux-Unterstützung liegt. Denn: Ich nutze Linux kompromisslos. Für eine Dual Boot-Installation hatte
+ich seit vielen Jahren keine Verwendung mehr.&lt;/p&gt;
+
+&lt;p&gt;Meine primäre Arbeitsumgebung ist seit ein paar Jahren KDE, wobei ich intensiv virtuelle Desktops
+verwende. Gut gefällt mir an der Distribution &lt;em&gt;Arch&lt;/em&gt;, dass die Rolling Releases für häufige (in der
+Regel positive) Überraschungen in Form neuer Software-Features führen. Die Distribution hat aber auch
+ihre Schattenseiten: Mehr als ein Jahr lang ging das eingebaute Mikrofon wegen Treiberproblemen nicht,
+während Ubuntu hier keine Probleme hatte. Generell sind solche Themen für mich nach mehr als 10 Jahren
+Linux auf dem Desktop keine Diskussion mehr wert. Wer mit Linux zurecht kommt, soll damit arbeiten, alle
+anderen sollen es eben lassen.&lt;/p&gt;
+
+&lt;h2 id=&quot;höhenverstellbarer-schreibtisch&quot;&gt;Höhenverstellbarer Schreibtisch&lt;/h2&gt;
+
+&lt;p&gt;Kommen wir nun zu meinem primären Arbeitsplatz in Münster/Westfalen:&lt;/p&gt;
+
+&lt;p&gt;Kaum etwas hat meinen Arbeitskomfort so erleichtert wie der höhenverstellbare Schreibtisch, den ich mir
+erst vor wenigen Jahren zugelegt habe. Leider war ich etwas knausrig und wählte ein Modell mit
+mechanischer Kurbel statt elektrischem Motor, was ich heute täglich beklage, da ich mit Motor deutlich
+häufiger die Position wechseln würde. Der Schreibtisch ist ein mittlerweile nicht mehr verfügbares
+Modell von &lt;em&gt;IKEA&lt;/em&gt;, welches leider eine ziemlich kleine Arbeitsfläche von nur 80x160cm hat. Ich habe
+fast 10 Jahre lang einen 100x200cm großen Schreibtisch verwendet, sodass das für mich eine echte
+Umstellung war. Allerdings ist der kleinere Tisch auch wendiger und leichter.&lt;/p&gt;
+
+&lt;p&gt;Meinen Schreibtisch beleuchte ich seit Jahren mit zwei
+&lt;a href=&quot;https://www.ikea.com/de/de/p/tertial-arbeitsleuchte-weiss-70355455/&quot;&gt;IKEA TERTIAL&lt;/a&gt; von beiden Seiten
+mit starken LED-Leuchtmitteln (je 800-1000 Lumen). Die Arbeitsleuchte ist eine Design-Ikone und extrem
+praktisch, um das Licht genau zu steuern.&lt;/p&gt;
+
+&lt;p&gt;Um den kleinen Schreibtisch zu kompensieren, habe ich in der Regel eine zusätzliche Arbeitsplatte
+auf Böcken aufgebaut sowie nutze diverse Regale und Ablagesysteme drumherum. Der zweite Tisch ist in
+der Regel leer und wird nur für Projekte aufgebaut, z.B. für eine temporäre Lötstation, zum Sortieren
+von Akten oder für einen zweiten Computer. Dann steht auch schnell ein oder mehrere Bildschirme auf
+der Zweitplatte, die ähnliche Maße hat. Beide Tische sind wie alle Möbel weiß.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/blog/2021-08-26-Workspace-Desk.jpg&quot; alt=&quot;Thinkpad&quot; style=&quot;max-width:100%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;superwide-display-und-kabel&quot;&gt;SuperWide-Display und Kabel&lt;/h2&gt;
+
+&lt;p&gt;Im Januar 2021 hab ich mir einen besonderen Luxus gegönnt und meine beiden 16:9-Bildschirme durch einen
+einzelnen 32:9-Bildschirm ersetzt. Dadurch hat sich effektiv die Anzahl der Pixel nur unwesentlich
+geändert, allerdings der Komfort enorm erhöht: Das teure &lt;em&gt;Philips 499P9H&lt;/em&gt;-Display hat nämlich eine
+integrierten Docking-Station mit USB-Hub, Ethernet, Lautsprecher und Webcam. Das alles kann inklusive
+des Displays mit nur einem einzigen USB-C-Kabel vom Laptop angesprochen werden, der während des
+Anschlusses auch noch darüber geladen wird. Für mich ein echter Game-Changer, da der Arbeitsplatz nun
+mit jedem USB-C-fähigen Laptop (etwa auch einem Macbook) sehr schnell in Benutzung genommen werden kann.
+Dass die Hardware mit Linux so gut tadellos funktioniert, hat mich ehrlich gesagt auch etwas überrascht.&lt;/p&gt;
+
+&lt;p&gt;Der Standfuß des Displays nimmt auf dem kleinen Schreibtisch natürlich einiges an Platz weg. Ich habe
+bereits überlegt, eine Monitorhalterung einzukaufen, konnte mich dazu aber noch nicht durchringen.&lt;/p&gt;
+
+&lt;p&gt;An das Display sind völlige Commodity-Eingabegeräte angeschlossen: Eine simple &lt;em&gt;Cherry&lt;/em&gt;-Tastatur
+(&lt;em&gt;KC 1000&lt;/em&gt; o.ä.) und eine billige Logitech-Maus. Immerhin ist alles kabelgebunden, was ich unter
+Datensicherheitsaspekten sehr beruhigend finde.&lt;/p&gt;
+
+&lt;h2 id=&quot;dokumentenmanagament&quot;&gt;Dokumentenmanagament&lt;/h2&gt;
+
+&lt;p&gt;Das papierlose Büro sucht man bei mir vergeblich. Die Konsequenz, jeden einkommenden Brief zu
+digitalisieren, bringe ich nicht auf. Trotzdem kommt der &lt;a href=&quot;https://www.brother.de/scanner/ads-1700w&quot;&gt;Brother ADS-1700W&lt;/a&gt;
+regelmäßig zum Einsatz. Der kompakte Duplex-Dokumentenscanner kann mehrere Dutzend Seiten in einem
+Durchgang und recht flott farbig scannen, hat Wifi und einen kleinen Touchscreen, über den man ihn
+autonom bedienen kann. Ich scanne stets auf ein Netzwerklaufwerk, von dem ich mir die Files auf dem
+Rechner runterhole.&lt;/p&gt;
+
+&lt;p&gt;Zur Ent-Digitalisierung schwöre ich auf schwarz/weiß-Laserdrucker. Ich genieße solange er es tut noch
+meinen betagten &lt;em&gt;HP Laserjet 4050TN&lt;/em&gt;, der über Netzwerk druckt und druckt und druckt… Meiner Meinung
+nach bieten SW-Laserdrucker das beste Preis-Leistungsverhältnis für Gelegenheitsdrucker. Für das gute
+Gefühl ist aber eine offene Aufstellung an einem gut belüfteten Platz Pflicht, um krebserregenden
+Feinstaub zu reduzieren. Ohne Not werde ich mir keinen Farb-Tintenstrahldrucker kaufen, Bilder drucke
+ich lieber günstig bei der Drogerie auf Fotopapier aus.&lt;/p&gt;
+
+&lt;p&gt;Meine komplette Ablage und Korrespondenz läuft seit einigen Jahren recht erfolgreich über ein paar
+Nextcloud-Instanzen. Diese Software hat bei mir komplett und erfolgreich Dropbox ersetzt (bislang nie
+ohne größere Pannen) und stellt nebenbei dank Synchronisation auf verschiedene Notebooks eine kleine
+Backup-Strategie dar. Außerdem ist sie selbstgehostet und damit autonom. Ich hoste aber grundsätzlich
+nur im Internet (d.h. 100mbit symmetrisch), da ich die langsamen Upstream-Breiten aus Heimnetzen nicht
+ausstehen kann.&lt;/p&gt;
+
+&lt;h2 id=&quot;netzwerk-und-internet&quot;&gt;Netzwerk und Internet&lt;/h2&gt;
+
+&lt;p&gt;Ich bin zwar kein Gegner von Wifi, aber es geht doch nichts über kabelgebundenes Ethernet. Es gibt
+prinzipbedingt keine Ausfälle oder ungewöhnlichen Ping-Spikes, und was die Nachbarn machen spielt
+keine Rolle.  Ich hab mir auch die Mühe gemacht, das Ethernet durch die Wände bis zum Router zu verlegen,
+um mich nicht überflüssigerweise mit WLAN-Empfang ärgern zu müssen. Als Uplink habe ich seit ein paar
+Jahren einen &lt;em&gt;Unitymedia Buisness&lt;/em&gt;-Tarif, weil dieser eine fixe IPv4-Adresse in Verbindung mit guten
+Upstream-Breiten anbietet. Den werde ich wahrscheinlich aber bald ändern, weil er mir zu teuer ist.&lt;/p&gt;
+
+&lt;p&gt;Ich versuche die Anzahl von aktiven Netzwerkgeräten zu reduzieren, trotzdem laufen natürlich ein paar
+Switches (in der Regel in Access Point-Doppelfunktion) bei mir rum. Ich habe viele Jahre ein tolles
+kleines energiesparsames (&amp;lt;20W) NAS betrieben, was ich aber irgendwann eingestellt habe ohne davon im
+Alltag etwas zu bemerken.&lt;/p&gt;
+
+&lt;h2 id=&quot;handschriftlich-whiteboard-und-labbook&quot;&gt;Handschriftlich: Whiteboard und Labbook&lt;/h2&gt;
+
+&lt;p&gt;Es geht doch nichts über die Handschrift, vor allem wenn sie groß ist: Wir haben einen ganzen Schwung
+90*180cm großer Whiteboards (die sind mit ca. 30€ pro Stück recht erschwinglich) in verschiedenen
+Räumen zum inhaltlichen Austausch. Für meine Haupttätigkeit verwende ich außerdem ein klassisches
+Labbook, was man mit Kugelschreiber beschreiben kann. Das lässt sich zwar nicht durchsuchen, aber
+ist schneller gezückt als eine Notiz-App auf dem Handy.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 26 Aug 2021 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2021/08/26/show-your-Workspace.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2021/08/26/show-your-Workspace.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Martialische Redewendungen im beruflichen Alltag</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;Das Thema &lt;em&gt;Sprache&lt;/em&gt; ist öfters Gegenstand dieses Blogs: Sowohl natürliche
+als auch Programmiersprachen werden hier regelmäßig diskutiert.
+Heute soll es wieder einmal um die natürliche Umgangssprache gehen, wie wir
+sie vor allem im beruflichen Kontext verwenden. Dabei werde ich mich vor allem
+auf die deutsche Sprache konzentrieren.&lt;/p&gt;
+
+&lt;h2 id=&quot;das-willensstarke-geschäftstreffen&quot;&gt;Das willensstarke Geschäftstreffen&lt;/h2&gt;
+
+&lt;p&gt;In vielen Zusammenhängen gilt immer noch das recht des Stärkeren: Wer seinen
+Willen aggressiv und furchteinflößend ausdrückt, macht damit klar, dass
+er es ernst meint, wichtige Ziele verfolgt und gewillt ist, Hindernisse in
+Kauf zu nehmen. Da die Gewaltausübung in unseren Breiten mittlerweile verpönt
+ist, sind Drohgebärden wie das Hauen mit der Faust auf den Tisch nicht mehr
+angebracht. Stattdessen dient Sprache dazu, seine Motivation unter Beweis
+zu stellen. In diesem Posting wird es um &lt;em&gt;kriegerische&lt;/em&gt; und &lt;em&gt;kämpferische&lt;/em&gt;
+Formulierungen gehen, wie sie auch im Gruppensport zum Alltag gehören.
+Dabei möchte ich stets &lt;em&gt;Alternativen&lt;/em&gt; aufzeigen, sich weniger aggressiv
+auszudrücken. Die Intention ist, die Verwendung von Kraftausdrücken zu
+reduzieren.&lt;/p&gt;
+
+&lt;p&gt;Am Rande: Historisch ist diese Sprache klassischen Männerdomänen zuzuordnen.
+Sowohl Sport als auch Krieg wird meiner Wahrnehmung nach auch heute noch vor
+allem von Männern dominiert. Häufig
+ist Sprache ein probates Mittel, um vermeintlich körperliche Defizite zu
+kompensieren, also seine Minderwertigkeitskomplexe zu kaschieren.
+Das Sprecher-Geschlecht spielt eigentlich eine untergeordnete Rolle.&lt;/p&gt;
+
+&lt;h2 id=&quot;der-tägliche-ballsport-im-büro&quot;&gt;Der tägliche Ballsport im Büro&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Am Ball bleiben&lt;/strong&gt;: Wer beim Projekt den Faden oder Anschluss nicht verlieren
+will, hat &lt;em&gt;am Ball zu bleiben&lt;/em&gt;. Die harmlosere Variante &lt;em&gt;dranbleiben&lt;/em&gt; hat
+weniger sportliche Konnotation. Warum stattdessen nicht konkretisieren,
+welche Handlung gemeint ist? &lt;em&gt;Probleme im Blick behalten&lt;/em&gt; etwa, oder
+&lt;em&gt;täglich nach dem Rechten schauen&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Aufschlag machen&lt;/strong&gt;: Wer den ersten Entwurf eines Dokumentes macht, der
+&lt;em&gt;macht den Aufschlag&lt;/em&gt; im Pingpong-Tennis der Dokumentenbearbeitung. Obwohl
+es 2021 ist, werden immer noch Worddokumente mit obskuren Versionsnamen per
+E-Mail hin- und hergeschickt und die technische Unzulänglichkeit mittlerweile
+flotten sportlichen Sprüchen übergangen? Vielleicht einfach mal als Alternative:
+Git benutzen oder weiterhin altertümlich &lt;em&gt;die erste Version schreiben/schicken&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Den Ball flach halten&lt;/strong&gt; sollen einzelne oder das Team, um dem &lt;em&gt;Gegner&lt;/em&gt; nicht
+zu viele Informationen zur Verfügung zu stellen. Und das, ohne den Sportsgeist
+zu verlieren! Der Ball, das steht sinnbildlich für Geschäftsgeheimnisse,
+Zeugnisse der Arbeit, oder einfach nur der ganzen eigenen Unternehmung. 
+Wer die Öffentlichkeit und Konkurrenz scheut, kann mit dieser Formulierung
+scheinbar sportlich sein Gesicht wahren. Siehe auch weiter unten &lt;em&gt;Unter dem
+Radar fliegen&lt;/em&gt;. Weniger drakonisch wäre die Formulierung &lt;em&gt;still halten&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Das &lt;strong&gt;Eigentor&lt;/strong&gt; schießt, wer seinem Geschäftsgegner einen unfreiwilligen
+Vorteil verschafft hat. Man(n) nimmt es sportlich! Eine Alternative wäre
+die ehrlichere aber härtere Formulierung &lt;em&gt;geschäftsschädigend&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gut aufgestellt&lt;/strong&gt; ist die eigene Mannschaft, wenn der Chef sich handlungsfähig
+sieht. Ob sie wirklich alle Kompetenzen abdeckt oder effizient ist, kann ganz
+sportlich übergangen werden, dafür gibt es ja Hierarchien. Wie wäre es zur
+Abwechslung mal mit einem &lt;em&gt;diversen&lt;/em&gt; Team, welches Expert:innen diverser
+Disziplinien versammelt?&lt;/li&gt;
+  &lt;li&gt;Den &lt;strong&gt;Ball in der Luft halten&lt;/strong&gt; muss das Team, damit es nicht zum Showstopper
+kommt. Jetzt muss geliefert werden! Alternative:
+&lt;a href=&quot;https://en.wikiquote.org/wiki/Shut_up_and_calculate&quot;&gt;&lt;em&gt;Shut up and calculate!&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mit-den-kollegen-im-schwimmbecken-oder-auf-dem-eis&quot;&gt;Mit den Kollegen im Schwimmbecken oder auf dem Eis&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Zu viele Themen vor der Brust&lt;/strong&gt; haben gestresste Manager, die ihren
+sportlichen Ehrgeiz trotzdem weiterhin unter Beweis stellen wollen. Wie ein Ochse
+können sie zwar auch mit &lt;em&gt;zu vielen Themen vor der Brust&lt;/em&gt; weiterlaufen oder
+-schwimmen, kommen dabei aber nicht weit voran. Ein ehrliches
+&lt;em&gt;ich hab zu viel zu tun und bin überfordert&lt;/em&gt; mag sich niemand eingestehen, es
+würde menschliche Schwächen offenlegen. Wäre mal ein Versuch wert!&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Zurückrudern&lt;/strong&gt; tut, wer seine Meinung ändert oder gar eine 180°-Wende
+einlegt. Wie immer währt man sportlich sein Gesicht, denn es ist ja alles
+nicht so ganz ernst gemeint. Hier gibt es keine Alternative, man muss sich
+leider so ausdrücken als ob man Kassenwart eines Ruderbootvereins ist.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Go where the Puk is going, not where it has been&lt;/strong&gt; ist eine englischsprachige
+Redewendung, die Wayne Gretzky nachgesagt wird. Der &lt;em&gt;Player&lt;/em&gt; handelt
+vorausschauend und motiviert sein Team. Weiter so, Männers!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mit-krawatte-im-fliegerhorst-und-dsytopischer-technikschmiede&quot;&gt;Mit Krawatte im Fliegerhorst und dsytopischer Technikschmiede&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Unter dem Radar bleiben/fliegen&lt;/strong&gt;, siehe &lt;em&gt;Den Ball flachhalten&lt;/em&gt; weiter oben.
+Passt auf, nicht vom toten Pferd zu fallen!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;der-bürohengst-im-manöver-auf-dem-schlachtfeld-oder-hoch-zur-see&quot;&gt;Der Bürohengst im Manöver auf dem Schlachtfeld oder hoch zur See&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Das &lt;strong&gt;Manöver&lt;/strong&gt; ist bitterernst und taktisch durchgeführt. Runter vom
+Sportplatz und ran an die Waffen! Es gilt den Gegner zu verwirren, auszuspielen
+und letztlich zu eliminieren. Wo Mord und Totschlag den Takt angeben, ist
+der Sprache nicht mehr zu helfen.&lt;/li&gt;
+  &lt;li&gt;Wer die &lt;strong&gt;Linien absteckt&lt;/strong&gt;, ist vielleicht schon in Vorbereitung der
+Friedensverhandlungen. Weiter so!&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Von hinten durch die Brust ins Auge&lt;/strong&gt; ist eine eher humoristische
+Umschreibung eines unnötig komplizierten Vorgehens. Der kriegerische
+Kontext ist wahrscheinlich eher konstruiert, mit kommt die
+Dolchstoßlegende in den Kopf, aber eigentlich kann man sich so ruhig
+ausdrücken. Die Welt ist brutal, und so ist es auch das Geschäft. Nicht
+wahr?&lt;/li&gt;
+  &lt;li&gt;Einen &lt;strong&gt;Überraschungsangriff&lt;/strong&gt; kann man ruhig einmal fahren. Schließlich
+geht es am Ende um die feindliche Übernahme.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Aus allen Rohren schießen&lt;/strong&gt; tut man, wenn es um Laib und Leben geht.
+Völlig alternativlos.&lt;/li&gt;
+  &lt;li&gt;Were &lt;strong&gt;schwere Geschütze auffährt&lt;/strong&gt;, plant den ganz großen Angriff. Immer
+dann anwenden, wenn eine Börsenübernahme geplant ist.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Unter Beschuss stehend&lt;/strong&gt; kann die Gegenpartei sich dann identifizieren.
+&lt;em&gt;Wir weden angegriffen&lt;/em&gt; ist eine weniger blumige Ausdrucksweise.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mit gefangen, mit gehangen&lt;/strong&gt; heißt es schon im Kindergarten.
+That’s it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;In den Hinterhalt locken&lt;/strong&gt; kann man den Gegner, wenn man Strategie und
+Taktik perfektioniert. Süß ist das Gift des Sieges! Hier bieten sich alternativ
+auch Metaphern aus dem Tierreich an, vielleicht von einer Spinne, die ihren
+Gegner aussaugt.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;grobes-am-pissoir-weit-unterhalb-der-gürtellinie&quot;&gt;Grobes am Pissoir weit unterhalb der Gürtellinie&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Die &lt;strong&gt;Mannschaft&lt;/strong&gt; mit Glied und Gürtel. Frauen sind mitgemeint.&lt;/li&gt;
+  &lt;li&gt;Wer einen &lt;strong&gt;Schnellschuss&lt;/strong&gt; landet, hat sich vorher wahrscheinlich nicht
+richtig gedehnt. Oder die Waffe falsch geladen. Nicht gleich die Flinte ins
+Korn werfen! Die Formulierung hat auch eine voyeuristisch-sexistische
+Konnotation: Der vorzeitige Samenerguss wird auch gerne mit einem
+&lt;em&gt;Schnellschuss&lt;/em&gt; umschrieben. So verstehen sich Männer ganz ohne Worte.
+Alternative: Bitte etwas möglichst weit&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pulver schon verschossen&lt;/strong&gt;, siehe &lt;em&gt;Schnellschuss&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Zu guterletzt drückt die grobe Formulierung &lt;strong&gt;Kameradenschwein&lt;/strong&gt; eine
+herbe Enttäuschung aus, welche den Verrat am Korpsgeist zum Ausdruck bringt
+und gleichzeitig die wunderbare Tierart der Schweine durch den Dreck zieht.
+Hier bietet sich alternativ etwas wie &lt;em&gt;Zimtzicke&lt;/em&gt; oder &lt;em&gt;Dreckskerl&lt;/em&gt; an,
+welches weniger militärisch assoziiert ist. &lt;em&gt;Verräter(in)&lt;/em&gt; passt auch
+ganz inklusiv.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Geplant ist, diese Liste weiterhin fortzusetzen. Letzte Änderung am 25.08.2021.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Aug 2021 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2021/08/25/kriegs-sport-sprache.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2021/08/25/kriegs-sport-sprache.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Die IDE-Wars</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;Heute möchte ich einmal über ein Thema schreiben, welches in der Genossenschaft sehr
+intensiv diskutiert wird: Integrierte Entwicklungsumgebungen, kurz &lt;em&gt;IDEs&lt;/em&gt; (für englisch
+&lt;em&gt;Integrated Development Environments&lt;/em&gt;). Dem gegenüber stehen vor allem die &lt;em&gt;REPLs&lt;/em&gt;,
+englisch für &lt;em&gt;Read Eval Print Loop&lt;/em&gt;, also ein Arbeitsablauf, der sich auf deutsch
+vielleicht mit &lt;em&gt;LAPS&lt;/em&gt; abkürzen ließe, für Lesen, Ausführen, Ausgeben, Schleife.
+Dieses Prinzip erinnert etwas an &lt;a href=&quot;https://de.wikipedia.org/wiki/Eat_Pray_Love&quot;&gt;Eat Pray Love&lt;/a&gt;
+oder &lt;a href=&quot;https://medium.com/study-tips/eat-sleep-exercise-repeat-7a12ba07c84d&quot;&gt;Eat Exercise Sleep Repeat&lt;/a&gt;.
+Es handelt sich durchaus um ein Paradigma, ist aber nicht so exotisch, dass er Teil
+meiner Blogartikelserie &lt;em&gt;Blick über den Tellerrand&lt;/em&gt; wäre, welche ich diese Woche
+mit einem Text über
+&lt;a href=&quot;/2021/06/29/tellerrand-stackbasierte-programmiersprachen.html&quot;&gt;stackbasierte Programmiersprachen&lt;/a&gt;
+angefangen habe.&lt;/p&gt;
+
+&lt;p&gt;Tatsächlich wurde ich für diesen Blogartikel motiviert von einem Blogartikel
+&lt;a href=&quot;https://vlaaad.github.io/clj-vs-cli&quot;&gt;REPL vs CLI: IDE wars&lt;/a&gt;, der gestern erschien. Dort
+geht es vor allem um die &lt;a href=&quot;https://clojure.org/&quot;&gt;Programmiersprache Clojure&lt;/a&gt; und die
+&lt;a href=&quot;https://clojure.org/guides/repl/introduction#_what_is_a_repl&quot;&gt;Clojure-REPL&lt;/a&gt;.
+Der &lt;a href=&quot;https://vlaaad.github.io/about/&quot;&gt;schwedische Autor&lt;/a&gt; verweist auch am Anfang seines
+Artikels darauf, dass er nicht der erste ist, der über die Frage, was denn nun alles eine IDE
+sein kann, philosophiert.&lt;/p&gt;
+
+&lt;h2 id=&quot;die-liebe-zur-entwicklungsumgebung&quot;&gt;Die Liebe zur Entwicklungsumgebung&lt;/h2&gt;
+
+&lt;p&gt;Softwareentwickler:innen pflegen oft eine Affinität zu Computern, die sich über ihre Arbeit
+hinaus auf das Betriebssystem, seine Konfiguration bis hin zur verwendeten Hardware und
+physischen Arbeitsumgebung fortsetzt. Wo es früher darum ging, mit welchem Farbschema man
+unter Windows 95 am besten entwickeln kann, waren es später Texteditoren und Syntaxhighlighting,
+&lt;a href=&quot;https://duckduckgo.com/?t=ffab&amp;amp;q=best+programming+font&amp;amp;ia=web&quot;&gt;die verwendete Schriftart&lt;/a&gt;,
+die Anzahl und Ausrichtung der Monitore, Tastaturen, mobile Endgeräte, usw – die Liste lässt
+sich fast endlos fortsetzen.&lt;/p&gt;
+
+&lt;p&gt;Besondere Vorlieben gibt es selbstverständlich auch zum Software-Ökosystem (oder &lt;em&gt;Softwarestack&lt;/em&gt;),
+mit welchem am liebsten programmiert und entwickelt wird. Dazu gehört nicht nur die
+&lt;a href=&quot;https://duckduckgo.com/?t=ffab&amp;amp;q=favourite+programming+language&amp;amp;ia=web&quot;&gt;Lieblingsprogrammiersprache&lt;/a&gt;,
+sondern auch die &lt;a href=&quot;https://duckduckgo.com/?t=ffab&amp;amp;q=favourite+web+framework&amp;amp;ia=web&quot;&gt;Lieblings-Frameworks&lt;/a&gt;
+und -Libraries, die &lt;a href=&quot;https://duckduckgo.com/?t=ffab&amp;amp;q=favourite+database&amp;amp;ia=web&quot;&gt;Lieblingsdatenbank&lt;/a&gt;,
+und so weiter. Zum Entwickeln gehört ferner das 
+&lt;a href=&quot;https://duckduckgo.com/?t=ffab&amp;amp;q=favourite+build+system&amp;amp;ia=web&quot;&gt;Lieblings-Buildsystem&lt;/a&gt;,
+welches sich um das Aufrufen des nötigen Compilers (auch da gibt es manchmal Varianten, die
+zur Präferenzenbildung einladen) kümmert.&lt;/p&gt;
+
+&lt;p&gt;Zum Entwickeln kann aber auch noch mehr gehören: Etwa Werkzeuge, die die Entwickler:in beim Suchen und
+Finden von Fehlern unterstützt. Die Rede ist etwa vom &lt;a href=&quot;https://duckduckgo.com/?t=ffab&amp;amp;q=favourite+debugger&amp;amp;ia=web&quot;&gt;Lieblings-Debugger&lt;/a&gt;
+(langsam ein bisschen viel &lt;em&gt;Lieblings-…&lt;/em&gt;, oder?) oder vom
+&lt;a href=&quot;http://stackoverflow.com/questions/26663/ddg#266969&quot;&gt;Lieblings-Profiler&lt;/a&gt;
+(diesmal kein DuckDuckGo-Link!).&lt;/p&gt;
+
+&lt;h2 id=&quot;anatomie-und-benutzung-einer-ide&quot;&gt;Anatomie und Benutzung einer IDE&lt;/h2&gt;
+
+&lt;p&gt;Um all diese Werkzeuge irgendwie ansprechen zu können, haben Entwickler:innen irgendwann angefangen,
+ein Superwerkzeug zu entwickeln welches alle anderen Werkzeuge integriert. Das Ergebnis war die
+&lt;em&gt;integrierte Entwicklungsumgebung&lt;/em&gt;, die eierlegende Wollmilchsau welche den Anspruch hat, alle
+Wünsche zu beantworten und den Entwickler:innen-Alltag komplett abzubilden. Idealerweise läuft
+diese Umgebung immer im Hintergrund, startet morgens beim Aufstehen und geht abends zum
+Zu-Bett-Gehen wieder aus. Da Entwickler:innen ja auch gerne teure schnelle Computer
+kaufen (siehe oben), gehören Entwicklungsumgebungen häufig zu den anspruchsvollsten Programmen,
+die ein solcher Computer bewältigen kann. Komplex und langsam werden sie vor allem durch
+große speicherintensive Datenbanken und zugehörige Indexierer, welche etwa den Code ständig
+im Hintergrund parsen und Cross-Referenzing ermöglichen, die zugehörigen Dokumentationen
+zu Code, Sprache und Libraries (oft viele tausend Seiten dicke Bücher) vorhalten und eben
+nebenbei auch noch alle obengenannten Tools per Mausklick verfügbar machen. Zu einer modernen
+Entwicklungsumgebung für spezielle Plattformen gehört oft noch ein Simulator jener
+Plattform (z.B. eines Smartphones). Auch die komplette Entwicklungsgeschichte des Codes wird
+per Anschluss an ein Revisionskontrollsystem (z.B. &lt;em&gt;git&lt;/em&gt;) vorgehalten.&lt;/p&gt;
+
+&lt;p&gt;Um all die Funktionen unter einen Hut zu bringen, sehen die Benutzeroberflächen von
+Entwicklungsumgebungen aus wie das Cockpit eines Jumbojets. An allen Ecken und Kanten gibt es
+Buttons und Menüs, Ausklappfenster und Indikatorzeichen in allen Farben des Regenbogens.
+Für den eigentlichen Quellcode, der den Kern der Arbeit der Entwickler:in ausmacht, bleibt
+auf dem Bildschirm so wenig Platz übrig. Und auch der Quellcode ist durchzogen von farbigen
+Linien, gerade, gewellt oder gestrichelt, um die vielen Anmerkungen, die die IDE vorschlägt,
+unterzubringen.&lt;/p&gt;
+
+&lt;p&gt;Um mit einer solchen IDE effizient zu arbeiten, muss die Entwickler:in eine enorme
+Lernkurve bewältigen. Idealerweise lernt sie zunächst die eigentliche Programmiersprache,
+die zu benutzenden Frameworks und Libraries sowie Domänenwissen in der Anwendung, die sie
+vorhat zu schreiben. Anschließend muss sie lernen, welche Werkzeuge sie benötigt (z.B. einen
+Debugger) und wie sie ihn über die IDE anspricht. Erst nach Bewältigung der Lernkurve
+stellt sich der Vorteil einer IDE ein, und zwar zuvorerst die Zeitersparnis, da alle
+Werkzeuge zur Hand sind. Viele Vorteile kann eine IDE auch erst ausspielen, wenn der
+damit bearbeitete Code sehr groß geworden ist, sodass eine computerunterstützte Navigation
+schneller als eine händische vonstatten geht. Nachdem ein solches Wissen aufgebaut wurde,
+kann eine IDE sich als sehr mächtiges Werkzeug herausstellen, was die Effizienz der
+Entwickler:in erhöht.&lt;/p&gt;
+
+&lt;h2 id=&quot;die-zukunft-der-ide-programmieren-mit-der-künstlichen-intelligenz&quot;&gt;Die Zukunft der IDE: Programmieren mit der künstlichen Intelligenz&lt;/h2&gt;
+
+&lt;p&gt;Ich beobachte generell die letzten Jahrzehnte eine Tenden zu immer komplexeren Frameworks
+und Libraries, die sich eigentlich auch nur mit immer komplexeren Entwicklungsumgebungen
+beherrschen lassen. Dabei verschmelzt die Idee, dass der Computer der Entwickler:in beim
+Programmieren hilft, mittlerweile mit Ansätzen der künstlichen Intelligenz, den Computer
+beim Entwickeln zu unterstützen. Vor wenigen Tagen wurde etwa der
+&lt;a href=&quot;https://copilot.github.com/&quot;&gt;Github Coplit&lt;/a&gt; angekündigt, ein Tool zum Erzeugen von
+Textblöcken in &lt;em&gt;Programmiersprache&lt;/em&gt; auf Basis von von der Entwickler:in in
+&lt;em&gt;natürlicher Sprache&lt;/em&gt; formulierten Kommentaren.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/media/E5D6uw2XIBAkU4u?format=jpg&amp;amp;name=4096x4096&quot; style=&quot;width:100%;&quot; alt=&quot;Github Copilot Screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mit Bildern wie dem obigen wurde der &lt;em&gt;Copilot&lt;/em&gt; angekündigt. 
+&lt;a href=&quot;https://twitter.com/nickjshearer/status/1409902649625956361?s=20&quot;&gt;In den sozialen Medien&lt;/a&gt;
+wurde gerade dieser Screenshot zerrissen, weil er die Todsünde vorschlägt, Geldbeträge
+als binäre Fließkommazahlen darzustellen (statt als Dezimalzahlen).&lt;/p&gt;
+
+&lt;h2 id=&quot;flink-im-geiste-eat-sleep-exercise-repeat&quot;&gt;Flink im Geiste: Eat, Sleep, Exercise, Repeat&lt;/h2&gt;
+
+&lt;p&gt;Nach dieser Exkursion zu den &lt;a href=&quot;https://en.wikipedia.org/wiki/Frontier&quot;&gt;Frontiers&lt;/a&gt; der
+Softwareentwicklung nun zurück zur Kernfrage, was das Softwareentwickeln eigentlich
+ausmacht. Die Referenz auf &lt;em&gt;Eat, Sleep, Exercise, Repeat&lt;/em&gt; war nicht nur anekdotisch
+gemeint, sondern gehört auch irgendwie zum Selbstverständnis des Berufes der
+Softwareentwickler:in. &lt;em&gt;Lebenslanges Lernen&lt;/em&gt; setzt man bei den praktizierenden
+Informatiker:innen in der Regel voraus, um auf Trends und aktuelle Entwicklungen
+Rücksicht zu nehmen. Sowas institutionalisieren wir Entwickler:innen z.B. auch
+mit &lt;a href=&quot;https://duckduckgo.com/?t=ffab&amp;amp;q=coding+dojo&amp;amp;ia=web&quot;&gt;Coding-Dojos&lt;/a&gt;. Das
+&lt;em&gt;Exercise&lt;/em&gt; ist also nicht (nur) auf unser körperliches Wohlbefinden gemeint,
+sondern auch auf unser geistiges.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Komplexität&lt;/em&gt; ist der Erzfeind von Entwickler:innen und einer der Tode, die ein
+Softwareprojekt sterben kann. Natürlich gehört es zu den wesentlichen Aufgaben bzw.
+Kompetenzen von uns als &lt;em&gt;Denktmitties&lt;/em&gt;, Komplexität zu strukturieren,
+organisieren und beherrschbar zu machen. Eine IDE kann dabei eine große Hilfe sein,
+vor allem wenn ein &lt;em&gt;Legacy-Projekt&lt;/em&gt; (also ein Projekt, in dem es viel alten Code
+gibt) übernommen wird. Mit viel Erfahrung kann sich eine Entwickler:in dabei auch
+eine gewisse &lt;em&gt;Flinkheit&lt;/em&gt; erhalten, vor allem nachdem eine Einarbeitungszeit
+überwunden wurde.&lt;/p&gt;
+
+&lt;p&gt;In dieser Einarbeitungszeit geht viel Zeit darauf, herauszufinden welche Aufgabe
+bestimmte Code-Abschnitte übernehmen. Eine solche sprichwörtlich »forensische
+Studie« (man könnte auch &lt;em&gt;Leichenschau&lt;/em&gt; sagen, aber das wäre sehr abwertend)
+kann bis runter auf die Bedeutung einzelner Code-Zeilen oder Teilen von Zeilen
+gehen.&lt;/p&gt;
+
+&lt;p&gt;Sehr hilfreich kann es in so einem Zusammenhang sein, einfach einmal Teile von
+Code in einer möglicherweise isolierten Umgebung ausführen zu können, um ihre
+Wirkung (etwa in Form eines Rückgabewertes) zu untersuchen. Hier kommen wir in
+die Welt der &lt;em&gt;REPLs&lt;/em&gt;, worüber 
+&lt;a href=&quot;https://vlaaad.github.io/clj-vs-cli&quot;&gt;der zugrundeliegende Blogeintrag für Clojure ausführlich spricht&lt;/a&gt;.
+Besonders bemerkenswert ist ein über diesen Blogeintrag gemachter
+&lt;a href=&quot;https://news.ycombinator.com/item?id=27700206&quot;&gt;Kommentar auf Hackernews&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+There is a significant, qualitative difference between using a language that designed for REPL use and one that isn’t.
+&lt;p&gt;Those boundaries you talk of are the crux of the issue. A highly dynamic, completely expression based language is going to enable a much different experience. Homoiconicity also plays an important role here, because you can ispect and parse code within the language, with the same functions and algorithms as everything else.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Dieser erste Satz ist zu betonen: &lt;em&gt;Es gibt einen signifikanten qualitativen
+Untesrschied dazwischen, eine Sprache zu benutzen, die für die Benutzung
+in einer REPL designt wurde und einer die es nicht wurde&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Beispiele für Sprachen, für die eine REPL primär nicht angedacht war, sind
+klassische Programmiersprachen wie Java, C, C++ oder Fortran, aber auch
+Scriptsprachen wie Perl oder Ruby bis hin zu JavaScript. Das heißt natürlich
+nicht, dass es nicht trotzdem REPLs für diese Sprachen gibt. In jedem Browser
+findet sich etwa mittlerweile eine &lt;em&gt;Entwicklerkonsole&lt;/em&gt;, in der man JavaScript
+im Kontext des aktuellen Browserfensters in einer REPL ausführen kann. Auch
+für C++ gibt es mittlerweile einen Interpreter
+(&lt;a href=&quot;https://github.com/root-project/cling&quot;&gt;cling&lt;/a&gt;) mit einer REPL.&lt;/p&gt;
+
+&lt;p&gt;Beide Sprachen sind in ihrer REPL benutzbar, aber nicht besonders gut. Das
+liegt eben genau daran, dass die Sprachen nicht zur Benutzung einer REPL
+»designt« wurden. Zu dem Design gehört vor allem die frühe Verfügbarkeit
+einer REPL und ihrem häufigen Einsatz etwa in Dokumentationen.
+Interessant ist an der Stelle auch der Blogartikel
+&lt;a href=&quot;http://vvvvalvalval.github.io/posts/what-makes-a-good-repl.html&quot;&gt;What makes a good REPL?&lt;/a&gt;
+Zu den zentralen Punkten gehört etwa, dass eine REPL die Programmiersprache
+&lt;em&gt;zugänglich&lt;/em&gt; macht, in dem sie es erlaubt kleine Bruchstücke gut und
+unabhängig testen zu können. Dabei geht es weniger darum, ob die Sprache z.B.
+viele mächtige Einzeiler hervorbringt (wie etwa Perl), sondern darum wie die
+Libraries (das »Ökosystem«) funktionieren. Gibt es in einer Sprache mit
+anwendungsspezifischen Libraries die Möglichkeit, gehaltvolle Einzeiler zu
+schreiben? Die REPL steht und fällt mit aussagekräftigen kurzen Statements,
+ansonsten verliert sie ihre Praktikabilität.&lt;/p&gt;
+
+&lt;p&gt;Ich möchte an dieser Stelle den ebengenannten Blogartikel zitieren:
+&lt;em&gt;What makes a programming language REPL-friendly?&lt;/em&gt; Als Antwort wird
+geliefert:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;Data literals&lt;/em&gt;. That is, the values manipulated in the programs have a textual representation which is both readable for humans and executable as code. The most famous form of data literals is the JavaScript object Notation (JSON). Ideally, the programming language should make it idiomatic to write programs in which most of the values can be represented by data literals.
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Immutability&lt;/em&gt;. When programming in a REPL, you're both holding on to evaluation results and viewing them in a serialized form (text in the output); what's more, since most of the work you're doing is experimental, you want to be able confine the effects of evaluating code (most of the time, to no other effect than showing the result and saving it in memory). This means you'll tend to program with values, not side-effects. As such, programming languages which make it practical to program with immutable data structures are more REPL-friendly.
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Top-level definitions&lt;/em&gt;. Working at the REPL consists of (re-)defining data and behaviour globally. Some languages provide limited support for this (especially some class-based languages); sometimes they ship with REPLs that 'patch' some additional features to the language for this sole purpose, but in practice this results in an impedance mismatch between the REPL and an existing codebase - you should really be able to seamlessly transfer code from one to the other. More generally, the language should have semantics for re-defining code while the program is running - interactivity should not be an afterthought in language design!
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Expressive power&lt;/em&gt;. You may think it's a bit silly to mention this one, but it's not a given. For the levels of sophistication we are aiming for, we need our languages to have clear and concise syntax which can express powerful abstractions that we know how to run efficiently, and there is no level of interactivity that can make up for those needs. This is why we don't write most of our programs as Bash scripts.
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Python&lt;/em&gt; soll als positives Beispiel einer Programmiersprache dienen,
+die als REPL-Sprache konzipiert wurde. So wird in der Standardbibliothek der
+Kernsprache großer Wert darauf gelegt, dass es für Datenstrukturen sinnvolle textuelle
+Repräsentationen gibt. Viele wichtige Libraries nehmen dieses Konzept auf, sodass man
+oft die Ausgabe direkt (in die Zwischenablage) kopieren kann und an anderer Stelle
+einfügen kann.&lt;/p&gt;
+
+&lt;h2 id=&quot;fazit&quot;&gt;Fazit&lt;/h2&gt;
+
+&lt;p&gt;Eine REPL kann auch Teil einer IDE sein, die beiden Konzepte schließen sich nicht aus.
+Als unabhängiges Tool ist die REPL ein Werkzeug, welches experimentelles und
+schnelles Entwickeln unterstützt und dabei eine enge Zusammenarbeit der Entwickler:in
+mit dem Code in den Vordergrund rückt. Bewusst habe ich in diesem Artikel nicht die
+Ökosysteme um meine sonst gern genannte Programmiersprache &lt;em&gt;LISP&lt;/em&gt; erwähnt, welche das
+Schreiben eines Codes mit seiner Ausführung verschmelzen lassen. Auch habe ich
+versucht, nicht wieder das Java-Ökosystem zu zerreißen, wie ich es sonst gerne mache.
+Es gibt sicherlich eine Berechtigung für das Schreiben von großen, unübersichtlichen
+Codes die sich als Monolith auch nicht einfacher zergliedern lassen, oder von – im
+kompletten Gegenteil – einer unüberschaubaren Anzahl von Libraries, deren Zusammenarbeit
+sich nicht anders als mit IDEs warten lässt. Meine persönliche Meinung über IDEs vs.
+REPLs ist in diesem Text sicher an einigen Stellen durchgescheint, sodass ich mir hier
+kein weiteres Urteil erlaube. Mit dem Motto des Textes möchte ich schließen: Vergesst
+nicht vor lauter Essen, Trainieren und Wiederholen das Schlafen! :-)&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Jul 2021 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2021/07/02/repl-cli-ide-wars.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2021/07/02/repl-cli-ide-wars.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Der Blick über den Tellerrand, Volume 1: Stackbasierte Programmiersprachen</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;Dieser Artikel ist Teil einer neuen Serie von Blogartikeln, die ich über
+&lt;em&gt;Programmierparadigmen&lt;/em&gt; schreiben möchte. Sie sollen dazu anregen, einen 
+sprichwörtlichen &lt;em&gt;Blick über den Tellerrand&lt;/em&gt; zu wagen: Raus aus den eigenen Strick-
+und Entwurfsmustern für Software, den gewohnten Trampelpfaden der Programmiersprache,
+die man für Projekte seit Jahren, vielleicht Jahrzehnten verwendet. Dazu folgt zunächst einmal
+eine Einordnung, wie dieser Trampelpfad für die allermeisten von uns aussieht.&lt;/p&gt;
+
+&lt;h2 id=&quot;unser-trampelpfad-ist-multiparadigmenfähig&quot;&gt;Unser Trampelpfad ist multiparadigmenfähig&lt;/h2&gt;
+
+&lt;p&gt;Die prototypische moderne Programmiersprache ist gar nicht so dogmatisch, wie man meinen
+könnte. Wer heute eine Software schreibt, tut dies meistens in einer Sprache, die mindestens
+drei Programmierparadigmen ihr eigen nennt:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Imperatives Programmieren&lt;/em&gt;: Der Programmcode ist eine sequentielle Anordnung von
+Befehlen, die der Computer abarbeitet. Dabei gibt es in der Regel das Konzept von
+&lt;em&gt;Variablen&lt;/em&gt; im Sinne von Speicherplätzen, mit denen gearbeitet wird. Durch &lt;em&gt;Subroutinen&lt;/em&gt;
+wird das Programm strukturiert, zu denen gesprungen werden kann. Beliebige Sprungstellen
+(&lt;a href=&quot;https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf&quot;&gt;Goto considered harmful&lt;/a&gt;)
+gibt es seit vielen Jahrzehnten nicht mehr in modernen Programmiersprachen.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Objektorientiertes Programmieren&lt;/em&gt;: Datenstrukturen werden mit zugehörigen Subroutinen
+in Form von &lt;em&gt;Klassen&lt;/em&gt; organisiert. Mit den originären Konzepten vom objektorientierten
+Programmieren (&lt;em&gt;Message Passing&lt;/em&gt;) hat der Defacto-Standard nicht mehr viel zu tun: Wir
+sind Polymorphie, Typisierung und Reflektion gewohnt. Konzepte wie protypenbasierte
+Klassen, wie sie in JavaScript vorkommen, sind in den verbreiteten “echten” Programmiersprachen
+(das muss an der Stelle so sarkastisch und unkommentiert stehen bleiben) nicht verbreitet.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Funktionales Programmieren&lt;/em&gt;: Anonyme Funktionen (Lambdas) und Funktionen als Objekte
+erlauben es auch, funktionale Aspekte in moderne Programme einzubringen. So lassen sich
+Callbacks, verkettete Funktionsaufrufe, Map/Reduce oder rekursive Algorithmen einfach
+umsetzen. Aus der Welt der funktionalen Programmierung haben wir auch Dinge wie Closures,
+Funktoren, unveränderliche (immutable) Datentypen geerbt.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ausnahmslos alle populären Programmiersprachen, die man heute vorfindet, folgen diesem Muster.
+Lohnt es sich dann überhaupt, etwas anderes zu lernen? Das mentale Programmiermodell muss ja
+eigentlich nur ein paar dieser Paradigmen verstehen, um mit Programmcode zurecht zu kommen.
+Zunächst also zur Frage: Was ist eigentlich ein Paradigma?&lt;/p&gt;
+
+&lt;h2 id=&quot;zum-programmierparadigma-eine-denkschule-und-rechnerabstraktion&quot;&gt;Zum Programmierparadigma: Eine Denkschule und Rechnerabstraktion&lt;/h2&gt;
+
+&lt;p&gt;Wer Programmierparadigma verstehen will, der muss ihre historische Entwicklung verfolgen. Sie
+war stets eine Abfolge von technischen Möglichkeiten und Anwendungsnötigkeiten. Wer sich auf
+die Geschichte von Programmiersprachen macht, entdeckt etwa die berühmte
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Softwarekrise&quot;&gt;Softwarekrise&lt;/a&gt; der 1960er-Jahre, als das erste
+mal auf großen Skalen die Komplexität von Software ihre Entwickler:innen blockierte.&lt;/p&gt;
+
+&lt;p&gt;In den 1960er-Jahren gab es die ersten &lt;em&gt;Hochsprachen&lt;/em&gt;, welche die Programmierung von Computern
+auf einem abstrakteren Level als mittels Maschinenbefehlen (Assemblerinstruktionen) erlaubten.
+In Anbetracht der wenigen Kilobyte von Speicher, über die die Digitalrechner dieser Zeit verfügten,
+mutet es doch als ziemlicher Luxus an, diesen Speicher nicht mehr direkt anzusprechen, sondern mit ihm
+indirekt zu agieren und einen Compiler die Abbildung des Programmcodes auf die tatsächliche
+Maschine durchführen zu lassen. Daran hat sich in den letzten 70 Jahren vergleichsweise wenig
+geändert: Auch moderner Code wird zu Maschinencode kompiliert. Die Aufgabe des Compilers ist es
+also stets, ein abstrakteres Rechenmodell, welches die Entwickelnden im Kopf haben, auf die echte
+&lt;em&gt;Registermaschine&lt;/em&gt; mit ihren physischen Bausteinen wie CPU-Registern, Arbeitsspeicher oder
+nicht-flüchtigem Speicher (traditionell der Festplattenspeicher, heute SSDs) abzubilden. Eine
+Aufgabe von &lt;em&gt;Libraries&lt;/em&gt; ist es, Computerressourcen zu abstrahieren und darüberhinaus also auch
+etwa den Zugang zu Speicher- und Netzwerkressourcen in eine sprachliche Form zu bringen, welche
+den Entwickelnden erlaubt darauf in geeigneter Form zuzugreifen – also in der Regel vor allem
+unkompliziert, mit wenigen Anweisungen und die Komplexität und Verschiedenheit der technischen
+Implementierung versteckend. Noch weiter gehen &lt;em&gt;Frameworks&lt;/em&gt;, die sich von &lt;em&gt;Libraries&lt;/em&gt; vor allem
+darin unterscheiden, dass sie in der Regel den Programmfluss übernehmen und so eine &lt;em&gt;Inversion
+der Kontrolle&lt;/em&gt; zur Folge haben. Das Framework erlaubt so die besonders schnelle und
+gleichartige Entwicklung von Standardsoftware nach einem Muster.&lt;/p&gt;
+
+&lt;p&gt;Die Gesamtheit von Frameworks, Libraries, Programmiersprachen und &lt;em&gt;Build-Systemen&lt;/em&gt;, welche den
+damit geschriebenen Code zu etwas Ausführbarem umwandeln, führt zu einer Art gedanklichem
+Korsett. Das ist keineswegs ausschließlich so negativ gemeint, wie der Begriff meint: Das
+&lt;em&gt;Tooling&lt;/em&gt; stellt sich als eine effektive Methode heraus, gewisse Probleme zu bearbeiten.&lt;/p&gt;
+
+&lt;p&gt;Ein typisches Beispiel ist der bahnbrechende Erfolg, den 
+&lt;a href=&quot;https://de.wikipedia.org/wiki/JQuery&quot;&gt;jQuery&lt;/a&gt; zu seiner Entstehungszeit ca. 2006 herum hatte.
+Es ist wahrscheinlich nicht untertrieben, diese Library als einen Motor des
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Web_2.0&quot;&gt;Web 2.0&lt;/a&gt; zu bezeichnen. Die Library ermöglichte es,
+auf Webseiten typische interaktive Tätigkeiten (z.B. einen Button einzublenden oder einen
+Inhalt nachzuladen) in nur wenigen Zeichen Code zu implementieren. Dieser lief fortan auf einer
+Großzahl der damals sehr verschiedenen Browser zuverlässig. Die Library bot also nicht nur
+eine Abstraktionsstufe zu den Browser-Schnittstellen (Application Interfaces, kurz APIs) 
+dieser Zeit, sondern durch ihr objektorientiert-funktionales Programmiermodell, das
+querybasierte Arbeiten mit einer &lt;em&gt;Selektorengine&lt;/em&gt; (welche das DOM-Parsing durch 
+CSS-artige Queries erlaubte) und das &lt;em&gt;Method Chaining&lt;/em&gt; auch eine Möglichkeit sehr prägnanten
+Code zu schreiben. Durch die höhere Abstraktionsstufe fiel die mentale Last für Entwickelnde
+und komplexere Webanwendungen waren möglich: Es war die Geburtsstunde des &lt;em&gt;Web 2.0&lt;/em&gt; mit seiner
+erhöhten Interaktivität und neuen Anwendungsmodellen, die etwa &lt;em&gt;User-Generated Content&lt;/em&gt; in
+den Vordergrund stellten.&lt;/p&gt;
+
+&lt;p&gt;Solche Paradigma sind immer auch &lt;em&gt;Denktschulen&lt;/em&gt;, weil eine ganze Generation von Entwickelnden
+erstmalig nicht mehr mit der vorangegangenen Art, Software zu entwickeln, konfrontiert wird,
+sondern nur noch mit der neuen, abstrakteren Art. Ich habe das Beispiel &lt;em&gt;jQuery&lt;/em&gt; bewusst
+gewählt, weil es nun schon 15 Jahre alt ist und tatsächlich mehrere »Entwicklergenerationen«
+zurück liegt! Danach kamen noch viel mehr Abstraktionsstufen, die Konzepte wie Virtual DOM,
+double data binding, »Reaktivität« und vieles mehr einführten. Die junge Generation von
+Entwickelnden kennt daher nur noch begrenzt den Mehrwert von »einfachen« Libraries wie jQuery.
+Ihnen fehlt letztlich ein älteres Programmierparadigma, welches sie nur in den Geschichtsbüchern
+nachschlagen können.&lt;/p&gt;
+
+&lt;p&gt;Doch der Blick lohnt sich: Verschiedene Paradigma sind zur Lösung verschiedener Probleme
+geeignet. Auch heute noch gibt es Webseiten, die besser &lt;em&gt;statisch&lt;/em&gt; als &lt;em&gt;dynamisch&lt;/em&gt; geschrieben
+werden, wo andere Zugänge als die abstrakteren unserer Zeit sich also besser eignen. Genauso
+sieht es auch mit anderen Bereichen der Softwaretechnik aus, wo weniger Abstraktion hilfreich
+ist. Man denke an den immerwährenden »Kampf« von &lt;em&gt;interpretiertem&lt;/em&gt; Programmcode zu solchem,
+der &lt;em&gt;kompiliert&lt;/em&gt; wird. Diese Unterscheidung bezeichnet traditionell die Grenze zwischen
+einfachen &lt;em&gt;Scriptsprachen&lt;/em&gt; und komplexeren &lt;em&gt;Programmiersprachen&lt;/em&gt;. Hier gilt die klassische
+Weisheit, dass es für jedes Problem das richtige Werkzeug gibt und mehr Abstraktion, wie sie
+die interpretierten Scripte einführen, nicht immer hilfreich ist.&lt;/p&gt;
+
+&lt;h2 id=&quot;here-to-be-dragons-in-die-welt-der-stacks&quot;&gt;Here to be dragons: In die Welt der Stacks&lt;/h2&gt;
+
+&lt;p&gt;Tauchen wir also ein in unseren ersten Blick über den Tellerrand: In die Welt der
+&lt;em&gt;stackorientierten Programmiersprachen&lt;/em&gt;. Jeder, der sich schon einmal mit den Programmiersprachen
+C oder C++ beschäftigt hat, kennt die Unterscheidung von &lt;em&gt;Stack&lt;/em&gt; (engl. Stapel) zu &lt;em&gt;Heap&lt;/em&gt;
+(engl. Haufen): Während der &lt;em&gt;Stack&lt;/em&gt; typischerweise den Zustand des Programmflusses
+speichert (&lt;a href=&quot;https://de.wikipedia.org/wiki/Aufrufstapel&quot;&gt;Aufrufstapel&lt;/a&gt;) und geeignet ist,
+eine endliche und überschaubare Menge von temporären und in ihrer Größe vorhersagbaren Variablen
+zu speichern, ist der &lt;em&gt;Heap&lt;/em&gt; eher für eine große Menge von dynamischen Daten geeignete, die
+zur Laufzeit &lt;a href=&quot;https://de.wikipedia.org/wiki/Allokation_(Informatik)&quot;&gt;alloziiert&lt;/a&gt; werden.
+Diese dynamischen Datentypen werden in der Regel über &lt;em&gt;Pointer&lt;/em&gt; miteinander verknüpft, welche
+die eigentliche Dynamik ermöglichen. Gleichzeitig ist die Traversierung solcher Datenstrukturen
+langsamer, da eben diese Pointer aufgelöst werden müssen, um die Speicheradressen der
+angesprochenen Datenstrukturen herauszufinden. Performanceorientierte Entwickler:innen die
+maschinennah arbeiten, versuchen daher oft, dynamische Datenstrukturen auf dem Heap zu vermeiden
+und auf dem Stack zu arbeiten, denn ein Sprichwort sagt, der &lt;em&gt;Stack ist immer warm&lt;/em&gt;, befindet
+sich also wegen vielen Aufrufen/Sprüngen stets im Prozessorcache.&lt;/p&gt;
+
+&lt;p&gt;Tatsächlich ist diese Einführung in die Stacks leider nur begrenzt hilfreich, um stackorientiertes
+Programmieren zu lernen. Wer in einer stackorientierten Programmiersprache arbeitet, dem stellen
+sich solche Fragen nämlich gar nicht, da es dort eigentlich &lt;em&gt;nur&lt;/em&gt; einen Stack gibt und sonst
+gar nichts. Sie war eher zur Einordnung gedacht, als Brücke in die Welt der &lt;em&gt;Stackmaschinen&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;stackmaschinen-forth-und-real-life-anwendungen&quot;&gt;Stackmaschinen, Forth und Real Life-Anwendungen?&lt;/h2&gt;
+
+&lt;p&gt;Viele Programmierparadigmen wurden im ausgehenden 20. Jahrhundert erfunden und waren in ihrer
+Zeit prohibitiv aufwändig zu implementieren oder benötigten ein ganz anderes physisches
+Rechenmodell. So ähnlich ist es auch bei den 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Stack_machine&quot;&gt;Stackmaschinen&lt;/a&gt;, die als abstraktes Rechnermodell
+ähnlich zu den (uns viel geläufigeren) Registermaschinen oder der mathematisch abstrakten
+Turingmaschine arbeiten.&lt;/p&gt;
+
+&lt;p&gt;Eine recht populäre Stackprogrammiersprache ist
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Forth_(programming_language)&quot;&gt;Forth&lt;/a&gt;. Die verlinkte Wikipedia-Seite
+beinhaltet viele Beispiele, wie eine Programmierung mit so einer Sprache aussieht. Solche
+Beispiele beschränken sich in der Regel auf gänzlich grundlegende Rechenoperationen, etwa
+die Implementierung von arithmetischen Operationen (Grundrechenarten auf Zahlen oder Objekten
+der linearen Algebra). Der exotische Beitrag entsteht noch durch Nutzung etwa der
+&lt;em&gt;Reverse Polish Notation&lt;/em&gt; (daran kann man sich gewöhnen), es sieht schlicht und ergreifend
+alles komplett anders aus als in einem gewöhnlichen Programm einer heutzutage verbreiteten
+Programmiersprache. Wie macht man damit etwas komplizierteres?&lt;/p&gt;
+
+&lt;p&gt;Nun, zum einen gibt es natürlich auch hier die Möglichkeit Programme in Subroutinen zu 
+organisieren. So gibt es letztlich auch Libraries und Frameworks, z.B.
+&lt;a href=&quot;http://www.1-9-9-1.com/&quot;&gt;das Webframework »1991« für Forth&lt;/a&gt; welches mit seinem Democode doch
+eigentlich ganz familiär aussieht für jeden, der Webframeworks kennt:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\ Load 1991.
+include 1991.fs
+
+\ Define our route handlers.
+: handle-/ ( -- addr u )
+    \ Any string returned by the handler
+    \ will be output to the browser.
+    s&quot; Hello, 1991.&quot; ;
+
+\ Set up our routes.
+/1991 / handle-/
+
+\ Start the server on port 8080.
+8080 1991:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Auf der Seite des Frameworks finden sich viele Beispiele, wie auch Templateverarbeitung mit
+Forth funktionieren kann. Dieser Anwendungsfall zeigt, dass man mit stackorientierten Sprachen
+auch »from first Principles« komplexe Anwendungen schreiben kann. Wem dieses Beispiel gefällt
+und wer etwas in der Forth-Welt stöbern möchte, kann sich die
+&lt;a href=&quot;https://news.ycombinator.com/item?id=19146767&quot;&gt;zugehörige Hackernews-Diskussion&lt;/a&gt; einmal
+anschauen.&lt;/p&gt;
+
+&lt;p&gt;Darüber stößt man auch schnell auf andere stackorientierte Sprachen, z.B. die
+&lt;a href=&quot;http://kittenlang.org/&quot;&gt;Kitten Programming Language&lt;/a&gt; welche starke Typisierung mitbringt.
+Die Programmierung dieser Sprache sieht überhaupt nicht mehr so sehr nach stackorientiert
+aus, sondern bereits ziemlich High-Level. Tatsächlich ist das eine der großen Stärken der 
+stackorientierten Welt, dass man mit dem Maschinenmodell leicht große Abstraktionen hinbekommen
+kann. So basiert zB. auch die berühmte &lt;em&gt;embedded Scriptingsprache&lt;/em&gt; 
+&lt;a href=&quot;https://www.lua.org/&quot;&gt;Lua&lt;/a&gt; auf einem Stackmaschinenmodell bzw. auf einer stackorientierten
+Programmiersprache, obwohl Lua eine moderne Multiparadigmensprache ist.&lt;/p&gt;
+
+&lt;p&gt;Zuguterletzt hier noch einige Materialien für die Leserschaft, die sich weiter am Beispiel von
+Forth in der Welt der stackorientierten Sprachen erkundigen möchte: Es gibt eine jährliche
+&lt;a href=&quot;http://www.complang.tuwien.ac.at/anton/euroforth/&quot;&gt;europäische Forth-Konferenz&lt;/a&gt;, eine
+&lt;a href=&quot;https://www.forth.com/resources/forth-web-sites/&quot;&gt;Liste von Forth-Webseiten&lt;/a&gt; oder zB.
+eine &lt;a href=&quot;https://www.taygeta.com/fsl/sciforth.html&quot;&gt;wissenschaftliche Forth-Library&lt;/a&gt;. Ich denke
+die Materialien zeigen, dass Forth weit weg davon ist, in den Programmiereralltag Einklang
+zu finden. Wer Forth nur eine Chance geben will, wenn seine IDE eine Unterstützung dafür
+bereithält, wird schnell aufgeben müssen. Wo stackorientierte Modelle aber durchaus lebendig
+sind, ist sowohl in der Hardware- und Firmware-Szene (hauptsächlich dank ihrer geringen
+Anforderungen an die Compiler- und Laufzeitinfrastruktur) sowie als eingebettete Systeme
+in größere Anwendungen. Es gibt eine ganz wunderbare Diskussion dazu auf Stack Overflow,
+mit der ich hier schließen möchte:
+&lt;a href=&quot;https://stackoverflow.com/questions/1415910/forth-interpreter-in-java&quot;&gt;Forth Interpreter in Java – Will it be efficient?&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 29 Jun 2021 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2021/06/29/tellerrand-stackbasierte-programmiersprachen.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2021/06/29/tellerrand-stackbasierte-programmiersprachen.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Plaintext ist Trumpf</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;In der Softwarearchitektur gibt es einige Weisheiten die zeitlos sind. Dazu gehört
+die &lt;a href=&quot;https://blog.finxter.com/the-unix-philosophy/&quot;&gt;Unix-Philosophie&lt;/a&gt;, auch als
+&lt;em&gt;principles of Unix Software design&lt;/em&gt; bekannt. Unix ist eines der erfolgreichsten
+Betriebssysteme und direkt oder indirekter Vorgänger aller moderner Desktop- oder
+Mobilgerätbetriebssysteme.&lt;/p&gt;
+
+&lt;p&gt;In diesem Blogpost möchte ich das Prinzip &lt;em&gt;Plaintext over XYZ&lt;/em&gt; erläutern, wobei
+&lt;em&gt;XYZ&lt;/em&gt; alles mögliche sein kann: Ganz allgemein binäre Strukturen, spezielle
+Dateiformate oder komplizierte Austauschformate. Um das zu verstehen, hole ich etwas
+aus, wie man Unix für gewöhnlich bedient.&lt;/p&gt;
+
+&lt;h2 id=&quot;die-unix-shell&quot;&gt;Die Unix-Shell&lt;/h2&gt;
+
+&lt;p&gt;Die Unix-Shell ist eine Kommandozeile, auf der man Zugriff zu vielen hundert
+installierten Anwendungen hat. Wenn ich auf einem modernen Linux in der
+&lt;a href=&quot;https://www.gnu.org/software/bash/&quot;&gt;Bash&lt;/a&gt; zweimal die Tabulatortaste drücke,
+kriege ich auf meinem Rechner fast 6000 Kommandos angezeigt, die ich benutzen
+kann. Ein guter Teil davon implementiert die drei Kernpfeiler der Unix-Philosophie:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Schreibe Programme die (nur) &lt;em&gt;eine&lt;/em&gt; Sache machen und die sie dafür sehr gut
+machen.&lt;/li&gt;
+  &lt;li&gt;Schreibe Programme, die zsuammen arbeiten.&lt;/li&gt;
+  &lt;li&gt;Schreibe Programme, die Textstreams verarbeiten, denn dies ist eine universelle
+Schnittstelle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In einem Satz: Unix-Tools sind nach dem Baukastenprinzip gestaltet und verarbeiten
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Plain_text&quot;&gt;Plaintext&lt;/a&gt;. Erstaunlich daran ist, dass
+viele dieser Tools viele Jahrzehnte alt sind und heute genauso gut funktionieren
+wie damals, vor allem weil sie eine klare Schnittstelle darstellen. Zum Beispiel
+kann ich die Protokolle meines Kernels nach der Marke meiner Tastatur durchsuchen:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;% sudo dmesg | grep -B2 Cherry | head -n3
+[    9.003189] usb 1-2.1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    9.003190] usb 1-2.1.4: Product: USB keyboard
+[    9.003191] usb 1-2.1.4: Manufacturer: Cherry
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dabei habe ich &lt;a href=&quot;https://de.wikipedia.org/wiki/Grep&quot;&gt;grep&lt;/a&gt; verwendet, welches in
+Textstreams sucht und matchende Zeilen ausgibt. Grep ist einfach, es kann nur suchen.
+Durch &lt;a href=&quot;https://de.wikipedia.org/wiki/Pipeline_(Unix)&quot;&gt;Pipes&lt;/a&gt; kann man es mit anderen
+Programmen verbinden, z.B. &lt;a href=&quot;https://de.wikipedia.org/wiki/Head_(Unix)&quot;&gt;head&lt;/a&gt;.
+Grep ist gut geschrieben, und viele Leute haben sich schon gefragt:
+&lt;a href=&quot;https://stackoverflow.com/questions/12629749/how-does-grep-run-so-fast&quot;&gt;Why is grep so fast?&lt;/a&gt;.
+In die Optimierung von Grep sind viele Softwareiterationen geflossen, und 
+&lt;a href=&quot;https://blog.burntsushi.net/ripgrep/&quot;&gt;das Ende der Fahnenstange ist noch nicht erreicht&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;die-logging-hölle&quot;&gt;Die Logging-Hölle&lt;/h2&gt;
+
+&lt;p&gt;Tatsächlich ist das gegebene Beispiel ganz hervorragend, weil es auch die Schwächen
+von Textformaten anzeigt. Das Systemjournal, welches hier von &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dmesg&lt;/code&gt; (Kernel
+Ringbuffer) ausgegeben wurde, ist zeilenbasiert. Jede Zeile stellt eine Ausgabe
+eines &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;printk(...)&lt;/code&gt;-Aufrufs im Kernel dar, welche vom Puffer um einen Timestamp
+ergänzt wurde (links in den eckigen Klammern, zählt hoch aufgelöst 
+die Sekunden seit Systemstart). Alles dahinter ist Konvention, so etwa die Tatsache
+dass das &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;usb&lt;/code&gt;-Modul sich zu erkennen gibt (sprich per Konvention jeder &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;printk&lt;/code&gt;-Aufruf
+im USB-Modul in etwa wie &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;printk(&quot;usb ...&quot;)&lt;/code&gt; aussieht).&lt;/p&gt;
+
+&lt;p&gt;Vor einer Weile stieß ich über den interessanten Blogartikel
+&lt;a href=&quot;https://techblog.bozho.net/the-syslog-hell/&quot;&gt;The Syslog Hell&lt;/a&gt;, in der der Autor sich
+über die vielen Standard beim Syslog-Interface vieler Unix-Betriebssysteme aufregt.
+Auf &lt;a href=&quot;https://news.ycombinator.com/item?id=27104469&quot;&gt;Hackernews hingegen kommentiert man trocken&lt;/a&gt;:
+»&lt;em&gt;And yet syslog works to the point where anything sold as an syslog replacement ends up adding
+complexity (along with features) rather then an simplification of the core problem.
+It’s in general a trend for old unix tools to work better in reality then in theory something
+thats rare for more modern tools.
+Sure it’s nice been able to use more modern query tools and have graphing libraries available
+but syslog grep and awk does get the job done and dont require a lot of resources to
+set up and maintain.&lt;/em&gt;«&lt;/p&gt;
+
+&lt;p&gt;Hat diese Person recht? Das mittlerweile im Rahmen von &lt;em&gt;systemd&lt;/em&gt; weit verbreitete
+&lt;em&gt;journald&lt;/em&gt; erlaubt binäres Journaling und bringt syslog damit gedanklich ins 21.
+Jahrhundert. Das obige Beispiel funktioniert mit einem Austauschformat, welches
+eine einfache programmatorische Weiterverarbeitung erlaubt – nämlich
+&lt;a href=&quot;https://www.json.org/&quot;&gt;JSON&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;% journalctl --since=yesterday --output=json | grep -B 3 Cherry | head -n1 | jq
+{
+  &quot;__REALTIME_TIMESTAMP&quot;: &quot;1623049286198966&quot;,
+  &quot;_MACHINE_ID&quot;: &quot;99[redacted]d5&quot;,
+  &quot;_KERNEL_DEVICE&quot;: &quot;c189:11&quot;,
+  &quot;_HOSTNAME&quot;: &quot;sveto&quot;,
+  &quot;SYSLOG_FACILITY&quot;: &quot;0&quot;,
+  &quot;_UDEV_SYSNAME&quot;: &quot;1-2.1.4&quot;,
+  &quot;_SOURCE_MONOTONIC_TIMESTAMP&quot;: &quot;245529094761&quot;,
+  &quot;_TRANSPORT&quot;: &quot;kernel&quot;,
+  &quot;PRIORITY&quot;: &quot;6&quot;,
+  &quot;MESSAGE&quot;: &quot;usb 1-2.1.4: New USB device found, idVendor=046a, idProduct=b090, bcdDevice= 1.03&quot;,
+  &quot;__CURSOR&quot;: &quot;s=c0[redacted]f0&quot;,
+  &quot;SYSLOG_IDENTIFIER&quot;: &quot;kernel&quot;,
+  &quot;_BOOT_ID&quot;: &quot;5f[redacted]d&quot;,
+  &quot;_UDEV_DEVNODE&quot;: &quot;/dev/bus/usb/001/012&quot;,
+  &quot;__MONOTONIC_TIMESTAMP&quot;: &quot;29696437839&quot;,
+  &quot;_KERNEL_SUBSYSTEM&quot;: &quot;usb&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;die-schillernde-welt-der-objektorientierten-shells-und--sprachen&quot;&gt;Die schillernde Welt der objektorientierten Shells und -Sprachen&lt;/h2&gt;
+
+&lt;p&gt;Tatsächlich tun sich Unix-Shells schwer damit, ein Kommando-Ökosystem zur Bearbeitung von
+komplexen Datenformaten zu etablieren. Mit JSON ist mittlerweile ein Standard aus dem Web
+in die Systemprogrammierung gekommen, der das schrittweise ändert, doch diese Entwicklung
+passiert viele Jahre, nachdem Microsoft mit der 
+&lt;a href=&quot;https://docs.microsoft.com/de-de/powershell/scripting/overview?view=powershell-7.1&quot;&gt;Windows PowerShell&lt;/a&gt;
+eine moderne Alternative zur &lt;a href=&quot;https://de.wikipedia.org/wiki/Cmd.exe&quot;&gt;DOS-Befehlszeile&lt;/a&gt;
+entwickelt hat. Diese transportiert Objekte zwischen den Kommandos, welche etwa zum
+Beispiel mit SQL-Abfragen weiter bearbeitet werden können. Mangels Windows kann ich
+an dieser Stelle keine Beispiele zeigen, aber es gibt jede Menge schönes Material, wenn
+man nach »&lt;a href=&quot;https://duckduckgo.com/?t=ffab&amp;amp;q=powershell+example&amp;amp;ia=web&quot;&gt;powershell examples&lt;/a&gt;«
+sucht.&lt;/p&gt;
+
+&lt;p&gt;Vor ein paar Tagen habe ich über ein
+&lt;a href=&quot;https://twitter.com/denktmit/status/1400808910836150273&quot;&gt;interessantes ACM-Paper getwittert&lt;/a&gt;,
+welches die Unix-Shell im Zeichen der Zeit interpretiert:
+&lt;em&gt;Greenberg, Kallas, Vasilakis&lt;/em&gt;:
+&lt;a href=&quot;https://dl.acm.org/doi/10.1145/3458336.3465294&quot;&gt;Unix Shell Programming: The Next 50 Years&lt;/a&gt;.
+Hier werden die beiden experimentellen Shells
+&lt;a href=&quot;https://www.usenix.org/conference/atc20/presentation/raghavan&quot;&gt;POSH&lt;/a&gt; und
+&lt;a href=&quot;https://github.com/andromeda/pash&quot;&gt;PaSh&lt;/a&gt;
+erläutert, die interessante Herausforderungen des modernen Manycore-Processings oder der
+&lt;em&gt;data awareness&lt;/em&gt; angehen. Trotzdem habe ich das Gefühl, dass die gängige Praxis des
+Shell-Scriptings ist, für leicht komplexere Probleme auf Scriptsprachen wie Ruby, Python
+oder Perl auszuweichen. Sie sind etablierter und das Tooling ist besser. Man verlässt
+allerdings schnell das Ökosystem der textbasierten Unix-Welt mit ihren &lt;em&gt;einfachen&lt;/em&gt; und
+kurzen Tools. Das rächt sich schnell: Alle drei erwähnten Scriptsprachen leiden unter
+einem “Global Interpreter Lock”, der ein (effizientes) Multithreading verhindert und
+Parallelisierung daher nur per aufwändigem Multiprocessing ermöglicht. Gerade allerdings
+Arbeitsverteilung und -Parallelisierung sind Stärken der Shell und damit verbundener
+Tools (wie etwa der Job-Managament-Scheduler &lt;a href=&quot;https://slurm.schedmd.com/&quot;&gt;Slurm&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&quot;der-erfolg-der-textbasierten-standards&quot;&gt;Der Erfolg der textbasierten Standards&lt;/h2&gt;
+
+&lt;p&gt;Die Softwarearchitektur ist häufig Trends und Wellen unterworfen. In meinen Augen ist
+eine Konstante, dass Systeme, die für Menschen und Einfachheit geschrieben wurden, viel
+Erfolg hatten. Viele Protokolle, die auf TCP/IP basieren, funktionieren in Plaintext,
+darunter FTP, HTTP und SMTP. &lt;em&gt;Flat File&lt;/em&gt;-Datenbanken leiden nicht unter einem Vendor
+Lockin und ermöglichen das Einlesen und Verabeiten mit diversen Tools. Das 
+Versionsverwaltungstool &lt;em&gt;git&lt;/em&gt; ist ein Beispiel für eine sehr erfolgreiche Umsetzung
+dieses Konzepts. Git ist so einfach und Datei-/Plaintextbasiert, dass es eine
+&lt;a href=&quot;https://git.sr.ht/~sircmpwn/shit&quot;&gt;Implementierung gibt, die ausschließlich die POSIX-Shell verwendet&lt;/a&gt;.
+Dadurch werden Git-Repositories noch brauchbar sein, lange nachdem viele proprietäre
+Datenbankformate nicht mehr lesbar sind. Und auch die gute alte &lt;em&gt;CSV-Tabelle&lt;/em&gt; erfreut
+sich ähnlich wie das Plaintext-Markup in &lt;em&gt;Markdown&lt;/em&gt; in manchen Kreisen einer regen
+Beliebtheit, als wäre sie nie weg gewesen.&lt;/p&gt;
+
+&lt;p&gt;Auf Plaintext zu verzichten, ist oft einer
+&lt;a href=&quot;https://en.wiktionary.org/wiki/premature_optimization&quot;&gt;premature optimization&lt;/a&gt;
+geschuldet. Irregeleitete Entwickler:innen sind der Meinung, eine Serialisierung
+ihrer Datenstrukturen in einer maschinenlesbaren Form reicht aus. In Folge dessen
+lassen sich die Dateien nur noch mit Spezialwerkzeugen bearbeiten, das Debugging ist
+aufwändiger als es sein müsste. Unnötige Komplexität ist einer der Killer in Software,
+die über kurz und lang auch dessen Autor:in niederstreckt. Für eine Plaintext-Zukunft
+der offenen und menschenlesbaren Austauschformate!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Jun 2021 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2021/06/08/plaintext.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2021/06/08/plaintext.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Gendern im Markup und in Programmiersprachen</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;&lt;a href=&quot;https://de.wikipedia.org/wiki/Geschlechtergerechte_Sprache&quot;&gt;Geschlechtergerechte Sprache&lt;/a&gt;
+ist in aller Munde. In diesem Blogpost möchte ich die politische Dimension außer Acht lassen
+und als gesetzt nehmen, dass in einem (Programmier-)projekt das Gendern von Kund(inn)enseite aus
+gewünscht ist. Wie ist damit umzugehen? Welche technische Unterstützung und welche Hürden sind
+zu erwarten?&lt;/p&gt;
+
+&lt;h2 id=&quot;eine-momentaufnahme-der-internationalisierung-und-ux&quot;&gt;Eine Momentaufnahme der Internationalisierung und UX&lt;/h2&gt;
+
+&lt;p&gt;Soziale Strukturen bilden sich in der Software ab, dies ist ein bekanntes
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Anti-pattern&quot;&gt;Anti-Pattern&lt;/a&gt; der Softwareentwicklung. Leider ist
+die Männerquote in der IT immer noch
+weit über der absoluten Mehrheit. Das zeigt sich in Systemen, die solche Personen schreiben.
+Veraltete Libraries sind nicht umbedingt das Problem: So unterstützen
+Internationalisiserungs-Bibliotheken wie &lt;em&gt;gettext&lt;/em&gt; die Sprachgestaltung nicht nur hinsichtlich
+Pluralformen, sondern mit &lt;em&gt;Kontexten&lt;/em&gt; auch hinsichtlich Geschlechtern, vgl. etwa diese
+StackOverflow-Frage: &lt;a href=&quot;https://stackoverflow.com/questions/6143547/handling-grammatical-gender-with-gettext&quot;&gt;Handling grammatical gender with Gettext&lt;/a&gt;.
+Ein solcher Kontext würde prinzipiell auch nicht-binäre Varianten erlauben. Eine andere
+Problematik ergibt sich im User Interfacing (UX): Liberale Positionen sind hier eigentlich
+schon lange zur Auffassung gekommen, die Wahl der Anrede (zB. &lt;em&gt;du&lt;/em&gt;/&lt;em&gt;sie&lt;/em&gt;, &lt;em&gt;Herr&lt;/em&gt;/&lt;em&gt;Frau&lt;/em&gt;, aber auch
+&lt;em&gt;er&lt;/em&gt;/&lt;em&gt;sie&lt;/em&gt;/&lt;em&gt;es&lt;/em&gt; bzw. komplett Freiform) der ausfüllenden/anmeldenden Person zu überlassen.
+Aus Perspektive einer Softwareschmiede kann man hier nur die Position einer Unternehmensberatung
+einnehmen, welche Kund(inn)en darin berät, diese Prinzipien anzuwenden.&lt;/p&gt;
+
+&lt;h2 id=&quot;gendern-im-markup-fließtext&quot;&gt;Gendern im Markup-Fließtext&lt;/h2&gt;
+
+&lt;p&gt;Die eigentliche Problematik beginnt aber beim Umgang mit &lt;em&gt;User generated Content&lt;/em&gt;, etwa
+in seiner freisten Form als Fließtext mit Formatierungsanweisungen (Markup). So habe ich es
+vor zwei Jahren einmal bei dem kleinen Zeitungsstartup 
+&lt;a href=&quot;https://perspective-daily.de/&quot;&gt;Perspective Daily&lt;/a&gt; erlebt, welches aus einer progressiven
+Autor(innen)schaft bestand, welche seinerzeit das &lt;a href=&quot;https://de.wikipedia.org/wiki/Gendersternchen&quot;&gt;Gendersternchen&lt;/a&gt;
+verwendete — allerdings in Texten, die mit &lt;a href=&quot;https://de.wikipedia.org/wiki/Markdown&quot;&gt;Markdown&lt;/a&gt;
+ausgezeichnet wurden. Das Ergebnis war technisches Versagen, denn das Sternchen
+(&lt;a href=&quot;https://de.wikipedia.org/wiki/Sternchen_(Schriftzeichen)&quot;&gt;Asterisk, ASCII-Zeichen&lt;/a&gt; wird
+bei Markdown verwendet, um &lt;a href=&quot;https://de.wikipedia.org/wiki/Kursivschrift&quot;&gt;Kursivschrift&lt;/a&gt; zu
+markieren. Korrekterweise muss die Person, die einen Text in Markdown gendern möchte, dazu
+angehalten werden, das Gendersternchen zu &lt;a href=&quot;https://de.wikipedia.org/wiki/Maskierungszeichen&quot;&gt;maskieren&lt;/a&gt;.
+Statt &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Programmierer*innen&lt;/code&gt; müsste die Autorenschaft dann &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Programmierer\*innen&lt;/code&gt;
+schreiben, damit es als &lt;em&gt;Programmierer*innen&lt;/em&gt; dargestellt wird. Da dies wiederum als der
+Autorenschaft nicht zuzumuten galt, habe ich seinerzeit versucht die Problematik zu entschärfen,
+in dem ich mit regulären Ausdrücken als Preprocessing das Gendern erkannt und maskiert habe,
+hier etwa in Python (siehe &lt;a href=&quot;https://gist.github.com/svenk/0e60864a7bbe34a3d3dba07468f67b83&quot;&gt;Github Gist&lt;/a&gt;
+für weiteren Code):&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; for x in [&quot;Gender*nnen&quot;,&quot;foo *bar* baz&quot;, &quot;foo *bar*baz&quot;, &quot;Und *das* ist wirklich Mensch*nnen *und* toll.&quot;]:
+&amp;gt;      print(re.sub(r&quot;(^|\s)(\w+)\*([^.\s]*\w+)($|\s)&quot;, r&quot;\1\2\*\3\4&quot;, x))
+
+Gender\*nnen
+foo *bar* baz
+foo *bar*baz
+Und *das* ist wirklich Mensch\*nnen *und* toll.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;An den Testbeispielen sieht man, dass der vorgeschlagene reguläre Ausdruck einigermaßen
+zu klappen scheint, aber die Praxis lehrt, dass der eine oder andere Randfall dann doch
+unberücksichtigt bleibt. Aus Sicht der Programmierenden handelt es sich um ein klassisches
+Problem der Kontextwechsel; über dieses Problem hat ein Kollege von mir schon vor über
+10 Jahren einen Artikel im Zusammenhang mit SQL-Injections geschrieben, damals noch bei
+SELFHTML: &lt;a href=&quot;https://wiki.selfhtml.org/wiki/Programmiertechnik/Kontextwechsel&quot;&gt;Programmiertechnik/Kontextwechsel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;kontextwechsel-und-orthogonalität-als-grundlegendes-problem-in-der-angewandten-informatik&quot;&gt;Kontextwechsel und Orthogonalität als grundlegendes Problem in der angewandten Informatik&lt;/h2&gt;
+
+&lt;p&gt;Die Grundproblematik ist also, dass eine Markupsprache wie Markdown davon ausgeht, dass
+der Asterisk (also das Sternchen) im Fließtext selten vorkommt. Nur mit dieser Annahme
+ist es sinnvoll, den Asterisk als Markup-Zeichen zu verwenden. Das zugrundeliegende
+Konzept kann auch mit der &lt;a href=&quot;https://de.wikipedia.org/wiki/Orthogonalit%C3%A4t_(Informatik)&quot;&gt;Orthogonalität&lt;/a&gt;
+in der Informatik verglichen werden: Markup-Sprache und zugrundeliegende Sprache stehen
+orthogonal aufeinander, weil sie wenig gemeinsame Zeichen teilen. Steueranweisungen und
+menschliche Sprache stehen orthogonal aufeinander. Es gibt hier natürlich eine einfache
+Lösung, etwa den Wechsel der Auszeichnungssprache, z.B. von Markdown zu
+&lt;a href=&quot;https://docutils.sourceforge.io/docs/user/rst/cheatsheet.html&quot;&gt;reStructuredText&lt;/a&gt; oder
+etwa dem &lt;a href=&quot;https://www.mediawiki.org/wiki/Help:Formatting&quot;&gt;MediaWiki-Markup&lt;/a&gt;, in welchem
+Kursiv- und Dickschrift mit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;''einfachen'' Anführungsstrichen&lt;/code&gt; ausgezeichnet werden.
+Generell sind diese Markupschriften als vereinfachte Formen von Sprachen wie
+&lt;a href=&quot;https://en.wikipedia.org/wiki/HTML&quot;&gt;HTML&lt;/a&gt; oder XML entstanden, welches den Kontextwechsel
+stets mit eckigen Klammern vornimmt. Grundsätzlich lässt sich Markup nicht losgelöst
+vom Inhalt betrachten. Eine solche Kodierung lässt sich nur ermöglichen, wenn man
+maschinennähere Textrepräsentationen erwägt, bei welchen es keine Vermischung mehr
+von Inhalt und Formatierungsanweisungen gibt. Im Grunde genommen sind Benutzer:innen
+derartiges von &lt;a href=&quot;https://en.wikipedia.org/wiki/Word_processor&quot;&gt;Wortprozessoren&lt;/a&gt;
+gewohnt, die von der internen Textrepräsentation abstrahieren und ein
+&lt;em&gt;WYSIWYG&lt;/em&gt;-Interface anbieten, was kurz steht für &lt;em&gt;What You See Is What You Get&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Solche &lt;em&gt;WYSIWYG&lt;/em&gt;-Benutzerschnittstellen haben in den letzten Jahren etwas an Boden
+verloren. Der schnelle technische Fortschritt hat da sicher beigetragen, Anforderungen
+haben sich mehr an den Entwickeldnen als an den Benutzenden orientiert. Das kleine
+Zeitungs-Startup, von dem ich oben schrieb, verwendete eine Markupsprache, damit sie
+ihr Zeitungsportal schneller “gelauncht” bekamen. Und soziale Netzwerke wie Twitter
+verwenden Markup — und dazu zählt konzeptionell auch der berühmte 
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Hashtag&quot;&gt;Hashtag&lt;/a&gt; — vermascht mit anderem
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Plain_text&quot;&gt;Plaintext&lt;/a&gt; zwecks schneller Bearbeitung
+von Tweets. Eine Notiz hier nur am Rande: Tatsächlich wurden Hashtags von den Benutzenden
+der Plattform selbst erfunden und eingeführt, die Plattform hat sich diese erfolgreiche
+Technik letztlich zu eigen gemacht. Diese Erfindung wäre nicht anders als mit einer
+Auszeichnungssprache, die “ontop” des menschlichen Textes erfunden wurde, möglich gewesen,
+da Benutzende nicht in die Programmierung der proprietären Anwendung eingreifen können.&lt;/p&gt;
+
+&lt;h2 id=&quot;doppelpunkt-auslassungszeichen-oder-sternchen&quot;&gt;Doppelpunkt, Auslassungszeichen oder Sternchen?&lt;/h2&gt;
+
+&lt;p&gt;Vor dem dargelegten Hintergrund von Vermaschung konstruierter (technischer)
+Programmiersprache und menschlicher Sprache ist es doch seltsam, dass der Doppelpunkt
+als Genderzeichen (wie in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Programmierer:innen&lt;/code&gt;) eingeführt wurde, just um technischen
+Limitationen zu umgehen: Es wurde nämlich beobachtet, dass der Doppelpunkt von
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Plain_text&quot;&gt;Sprachsyntheseprogrammen (Text-to-Speech)&lt;/a&gt;
+zu einer kurzen Pause führte, welcher ähnlich wie der
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Glottaler_Plosiv&quot;&gt;Glottisschlag&lt;/a&gt; interpretiert wurde.
+Es dauert nicht lange, um Beispiele zu finden, wo der Doppelpunkt hingegen wieder
+negativ mit der Technik interferiert, etwa innerhalb der verbreiteten
+Auszeichnungssprache &lt;a href=&quot;https://de.wikipedia.org/wiki/YAML&quot;&gt;YAML&lt;/a&gt;, in der es (angelehnt
+an viele Programmiersprachen) zur Trennung von Schlüssel und Wert bei der Definition
+einer Tabelle/Abbildung/Dictionary dient. Die Lösung ist hier, da ein strukturgebender
+Kontext vorliegt, allerdings einfacher, da der Wert (Textstring) einfach durch
+Anführungsstriche maskiert wird. Aus &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;schlüssel:wert&lt;/code&gt; kann nämlich equivalent
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;schlüssel&quot;:&quot;wert&quot;&lt;/code&gt; werden, sodass &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;Programmierer:innen sind&quot;:&quot;auch Anwender:innen&quot;&lt;/code&gt;
+valides YAML ist.&lt;/p&gt;
+
+&lt;p&gt;So entsteht eine kleine Matrix, welche Genderform mit welcher Markupsprache einfach
+zu benutzen (“kompatibel”) ist:&lt;/p&gt;
+
+&lt;table class=&quot;table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Paarform&lt;/th&gt;
+      &lt;th&gt;Markdown&lt;/th&gt;
+      &lt;th&gt;RST&lt;/th&gt;
+      &lt;th&gt;LaTeX&lt;/th&gt;
+      &lt;th&gt;HTML&lt;/th&gt;
+      &lt;th&gt;YAML&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lehrer(innen)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lehrerinnen/Lehrer&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;🟡 (Quirky)&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lehrer*innen&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;❌&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lehrer_innen&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;❌&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lehrer:innen&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;✅&lt;/td&gt;
+      &lt;td&gt;❌&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Die Tabelle zeigt, dass manche Sprachen wie &lt;em&gt;reStructuredText&lt;/em&gt; (RST) oder HTML mit fast
+jeder Variante klarkommen, wohingegen es in anderen Sprachen häufig Probleme gibt, die
+eine Maskierung (Escaping) nötig machen. Nur die in natürlichen Sprachen recht häufigen
+runden Klammern stellen in keiner der verglichenen Sprachen ein Problem dar.&lt;/p&gt;
+
+&lt;h2 id=&quot;abgünde-des-parsings&quot;&gt;Abgünde des Parsings&lt;/h2&gt;
+
+&lt;p&gt;Die Probleme mit Markierungszeichen für Sprachformen gehen aber über bloße Darstellungsfehler
+hinaus:
+Das Gendern von Texten kann die AnwenderInnen zur regelrechten
+Verzweiflung bringen. Das Zeitungs-Startup benutzte intern auch das freie Textsatzprogramm
+&lt;a href=&quot;https://de.wikipedia.org/wiki/LaTeX&quot;&gt;LaTeX&lt;/a&gt;. LaTeX ist heute der defakto-Standard zum
+Schreiben von wissenschaftlichen Aufsätzen, vor allem in dem naturwissenschaftlich-technischen
+Bereich. Es ist außerdem Defakto-Standard für die Repräsentation von komplizierten
+mathematischen Formeln sowie ihrer Darstellung (Rendering). Latex-Code ist auf dem
+Kontinuum zwischen Programmiersprachen und Markup-Sprachen noch ein Stück näher an der
+Maschine, als es vielleicht YAML ist. Im Grunde genommen ist ein Latex-Code ein ausführbares
+Computerprogramm, welches von dem Interpreter in eine andere Darstellung, etwa ein
+PDF-Dokument umgewandelt ist. Es ist damit mit der Seitenbeschreibungssprache
+&lt;a href=&quot;https://en.wikipedia.org/wiki/PostScript&quot;&gt;Postscript&lt;/a&gt; vergleichbar, die wiederum die
+Grundlage für das PDF-Format darstellt. An dieser Stelle möchte ich gerne das &lt;a href=&quot;https://en.wikipedia.org/wiki/PostScript#%22Hello_world%22&quot;&gt;Hello-World-Beispiel
+über Postscript aus Wikipedia&lt;/a&gt;
+zitieren:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; %!PS
+ /Courier
+ 20 selectfont
+ 72 500 moveto
+ (Hello world!) show
+ showpage
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dieser Code liest sich wie ein Buch zeile für zeile von links nach rechts. Postscript ist
+eine stackorientierte Programmiersprache, weswegen zunächst alle erwähnten Dinge auf einen
+virtuellen “Stapel” gelegt werden, wo sie von Anweisungen, die Postscript versteht, dann
+“heruntergeholt” werden. So landet auch die Zeichenkette &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hello world!&lt;/code&gt; auf dem Stapel,
+ehe sie von &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;show&lt;/code&gt; zur Anzeige gebracht wird. Wieder haben wir es mit einem Escape-Problem
+zu tun, es wäre gar nicht einfach &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hello (cruel) world&lt;/code&gt; zu schreiben, ohne mit den runden
+Klammern von Postscript ins Gehege zu kommen. Der binäre Zugang, der allerdings in keiner
+praktikablen Programmiersprache gewählt wird, wäre an so einer Stelle im Übrigen die
+Definition des Strings als &lt;em&gt;fixed length string&lt;/em&gt;, sodass der String selber von keinem
+Compiler auf Escape-Sequenzen interpretiert werden muss. Auf diese Weise funktionieren die
+allermeisten Netzwerkprotokolle und auch die meisten Stringinterpretationen auf Maschinenebene.
+Wer sich darüber etwas informieren möchte, findet mit der
+&lt;a href=&quot;https://en.wikipedia.org/wiki/ASN.1&quot;&gt;Abstract Syntax Notation One (ASN.1)&lt;/a&gt; einen guten
+Startpunkt.&lt;/p&gt;
+
+&lt;p&gt;Was passiert nun, wenn man bei Latex mit Unterstrich gendert? Probieren wir es mit einem
+&lt;a href=&quot;http://tug.ctan.org/info/dickimaw/dickimaw-minexample.pdf&quot;&gt;minimally&lt;/a&gt;
+not &lt;a href=&quot;https://tex.meta.stackexchange.com/questions/228/ive-just-been-asked-to-write-a-minimal-working-example-mwe-what-is-that&quot;&gt;working example&lt;/a&gt;
+aus:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\documentclass{article}
+\begin{document}
+DenktMit Programmier_innen sind Gött_innen in schwarz.
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dieses Dokument mit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pdflatex&lt;/code&gt; kompliert gibt bei mir folgende Ausgabe:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sven@localhost /tmp/foo % pdflatex gender.tex
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./gender.txt
+LaTeX2e &amp;lt;2020-10-01&amp;gt; patch level 2
+L3 programming layer &amp;lt;2020-12-03&amp;gt; xparse &amp;lt;2020-03-03&amp;gt;
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+No file gender.aux.
+! Missing $ inserted.
+&amp;lt;inserted text&amp;gt; 
+                $
+l.3 DenktMit Programmier_
+                         innen sind Gött_innen in schwarz.
+? 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;PDFLatex ist abgestürzt. Das tut es bei Syntaxfehlern immer, und hier liegt ein
+solcher Syntaxfehler vor. Der Unterstrich ist ein
+&lt;a href=&quot;http://latexref.xyz/Reserved-characters.html&quot;&gt;reserviertes Zeichen&lt;/a&gt; und
+damit Teil der Menge &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;# $ % &amp;amp; { } _ ~ ^ \&lt;/code&gt;. Latex ist eine alte Software mit
+vielen &lt;em&gt;Quirks&lt;/em&gt;, man sagt nur Latex könne Latex parsen. Je nach Kontext ist der
+Unterstrich doch wieder zulässig, etwa in einer Mathematikumgebung (die ihrerseits
+mit einem Dollarzeichen &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt; eingeleitet wird), oder in einer URL (aber
+nur, wenn &lt;a href=&quot;https://ctan.org/pkg/hyperref&quot;&gt;Hyperref&lt;/a&gt; das richtig versteht).
+Sobald ein Texcode geringfügig komplizierter wird als das hier gezeigte,
+sind die Fehlermeldungen schnell kryptisch und die Fehlerursachen nicht mehr
+so schnell zu finden, wenn man nicht ein paar Jahre Latex-Erfahrung angesammelt
+hat. Wo Markdown einfach still und “resistent” ein Markup erstellt, welches so
+nicht gedacht war, stoppt Latex die Ausführung komplett. Für Benutzende ist
+das frustrierend.&lt;/p&gt;
+
+&lt;h2 id=&quot;quo-vadis-programmiersprache&quot;&gt;Quo vadis, Programmiersprache?&lt;/h2&gt;
+
+&lt;p&gt;Eine Programmiersprache, die sich an den Bedürfnissen der echten Sprache anpasst,
+ist mir bislang noch nicht begegnet. Es ist eher ein Trial-and-Error, ein
+gegenseitiges Austarieren zwischen wirtschaftlichem Einsatz von programmierenden
+und benutzendem Personal. Immerhin haben Sprachdebatten und Neuentwicklungen bei
+Programmiersprachen eine Gemeinsamkeit: Beide sind geführt vom Geist der
+Veränderung. Sprache, egal ob natürlich oder künstlich, ist ein menschgemachtes
+Konstrukt und ein Konsens. Als Entwickler maße ich es mir nicht an, über den
+Inhalt meiner datenverarbeitenden Systeme zu werten.&lt;/p&gt;
+
+&lt;h2 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h2&gt;
+
+&lt;p&gt;Zuguterletzt gebe ich doch noch meine Meinung zu diesem strittigen Thema ab.
+Sie ist wahrscheinlich auch schon hier und da durchgeblitzt. Als typischer
+“alter weißer Mann” und Partner und Vater von Frau(en) versuche ich, mir die systemische
+Geschlechterdiskriminierung (etwa gegenüber Frauen) und meine “Vormachtposition”
+gelegentlich zu vergegenwärtigen. Ich lehne das generische Maskulinum ab
+und halte das “Genus vs. Sexus”-Argument für einen Vorwand, sich mit der
+sprachlichen und gesellschaftlichen Wirklichkeit nicht auseinandersetzen zu müssen.
+Ich experimentiere gerne gleichermaßen mit Programmiersprachen und mit natürlicher
+Sprache. Da ich mir wünschen würde, dass ich etwa vom deutschen Staat 
+nicht mit meinem Geschlecht angesprochen werde, halte ich in diesen Zusammenhängen
+eine Sprachvorschrift in Behörden oder Firmen für angemessen. Leider argumentieren
+sowohl Befürworter:innen als auch Gegner_innen sehr offensiv und extrem, an einem
+Konsens ist oft wenig Interesse. Mehr gemäßigte Mitte und Empathie würde der
+Debattenkultur gut tun.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 07 Jun 2021 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2021/06/07/gendern-in-markup.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2021/06/07/gendern-in-markup.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Storypoints Should Estimate Cognitive Load</title>
+        <author>Marius Schmidt</author>
+        <description>&lt;h2 id=&quot;the-problem&quot;&gt;The problem&lt;/h2&gt;
+&lt;p&gt;Most of the projects we do today use an agile software development approach, be it SCRUM or Kanban or the like. Most of the time, the work to be done is estimated based on story points. At first glance, this may seem easy, but at some point your project team could debate what a story point actually represents. Some might argue that story points somehow value time. Others are convinced that they somehow assess the academic complexity of a task. And a third group does not hesitate to point out that they are only ever allowed for user stories and not for bugs or minor technical tasks. After all, almost everyone agrees that the Fibonacci numbers are great candidates for story points.&lt;/p&gt;
+
+&lt;p&gt;In our opinion, story points should estimate the &lt;strong&gt;total cognitive load&lt;/strong&gt; to get some well enough defined pile of work done. We derive possible story point values from Fibonacci numbers &amp;lt;= 21, allow an additional 0.5 value and we apply them for everything. The rest of this blog post is, &lt;strong&gt;why&lt;/strong&gt; we do it that way.&lt;/p&gt;
+
+&lt;h2 id=&quot;goals-of-estimating-tasks&quot;&gt;Goals of estimating tasks&lt;/h2&gt;
+&lt;p&gt;To prioritize work properly, it is essential to figure out the expected return of invest (ROI) as ratio of expected business value and expected effort. In order monitor the quality of our forecast, we would continuously compare the expected with the actual outcome and try to reduce the deviation. In order to enhance the forecast, we want to it to become as efficient (low-cost, fast and easy), effective (concise, non-misleading insights) and appropriate (only asking for the measures and granularity needed) as possible.&lt;/p&gt;
+
+&lt;h2 id=&quot;story-points-are-a-better-fit-for-human-guessing&quot;&gt;Story points are a better fit for human guessing&lt;/h2&gt;
+&lt;p&gt;Before using story points, we tried to estimate the amount of time to get a certain workload done. One of the pain point was, that we as humans are surprisingly bad and overoptimistic in guessing how long something new is going to take. At the same time we want be accurate in our statements. Treating those estimates as binding cost estimates, in many cases definitely added some pressure.&lt;/p&gt;
+
+&lt;p&gt;As a countermeasure, many developers, including us, designed some fancy Excel sheets to enter their guess work and deliver educated overestimates to compensate for our optimism. That made us feel better and lightened some pressure by moving unused times between work items. The approach was time-consuming because of the fancy guess work. It also did not deliver accurate results because of the intrinsic lack of knowledge in doing something new and the safe-guarding over-estimates.&lt;/p&gt;
+
+&lt;p&gt;As it turned out, story points improve the estimation part of the ROI equation. We humans are surprisingly good at guessing the relative difficulty of tasks we only have partial knowledge of. Most of the time, we can easily say: “This will be A LOT harder than that. Doing ABC is more easy peasy compared to XZY”. We do not even need to remember the exact effort of the reference work to make that guess.&lt;/p&gt;
+
+&lt;p&gt;Additionally, we are easily overwhelmed with too much choice&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. Having choices between hours, days, weeks and maybe even months makes it harder for us to decide. It is a smart move to limit the number of available choices to accelerate a decision process. Using a limited set of possible story points, applies choice architecture&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; on effort estimation.&lt;/p&gt;
+
+&lt;p&gt;We still have some freedom what number sequence to take. Ideally, the sequence of valid story point values should reflect the fact, that estimates lack more accuracy, the bigger the subject to estimate is. Using the Fibonacci numbers fits this requirement nicely, because consecutive numbers have an increasing gap between them. Of course, you could use another number sequence, but Fibonacci numbers will always be more cool. They have an italian name, a strong relation to the golden ratio and you do not have to explain them yourself&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;We like to add a 0.5 story point option to be assigned for very small tasks that are often neglected as &lt;strong&gt;to small to be estimated at all&lt;/strong&gt;. In doing so, if those tasks come in numbers, they at least show up in the forecast. We limit our story point values to nine options in total to support quick decision-making. We usually consider a story point value of 21 as &lt;strong&gt;too big, should usually be broken up into smaller parts&lt;/strong&gt;. Anything that feels bigger than even a 21 is rejected and must be refined first.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-gain-of-story-points&quot;&gt;The gain of story points&lt;/h2&gt;
+&lt;p&gt;In summary the two effects improve the efficiency and effectiveness of the estimation process. Since estimating is lot faster with story points, it quickly became a team effort increasing the quality by averaging between independent guesses. Using Planning poker avoids being biased by other opinions.&lt;/p&gt;
+
+&lt;p&gt;This whole team approach results into a better quality of the effort estimates. By monitoring the story points a developer team delivers over time, one finds, that the total amount of story points per sprint usually converges into an expectancy value. In our experience, the ROI forecast derivable from that value is of better quality than the one derived from time estimations. Therefore, we consider story points more appropriate.&lt;/p&gt;
+
+&lt;h2 id=&quot;story-points-should-estimate-total-cognitive-load&quot;&gt;Story points should estimate total cognitive load&lt;/h2&gt;
+&lt;p&gt;Let us focus on why we are estimating at all: We want to know the expected return on invest and everything that improves that forecast is good. We are already convinced, that using story points are pragmatic in delivering a better ROI forecast. However, story points are an abstract concept. Some definition what exactly they represent is needed. Maybe for that reason, there seems to be some fear of not doing story points right.&lt;/p&gt;
+
+&lt;p&gt;Keep in mind, that the whole agile development approach should be adapted to what works best for you. We think, story points should have meaning, that feels natural and explaining them should be very easy. Since software is a brain child, we feel comfortable in treating story points as &lt;strong&gt;expected total cognitive load&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Everything becomes quite clear with this definition. If a task is more difficult than another, it causes more cognitive load. You need to research something new. Some business process might be complex, so you need to meet with the business experts and learn about it. A task is simple, but it contains a lot of repetitive work, and that needs time and focus. It all adds up on the cognitive load.&lt;/p&gt;
+
+&lt;p&gt;Doing a task a second time but on an evolved system where it has become a lot easier, results into less cognitive load. Assigning fewer story point is totally fine. The product is more sophisticated now and allows for a higher ROI.&lt;/p&gt;
+
+&lt;p&gt;Some developer has more foreknowledge than the others? Sharing it causes cognitive load. If he is done quicker than the team average: be it so. It will just result into a slightly better actual ROI than expected for the team average and shows good resource allocation.&lt;/p&gt;
+
+&lt;p&gt;Not sure if to assign story points to a bug or task? Well, they also produce cognitive load. So we just assign them story points, because in the end, we want to obtain a more accurate forecast.&lt;/p&gt;
+
+&lt;p&gt;Keep the cognitive load buffers clean and happy estimating.&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Choice#Number_of_options_and_paradox&quot;&gt;Choice: Number of options and paradox&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Choice_architecture&quot;&gt;Choice architecture&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Fibonacci-Numbers&lt;/a&gt; &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 21 Jul 2020 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2020/07/21/storypoints-should-estimate-cognitive-load.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2020/07/21/storypoints-should-estimate-cognitive-load.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>How To Auth Your Api In 2020</title>
+        <author>Marius Schmidt</author>
+        <description>&lt;p&gt;What kind if auth mechanism exist?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml&quot;&gt;IANA HTTP authschemas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Getting acquainted with OAuth2&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth&quot;&gt;What the heck is OAuth?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mastercard.com/blog/why-mastercard-doesnt-use-oauth-20/&quot;&gt;Why Mastercard Doesn’t Use OAuth 2.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.okta.com/blog/2019/10/want-to-secure-your-apis-youll-need-oauth-2-0-for-that/&quot;&gt;Want to Secure Your APIs? You’ll Need OAuth 2.0 for That&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thoughts on why JWT for Session might not be the best choice&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.pingidentity.com/fr/company/blog/posts/2019/the-hard-parts-of-jwt-security-nobody-talks-about.html&quot;&gt;The hard parts of JWT scurity nobody talks about&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/&quot;&gt;Stop using JWT for sessions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cryto.net/~joepie91/blog/2016/06/19/stop-using-jwt-for-sessions-part-2-why-your-solution-doesnt-work/&quot;&gt;Stop using JWT for sessions, part 2. Why your solution does not work&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.okta.com/blog/2017/08/17/why-jwts-suck-as-session-tokens&quot;&gt;Why JWTs suck as session tokens&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.okta.com/blog/2018/06/20/what-happens-if-your-jwt-is-stolen&quot;&gt;What happens, if your JWT is stolen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using Keycloak for Auth&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.zakariaamine.com/2019-06-14/extending-keycloak&quot;&gt;Extending Keycloak: adding API key authentication&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What are the the big ones using?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html&quot;&gt;AWS Signature V4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 07 Feb 2020 00:00:00 -0600</pubDate>
+        <link>https://denktmit.de/2020/02/07/how-to-auth-your-api-in-2020.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2020/02/07/how-to-auth-your-api-in-2020.html</guid>
+        
+        
+      </item>
+      
+    
+  </channel>
+</rss>
+ 
