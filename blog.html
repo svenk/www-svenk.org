@@ -1,0 +1,18 @@
+---
+title: "Sven Köppel: Blog"
+permalink: /blog/
+layout: default
+--- 
+
+<h1>Blog</h1>
+
+{% assign blog_collection = site.data.aggregated_posts.aggregated_posts | sort: 'date' | reverse %}
+<ul>
+{% for item in blog_collection  %}
+    <li>
+    <a href="{{ item.link }}" class="{{ item.origin }}">
+        <span class="title">{{ item.title }}</span>
+        <span class="date">{{ item.date | date:"%b %Y" }}</span>
+    </a>
+{% endfor %}
+</ul>

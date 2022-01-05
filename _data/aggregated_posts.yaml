@@ -1,0 +1,56 @@
+aggregated_posts:
+- date: '2021-08-26'
+  link: https://denktmit.de/2021/08/26/show-your-Workspace.html
+  origin: denktmit-blog-feed
+  title: Show your Workspace! Der Auftakt
+- date: '2021-08-25'
+  link: https://denktmit.de/2021/08/25/kriegs-sport-sprache.html
+  origin: denktmit-blog-feed
+  title: Martialische Redewendungen im beruflichen Alltag
+- date: '2021-07-02'
+  link: https://denktmit.de/2021/07/02/repl-cli-ide-wars.html
+  origin: denktmit-blog-feed
+  title: Die IDE-Wars
+- date: '2021-06-29'
+  link: https://denktmit.de/2021/06/29/tellerrand-stackbasierte-programmiersprachen.html
+  origin: denktmit-blog-feed
+  title: "Der Blick \xFCber den Tellerrand, Volume 1: Stackbasierte Programmiersprachen"
+- date: '2021-06-08'
+  link: https://denktmit.de/2021/06/08/plaintext.html
+  origin: denktmit-blog-feed
+  title: Plaintext ist Trumpf
+- date: '2021-06-07'
+  link: https://denktmit.de/2021/06/07/gendern-in-markup.html
+  origin: denktmit-blog-feed
+  title: Gendern im Markup und in Programmiersprachen
+- date: '2016-04-12'
+  link: https://arxiv.org/abs/1604.03263
+  origin: papers-svenk
+  title: Geometric model of black hole quantum <i>N</i>-portrait, extradimensions
+    and thermodynamics
+- date: '2017-03-13'
+  link: https://arxiv.org/abs/1703.05222
+  origin: papers-svenk
+  title: Generalized uncertainty principle and extra dimensions
+- date: '2017-07-31'
+  link: https://arxiv.org/abs/1707.0991
+  origin: papers-svenk
+  title: A strongly hyperbolic first-order CCZ4 formulation of the Einstein equations
+    and its solution with discontinuous Galerkin schemes
+- date: '2017-11-01'
+  link: https://arxiv.org/abs/1711.08221
+  origin: papers-svenk
+  title: Towards an exascale code for GRMHD on dynamical spacetimes
+- date: '2017-12-05'
+  link: https://arxiv.org/abs/1801.02839
+  origin: papers-svenk
+  title: ADER discontinuous Galerkin schemes for the general relativistic magnetohydrodynamics
+    equations
+- date: '2018-12-05'
+  link: https://arxiv.org/abs/1901.09977
+  origin: papers-svenk
+  title: General-relativistic measurement of the threshold mass to prompt collapse
+- date: '2019-03-05'
+  origin: papers-svenk
+  title: Generalized Uncertainty Principle and Extra Dimensions
+
