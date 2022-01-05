@@ -10,16 +10,17 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+    background-attachment: fixed;
 }
 
-h1 {
+#teaser h1 {
 	font-weight: 900; /* Inter Black */
 	text-transform: uppercase;
 	font-size: 240%;
 	margin: 0; padding: 0;
 }
 
-p {
+#teaser p {
 	margin: .5em 0; padding: 0;
 	line-height: 140%;
 }
@@ -28,6 +29,7 @@ p {
 	display: block;
 }
 
+/* still teaser-specific */
 .mini { display: none; }
 
 a {
@@ -70,7 +72,7 @@ a:hover, a:active {
 	body { background-image: url(svenk-blue-1024.jpg); }
 	#teaser {
 		width: 30%;
-		margin: 10%;
+		/*margin: 10%;*/
 		font-size: 130%;
 	}
 	#teaser p {
@@ -138,12 +140,16 @@ h3 {
     color: #333;
 }
 
+body.landing .brand-title {
+    visibility: hidden;
+}
+
 .brand-title,
 .brand-tagline {
     margin: 0;
 }
 .brand-title {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 .brand-tagline {
     font-weight: 300;
@@ -166,8 +172,6 @@ h3 {
 }
 .nav-item {
     display: inline-block;
-    *display: inline;
-    zoom: 1;
 }
 .nav-item a {
     background: transparent;
@@ -199,13 +203,18 @@ body.landing .content {
 }
 
 .content {
-    padding: 2em 1em 0;
     background-color: rgba(255, 255, 255, .95);
     min-height: 100vh;
 }
 
 .content-wrapper {
     max-width: 1000px;
+    padding-bottom: 2em;
+    margin: 2em;
+}
+
+.lead { /* typically a paragraph */
+    font-size: 130%;
 }
 
 .post {
@@ -276,12 +285,15 @@ body.landing .content {
 
 @media (min-width: 48em) {
     .content {
-        padding: 2em 3em 0;
         margin-left: 25%;
+    }
+    
+    .content-wrapper {
+        margin: 20vh 3em 0;
     }
 
     .header {
-        margin: 80% 2em 0;
+        margin: 20vh 2em 0;
         text-align: right;
     }
 
@@ -294,4 +306,14 @@ body.landing .content {
     .footer {
         text-align: center;
     }
+    
+    .nav-item {
+        display: block;
+    }
 } 
+
+pre {
+    font-size: 80%;
+    background-color: #f5f5f5;
+    padding: 1em;
+}

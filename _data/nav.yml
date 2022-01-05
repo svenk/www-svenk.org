@@ -1,15 +1,15 @@
 main:
   - title: About
     url: /
-  - title: Blog
-    url: /blog/
+#  - title: Blog
+#    url: /blog/
   - title: Research
     url: /research/
-  - title: Affiliations
+  - title: Startups
     url: /companies/
   - title: Media
     url: /social/
-  - title: Misc
+  - title: Fun
     url: /misc/
   - title: Contact
     url: /contact/
