@@ -1,0 +1,11 @@
+data_sources:
+  - title: DenktMit Blog
+    human_url: https://denktmit.de/outreach.html
+    data_url: https://denktmit.de/blog-feed.xml
+    local_file: denktmit-blog-feed.xml
+    field_name: denktmit_blog_postings
+  - title: Publications
+    human_url: https://github.com/svenk/publications/
+    field_name: papers
+    data_url: https://raw.githubusercontent.com/svenk/publications/master/Papers/papers-svenk.yaml
+    local_file: papers-svenk.yaml
