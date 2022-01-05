@@ -8,6 +8,7 @@ download() { curl -sS $data_url > $local_file; }
 git_add_assets() { git add ${local_file/.*}.*; }
 
 echo "data_sources:" | tee $data_sources_fname # wipes content
+declare -a local_yaml_files=()
 
 log "  - title: DenktMit Blog"
 log "    human_url: https://denktmit.de/outreach.html"
@@ -18,6 +19,7 @@ field_name="denktmit-blog-feed"; show field_name
 #echo $field_name > ${local_file/.*}.yaml
 ./rss2yaml.py $local_file --author-filter=Sven --skip-field=description \
     > ${local_file/.*}.yaml
+local_yaml_files+=("${local_file/.*}.yaml")
 git_add_assets
 
 log "  - title: Publications"
@@ -26,6 +28,11 @@ log "    field_name: papers"
 data_url="https://raw.githubusercontent.com/svenk/publications/master/Papers/papers-svenk.yaml"
 show data_url
 local_file="$(basename $data_url)"; show local_file
+local_yaml_files+=($local_file)
 download
 # could assert: head -n1 $local_file == "$field_name:"
 git_add_assets
+
+./aggregate.py "${local_yaml_files[@]}" \
+    --out-keyname="aggregated_posts" > aggregated_posts.yaml
+git add aggregated_posts.yaml
