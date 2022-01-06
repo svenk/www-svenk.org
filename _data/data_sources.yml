@@ -8,6 +8,7 @@ data_sources:
   papers:
     title: Publications
     human_url: https://github.com/svenk/publications/
+    icon: https://upload.wikimedia.org/wikipedia/commons/3/32/OOjs_UI_icon_academic.svg
     data_url: https://raw.githubusercontent.com/svenk/publications/master/Papers/papers-svenk.yaml
     local_file: papers-svenk.yaml
   t29-blog:
@@ -16,3 +17,9 @@ data_sources:
     icon: https://technikum29.de/shared/img-v6/touch-icon.png
     data_url: https://technikum29.de/blog/rss.php
     local_file: t29-blog-feed.xml
+  uniordner:
+    title: Uniordner (historisch)
+    human_url: http://sven.köppel.org/uni/
+    icon: http://sven.köppel.org/favicon.ico
+    data_url: http://sven.köppel.org/uni/cgi-bin/json-uniordner
+    local_file: uniordner.json

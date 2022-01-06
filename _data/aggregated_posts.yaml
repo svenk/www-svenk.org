@@ -161,4 +161,111 @@ aggregated_posts:
   link: https://technikum29.de/blog/2019-02-04-the-heritage
   origin: t29-blog
   title: The Heritage
+- date: '2014-07-15'
+  link: http://sven.xn--kppel-jua.org/uni/ws1314/Seminar Angewandte Informatik/Universal-Vortrag/Praesentation
+    Universal/use-soznetz.pdf
+  origin: uniordner
+  title: Wissenschaft als soziales Netzwerk (Studienkongress UNIversal)
+- date: '2014-06-18'
+  link: http://sven.xn--kppel-jua.org/uni/ss2014/Journal Club in HEP/14-06-18/journal-club-jun2014
+    (Calc15b).pdf
+  origin: uniordner
+  title: Some notes on calculating GUP/NCBHs in LXDs (Journal Club in HEP)
+- date: '2015-03-17'
+  link: http://sven.xn--kppel-jua.org/uni/ws1415/2015-03 Berlin/Poster/berlin15-poster.pdf
+  origin: uniordner
+  title: "Quantum gravity improved black holes (DPG-Fr\xFChjahrestagung 2015)"
+- date: '2015-03-20'
+  link: http://sven.xn--kppel-jua.org/uni/ws1415/2015-03 Berlin/HoloTalk/HoloTalkDPG.pdf
+  origin: uniordner
+  title: "On gravity self-completeness in higher dimensions (DPG-Fr\xFChjahrestagung\
+    \ 2015)"
+- date: '2014-09-14'
+  link: http://sven.xn--kppel-jua.org/uni/ws1415/GR99/QMmodBHs-KDK14GR99/build/Poster.pdf
+  origin: uniordner
+  title: Quantum gravity improved black holes (DPG Physics School General Relativity
+    99)
+- date: '2015-01-27'
+  link: http://sven.xn--kppel-jua.org/uni/ws1415/astrocoffee/AstroCoffee-slides.pdf
+  origin: uniordner
+  title: Quantum gravity improved black holes (Astro Coffee)
+- date: '2014-11-26'
+  link: http://sven.xn--kppel-jua.org/uni/ws1415/defense/sketch.pdf
+  origin: uniordner
+  title: Ultraviolet improved black holes, My Master thesis project (Journal Club
+    in HEP)
+- date: '2014-12-15'
+  link: http://sven.xn--kppel-jua.org/uni/ws1415/palaver2014-finished/palaver2014.pdf
+  origin: uniordner
+  title: Ultraviolet improved black holes (Palaver WS 14/15)
+- date: '2015-01-18'
+  link: http://sven.xn--kppel-jua.org/uni/ws1415/retreat/retreat2015-talk.pdf
+  origin: uniordner
+  title: The quest for physics at shortest scales (FIAS scientific retreat)
+- date: '2015-07-21'
+  link: http://sven.xn--kppel-jua.org/uni/ss2015/GUP-Talk-KSM2015/GUP-printout-KSM2015.pdf
+  origin: uniordner
+  title: The Generalized Uncertainty Principle in extra dimensions (Karl Schwarzschild
+    Meeting on Gravitational Physics 2015)
+- date: '2014-06-15'
+  link: http://sven.xn--kppel-jua.org/uni/ss2015/Journal Club in HEP/15-06-15/jchep-frolov-jun2015-handout.pdf
+  origin: uniordner
+  title: Mass-gap for black hole formation in higher derivative and ghost free gravity
+    (Journal Club in HEP)
+- date: '2015-05-13'
+  link: http://sven.xn--kppel-jua.org/uni/ss2015/jcnr-May2015/jcnr-May2015.pdf
+  origin: uniordner
+  title: Numerical relativity simulations of neutron star merger remnants using conservative
+    mesh refinement (Journal Club in Numerical Relativity)
+- date: '2015-09-25'
+  link: http://sven.xn--kppel-jua.org/uni/ws1516/Bukarest15 Talk GUP/Bukarest Talk.pdf
+  origin: uniordner
+  title: The Generalized Uncertainty Principle and Extra Dimensions (Geometry and
+    Physics seminar)
+- date: '2016-03-01'
+  link: http://sven.xn--kppel-jua.org/uni/ws1516/Hamburg16-DPG/Talk-HoloAds/HoloAdSHamburgDPG16.pdf
+  origin: uniordner
+  title: "On gravity self-completeness on Anti-de Sitter background (DPG-Fr\xFChjahrestagung\
+    \ 2016)"
+- date: '2016-05-30'
+  link: http://sven.xn--kppel-jua.org/uni/ss2016/Palaver2016/ToriPalaver-May16.pdf
+  origin: uniordner
+  title: Donuts in Space (Palaver SS 2016)
+- date: '2016-12-12'
+  link: http://sven.xn--kppel-jua.org/uni/ws1617/2016-12-12-FIGSS-Talk/FIGSS-Talk-Koeppel-2016-12-12.pdf
+  origin: uniordner
+  title: Probing star collisions with Exascale computers (FIGSS seminar WS 2016/17)
+- date: '2017-04-03'
+  link: http://sven.xn--kppel-jua.org/uni/ws1617/2017-04-03-ExaHyPE-ReviewMeeting-FIAS-SK/2017-04-03-ExaHyPE-ReviewMeeting-SK.pdf
+  origin: uniordner
+  title: Einsteins Equations in ExaHyPE (ExaHyPE Research Council)
+- date: '2017-06-01'
+  link: http://sven.xn--kppel-jua.org/uni/ss2017/2017-06-01-Juelich-Prace-ExaHyPE/Talk-2017-06-01-Juelich-Prace-ExaHyPE.pdf
+  origin: uniordner
+  title: 'Mini Overview, ExaHyPE: Exascale Spacetree ADER-DG (Mini-Workshop on Preparing
+    for PRACE Exascale Systems)'
+- date: '2017-06-27'
+  link: http://sven.xn--kppel-jua.org/uni/ss2017/2017-06-27-Astronum2017/Astronum17-Koeppel-Poster.pdf
+  origin: uniordner
+  title: Towards an Exascale code for MHD on dynamical spacetimes (Astronum 2017)
+- date: '2017-06-28'
+  link: http://sven.xn--kppel-jua.org/uni/ss2017/2017-06-27-Astronum2017/Astronum2017-Poster-Praesentation-3min.pdf
+  origin: uniordner
+  title: Towards an Exascale code for MHD on dynamical spacetimes (Astronum 2017)
+- date: '2017-11-30'
+  link: http://sven.xn--kppel-jua.org/uni/ws1718/2017-11-30-Durham-ExaHyPE-Workshop/Durham-Talk-Nov2017-SK
+    4-zu-3.pdf
+  origin: uniordner
+  title: Predicting gravitational waves on computers (When Gravitational Waves hit
+    Durham - an ExaHyPE workshop)
+- date: '2018-01-25'
+  link: http://sven.xn--kppel-jua.org/uni/ws1718/Talk-2018-01-25-RCM-ExaHyPE/Svens
+    presentation sketch.pdf
+  origin: uniordner
+  title: Report on Astro Physics state in ExaHyPE (6. Research Council Meeting in
+    Garching, LRZ)
+- date: '2019-06-28'
+  link: http://sven.xn--kppel-jua.org/uni/ws1819/2018-06-28 Phd-Thesis-Defesense/Defense-Slides.pdf
+  origin: uniordner
+  title: PhD Defense (Defense)
 

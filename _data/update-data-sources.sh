@@ -29,6 +29,7 @@ git_add_assets
 identifier="papers"; start $identifier
 prop "title: Publications"
 prop "human_url: https://github.com/svenk/publications/"
+prop "icon: https://upload.wikimedia.org/wikipedia/commons/3/32/OOjs_UI_icon_academic.svg"
 data_url="https://raw.githubusercontent.com/svenk/publications/master/Papers/papers-svenk.yaml"
 show data_url
 local_file="$(basename $data_url)"; show local_file
@@ -45,6 +46,18 @@ data_url="https://technikum29.de/blog/rss.php"; show data_url
 local_file="t29-blog-feed.xml"; show local_file
 download
 ./rss2yaml.py $local_file --out-keyname=$identifier > ${local_file/.*}.yaml
+local_yaml_files+=("${local_file/.*}.yaml")
+git_add_assets
+
+identifier="uniordner"; start $identifier
+prop "title: Uniordner (historisch)"
+prop "human_url: http://sven.köppel.org/uni/"
+prop "icon: http://sven.köppel.org/favicon.ico"
+data_url="http://sven.köppel.org/uni/cgi-bin/json-uniordner"; show data_url
+local_file="uniordner.json"; show local_file
+download
+python -c "import yaml,json; print(yaml.dump(json.load(open('$local_file'))))" \
+    > ${local_file/.*}.yaml
 local_yaml_files+=("${local_file/.*}.yaml")
 git_add_assets
 

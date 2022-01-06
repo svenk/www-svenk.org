@@ -17,11 +17,21 @@ def prepend(key, prepender):
             return None
     return lookup
 
+def uniordner():
+    def lookup(dct):
+        # Detect a uniordner-like entry and make something nice of it
+        if "event" in dct and "title" in dct:
+            return f"%(title)s (%(event)s)"%dct
+        else:
+            return None
+    return lookup
+
 candidates = {
-    "title": [ "title" ],
+    "title": [ "title", uniordner() ],
     "date":  [ "date", "pubDate" ],
     "link":  [ "link", prepend("DOI", "https://dx.doi.org/"),
-                prepend("arxiv", "https://arxiv.org/abs/") ]
+                prepend("arxiv", "https://arxiv.org/abs/"),
+                "sources", "slides" ]
 }
 
 records = []
