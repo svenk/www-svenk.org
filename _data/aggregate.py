@@ -26,18 +26,19 @@ candidates = {
 
 records = []
 for fh in args.yaml_filenames:
-    fname = stem(fh.name)
+    identifier = stem(fh.name)
     data = yaml.load(fh, Loader=yaml.CLoader)
     if isinstance(data, dict):
         keys = list(data.keys())
         if len(keys) != 1:
-            print(f"{fname}: Contains dictionary with keys {keys}. Need a single key or list!")
+            print(f"{identifier}: Contains dictionary with keys {keys}. Need a single key or list!")
             continue
-        data = data[keys[0]]
+        identifier = keys[0]
+        data = data[identifier]
     assert isinstance(data, list)
     for irec in data:
         assert isinstance(irec, dict)
-        orec = { 'origin': fname }
+        orec = { 'origin': identifier }
         
         # general mapping attempt
         for field, lookup_candidates in candidates.items():

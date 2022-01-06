@@ -1,164 +1,136 @@
-aggregated_posts:
-- date: '2021-08-26'
-  link: https://denktmit.de/2021/08/26/show-your-Workspace.html
-  origin: denktmit-blog
-  title: Show your Workspace! Der Auftakt
-- date: '2021-08-25'
-  link: https://denktmit.de/2021/08/25/kriegs-sport-sprache.html
-  origin: denktmit-blog
-  title: Martialische Redewendungen im beruflichen Alltag
-- date: '2021-07-02'
-  link: https://denktmit.de/2021/07/02/repl-cli-ide-wars.html
-  origin: denktmit-blog
-  title: Die IDE-Wars
-- date: '2021-06-29'
-  link: https://denktmit.de/2021/06/29/tellerrand-stackbasierte-programmiersprachen.html
-  origin: denktmit-blog
-  title: "Der Blick \xFCber den Tellerrand, Volume 1: Stackbasierte Programmiersprachen"
-- date: '2021-06-08'
-  link: https://denktmit.de/2021/06/08/plaintext.html
-  origin: denktmit-blog
-  title: Plaintext ist Trumpf
-- date: '2021-06-07'
-  link: https://denktmit.de/2021/06/07/gendern-in-markup.html
-  origin: denktmit-blog
-  title: Gendern im Markup und in Programmiersprachen
-- date: '2016-04-12'
-  link: https://arxiv.org/abs/1604.03263
-  origin: papers
-  title: Geometric model of black hole quantum <i>N</i>-portrait, extradimensions
-    and thermodynamics
-- date: '2017-03-13'
-  link: https://arxiv.org/abs/1703.05222
-  origin: papers
-  title: Generalized uncertainty principle and extra dimensions
-- date: '2017-07-31'
-  link: https://arxiv.org/abs/1707.0991
-  origin: papers
-  title: A strongly hyperbolic first-order CCZ4 formulation of the Einstein equations
-    and its solution with discontinuous Galerkin schemes
-- date: '2017-11-01'
-  link: https://arxiv.org/abs/1711.08221
-  origin: papers
-  title: Towards an exascale code for GRMHD on dynamical spacetimes
-- date: '2017-12-06'
-  link: https://arxiv.org/abs/1801.02839
-  origin: papers
-  title: ADER discontinuous Galerkin schemes for the general relativistic magnetohydrodynamics
-    equations
-- date: '2018-12-06'
-  link: https://arxiv.org/abs/1901.09977
-  origin: papers
-  title: General-relativistic measurement of the threshold mass to prompt collapse
-- date: '2019-03-06'
-  origin: papers
-  title: Generalized Uncertainty Principle and Extra Dimensions
-- date: '2021-12-26'
+t29-blog:
+- author: Sven
+  guid: https://technikum29.de/blog/2021-12-26-Jahresabschluss
   link: https://technikum29.de/blog/2021-12-26-Jahresabschluss
-  origin: t29-blog
+  pubDate: '2021-12-26'
   title: "technikum29 w\xFCnscht sch\xF6ne Feiertage \u2014 wir fassen zusammen, was\
     \ 2021 geschah"
-- date: '2021-09-08'
+- author: Roland
+  guid: https://technikum29.de/blog/2021-09-07-Unsere-IBM5100-funktioniert-wieder
   link: https://technikum29.de/blog/2021-09-07-Unsere-IBM5100-funktioniert-wieder
-  origin: t29-blog
+  pubDate: '2021-09-08'
   title: Unsere IBM5100 funktioniert wieder !
-- date: '2021-07-27'
+- author: Roland
+  guid: https://technikum29.de/blog/2021-07-27-BTX_im_technikum
   link: https://technikum29.de/blog/2021-07-27-BTX_im_technikum
-  origin: t29-blog
+  pubDate: '2021-07-27'
   title: 'Neu im technikum29: BTX'
-- date: '2021-07-05'
+- author: Roland
+  guid: https://technikum29.de/blog/2021-07-05_weiterer_Neuzugang
   link: https://technikum29.de/blog/2021-07-05_weiterer_Neuzugang
-  origin: t29-blog
+  pubDate: '2021-07-05'
   title: Ein neuer Lochkartenstanzer im technikum29
-- date: '2021-07-05'
+- author: Roland
+  guid: https://technikum29.de/blog/2021-07-05_UPDATE_IBM5320
   link: https://technikum29.de/blog/2021-07-05_UPDATE_IBM5320
-  origin: t29-blog
+  pubDate: '2021-07-05'
   title: 'UPDATE IBM5320: neue Software'
-- date: '2021-05-19'
+- author: Roland
+  guid: https://technikum29.de/blog/2021-05-19-MADAS
   link: https://technikum29.de/blog/2021-05-19-MADAS
-  origin: t29-blog
+  pubDate: '2021-05-19'
   title: Unsere MADAS VII eTA rechnet wieder !
-- date: '2021-05-15'
+- author: Roland
+  guid: https://technikum29.de/blog/2021-05-15-Wiederinbetriebnahme-5320
   link: https://technikum29.de/blog/2021-05-15-Wiederinbetriebnahme-5320
-  origin: t29-blog
+  pubDate: '2021-05-15'
   title: Wiederinbetriebnahme IBM5320
-- date: '2021-05-01'
+- author: Roland
+  guid: https://technikum29.de/blog/2021-05-01-Neuzugaenge
   link: https://technikum29.de/blog/2021-05-01-Neuzugaenge
-  origin: t29-blog
+  pubDate: '2021-05-01'
   title: "Neuzug\xE4nge"
-- date: '2021-04-30'
+- author: Roland
+  guid: https://technikum29.de/blog/2021-04-30-Update-Safe
   link: https://technikum29.de/blog/2021-04-30-Update-Safe
-  origin: t29-blog
+  pubDate: '2021-04-30'
   title: 'UPDATE: Wer knackt den Banktresor?'
-- date: '2020-12-10'
+- author: Sven
+  guid: https://technikum29.de/blog/2020-12-10-Jahresabschluss
   link: https://technikum29.de/blog/2020-12-10-Jahresabschluss
-  origin: t29-blog
+  pubDate: '2020-12-10'
   title: "technikum29 w\xFCnscht sch\xF6ne Feiertage \u2014 wir fassen zusammen, was\
     \ 2020 geschah"
-- date: '2020-09-03'
+- author: Sven
+  guid: https://technikum29.de/blog/2020-09-03-Lagersuche
   link: https://technikum29.de/blog/2020-09-03-Lagersuche
-  origin: t29-blog
+  pubDate: '2020-09-03'
   title: "Wir suchen Lagerfl\xE4chen"
-- date: '2020-07-27'
+- author: Sven
+  guid: https://technikum29.de/blog/2020-07-27-iTelex
   link: https://technikum29.de/blog/2020-07-27-iTelex
-  origin: t29-blog
+  pubDate: '2020-07-27'
   title: Unsere Fernschreiber sind ans Telex-Netzwerk angebunden
-- date: '2020-07-07'
+- author: Sven
+  guid: https://technikum29.de/blog/2020-07-07-Nachlese-Helfertag
   link: https://technikum29.de/blog/2020-07-07-Nachlese-Helfertag
-  origin: t29-blog
+  pubDate: '2020-07-07'
   title: Erfolgreicher Helfertag am 04.07.2020
-- date: '2020-03-03'
+- author: Roland
+  guid: https://technikum29.de/blog/2020-03-03-Nachlese-Arbeitswochenende
   link: https://technikum29.de/blog/2020-03-03-Nachlese-Arbeitswochenende
-  origin: t29-blog
+  pubDate: '2020-03-03'
   title: "Erfolgreiches Treffen der Unterst\xFCtzer des technikum29 am 28.02.2020"
-- date: '2020-02-05'
+- author: Sven
+  guid: https://technikum29.de/blog/2020-02-05-Safetuer
   link: https://technikum29.de/blog/2020-02-05-Safetuer
-  origin: t29-blog
+  pubDate: '2020-02-05'
   title: Wer knackt den Banktresor?
-- date: '2020-01-04'
+- author: Roland
+  guid: https://technikum29.de/blog/2020-01-04-Ankuendigung-Arbeitstag
   link: https://technikum29.de/blog/2020-01-04-Ankuendigung-Arbeitstag
-  origin: t29-blog
+  pubDate: '2020-01-04'
   title: "Ank\xFCndigung des n\xE4chsten Samstages zum gemeinsamen Arbeiten"
-- date: '2019-12-21'
+- author: Roland
+  guid: https://technikum29.de/blog/2019-12-21-Jahresabschluss
   link: https://technikum29.de/blog/2019-12-21-Jahresabschluss
-  origin: t29-blog
+  pubDate: '2019-12-21'
   title: "technikum29 w\xFCnscht sch\xF6ne Feiertage \u2014 wir fassen zusammen, was\
     \ 2019 geschah."
-- date: '2019-12-05'
+- author: Roland
+  guid: https://technikum29.de/blog/2019-12-05-cpt-8800
   link: https://technikum29.de/blog/2019-12-05-cpt-8800
-  origin: t29-blog
+  pubDate: '2019-12-05'
   title: 'Neuzugang im Museum: CPT 8800 Textverarbeitungssystem'
-- date: '2019-11-25'
+- author: Roland
+  guid: https://technikum29.de/blog/2019-11-25-Nachlese-Arbeitswochenende
   link: https://technikum29.de/blog/2019-11-25-Nachlese-Arbeitswochenende
-  origin: t29-blog
+  pubDate: '2019-11-25'
   title: "Erstes Arbeitswochenende der Unterst\xFCtzer des technikum29 erfolgreich\
     \ beendet"
-- date: '2019-11-06'
+- author: Sven
+  guid: https://technikum29.de/blog/2019-11-06-Ankuendigung-Arbeitswochenende
   link: https://technikum29.de/blog/2019-11-06-Ankuendigung-Arbeitswochenende
-  origin: t29-blog
+  pubDate: '2019-11-06'
   title: "Ank\xFCndigung: Arbeitswochenende am 23. November im Museum"
-- date: '2019-10-31'
+- author: Sven
+  guid: https://technikum29.de/blog/2019-10-31-Auftakttreffen
   link: https://technikum29.de/blog/2019-10-31-Auftakttreffen
-  origin: t29-blog
+  pubDate: '2019-10-31'
   title: Das Auftakttreffen im technikum29 fand statt
-- date: '2019-09-14'
+- author: Sven
+  guid: https://technikum29.de/blog/2019-10-14-VCFB-Nachlese
   link: https://technikum29.de/blog/2019-10-14-VCFB-Nachlese
-  origin: t29-blog
+  pubDate: '2019-09-14'
   title: Wir waren auf dem Vintage Computing Festival Berlin (mit Video)
-- date: '2019-09-20'
+- author: Sven
+  guid: https://technikum29.de/blog/2019-09-20-Ankuendigung-Kickoff
   link: https://technikum29.de/blog/2019-09-20-Ankuendigung-Kickoff
-  origin: t29-blog
+  pubDate: '2019-09-20'
   title: "Ank\xFCndigung: Auftakttreffen im technikum29"
-- date: '2019-08-15'
+- author: Sven
+  guid: https://technikum29.de/blog/2019-08-15-Ankuendigung-VCFB
   link: https://technikum29.de/blog/2019-08-15-Ankuendigung-VCFB
-  origin: t29-blog
+  pubDate: '2019-08-15'
   title: "Ank\xFCndigung: technikum29 auf dem Vintage Computing Festival Berlin"
-- date: '2019-02-21'
+- author: Sven
+  guid: https://technikum29.de/blog/2019-02-21-Organisationsformen
   link: https://technikum29.de/blog/2019-02-21-Organisationsformen
-  origin: t29-blog
+  pubDate: '2019-02-21'
   title: Organisationsformen
-- date: '2019-02-04'
+- author: Sven
+  guid: https://technikum29.de/blog/2019-02-04-the-heritage
   link: https://technikum29.de/blog/2019-02-04-the-heritage
-  origin: t29-blog
+  pubDate: '2019-02-04'
   title: The Heritage
 

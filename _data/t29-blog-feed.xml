@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss 
+   xmlns:atom="http://www.w3.org/2005/Atom"
+   xml:lang="de"
+   version="2.0">
+    <channel>
+	<title>technikum29 Blog</title>
+	<link>http://www.technikum29.de</link>
+	<description>A blog about news from the technikum29 computer museum</description>
+	<language>de</language>
+	<copyright>&#x2117; &amp; &#xA9; 2003-2022 Sven K&#245;ppel and the technikum29 team</copyright>
+	<pubDate>Thu, 06 Jan 2022 10:14:34 +0100</pubDate>
+	<image>
+		<url>https://www.technikum29.de/shared/img-v6/banner.de.png</url>
+		<title>technikum29 Computermuseum</title>
+		<link>https://www.technikum29.de/</link>
+	</image>
+	<!-- Time To Live: Cache validity time for channel until update in minutes -->
+	<!--<ttl>720</ttl>--><!-- half a day -->
+	
+	<atom:link href="https://www.technikum29.de/blog/rss" rel="self" type="application/rss+xml" />	
+	
+				<item>
+				<title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2021 geschah</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2021-12-26-Jahresabschluss</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2021-12-26-Jahresabschluss</guid>
+				<pubDate>2021-12-26</pubDate>
+			</item>
+						<item>
+				<title>Unsere IBM5100 funktioniert wieder !</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2021-09-07-Unsere-IBM5100-funktioniert-wieder</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2021-09-07-Unsere-IBM5100-funktioniert-wieder</guid>
+				<pubDate>2021-09-08</pubDate>
+			</item>
+						<item>
+				<title>Neu im technikum29: BTX</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2021-07-27-BTX_im_technikum</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2021-07-27-BTX_im_technikum</guid>
+				<pubDate>2021-07-27</pubDate>
+			</item>
+						<item>
+				<title>Ein neuer Lochkartenstanzer im technikum29</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2021-07-05_weiterer_Neuzugang</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2021-07-05_weiterer_Neuzugang</guid>
+				<pubDate>2021-07-05</pubDate>
+			</item>
+						<item>
+				<title>UPDATE IBM5320: neue Software</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2021-07-05_UPDATE_IBM5320</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2021-07-05_UPDATE_IBM5320</guid>
+				<pubDate>2021-07-05</pubDate>
+			</item>
+						<item>
+				<title>Unsere MADAS VII eTA rechnet wieder !</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2021-05-19-MADAS</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2021-05-19-MADAS</guid>
+				<pubDate>2021-05-19</pubDate>
+			</item>
+						<item>
+				<title>Wiederinbetriebnahme IBM5320</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2021-05-15-Wiederinbetriebnahme-5320</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2021-05-15-Wiederinbetriebnahme-5320</guid>
+				<pubDate>2021-05-15</pubDate>
+			</item>
+						<item>
+				<title>Neuzugänge</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2021-05-01-Neuzugaenge</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2021-05-01-Neuzugaenge</guid>
+				<pubDate>2021-05-01</pubDate>
+			</item>
+						<item>
+				<title>UPDATE: Wer knackt den Banktresor?</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2021-04-30-Update-Safe</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2021-04-30-Update-Safe</guid>
+				<pubDate>2021-04-30</pubDate>
+			</item>
+						<item>
+				<title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2020 geschah</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2020-12-10-Jahresabschluss</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2020-12-10-Jahresabschluss</guid>
+				<pubDate>2020-12-10</pubDate>
+			</item>
+						<item>
+				<title>Wir suchen Lagerflächen</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2020-09-03-Lagersuche</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2020-09-03-Lagersuche</guid>
+				<pubDate>2020-09-03</pubDate>
+			</item>
+						<item>
+				<title>Unsere Fernschreiber sind ans Telex-Netzwerk angebunden</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2020-07-27-iTelex</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2020-07-27-iTelex</guid>
+				<pubDate>2020-07-27</pubDate>
+			</item>
+						<item>
+				<title>Erfolgreicher Helfertag am 04.07.2020</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2020-07-07-Nachlese-Helfertag</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2020-07-07-Nachlese-Helfertag</guid>
+				<pubDate>2020-07-07</pubDate>
+			</item>
+						<item>
+				<title>Erfolgreiches Treffen der Unterstützer des technikum29 am 28.02.2020</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2020-03-03-Nachlese-Arbeitswochenende</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2020-03-03-Nachlese-Arbeitswochenende</guid>
+				<pubDate>2020-03-03</pubDate>
+			</item>
+						<item>
+				<title>Wer knackt den Banktresor?</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2020-02-05-Safetuer</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2020-02-05-Safetuer</guid>
+				<pubDate>2020-02-05</pubDate>
+			</item>
+						<item>
+				<title>Ankündigung des nächsten Samstages zum gemeinsamen Arbeiten</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2020-01-04-Ankuendigung-Arbeitstag</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2020-01-04-Ankuendigung-Arbeitstag</guid>
+				<pubDate>2020-01-04</pubDate>
+			</item>
+						<item>
+				<title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2019 geschah.</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2019-12-21-Jahresabschluss</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-12-21-Jahresabschluss</guid>
+				<pubDate>2019-12-21</pubDate>
+			</item>
+						<item>
+				<title>Neuzugang im Museum: CPT 8800 Textverarbeitungssystem</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2019-12-05-cpt-8800</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-12-05-cpt-8800</guid>
+				<pubDate>2019-12-05</pubDate>
+			</item>
+						<item>
+				<title>Erstes Arbeitswochenende der Unterstützer des technikum29 erfolgreich beendet</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2019-11-25-Nachlese-Arbeitswochenende</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-11-25-Nachlese-Arbeitswochenende</guid>
+				<pubDate>2019-11-25</pubDate>
+			</item>
+						<item>
+				<title>Ankündigung: Arbeitswochenende am 23. November im Museum</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2019-11-06-Ankuendigung-Arbeitswochenende</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-11-06-Ankuendigung-Arbeitswochenende</guid>
+				<pubDate>2019-11-06</pubDate>
+			</item>
+						<item>
+				<title>Das Auftakttreffen im technikum29 fand statt</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2019-10-31-Auftakttreffen</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-10-31-Auftakttreffen</guid>
+				<pubDate>2019-10-31</pubDate>
+			</item>
+						<item>
+				<title>Wir waren auf dem Vintage Computing Festival Berlin (mit Video)</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2019-10-14-VCFB-Nachlese</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-10-14-VCFB-Nachlese</guid>
+				<pubDate>2019-09-14</pubDate>
+			</item>
+						<item>
+				<title>Ankündigung: Auftakttreffen im technikum29</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2019-09-20-Ankuendigung-Kickoff</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-09-20-Ankuendigung-Kickoff</guid>
+				<pubDate>2019-09-20</pubDate>
+			</item>
+						<item>
+				<title>Ankündigung: technikum29 auf dem Vintage Computing Festival Berlin</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2019-08-15-Ankuendigung-VCFB</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-08-15-Ankuendigung-VCFB</guid>
+				<pubDate>2019-08-15</pubDate>
+			</item>
+						<item>
+				<title>Organisationsformen</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2019-02-21-Organisationsformen</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-02-21-Organisationsformen</guid>
+				<pubDate>2019-02-21</pubDate>
+			</item>
+						<item>
+				<title>The Heritage</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2019-02-04-the-heritage</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2019-02-04-the-heritage</guid>
+				<pubDate>2019-02-04</pubDate>
+			</item>
+			
+  </channel>
+</rss> 

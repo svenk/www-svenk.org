@@ -6,13 +6,15 @@ layout: default
 
 <h1>Blog</h1>
 
-{% assign blog_collection = site.data.aggregated_posts.aggregated_posts | sort: 'date' | reverse %}
-<ul>
-{% for item in blog_collection  %}
+{% assign sources = site.data.data_sources.data_sources %}
+{% assign collection = site.data.aggregated_posts.aggregated_posts | sort: 'date' | reverse %}
+<ul class="blog">
+{% for item in collection  %}
     <li>
-    <a href="{{ item.link }}" class="{{ item.origin }}">
-        <span class="title">{{ item.title }}</span>
+        <a class="selector" href="#" title="{{sources[item.origin].title }}"><img src="{{ sources[item.origin].icon }}"></a>
+        <a href="{{ item.link }}" class="{{ item.origin }}">{{ item.title }}</a>
         <span class="date">{{ item.date | date:"%b %Y" }}</span>
-    </a>
+    </li>
 {% endfor %}
 </ul>
+
