@@ -5,29 +5,14 @@ layout: default
 ---
   <h1 id="science">Research</h1>
 
-  <p class="lead">I am a theoretical physicist with a background in applied mathematics,
-     mathematical physics and computer science. My current research
+  <p class="lead">I am a theoretical physicist
+     with a background in quantum gravity, relativistic astrophysics,
+     applied mathematics and computer science. My current research
      focus is on exotic computing approaches, such as 
-     <a href="#analog">analog computing</a>, quantum computing or
+     analog computing, quantum computing or
      neuromorphic architectures.
 
-  <p>I graduated with a PhD thesis on
-     <a href="../publications/Thesis/phdthesis-Sven-Koeppel.pdf">numerical and quantum
-     general relativity</a> at <a href="https://www.uni-frankfurt.de/">Goethe-Universität Frankfurt</a>
-     in 2019. A major research interest during my studies was
-     <a href="../publications/Thesis/Sven-Koeppel-master-thesis-Ultraviolet-improved-black-holes.pdf">exotic
-     high energy physics</a> and quantum field theory. On the field of
-     applied mathematics, I studied advanced numerical methods for partial
-     differential equations. I worked on exascale methods for
-     solving hyperbolic equations
-     within the European <a href="https://exahype.eu/">ExaHyPE</a> project.
-
-<!-- Since April 2020 I work on a German-based research and engineering
-     project to explore analog computing to accelerate the most challenging
-     problems in computing, such as simulation of quantum computers,
-     machine learning and artificial intelligence. -->
-
-  <h2 id="analog">Analog computing</h2>
+  <h2 id="analog">Analog Computing</h2>
   <p>Analog computing is a rediscovered branch of science which was beaten
   by digital (i.e. algorithmic/numeric) computing in the 1980s. In the dawn
   of Moore's law, this branch of classical computing percieves a revival.
@@ -47,7 +32,14 @@ layout: default
   accessibility of the largest problems in the world.
   
   <p>Here are a few recent publications in the context of analog computing:
+  
+  <div class="hide-labels">
+  {% assign analog_papers = site.data.scientific_publications.scientific_publications |
+     where_exp:"item", "item.labels contains 'analog'" | sort: 'date'  %}
+  {% include listing-snippet-publications.html papers=analog_papers %}
+  </div>
 
+  <!-- Old list:
   <ul>
     <li>Ulmann, Köppel, Killat:
         <a href="https://ieeexplore.ieee.org/abstract/document/9598447">
@@ -64,41 +56,63 @@ layout: default
         submitted to Emerging Topics in Computing, IEEE Trans,
         preprint at <a href="https://arxiv.org/pdf/2107.06283">arXiv:2107.06283</a>.
   </ul>
+  -->
   
-
-
   <!--
-  <h3>Reference material about analog computing</h3>
-  <p>Note: I am conducting research on analog computing since half a year
-  and a couple of publications are in the pipeline. In the meantime, see
-  for instance these publications:
-  
-  <ul>
-    <li><a href="https://www.nature.com/articles/s41467-018-07327-2">A continuous-time MaxSAT solver with high analog performance</a>
-        (Molnár+2018, Nature Communications).
-    <li><a href="https://www.nature.com/articles/s41598-019-49699-5">Analog Coupled Oscillator Based Weighted Ising Machine</a>
-        (Chou+2019, Nature Scientific Reports on <a href="https://www.nature.com/collections/hfddcbgbea">Novel
-         hardware and concepts for unconvential computing</a>).
-    <li><a href="https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2010.0017">Quantum analogue computing</a>
-        (Kendon+2010, PTRS)
-  </ul>
-
   <p>(Note to myself: We have more then 300 papers compiled on analog computing
   in all kind of scientific branches and will put a literature database online
   soon)
   -->
+  
+  <h2>Gravity and Quantum Physics</h2>
+  
+  <p>As a theoretical physicist in particle physics, my research interest is on the smallest scales.
+     This is why I started my studies on understanding quarks (and their dynamics, described by a
+     Quantum Field Theory called Quantum Chromodynamics) and later switched to quantum black holes,
+     which are many orders of magnitude smaller. In this exotic field of high energy physics, I wrote
+     a master thesis about
+     <a href="../publications/Thesis/Sven-Koeppel-master-thesis-Ultraviolet-improved-black-holes.pdf">Ultraviolet
+     improved black holes</a>. Fascinated by Einstein Field Theory, I switched my focus on numerical
+     relativity and gravitational waves. In 2019 I graduated with a PhD Thesis on
+     <a href="../publications/Thesis/phdthesis-Sven-Koeppel.pdf">high-order methods in fully
+     general-relativistic hydrodynamics and magnetohydrodynamics</a>. This project was carried out at
+     <a href="https://www.uni-frankfurt.de/">Goethe-Universität Frankfurt</a> within a Horizon2020
+     collaboration with the Universities of <a href="https://www.unitn.it/en">Trento</a> and
+     <a href="https://www.durham.ac.uk/homepage/">Durham</a>. Within this project, called
+     <a href="https://exahype.eu/">ExaHyPE</a>, I studied numerical methods for solving 
+     hyperbolic partial differential equations on future exascale architectures.
 
-  <h2>My Scientific Publications</h2>
+  {% assign analog_papers = site.data.scientific_publications.scientific_publications |
+     where_exp:"item", "item.labels contains 'hep'" | sort: 'date'  %}
+  {% include listing-snippet-publications.html papers=analog_papers %}
+
+  <h2>Physics Education Research</h2>
+  
+  <p>Between 2009 and 2019, I was actively working in didactics and engineering of e-Learning
+  ressources and mediatization attempts. Cumulated, I raised more then 500kEUR for setting up
+  large teams dedicated to creating content, videos and digital tools. We had several offices
+  and own computer and server infrastructure. Here's a bit of
+  <a href="https://svenk.org/~koeppel/elearning/">project description</a>.</p>
+  
+
+  <h2>See also</h2>
   <p>
+  <!--
   You can read <a href="publications.html">my publications list</a>, but you better
   head on to the more recent listings at 
+  -->
+  For publication listings, see also
   <a href="https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=find%20a%20sven%20k%C3%B6ppel%20or%20find%20a%20sven%20koeppel">Inspire-HEP</a>,
   <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22K%C3%B6ppel%2C%20Sven%22&sort=date%20desc%2C%20bibcode%20desc&p_=0">NASA-ADS</a>,
-  <a href="https://dblp.uni-trier.de/pid/181/3351.html">DBLP</a>
+  <a href="https://dblp.uni-trier.de/pid/181/3351.html">DBLP</a> or
   <a href="https://arxiv.org/search/?query=sven+k%C3%B6ppel&searchtype=all&source=header">ArXiV</a>.
+  I have a <a href="https://www.researchgate.net/profile/Sven_Koeppel">ResearchGate profile</a>
+  and my ORCID is <a href="https://orcid.org/0000-0003-2303-7765">0000-0003-2303-7765</a>.
+  The mathematics genealogy project <a href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=250352">has an entry about me</a>,
+  als <a href="http://d-nb.info/gnd/1189697777">DNB has one</a>.
   In the past, I wrote a couple of 
   <a href="https://svenk.org/~koeppel/papers/outreach">outreach press/blog posts</a>.
-  
+  <!--
   <p>You can read my PhD thesis about
   <a href="../publications/Thesis/phdthesis-Sven-Koeppel.pdf">high-order methods in
   fully general-relativistic hydrodynamics and magnetohydrodynamics</a>
@@ -108,8 +122,7 @@ layout: default
   [<a href="http://d-nb.info/1164077651">DNB</a>].
   
   <h2>Trivia</h2>
-  <p>The mathematics genealogy project <a href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=250352">has an entry about me</a>,
-  als <a href="http://d-nb.info/gnd/1189697777">DNB has one</a>.
-  I have a <a href="https://www.researchgate.net/profile/Sven_Koeppel">ResearchGate profile</a>
-  and my ORCID is <a href="https://orcid.org/0000-0003-2303-7765">0000-0003-2303-7765</a>.
+  -->
+
+
   

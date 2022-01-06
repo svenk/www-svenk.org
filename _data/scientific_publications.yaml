@@ -21,7 +21,8 @@ scientific_publications:
     url: https://www.uni-hamburg.de/elearning/hamburger-elearning-magazin-04.pdf
   - title:  Ultraviolet improved black holes
     labels:
-      - quantum gravity
+      - hep
+      - quantum-gravity
       - thesis
       - master thesis
     authors:
@@ -43,6 +44,8 @@ scientific_publications:
     arxiv_suffix: "[gr-qc]"
     DOI: 10.3390/e18050181
     labels:
+      - hep
+      - quantum-gravity
       - peer-reviewed
   - title: Generalized uncertainty principle and extra dimensions
     authors:
@@ -58,6 +61,8 @@ scientific_publications:
     arxiv: "1703.05222"
     arxiv_suffix: "[hep-th]"
     labels:
+      - hep
+      - quantum-gravity
       - proceeding
       - peer-reviewed
   - title: Generalized Uncertainty Principle and Black Holes in Higher Dimensional Self-Complete Gravity
@@ -71,6 +76,8 @@ scientific_publications:
     DOI: 10.1088/1475-7516/2019/08/008
     inspire: https://inspirehep.net/literature/1733875
     labels:
+      - hep
+      - quantum-gravity
       - quantum-gravity
       - peer-reviewed
   - title: A strongly hyperbolic first-order CCZ4 formulation of the Einstein equations and its solution with discontinuous Galerkin schemes
@@ -86,6 +93,8 @@ scientific_publications:
     arxiv: "1707.09910"
     arxiv_suffix: "[gr-qc]"
     labels:
+      - hep
+      - astrophysics
       - peer-reviewed
   - title: Towards an exascale code for GRMHD on dynamical spacetimes
     authors:
@@ -110,6 +119,8 @@ scientific_publications:
     arxiv: "1801.02839"
     arxiv_suffix: "[gr-qc]"
     labels:
+      - hep
+      - astrophysics
       - peer-reviewed
   - title: A General-relativistic Determination of the Threshold Mass to Prompt Collapse in Binary Neutron Star Mergers
     authors:
@@ -123,6 +134,8 @@ scientific_publications:
     inspire: https://inspirehep.net/literature/1717519
     labels:
       - peer-reviewed
+      - hep
+      - astrophysics
   - title: "ExaHyPE: An Engine for Parallel Dynamically Adaptive Simulations of Wave Problems"
     authors:
       - Reinarz
@@ -143,18 +156,25 @@ scientific_publications:
     arxiv: "1905.07987"
     date: May 2020
     DOI: 10.1016/j.cpc.2020.107251
+    labels:
+      - peer-reviewed
+      - hep
+      - astrophysics
   - title: "High-order methods in fully general-relativistic hydrodynamics & magnetohydrodynamics"
+    date: Jun 2019
     authors:
        - Sven Köppel
     labels:
+       - hep
+       - astrophysics
        - thesis
        - phd thesis
        - numerical relavitiy
        - quantum gravity
     URN: "urn:nbn:de:hebis:30:3-507282"
     links:
-       - http://publikationen.ub.uni-frankfurt.de/frontdoor/index/index/docId/50728
        - https://github.com/svenk/publications/blob/master/Thesis/phdthesis-Sven-Koeppel.pdf
+       - http://publikationen.ub.uni-frankfurt.de/frontdoor/index/index/docId/50728
        - https://github.com/svenk/phdthesis
   - title: About using analog computers in today's largest computational challenges
     authors:
@@ -166,7 +186,7 @@ scientific_publications:
     DOI: 10.5194/ars-19-105-2021
     date: Feb 2021
     labels:
-       - analog computers
+       - analog
        - proceeding
        - peer-reviewed
   - title: Analog Computing for Molecular Dynamics
@@ -177,12 +197,13 @@ scientific_publications:
     date: July 2021
     arxiv: "2107.06283"
     labels:
-       - analog computers
+       - analog
        - preprint
   - title: Open Hardware Analog Computer for Education &mdash; Design and Application
     DOI: 10.23919/IEEECONF54431.2021.9598447
+    date: Sept 2021
     labels:
-       - analog computers
+       - analog
        - proceeding
        - peer-reviewed
     authors:

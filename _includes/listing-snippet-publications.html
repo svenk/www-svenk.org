@@ -1,0 +1,36 @@
+{% comment %}
+  Expects to be passed a papers structure.
+  See for instance usage in publications/index.html
+{% endcomment %}
+
+<ul class="papers">
+{% for paper in include.papers %}
+<li><span class="headline">
+        {{ paper.authors | join: ", " }}:
+        
+        {% for label in paper.labels %}
+            <span class="label label-info">{{label}}</span>
+        {% endfor %}
+        
+    </span>
+    <span class="title">{{ paper.title|raw }}</span>
+    
+    <span class="links">
+        {{ paper.date }}
+
+        {% if paper.inspire %}
+        [<a href="{{ paper.inspire }}">Inspire-HEP</a>]
+        {% endif %}	
+        {% if paper.arxiv %}
+        [<a href="http://arxiv.org/abs/{{paper.arxiv}}">ArXiV</a>]
+        {% endif %}
+        {% if paper.DOI %}
+        [<a href="http://dx.doi.org/{{ paper.DOI }}">DOI</a>]
+        {% endif %}
+        {% if paper.URN %}
+        [<a href="https://nbn-resolving.org/{{ paper.URN }}">URN</a>]
+        {% endif %}
+    </span>
+</li>
+{% endfor %}
+</ul>

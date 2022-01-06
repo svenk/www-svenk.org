@@ -7,8 +7,8 @@ main:
     url: /research/
   - title: Startups
     url: /companies/
-  - title: Media
-    url: /social/
+#  - title: Media
+#    url: /social/
   - title: Fun
     url: /misc/
   - title: Contact

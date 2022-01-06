@@ -2,24 +2,29 @@ data_sources:
   denktmit-blog:
     title: DenktMit Blog
     human_url: https://denktmit.de/outreach.html
-    icon: https://denktmit.de/files/sdm/images/logo_blue_without_text.png
+    icon: /assets/icons/code.png
     data_url: https://denktmit.de/blog-feed.xml
     local_file: denktmit-blog-feed.xml
-  papers:
+  scientific_publications:
     title: Publications
     human_url: https://github.com/svenk/publications/
-    icon: https://upload.wikimedia.org/wikipedia/commons/3/32/OOjs_UI_icon_academic.svg
+    icon: /assets/icons/univ.png
     data_url: https://raw.githubusercontent.com/svenk/publications/master/Papers/papers-svenk.yaml
-    local_file: papers-svenk.yaml
+    local_file: scientific_publications.yaml
+  talks:
+    title: Talks
+    human_url: https://github.com/svenk/publications/
+    icon: /assets/icons/talk.png
+    local_file: talks.yaml
   t29-blog:
     title: technikum29 Blog
     human_url: https://technikum29.de/blog/
-    icon: https://technikum29.de/shared/img-v6/touch-icon.png
+    icon: /assets/icons/museum.png
     data_url: https://technikum29.de/blog/rss.php
     local_file: t29-blog-feed.xml
   uniordner:
     title: Uniordner (historisch)
     human_url: http://sven.köppel.org/uni/
-    icon: http://sven.köppel.org/favicon.ico
+    icon: /assets/icons/talk.png
     data_url: http://sven.köppel.org/uni/cgi-bin/json-uniordner
     local_file: uniordner.json
