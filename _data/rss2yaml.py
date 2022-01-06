@@ -8,9 +8,12 @@ parser.add_argument("--author-filter", default="",
     help="Author name to filter on (case insensitive)")
 parser.add_argument("--skip-field", nargs="*",
     default=[], help="Fields to skip in output (ie: description)")
+parser.add_argument("--out-keyname", default=None,
+    help="Whether to output YAML dict with given key")
 args = parser.parse_args()
 
-xml = et.parse(args.xml_filename)
+parser = et.XMLParser(resolve_entities=False) # for also slurping not-so-well-formed XMLs
+xml = et.parse(args.xml_filename, parser)
 items = xml.findall("//item")
 records = [ { e.tag: e.text for e in item \
                if not e.tag in args.skip_field
@@ -20,5 +23,6 @@ if args.author_filter:
     records = list(filter(lambda rec: "author" in rec and 
         args.author_filter.lower() in  rec["author"].lower(),
         records))
-
-print(yaml.dump(records))
+    
+out_obj = {args.out_keyname: records} if args.out_keyname else records
+print(yaml.dump(out_obj))

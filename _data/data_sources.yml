@@ -1,11 +1,18 @@
 data_sources:
-  - title: DenktMit Blog
+  denktmit-blog:
+    title: DenktMit Blog
     human_url: https://denktmit.de/outreach.html
+    icon: https://denktmit.de/files/sdm/images/logo_blue_without_text.png
     data_url: https://denktmit.de/blog-feed.xml
     local_file: denktmit-blog-feed.xml
-    field_name: denktmit-blog-feed
-  - title: Publications
+  papers:
+    title: Publications
     human_url: https://github.com/svenk/publications/
-    field_name: papers
     data_url: https://raw.githubusercontent.com/svenk/publications/master/Papers/papers-svenk.yaml
     local_file: papers-svenk.yaml
+  t29-blog:
+    title: technikum29 Blog
+    human_url: https://technikum29.de/blog/
+    icon: https://technikum29.de/shared/img-v6/touch-icon.png
+    data_url: https://technikum29.de/blog/rss.php
+    local_file: t29-blog-feed.xml
