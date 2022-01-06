@@ -1,0 +1,43 @@
+talks:
+- author: "Sven K\xF6ppel"
+  date: 2021-06-18
+  event: Night Of Science, Frankfurt
+  event_website: https://www.nightofscience.de/
+  key: nos21
+  keywords:
+  - goethe-uni
+  - night of science
+  - analog
+  place: "Goethe-Universit\xE4t Frankfurt"
+  slides: https://github.com/svenk/publications/tree/master/Talks/2021-06-18-NOS-Frankfurt/NOS2021-Anabrid.pdf
+  sources: https://github.com/svenk/publications/tree/master/Talks/2021-06-18-NOS-Frankfurt/NOS2021-Anabrid.odp
+  title: "Die Zukunft ist Analog \u2013 wenn Digitalcomputern die Luft ausgeht"
+- author: "Sven K\xF6ppel"
+  date: 2021-10-13
+  event: "Kolloquium Fachbereich ETI, FH M\xFCnster"
+  event_website: https://www.fh-muenster.de/hochschule/aktuelles/news/index.php?newsId=2501
+  key: kolloqfhms
+  keywords:
+  - "m\xFCnster"
+  - kolloquium
+  - analog
+  place: "M\xFCnster University of Applied Sciences"
+  slides: "https://github.com/svenk/publications/tree/master/Talks/2021-10-13-Kolloq-FH-M\xFC\
+    nster/2021-10-Kolloq-FH-M\xFCnster.pdf"
+  title: "Die Zukunft ist Analog \u2013 Neue Rechnergenerationen \u201EBeyond Moore\u201C"
+- author: "Sven K\xF6ppel"
+  date: 2021-09-18
+  event: "TEDx M\xFCnster"
+  event_website: https://www.tedxmuenster.de/
+  key: tedxms21
+  keywords:
+  - ted
+  - "m\xFCnster"
+  - analog
+  material:
+    transcript: "https://github.com/svenk/publications/tree/master/Talks/2021-09-18-TEDx-M\xFC\
+      nster/Textentwurf TEDx v4.pdf"
+  place: "Lichtenberghaus, M\xFCnster"
+  title: "More Computing Power and Less CO2 Damage \u2013 a Plea for Analogue Computers"
+  video: https://www.youtube.com/watch?v=gg2YpIIlQpM
+

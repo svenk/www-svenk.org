@@ -26,12 +26,22 @@ def uniordner():
             return None
     return lookup
 
+def linklist(key):
+    # as seen in publications.yaml
+    def lookup(dct):
+        if key in dct and isinstance(dct[key], list) and len(dct[key])>0:
+            return dct[key][0]
+        else:
+            return None
+    return lookup
+
 candidates = {
     "title": [ "title", uniordner() ],
     "date":  [ "date", "pubDate" ],
-    "link":  [ "link", prepend("DOI", "https://dx.doi.org/"),
+    "link":  [ "video", "sources", "slides",
+               "link", prepend("DOI", "https://dx.doi.org/"),
                 prepend("arxiv", "https://arxiv.org/abs/"),
-                "sources", "slides" ]
+                linklist("links") ]
 }
 
 records = []
@@ -60,7 +70,7 @@ for fh in args.yaml_filenames:
         
         # try to parse date to something low fidelity
         if "date" in orec:
-            orec["date"] = parse_date(orec["date"]).strftime("%Y-%m-%d")
+            orec["date"] = parse_date(str(orec["date"])).strftime("%Y-%m-%d")
                     
         records.append(orec)
 

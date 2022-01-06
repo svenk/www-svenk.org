@@ -23,36 +23,87 @@ aggregated_posts:
   link: https://denktmit.de/2021/06/07/gendern-in-markup.html
   origin: denktmit-blog
   title: Gendern im Markup und in Programmiersprachen
+- date: '2013-01-06'
+  origin: scientific_publications
+  title: POKAL, Kollaboratives Mathematik-E-Learning neu erfunden
+- date: '2012-01-06'
+  origin: scientific_publications
+  title: 'BioKemika und MetaSearch: Biochemische Datenbanken und Online-Tools verstehen
+    und anwenden'
+- date: '2014-12-06'
+  link: https://github.com/svenk/publications/blob/master/Thesis/Sven-Koeppel-master-thesis-Ultraviolet-improved-black-holes.pdf
+  origin: scientific_publications
+  title: Ultraviolet improved black holes
 - date: '2016-04-12'
   link: https://arxiv.org/abs/1604.03263
-  origin: papers
+  origin: scientific_publications
   title: Geometric model of black hole quantum <i>N</i>-portrait, extradimensions
     and thermodynamics
 - date: '2017-03-13'
   link: https://arxiv.org/abs/1703.05222
-  origin: papers
+  origin: scientific_publications
   title: Generalized uncertainty principle and extra dimensions
+- date: '2019-08-06'
+  link: https://arxiv.org/abs/1905.03233
+  origin: scientific_publications
+  title: Generalized Uncertainty Principle and Black Holes in Higher Dimensional Self-Complete
+    Gravity
 - date: '2017-07-31'
-  link: https://arxiv.org/abs/1707.0991
-  origin: papers
+  link: https://arxiv.org/abs/1707.09910
+  origin: scientific_publications
   title: A strongly hyperbolic first-order CCZ4 formulation of the Einstein equations
     and its solution with discontinuous Galerkin schemes
 - date: '2017-11-01'
   link: https://arxiv.org/abs/1711.08221
-  origin: papers
+  origin: scientific_publications
   title: Towards an exascale code for GRMHD on dynamical spacetimes
 - date: '2017-12-06'
   link: https://arxiv.org/abs/1801.02839
-  origin: papers
+  origin: scientific_publications
   title: ADER discontinuous Galerkin schemes for the general relativistic magnetohydrodynamics
     equations
-- date: '2018-12-06'
+- date: '2019-02-06'
   link: https://arxiv.org/abs/1901.09977
-  origin: papers
-  title: General-relativistic measurement of the threshold mass to prompt collapse
-- date: '2019-03-06'
-  origin: papers
-  title: Generalized Uncertainty Principle and Extra Dimensions
+  origin: scientific_publications
+  title: A General-relativistic Determination of the Threshold Mass to Prompt Collapse
+    in Binary Neutron Star Mergers
+- date: '2020-05-06'
+  link: https://arxiv.org/abs/1905.07987
+  origin: scientific_publications
+  title: 'ExaHyPE: An Engine for Parallel Dynamically Adaptive Simulations of Wave
+    Problems'
+- date: '2019-06-06'
+  link: https://github.com/svenk/publications/blob/master/Thesis/phdthesis-Sven-Koeppel.pdf
+  origin: scientific_publications
+  title: High-order methods in fully general-relativistic hydrodynamics & magnetohydrodynamics
+- date: '2021-02-06'
+  link: https://arxiv.org/abs/2102.07268
+  origin: scientific_publications
+  title: About using analog computers in today's largest computational challenges
+- date: '2021-07-06'
+  link: https://arxiv.org/abs/2107.06283
+  origin: scientific_publications
+  title: Analog Computing for Molecular Dynamics
+- date: '2021-09-06'
+  link: https://dx.doi.org/10.23919/IEEECONF54431.2021.9598447
+  origin: scientific_publications
+  title: Open Hardware Analog Computer for Education &mdash; Design and Application
+- date: '2021-06-18'
+  link: https://github.com/svenk/publications/tree/master/Talks/2021-06-18-NOS-Frankfurt/NOS2021-Anabrid.pdf
+  origin: talks
+  title: "Die Zukunft ist Analog \u2013 wenn Digitalcomputern die Luft ausgeht (Night\
+    \ Of Science, Frankfurt)"
+- date: '2021-10-13'
+  link: "https://github.com/svenk/publications/tree/master/Talks/2021-10-13-Kolloq-FH-M\xFC\
+    nster/2021-10-Kolloq-FH-M\xFCnster.pdf"
+  origin: talks
+  title: "Die Zukunft ist Analog \u2013 Neue Rechnergenerationen \u201EBeyond Moore\u201C\
+    \ (Kolloquium Fachbereich ETI, FH M\xFCnster)"
+- date: '2021-09-18'
+  link: https://www.youtube.com/watch?v=gg2YpIIlQpM
+  origin: talks
+  title: "More Computing Power and Less CO2 Damage \u2013 a Plea for Analogue Computers\
+    \ (TEDx M\xFCnster)"
 - date: '2021-12-26'
   link: https://technikum29.de/blog/2021-12-26-Jahresabschluss
   origin: t29-blog
