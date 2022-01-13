@@ -151,6 +151,10 @@ body.landing .brand-tagline {
     visibility: hidden;
 }
 
+body.landing .footer {
+    display: none;
+}
+
 .brand-title,
 .brand-tagline {
     margin: 0;
@@ -218,17 +222,41 @@ body.landing .content {
     background-color: transparent;
 }
 
-.content {
+.content, .footer {
     background-color: rgba(255, 255, 255, .95);
     min-height: 100vh;
 }
 
-.content-wrapper {
+.content-wrapper, .footer-wrapper {
     max-width: 1000px;
     padding-bottom: 2em;
     /*margin: 2em;*/
     margin: 5%;
 }
+
+.footer {
+    width: 100%;
+    min-height: 0;
+}
+
+.footer-wrapper {
+    padding-bottom: 0;
+    position: relative;
+    text-align: center;
+    opacity: .8;
+}
+
+/* looks nice, but is too much */
+/*
+.footer-wrapper::before {
+    display: block;
+    content: '';
+    width: 30px;
+    height: 2px;
+    background-color: #959595;
+    margin-bottom: 1.5em;
+}
+*/
 
 .lead { /* typically a paragraph */
     font-size: 130%;
@@ -288,25 +316,18 @@ body.landing .content {
     text-shadow: 0 1px 1px #333;
 }
 
-.footer {
-    padding: 1em 0;
-}
-.footer a {
-    color: #ccc;
-    font-size: 80%;
-}
-.footer .pure-menu a:hover,
-.footer .pure-menu a:focus {
-    background: none;
-}
 
 @media (min-width: 48em) {
-    .content {
+    .content, .footer {
         margin-left: 25%;
     }
     
     .content-wrapper {
         margin: 20vh 3em 0;
+    }
+    
+    .footer-wrapper {
+        margin: 1em 3em;
     }
 
     .header {
@@ -320,10 +341,6 @@ body.landing .content {
         bottom: 0;
     }
 
-    .footer {
-        text-align: center;
-    }
-    
     .nav-item {
         display: block;
     }
@@ -338,7 +355,15 @@ pre {
     padding: 1em;
 }
 
+.footer a .icon {
+    width: 1em;
+    vertical-align: middle;
+    opacity: .7;
+}
 
+.footer a:hover .icon, .footer a:focus .icon {
+    opacity: 1;
+}
 
 /* Blog styling */
 
