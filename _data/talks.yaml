@@ -1,4 +1,17 @@
 talks:
+- author:
+  - Luca Moczko
+  - "Sven K\xF6ppel"
+  date: 2022-01-31
+  event: "Podcast \"Computing Machines\" von Luca Moczko mit Gast Sven K\xF6ppel"
+  key: podcast_qc_computing_machines
+  keywords:
+  - podcast
+  - analog
+  - spotify
+  languge: de
+  link: https://open.spotify.com/episode/0ekHBRXddwZCLE0LF4LkI9?si=8gNe2KWJTVWCntZ6AP8dHQ
+  title: Was sind Quantencomputer?
 - author: "Sven K\xF6ppel"
   date: 2021-06-18
   event: Night Of Science, Frankfurt
