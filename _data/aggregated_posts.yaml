@@ -1,4 +1,32 @@
 aggregated_posts:
+- date: '2022-02-22'
+  link: https://anabrid.com/news/2022-02-22/DLR-Ulm-Quanteninitiative/
+  origin: anabrid-news
+  title: Der Analogrechner der Zukunft entsteht in Ulm
+- date: '2022-01-24'
+  link: https://anabrid.com/news/2022-01-24/THAT-Production/
+  origin: anabrid-news
+  title: Anabrid build and sold 100 THE ANALOG THINGs
+- date: '2021-09-13'
+  link: https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/
+  origin: anabrid-news
+  title: "Frankfurter Allgemeine Zeitung: Neue Hoffnung f\xFCr die Analogrechner"
+- date: '2022-03-30'
+  link: https://the-analog-thing.org/newsletter/5/
+  origin: anabrid-news
+  title: 'The Analog Thing Newsletter #5: Production, test and shipping'
+- date: '2022-03-01'
+  link: https://twitter.com/analogparadigm/status/1510302871128092678
+  origin: anabrid-news
+  title: "CHIP-Magazin: F\xFCr Spezialanwendungen k\xF6nnten Analogrechner wiederauferstehen"
+- date: '2022-04-15'
+  link: https://the-analog-thing.org/newsletter/6/
+  origin: anabrid-news
+  title: 'The Analog Thing Newsletter #6: Shipping estimates'
+- date: '2022-04-11'
+  link: https://www.appliedai.de/hub/2022-ai-german-startup-landscape
+  origin: anabrid-news
+  title: 'AppliedAI: Anabrid is part of the German AI Startup Landscape'
 - date: '2022-04-06'
   link: https://denktmit.de/2022/04/06/Python-the-modern-Basic-lingua-franca.html
   origin: denktmit-blog
