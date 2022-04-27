@@ -5,9 +5,259 @@
     <description>Steigern Sie die digitale Eigenexpertise Ihrer Firma, indem Sie IT-Experten der DenktMit eG beauftragen. Wir involvieren Sie stets auf Augenhöhe.</description>
     <link>https://denktmit.de/</link>
     <atom:link href="https://denktmit.de/blog-feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Feb 2022 06:05:07 -0600</pubDate>
-    <lastBuildDate>Mon, 14 Feb 2022 06:05:07 -0600</lastBuildDate>
+    <pubDate>Fri, 08 Apr 2022 08:03:35 -0500</pubDate>
+    <lastBuildDate>Fri, 08 Apr 2022 08:03:35 -0500</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+     
+      <item>
+        <title>Python ist das BASIC des 21. Jahrhunderts</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;Viele Menschen lästern gerne. Gerade im Berufsleben ist das eine willkommene Ablenkung,
+und kaum ein Lästerthema ist so harmlos und sagt doch so viel aus wie &lt;em&gt;Programmiersprachen&lt;/em&gt;.
+Es ist überhaupt eine der liebsten Pausenbeschäftigungen von Programmierer:innen, über
+ihre täglichen Sprachen zu philosophieren. Ganz hervorragend kann man damit die eigene
+Überlegenheit demonstrieren und die Anhängerschaft unliebsamer Sprachen degradieren.&lt;/p&gt;
+
+&lt;h2 id=&quot;allgemeinplätze-allenthalben&quot;&gt;Allgemeinplätze allenthalben&lt;/h2&gt;
+
+&lt;p&gt;Bei Programmiersprachen geht es manchmal um Trivialitäten wie Semikolons, die Position
+von Klammern oder Namenskonventionen. Oder es geht um die Art der &lt;em&gt;Objektorientierung&lt;/em&gt;
+(OOP), die eine Sprache umsetzt. Dieser Begriff trendete eigentlich in den 1990er-Jahren,
+als die ersten Hochsprachen mit OOP trendeten und das Konzept gerade aus der Programmierung
+grafischer Benutzerschnittstellen (GUIs) aus den Kinderschuhen entwuchs. In diese Phase
+fällt der 1994er-Designklassiker der &lt;a href=&quot;https://de.wikipedia.org/wiki/Entwurfsmuster_(Buch)&quot;&gt;Gang of Four&lt;/a&gt;.
+Wer heute Advokat für starke typisierte Programmiersprachen ist, hat entweder 30 Jahre lang
+geschlafen oder will mit seiner akademischen Ausbildung prahlen. Denn was in den Lehrbüchern
+nach einer tollen Idee klingt, muss es in der Praxis noch lange nicht sein. Schöne Beispiele
+für solche Extreme ist &lt;em&gt;LISP&lt;/em&gt;, einer der Väter funktionaler Programmiersprachen
+(gerne auch in Form seines Urenkels &lt;em&gt;Haskell&lt;/em&gt; genommen) oder
+die objektorientierte, stark typisierte Programmiersprache &lt;em&gt;Java&lt;/em&gt;. Während funktionale
+Programmierung seit Jahrzehnten im Ausbildungsbetrieb und akademischen Umfeld Erfolge feiert,
+ist Java berühmt-berüchtigt für seinen Einsatz im “Enterprise”-Umfeld, und gehasst für seine
+Ausführlichkeit, seinen “Boilerplate”.&lt;/p&gt;
+
+&lt;p&gt;Doch die Zeit ist nicht stehengeblieben. Multiparadigmensprachen, einst erwachsen aus dem
+Scriptumfeld, sind seit Jahrzehnten in der Praxis angekommen und werden auch auf
+“Enterprise”-Plattformen wie der Java Virtual Machine (JVM) akzeptiert. In der Genossenschaft
+ist hier zum Beispiel &lt;em&gt;Kotlin&lt;/em&gt; sehr populär. Die Übergänge zwischen untypisiertem Script
+und “eventually typed” Enterprise-Programming sind hier fließend.&lt;/p&gt;
+
+&lt;p&gt;Doch damit genug zu den Allgemeinplätzen.&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-die-lingua-franca-der-70er-und-80er-jahre&quot;&gt;BASIC, die Lingua Franca der 70er und 80er-Jahre&lt;/h2&gt;
+
+&lt;p&gt;Lange bevor die meisten der Mitglieder der Genossenschaft geboren waren, gab es eine
+erfolgreiche Hochsprache, die noch auf die Zeit vor den Mikrocomputern zurückdatiert.
+Die Rede ist von &lt;em&gt;BASIC&lt;/em&gt;, der Sprache die durch ihre &lt;em&gt;GOTO&lt;/em&gt;-Befehle und nummerierten Zeilen
+berühmt geworden ist. BASIC hatte eine unglaublich niedrige Einstiegshürde, jeder konnte
+damit loslegen, es war auch die Sprache der Wahl um Computern Kindern näher zu bringen.
+Ein Basic-Interpreter passt in wenige Kilobyte und war auch später Teil von vielen
+DOS-Distributionen früher PC-Heimsysteme oder gar kleinerer Computer.&lt;/p&gt;
+
+&lt;p&gt;Und hier kommt mein “bold Statement”, meine gar nicht so kühne Behauptung: &lt;strong&gt;Python ist das
+BASIC unserer Tage&lt;/strong&gt;. Tatsächlich ist kaum eine Scriptsprache heute so verbreitet wie
+Python. Quer durch die Kompetenzbereiche, wie Umfragen von &lt;a href=&quot;https://insights.stackoverflow.com/survey/2021&quot;&gt;Stackoverflow&lt;/a&gt;
+oder dem &lt;a href=&quot;https://arxiv.org/pdf/2203.12466.pdf&quot;&gt;Chaos Computer Club&lt;/a&gt; zeigen, ist Python
+die am häufigsten verwendete Programmiersprache. Wie jede erfolgreiche Sprache scheiden sich
+die Geister an seinen Designentscheidungen, etwa der Strukturierung durch Einrückung,
+dem Ducktyping, dem Umgang mit Namensräumen und Modulen. Das Erfolgsrezept zum Start von
+Pythons Aufstieg ist eine Kombination von einfacher Syntax und der großen Standardbibliothek
+(“Batteries Included”). Mittlerweile gibt es auch in Python viele langsame und große
+Legacy-Codes, die unter ihrer schlechten Struktur ächtzen. Aber wie jede große Programmiersprache
+wurde auch Python weiterentwickelt, verfügt mittlerweile über ein algebraisches Typensystem
+welches nachträgliche Typisierung (“Evventual Typing”) ermöglicht. Und wie jede große Sprache
+hat es eine Achillesferse, die ihren Erfolg bedroht: Bei Python vor allem die Ausführungsgeschwindigkeit,
+die fehlende Multithreading-Fähigkeit (der berühmt-berüchtigte &lt;em&gt;Global Interpreter Lock&lt;/em&gt;),
+die &lt;a href=&quot;https://xkcd.com/1987/&quot;&gt;Installations-Routine&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;der-fluch-von-legacy-und-personal&quot;&gt;Der Fluch von Legacy und Personal&lt;/h2&gt;
+
+&lt;p&gt;Eine Community, der ich angehaftet bin und die stark auf Python setzt(e), ist die des wissenschaftlichen
+Rechnens. Python hat es durch jahrzehntelange Arbeit einer globalen Community aus Wissenschaftler:innen
+geschafft, Profi-Frameworks wie &lt;em&gt;Matlab&lt;/em&gt; die Pfründe zu stehlen. Moderne Biotechnologie-Codes
+entstehen nicht mehr in Matlab, sondern in Python, auf Open Source. Python dient dabei in der
+Regel als &lt;em&gt;Glue Language&lt;/em&gt;, um effizientem Code (der etwa in C++ geschrieben ist) eine benutzerfreundliche
+und vor allem einfache API vorzusetzen. Seine wir ehrlich, dabei geht es vor allem darum,
+Typisierungs-Boilerplate zu verhindern und die Syntax aufzuhübschen.&lt;/p&gt;
+
+&lt;p&gt;Natürlich dreht die Zeit sich aber weiter. So gibt es zum Beispiel die Programmiersprache
+&lt;a href=&quot;https://julialang.org/&quot;&gt;Julia&lt;/a&gt;, die in jenem wissenschaftlichen Umfeld als bewusster “Nachfolger”
+von Python auftritt und viele “Shortcomings” von Python überwindet. Auf einmal sieht sich eine neue Generation
+von Programmierer:innen dem Problem von Legacy-Code begegnet.&lt;/p&gt;
+
+&lt;p&gt;Und ein weiteres Problem ist durch den Platzhirsch zementiert: Dank dem
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Matth%C3%A4us-Effekt&quot;&gt;Matthäus-Effekt&lt;/a&gt; gibt es mehr Python-Entwickler als
+zu kleineren Programmiersprachen. Wer heute einen neuen Software-Stack entwirft, trifft mit Python keine
+grundsätzlich falsche Entscheidung. Und zementiert doch die Skalierungsprobleme von Python in seine
+personelle Struktur mit ein. Sprachen wie Go, Kotlin oder Julia versuchen den Wechsel einfach zu gestalten,
+sei es mit ähnlicher Syntax oder Adapterbibliotheken. Und doch ist der Wechsel einer Programmiersprache
+in einer großen Software ein riskantes Mammutprojekt.&lt;/p&gt;
+
+&lt;p&gt;Letztlich bleibt zu sagen: Egal für welches Software-Ökosystem man sich entscheidet, es gibt immer
+die Art von Entwickler:innen, die das System derart verbiegen und missbrauchen, dass daraus Spaghetticode
+und ein Performance-Grab wird. Wenig verbreitete Sprachen tendieren dazu, eher von Expert:innen genutzt zu
+werden, die wissen was sie tun – und die damit ein Scheinargument für die Überlegenheit dieser Sprache
+liefern. Wer guten Python-Code lesen will, der schaue sich zB. mal die &lt;a href=&quot;https://github.com/norvig/pytudes&quot;&gt;Pytudes von Peter Norvig&lt;/a&gt;
+an. Eine &lt;a href=&quot;https://github.com/pamoroso/free-python-books&quot;&gt;Übersicht zu Python-Büchern&lt;/a&gt; hilft dabei, die
+nötige Lektüre zu finden, eine Domäne mithilfe von Python zu meistern.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Apr 2022 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2022/04/06/Python-the-modern-Basic-lingua-franca.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2022/04/06/Python-the-modern-Basic-lingua-franca.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Express Your Domain Model With Asciidoctor And Plantuml</title>
+        <author>Sascha Bleidner</author>
+        <description>&lt;h2 id=&quot;the-importance-of-expressive-domain-models&quot;&gt;The Importance of Expressive Domain Models&lt;/h2&gt;
+
+&lt;p&gt;Expressive and rich domain models gained a growing popularity with the rise of Domain-Driven Design, which was
+coined by Eric Evans by his book &lt;a href=&quot;https://www.domainlanguage.com/ddd/&quot;&gt;Domain-Driven Design: Tackling Complexity in the Heart of Software&lt;/a&gt; and the growing popularity of the Ports-and-Adapters software architecture.&lt;/p&gt;
+
+&lt;p&gt;Key to an expressive domain is the ubiquitous language, which is used both by the developers and the business people
+in your team. Developing such a ubiquitous language requires extensive collaboration between these two parties
+throughout a software development project. Discussing a well formatted diagram together with the business people is a
+lot easier, than looking at the actual code.&lt;/p&gt;
+
+&lt;p&gt;However, keeping such diagram up-to-date is a boring task, which can
+easily be forgotten. That is one reason why so many wiki pages are outdated one minute after you hit the save button
+on it.&lt;/p&gt;
+
+&lt;p&gt;Instead of having to update such pages, we want to generate the relevant documentation based on the actual code.
+This post will present you one easy way to integrate a workflow to generate a UML diagram based on your domain
+classes and render it within a asciidoc HTML document, which can be easily published as a static website.&lt;/p&gt;
+
+&lt;p&gt;Visualizing our domain classes in a HTML document, which can be easily published e.g. as a static website,
+is a two-step process:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We need to generade a PlantUML diagram file, which can be rendered into a PNG file&lt;/li&gt;
+  &lt;li&gt;We need to add an asciidoc to our project, which includes and renders the generated PlantUML file.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You can find a running example of the code described in this post on &lt;a href=&quot;https://github.com/DenktMit-eG/de.denktmit.blog.domain-diagram-example&quot;&gt;github.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-generate-a-plantuml-diagram&quot;&gt;1. Generate a PlantUML Diagram&lt;/h2&gt;
+
+&lt;p&gt;There are multiple maven plugins available, which can generate PlantUML syntax for given Java classes.
+We decided to use the &lt;a href=&quot;https://github.com/devlauer/plantuml-generator&quot;&gt;plantuml-generator-maven-plugin&lt;/a&gt;, since it
+includes various well documented configuration options and includes support for generating the asciidoc wrapper.&lt;/p&gt;
+
+&lt;p&gt;The plugin can be configured within the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; section of our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pom.xml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;plugin&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;plantuml-generator-maven-plugin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;de.elnarion.maven&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.2.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;executions&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;execution&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;generate-simple-diagram&lt;span class=&quot;nt&quot;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;goals&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;goal&amp;gt;&lt;/span&gt;generate&lt;span class=&quot;nt&quot;&gt;&amp;lt;/goal&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/goals&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;phase&amp;gt;&lt;/span&gt;generate-test-sources&lt;span class=&quot;nt&quot;&gt;&amp;lt;/phase&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;outputDirectory&amp;gt;&lt;/span&gt;${build.directory}/classes/docs&lt;span class=&quot;nt&quot;&gt;&amp;lt;/outputDirectory&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;outputFilename&amp;gt;&lt;/span&gt;domain.puml&lt;span class=&quot;nt&quot;&gt;&amp;lt;/outputFilename&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;scanPackages&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;scanPackage&amp;gt;&lt;/span&gt;de.denktmit.domain&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scanPackage&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/scanPackages&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;enableAsciidocWrapper&amp;gt;&lt;/span&gt;true&lt;span class=&quot;nt&quot;&gt;&amp;lt;/enableAsciidocWrapper&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/execution&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/executions&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/plugin&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;All classes within the package &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;de.denktmit.domain&lt;/code&gt; will be included in the generated PlantUML file. The file will be
+generated in the directory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/target/classes/docs&lt;/code&gt;. This directory is crucial, since we need to reference this file
+from within our asciidoc later.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-render-diagram-within-an-asciidoc&quot;&gt;2. Render Diagram within an Asciidoc&lt;/h2&gt;
+&lt;p&gt;In this step we integrate the generated PlantUML file into an asciidoc file, which can be part of an existing
+documentation. The following asciidoc is a minimal example for rendering our PlantUML file:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;= Diagram Example
+
+// Configuration for external diagram rendering service:
+:diagram-server-url: https://kroki.io/
+:diagram-server-type: kroki_io
+
+== Domain Diagram
+
+This is a simple asciidoc example to illustrate how to efficiently generate a domain class diagram from code.
+
+// include the PlantUML diagram file
+include::domain.puml[]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This files can be rendered into an HTML document with the help of the asciidoctor toolchain, which is also
+conveniently available as a maven plugin:&lt;/p&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;plugin&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.asciidoctor&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;asciidoctor-maven-plugin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;${asciidoctor.version}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependencies&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.asciidoctor&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;asciidoctorj-diagram&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;${asciidoctor.version}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependencies&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;sourceDirectory&amp;gt;&lt;/span&gt;${build.directory}/classes/docs&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sourceDirectory&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;requires&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;require&amp;gt;&lt;/span&gt;asciidoctor-diagram&lt;span class=&quot;nt&quot;&gt;&amp;lt;/require&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/requires&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;executions&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;execution&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;generate-html-doc&lt;span class=&quot;nt&quot;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;phase&amp;gt;&lt;/span&gt;generate-test-resources&lt;span class=&quot;nt&quot;&gt;&amp;lt;/phase&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;goals&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;goal&amp;gt;&lt;/span&gt;process-asciidoc&lt;span class=&quot;nt&quot;&gt;&amp;lt;/goal&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/goals&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;backend&amp;gt;&lt;/span&gt;html5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/backend&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;attributes&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;toc&amp;gt;&lt;/span&gt;left&lt;span class=&quot;nt&quot;&gt;&amp;lt;/toc&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/attributes&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/execution&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/executions&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/plugin&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Rendering a PlantUML diagram into a PNG file actually requires (graphviz)[https://graphviz.org] to be installed on
+the build host. Since this can be an issue especially in CI-environments, asciidoc includes support to use external
+services to render PlantUML and other diagram types. (Kroki)[https://korki.io] is one of these services which can
+also be self-hosted to avoid sending sensitive data to public webservices. In our example we configured the public Kroki
+instance to be used to render our diagram within the asciidoc:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:diagram-server-url: https://kroki.io/
+:diagram-server-type: kroki_io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;publish-documentation&quot;&gt;Publish Documentation&lt;/h2&gt;
+
+&lt;p&gt;Running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvn package&lt;/code&gt; will execute the PlantUML generation and render the asciidoc as a HTML document afterwards.
+The result will look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/blog/2022-03-20-uml-diagram.png&quot; alt=&quot;Domain UML Diagram&quot; style=&quot;max-width:100%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The document will be generated into the directory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target/generated-docs&lt;/code&gt;. From here it can easily be published as a
+static website, e.g. using GitHub or Gitlab Pages.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 15 Mar 2022 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2022/03/15/express-your-domain-model-with-asciidoctor-and-plantUML.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2022/03/15/express-your-domain-model-with-asciidoctor-and-plantUML.html</guid>
+        
+        
+      </item>
+      
     
      
       <item>

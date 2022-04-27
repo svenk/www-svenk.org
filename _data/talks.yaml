@@ -10,8 +10,21 @@ talks:
   - analog
   - spotify
   languge: de
-  link: https://open.spotify.com/episode/0ekHBRXddwZCLE0LF4LkI9?si=8gNe2KWJTVWCntZ6AP8dHQ
+  link: https://open.spotify.com/episode/0ekHBRXddwZCLE0LF4LkI9
   title: Was sind Quantencomputer?
+- author:
+  - Luca Moczko
+  - "Sven K\xF6ppel"
+  date: 2022-04-10
+  event: "Podcast \"Computing Machines\" von Luca Moczko mit Gast Sven K\xF6ppel"
+  key: podcast2_qc_computing_machines
+  keywords:
+  - podcast
+  - analog
+  - spotify
+  languge: de
+  link: https://open.spotify.com/episode/1M3SHJ8qDZyhlZnOEWxjzM
+  title: Die Rolle der Computersimulationen in der Wissenschaft
 - author: "Sven K\xF6ppel"
   date: 2021-06-18
   event: Night Of Science, Frankfurt

@@ -1,4 +1,8 @@
 aggregated_posts:
+- date: '2022-04-06'
+  link: https://denktmit.de/2022/04/06/Python-the-modern-Basic-lingua-franca.html
+  origin: denktmit-blog
+  title: Python ist das BASIC des 21. Jahrhunderts
 - date: '2022-02-03'
   link: https://denktmit.de/2022/02/03/Accounting-Auditing-Big-Data-Python-Data-Warehousing.html
   origin: denktmit-blog
@@ -31,14 +35,14 @@ aggregated_posts:
   link: https://denktmit.de/2021/06/07/gendern-in-markup.html
   origin: denktmit-blog
   title: Gendern im Markup und in Programmiersprachen
-- date: '2013-02-14'
+- date: '2013-04-27'
   origin: scientific_publications
   title: POKAL, Kollaboratives Mathematik-E-Learning neu erfunden
-- date: '2012-02-14'
+- date: '2012-04-27'
   origin: scientific_publications
   title: 'BioKemika und MetaSearch: Biochemische Datenbanken und Online-Tools verstehen
     und anwenden'
-- date: '2014-12-14'
+- date: '2014-12-27'
   link: https://github.com/svenk/publications/blob/master/Thesis/Sven-Koeppel-master-thesis-Ultraviolet-improved-black-holes.pdf
   origin: scientific_publications
   title: Ultraviolet improved black holes
@@ -51,7 +55,7 @@ aggregated_posts:
   link: https://arxiv.org/abs/1703.05222
   origin: scientific_publications
   title: Generalized uncertainty principle and extra dimensions
-- date: '2019-08-14'
+- date: '2019-08-27'
   link: https://arxiv.org/abs/1905.03233
   origin: scientific_publications
   title: Generalized Uncertainty Principle and Black Holes in Higher Dimensional Self-Complete
@@ -65,42 +69,47 @@ aggregated_posts:
   link: https://arxiv.org/abs/1711.08221
   origin: scientific_publications
   title: Towards an exascale code for GRMHD on dynamical spacetimes
-- date: '2017-12-14'
+- date: '2017-12-27'
   link: https://arxiv.org/abs/1801.02839
   origin: scientific_publications
   title: ADER discontinuous Galerkin schemes for the general relativistic magnetohydrodynamics
     equations
-- date: '2019-02-14'
+- date: '2019-02-27'
   link: https://arxiv.org/abs/1901.09977
   origin: scientific_publications
   title: A General-relativistic Determination of the Threshold Mass to Prompt Collapse
     in Binary Neutron Star Mergers
-- date: '2020-05-14'
+- date: '2020-05-27'
   link: https://arxiv.org/abs/1905.07987
   origin: scientific_publications
   title: 'ExaHyPE: An Engine for Parallel Dynamically Adaptive Simulations of Wave
     Problems'
-- date: '2019-06-14'
+- date: '2019-06-27'
   link: https://github.com/svenk/publications/blob/master/Thesis/phdthesis-Sven-Koeppel.pdf
   origin: scientific_publications
   title: High-order methods in fully general-relativistic hydrodynamics & magnetohydrodynamics
-- date: '2021-02-14'
+- date: '2021-02-27'
   link: https://arxiv.org/abs/2102.07268
   origin: scientific_publications
   title: About using analog computers in today's largest computational challenges
-- date: '2021-07-14'
+- date: '2021-07-27'
   link: https://arxiv.org/abs/2107.06283
   origin: scientific_publications
   title: Analog Computing for Molecular Dynamics
-- date: '2021-09-14'
+- date: '2021-09-27'
   link: https://dx.doi.org/10.23919/IEEECONF54431.2021.9598447
   origin: scientific_publications
   title: Open Hardware Analog Computer for Education &mdash; Design and Application
 - date: '2022-01-31'
-  link: https://open.spotify.com/episode/0ekHBRXddwZCLE0LF4LkI9?si=8gNe2KWJTVWCntZ6AP8dHQ
+  link: https://open.spotify.com/episode/0ekHBRXddwZCLE0LF4LkI9
   origin: talks
   title: "Was sind Quantencomputer? (Podcast \"Computing Machines\" von Luca Moczko\
     \ mit Gast Sven K\xF6ppel)"
+- date: '2022-04-10'
+  link: https://open.spotify.com/episode/1M3SHJ8qDZyhlZnOEWxjzM
+  origin: talks
+  title: "Die Rolle der Computersimulationen in der Wissenschaft (Podcast \"Computing\
+    \ Machines\" von Luca Moczko mit Gast Sven K\xF6ppel)"
 - date: '2021-06-18'
   link: https://github.com/svenk/publications/tree/master/Talks/2021-06-18-NOS-Frankfurt/NOS2021-Anabrid.pdf
   origin: talks
@@ -117,6 +126,10 @@ aggregated_posts:
   origin: talks
   title: "More Computing Power and Less CO2 Damage \u2013 a Plea for Analogue Computers\
     \ (TEDx M\xFCnster)"
+- date: '2022-04-26'
+  link: https://technikum29.de/blog/2022-04-26-Wir_raeumen_um
+  origin: t29-blog
+  title: "Neues im Technikum29 - Wir r\xE4umen um !"
 - date: '2021-12-26'
   link: https://technikum29.de/blog/2021-12-26-Jahresabschluss
   origin: t29-blog
