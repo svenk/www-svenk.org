@@ -9,7 +9,7 @@
 	<description>A blog about news from the technikum29 computer museum</description>
 	<language>de</language>
 	<copyright>&#x2117; &amp; &#xA9; 2003-2022 Sven K&#245;ppel and the technikum29 team</copyright>
-	<pubDate>Mon, 14 Feb 2022 13:23:47 +0100</pubDate>
+	<pubDate>Wed, 27 Apr 2022 08:02:15 +0200</pubDate>
 	<image>
 		<url>https://www.technikum29.de/shared/img-v6/banner.de.png</url>
 		<title>technikum29 Computermuseum</title>
@@ -21,6 +21,13 @@
 	<atom:link href="https://www.technikum29.de/blog/rss" rel="self" type="application/rss+xml" />	
 	
 				<item>
+				<title>Neues im Technikum29 - Wir räumen um !</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2022-04-26-Wir_raeumen_um</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2022-04-26-Wir_raeumen_um</guid>
+				<pubDate>2022-04-26</pubDate>
+			</item>
+						<item>
 				<title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2021 geschah</title>
 				<author>Sven</author>
 				<link>https://technikum29.de/blog/2021-12-26-Jahresabschluss</link>
