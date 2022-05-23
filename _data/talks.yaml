@@ -26,6 +26,26 @@ talks:
   link: https://open.spotify.com/episode/1M3SHJ8qDZyhlZnOEWxjzM
   title: Die Rolle der Computersimulationen in der Wissenschaft
 - author: "Sven K\xF6ppel"
+  date: 2022-05-21
+  event: Gulaschprogrammiernacht 2022 (GPN20)
+  event_website: https://entropia.de/GPN20
+  key: gpn20
+  keywords:
+  - karlsruhe
+  - ccc
+  - gulaschprogrammiernacht
+  - analog
+  material:
+    infoletter: https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/GPN
+      THAT Infozettel.odt
+    voc3c: https://media.ccc.de/v/gpn20-50-wie-hackt-man-einen-analogrechner
+  place: "Staatliche Hochschule f\xFCr Gestaltung (GPN20)"
+  slides: https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/2022-05-21-GPN20-Karlsruhe.pdf
+  sources: https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/2022-05-21-GPN20-Karlsruhe.odp
+  title: "Wie hackt man einen Analogrechner \u2013 Alles \xFCber die zuk\xFCnftigen\
+    \ kontinuierlichen Computer"
+  video: https://www.youtube.com/watch?v=2TMBMA2FLXw
+- author: "Sven K\xF6ppel"
   date: 2021-06-18
   event: Night Of Science, Frankfurt
   event_website: https://www.nightofscience.de/
