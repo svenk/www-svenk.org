@@ -11,6 +11,10 @@ aggregated_posts:
   link: https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/
   origin: anabrid-news
   title: "Frankfurter Allgemeine Zeitung: Neue Hoffnung f\xFCr die Analogrechner"
+- date: '2022-02-22'
+  link: https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html
+  origin: anabrid-news
+  title: So helfen Analogrechner beim Quantencomputing
 - date: '2022-03-30'
   link: https://the-analog-thing.org/newsletter/5/
   origin: anabrid-news
@@ -27,6 +31,18 @@ aggregated_posts:
   link: https://www.appliedai.de/hub/2022-ai-german-startup-landscape
   origin: anabrid-news
   title: 'AppliedAI: Anabrid is part of the German AI Startup Landscape'
+- date: '2022-05-16'
+  link: https://the-analog-thing.org/newsletter/7/
+  origin: anabrid-news
+  title: 'The Analog Thing Newsletter #7: Production news'
+- date: '2022-06-30'
+  link: https://denktmit.de/2022/06/30/Generalversammlung.html
+  origin: denktmit-blog
+  title: "Ein Jahr DenktMit eG \u2013 die Generalversammlung tagt"
+- date: '2022-06-27'
+  link: https://denktmit.de/2022/06/27/KI-Programmierer-Diktatur.html
+  origin: denktmit-blog
+  title: "Zur Rolle der Programmierer und Entwickler bei k\xFCnstlicher Intelligenz"
 - date: '2022-05-13'
   link: https://denktmit.de/2022/05/13/Finding-Love-for-Nerds.html
   origin: denktmit-blog
@@ -67,14 +83,14 @@ aggregated_posts:
   link: https://denktmit.de/2021/06/07/gendern-in-markup.html
   origin: denktmit-blog
   title: Gendern im Markup und in Programmiersprachen
-- date: '2013-05-23'
+- date: '2013-07-11'
   origin: scientific_publications
   title: POKAL, Kollaboratives Mathematik-E-Learning neu erfunden
-- date: '2012-05-23'
+- date: '2012-07-11'
   origin: scientific_publications
   title: 'BioKemika und MetaSearch: Biochemische Datenbanken und Online-Tools verstehen
     und anwenden'
-- date: '2014-12-23'
+- date: '2014-12-11'
   link: https://github.com/svenk/publications/blob/master/Thesis/Sven-Koeppel-master-thesis-Ultraviolet-improved-black-holes.pdf
   origin: scientific_publications
   title: Ultraviolet improved black holes
@@ -87,7 +103,7 @@ aggregated_posts:
   link: https://arxiv.org/abs/1703.05222
   origin: scientific_publications
   title: Generalized uncertainty principle and extra dimensions
-- date: '2019-08-23'
+- date: '2019-08-11'
   link: https://arxiv.org/abs/1905.03233
   origin: scientific_publications
   title: Generalized Uncertainty Principle and Black Holes in Higher Dimensional Self-Complete
@@ -101,34 +117,34 @@ aggregated_posts:
   link: https://arxiv.org/abs/1711.08221
   origin: scientific_publications
   title: Towards an exascale code for GRMHD on dynamical spacetimes
-- date: '2017-12-23'
+- date: '2017-12-11'
   link: https://arxiv.org/abs/1801.02839
   origin: scientific_publications
   title: ADER discontinuous Galerkin schemes for the general relativistic magnetohydrodynamics
     equations
-- date: '2019-02-23'
+- date: '2019-02-11'
   link: https://arxiv.org/abs/1901.09977
   origin: scientific_publications
   title: A General-relativistic Determination of the Threshold Mass to Prompt Collapse
     in Binary Neutron Star Mergers
-- date: '2020-05-23'
+- date: '2020-05-11'
   link: https://arxiv.org/abs/1905.07987
   origin: scientific_publications
   title: 'ExaHyPE: An Engine for Parallel Dynamically Adaptive Simulations of Wave
     Problems'
-- date: '2019-06-23'
+- date: '2019-06-11'
   link: https://github.com/svenk/publications/blob/master/Thesis/phdthesis-Sven-Koeppel.pdf
   origin: scientific_publications
   title: High-order methods in fully general-relativistic hydrodynamics & magnetohydrodynamics
-- date: '2021-02-23'
+- date: '2021-02-11'
   link: https://arxiv.org/abs/2102.07268
   origin: scientific_publications
   title: About using analog computers in today's largest computational challenges
-- date: '2021-07-23'
+- date: '2021-07-11'
   link: https://arxiv.org/abs/2107.06283
   origin: scientific_publications
   title: Analog Computing for Molecular Dynamics
-- date: '2021-09-23'
+- date: '2021-09-11'
   link: https://dx.doi.org/10.23919/IEEECONF54431.2021.9598447
   origin: scientific_publications
   title: Open Hardware Analog Computer for Education &mdash; Design and Application
@@ -142,6 +158,16 @@ aggregated_posts:
   origin: talks
   title: "Die Rolle der Computersimulationen in der Wissenschaft (Podcast \"Computing\
     \ Machines\" von Luca Moczko mit Gast Sven K\xF6ppel)"
+- date: '2022-05-29'
+  link: https://open.spotify.com/episode/0OI9qnJ4mbWWmDt4zGd8zW
+  origin: talks
+  title: "Software Antipatterns (Podcast \"Computing Machines\" von Luca Moczko mit\
+    \ Gast Sven K\xF6ppel)"
+- date: '2022-06-28'
+  link: https://open.spotify.com/episode/0quGnOPsayGulkyLMQXHv0
+  origin: talks
+  title: "Beendet k\xFCnstliche Intelligenz die \xBBDiktatur\xAB der Programmierenden?\
+    \ (Podcast \"Computing Machines\" von Luca Moczko mit Gast Sven K\xF6ppel)"
 - date: '2022-05-21'
   link: https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/2022-05-21-GPN20-Karlsruhe.pdf
   origin: talks
@@ -163,6 +189,14 @@ aggregated_posts:
   origin: talks
   title: "More Computing Power and Less CO2 Damage \u2013 a Plea for Analogue Computers\
     \ (TEDx M\xFCnster)"
+- date: '2022-06-08'
+  link: https://technikum29.de/blog/2022-06-08-technikum29_in_der_Presse
+  origin: t29-blog
+  title: technikum29 in der Presse
+- date: '2022-06-06'
+  link: https://technikum29.de/blog/2022-06-06-Neuzugaenge-Kassel-2022
+  origin: t29-blog
+  title: "F\xFCnf neue Exponate im technikum29 eingetroffen"
 - date: '2022-04-27'
   link: https://technikum29.de/blog/2022-04-27-Neuzugaenge
   origin: t29-blog
