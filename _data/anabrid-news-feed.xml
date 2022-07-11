@@ -5,8 +5,8 @@
     <description>Anabrid is the Analog Computing Company. This feed shows the same content as in https://anabrid.com/news/</description>
     <link>https://anabrid.com/</link>
     <atom:link href="https://anabrid.com" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Apr 2022 09:38:35 +0200</pubDate>
-    <lastBuildDate>Wed, 27 Apr 2022 09:38:35 +0200</lastBuildDate>
+    <pubDate>Mon, 30 May 2022 13:20:36 +0200</pubDate>
+    <lastBuildDate>Mon, 30 May 2022 13:20:36 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
      
@@ -119,6 +119,17 @@ The parts are about to be shipped to Germany for final assembly.&lt;/p&gt;
     
      
       <item>
+        <title>So helfen Analogrechner beim Quantencomputing</title>
+        <pubDate>Tue, 22 Feb 2022 00:00:00 +0100</pubDate>
+        <link>https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</link>
+        <guid isPermaLink="true">https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
         <title>The Analog Thing Newsletter #5: Production, test and shipping</title>
         <pubDate>Wed, 30 Mar 2022 00:00:00 +0200</pubDate>
         <link>https://the-analog-thing.org/newsletter/5/</link>
@@ -156,6 +167,17 @@ The parts are about to be shipped to Germany for final assembly.&lt;/p&gt;
         <pubDate>Mon, 11 Apr 2022 00:00:00 +0200</pubDate>
         <link>https://www.appliedai.de/hub/2022-ai-german-startup-landscape</link>
         <guid isPermaLink="true">https://www.appliedai.de/hub/2022-ai-german-startup-landscape</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #7: Production news</title>
+        <pubDate>Mon, 16 May 2022 00:00:00 +0200</pubDate>
+        <link>https://the-analog-thing.org/newsletter/7/</link>
+        <guid isPermaLink="true">https://the-analog-thing.org/newsletter/7/</guid>
         
         
       </item>

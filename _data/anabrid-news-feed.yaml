@@ -15,6 +15,10 @@ anabrid-news:
   link: https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/
   pubDate: Mon, 13 Sep 2021 00:00:00 +0200
   title: "Frankfurter Allgemeine Zeitung: Neue Hoffnung f\xFCr die Analogrechner"
+- guid: https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html
+  link: https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html
+  pubDate: Tue, 22 Feb 2022 00:00:00 +0100
+  title: So helfen Analogrechner beim Quantencomputing
 - guid: https://the-analog-thing.org/newsletter/5/
   link: https://the-analog-thing.org/newsletter/5/
   pubDate: Wed, 30 Mar 2022 00:00:00 +0200
@@ -31,4 +35,8 @@ anabrid-news:
   link: https://www.appliedai.de/hub/2022-ai-german-startup-landscape
   pubDate: Mon, 11 Apr 2022 00:00:00 +0200
   title: 'AppliedAI: Anabrid is part of the German AI Startup Landscape'
+- guid: https://the-analog-thing.org/newsletter/7/
+  link: https://the-analog-thing.org/newsletter/7/
+  pubDate: Mon, 16 May 2022 00:00:00 +0200
+  title: 'The Analog Thing Newsletter #7: Production news'
 
