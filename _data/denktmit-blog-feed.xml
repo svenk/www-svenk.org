@@ -5,9 +5,367 @@
     <description>Steigern Sie die digitale Eigenexpertise Ihrer Firma, indem Sie IT-Experten der DenktMit eG beauftragen. Wir involvieren Sie stets auf Augenhöhe.</description>
     <link>https://denktmit.de/</link>
     <atom:link href="https://denktmit.de/blog-feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jun 2022 15:34:45 -0500</pubDate>
-    <lastBuildDate>Thu, 30 Jun 2022 15:34:45 -0500</lastBuildDate>
-    <generator>Jekyll v4.2.0</generator>
+    <pubDate>Sat, 15 Oct 2022 19:38:42 -0500</pubDate>
+    <lastBuildDate>Sat, 15 Oct 2022 19:38:42 -0500</lastBuildDate>
+    <generator>Jekyll v4.2.2</generator>
+    
+     
+      <item>
+        <title>Zum Programmierpraktikum in der Entwickler-Agentur: Ein Bericht aus Betreuerperspektive</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;Ein Unternehmen aufzubauen bedeutet immer auch, Nachwuchskräfte zu gewinnen. In der
+Genossenschaft haben wir uns &lt;a href=&quot;/2022/06/30/Generalversammlung&quot;&gt;ein Jahr nach der Gründung&lt;/a&gt;
+dazu entschlossen, für ein paar Wochen eine Praktikantin aufzunehmen. Es handelt sich
+um eine Naturwissenschaftlerin mit Master-Abschluss, die uns in der Firmenzentrale
+in Oberursel vor den Toren Frankfurts vor einer Weile besucht hat und großes Interesse
+daran hat, professionell zu Programmieren und das Tätigkeitsfeld von freiberuflichen
+Software-Entwickler:innen, oft einfach »Freelancer« genannt, kennenzulernen.&lt;/p&gt;
+
+&lt;p&gt;Um unseren Aufwand für das bezahlte Praktikum auf die vielen Schultern in der Genossenschaft
+zu verteilen, haben wir uns dazu entschlossen, der Praktikantin jede Woche eine andere
+Betreuungsperson zuzuweisen. Durch dieses rotierende Prinzip bekam sie viele verschiedene
+Perspektiven, wohingegen der zeitliche Aufwand für jeden von uns gedeckelt blieb.&lt;/p&gt;
+
+&lt;h2 id=&quot;die-begleitung-im-remote-praktikumsbetreuung&quot;&gt;Die Begleitung im Remote-Praktikumsbetreuung&lt;/h2&gt;
+
+&lt;p&gt;In der vergangene Woche im September 2022 hab ich mich bereiterklärt, die Praktikantin
+zu betreuen bzw. bei ihrem Lernprojekt zu begleiten. Wir hatten einen intensiven Austausch
+zu einem Projekt, mit dem Ziel es in einer 5-Tages-Arbeitswoche zu absolvieren. Tatsächlich
+kommt also die Formulierung “Betreuer begleitet Praktikanten” eher hin als die paktikumstypischere
+Formulierung “Praktikant begleitet Betreuer”. Von meinem Arbeitsalltag mit seinen vielen 
+Meetings bekam die Praktikantin nämlich eigentlich nichts mit.&lt;/p&gt;
+
+&lt;p&gt;Erschwerend kam hinzu, dass das Praktikum &lt;em&gt;remote&lt;/em&gt; betreut wurde, ich also in Oberursel
+nicht vor Ort war. Ein Grund dafür war das wenige Wochen alte Baby, um welches ich mich (mangels
+städtischer Kinderbetreuung und mangels Elternzeit für Menschen in ungewöhnlichen Lebensphasen)
+werktags kümmern musste, während meine Partnerin 10-Stunden-Schichten im Krankenhaus absolvierte.
+Während das physische Begleiten und “Über die Schulter schauen” in einem Remote-Praktikum
+schwieriger abzubilden ist, hat diese Betreuungsform immerhin den Vorteil, dass die Situation es
+ebensowenig zulässt, in unprofessionelle Muster zu fallen, Stichwort “Praktikant kocht Kaffee”
+oder “Praktikant macht Babysitting”.&lt;/p&gt;
+
+&lt;p&gt;Wir haben die Betreuung letzte Woche so ausgelegt, dass wir in Anbetracht meines eng getakteten
+Terminkalenders täglich mittags eine Stunde und dann abends ab ca. 19 Uhr mehrere Stunden
+eine Videotelefonie gemacht haben und dabei intensiv und ohne nennenswerter Ablenkung gearbeitet
+haben. So kamen wir in der Woche auf ungefähr zwölf Betreuungsstunden, die in meinem Fall zur
+regulären Arbeitswoche dazukamen und im Falle der Praktikantin mehr als die Hälfte ihrer vertraglichen
+Wochenarbeitszeit abdeckten.&lt;/p&gt;
+
+&lt;p&gt;Tatsächlich hätte ich so ein Pensum mit einer Vor-Ort-Betreuung nur schwer realisieren können.
+Erst der schnelle Kontextwechsel, der durch Remote-Arbeit möglich ist, ermöglichte mir zwischen
+Standorten und Firmen schneller zu wechseln, als dem Neugeborenen seine Windel. Als großer Freund
+von asynchroner Kommunikation (etwa im firmenweiten Slack-Chat) sind synchrone Einheiten
+(im Videotelefonat) stets ein Zugeständnis an ein Stück besondere Zeit, die im Tempo des Praktikanten
+verbracht wird. Wichtig war mir, dass diese Telefonate nicht zwischen Tür und Angel, auf dem Mobiltelefon
+mit schlechtem Empfang stattfanden, sondern stets so, dass beide Beteiligten an einem Schreibtisch
+saßen, an einem eingerichteten Computer mit Entwicklungsumgebung, Terminal und allem anderen, was
+es zum &lt;em&gt;Coden&lt;/em&gt; braucht.&lt;/p&gt;
+
+&lt;h2 id=&quot;das-konzept-des-programmierens-lernen&quot;&gt;Das Konzept des Programmierens Lernen&lt;/h2&gt;
+
+&lt;p&gt;Die Praktikantin hatte die letzten Wochen die Grundlagen der Programmiersprache &lt;a href=&quot;https://www.python.org/&quot;&gt;Python&lt;/a&gt;
+unter anderem an &lt;a href=&quot;http://codekata.com/&quot;&gt;Katas&lt;/a&gt; geübt. Am Montag hatten wir eine Übergabe vom
+Betreuer der Vorwoche gemacht, dabei fand ich ein Github-Repository mit einem &lt;a href=&quot;https://www.djangoproject.com/&quot;&gt;Django&lt;/a&gt;-Demoprojekt vor.
+Das Ziel war es, eine Anwendung zu entwickeln, die eine selektive Übersetzung eines
+englisch- zu einem deutschsprachigen Text ermölichte, je nach klassifiziertem Lerngrad des Benutzers
+(Sprachlern-Level A1, A2, B, C, etc.). Ich schlug vor, dieses Projekt und die Woche wie folgt zu 
+strukturieren:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Zunächst Aufbau eines &lt;a href=&quot;https://de.wikipedia.org/wiki/Textkorpus&quot;&gt;Textkorpus&lt;/a&gt; in Form einer
+Wort-Übersetzungstabelle. Das ist eine klassische semi-automatisierbare &lt;em&gt;Data Science&lt;/em&gt;-Aufgabe,
+die domänenspezifisches Wissen erfordert.&lt;/li&gt;
+  &lt;li&gt;Erprobung von Übersetzungsmechanismen im Terminal mit meinem favorisierten REPL-Ansatz, d.h. 
+Entwicklung eines kurzen, freistehenden Programmes von dem man jede Zeile versteht und welches
+den Fokus auf der &lt;em&gt;Buisnesslogik&lt;/em&gt; und nicht der umfangreichen Verwendung von Bibliotheken und APIs hat.&lt;/li&gt;
+  &lt;li&gt;Erstellung einer grafischen Benutzeroberfläche (GUI) für dieses Programm in Form einer
+Webschnittstelle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Während der Woche haben wir festgestellt, dass Wortlisten sich gut mit &lt;a href=&quot;https://www.deepl.com/translator&quot;&gt;DeepL&lt;/a&gt;
+sowie &lt;a href=&quot;https://translate.google.de/&quot;&gt;Google Translate&lt;/a&gt; übersetzen lassen. Natürlich sind wir sofort
+darauf gestoßen, dass die Übersetzung eines Textes ein quasi beliebig kompliziertes Unterfangen ist
+und Ansätze wie &lt;a href=&quot;https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization&quot;&gt;Tokenization zur lexikalischen Analyse&lt;/a&gt;
+sich zwar gut zur kontextfreien Übersetzung einzelner Wörter eignen, es aber keine brauchbaren
+fertigen &lt;em&gt;detokenizer&lt;/em&gt; gibt, welche wieder die originale Textformatierung herstellen. Stattdessen haben
+wir den Algorithmus als Quick-and-Dirty regulären Ausdruck mit &lt;a href=&quot;https://pcre.org/original/doc/html/pcrepattern.html#SEC11&quot;&gt;word boundaries&lt;/a&gt;
+realisiert. Damit war dann entgültig klar, dass eine relationale Datenbank uns keinen Mehrwert schaffen
+wird, sodass wir statt Django das deutlich einfachere &lt;a href=&quot;https://flask.palletsprojects.com/en/2.2.x/&quot;&gt;Flask-Webframework&lt;/a&gt;
+gewählt haben. Letztlich hätten wir auch auf Flask verzichten können und einen HTTP-Server “from the scratch”
+schreiben können, doch diesen Luxus haben wir uns an der Stelle gegönnt. Die Bearbeitung von HTML und CSS
+rundeten das Projekt zum Ende der Woche ab, außerdem wurde es zwecks Deploying bei
+&lt;a href=&quot;https://www.pythonanywhere.com/&quot;&gt;PythonAnywhere&lt;/a&gt; hochgeladen, womit die Praktikantin bereits aus Vorwochen Erfahrung
+hatte.&lt;/p&gt;
+
+&lt;h2 id=&quot;schwerpunkte&quot;&gt;Schwerpunkte&lt;/h2&gt;
+
+&lt;p&gt;Von Anfang an lag mein Fokus in dieser Woche darauf, Grundlagen zu lernen, so etwa&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Die interaktive, explorative Benutzung von Python in der Konsole mittels der &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;help()&lt;/code&gt;-Funktion
+(in &lt;a href=&quot;https://ipython.org/&quot;&gt;IPython&lt;/a&gt; mit nachgestelltem Fragezeichen &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;?&lt;/code&gt; erreichbar).&lt;/li&gt;
+  &lt;li&gt;Das Erlernen klassischer Ein- und Ausgabe mithilfe von Textdateien (C-Idiom &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;open()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;readline()&lt;/code&gt;
+sowie auf CSV-Ebene), die Auseinandersetzung mit Zeichensätzen.&lt;/li&gt;
+  &lt;li&gt;Den funktionalen Zugang mittels &lt;a href=&quot;https://pythongeeks.org/list-comprehensions-in-python/&quot;&gt;List Comprehension&lt;/a&gt;
+sowie den elementaren Datenstrukturen von Python (Strings, Tupel, Listen, Dictionaries) zu erlernen.&lt;/li&gt;
+  &lt;li&gt;Den Unterschied zwischen Groß- und Kleinschreibung beim Suchen-und-Ersetzen sowie der Abgrenzung
+zu regulären Ausdrücken zu erlernen. Reguläre Sprachen reihen sich nahtlos in die Thematik zwischen natürlicher
+Sprachverarbeitung und künstlicher, Turing-vollständiger Programmiersprache ein.&lt;/li&gt;
+  &lt;li&gt;Grundlegendes Verständnis für objektorientierte Programmierung auch mithilfe des Schreibens eigener Klassen
+zu vermitteln.&lt;/li&gt;
+  &lt;li&gt;Grundlegendes Verständnis für hierarschie Dateisystem und das Pfadkonzept zu vermitteln, welches
+sowohl beim lokalen Arbeiten mit Dateien als auch im Kontext von Webservern relevant ist.&lt;/li&gt;
+  &lt;li&gt;Die Funktionsweise einer Client-/Server-Anwendung sowie von HTML-Tags und HTML-Formularen zu
+vermitteln, ohne sie von einem Framework wegzuabstrahieren.&lt;/li&gt;
+  &lt;li&gt;Praktische Erfahrung im Debugging lokal in der Konsole (Stack Trace) vs. einer IDE (Visual Studio, interaktives Debugging)
+vs. auf dem Server (PythonAnywhere mithilfe von Error Logs) zu vermitteln.&lt;/li&gt;
+  &lt;li&gt;Aufmerksamkeit für Sicherheitslücken zu vermitteln, etwa einer &lt;em&gt;Cross Site Scripting&lt;/em&gt;-Attacke die wir durch
+Replying von unsicheren Benutzereingaben im HTML erzeugt haben.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Wie man an vielen Stellen in (diesem Blog)[/blog] merkt, bin ich ein großer Verfechter von einfachen
+und prägnanten Programmen die in völligem Bewusstsein Libraries und APIs verwenden. Deswegen haben wir
+mithilfe unseres Ansatzes einen “MVP”, einen “Minimum Viable Prototype” gebaut, der auf einer lokalen,
+vorgefertigten Datenbasis arbeitet. Wir haben beispielsweise mit dem &lt;a href=&quot;https://www.nltk.org/&quot;&gt;Python Natural Language Toolkit&lt;/a&gt;
+experimentiert, waren aber mit den Tokenization-Routinen unglücklich und haben von dieser Abhägigkeit
+daher wieder Abstand genommen. Auch von der Benutzung von Tooling welches zum Deploying verwendet werden, etwa
+&lt;em&gt;python virtual environments&lt;/em&gt; oder &lt;em&gt;Docker&lt;/em&gt; haben wir während der Woche abgesehen.&lt;/p&gt;
+
+&lt;h2 id=&quot;verwendete-werkzeuge&quot;&gt;Verwendete Werkzeuge&lt;/h2&gt;
+
+&lt;p&gt;In der Regel haben wir einfach nur eine Videotelefoniesoftware (Zoom, Jitsi und vergleichbar) genutzt. Die
+Praktikantin hatte im Büro eine Linux-Workstation und privat einen Windows-Laptop, auf beiden waren vergleichbare
+Benutzungsumgebungen installiert. Dank &lt;em&gt;Teamviewer&lt;/em&gt; konnten wir spontan auch interaktiv arbeiten. Ansonsten
+haben wir uns mit wechselseitigen Bildschirmfreigaben beholfen. Wichtige Links und Arbeitsanweisungen wurden
+per Slack festgehalten.&lt;/p&gt;
+
+&lt;h2 id=&quot;fazit&quot;&gt;Fazit&lt;/h2&gt;
+
+&lt;p&gt;Für mich als Betreuer war dieses Remote-Praktikum eine interessante Erfahrung. Die Betreuungswoche fiel auf
+eine Zeit, bei der ich privat wie beruflich sehr stark eingebunden war, weswegen die intensive Videotelefonie
+für mich sehr herausfordern war. Als Vorteile des Remote-Praktikums habe ich empfunden, dass&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;dank der Kombination von synchronem (Telefonie) und asynchronem (Chat) Kontakt eigentlich
+eine kontinuierliches Betreuungsangebot möglich war,&lt;/li&gt;
+  &lt;li&gt;ich auch die Zeit der Videokonferenzen prinzipiell gut parallel nutzen konnte und sie dank großer
+zeitlicher Flexibilität auch in den Abendstunden ging – etwas, was man im Büro wahrscheinlich nicht
+tun würde,&lt;/li&gt;
+  &lt;li&gt;verhältnismäßig viele digitale Assets angefallen sind, die es mir jetzt etwa im Nachhinein auch
+einfach machen, die Woche zusammenzufassen.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Als Nachteile ist klar zu nennen, dass&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;der zwischenmenschliche Kontakt auf der Strecke blieb. Ein Praktikum lebt viel davon, die Arbeitsumstände
+im Alltag kennenzulernen, von dem die Pausen zuweilen die wichtigste Zeit zur Konversation sind. Die
+wortwörtliche “gemeinsame Zeit in der Kaffeeküche” oder in einem Restaurant fand nicht statt.
+Als Menschen haben wir uns dadurch eigentlich nicht kennengelernt,&lt;/li&gt;
+  &lt;li&gt;der Umweg über Chat “die schnelle Frage zwischendurch” signifikant schwieriger macht. Ich nehme das
+schriftliche “schnelle Anschreiben zwischendurch” als Hürde wahr, die der Praktikant erst überwinden 
+muss. Das findet oft nicht statt, dadurch geht dem Praktikanten wertvolle Zeit verloren,&lt;/li&gt;
+  &lt;li&gt;diese Form der Zusammenarbeit sehr anstrengend für alle Beteiligten ist: Stundenlange Videotelefonate
+sind (nicht nur zu später Stunde) ermüdend, die “Zoom fatigue” ist zu Covid-Lockdown-Zeiten einer
+breiten Öffentlichkeit ein Begriff geworden. Normalerweise begrenze ich daher meine Videotelefonate auf
+60 Minuten, das hat aber wegen der kompakten Woche nicht funktioniert.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Für die Praktikantin geht es jetzt übrigens weiter: Nach einer Übergabe am Montag ist sie bereits mitten
+in der “nächsten” Woche mit einem weiteren Genossen und Folgeprojekten.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 13 Sep 2022 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2022/09/13/Bericht-Programmier-Praktikum-Internship.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2022/09/13/Bericht-Programmier-Praktikum-Internship.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>How to get started with technical writing</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;This blog post is about an important topic in engineering jobs. It is about
+doing your paperwork, the documentation, the (technical) writing. This is
+something science and engineering have in common: Without proper documentation,
+your work can easily become unusable and/or meaningless. In the era of
+self-explaining and explorative user interfaces, proper code documentation,
+project reporting, written design decisions and architectural explanations
+mark the difference of high quality work and unmaintainable “single-use projects”
+with limited lifespan.&lt;/p&gt;
+
+&lt;p&gt;The web is full of advices how to write. &lt;a href=&quot;https://herbertlui.net/dont-think-to-write-write-to-think/&quot;&gt;Don’t think to write, write to think&lt;/a&gt; is an article I just read
+today. Ironically, in the era of Covid-19, video conferencing and remote work,
+the written word becomes once more very important in particular in the context
+of protocols, digital meeting artifacts and chats and short messages. And yet
+many developers have a natural resistance against bringing their thoughts to
+the sheet (or the screen). Since I am somewhat the &lt;em&gt;house poet&lt;/em&gt; of
+&lt;a href=&quot;/&quot;&gt;DenktMit eG&lt;/a&gt;, I feel somewhat obligated to add my thoughts to the pile of
+tips.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started-overcoming-barriers&quot;&gt;Getting started: Overcoming barriers&lt;/h2&gt;
+
+&lt;p&gt;Many people (including me!) have problems entering a big illumnated stage and start
+giving a keynote. The more you think about it and prepare for it, the bigger the
+problem can get. What is the textual correspondence to &lt;em&gt;stage fright&lt;/em&gt;? Probably
+sitting in front of a big white paper, either physical or in form of MS Word or
+your favourite text editor for code (documentation).&lt;/p&gt;
+
+&lt;p&gt;There are different strategies
+how to cope with that. Do you remember what you do when starting a new coding project
+in a new programming language from the scratch? You never start with an empty document.
+There is always some tutorial, some demo code which you can build up on. It is the
+code equivalent of a textual outline, a table of contents. Start with your favourite
+note-taking app and write down some bullet points of what you want to write about.
+Do some nesting and voila, you are done with a table of contents. Did you notice that
+I suggested you do this work in your regular note-taking app (suggesting that you have
+such a thing, like Evernote, Notion.io, Apple Notes, Google Keep, Microsoft OneNote, etc.)?
+If you don’t have such an app, why not take some other &lt;em&gt;familiar environment&lt;/em&gt; such as your
+e-mail client or some chat window with a friend? This is somewhat similar to training
+your big keynote show act in a familiar environment in front of your best friend.&lt;/p&gt;
+
+&lt;h2 id=&quot;improve-iteratively&quot;&gt;Improve iteratively&lt;/h2&gt;
+
+&lt;p&gt;Something else you probably naturally do when changing situation is making use of your
+everyday voice. No need for pretending a vocabulary which is not yours. If it helps,
+talk and write colloquially! Even when you want to set high standards on your text,
+it is better to get started with a bad text then with no text. The same is true for
+language: If you want or need to write in English but are much more fluent, say, in German,
+then write down a German text. Machine learning translation (such as with Linguee/DeepL)
+got very good in the last years even in highly technical texts and can be a great starting
+point when doing the language transition.&lt;/p&gt;
+
+&lt;p&gt;When it comes to iterating texts, forget about formatting technicalities for the moment.
+Exclude correct hyperlinking, footnotes, citations, images, headings, everything which
+makes text complicated. If it helps, also skip all your fancy versioning tools (such as git)
+or the correct markup (such as Latex, HTML or markdown).
+Just work with plain text, which is most interoperable between your tooling.
+This makes it easy to copy and paste to Microsoft Word in order to quickly run spell
+and grammar checking. You want to come into a mood where you really &lt;em&gt;work&lt;/em&gt; with text the
+same way as you do cooking: Words and sentences are your ingredients and subject to be
+cut here and there, put into form, being rearranged, temporarily deleted and retrieved
+again.&lt;/p&gt;
+
+&lt;h2 id=&quot;know-your-audience&quot;&gt;Know your audience&lt;/h2&gt;
+
+&lt;p&gt;Something you should consider while improving your texts is asking yourself who is the
+target audience and what questions you want to answer. Sure, these are questions which
+are relevant to answer &lt;em&gt;before&lt;/em&gt; writing a text, but why not improve while iterating over
+your texts. It is quite likely that you recognize you can make two texts from one starting
+point.&lt;/p&gt;
+
+&lt;p&gt;If you wonder about the audience, here are a few good starting points: Think of yourself
+but before the project started. What questions would you like have to be answered? Or ask
+team mates, friends and/or coworkers for what questions they would raise about your project.&lt;/p&gt;
+
+&lt;h2 id=&quot;writing-is-not-that-different-to-coding&quot;&gt;Writing is not that different to coding&lt;/h2&gt;
+
+&lt;p&gt;In the end, a good technical writeup shares quite some details with good code: It is concise,
+answers a particular question by using a particular vocabulary. It is typically highly
+structured. References of various kinds, a glossary, good searchability are
+vital to code documentation or a good scientific paper. Since you are probably used to
+formal methods such as a computer programming language or the mathematical language of
+your specific scientific problem, why not treat your documentation similarly formal? Sooner
+or later you will find a way of how you would like to read literature and be able to replicate
+that style on your own.&lt;/p&gt;
+
+&lt;h2 id=&quot;epilog-making-money-with-writing&quot;&gt;Epilog: Making money with writing&lt;/h2&gt;
+
+&lt;p&gt;I have to admit that I spend a good portion of my day with writing texts. Let it be proposals
+or reports, there is always a majority of text which replicates previous work (done by me or
+others) and only a minority of novel ideas. Most of the time when I start a new text, I do it
+by copying some old one, deleting all text and building up on the template, thus seldomly starting
+with an empty page or empty line. But from time to time I also enjoy writing a LaTeX document
+from the scratch or exploring all the features of a new code documentation system (something
+like Javadoc). I am kind of a &lt;em&gt;agnostic purist&lt;/em&gt;, not into emacs or vim but just using any plain
+text editor available on the system (such as gedit, kwrite, notepad++) which has low background
+noise (no distraction). But most of all, I enjoy writing texts in a single run, from a single
+cast. This gives them a rather spontaneous note, and it is in fact the same way as I handle my 
+stage fright: I just start talking, without much preparation, and evventually come to an end.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 30 Aug 2022 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2022/08/30/Tipps-for-Technical-Writing.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2022/08/30/Tipps-for-Technical-Writing.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Was ist Bootstrapping und warum ist es so wichtig?</title>
+        <author>Sven Köppel</author>
+        <description>&lt;p&gt;Das laufende Jahrzehnt fängt großartig an: Wir haben Smartphones und das Internet,
+großartige komplizierte Dinge wie Blockchains oder kybernetisch anmutende Anwendungen,
+die alle miteinander kommunizieren, geschrieben in Programmiersprachen, die Menschen
+bei der Befehligung des Computers unterstützen. Doch wie kommt all die Großartigkeit
+in die Welt? Sie steht doch scheinbar »auf den Schultern der Giganten«, wie man
+sprichwörtlich sagt: Neuere Roboter wurden durch ältere gebaut, neuere Computer durch
+ältere. Es reicht alles zurück in die Zeit der einfacheren Werkzeuge und weniger
+komplexen Systeme.&lt;/p&gt;
+
+&lt;h2 id=&quot;bootstrapping-erzeugt-wünschenswerte-komplexität&quot;&gt;Bootstrapping erzeugt wünschenswerte Komplexität&lt;/h2&gt;
+
+&lt;p&gt;Tatsächlich kommt Komplexität nicht ohne Arbeit in die Welt. In der Softwaretechnik
+sprechen wir von einem Henne-Ei-Problem: Wenn eine mächtige Plattform oder Technik
+in der Lage sein soll, sich selbst zu replizieren bzw. von Grund auf zu erschaffen.
+Ein Beispiel sei eine neue “höhere” Programmiersprachen, sei es einmal das in der
+Genossenschaft so beliebte &lt;em&gt;Kotlin&lt;/em&gt;, für die es einen sogenannten Compiler benötigt,
+der aus dem typischerweise in Textform vorliegenden Programmcode maschinenlesbare
+Anweisungen erzeugt. Es gibt viele Gründe, warum es interessant ist, diesen Compiler
+in der neuen Sprache selbst zu schreiben. Einer davon ist, dass es für die an der
+neuen Programmiersprache abeitende Menschen interessanter ist, die Funktionen
+ihres neuen Zöglings auch zu nutzen, statt eine ältere Programmiersprache zu verwenden.
+Wenn eine Sprache diesen evolutionären Schritt geschafft hat, nennt man sie
+&lt;em&gt;selfhosting&lt;/em&gt;, sie ist also ihr eigener Gast.&lt;/p&gt;
+
+&lt;p&gt;Die technische Umsetzung dieses Vorhabens ist gar nicht einmal so einfach: In der Regel
+werden ältere Compiler einer Sprache verwendet, um neuere zu entwickeln. So ist es
+in der Java-Welt üblich, dass sich ohne &lt;em&gt;Java Development Kit&lt;/em&gt; kein neues
+&lt;em&gt;Java Development Kit&lt;/em&gt; entwickeln lässt. Diese Abhängigkeiten lassen sich zurückverfolgen
+bis zu den ältesten Versionen von Java, für die es Compiler in der Sprache &lt;em&gt;C&lt;/em&gt; gibt.
+Eine saubere Methode, solche Ketten zu durchbrechen, zeigen etwa die Sprachen &lt;em&gt;Go&lt;/em&gt; und
+&lt;em&gt;Zig&lt;/em&gt;, für die es kleine Bootloader oder “Vorstufen-Compiler” gibt, aus denen sich
+ein Compiler für eine einfache Version der Programmiersprache übersetzen lässt, aus dem
+sich schließlich ein Compiler entwickeln lässt, der alle Funktionen der Sprache
+versteht. Die Art und Weise, wie diese kaskadierten Compilerstufen funktionieren, erinnern
+an den Prozess des &lt;em&gt;Bootens&lt;/em&gt; eines Computers, den viele ältere noch von ihrem Personalcomputer
+kennen und der heute im Prinzip nur wenig verändert weiterhin anhält, aber in der
+mobilen Gegenwart oft nicht mehr so stark in Erscheinung tritt. Dabei starten Prozessoren
+sogar meist mit einem einfacheren 16bit-Vorprogrammiersystem (früher von dem BIOS
+bespielt) um sich dann in 32bit und danach 64bit “upzugraden”. Auch der Linux-Ladeprozess
+mit einem &lt;em&gt;Bootloader&lt;/em&gt;, der defakto selber (im Moment des Bootens) ein Betriebssystem darstellt,
+ist noch heutigen Linux-Benutzenden oft ein Begriff. Auch wenn solche Fragestellungen als
+“erledigt und abgehakt” und damit eher theoretischer Natur erscheinen, sind sie dennoch
+hoch relevant für die Zukunft und erfordern eine regelmäßige Überarbeitung.&lt;/p&gt;
+
+&lt;h2 id=&quot;bootstrapping-hilft-zur-resilienz-und-vertrauen-in-der-softwaretechnik&quot;&gt;Bootstrapping hilft zur Resilienz und Vertrauen in der Softwaretechnik&lt;/h2&gt;
+
+&lt;p&gt;Tatsächlich gibt es aber auch viele andere Gründe, warum Systeme &lt;em&gt;bootstrappable&lt;/em&gt;
+sein sollen, sich also an den eigenen Stiefelriemen aus dem imaginären Sumpf der
+Trivialität ziehen können sollen. Das Webprojekt &lt;a href=&quot;https://bootstrappable.org/&quot;&gt;bootstrappable.org&lt;/a&gt;
+etwa listet eine ganze Liste von Vorteilen auf und beinhaltet viele interessante
+weiterführende Links. Ein wesentlicher Vorteil ist das &lt;em&gt;Vertrauen&lt;/em&gt;, welches
+bootstrap-fähige Systeme genießen können: Sie können mit keinen oder zumindest erheblich
+geringeren Abhängigkeiten erzeugt werden. Besonders interessant wird das in
+Zusammenhang mit &lt;a href=&quot;https://reproducible-builds.org/&quot;&gt;reproduzierbaren Builds&lt;/a&gt;, welche
+eine hundertprozentige Vorhersagbarkeit (Determinismus) von Kompilaten zum Ziel haben.
+Diese Zugänge können als Versuch verstanden werden, die Komplexität moderner
+Softwaresysteme wieder zu bändigen und &lt;em&gt;nachhaltiger zu Programmieren&lt;/em&gt;. Über die
+enorme Bedeutung der Beherrschung von Komplexität füllt &lt;a href=&quot;https://www.schatten.info/&quot;&gt;Alexander Schatten&lt;/a&gt; in der 
+&lt;a href=&quot;https://shop.heise.de/ix-13-2022/PDF&quot;&gt;iX Spezial 2022 – Green IT&lt;/a&gt; fast eine gesamte
+Ausgabe des Magazins im Alleingang.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 20 Aug 2022 00:00:00 -0500</pubDate>
+        <link>https://denktmit.de/2022/08/20/Bootstrapping-Programming-Languages.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2022/08/20/Bootstrapping-Programming-Languages.html</guid>
+        
+        
+      </item>
+      
     
      
       <item>
@@ -1256,6 +1614,75 @@ auf.&lt;/li&gt;
         <pubDate>Fri, 14 Jan 2022 00:00:00 -0600</pubDate>
         <link>https://denktmit.de/2022/01/14/mein-zukunftstraum-von-silicon-orschel.html</link>
         <guid isPermaLink="true">https://denktmit.de/2022/01/14/mein-zukunftstraum-von-silicon-orschel.html</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Testen im Schlarafenland</title>
+        <author>Christian Keller</author>
+        <description>&lt;p&gt;Jeder kennt es, viele nervt es, jeder mag es, wenige tun es: Testen. Stellt euch vor ihr fragt jemanden in einem Vorstellungsgespräch was er von testen hält, natürlich ist das super und absolut notwendig, wird man hören. Aber ist es das wirklich? Und wie wird es gelebt? Da hilt eher die Frage “Welche Arten von Tests kennst du?” und “Was sind denn die Vor- und Nachteile?”. Die Antwort kann durchaus differenziert ausfallen, denn was ist wichtig beim testen und wie kann man sich das Leben einfacher machen?&lt;/p&gt;
+
+&lt;h2 id=&quot;so-viele-buzzwords&quot;&gt;So viele Buzzwords&lt;/h2&gt;
+&lt;p&gt;Ob TDD, BDD, Unit, Integration, Module, Component, Application, System, E2E, User Journey, Soak, Smoke, Performance, Load, oder hunderte andere Begriffe und Vorgehensweisen, alle haben Vor- und auch Nachteile. Meist sind diese Begriffe auch noch ordentlich überladen und sowieso in jedem Softwareprojekt anders interpretiert.
+Unabhängig von der Art der Tests sollten jedoch alle ein paar oberflächlich einfache Kriterien erfüllen um einem selbst und allen anderen nicht den Tag zu versauen.
+Tests sollten möglichst:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;kleinteilig, fast atomar bezogen auf ihren Scope sein&lt;/li&gt;
+  &lt;li&gt;möglichst wenig Anpassungsbedarf bei Änderungen halben&lt;/li&gt;
+  &lt;li&gt;Refactor-sicher sein&lt;/li&gt;
+  &lt;li&gt;schnell sein&lt;/li&gt;
+  &lt;li&gt;unabhängig sein&lt;/li&gt;
+  &lt;li&gt;sagen was klemmt, wenn es denn klemmt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;winzig-kleine-fitzelchen&quot;&gt;Winzig kleine Fitzelchen&lt;/h2&gt;
+&lt;p&gt;Wer Fitzelchen nicht kennt sollte sich mit Aktenschreddern auseinandersetzen, denn der eigene ist nicht mehr DSGVO-konform :)
+Was ist der kleinste (sinnvoll) testbare Teil einer Anwendung? Eine Funktion? Ja, nur nicht jede! Nur solche, die auch von außerhalb eines Typs genutzt werden können. Wir schreiben fröhlich und guter Dinge Tests, die wir sogleich durch eine glorreiche erste Implementierung grün werden lassen (TDD: red, green, refactor) um uns nach jedem Schritt zu fragen: “Ist das noch guter Code?”. Die Antwort ist meistens ein “fast”, was gut ist, denn dann können wir unsere IDe auspacken und die geballte Magie des Refactor anwerfen und den Code in bester Manier herausputzen. Dabei extrahiert man schon mal die eine oder andere Funktion, oder verschiebt solche in Utilities, bedeutet das jetzt fehlen Tests? Ganz einfach so? Jain :)
+Unser kleinsten Teile sind effektiv die kleinsten Teile, die jemand verwenden kann: Die Public-API! Ich höre schon die Schreie: “Das ist gar nicht public”, aber die Antwort ist einfach “It depends” und zwar auf dem Blickwinkel. Diesen Blickwinkel sollten wir schärfen indem wir Schnittstellen (Interfaces) definieren, Abhängigkeiten auslagern und Belange trennen.
+Was übrig bleibt, dem verpassen wir Unit-Tests. Einigt euch im Projekt darauf, was trivial ist und nicht getestet werden soll (ja das gibt es, setter und getter z.B.) und alles andere kann man beruhigt zu 100% (branch-coverage, nicht line-coverage, ihr Schlawiener ;) ) testen. Und ja das bedeutet nicht, dass man hier fertig ist, oder wirklich alle Fälle abgedeckt hat.&lt;/p&gt;
+
+&lt;p&gt;Whitebox (Fahrstuhlgedankenexperiment)&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Für die kleinsten dieser Teile, die hauptsächlich intern verwendet werden sind das die Unit-Test.
+Minimal klein, schnell, keine Mocks&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Die nächste Stufe der Tests überprüft lediglich die Integration der Unit-getesteten Teile, hierfür werden Mocks oder Dummys für alle Abhängigkeiten verwendet. Ob das jetzt Integration, Component, oder “was auch immer”-Test genannt werden ist ganz eurer Vorliebe überlassen.
+Klar abgesteckt/isoliert, flott, alle Mocks/Dummys&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jetzt schließt man auch mal externe Systeme an, die zur fertigen Anwendung gehören, wie z.B. Datenbanken, und testet Nutzerszenarien. Ich nenne das gerne Application-Test.
+Diese Tests sollte man wunderbar nach einer fachlichen Anforderung schreiben können. “Sollte (TM)”
+Schnittstellen, I/O, Minuten, Testdaten/Mocks&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Blackbox (Schrödinger lässt grüßen)&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Dann wird die Anwendung auch mal deployed, gestartet und geprüft ob sie auch brav antwortet, in der Regel ohne externe Abhängigkeiten (Smoke Tests).
+Laufzeit, thumbleweed, Mocks für andere Anwendungen&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Da die Welt nicht grau und leer ist, sollten wir auch mal schauen, ob unsere Anwendung(en) auch mit anderen klar kommen. (E2E, User Journey)
+Höhle des Löwen, Ewigkeiten, keine Mocks&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Natürlich habe ich etwas wichtiges vergessen (Außer JavaScript ist involviert, dann …), den Kompiler. Dieser kann uns einiges an Testaufwand ersparen, indem wir ein strikt typisiertes Design nutzen können viele komplexe Dinge wie z.B. Konfigurationen durch Builder oder DSLs (nicht Parser/Lexer) helfen die meisten Fehler durch den Kompiler auszuschließen.
+Ein Beispiel: Wenn ihr schon mal Manifeste für Kubernetes geschrieben habt, wisst ihr das gutes Tooling um auf Anhieb und ohne viel Erfahrung damit ein fehlerfrei zu bleiben und nicht erst beim apply zu merken, dass etwas nicht stimmt, rar ist. Warum also nicht eine DSL für eine typsichere Sprache generieren, die Syntaxfehler ausschließt?
+Gesagt, getan: https://github.com/loosetie/k8s-dsl :)&lt;/p&gt;
+
+&lt;h2 id=&quot;fazit&quot;&gt;Fazit&lt;/h2&gt;
+&lt;p&gt;Warum “Testen im Schlarafenland”? Weil es einfach zu viele Definitionen/Tools und auch sinnvolle Möglichkeiten gibt. Jedes Team muss also in den Süß/Sauren Apfel breißen und für sich selbst entscheiden, was am besten funktioniert :)&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Dec 2021 00:00:00 -0600</pubDate>
+        <link>https://denktmit.de/2021/12/03/testen-im-schlarafenland.html</link>
+        <guid isPermaLink="true">https://denktmit.de/2021/12/03/testen-im-schlarafenland.html</guid>
         
         
       </item>

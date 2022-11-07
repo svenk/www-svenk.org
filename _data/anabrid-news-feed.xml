@@ -5,62 +5,179 @@
     <description>Anabrid is the Analog Computing Company. This feed shows the same content as in https://anabrid.com/news/</description>
     <link>https://anabrid.com/</link>
     <atom:link href="https://anabrid.com" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 May 2022 13:20:36 +0200</pubDate>
-    <lastBuildDate>Mon, 30 May 2022 13:20:36 +0200</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2022 14:51:32 +0100</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2022 14:51:32 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+    
+    
+     
+      <item>
+        <title>anabrid eröffnet Räume in Frankfurt</title>
+        <author>Sven Köppel</author>
+        <description></description>
+        <pubDate>Tue, 01 Nov 2022 00:00:00 +0100</pubDate>
+        <link>https://anabrid.com/news/2022-11-01/neuer-Standort-Frankfurt/</link>
+        <guid isPermaLink="true">https://anabrid.com/news/2022-11-01/neuer-Standort-Frankfurt/</guid>
+        
+        <category>Frankfurt</category>
+        
+        <category>Standort</category>
+        
+        <category>Pressemitteilung</category>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #12: Batch 2.0 production delays</title>
+        <author></author>
+        <description></description>
+        <pubDate>Wed, 26 Oct 2022 00:00:00 +0200</pubDate>
+        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/12/</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/12/</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #11: Batch 2.0 production news</title>
+        <author></author>
+        <description></description>
+        <pubDate>Mon, 19 Sep 2022 00:00:00 +0200</pubDate>
+        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/11/</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/11/</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #10: First production line in Germany started</title>
+        <author></author>
+        <description></description>
+        <pubDate>Tue, 23 Aug 2022 00:00:00 +0200</pubDate>
+        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/10/</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/10/</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #9: IC scam detective story</title>
+        <author></author>
+        <description></description>
+        <pubDate>Fri, 01 Jul 2022 00:00:00 +0200</pubDate>
+        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/9/</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/9/</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #8: Analog Thing presentations and production delay</title>
+        <author></author>
+        <description></description>
+        <pubDate>Thu, 16 Jun 2022 00:00:00 +0200</pubDate>
+        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/8/</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/8/</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #7: Batch 1.5 production news</title>
+        <author></author>
+        <description></description>
+        <pubDate>Mon, 16 May 2022 00:00:00 +0200</pubDate>
+        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/7/</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/7/</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #6: Shipping estimates</title>
+        <author></author>
+        <description></description>
+        <pubDate>Fri, 15 Apr 2022 00:00:00 +0200</pubDate>
+        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/6/</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/6/</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>AppliedAI: Anabrid is part of the German AI Startup Landscape</title>
+        <author></author>
+        <description></description>
+        <pubDate>Mon, 11 Apr 2022 00:00:00 +0200</pubDate>
+        <link>https://anabrid.comhttps://www.appliedai.de/hub/2022-ai-german-startup-landscape</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://www.appliedai.de/hub/2022-ai-german-startup-landscape</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #5: Production, test and shipping</title>
+        <author></author>
+        <description></description>
+        <pubDate>Wed, 30 Mar 2022 00:00:00 +0200</pubDate>
+        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/5/</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/5/</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>CHIP-Magazin: Für Spezialanwendungen könnten Analogrechner wiederauferstehen</title>
+        <author></author>
+        <description></description>
+        <pubDate>Tue, 01 Mar 2022 00:00:00 +0100</pubDate>
+        <link>https://anabrid.comhttps://twitter.com/analogparadigm/status/1510302871128092678</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://twitter.com/analogparadigm/status/1510302871128092678</guid>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>So helfen Analogrechner beim Quantencomputing</title>
+        <author></author>
+        <description></description>
+        <pubDate>Tue, 22 Feb 2022 00:00:00 +0100</pubDate>
+        <link>https://anabrid.comhttps://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</guid>
+        
+        
+      </item>
+      
     
      
       <item>
         <title>Der Analogrechner der Zukunft entsteht in Ulm</title>
         <author>Sven Köppel</author>
-        <description>&lt;p&gt;Wenn Politik, Industrie und Wissenschaft aufeinandertreffen, dann ist oft viel
-Geld für große Zukunftsthemen wie &lt;em&gt;Künstliche Intelligenz&lt;/em&gt; (KI) oder
-&lt;em&gt;Quantencomputer&lt;/em&gt; (QC) im Spiel. So hat die Bundesregierung 2021 zusammen
-mit dem &lt;a href=&quot;https://www.dlr.de/&quot;&gt;deutschen Zentrum für Luft- und Raumfahrt (DLR)&lt;/a&gt;
-eine millionenschwere Initiative zur &lt;a href=&quot;https://www.dlr.de/content/de/dossiers/2021/quantencomputing.html&quot;&gt;Entwicklung von Quantencomputern&lt;/a&gt;
-gestartet. Dafür wurde in Ulm ein &lt;a href=&quot;https://www.dlr.de/content/de/artikel/news/2021/02/20210527_dlr-eroeffnet-institut-fuer-quantentechnologien-in-ulm.html&quot;&gt;Institut für Quantentechnologien&lt;/a&gt;
-eröffnet, in dem vielversprechende Startups in einem &lt;em&gt;Innovationszentrum&lt;/em&gt;
-zusammengebracht werden sollen. Die &lt;a href=&quot;/&quot;&gt;anabrid GmbH&lt;/a&gt; hat sich in einer
-öffentlichen Ausschreibung nun erfolgreich auf eine der begehrten Positionen
-beworben.
-Das DLR sticht aus der deutschen Forschungslandschaft als öffentliches
-Forschungszentrum zum Zweck der angewandten und Grundlagenforschung heraus,
-welches neben seinem Schwerpunkt auf Luftfahrt und Raumfahrt
-auch Themen der Energie, Verkehr, Sicherheit und Digitalisierung bearbeitet.
-Mit dem DLR hat die &lt;em&gt;anabrid&lt;/em&gt; einen erfahren und erfolgreichen Partner mit
-besten Kontakten im öffentlichen und privaten Sektor.&lt;/p&gt;
-
-&lt;p&gt;Die Quanteninitiative ist auf dem ehemaligen Geländer der &lt;em&gt;Daimler AG&lt;/em&gt; im
-&lt;a href=&quot;https://www.uni-ulm.de/einrichtungen/kiz/weiteres/campus-navigation/campus-navigator/&quot;&gt;Bereich West/Science Park II auf dem oberen Eselsberg&lt;/a&gt;
-der Stadt Ulm beheimatet. Hier bekommt die &lt;em&gt;anabrid&lt;/em&gt; im Rahmen der Ausschreibung
-Räumlichkeiten und Labore zur Verfügung gestellt und kann auf gemeinsame
-Ressourcen des Innovationszentrums zugreifen, darunter Speziallabore,
-ein Hörsaalgebäude sowie eine Kantine. Fast 12 Mitarbeiterinnen und Mitarbeiter
-sollen an diesem neuen Forschungsstandort der &lt;em&gt;anabrid&lt;/em&gt; zukünftig beschäftigt werden
-und untersuchen, wie man Computer baut, die ähnlich wie Quantencomputer funktionieren,
-aber deutlich günstiger (einfacher) in der Herstellung, Unterhalt und Betrieb sind.&lt;/p&gt;
-
-&lt;p&gt;Die &lt;em&gt;anabrid&lt;/em&gt; zählt zu den weltweit führenden Experten im Bereich des &lt;em&gt;Analogrechnens&lt;/em&gt;.
-Dabei handelt es sich um eine Art und Weise, Computer zu bauen und zu betreiben, die
-im letzten Jahrhundert sehr verbreitet war, aber von den &lt;em&gt;Digitalcomputern&lt;/em&gt;
-überholt wurde. Die &lt;em&gt;anabrid&lt;/em&gt; beabsichtigt, die Fortschritte der digitalen
-Halbleiterentwicklung auf Analogcomputer zu übertragen und so eine Brückentechnik
-zwischen den heutigen klassischen Digitalrechnern und den zukunftsträchtigen
-Quantencomputern zu entwickeln.&lt;/p&gt;
-
-&lt;p&gt;Tatsächlich ist die Wiederentdeckung analoger Rechenschaltkreise ein Trend, der vor
-ein paar Jahren eingesetzt hat. Dabei locken der energieeffiziente Betrieb
-und die kaum beschränkten Skalierungseigenschaften Forscherinnen und Forscher auf der
-ganzen Welt an. 
-Grundlagenforschung und Entwicklung praktikabler moderner Analogrechnertechnologien
-umfassen eine Vielzahl von Aufgaben, welche die anabrid dank ihres breit aufgestellten
-Teams aus Wissenschaftler:innen, Elektroniker:innen und Anwender:innen meistern wird.
-&lt;!--
-Das Rennen zur Entwicklung der Grundlagenforschung hin zu 
-einer marktreifen Technologie umfasst allerdings viele ingeneurstechnische Aufgaben,
-die die *anabrid* dank ihres divers aufgestellten Teams meistern möchte.
---&gt;&lt;/p&gt;
-</description>
+        <description></description>
         <pubDate>Tue, 22 Feb 2022 00:00:00 +0100</pubDate>
         <link>https://anabrid.com/news/2022-02-22/DLR-Ulm-Quanteninitiative/</link>
         <guid isPermaLink="true">https://anabrid.com/news/2022-02-22/DLR-Ulm-Quanteninitiative/</guid>
@@ -79,18 +196,7 @@ die die *anabrid* dank ihres divers aufgestellten Teams meistern möchte.
       <item>
         <title>Anabrid build and sold 100 THE ANALOG THINGs</title>
         <author>Sven Köppel</author>
-        <description>&lt;p&gt;Anabrid, the creator of &lt;a href=&quot;https://the-analog-thing.org/&quot;&gt;The Analog Thing&lt;/a&gt;
-(&lt;em&gt;THAT&lt;/em&gt;), just sold the first batch of 100 THATs within two months. The
-&lt;a href=&quot;https://shop.anabrid.com/&quot;&gt;Anabrid web shop&lt;/a&gt; launched for pre-orderings
-in October 2021. We are now collecting orders for the next batch of THATs.
-Anabrid chose this model of funding the production of batches in order to
-provide a low price. This approach was also explained in the
-&lt;a href=&quot;https://the-analog-thing.org/newsletter/&quot;&gt;three newsletters&lt;/a&gt; which where
-released within the past two months.&lt;/p&gt;
-
-&lt;p&gt;In the meantime, the fabrication of &lt;em&gt;THE ANALOG THINGs&lt;/em&gt; got finished.
-The parts are about to be shipped to Germany for final assembly.&lt;/p&gt;
-</description>
+        <description></description>
         <pubDate>Mon, 24 Jan 2022 00:00:00 +0100</pubDate>
         <link>https://anabrid.com/news/2022-01-24/THAT-Production/</link>
         <guid isPermaLink="true">https://anabrid.com/news/2022-01-24/THAT-Production/</guid>
@@ -103,85 +209,19 @@ The parts are about to be shipped to Germany for final assembly.&lt;/p&gt;
       </item>
       
     
-    
-    <!-- also loop over sidebar news -->
-    
      
       <item>
         <title>Frankfurter Allgemeine Zeitung: Neue Hoffnung für die Analogrechner</title>
+        <author></author>
+        <description></description>
         <pubDate>Mon, 13 Sep 2021 00:00:00 +0200</pubDate>
-        <link>https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/</link>
-        <guid isPermaLink="true">https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/</guid>
+        <link>https://anabrid.comhttps://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/</link>
+        <guid isPermaLink="true">https://anabrid.comhttps://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/</guid>
         
         
       </item>
       
     
-     
-      <item>
-        <title>So helfen Analogrechner beim Quantencomputing</title>
-        <pubDate>Tue, 22 Feb 2022 00:00:00 +0100</pubDate>
-        <link>https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</link>
-        <guid isPermaLink="true">https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</guid>
-        
-        
-      </item>
-      
-    
-     
-      <item>
-        <title>The Analog Thing Newsletter #5: Production, test and shipping</title>
-        <pubDate>Wed, 30 Mar 2022 00:00:00 +0200</pubDate>
-        <link>https://the-analog-thing.org/newsletter/5/</link>
-        <guid isPermaLink="true">https://the-analog-thing.org/newsletter/5/</guid>
-        
-        
-      </item>
-      
-    
-     
-      <item>
-        <title>CHIP-Magazin: Für Spezialanwendungen könnten Analogrechner wiederauferstehen</title>
-        <pubDate>Tue, 01 Mar 2022 00:00:00 +0100</pubDate>
-        <link>https://twitter.com/analogparadigm/status/1510302871128092678</link>
-        <guid isPermaLink="true">https://twitter.com/analogparadigm/status/1510302871128092678</guid>
-        
-        
-      </item>
-      
-    
-     
-      <item>
-        <title>The Analog Thing Newsletter #6: Shipping estimates</title>
-        <pubDate>Fri, 15 Apr 2022 00:00:00 +0200</pubDate>
-        <link>https://the-analog-thing.org/newsletter/6/</link>
-        <guid isPermaLink="true">https://the-analog-thing.org/newsletter/6/</guid>
-        
-        
-      </item>
-      
-    
-     
-      <item>
-        <title>AppliedAI: Anabrid is part of the German AI Startup Landscape</title>
-        <pubDate>Mon, 11 Apr 2022 00:00:00 +0200</pubDate>
-        <link>https://www.appliedai.de/hub/2022-ai-german-startup-landscape</link>
-        <guid isPermaLink="true">https://www.appliedai.de/hub/2022-ai-german-startup-landscape</guid>
-        
-        
-      </item>
-      
-    
-     
-      <item>
-        <title>The Analog Thing Newsletter #7: Production news</title>
-        <pubDate>Mon, 16 May 2022 00:00:00 +0200</pubDate>
-        <link>https://the-analog-thing.org/newsletter/7/</link>
-        <guid isPermaLink="true">https://the-analog-thing.org/newsletter/7/</guid>
-        
-        
-      </item>
-      
     
   </channel>
 </rss>
