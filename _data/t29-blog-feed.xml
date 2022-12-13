@@ -9,7 +9,7 @@
 	<description>A blog about news from the technikum29 computer museum</description>
 	<language>de</language>
 	<copyright>&#x2117; &amp; &#xA9; 2003-2022 Sven K&#245;ppel and the technikum29 team</copyright>
-	<pubDate>Mon, 07 Nov 2022 15:54:34 +0100</pubDate>
+	<pubDate>Tue, 13 Dec 2022 11:15:32 +0100</pubDate>
 	<image>
 		<url>https://www.technikum29.de/shared/img-v6/banner.de.png</url>
 		<title>technikum29 Computermuseum</title>
@@ -21,6 +21,13 @@
 	<atom:link href="https://www.technikum29.de/blog/rss" rel="self" type="application/rss+xml" />	
 	
 				<item>
+				<title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2022 geschah</title>
+				<author>Sven</author>
+				<link>https://technikum29.de/blog/2022-12-13-Jahresabschluss</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2022-12-13-Jahresabschluss</guid>
+				<pubDate>2022-12-13</pubDate>
+			</item>
+						<item>
 				<title>Neuer Fernschreiber Siemens T100S im technikum29</title>
 				<author>Detlef</author>
 				<link>https://technikum29.de/blog/2022-11-05-Neuer Fernschreiber Siemens T100S im technikum29</link>
