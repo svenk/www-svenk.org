@@ -1,72 +1,90 @@
 anabrid-news:
 - author: "Sven K\xF6ppel"
   category: Pressemitteilung
+  guid: https://anabrid.com/news/2023-03-15/UnternehmerTUM-Anabrid/
+  link: https://anabrid.com/news/2023-03-15/UnternehmerTUM-Anabrid/
+  pubDate: Wed, 15 Mar 2023 00:00:00 -0500
+  title: Anabrid joins UnternehmerTUM Incubator
+- author: null
+  guid: https://the-analog-thing.org/newsletter/13
+  link: https://the-analog-thing.org/newsletter/13
+  pubDate: Mon, 06 Feb 2023 00:00:00 -0600
+  title: 'The Analog Thing Newsletter #13: Production updates, Pictures from new assembly
+    site'
+- author: null
+  guid: https://qci.dlr.de/aqura-x-anabrid-kick-off-fuer-die-erste-industrie-forschungspartnerschaft-in-der-qci/
+  link: https://qci.dlr.de/aqura-x-anabrid-kick-off-fuer-die-erste-industrie-forschungspartnerschaft-in-der-qci/
+  pubDate: Tue, 17 Jan 2023 00:00:00 -0600
+  title: "Kick-off f\xFCr die erste Industrie- & Forschungspartnerschaft im Quantencomputing-Zentrum\
+    \ Ulm"
+- author: "Sven K\xF6ppel"
+  category: Pressemitteilung
   guid: https://anabrid.com/news/2022-11-01/neuer-Standort-Frankfurt/
   link: https://anabrid.com/news/2022-11-01/neuer-Standort-Frankfurt/
   pubDate: Tue, 01 Nov 2022 00:00:00 -0500
   title: "anabrid er\xF6ffnet R\xE4ume in Frankfurt"
 - author: null
-  guid: https://anabrid.comhttps://the-analog-thing.org/newsletter/12/
-  link: https://anabrid.comhttps://the-analog-thing.org/newsletter/12/
+  guid: https://the-analog-thing.org/newsletter/12/
+  link: https://the-analog-thing.org/newsletter/12/
   pubDate: Wed, 26 Oct 2022 00:00:00 -0500
   title: 'The Analog Thing Newsletter #12: Batch 2.0 production delays'
 - author: null
-  guid: https://anabrid.comhttps://the-analog-thing.org/newsletter/11/
-  link: https://anabrid.comhttps://the-analog-thing.org/newsletter/11/
+  guid: https://the-analog-thing.org/newsletter/11/
+  link: https://the-analog-thing.org/newsletter/11/
   pubDate: Mon, 19 Sep 2022 00:00:00 -0500
   title: 'The Analog Thing Newsletter #11: Batch 2.0 production news'
 - author: null
-  guid: https://anabrid.comhttps://the-analog-thing.org/newsletter/10/
-  link: https://anabrid.comhttps://the-analog-thing.org/newsletter/10/
+  guid: https://the-analog-thing.org/newsletter/10/
+  link: https://the-analog-thing.org/newsletter/10/
   pubDate: Tue, 23 Aug 2022 00:00:00 -0500
   title: 'The Analog Thing Newsletter #10: First production line in Germany started'
 - author: null
-  guid: https://anabrid.comhttps://the-analog-thing.org/newsletter/9/
-  link: https://anabrid.comhttps://the-analog-thing.org/newsletter/9/
+  guid: https://the-analog-thing.org/newsletter/9/
+  link: https://the-analog-thing.org/newsletter/9/
   pubDate: Fri, 01 Jul 2022 00:00:00 -0500
   title: 'The Analog Thing Newsletter #9: IC scam detective story'
 - author: null
-  guid: https://anabrid.comhttps://the-analog-thing.org/newsletter/8/
-  link: https://anabrid.comhttps://the-analog-thing.org/newsletter/8/
+  guid: https://the-analog-thing.org/newsletter/8/
+  link: https://the-analog-thing.org/newsletter/8/
   pubDate: Thu, 16 Jun 2022 00:00:00 -0500
   title: 'The Analog Thing Newsletter #8: Analog Thing presentations and production
     delay'
 - author: null
-  guid: https://anabrid.comhttps://the-analog-thing.org/newsletter/7/
-  link: https://anabrid.comhttps://the-analog-thing.org/newsletter/7/
+  guid: https://the-analog-thing.org/newsletter/7/
+  link: https://the-analog-thing.org/newsletter/7/
   pubDate: Mon, 16 May 2022 00:00:00 -0500
   title: 'The Analog Thing Newsletter #7: Batch 1.5 production news'
 - author: null
-  guid: https://anabrid.comhttps://the-analog-thing.org/newsletter/6/
-  link: https://anabrid.comhttps://the-analog-thing.org/newsletter/6/
+  guid: https://the-analog-thing.org/newsletter/6/
+  link: https://the-analog-thing.org/newsletter/6/
   pubDate: Fri, 15 Apr 2022 00:00:00 -0500
   title: 'The Analog Thing Newsletter #6: Shipping estimates'
 - author: null
-  guid: https://anabrid.comhttps://www.appliedai.de/hub/2022-ai-german-startup-landscape
-  link: https://anabrid.comhttps://www.appliedai.de/hub/2022-ai-german-startup-landscape
+  guid: https://www.appliedai.de/hub/2022-ai-german-startup-landscape
+  link: https://www.appliedai.de/hub/2022-ai-german-startup-landscape
   pubDate: Mon, 11 Apr 2022 00:00:00 -0500
   title: 'AppliedAI: Anabrid is part of the German AI Startup Landscape'
 - author: null
-  guid: https://anabrid.comhttps://the-analog-thing.org/newsletter/5/
-  link: https://anabrid.comhttps://the-analog-thing.org/newsletter/5/
+  guid: https://the-analog-thing.org/newsletter/5/
+  link: https://the-analog-thing.org/newsletter/5/
   pubDate: Wed, 30 Mar 2022 00:00:00 -0500
   title: 'The Analog Thing Newsletter #5: Production, test and shipping'
 - author: null
-  guid: https://anabrid.comhttps://twitter.com/analogparadigm/status/1510302871128092678
-  link: https://anabrid.comhttps://twitter.com/analogparadigm/status/1510302871128092678
+  guid: https://twitter.com/analogparadigm/status/1510302871128092678
+  link: https://twitter.com/analogparadigm/status/1510302871128092678
   pubDate: Tue, 01 Mar 2022 00:00:00 -0600
   title: "CHIP-Magazin: F\xFCr Spezialanwendungen k\xF6nnten Analogrechner wiederauferstehen"
-- author: null
-  guid: https://anabrid.comhttps://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html
-  link: https://anabrid.comhttps://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html
-  pubDate: Tue, 22 Feb 2022 00:00:00 -0600
-  title: So helfen Analogrechner beim Quantencomputing
 - author: "Sven K\xF6ppel"
   category: Pressemitteilung
   guid: https://anabrid.com/news/2022-02-22/DLR-Ulm-Quanteninitiative/
   link: https://anabrid.com/news/2022-02-22/DLR-Ulm-Quanteninitiative/
   pubDate: Tue, 22 Feb 2022 00:00:00 -0600
   title: Der Analogrechner der Zukunft entsteht in Ulm
+- author: null
+  guid: https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html
+  link: https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html
+  pubDate: Tue, 22 Feb 2022 00:00:00 -0600
+  title: So helfen Analogrechner beim Quantencomputing
 - author: "Sven K\xF6ppel"
   category: Pressemitteilung
   guid: https://anabrid.com/news/2022-01-24/THAT-Production/
@@ -74,8 +92,8 @@ anabrid-news:
   pubDate: Mon, 24 Jan 2022 00:00:00 -0600
   title: Anabrid build and sold 100 THE ANALOG THINGs
 - author: null
-  guid: https://anabrid.comhttps://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/
-  link: https://anabrid.comhttps://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/
+  guid: https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/
+  link: https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/
   pubDate: Mon, 13 Sep 2021 00:00:00 -0500
   title: "Frankfurter Allgemeine Zeitung: Neue Hoffnung f\xFCr die Analogrechner"
 

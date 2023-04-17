@@ -82,7 +82,8 @@ prop "human_url: http://sven.köppel.org/uni/"
 prop "icon: /assets/icons/talk.png" # <- because it is mostly talks
 data_url="http://sven.köppel.org/uni/cgi-bin/json-uniordner"; show data_url
 local_file="uniordner.json"; show local_file
-download
+# download
+echo "    skipped_download: True # because target is currently offline!"
 python -c "import yaml,json; print(yaml.dump(json.load(open('$local_file'))))" \
     > ${local_file/.*}.yaml
 local_yaml_files+=("${local_file/.*}.yaml")
