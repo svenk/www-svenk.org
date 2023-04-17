@@ -5,20 +5,73 @@
     <description>Anabrid is the Analog Computing Company. This feed shows the same content as in https://anabrid.com/news/</description>
     <link>https://anabrid.com/</link>
     <atom:link href="https://anabrid.com" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Nov 2022 03:32:24 -0600</pubDate>
-    <lastBuildDate>Thu, 17 Nov 2022 03:32:24 -0600</lastBuildDate>
-    <generator>Jekyll v4.2.1</generator>
+    <pubDate>Mon, 17 Apr 2023 15:38:54 -0500</pubDate>
+    <lastBuildDate>Mon, 17 Apr 2023 15:38:54 -0500</lastBuildDate>
+    <generator>Jekyll v4.2.2</generator>
     
     
+    
+     
+      <item>
+        <title>Anabrid joins UnternehmerTUM Incubator</title>
+        <author>Sven Köppel</author>
+        <description></description>
+	<pubDate>Wed, 15 Mar 2023 00:00:00 -0500</pubDate>
+	
+        <link>https://anabrid.com/news/2023-03-15/UnternehmerTUM-Anabrid/</link>
+	<guid isPermaLink="true">https://anabrid.com/news/2023-03-15/UnternehmerTUM-Anabrid/</guid>
+	
+        
+        <category>UnternehmerTUM</category>
+        
+        <category>Incubator</category>
+        
+        <category>Pressemitteilung</category>
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>The Analog Thing Newsletter #13: Production updates, Pictures from new assembly site</title>
+        <author></author>
+        <description></description>
+	<pubDate>Mon, 06 Feb 2023 00:00:00 -0600</pubDate>
+	
+	<link>https://the-analog-thing.org/newsletter/13</link>
+	<guid isPermaLink="true>">https://the-analog-thing.org/newsletter/13</guid>
+	
+        
+        
+      </item>
+      
+    
+     
+      <item>
+        <title>Kick-off für die erste Industrie- &amp; Forschungspartnerschaft im Quantencomputing-Zentrum Ulm</title>
+        <author></author>
+        <description></description>
+	<pubDate>Tue, 17 Jan 2023 00:00:00 -0600</pubDate>
+	
+	<link>https://qci.dlr.de/aqura-x-anabrid-kick-off-fuer-die-erste-industrie-forschungspartnerschaft-in-der-qci/</link>
+	<guid isPermaLink="true>">https://qci.dlr.de/aqura-x-anabrid-kick-off-fuer-die-erste-industrie-forschungspartnerschaft-in-der-qci/</guid>
+	
+        
+        
+      </item>
+      
     
      
       <item>
         <title>anabrid eröffnet Räume in Frankfurt</title>
         <author>Sven Köppel</author>
         <description></description>
-        <pubDate>Tue, 01 Nov 2022 00:00:00 -0500</pubDate>
+	<pubDate>Tue, 01 Nov 2022 00:00:00 -0500</pubDate>
+	
         <link>https://anabrid.com/news/2022-11-01/neuer-Standort-Frankfurt/</link>
-        <guid isPermaLink="true">https://anabrid.com/news/2022-11-01/neuer-Standort-Frankfurt/</guid>
+	<guid isPermaLink="true">https://anabrid.com/news/2022-11-01/neuer-Standort-Frankfurt/</guid>
+	
         
         <category>Frankfurt</category>
         
@@ -35,9 +88,11 @@
         <title>The Analog Thing Newsletter #12: Batch 2.0 production delays</title>
         <author></author>
         <description></description>
-        <pubDate>Wed, 26 Oct 2022 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/12/</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/12/</guid>
+	<pubDate>Wed, 26 Oct 2022 00:00:00 -0500</pubDate>
+	
+	<link>https://the-analog-thing.org/newsletter/12/</link>
+	<guid isPermaLink="true>">https://the-analog-thing.org/newsletter/12/</guid>
+	
         
         
       </item>
@@ -48,9 +103,11 @@
         <title>The Analog Thing Newsletter #11: Batch 2.0 production news</title>
         <author></author>
         <description></description>
-        <pubDate>Mon, 19 Sep 2022 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/11/</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/11/</guid>
+	<pubDate>Mon, 19 Sep 2022 00:00:00 -0500</pubDate>
+	
+	<link>https://the-analog-thing.org/newsletter/11/</link>
+	<guid isPermaLink="true>">https://the-analog-thing.org/newsletter/11/</guid>
+	
         
         
       </item>
@@ -61,9 +118,11 @@
         <title>The Analog Thing Newsletter #10: First production line in Germany started</title>
         <author></author>
         <description></description>
-        <pubDate>Tue, 23 Aug 2022 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/10/</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/10/</guid>
+	<pubDate>Tue, 23 Aug 2022 00:00:00 -0500</pubDate>
+	
+	<link>https://the-analog-thing.org/newsletter/10/</link>
+	<guid isPermaLink="true>">https://the-analog-thing.org/newsletter/10/</guid>
+	
         
         
       </item>
@@ -74,9 +133,11 @@
         <title>The Analog Thing Newsletter #9: IC scam detective story</title>
         <author></author>
         <description></description>
-        <pubDate>Fri, 01 Jul 2022 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/9/</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/9/</guid>
+	<pubDate>Fri, 01 Jul 2022 00:00:00 -0500</pubDate>
+	
+	<link>https://the-analog-thing.org/newsletter/9/</link>
+	<guid isPermaLink="true>">https://the-analog-thing.org/newsletter/9/</guid>
+	
         
         
       </item>
@@ -87,9 +148,11 @@
         <title>The Analog Thing Newsletter #8: Analog Thing presentations and production delay</title>
         <author></author>
         <description></description>
-        <pubDate>Thu, 16 Jun 2022 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/8/</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/8/</guid>
+	<pubDate>Thu, 16 Jun 2022 00:00:00 -0500</pubDate>
+	
+	<link>https://the-analog-thing.org/newsletter/8/</link>
+	<guid isPermaLink="true>">https://the-analog-thing.org/newsletter/8/</guid>
+	
         
         
       </item>
@@ -100,9 +163,11 @@
         <title>The Analog Thing Newsletter #7: Batch 1.5 production news</title>
         <author></author>
         <description></description>
-        <pubDate>Mon, 16 May 2022 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/7/</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/7/</guid>
+	<pubDate>Mon, 16 May 2022 00:00:00 -0500</pubDate>
+	
+	<link>https://the-analog-thing.org/newsletter/7/</link>
+	<guid isPermaLink="true>">https://the-analog-thing.org/newsletter/7/</guid>
+	
         
         
       </item>
@@ -113,9 +178,11 @@
         <title>The Analog Thing Newsletter #6: Shipping estimates</title>
         <author></author>
         <description></description>
-        <pubDate>Fri, 15 Apr 2022 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/6/</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/6/</guid>
+	<pubDate>Fri, 15 Apr 2022 00:00:00 -0500</pubDate>
+	
+	<link>https://the-analog-thing.org/newsletter/6/</link>
+	<guid isPermaLink="true>">https://the-analog-thing.org/newsletter/6/</guid>
+	
         
         
       </item>
@@ -126,9 +193,11 @@
         <title>AppliedAI: Anabrid is part of the German AI Startup Landscape</title>
         <author></author>
         <description></description>
-        <pubDate>Mon, 11 Apr 2022 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://www.appliedai.de/hub/2022-ai-german-startup-landscape</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://www.appliedai.de/hub/2022-ai-german-startup-landscape</guid>
+	<pubDate>Mon, 11 Apr 2022 00:00:00 -0500</pubDate>
+	
+	<link>https://www.appliedai.de/hub/2022-ai-german-startup-landscape</link>
+	<guid isPermaLink="true>">https://www.appliedai.de/hub/2022-ai-german-startup-landscape</guid>
+	
         
         
       </item>
@@ -139,9 +208,11 @@
         <title>The Analog Thing Newsletter #5: Production, test and shipping</title>
         <author></author>
         <description></description>
-        <pubDate>Wed, 30 Mar 2022 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://the-analog-thing.org/newsletter/5/</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://the-analog-thing.org/newsletter/5/</guid>
+	<pubDate>Wed, 30 Mar 2022 00:00:00 -0500</pubDate>
+	
+	<link>https://the-analog-thing.org/newsletter/5/</link>
+	<guid isPermaLink="true>">https://the-analog-thing.org/newsletter/5/</guid>
+	
         
         
       </item>
@@ -152,22 +223,11 @@
         <title>CHIP-Magazin: Für Spezialanwendungen könnten Analogrechner wiederauferstehen</title>
         <author></author>
         <description></description>
-        <pubDate>Tue, 01 Mar 2022 00:00:00 -0600</pubDate>
-        <link>https://anabrid.comhttps://twitter.com/analogparadigm/status/1510302871128092678</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://twitter.com/analogparadigm/status/1510302871128092678</guid>
-        
-        
-      </item>
-      
-    
-     
-      <item>
-        <title>So helfen Analogrechner beim Quantencomputing</title>
-        <author></author>
-        <description></description>
-        <pubDate>Tue, 22 Feb 2022 00:00:00 -0600</pubDate>
-        <link>https://anabrid.comhttps://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</guid>
+	<pubDate>Tue, 01 Mar 2022 00:00:00 -0600</pubDate>
+	
+	<link>https://twitter.com/analogparadigm/status/1510302871128092678</link>
+	<guid isPermaLink="true>">https://twitter.com/analogparadigm/status/1510302871128092678</guid>
+	
         
         
       </item>
@@ -178,9 +238,11 @@
         <title>Der Analogrechner der Zukunft entsteht in Ulm</title>
         <author>Sven Köppel</author>
         <description></description>
-        <pubDate>Tue, 22 Feb 2022 00:00:00 -0600</pubDate>
+	<pubDate>Tue, 22 Feb 2022 00:00:00 -0600</pubDate>
+	
         <link>https://anabrid.com/news/2022-02-22/DLR-Ulm-Quanteninitiative/</link>
-        <guid isPermaLink="true">https://anabrid.com/news/2022-02-22/DLR-Ulm-Quanteninitiative/</guid>
+	<guid isPermaLink="true">https://anabrid.com/news/2022-02-22/DLR-Ulm-Quanteninitiative/</guid>
+	
         
         <category>DLR</category>
         
@@ -194,12 +256,29 @@
     
      
       <item>
+        <title>So helfen Analogrechner beim Quantencomputing</title>
+        <author></author>
+        <description></description>
+	<pubDate>Tue, 22 Feb 2022 00:00:00 -0600</pubDate>
+	
+	<link>https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</link>
+	<guid isPermaLink="true>">https://www.dlr.de/content/de/artikel/news/2022/01/20220222_so-helfen-analogrechner-beim-quantencomputing.html</guid>
+	
+        
+        
+      </item>
+      
+    
+     
+      <item>
         <title>Anabrid build and sold 100 THE ANALOG THINGs</title>
         <author>Sven Köppel</author>
         <description></description>
-        <pubDate>Mon, 24 Jan 2022 00:00:00 -0600</pubDate>
+	<pubDate>Mon, 24 Jan 2022 00:00:00 -0600</pubDate>
+	
         <link>https://anabrid.com/news/2022-01-24/THAT-Production/</link>
-        <guid isPermaLink="true">https://anabrid.com/news/2022-01-24/THAT-Production/</guid>
+	<guid isPermaLink="true">https://anabrid.com/news/2022-01-24/THAT-Production/</guid>
+	
         
         <category>THAT</category>
         
@@ -214,9 +293,11 @@
         <title>Frankfurter Allgemeine Zeitung: Neue Hoffnung für die Analogrechner</title>
         <author></author>
         <description></description>
-        <pubDate>Mon, 13 Sep 2021 00:00:00 -0500</pubDate>
-        <link>https://anabrid.comhttps://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/</link>
-        <guid isPermaLink="true">https://anabrid.comhttps://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/</guid>
+	<pubDate>Mon, 13 Sep 2021 00:00:00 -0500</pubDate>
+	
+	<link>https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/</link>
+	<guid isPermaLink="true>">https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/</guid>
+	
         
         
       </item>
