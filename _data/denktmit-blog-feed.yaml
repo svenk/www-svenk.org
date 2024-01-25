@@ -1,77 +1,86 @@
 denktmit-blog:
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2022/09/13/Bericht-Programmier-Praktikum-Internship.html
-  link: https://denktmit.de/2022/09/13/Bericht-Programmier-Praktikum-Internship.html
-  pubDate: Tue, 13 Sep 2022 00:00:00 -0500
+- guid: https://denktmit.de/blog/2023/08/07/%C3%B6ffentliches-wlan-im-eigenen-betrieb/
+  link: https://denktmit.de/blog/2023/08/07/%C3%B6ffentliches-wlan-im-eigenen-betrieb/
+  pubDate: Mon, 07 Aug 2023 00:00:00 +0000
+  title: "\xD6ffentliches WLAN im eigenen Betrieb"
+- guid: https://denktmit.de/blog/2022/09/13/zum-programmierpraktikum-in-der-entwickler-agentur-ein-bericht-aus-betreuerperspektive/
+  link: https://denktmit.de/blog/2022/09/13/zum-programmierpraktikum-in-der-entwickler-agentur-ein-bericht-aus-betreuerperspektive/
+  pubDate: Tue, 13 Sep 2022 00:00:00 +0000
   title: 'Zum Programmierpraktikum in der Entwickler-Agentur: Ein Bericht aus Betreuerperspektive'
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2022/08/30/Tipps-for-Technical-Writing.html
-  link: https://denktmit.de/2022/08/30/Tipps-for-Technical-Writing.html
-  pubDate: Tue, 30 Aug 2022 00:00:00 -0500
+- guid: https://denktmit.de/blog/2022/08/30/how-to-get-started-with-technical-writing/
+  link: https://denktmit.de/blog/2022/08/30/how-to-get-started-with-technical-writing/
+  pubDate: Tue, 30 Aug 2022 00:00:00 +0000
   title: How to get started with technical writing
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2022/08/20/Bootstrapping-Programming-Languages.html
-  link: https://denktmit.de/2022/08/20/Bootstrapping-Programming-Languages.html
-  pubDate: Sat, 20 Aug 2022 00:00:00 -0500
+- guid: https://denktmit.de/blog/2022/08/20/was-ist-bootstrapping-und-warum-ist-es-so-wichtig/
+  link: https://denktmit.de/blog/2022/08/20/was-ist-bootstrapping-und-warum-ist-es-so-wichtig/
+  pubDate: Sat, 20 Aug 2022 00:00:00 +0000
   title: Was ist Bootstrapping und warum ist es so wichtig?
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2022/06/30/Generalversammlung.html
-  link: https://denktmit.de/2022/06/30/Generalversammlung.html
-  pubDate: Thu, 30 Jun 2022 00:00:00 -0500
+- guid: https://denktmit.de/blog/2022/06/30/ein-jahr-denktmit-eg-die-generalversammlung-tagt/
+  link: https://denktmit.de/blog/2022/06/30/ein-jahr-denktmit-eg-die-generalversammlung-tagt/
+  pubDate: Thu, 30 Jun 2022 00:00:00 +0000
   title: "Ein Jahr DenktMit eG \u2013 die Generalversammlung tagt"
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2022/06/27/KI-Programmierer-Diktatur.html
-  link: https://denktmit.de/2022/06/27/KI-Programmierer-Diktatur.html
-  pubDate: Mon, 27 Jun 2022 00:00:00 -0500
+- guid: https://denktmit.de/blog/2022/06/27/zur-rolle-der-programmierer-und-entwickler-bei-k%C3%BCnstlicher-intelligenz/
+  link: https://denktmit.de/blog/2022/06/27/zur-rolle-der-programmierer-und-entwickler-bei-k%C3%BCnstlicher-intelligenz/
+  pubDate: Mon, 27 Jun 2022 00:00:00 +0000
   title: "Zur Rolle der Programmierer und Entwickler bei k\xFCnstlicher Intelligenz"
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2022/05/13/Finding-Love-for-Nerds.html
-  link: https://denktmit.de/2022/05/13/Finding-Love-for-Nerds.html
-  pubDate: Fri, 13 May 2022 00:00:00 -0500
+- guid: https://denktmit.de/blog/2022/05/13/finding-love-for-nerds-a-guide/
+  link: https://denktmit.de/blog/2022/05/13/finding-love-for-nerds-a-guide/
+  pubDate: Fri, 13 May 2022 00:00:00 +0000
   title: 'Finding Love For Nerds: A Guide'
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2022/04/06/Python-the-modern-Basic-lingua-franca.html
-  link: https://denktmit.de/2022/04/06/Python-the-modern-Basic-lingua-franca.html
-  pubDate: Wed, 06 Apr 2022 00:00:00 -0500
+- guid: https://denktmit.de/blog/2022/04/06/python-ist-das-basic-des-21.-jahrhunderts/
+  link: https://denktmit.de/blog/2022/04/06/python-ist-das-basic-des-21.-jahrhunderts/
+  pubDate: Wed, 06 Apr 2022 00:00:00 +0000
   title: Python ist das BASIC des 21. Jahrhunderts
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2022/02/03/Accounting-Auditing-Big-Data-Python-Data-Warehousing.html
-  link: https://denktmit.de/2022/02/03/Accounting-Auditing-Big-Data-Python-Data-Warehousing.html
-  pubDate: Thu, 03 Feb 2022 00:00:00 -0600
+- guid: https://denktmit.de/blog/2022/03/15/the-importance-of-expressive-domain-models/
+  link: https://denktmit.de/blog/2022/03/15/the-importance-of-expressive-domain-models/
+  pubDate: Tue, 15 Mar 2022 00:00:00 +0000
+  title: The Importance of Expressive Domain Models
+- guid: https://denktmit.de/blog/2022/02/03/big-data-accounting-with-python-and-other-tools-an-experience-report/
+  link: https://denktmit.de/blog/2022/02/03/big-data-accounting-with-python-and-other-tools-an-experience-report/
+  pubDate: Thu, 03 Feb 2022 00:00:00 +0000
   title: 'Big Data Accounting with Python and other tools: An experience report'
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2022/01/20/Rhein-Main-Denken.html
-  link: https://denktmit.de/2022/01/20/Rhein-Main-Denken.html
-  pubDate: Thu, 20 Jan 2022 00:00:00 -0600
+- guid: https://denktmit.de/blog/2022/01/20/ein-essay-zur-digitalisierung-und-gr%C3%BCndergeist-in-rhein-main/
+  link: https://denktmit.de/blog/2022/01/20/ein-essay-zur-digitalisierung-und-gr%C3%BCndergeist-in-rhein-main/
+  pubDate: Thu, 20 Jan 2022 00:00:00 +0000
   title: "Ein Essay zur Digitalisierung und Gr\xFCndergeist in Rhein-Main"
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2021/08/26/show-your-Workspace.html
-  link: https://denktmit.de/2021/08/26/show-your-Workspace.html
-  pubDate: Thu, 26 Aug 2021 00:00:00 -0500
+- guid: https://denktmit.de/blog/2022/01/14/mein-zukunftstraum-von-silicon-orschel/
+  link: https://denktmit.de/blog/2022/01/14/mein-zukunftstraum-von-silicon-orschel/
+  pubDate: Fri, 14 Jan 2022 00:00:00 +0000
+  title: Mein Zukunftstraum von Silicon Orschel
+- guid: https://denktmit.de/blog/2021/11/21/release-and-ship-your-e2e-tests-as-containers-alongside-your-product/
+  link: https://denktmit.de/blog/2021/11/21/release-and-ship-your-e2e-tests-as-containers-alongside-your-product/
+  pubDate: Sun, 21 Nov 2021 00:00:00 +0000
+  title: Release and ship your e2e tests as containers alongside your product
+- guid: https://denktmit.de/blog/2021/08/26/show-your-workspace-der-auftakt/
+  link: https://denktmit.de/blog/2021/08/26/show-your-workspace-der-auftakt/
+  pubDate: Thu, 26 Aug 2021 00:00:00 +0000
   title: Show your Workspace! Der Auftakt
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2021/08/25/kriegs-sport-sprache.html
-  link: https://denktmit.de/2021/08/25/kriegs-sport-sprache.html
-  pubDate: Wed, 25 Aug 2021 00:00:00 -0500
+- guid: https://denktmit.de/blog/2021/08/25/martialische-redewendungen-im-beruflichen-alltag/
+  link: https://denktmit.de/blog/2021/08/25/martialische-redewendungen-im-beruflichen-alltag/
+  pubDate: Wed, 25 Aug 2021 00:00:00 +0000
   title: Martialische Redewendungen im beruflichen Alltag
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2021/07/02/repl-cli-ide-wars.html
-  link: https://denktmit.de/2021/07/02/repl-cli-ide-wars.html
-  pubDate: Fri, 02 Jul 2021 00:00:00 -0500
+- guid: https://denktmit.de/blog/2021/07/02/die-ide-wars/
+  link: https://denktmit.de/blog/2021/07/02/die-ide-wars/
+  pubDate: Fri, 02 Jul 2021 00:00:00 +0000
   title: Die IDE-Wars
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2021/06/29/tellerrand-stackbasierte-programmiersprachen.html
-  link: https://denktmit.de/2021/06/29/tellerrand-stackbasierte-programmiersprachen.html
-  pubDate: Tue, 29 Jun 2021 00:00:00 -0500
+- guid: https://denktmit.de/blog/2021/06/29/der-blick-%C3%BCber-den-tellerrand-volume-1-stackbasierte-programmiersprachen/
+  link: https://denktmit.de/blog/2021/06/29/der-blick-%C3%BCber-den-tellerrand-volume-1-stackbasierte-programmiersprachen/
+  pubDate: Tue, 29 Jun 2021 00:00:00 +0000
   title: "Der Blick \xFCber den Tellerrand, Volume 1: Stackbasierte Programmiersprachen"
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2021/06/08/plaintext.html
-  link: https://denktmit.de/2021/06/08/plaintext.html
-  pubDate: Tue, 08 Jun 2021 00:00:00 -0500
+- guid: https://denktmit.de/blog/2021/06/08/plaintext-ist-trumpf/
+  link: https://denktmit.de/blog/2021/06/08/plaintext-ist-trumpf/
+  pubDate: Tue, 08 Jun 2021 00:00:00 +0000
   title: Plaintext ist Trumpf
-- author: "Sven K\xF6ppel"
-  guid: https://denktmit.de/2021/06/07/gendern-in-markup.html
-  link: https://denktmit.de/2021/06/07/gendern-in-markup.html
-  pubDate: Mon, 07 Jun 2021 00:00:00 -0500
+- guid: https://denktmit.de/blog/2021/06/07/gendern-im-markup-und-in-programmiersprachen/
+  link: https://denktmit.de/blog/2021/06/07/gendern-im-markup-und-in-programmiersprachen/
+  pubDate: Mon, 07 Jun 2021 00:00:00 +0000
   title: Gendern im Markup und in Programmiersprachen
+- guid: https://denktmit.de/blog/2020/07/21/storypoints-should-estimate-cognitive-load/
+  link: https://denktmit.de/blog/2020/07/21/storypoints-should-estimate-cognitive-load/
+  pubDate: Tue, 21 Jul 2020 00:00:00 +0000
+  title: Storypoints should estimate cognitive load
+- guid: https://denktmit.de/blog/2020/02/07/how-to-auth-your-api-in-2020/
+  link: https://denktmit.de/blog/2020/02/07/how-to-auth-your-api-in-2020/
+  pubDate: Fri, 07 Feb 2020 00:00:00 +0000
+  title: How to auth your API in 2020
 

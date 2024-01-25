@@ -8,8 +8,8 @@
 	<link>http://www.technikum29.de</link>
 	<description>A blog about news from the technikum29 computer museum</description>
 	<language>de</language>
-	<copyright>&#x2117; &amp; &#xA9; 2003-2023 Sven K&#245;ppel and the technikum29 team</copyright>
-	<pubDate>Mon, 17 Apr 2023 22:51:40 +0200</pubDate>
+	<copyright>&#x2117; &amp; &#xA9; 2003-2024 Sven K&#245;ppel and the technikum29 team</copyright>
+	<pubDate>Thu, 25 Jan 2024 00:56:26 +0100</pubDate>
 	<image>
 		<url>https://www.technikum29.de/shared/img-v6/banner.de.png</url>
 		<title>technikum29 Computermuseum</title>
@@ -21,6 +21,48 @@
 	<atom:link href="https://www.technikum29.de/blog/rss" rel="self" type="application/rss+xml" />	
 	
 				<item>
+				<title>technikum29 wünscht ein Frohes Neues Jahr 2024 !</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2024-01-02-Frohes_Neues_Jahr_2024</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2024-01-02-Frohes_Neues_Jahr_2024</guid>
+				<pubDate>2024-01-02</pubDate>
+			</item>
+						<item>
+				<title>Ankunft der Stantec Zebra Mk II im technikum29</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2023-11-16-Ankunft_der_Stantec</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2023-11-16-Ankunft_der_Stantec</guid>
+				<pubDate>2023-11-16</pubDate>
+			</item>
+						<item>
+				<title>Neuzugang Hamann automatic 500</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2023-10-23-Neuzugang_Hamann_automatic_500</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2023-10-23-Neuzugang_Hamann_automatic_500</guid>
+				<pubDate>2023-10-23</pubDate>
+			</item>
+						<item>
+				<title>Vorstellung weiterer Neuzugänge in 2023</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2023-10-20-weitere_Neuzugaenge_2023</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2023-10-20-weitere_Neuzugaenge_2023</guid>
+				<pubDate>2023-10-20</pubDate>
+			</item>
+						<item>
+				<title>Vorstellung einiger Neuzugänge in 2023</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2023-06-06-Neuzugaenge_2023</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2023-06-06-Neuzugaenge_2023</guid>
+				<pubDate>2023-06-06</pubDate>
+			</item>
+						<item>
+				<title>Zwei neue Streifenschreiber in der Kommunikationsabteilung</title>
+				<author>Detlef</author>
+				<link>https://technikum29.de/blog/2023-04-22-Neue_Streifenschreiber</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2023-04-22-Neue_Streifenschreiber</guid>
+				<pubDate>2023-04-22</pubDate>
+			</item>
+						<item>
 				<title>Neuzugänge aus unseren Depots: Olympia Tischrechner RAE 4/15 und 4/30</title>
 				<author>Roland</author>
 				<link>https://technikum29.de/blog/2023-02-13-Neuzugaenge_Olympia_RAE</link>
