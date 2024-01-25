@@ -231,6 +231,16 @@ aggregated_posts:
   link: https://dx.doi.org/10.23919/IEEECONF54431.2021.9598447
   origin: scientific_publications
   title: Open Hardware Analog Computer for Education &mdash; Design and Application
+- date: '2023-09-25'
+  link: https://arxiv.org/abs/2309.05598
+  origin: scientific_publications
+  title: Solving Partial Differential Equations with Monte Carlo / Random Walk on
+    an Analog-Digital Hybrid Computer
+- date: '2023-12-25'
+  link: https://dx.doi.org/10.5194/ars-21-89-2023
+  origin: scientific_publications
+  title: "Hybrid integrators with predictive overload estimation for analog computers\
+    \ and continuous-time \u0394\u03A3 modulators"
 - date: '2022-01-31'
   link: https://open.spotify.com/episode/0ekHBRXddwZCLE0LF4LkI9
   origin: talks
