@@ -10,7 +10,7 @@ data_sources:
     title: DenktMit Blog
     human_url: https://denktmit.de/outreach.html
     icon: /assets/icons/code.png
-    data_url: https://denktmit.de/blog-feed.xml
+    data_url: https://denktmit.de/blog/index.xml
     local_file: denktmit-blog-feed.xml
   scientific_publications:
     title: Publications

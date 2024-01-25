@@ -1,4 +1,12 @@
 aggregated_posts:
+- date: '2023-06-06'
+  link: https://the-analog-thing.org/newsletter/15
+  origin: anabrid-news
+  title: 'The Analog Thing Newsletter #15: Batch 3 is out!'
+- date: '2023-05-04'
+  link: https://the-analog-thing.org/newsletter/14
+  origin: anabrid-news
+  title: 'The Analog Thing Newsletter #14: Production updates'
 - date: '2023-03-15'
   link: https://anabrid.com/news/2023-03-15/UnternehmerTUM-Anabrid/
   origin: anabrid-news
@@ -74,74 +82,98 @@ aggregated_posts:
   link: https://zeitung.faz.net/faz/unternehmen/2021-09-13/23361234262870d5efcfaa679e337735/
   origin: anabrid-news
   title: "Frankfurter Allgemeine Zeitung: Neue Hoffnung f\xFCr die Analogrechner"
+- date: '2023-08-07'
+  link: https://denktmit.de/blog/2023/08/07/%C3%B6ffentliches-wlan-im-eigenen-betrieb/
+  origin: denktmit-blog
+  title: "\xD6ffentliches WLAN im eigenen Betrieb"
 - date: '2022-09-13'
-  link: https://denktmit.de/2022/09/13/Bericht-Programmier-Praktikum-Internship.html
+  link: https://denktmit.de/blog/2022/09/13/zum-programmierpraktikum-in-der-entwickler-agentur-ein-bericht-aus-betreuerperspektive/
   origin: denktmit-blog
   title: 'Zum Programmierpraktikum in der Entwickler-Agentur: Ein Bericht aus Betreuerperspektive'
 - date: '2022-08-30'
-  link: https://denktmit.de/2022/08/30/Tipps-for-Technical-Writing.html
+  link: https://denktmit.de/blog/2022/08/30/how-to-get-started-with-technical-writing/
   origin: denktmit-blog
   title: How to get started with technical writing
 - date: '2022-08-20'
-  link: https://denktmit.de/2022/08/20/Bootstrapping-Programming-Languages.html
+  link: https://denktmit.de/blog/2022/08/20/was-ist-bootstrapping-und-warum-ist-es-so-wichtig/
   origin: denktmit-blog
   title: Was ist Bootstrapping und warum ist es so wichtig?
 - date: '2022-06-30'
-  link: https://denktmit.de/2022/06/30/Generalversammlung.html
+  link: https://denktmit.de/blog/2022/06/30/ein-jahr-denktmit-eg-die-generalversammlung-tagt/
   origin: denktmit-blog
   title: "Ein Jahr DenktMit eG \u2013 die Generalversammlung tagt"
 - date: '2022-06-27'
-  link: https://denktmit.de/2022/06/27/KI-Programmierer-Diktatur.html
+  link: https://denktmit.de/blog/2022/06/27/zur-rolle-der-programmierer-und-entwickler-bei-k%C3%BCnstlicher-intelligenz/
   origin: denktmit-blog
   title: "Zur Rolle der Programmierer und Entwickler bei k\xFCnstlicher Intelligenz"
 - date: '2022-05-13'
-  link: https://denktmit.de/2022/05/13/Finding-Love-for-Nerds.html
+  link: https://denktmit.de/blog/2022/05/13/finding-love-for-nerds-a-guide/
   origin: denktmit-blog
   title: 'Finding Love For Nerds: A Guide'
 - date: '2022-04-06'
-  link: https://denktmit.de/2022/04/06/Python-the-modern-Basic-lingua-franca.html
+  link: https://denktmit.de/blog/2022/04/06/python-ist-das-basic-des-21.-jahrhunderts/
   origin: denktmit-blog
   title: Python ist das BASIC des 21. Jahrhunderts
+- date: '2022-03-15'
+  link: https://denktmit.de/blog/2022/03/15/the-importance-of-expressive-domain-models/
+  origin: denktmit-blog
+  title: The Importance of Expressive Domain Models
 - date: '2022-02-03'
-  link: https://denktmit.de/2022/02/03/Accounting-Auditing-Big-Data-Python-Data-Warehousing.html
+  link: https://denktmit.de/blog/2022/02/03/big-data-accounting-with-python-and-other-tools-an-experience-report/
   origin: denktmit-blog
   title: 'Big Data Accounting with Python and other tools: An experience report'
 - date: '2022-01-20'
-  link: https://denktmit.de/2022/01/20/Rhein-Main-Denken.html
+  link: https://denktmit.de/blog/2022/01/20/ein-essay-zur-digitalisierung-und-gr%C3%BCndergeist-in-rhein-main/
   origin: denktmit-blog
   title: "Ein Essay zur Digitalisierung und Gr\xFCndergeist in Rhein-Main"
+- date: '2022-01-14'
+  link: https://denktmit.de/blog/2022/01/14/mein-zukunftstraum-von-silicon-orschel/
+  origin: denktmit-blog
+  title: Mein Zukunftstraum von Silicon Orschel
+- date: '2021-11-21'
+  link: https://denktmit.de/blog/2021/11/21/release-and-ship-your-e2e-tests-as-containers-alongside-your-product/
+  origin: denktmit-blog
+  title: Release and ship your e2e tests as containers alongside your product
 - date: '2021-08-26'
-  link: https://denktmit.de/2021/08/26/show-your-Workspace.html
+  link: https://denktmit.de/blog/2021/08/26/show-your-workspace-der-auftakt/
   origin: denktmit-blog
   title: Show your Workspace! Der Auftakt
 - date: '2021-08-25'
-  link: https://denktmit.de/2021/08/25/kriegs-sport-sprache.html
+  link: https://denktmit.de/blog/2021/08/25/martialische-redewendungen-im-beruflichen-alltag/
   origin: denktmit-blog
   title: Martialische Redewendungen im beruflichen Alltag
 - date: '2021-07-02'
-  link: https://denktmit.de/2021/07/02/repl-cli-ide-wars.html
+  link: https://denktmit.de/blog/2021/07/02/die-ide-wars/
   origin: denktmit-blog
   title: Die IDE-Wars
 - date: '2021-06-29'
-  link: https://denktmit.de/2021/06/29/tellerrand-stackbasierte-programmiersprachen.html
+  link: https://denktmit.de/blog/2021/06/29/der-blick-%C3%BCber-den-tellerrand-volume-1-stackbasierte-programmiersprachen/
   origin: denktmit-blog
   title: "Der Blick \xFCber den Tellerrand, Volume 1: Stackbasierte Programmiersprachen"
 - date: '2021-06-08'
-  link: https://denktmit.de/2021/06/08/plaintext.html
+  link: https://denktmit.de/blog/2021/06/08/plaintext-ist-trumpf/
   origin: denktmit-blog
   title: Plaintext ist Trumpf
 - date: '2021-06-07'
-  link: https://denktmit.de/2021/06/07/gendern-in-markup.html
+  link: https://denktmit.de/blog/2021/06/07/gendern-im-markup-und-in-programmiersprachen/
   origin: denktmit-blog
   title: Gendern im Markup und in Programmiersprachen
-- date: '2013-04-17'
+- date: '2020-07-21'
+  link: https://denktmit.de/blog/2020/07/21/storypoints-should-estimate-cognitive-load/
+  origin: denktmit-blog
+  title: Storypoints should estimate cognitive load
+- date: '2020-02-07'
+  link: https://denktmit.de/blog/2020/02/07/how-to-auth-your-api-in-2020/
+  origin: denktmit-blog
+  title: How to auth your API in 2020
+- date: '2013-01-25'
   origin: scientific_publications
   title: POKAL, Kollaboratives Mathematik-E-Learning neu erfunden
-- date: '2012-04-17'
+- date: '2012-01-25'
   origin: scientific_publications
   title: 'BioKemika und MetaSearch: Biochemische Datenbanken und Online-Tools verstehen
     und anwenden'
-- date: '2014-12-17'
+- date: '2014-12-25'
   link: https://github.com/svenk/publications/blob/master/Thesis/Sven-Koeppel-master-thesis-Ultraviolet-improved-black-holes.pdf
   origin: scientific_publications
   title: Ultraviolet improved black holes
@@ -154,7 +186,7 @@ aggregated_posts:
   link: https://arxiv.org/abs/1703.05222
   origin: scientific_publications
   title: Generalized uncertainty principle and extra dimensions
-- date: '2019-08-17'
+- date: '2019-08-25'
   link: https://arxiv.org/abs/1905.03233
   origin: scientific_publications
   title: Generalized Uncertainty Principle and Black Holes in Higher Dimensional Self-Complete
@@ -168,34 +200,34 @@ aggregated_posts:
   link: https://arxiv.org/abs/1711.08221
   origin: scientific_publications
   title: Towards an exascale code for GRMHD on dynamical spacetimes
-- date: '2017-12-17'
+- date: '2017-12-25'
   link: https://arxiv.org/abs/1801.02839
   origin: scientific_publications
   title: ADER discontinuous Galerkin schemes for the general relativistic magnetohydrodynamics
     equations
-- date: '2019-02-17'
+- date: '2019-02-25'
   link: https://arxiv.org/abs/1901.09977
   origin: scientific_publications
   title: A General-relativistic Determination of the Threshold Mass to Prompt Collapse
     in Binary Neutron Star Mergers
-- date: '2020-05-17'
+- date: '2020-05-25'
   link: https://arxiv.org/abs/1905.07987
   origin: scientific_publications
   title: 'ExaHyPE: An Engine for Parallel Dynamically Adaptive Simulations of Wave
     Problems'
-- date: '2019-06-17'
+- date: '2019-06-25'
   link: https://github.com/svenk/publications/blob/master/Thesis/phdthesis-Sven-Koeppel.pdf
   origin: scientific_publications
   title: High-order methods in fully general-relativistic hydrodynamics & magnetohydrodynamics
-- date: '2021-02-17'
+- date: '2021-02-25'
   link: https://arxiv.org/abs/2102.07268
   origin: scientific_publications
   title: About using analog computers in today's largest computational challenges
-- date: '2021-07-17'
+- date: '2021-07-25'
   link: https://arxiv.org/abs/2107.06283
   origin: scientific_publications
   title: Analog Computing for Molecular Dynamics
-- date: '2021-09-17'
+- date: '2021-09-25'
   link: https://dx.doi.org/10.23919/IEEECONF54431.2021.9598447
   origin: scientific_publications
   title: Open Hardware Analog Computer for Education &mdash; Design and Application
@@ -240,6 +272,30 @@ aggregated_posts:
   origin: talks
   title: "More Computing Power and Less CO2 Damage \u2013 a Plea for Analogue Computers\
     \ (TEDx M\xFCnster)"
+- date: '2024-01-02'
+  link: https://technikum29.de/blog/2024-01-02-Frohes_Neues_Jahr_2024
+  origin: t29-blog
+  title: "technikum29 w\xFCnscht ein Frohes Neues Jahr 2024 !"
+- date: '2023-11-16'
+  link: https://technikum29.de/blog/2023-11-16-Ankunft_der_Stantec
+  origin: t29-blog
+  title: Ankunft der Stantec Zebra Mk II im technikum29
+- date: '2023-10-23'
+  link: https://technikum29.de/blog/2023-10-23-Neuzugang_Hamann_automatic_500
+  origin: t29-blog
+  title: Neuzugang Hamann automatic 500
+- date: '2023-10-20'
+  link: https://technikum29.de/blog/2023-10-20-weitere_Neuzugaenge_2023
+  origin: t29-blog
+  title: "Vorstellung weiterer Neuzug\xE4nge in 2023"
+- date: '2023-06-06'
+  link: https://technikum29.de/blog/2023-06-06-Neuzugaenge_2023
+  origin: t29-blog
+  title: "Vorstellung einiger Neuzug\xE4nge in 2023"
+- date: '2023-04-22'
+  link: https://technikum29.de/blog/2023-04-22-Neue_Streifenschreiber
+  origin: t29-blog
+  title: Zwei neue Streifenschreiber in der Kommunikationsabteilung
 - date: '2023-02-23'
   link: https://technikum29.de/blog/2023-02-13-Neuzugaenge_Olympia_RAE
   origin: t29-blog
