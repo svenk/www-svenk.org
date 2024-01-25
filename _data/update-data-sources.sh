@@ -31,10 +31,12 @@ identifier="denktmit-blog"; start $identifier
 prop "title: DenktMit Blog"
 prop "human_url: https://denktmit.de/outreach.html"
 prop "icon: /assets/icons/code.png"
-data_url="https://denktmit.de/blog-feed.xml"; show data_url
+data_url="https://denktmit.de/blog/index.xml"; show data_url
 local_file="denktmit-blog-feed.xml"; show local_file
 download
-./rss2yaml.py $local_file --author-filter=Sven --skip-field=description \
+# Since the hugo feed contains no author field and I wrote the majority of blog
+# posts, skip --author-filter=Sven  for the time being
+./rss2yaml.py $local_file --skip-field=description \
     --out-keyname=$identifier  > ${local_file/.*}.yaml
 local_yaml_files+=("${local_file/.*}.yaml")
 git_add_assets
@@ -92,3 +94,5 @@ git_add_assets
 ./aggregate.py "${local_yaml_files[@]}" \
     --out-keyname="aggregated_posts" > aggregated_posts.yaml
 git add aggregated_posts.yaml
+
+git add $data_sources_fname
