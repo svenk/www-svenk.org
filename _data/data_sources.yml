@@ -18,6 +18,7 @@ data_sources:
     icon: /assets/icons/univ.png
     data_url: https://raw.githubusercontent.com/svenk/publications/master/Papers/papers-svenk.yaml
     local_file: scientific_publications.yaml
+    fixed_dates: True
   talks:
     title: Talks
     human_url: https://github.com/svenk/publications/
@@ -35,3 +36,4 @@ data_sources:
     icon: /assets/icons/talk.png
     data_url: http://sven.köppel.org/uni/cgi-bin/json-uniordner
     local_file: uniordner.json
+    skipped_download: True # because target is currently offline!

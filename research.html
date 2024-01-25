@@ -35,7 +35,7 @@ layout: default
   
   <div class="hide-labels">
   {% assign analog_papers = site.data.scientific_publications.scientific_publications |
-     where_exp:"item", "item.labels contains 'analog'" | sort: 'date'  %}
+     where_exp:"item", "item.labels contains 'analog'" | sort: 'date_machine_readable'  %}
   {% include listing-snippet-publications.html papers=analog_papers %}
   </div>
 

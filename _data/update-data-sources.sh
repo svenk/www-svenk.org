@@ -53,6 +53,7 @@ cp ../publications/Papers/papers-svenk.yaml $local_file
 # or:
 #download
 #sed -i "s/scientific_publications:/$identifier:/" $local_file # should probably assert
+./parse-date-inplace.py && prop "fixed_dates: True" || prop "fixed_Dataes: False"
 local_yaml_files+=($local_file)
 git_add_assets
 
@@ -85,7 +86,7 @@ prop "icon: /assets/icons/talk.png" # <- because it is mostly talks
 data_url="http://sven.köppel.org/uni/cgi-bin/json-uniordner"; show data_url
 local_file="uniordner.json"; show local_file
 # download
-echo "    skipped_download: True # because target is currently offline!"
+prop "skipped_download: True # because target is currently offline!"
 python -c "import yaml,json; print(yaml.dump(json.load(open('$local_file'))))" \
     > ${local_file/.*}.yaml
 local_yaml_files+=("${local_file/.*}.yaml")
