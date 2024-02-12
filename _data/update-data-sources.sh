@@ -49,6 +49,7 @@ prop "icon: /assets/icons/essay.png"
 data_url="http://127.0.0.1:4000/posts-feed.xml"; show data_url
 local_file="svenk-local-blog.xml"; show local_file
 download # need to download since ../posts-feed.xml is only a template
+sed -i 's#http://localhost:4000/#/#g' $local_file # some ugly URL hotfixing
 # Since the hugo feed contains no author field and I wrote the majority of blog
 # posts, skip --author-filter=Sven  for the time being
 ./rss2yaml.py $local_file --skip-field=description \
