@@ -85,6 +85,10 @@ a:hover, a:active {
 	#teaser p {
 		line-height: 160%;
 	}
+	
+	
+	.post-header { display: flex; flex-direction: row; align-items: baseline; }
+	.post-header h1 { flex-grow: 2; }
 }
 
 @media screen and (min-width: 1200px) {

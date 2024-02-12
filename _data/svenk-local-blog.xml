@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>svenk.org</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 12 Feb 2024 03:21:24 +0100</pubDate>
+    <lastBuildDate>Mon, 12 Feb 2024 03:21:24 +0100</lastBuildDate>
+    <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Nie wieder ist jetzt</title>
+        <description>Ein Plädoyer für Demokratie und gegen Populismus und die AfD. Ein Appell an Bürger:innen und Wissenschaftler:innen für mehr Diskussion und Partizipation, zur Bewusstwerdung unserer Privilegien und unserem Einfluss auf den Staat, in dem wir leben.
+</description>
+        <pubDate>Mon, 12 Feb 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/posts/2024-02-12-nie-wieder-afd/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2024-02-12-nie-wieder-afd/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description></description>
+        <pubDate>Thu, 23 Sep 2021 13:34:43 +0200</pubDate>
+        <link>http://localhost:4000/posts/2021-09-23-welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2021-09-23-welcome-to-jekyll/</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>
