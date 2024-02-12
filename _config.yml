@@ -36,3 +36,9 @@ plugins:
 # do not copy the publications directory
 exclude:
    - publications/
+
+# some local blogging
+collections:
+  posts:
+    output: true
+    permalink: /posts/:name/

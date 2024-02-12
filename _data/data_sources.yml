@@ -12,6 +12,13 @@ data_sources:
     icon: /assets/icons/code.png
     data_url: https://denktmit.de/blog/index.xml
     local_file: denktmit-blog-feed.xml
+    skipped_download: True # because target is currently offline!
+  svenk-local-blog:
+    title: SvenK local Blog
+    human_url: https://svenk.org/posts/
+    icon: /assets/icons/essay.png
+    data_url: http://127.0.0.1:4000/posts-feed.xml
+    local_file: svenk-local-blog.xml
   scientific_publications:
     title: Publications
     human_url: https://github.com/svenk/publications/
