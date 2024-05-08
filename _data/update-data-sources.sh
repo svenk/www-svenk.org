@@ -31,11 +31,10 @@ identifier="denktmit-blog"; start $identifier
 prop "title: DenktMit Blog"
 prop "human_url: https://denktmit.de/outreach.html"
 prop "icon: /assets/icons/code.png"
-data_url="https://denktmit.de/blog/index.xml"; show data_url
+data_url="https://denktmit.de/feed.xml"; show data_url
 local_file="denktmit-blog-feed.xml"; show local_file
-# download # TODO: currently broken, skip download
-prop "skipped_download: True # because target is currently offline!"
-# Since the hugo feed contains no author field and I wrote the majority of blog
+download
+# Since the ~hugo~ 11ty feed contains no author field and I wrote the majority of blog
 # posts, skip --author-filter=Sven  for the time being
 ./rss2yaml.py $local_file --skip-field=description \
     --out-keyname=$identifier  > ${local_file/.*}.yaml
@@ -48,7 +47,7 @@ prop "human_url: https://svenk.org/posts/"
 prop "icon: /assets/icons/essay.png"
 data_url="http://127.0.0.1:4000/posts-feed.xml"; show data_url
 local_file="svenk-local-blog.xml"; show local_file
-download # need to download since ../posts-feed.xml is only a template
+#download # need to download since ../posts-feed.xml is only a template
 sed -i 's#http://localhost:4000/#/#g' $local_file # some ugly URL hotfixing
 # Since the hugo feed contains no author field and I wrote the majority of blog
 # posts, skip --author-filter=Sven  for the time being
