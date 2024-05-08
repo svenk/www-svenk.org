@@ -10,9 +10,8 @@ data_sources:
     title: DenktMit Blog
     human_url: https://denktmit.de/outreach.html
     icon: /assets/icons/code.png
-    data_url: https://denktmit.de/blog/index.xml
+    data_url: https://denktmit.de/feed.xml
     local_file: denktmit-blog-feed.xml
-    skipped_download: True # because target is currently offline!
   svenk-local-blog:
     title: SvenK local Blog
     human_url: https://svenk.org/posts/
