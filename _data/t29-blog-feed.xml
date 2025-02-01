@@ -8,8 +8,8 @@
 	<link>http://www.technikum29.de</link>
 	<description>A blog about news from the technikum29 computer museum</description>
 	<language>de</language>
-	<copyright>&#x2117; &amp; &#xA9; 2003-2024 Sven K&#245;ppel and the technikum29 team</copyright>
-	<pubDate>Wed, 08 May 2024 14:02:21 +0200</pubDate>
+	<copyright>&#x2117; &amp; &#xA9; 2003-2025 Sven K&#245;ppel and the technikum29 team</copyright>
+	<pubDate>Sat, 01 Feb 2025 18:25:23 +0100</pubDate>
 	<image>
 		<url>https://www.technikum29.de/shared/img-v6/banner.de.png</url>
 		<title>technikum29 Computermuseum</title>
@@ -21,6 +21,41 @@
 	<atom:link href="https://www.technikum29.de/blog/rss" rel="self" type="application/rss+xml" />	
 	
 				<item>
+				<title>technikum29 wünscht Frohe Weihnacht und feiert 2025 20sten Geburtstag !</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2024-12-23-Frohe_Weihnacht</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2024-12-23-Frohe_Weihnacht</guid>
+				<pubDate>2024-12-23</pubDate>
+			</item>
+						<item>
+				<title>technikum29 bezieht neues Depot !</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2024-11-26-DepotKelkheim</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2024-11-26-DepotKelkheim</guid>
+				<pubDate>2024-11-27</pubDate>
+			</item>
+						<item>
+				<title>technikum29 erhielt eine ENIGMA !</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2024-09-16-ENIGMA</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2024-09-16-ENIGMA</guid>
+				<pubDate>2024-09-16</pubDate>
+			</item>
+						<item>
+				<title>technikum29 in der Presse</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2024-08-23-technikum29_in_der_Zeitung</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2024-08-23-technikum29_in_der_Zeitung</guid>
+				<pubDate>2024-08-23</pubDate>
+			</item>
+						<item>
+				<title>Anmeldung zu Besuchen im technikum29</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2024-08-01-Besuche_im_technikum29</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2024-08-01-Besuche_im_technikum29</guid>
+				<pubDate>2024-08-01</pubDate>
+			</item>
+						<item>
 				<title>technikum29 wünscht ein Frohes Neues Jahr 2024 !</title>
 				<author>Roland</author>
 				<link>https://technikum29.de/blog/2024-01-02-Frohes_Neues_Jahr_2024</link>

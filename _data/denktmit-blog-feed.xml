@@ -1,16 +1,17 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Der DenktMit Tech-blog</title>
     <link>https://denktmit.de</link>
     <description></description>
     <language>en-us</language>
-    <lastBuildDate>2024-05-08T11:52:27Z</lastBuildDate>
-    <atom:link href="https://every-layout.dev/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>2025-02-01T17:04:44Z</lastBuildDate>
+    <atom:link href="https://denktmit.de/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to auth your API in 2020</title>
       <link>https://denktmit.de/blog/2020-02-07-how-to-auth-your-api-in-2020/</link>
+      <author>Marius Schmidt</author>
       <pubDate>2020-02-07T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2020-02-07-how-to-auth-your-api-in-2020/</guid>
       <description>&lt;p&gt;What kind if auth mechanism exist?&lt;/p&gt;
@@ -45,41 +46,98 @@
     <item>
       <title>Storypoints should estimate cognitive load</title>
       <link>https://denktmit.de/blog/2020-07-21-storypoints-should-estimate-cognitive-load/</link>
+      <author>Marius Schmidt</author>
       <pubDate>2020-07-21T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2020-07-21-storypoints-should-estimate-cognitive-load/</guid>
       <description>&lt;h2&gt;The problem&lt;/h2&gt;
-&lt;p&gt;Most of the projects we do today use an agile software development approach, be it SCRUM or Kanban or the like. Most of the time, the work to be done is estimated based on story points. At first glance, this may seem easy, but at some point your project team could debate what a story point actually represents. Some might argue that story points somehow value time. Others are convinced that they somehow assess the academic complexity of a task. And a third group does not hesitate to point out that they are only ever allowed for user stories and not for bugs or minor technical tasks. After all, almost everyone agrees that the Fibonacci numbers are great candidates for story points.&lt;/p&gt;
-&lt;p&gt;In our opinion, story points should estimate the &lt;strong&gt;total cognitive load&lt;/strong&gt; to get some well enough defined pile of work done. We derive possible story point values from Fibonacci numbers &amp;lt;= 21, allow an additional 0.5 value and we apply them for everything. The rest of this blog post is, &lt;strong&gt;why&lt;/strong&gt; we do it that way.&lt;/p&gt;
+&lt;p&gt;Most of the projects we do today use an agile software development approach, be it SCRUM or Kanban or the like. Most of
+the time, the work to be done is estimated based on story points. At first glance, this may seem easy, but at some point
+your project team could debate what a story point actually represents. Some might argue that story points somehow value
+time. Others are convinced that they somehow assess the academic complexity of a task. And a third group does not
+hesitate to point out that they are only ever allowed for user stories and not for bugs or minor technical tasks. After
+all, almost everyone agrees that the Fibonacci numbers are great candidates for story points.&lt;/p&gt;
+&lt;p&gt;In our opinion, story points should estimate the &lt;strong&gt;total cognitive load&lt;/strong&gt; to get some well enough defined pile of work
+done. We derive possible story point values from Fibonacci numbers &amp;lt;= 21, allow an additional 0.5 value and we apply
+them for everything. The rest of this blog post is, &lt;strong&gt;why&lt;/strong&gt; we do it that way.&lt;/p&gt;
 &lt;h2&gt;Goals of estimating tasks&lt;/h2&gt;
-&lt;p&gt;To prioritize work properly, it is essential to figure out the expected return of invest (ROI) as ratio of expected business value and expected effort. In order monitor the quality of our forecast, we would continuously compare the expected with the actual outcome and try to reduce the deviation. In order to enhance the forecast, we want to it to become as efficient (low-cost, fast and easy), effective (concise, non-misleading insights) and appropriate (only asking for the measures and granularity needed) as possible.&lt;/p&gt;
+&lt;p&gt;To prioritize work properly, it is essential to figure out the expected return of invest (ROI) as ratio of expected
+business value and expected effort. In order monitor the quality of our forecast, we would continuously compare the
+expected with the actual outcome and try to reduce the deviation. In order to enhance the forecast, we want to it to
+become as efficient (low-cost, fast and easy), effective (concise, non-misleading insights) and appropriate (only asking
+for the measures and granularity needed) as possible.&lt;/p&gt;
 &lt;h2&gt;Story points are a better fit for human guessing&lt;/h2&gt;
-&lt;p&gt;Before using story points, we tried to estimate the amount of time to get a certain workload done. One of the pain point was, that we as humans are surprisingly bad and overoptimistic in guessing how long something new is going to take. At the same time we want be accurate in our statements. Treating those estimates as binding cost estimates, in many cases definitely added some pressure.&lt;/p&gt;
-&lt;p&gt;As a countermeasure, many developers, including us, designed some fancy Excel sheets to enter their guess work and deliver educated overestimates to compensate for our optimism. That made us feel better and lightened some pressure by moving unused times between work items. The approach was time-consuming because of the fancy guess work. It also did not deliver accurate results because of the intrinsic lack of knowledge in doing something new and the safe-guarding over-estimates.&lt;/p&gt;
-&lt;p&gt;As it turned out, story points improve the estimation part of the ROI equation. We humans are surprisingly good at guessing the relative difficulty of tasks we only have partial knowledge of. Most of the time, we can easily say: &amp;quot;This will be A LOT harder than that. Doing ABC is more easy peasy compared to XZY&amp;quot;. We do not even need to remember the exact effort of the reference work to make that guess.&lt;/p&gt;
-&lt;p&gt;Additionally, we are easily overwhelmed with too much choice[^1]. Having choices between hours, days, weeks and maybe even months makes it harder for us to decide. It is a smart move to limit the number of available choices to accelerate a decision process. Using a limited set of possible story points, applies choice architecture[^2] on effort estimation.&lt;/p&gt;
-&lt;p&gt;We still have some freedom what number sequence to take. Ideally, the sequence of valid story point values should reflect the fact, that estimates lack more accuracy, the bigger the subject to estimate is. Using the Fibonacci numbers fits this requirement nicely, because consecutive numbers have an increasing gap between them. Of course, you could use another number sequence, but Fibonacci numbers will always be more cool. They have an italian name, a strong relation to the golden ratio and you do not have to explain them yourself[^3].&lt;/p&gt;
-&lt;p&gt;We like to add a 0.5 story point option to be assigned for very small tasks that are often neglected as &lt;strong&gt;to small to be estimated at all&lt;/strong&gt;. In doing so, if those tasks come in numbers, they at least show up in the forecast. We limit our story point values to nine options in total to support quick decision-making. We usually consider a story point value of 21 as &lt;strong&gt;too big, should usually be broken up into smaller parts&lt;/strong&gt;. Anything that feels bigger than even a 21 is rejected and must be refined first.&lt;/p&gt;
+&lt;p&gt;Before using story points, we tried to estimate the amount of time to get a certain workload done. One of the pain point
+was, that we as humans are surprisingly bad and overoptimistic in guessing how long something new is going to take. At
+the same time we want be accurate in our statements. Treating those estimates as binding cost estimates, in many cases
+definitely added some pressure.&lt;/p&gt;
+&lt;p&gt;As a countermeasure, many developers, including us, designed some fancy Excel sheets to enter their guess work and
+deliver educated overestimates to compensate for our optimism. That made us feel better and lightened some pressure by
+moving unused times between work items. The approach was time-consuming because of the fancy guess work. It also did not
+deliver accurate results because of the intrinsic lack of knowledge in doing something new and the safe-guarding
+over-estimates.&lt;/p&gt;
+&lt;h3&gt;Guessing relative difficulty is easier&lt;/h3&gt;
+&lt;p&gt;As it turned out, story points improve the estimation part of the ROI equation. We humans are surprisingly good at
+guessing the relative difficulty of tasks we only have partial knowledge of. Most of the time, we can easily say: &amp;quot;This
+will be A LOT harder than that. Doing ABC is more easy peasy compared to XZY&amp;quot;. We do not even need to remember the exact
+effort of the reference work to make that guess.&lt;/p&gt;
+&lt;h3&gt;The power of limited choice&lt;/h3&gt;
+&lt;p&gt;Additionally, &lt;a href=&quot;https://en.wikipedia.org/wiki/Choice#Number_of_options_and_paradox&quot;&gt;we are easily overwhelmed with too much choice&lt;/a&gt;.
+Having choices between hours, days, weeks and maybe even months makes it harder for us to decide. It is a smart move to
+limit the number of available choices to accelerate a decision process. Using a limited set of possible story points,
+applies &lt;a href=&quot;https://en.wikipedia.org/wiki/Choice_architecture&quot;&gt;choice architecture&lt;/a&gt; on effort estimation.&lt;/p&gt;
+&lt;p&gt;We still have some freedom what number sequence to take. Ideally, the sequence of valid story point values should
+reflect the fact, that estimates lack more accuracy, the bigger the subject to estimate is. Using the Fibonacci numbers
+fits this requirement nicely, because consecutive numbers have an increasing gap between them. Of course, you could use
+another number sequence, but &lt;a href=&quot;https://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Fibonacci-Numbers&lt;/a&gt; will always be more cool.
+They have an italian name, a strong relation to the golden ratio, and you do not have to explain them yourself.&lt;/p&gt;
+&lt;h3&gt;All the small things&lt;/h3&gt;
+&lt;p&gt;We like to add a 0.5 story point option to be assigned for very small tasks that are often neglected as &lt;strong&gt;to small to be
+estimated at all&lt;/strong&gt;. In doing so, if those tasks come in numbers, they at least show up in the forecast. We limit our
+story point values to nine options in total to support quick decision-making. We usually consider a story point value of
+21 as &lt;strong&gt;too big, should usually be broken up into smaller parts&lt;/strong&gt;. Anything that feels bigger than even a 21 is rejected
+and must be refined first.&lt;/p&gt;
 &lt;h2&gt;The gain of story points&lt;/h2&gt;
-&lt;p&gt;In summary the two effects improve the efficiency and effectiveness of the estimation process. Since estimating is lot faster with story points, it quickly became a team effort increasing the quality by averaging between independent guesses. Using Planning poker avoids being biased by other opinions.&lt;/p&gt;
-&lt;p&gt;This whole team approach results into a better quality of the effort estimates. By monitoring the story points a developer team delivers over time, one finds, that the total amount of story points per sprint usually converges into an expectancy value. In our experience, the ROI forecast derivable from that value is of better quality than the one derived from time estimations. Therefore, we consider story points more appropriate.&lt;/p&gt;
+&lt;p&gt;In summary the two effects improve the efficiency and effectiveness of the estimation process. Since estimating is lot
+faster with story points, it quickly became a team effort increasing the quality by averaging between independent
+guesses. Using Planning poker avoids being biased by other opinions.&lt;/p&gt;
+&lt;p&gt;This whole team approach results into a better quality of the effort estimates. By monitoring the story points a
+developer team delivers over time, one finds, that the total amount of story points per sprint usually converges into an
+expectancy value. In our experience, the ROI forecast derivable from that value is of better quality than the one
+derived from time estimations. Therefore, we consider story points more appropriate.&lt;/p&gt;
 &lt;h2&gt;Story points should estimate total cognitive load&lt;/h2&gt;
-&lt;p&gt;Let us focus on why we are estimating at all: We want to know the expected return on invest and everything that improves that forecast is good. We are already convinced, that using story points are pragmatic in delivering a better ROI forecast. However, story points are an abstract concept. Some definition what exactly they represent is needed. Maybe for that reason, there seems to be some fear of not doing story points right.&lt;/p&gt;
-&lt;p&gt;Keep in mind, that the whole agile development approach should be adapted to what works best for you. We think, story points should have meaning, that feels natural and explaining them should be very easy. Since software is a brain child, we feel comfortable in treating story points as &lt;strong&gt;expected total cognitive load&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Everything becomes quite clear with this definition. If a task is more difficult than another, it causes more cognitive load. You need to research something new. Some business process might be complex, so you need to meet with the business experts and learn about it. A task is simple, but it contains a lot of repetitive work, and that needs time and focus. It all adds up on the cognitive load.&lt;/p&gt;
-&lt;p&gt;Doing a task a second time but on an evolved system where it has become a lot easier, results into less cognitive load. Assigning fewer story point is totally fine. The product is more sophisticated now and allows for a higher ROI.&lt;/p&gt;
-&lt;p&gt;Some developer has more foreknowledge than the others? Sharing it causes cognitive load. If he is done quicker than the team average: be it so. It will just result into a slightly better actual ROI than expected for the team average and shows good resource allocation.&lt;/p&gt;
-&lt;p&gt;Not sure if to assign story points to a bug or task? Well, they also produce cognitive load. So we just assign them story points, because in the end, we want to obtain a more accurate forecast.&lt;/p&gt;
+&lt;p&gt;Let us focus on why we are estimating at all: We want to know the expected return on invest and everything that improves
+that forecast is good. We are already convinced, that using story points are pragmatic in delivering a better ROI
+forecast. However, story points are an abstract concept. Some definition what exactly they represent is needed. Maybe
+for that reason, there seems to be some fear of not doing story points right.&lt;/p&gt;
+&lt;p&gt;Keep in mind, that the whole agile development approach should be adapted to what works best for you. We think, story
+points should have meaning, that feels natural and explaining them should be very easy. Since software is a brain child,
+we feel comfortable in treating story points as &lt;strong&gt;expected total cognitive load&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;Some samples&lt;/h3&gt;
+&lt;p&gt;Everything becomes quite clear with this definition. If a task is more difficult than another, it causes more cognitive
+load. You need to research something new. Some business process might be complex, so you need to meet with the business
+experts and learn about it. A task is simple, but it contains a lot of repetitive work, and that needs time and focus.
+It all adds up on the cognitive load.&lt;/p&gt;
+&lt;p&gt;Doing a task a second time but on an evolved system where it has become a lot easier, results into less cognitive load.
+Assigning fewer story point is totally fine. The product is more sophisticated now and allows for a higher ROI.&lt;/p&gt;
+&lt;p&gt;Some developer has more foreknowledge than the others? Sharing it causes cognitive load. If he is done quicker than the
+team average: be it so. It will just result into a slightly better actual ROI than expected for the team average and
+shows good resource allocation.&lt;/p&gt;
+&lt;p&gt;Not sure if to assign story points to a bug or task? Well, they also produce cognitive load. So we just assign them
+story points, because in the end, we want to obtain a more accurate forecast.&lt;/p&gt;
 &lt;p&gt;Keep the cognitive load buffers clean and happy estimating.&lt;/p&gt;
 &lt;h2&gt;Links&lt;/h2&gt;
-&lt;p&gt;[^1]: &lt;a href=&quot;https://en.wikipedia.org/wiki/Choice#Number_of_options_and_paradox&quot;&gt;Choice: Number of options and paradox&lt;/a&gt;
-[^2]: &lt;a href=&quot;https://en.wikipedia.org/wiki/Choice_architecture&quot;&gt;Choice architecture&lt;/a&gt;
-[^3]: &lt;a href=&quot;https://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Fibonacci-Numbers&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Choice#Number_of_options_and_paradox&quot;&gt;Choice: Number of options and paradox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Choice_architecture&quot;&gt;Choice architecture&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Fibonacci-Numbers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
     <item>
       <title>Gendern im Markup und in Programmiersprachen</title>
       <link>https://denktmit.de/blog/2021-06-07-gendern-in-markup/</link>
+      <author>Sven Köppel</author>
       <pubDate>2021-06-07T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-06-07-gendern-in-markup/</guid>
       <description>&lt;p&gt;&lt;a href=&quot;https://de.wikipedia.org/wiki/Geschlechtergerechte_Sprache&quot;&gt;Geschlechtergerechte Sprache&lt;/a&gt;
@@ -352,6 +410,7 @@ Debattenkultur gut tun.&lt;/p&gt;
     <item>
       <title>Plaintext ist Trumpf</title>
       <link>https://denktmit.de/blog/2021-06-08-plaintext/</link>
+      <author>Sven Köppel</author>
       <pubDate>2021-06-08T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-06-08-plaintext/</guid>
       <description>&lt;p&gt;In der Softwarearchitektur gibt es einige Weisheiten die zeitlos sind. Dazu gehört
@@ -494,6 +553,7 @@ der offenen und menschenlesbaren Austauschformate!&lt;/p&gt;
     <item>
       <title>Der Blick über den Tellerrand, Volume 1: Stackbasierte Programmiersprachen</title>
       <link>https://denktmit.de/blog/2021-06-29-tellerrand-stackbasierte-programmiersprachen/</link>
+      <author>Sven Köppel</author>
       <pubDate>2021-06-29T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-06-29-tellerrand-stackbasierte-programmiersprachen/</guid>
       <description>&lt;p&gt;Dieser Artikel ist Teil einer neuen Serie von Blogartikeln, die ich über
@@ -677,6 +737,7 @@ mit der ich hier schließen möchte:
     <item>
       <title>Die IDE-Wars</title>
       <link>https://denktmit.de/blog/2021-07-02-repl-cli-ide-wars/</link>
+      <author>Sven Köppel</author>
       <pubDate>2021-07-02T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-07-02-repl-cli-ide-wars/</guid>
       <description>&lt;p&gt;Heute möchte ich einmal über ein Thema schreiben, welches in der Genossenschaft sehr
@@ -689,7 +750,7 @@ oder &lt;a href=&quot;https://medium.com/study-tips/eat-sleep-exercise-repeat-7a
 Es handelt sich durchaus um ein Paradigma, ist aber nicht so exotisch, dass er Teil
 meiner Blogartikelserie &lt;em&gt;Blick über den Tellerrand&lt;/em&gt; wäre, welche ich diese Woche
 mit einem Text über
-&lt;a href=&quot;https://denktmit.de/2021/06/29/tellerrand-stackbasierte-programmiersprachen.html&quot;&gt;stackbasierte Programmiersprachen&lt;/a&gt;
+&lt;a href=&quot;https://denktmit.de/blog/2021-06-29-tellerrand-stackbasierte-programmiersprachen/&quot;&gt;stackbasierte Programmiersprachen&lt;/a&gt;
 angefangen habe.&lt;/p&gt;
 &lt;p&gt;Tatsächlich wurde ich für diesen Blogartikel motiviert von einem Blogartikel
 &lt;a href=&quot;https://vlaaad.github.io/clj-vs-cli&quot;&gt;REPL vs CLI: IDE wars&lt;/a&gt;, der gestern erschien. Dort
@@ -763,7 +824,7 @@ beim Entwickeln zu unterstützen. Vor wenigen Tagen wurde etwa der
 &lt;a href=&quot;https://copilot.github.com/&quot;&gt;Github Coplit&lt;/a&gt; angekündigt, ein Tool zum Erzeugen von
 Textblöcken in &lt;em&gt;Programmiersprache&lt;/em&gt; auf Basis von von der Entwickler:in in
 &lt;em&gt;natürlicher Sprache&lt;/em&gt; formulierten Kommentaren.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://denktmit.de/E5D6uw2XIBAkU4u.jpeg&quot; alt=&quot;Github Copilot Screenshot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/E5D6uw2XIBAkU4u.webp&quot; alt=&quot;Github Copilot Screenshot&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Mit Bildern wie dem obigen wurde der &lt;em&gt;Copilot&lt;/em&gt; angekündigt.
 &lt;a href=&quot;https://twitter.com/nickjshearer/status/1409902649625956361?s=20&quot;&gt;In den sozialen Medien&lt;/a&gt;
 wurde gerade dieser Screenshot zerrissen, weil er die Todsünde vorschlägt, Geldbeträge
@@ -870,6 +931,7 @@ nicht vor lauter Essen, Trainieren und Wiederholen das Schlafen! :-)&lt;/p&gt;
     <item>
       <title>Martialische Redewendungen im beruflichen Alltag</title>
       <link>https://denktmit.de/blog/2021-08-25-kriegs-sport-sprache/</link>
+      <author>Sven Köppel</author>
       <pubDate>2021-08-25T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-08-25-kriegs-sport-sprache/</guid>
       <description>&lt;p&gt;Das Thema &lt;em&gt;Sprache&lt;/em&gt; ist öfters Gegenstand dieses Blogs: Sowohl natürliche
@@ -1000,9 +1062,10 @@ ganz inklusiv.&lt;/li&gt;
     
     <item>
       <title>Show your Workspace! Der Auftakt</title>
-      <link>https://denktmit.de/blog/2021-08-26-show-your-Workspace/</link>
+      <link>https://denktmit.de/blog/2021-08-26-show-your-workspace/</link>
+      <author>Sven Köppel</author>
       <pubDate>2021-08-26T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2021-08-26-show-your-Workspace/</guid>
+      <guid>https://denktmit.de/blog/2021-08-26-show-your-workspace/</guid>
       <description>&lt;p&gt;In einer neuen Reihe innerhalb dieses Blogs stellen die Mitglieder und Mitarbeiter von DenktMit
 ihren Arbeitsplatz (oder ihre Arbeitsplätze) vor. Als Menschen, die primär an einem Computer ihre
 Arbeit verrichten, ist die effiziente Ausgestaltung dieses Arbeitsplatzes für uns meist sehr wichtig.
@@ -1127,6 +1190,7 @@ ist schneller gezückt als eine Notiz-App auf dem Handy.&lt;/p&gt;
     <item>
       <title>Release and ship your e2e tests as containers alongside your product</title>
       <link>https://denktmit.de/blog/2021-11-21-release-and-ship-your-e2e-tests-as-containers-alongside-your-product/</link>
+      <author>Marius Schmidt</author>
       <pubDate>2021-11-21T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-11-21-release-and-ship-your-e2e-tests-as-containers-alongside-your-product/</guid>
       <description>&lt;h2&gt;E2E Testcontainers&lt;/h2&gt;
@@ -1425,7 +1489,7 @@ I hope you enjoyed it. Have fun building and releasing your own test containers.
 &lt;li&gt;&lt;a href=&quot;https://medium.com/@brotandgames/build-a-custom-cli-with-bash-e3ce60cfb9a4&quot;&gt;Build a Custom CLI with Bash&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://gauge.org/&quot;&gt;Gauge testing framework&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/getgauge/gauge-java&quot;&gt;Gauge java language bindings&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://denktmit.de/outreach.html&quot;&gt;DenktMit eG tech blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://denktmit.de/blog/&quot;&gt;DenktMit eG tech blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -1433,6 +1497,7 @@ I hope you enjoyed it. Have fun building and releasing your own test containers.
     <item>
       <title>Mein Zukunftstraum von Silicon Orschel</title>
       <link>https://denktmit.de/blog/2022-01-14-mein-zukunftstraum-von-silicon-orschel/</link>
+      <author>Marius Schmidt</author>
       <pubDate>2022-01-14T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-01-14-mein-zukunftstraum-von-silicon-orschel/</guid>
       <description>&lt;p&gt;Biontech hat vorgemacht, dass bereits ein einziges hocherfolgreiches High-Tech Unternehmen dem jeweiligen Standort ungeahntes Entwicklungspotential eröffnet. Derart extreme Erfolgsgeschichten sind allerdings eher selten und eine enorme Abhängigkeit vom Erfolg eines Einzelunternehmens auch nicht immer erstrebenswert.&lt;/p&gt;
@@ -1449,13 +1514,13 @@ I hope you enjoyed it. Have fun building and releasing your own test containers.
 &lt;p&gt;Benachbart zum Campus glänzen Satellite Offices und &lt;a href=&quot;https://de.wikipedia.org/wiki/Coworking&quot;&gt;Coworking Spaces&lt;/a&gt; etablierter Firmen, die erkannt haben, dass es unnötig ist, dass der Hochtaunuskreis bis in die Frankfurter Innenstadt fährt.&lt;/p&gt;
 &lt;p&gt;Das kürzt die Wege zu Silicon Orschels Startup-Hub, wo sich sich regelmäßig alte, neue und zukünftige Gründer mit interessierten Investoren und Firmenkunden austauschen. Aber auch so läuft man sich oft über den Weg. An finanzieller Förderung und Erfolg der lebendigen Orscheler StartUp Landschaft können sich Bürgerinnen und Bürger per Bürgerfonds beteiligen.&lt;/p&gt;
 &lt;h2&gt;Die smarte Stadt&lt;/h2&gt;
-&lt;p&gt;Seit die Verwaltung mit &lt;a href=&quot;https://www.dataport.de/was-wir-bewegen/portfolio/dphoenixsuite/&quot;&gt;Projekt Phönix&lt;/a&gt; auf &lt;a href=&quot;https://de.wikipedia.org/wiki/Open_Source&quot;&gt;Open Source&lt;/a&gt; Komponenten umgestellt wurde und Datensouveränität erlangte, konnte man die freiwerdenden Lizenzkosten und Daten gut nutzen, um den Bürgerdialog zu vertiefen. Eigenentwicklungen werden gemäß &lt;a href=&quot;https://www.wikimedia.de/2019/themen/oeffentlich-rechtlicher-rundfunk-oeffnet-sich-oeffentliches-geld-oeffentliches-gut/&quot;&gt;Öffentliches Geld - Öffentliches Gut&lt;/a&gt; grundsätzlich gemeinfrei gestellt.&lt;/p&gt;
+&lt;p&gt;Seit die Verwaltung mit &lt;a href=&quot;https://www.dataport.de/services-produkte/it-produkte/dphoenixsuite/&quot;&gt;Projekt Phönix&lt;/a&gt; auf &lt;a href=&quot;https://de.wikipedia.org/wiki/Open_Source&quot;&gt;Open Source&lt;/a&gt; Komponenten umgestellt wurde und Datensouveränität erlangte, konnte man die freiwerdenden Lizenzkosten und Daten gut nutzen, um den Bürgerdialog zu vertiefen. Eigenentwicklungen werden gemäß &lt;a href=&quot;https://www.wikimedia.de/2019/themen/oeffentlich-rechtlicher-rundfunk-oeffnet-sich-oeffentliches-geld-oeffentliches-gut/&quot;&gt;Öffentliches Geld - Öffentliches Gut&lt;/a&gt; grundsätzlich gemeinfrei gestellt.&lt;/p&gt;
 &lt;p&gt;Die Cyberstelle der Stadt nimmt Hinweise auf Bugs und Sicherheitslücken professionell entgegen. Für kritische Erstmeldungen gibt es über das &lt;a href=&quot;https://de.wikipedia.org/wiki/Bug-Bounty-Programm&quot;&gt;Bug-Bounty-Program&lt;/a&gt; der Stadt sogar eine kleine Belohnung.&lt;/p&gt;
 &lt;p&gt;Ein Meinungsbild der Bürger erhält das Stadtparlament schnell und einfach per &lt;a href=&quot;https://liqd.net/de/about/&quot;&gt;Liquid Democracy&lt;/a&gt;. Das Freifunk Netz der Stadt sorgt für eine flächig verfügbare WLAN Grundversorgung im gesamten Stadtgebiet, falls der eigene Provider einmal ausfällt.&lt;/p&gt;
 &lt;p&gt;Die Schnittstellen zur Stadt sind öffentlich und gut verständlich und durch die Stadt erhobene Informationen stehen grundsätzlich als &lt;a href=&quot;https://de.wikipedia.org/wiki/Open_Data&quot;&gt;Open Data&lt;/a&gt; bereit. Freie Parkplätze, Schadstoffsammlung oder Altkleidercontainer werden ebenso interaktiv angezeigt, wie künftige Baustellen oder Entwicklungsmaßnahmen. Die spontane Mitfahrgelegenheit zum Einkauf ergibt sich per digital ausgestrecktem Daumen.&lt;/p&gt;
 &lt;p&gt;In Eigenregie konnte die Orscheler Bürgerinitiative pro Windkraft per &lt;a href=&quot;https://de.wikipedia.org/wiki/Digitaler_Zwilling&quot;&gt;Digital Twin&lt;/a&gt; der Stadt die besten Standorte für Windkraftanlagen bezüglich Wirkungsgrad und Lärmbelastung einfach vorab simulieren. Die anonymisierte Standortanfrage an den Grundstückseigentümer wurde direkt im Nachgang per digitalem Kataster übermittelt.&lt;/p&gt;
 &lt;p&gt;Aber auch der Stadt selbst hilft der Digital-Twin. Seit Erfassung der Wärmedaten an tausenden Messpunkten kann die Stadt bei eigenen Bauvorhaben die wärmetechnischen Belastungen im Detail berücksichtigen. Mülltonnen melden Ihren Füllstand selbst und erlauben dynamische Leerungsplanung.&lt;/p&gt;
-&lt;p&gt;Funk-Wasseruhren erlauben den perfekten Überblick über Wasserverbrauch, Leckagen und Reserven und Feuchtigkeitssensoren zeigen auf, welche Grünflächen leiden. Straßenlaternen reagieren auf Bewegung und schalten bei wenig Betrieb ab. Ohnehin wurden aber vielerorts bereits &lt;a href=&quot;https://www.mdr.de/wissen/leuchtende-baeume-als-strassenlaternen100.html&quot;&gt;biolumineszente Bäume&lt;/a&gt; gepflanzt, die auf umweltfreundliche Art und Weise für eine Grundbeleuchtung sorgen.&lt;/p&gt;
+&lt;p&gt;Funk-Wasseruhren erlauben den perfekten Überblick über Wasserverbrauch, Leckagen und Reserven und Feuchtigkeitssensoren zeigen auf, welche Grünflächen leiden. Straßenlaternen reagieren auf Bewegung und schalten bei wenig Betrieb ab. Ohnehin wurden aber vielerorts bereits &lt;a href=&quot;https://www.swr.de/wissen/leuchtende-baueme-100.html&quot;&gt;biolumineszente Bäume&lt;/a&gt; gepflanzt, die auf umweltfreundliche Art und Weise für eine Grundbeleuchtung sorgen.&lt;/p&gt;
 &lt;h2&gt;Zum Weiterlesen&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Die Stadt Münster &lt;a href=&quot;https://opendata.stadt-muenster.de/&quot;&gt;betreibt ein Open-Data Portal&lt;/a&gt;&lt;/li&gt;
@@ -1471,11 +1536,12 @@ I hope you enjoyed it. Have fun building and releasing your own test containers.
     
     <item>
       <title>Ein Essay zur Digitalisierung und Gründergeist in Rhein-Main</title>
-      <link>https://denktmit.de/blog/2022-01-20-Rhein-Main-Denken/</link>
+      <link>https://denktmit.de/blog/2022-01-20-rhein-main-denken/</link>
+      <author>Sven Köppel</author>
       <pubDate>2022-01-20T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-01-20-Rhein-Main-Denken/</guid>
-      <description>&lt;p&gt;Vor einer Woche schrieb Marius Schmidt &lt;a href=&quot;https://denktmit.de/blog.html&quot;&gt;an dieser Stelle&lt;/a&gt; ein brennendes
-Plädoyer für das &lt;a href=&quot;https://denktmit.de/2022/01/14/mein-zukunftstraum-von-silicon-orschel.html&quot;&gt;Silicon Oschel&lt;/a&gt;,
+      <guid>https://denktmit.de/blog/2022-01-20-rhein-main-denken/</guid>
+      <description>&lt;p&gt;Vor einer Woche schrieb Marius Schmidt &lt;a href=&quot;https://denktmit.de/blog/&quot;&gt;an dieser Stelle&lt;/a&gt; ein brennendes
+Plädoyer für das &lt;a href=&quot;https://denktmit.de/blog/2022-01-14-mein-zukunftstraum-von-silicon-orschel/&quot;&gt;Silicon Oschel&lt;/a&gt;,
 eine Vision für die Stadt, in er die Genossenschaft ihren Sitz hat und vier von
 zehn Gründungsmitglieder &lt;a href=&quot;https://denktmit.de/&quot;&gt;der DenktMit-Genossenschaft&lt;/a&gt; ihren Wohnsitz.&lt;/p&gt;
 &lt;p&gt;Die Frage, wie Digitalisierung gelingen kann und welche gesellschaftliche Transformation
@@ -1601,7 +1667,7 @@ Kleinstadt. Die Wirklichkeit ist natürlich etwas komplizierter: &lt;em&gt;Remot
 sind nur wenige Softwareunternehmen. Das Rhein-Main-Unicorn Biontech hingegen
 braucht Laborräume und als medizinnahes Biotechnologieunternehmen auch die Nähe
 zu einem Uniklinikum — sicher ein Grund, warum sich der Firmensitz auf/neben dem Campus der
-Mainzer Universitätsklinik befindet. In Deutschland gibt es &lt;a href=&quot;https://www.uniklinika.de/die-deutschen-universitaetsklinika/uebersicht-der-universitaetsklinika/&quot;&gt;knapp 40 Uniklinken&lt;/a&gt;,
+Mainzer Universitätsklinik befindet. In Deutschland gibt es &lt;a href=&quot;https://www.uniklinika.de/die-deutschenuniversitaetsklinika/uebersicht-der-universitaetsklinika/&quot;&gt;knapp 40 Uniklinken&lt;/a&gt;,
 dazu kommen &lt;a href=&quot;https://de.wikipedia.org/wiki/Liste_der_akademischen_Lehrkrankenh%C3%A4user_in_Deutschland&quot;&gt;ca. 600 Lehrkrankenhäuser&lt;/a&gt;, an
 denen manchmal auch geforscht wird. Auf dem Stadtgebiet Oberursel steht übrigens
 kein einziges davon (wohl aber in Bad Homburg).&lt;/p&gt;
@@ -1700,7 +1766,7 @@ schreibt u.a. über Bürokratieabbau und Innovationsmanagament.&lt;/li&gt;
 &lt;li&gt;Die meisten Unis haben mittlerweile gut ausgestattete Ausgründungszentren
 und Lehrstühle für Gründungsmanagament, wo es häufig interessante Literatur
 gibt. So wartet zB. das Potsdamer Hassno Plattner Institut mit der
-Forschungsrichtung &lt;a href=&quot;https://hpi.de/hoelzle/it-entrepreneurship.html&quot;&gt;IT-Entrepreneurship&lt;/a&gt;
+Forschungsrichtung &lt;a href=&quot;https://hpi.de/studium/entrepreneurship.html&quot;&gt;IT-Entrepreneurship&lt;/a&gt;
 auf.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -1708,9 +1774,10 @@ auf.&lt;/li&gt;
     
     <item>
       <title>Big Data Accounting with Python and other tools: An experience report</title>
-      <link>https://denktmit.de/blog/2022-02-03-Accounting-Auditing-Big-Data-Python-Data-Warehousing/</link>
+      <link>https://denktmit.de/blog/2022-02-03-accounting-auditing-big-data-python-data-warehousing/</link>
+      <author>Sven Köppel</author>
       <pubDate>2022-02-03T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-02-03-Accounting-Auditing-Big-Data-Python-Data-Warehousing/</guid>
+      <guid>https://denktmit.de/blog/2022-02-03-accounting-auditing-big-data-python-data-warehousing/</guid>
       <description>&lt;p&gt;This post is an experience report of a project carried out by two persons at &lt;a href=&quot;https://denktmit.de/&quot;&gt;DenktMit eG&lt;/a&gt;
 a short while ago. We will illustrate our approaches, with a technical focus, and we
 will ensure the anonymity of our client. In fact, this client was contacting us for
@@ -1726,7 +1793,7 @@ museum and astrophysics, this story will be probably somwhat unsual.&lt;/p&gt;
 computation as the financial sector, for instance banking, accounting and auditing.
 Beginning with &lt;a href=&quot;https://technikum29.de/en/computer/electro-mechanical.php&quot;&gt;early 20th century desk calculators&lt;/a&gt;,
 &lt;a href=&quot;https://technikum29.de/en/computer/punchcard.php&quot;&gt;punch card computing&lt;/a&gt; was intensively
-used for massive (semi) automated processing of accounting data. The single card with 80 characters
+used for massive (semi) automatied processing of accounting data. The single card with 80 characters
 (columns in traditional &lt;a href=&quot;https://en.wikipedia.org/wiki/EBCDIC&quot;&gt;EBCDIC charset&lt;/a&gt;) was ideal for
 representing single transactions. On dedicated machines, where typically one machine could
 carry out only one job, decks of these cards could be sorted, values could be accumulated,
@@ -1735,7 +1802,7 @@ random access memory (RAM), many aspects of banking could be covered. This is wh
 &lt;em&gt;batch processing&lt;/em&gt; originate from, and these tasks were, by nature, heavily I/O bound.
 Later on, these computers were replaced by more compact successors, a branch generally known
 as &lt;a href=&quot;https://technikum29.de/en/computer/commercial.php&quot;&gt;commercial computing&lt;/a&gt; in distinction to
-&lt;a href=&quot;https://technikum29.de/en/computer/early-computers.php&quot;&gt;scientific computing&lt;/a&gt;. In it&#39;s
+&lt;a href=&quot;https://technikum29.de/en/computer/scientific-computers.php&quot;&gt;scientific computing&lt;/a&gt;. In it&#39;s
 extreme forms, commercial computing evventually lead to
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Mainframe_computer&quot;&gt;mainframe computer architectures&lt;/a&gt;
 whereas scientific computing lead to what we call
@@ -1940,7 +2007,7 @@ line by line and column by column on the raw CSV file.&lt;/p&gt;
 &lt;p&gt;Obviously, for more challenging tasks such as writing out particular data or doing more sophisticated
 &lt;em&gt;map reduce&lt;/em&gt; cycles, your milage may greatly vary. Vaex puts quite some effort to optimizing custom
 mappers with &lt;a href=&quot;https://vaex.io/docs/tutorial.html#Just-In-Time-compilation&quot;&gt;just in time compilation&lt;/a&gt;
-using &lt;a href=&quot;https://numba.pydata.org/&quot;&gt;numba&lt;/a&gt;, &lt;a href=&quot;https://pythonhosted.org/pythran/&quot;&gt;pythron&lt;/a&gt; or
+using &lt;a href=&quot;https://numba.pydata.org/&quot;&gt;numba&lt;/a&gt;, &lt;a href=&quot;https://pypi.org/project/pythran/#description&quot;&gt;pythran&lt;/a&gt; or
 &lt;a href=&quot;https://developer.nvidia.com/cuda-zone&quot;&gt;CUDA&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My conclusion: Try first with vaex, best by avoiding Microsoft Windows as much as possible. If this
 does not work well, try Dask.&lt;/p&gt;
@@ -1964,7 +2031,7 @@ representation.&lt;/p&gt;
 timeline of a few days. We mostly &lt;a href=&quot;https://en.wikipedia.org/wiki/Space%E2%80%93time_tradeoff&quot;&gt;traded CPU time against memory&lt;/a&gt;
 and filled the hard disk with tons of redundant data, differently filtered or splitted. This was
 not very clever, but &lt;em&gt;got the job done&lt;/em&gt;. Interestingly, the open source
-&lt;a href=&quot;https://www.hitachivantara.com/de-de/products/data-management-analytics/pentaho-platform/pentaho-data-integration.html&quot;&gt;Pentaho Data Integration&lt;/a&gt;
+&lt;a href=&quot;https://pentaho.com/products/pentaho-data-integration/&quot;&gt;Pentaho Data Integration&lt;/a&gt;
 platform by HITACHI saved the day for some queries. This is a visual programming toolkit optimized
 for streaming dataflows which we abused for batch data processing. It won&#39;t win a prize when it
 comes to &lt;em&gt;time to solution&lt;/em&gt; performance, as parallelization is only performed on individual
@@ -1984,9 +2051,10 @@ sanatization and representation.&lt;/p&gt;
     
     <item>
       <title>The Importance of Expressive Domain Models</title>
-      <link>https://denktmit.de/blog/2022-03-15-express-your-domain-model-with-asciidoctor-and-plantUML/</link>
+      <link>https://denktmit.de/blog/2022-03-15-express-your-domain-model-with-asciidoctor-and-plantuml/</link>
+      <author>Sascha Bleidner</author>
       <pubDate>2022-03-15T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-03-15-express-your-domain-model-with-asciidoctor-and-plantUML/</guid>
+      <guid>https://denktmit.de/blog/2022-03-15-express-your-domain-model-with-asciidoctor-and-plantuml/</guid>
       <description>&lt;h2&gt;The Importance of Expressive Domain Models&lt;/h2&gt;
 &lt;p&gt;Expressive and rich domain models gained a growing popularity with the rise of Domain-Driven Design, which was
 coined by Eric Evans by his book &lt;a href=&quot;https://www.domainlanguage.com/ddd/&quot;&gt;Domain-Driven Design: Tackling Complexity in the Heart of Software&lt;/a&gt; and the growing popularity of the Ports-and-Adapters software architecture.&lt;/p&gt;
@@ -2105,9 +2173,10 @@ static website, e.g. using GitHub or Gitlab Pages.&lt;/p&gt;
     
     <item>
       <title>Python ist das BASIC des 21. Jahrhunderts</title>
-      <link>https://denktmit.de/blog/2022-04-06-Python-the-modern-Basic-lingua-franca/</link>
+      <link>https://denktmit.de/blog/2022-04-06-python-the-modern-basic-lingua-franca/</link>
+      <author>Sven Köppel</author>
       <pubDate>2022-04-06T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-04-06-Python-the-modern-Basic-lingua-franca/</guid>
+      <guid>https://denktmit.de/blog/2022-04-06-python-the-modern-basic-lingua-franca/</guid>
       <description>&lt;p&gt;Viele Menschen lästern gerne. Gerade im Berufsleben ist das eine willkommene Ablenkung,
 und kaum ein Lästerthema ist so harmlos und sagt doch so viel aus wie &lt;em&gt;Programmiersprachen&lt;/em&gt;.
 Es ist überhaupt eine der liebsten Pausenbeschäftigungen von Programmierer:innen, über
@@ -2189,9 +2258,10 @@ nötige Lektüre zu finden, eine Domäne mithilfe von Python zu meistern.&lt;/p&
     
     <item>
       <title>Finding Love For Nerds: A Guide</title>
-      <link>https://denktmit.de/blog/2022-05-13-Finding-Love-for-Nerds/</link>
+      <link>https://denktmit.de/blog/2022-05-13-finding-love-for-nerds/</link>
+      <author>Sven Köppel</author>
       <pubDate>2022-05-13T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-05-13-Finding-Love-for-Nerds/</guid>
+      <guid>https://denktmit.de/blog/2022-05-13-finding-love-for-nerds/</guid>
       <description>&lt;p&gt;On this day, it&#39;s been 10 years when I have found my love, the partner of my life.
 I&#39;ve been in my 20s, and it was quite a different life compared to the 10 years before. In my teenager time,
 my friends had names like &lt;a href=&quot;https://www.perl.org/&quot;&gt;Perl&lt;/a&gt; or &lt;a href=&quot;https://www.gentoo.org/&quot;&gt;Gentoo Linux&lt;/a&gt;.
@@ -2328,9 +2398,10 @@ and being able to say all this about loving nerds.&lt;/p&gt;
     
     <item>
       <title>Zur Rolle der Programmierer und Entwickler bei künstlicher Intelligenz</title>
-      <link>https://denktmit.de/blog/2022-06-27-KI-Programmierer-Diktatur/</link>
+      <link>https://denktmit.de/blog/2022-06-27-ki-programmierer-diktatur/</link>
+      <author>Sven Köppel</author>
       <pubDate>2022-06-27T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-06-27-KI-Programmierer-Diktatur/</guid>
+      <guid>https://denktmit.de/blog/2022-06-27-ki-programmierer-diktatur/</guid>
       <description>&lt;p&gt;Kaum ein Thema eignet sich in der modernen »Business-Welt« so sehr, die Gemüter
 zu erhitzen, wie &lt;em&gt;künstliche Intelligenz&lt;/em&gt;. Hier glaubt jeder, mitreden zu können.
 Wenn Zukunftsforschende die Arbeitswelt von morgen erklären, machen sie das gerne
@@ -2351,7 +2422,7 @@ im folgenden einmal sachlich auseinandergenommen werden.&lt;/p&gt;
 &lt;h2&gt;Über Rollen- und Ausbildungswege in Firmen&lt;/h2&gt;
 &lt;p&gt;Die meisten Firmen beschäften Menschen, die eine Vielzahl von unterschiedlichen
 Qualifikationen aufweisen. Sicherlich sind für Buchhaltung und Rechnungswesen
-andere Fähigkeiten nötig als für Personalwesen und Mitarbeiteraquise. Oft gehen
+andere Fähigkeiten nötig als für Personalwesen und Mitarbeiterakquise. Oft gehen
 Berufsbilder, Ausbildungswege und Charaktereigenschaften auch einher und führen
 zu prägenden Klischees, wie das einer verschlafenen Inventur, einer peniblen
 Sekretärin oder eines überheblichen Administrators. In solchen negativen
@@ -2363,7 +2434,7 @@ warum sich Personen so verhalten wie sie es tun. Gerade Systemadministrator:inne
 stecken häufig in festen Strukturen fest, wo sie gegenüber verschiedenen Stellen
 widersprüchliche Ziele erreichen sollen. Das führt zu Frust, nicht zu letzt bei
 den Systemadmistrator:innen selber.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://denktmit.de/FVrpjj4X0AATpqR.jpeg&quot; alt=&quot;Karikatur mit Text: Eigentlich sind wir von der IT wie Gott.
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/fvrpjj4x0aatpqr.webp&quot; alt=&quot;Karikatur mit Text: Eigentlich sind wir von der IT wie Gott.
 Ich ziehe einen Stecker und ihr habt Kaffeepause statt Montag. Einfach So.&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;It-Sören, Quelle:&lt;a href=&quot;https://twitter.com/daskritzelt/status/1538799027533266944&quot;&gt;@daskritzelt&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/denktmit/status/1538816812153987072&quot;&gt;Admins sind Hausmeister&lt;/a&gt;,
@@ -2419,7 +2490,7 @@ Grundausbildung in statistischen Methoden benötigt. Eindrucksvolle
 Benutzerschnittstellen wie die Textschreibefähigkeit von &lt;a href=&quot;https://en.wikipedia.org/wiki/GPT-3&quot;&gt;GPT-3&lt;/a&gt;
 oder die Bildsynthese von &lt;a href=&quot;https://en.wikipedia.org/wiki/DALL-E&quot;&gt;DALL-E&lt;/a&gt; scheinen meine
 These zu verneinen, sind aber tatsächlich eher Spielzeuge oder nur oberflächlich
-zu gebrauchen. Hier im Blog schrieb ich letztes Jahr &lt;a href=&quot;https://denktmit.de/2021/07/02/repl-cli-ide-wars.html&quot;&gt;über Github Copilot&lt;/a&gt;, wo die resultierenden Texte als Programmbauteile mindestens einen kritischen
+zu gebrauchen. Hier im Blog schrieb ich letztes Jahr &lt;a href=&quot;https://denktmit.de/blog/2021-07-02-repl-cli-ide-wars/&quot;&gt;über Github Copilot&lt;/a&gt;, wo die resultierenden Texte als Programmbauteile mindestens einen kritischen
 Blick vor der Weiterverarbeitung bekommen sollten. Vor wenigen Tagen war dieses Tool
 wieder in den Nachrichten, so titulierte &lt;a href=&quot;https://www.heise.de/news/KI-Programmiergehilfe-GitHub-Copilot-ist-fertig-7146814.html&quot;&gt;Heise: Github Copilot lässt sich nun abonnieren&lt;/a&gt;.
 Das ist State-of-the-Art KI: Der Menschheitstraum, dass Computer sich selber programmieren,
@@ -2440,9 +2511,10 @@ Berufsgruppen liegen.&lt;/p&gt;
     
     <item>
       <title>Ein Jahr DenktMit eG – die Generalversammlung tagt</title>
-      <link>https://denktmit.de/blog/2022-06-30-Generalversammlung/</link>
+      <link>https://denktmit.de/blog/2022-06-30-generalversammlung/</link>
+      <author>Sven Köppel</author>
       <pubDate>2022-06-30T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-06-30-Generalversammlung/</guid>
+      <guid>https://denktmit.de/blog/2022-06-30-generalversammlung/</guid>
       <description>&lt;p&gt;Die Genossenschaft feiert Jubiläum: Am 07. Mai 2021 wurde sie gegründet, das Rumpfgeschäftsjahr ist
 abgeschlossen, drei neue Genoss:innen und viele wertvolle Kunden wurden gewonnen:
 In dieser positiven Tonalität begann gestern abend
@@ -2465,7 +2537,7 @@ Aufsichtsrat, in seiner Person der Vorsitzende Denis Malolepszy, Daniel Roth und
 Alle Amtsträger bedanken sich für das durch die basisdemokratische Wahl entgegengebrachte Vertrauen
 und bildeten heute im firmeninternen &lt;em&gt;Slack&lt;/em&gt;-Chat bereits einen &lt;em&gt;Platz der Republik&lt;/em&gt;, wo beide
 Organe für alle Genoss:innen transparent gemeinsame Themen besprechen können.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://denktmit.de/2022-06-30-Meeting-Owl-Generalversammlung.webp&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/2022-06-30-Meeting-Owl-Generalversammlung.webp&quot; alt=&quot;Im Vordergrund Tablet mit Meeting Video der Generalversammlung, im Hintergrund Spielplatz mit Kletterrakete&quot; /&gt;
 Der neue Besprechungsraum in der Herrenmühle ist ideal für ein 360°-Panorama mit der &lt;a href=&quot;https://owllabs.de/products/meeting-owl-pro/&quot;&gt;Meeting Owl®&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Mitbestimmung statt Frust im Hamsterrad&lt;/h2&gt;
 &lt;p&gt;Die Generalversammlung endete tief in der Nacht – aber nicht ohne noch einmal einen Blick auf die
@@ -2475,8 +2547,7 @@ titulierte gerade gestern die IT-Nachrichtenplattform &lt;em&gt;Golem&lt;/em&gt;
 Softwaregenossenschaft &lt;a href=&quot;https://ctrl.alt.coop/&quot;&gt;ctrl.alt.coop&lt;/a&gt;, mit der wir viele Werte
 teilen. Wo Gemeinsamkeiten sind, gibt es aber auch Unterschiede: So sehen wir keinen Widerspruch
 zwischen kooperativem Wirtschaften und freiberuflicher Unabhängigkeit. Das Agieren der Genoss:innen
-als Selbstständige und nicht als Angestellte ist in der &lt;a href=&quot;https://denktmit.de/pitch.html&quot;&gt;DNA der DenktMit eG&lt;/a&gt;
-eingewoben. Statt »Einheitsgehalt« bietet jeder Genosse der DenktMit seine Leistung zum selbst kalkulierten Preis an und führt einen Obulus von ca. 10€ pro abgerechneter Stunde zum Unterhalt der genossenschaftlichen
+als Selbstständige und nicht als Angestellte ist in der DNA der DenktMit eG eingewoben. Statt »Einheitsgehalt« bietet jeder Genosse der DenktMit seine Leistung zum selbst kalkulierten Preis an und führt einen Obulus von ca. 10€ pro abgerechneter Stunde zum Unterhalt der genossenschaftlichen
 Leistungen und Infrastruktur ab. Den Weg vom abhängigen Angestelltenverhältnis in die Selbstständigkeit
 gehen viele Neugenoss:innen vor oder während ihrer Aufnahme in die Genossenschaft und werden von der
 Gemeinschaft dabei nach Kräften unterstützt. Bislang hat ihn noch niemand bereut.&lt;/p&gt;
@@ -2485,9 +2556,10 @@ Gemeinschaft dabei nach Kräften unterstützt. Bislang hat ihn noch niemand bere
     
     <item>
       <title>Was ist Bootstrapping und warum ist es so wichtig?</title>
-      <link>https://denktmit.de/blog/2022-08-20-Bootstrapping-Programming-Languages/</link>
+      <link>https://denktmit.de/blog/2022-08-20-bootstrapping-programming-languages/</link>
+      <author>Sven Köppel</author>
       <pubDate>2022-08-20T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-08-20-Bootstrapping-Programming-Languages/</guid>
+      <guid>https://denktmit.de/blog/2022-08-20-bootstrapping-programming-languages/</guid>
       <description>&lt;p&gt;Das laufende Jahrzehnt fängt großartig an: Wir haben Smartphones und das Internet,
 großartige komplizierte Dinge wie Blockchains oder kybernetisch anmutende Anwendungen,
 die alle miteinander kommunizieren, geschrieben in Programmiersprachen, die Menschen
@@ -2505,7 +2577,7 @@ Genossenschaft so beliebte &lt;em&gt;Kotlin&lt;/em&gt;, für die es einen sogena
 der aus dem typischerweise in Textform vorliegenden Programmcode maschinenlesbare
 Anweisungen erzeugt. Es gibt viele Gründe, warum es interessant ist, diesen Compiler
 in der neuen Sprache selbst zu schreiben. Einer davon ist, dass es für die an der
-neuen Programmiersprache abeitende Menschen interessanter ist, die Funktionen
+neuen Programmiersprache arbeitende Menschen interessanter ist, die Funktionen
 ihres neuen Zöglings auch zu nutzen, statt eine ältere Programmiersprache zu verwenden.
 Wenn eine Sprache diesen evolutionären Schritt geschafft hat, nennt man sie
 &lt;em&gt;selfhosting&lt;/em&gt;, sie ist also ihr eigener Gast.&lt;/p&gt;
@@ -2524,7 +2596,7 @@ kennen und der heute im Prinzip nur wenig verändert weiterhin anhält, aber in 
 mobilen Gegenwart oft nicht mehr so stark in Erscheinung tritt. Dabei starten Prozessoren
 sogar meist mit einem einfacheren 16bit-Vorprogrammiersystem (früher von dem BIOS
 bespielt) um sich dann in 32bit und danach 64bit &amp;quot;upzugraden&amp;quot;. Auch der Linux-Ladeprozess
-mit einem &lt;em&gt;Bootloader&lt;/em&gt;, der defakto selber (im Moment des Bootens) ein Betriebssystem darstellt,
+mit einem &lt;em&gt;Bootloader&lt;/em&gt;, der defacto selber (im Moment des Bootens) ein Betriebssystem darstellt,
 ist noch heutigen Linux-Benutzenden oft ein Begriff. Auch wenn solche Fragestellungen als
 &amp;quot;erledigt und abgehakt&amp;quot; und damit eher theoretischer Natur erscheinen, sind sie dennoch
 hoch relevant für die Zukunft und erfordern eine regelmäßige Überarbeitung.&lt;/p&gt;
@@ -2548,9 +2620,10 @@ Ausgabe des Magazins im Alleingang.&lt;/p&gt;
     
     <item>
       <title>How to get started with technical writing</title>
-      <link>https://denktmit.de/blog/2022-08-30-Tipps-for-Technical-Writing/</link>
+      <link>https://denktmit.de/blog/2022-08-30-tipps-for-technical-writing/</link>
+      <author>Sven Köppel</author>
       <pubDate>2022-08-30T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-08-30-Tipps-for-Technical-Writing/</guid>
+      <guid>https://denktmit.de/blog/2022-08-30-tipps-for-technical-writing/</guid>
       <description>&lt;p&gt;This blog post is about an important topic in engineering jobs. It is about
 doing your paperwork, the documentation, the (technical) writing. This is
 something science and engineering have in common: Without proper documentation,
@@ -2639,11 +2712,12 @@ stage fright: I just start talking, without much preparation, and evventually co
     
     <item>
       <title>Zum Programmierpraktikum in der Entwickler-Agentur: Ein Bericht aus Betreuerperspektive</title>
-      <link>https://denktmit.de/blog/2022-09-13-Bericht-Programmier-Praktikum-Internship/</link>
+      <link>https://denktmit.de/blog/2022-09-13-bericht-programmier-praktikum-internship/</link>
+      <author>Sven Köppel</author>
       <pubDate>2022-09-13T00:00:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2022-09-13-Bericht-Programmier-Praktikum-Internship/</guid>
+      <guid>https://denktmit.de/blog/2022-09-13-bericht-programmier-praktikum-internship/</guid>
       <description>&lt;p&gt;Ein Unternehmen aufzubauen bedeutet immer auch, Nachwuchskräfte zu gewinnen. In der
-Genossenschaft haben wir uns &lt;a href=&quot;https://denktmit.de/2022/06/30/Generalversammlung&quot;&gt;ein Jahr nach der Gründung&lt;/a&gt;
+Genossenschaft haben wir uns &lt;a href=&quot;https://denktmit.de/blog/2022-06-30-generalversammlung/&quot;&gt;ein Jahr nach der Gründung&lt;/a&gt;
 dazu entschlossen, für ein paar Wochen eine Praktikantin aufzunehmen. Es handelt sich
 um eine Naturwissenschaftlerin mit Master-Abschluss, die uns in der Firmenzentrale
 in Oberursel vor den Toren Frankfurts vor einer Weile besucht hat und großes Interesse
@@ -2785,9 +2859,10 @@ in der &amp;quot;nächsten&amp;quot; Woche mit einem weiteren Genossen und Folge
     
     <item>
       <title>Öffentliches WLAN im eigenen Betrieb</title>
-      <link>https://denktmit.de/blog/2023-08-07-Public-Wifi-eduroam-freifunk/</link>
+      <link>https://denktmit.de/blog/2023-08-07-public-wifi-eduroam-freifunk/</link>
+      <author>Sven Köppel</author>
       <pubDate>2023-08-06T10:40:00Z</pubDate>
-      <guid>https://denktmit.de/blog/2023-08-07-Public-Wifi-eduroam-freifunk/</guid>
+      <guid>https://denktmit.de/blog/2023-08-07-public-wifi-eduroam-freifunk/</guid>
       <description>&lt;p&gt;Es ist 2023 und in &lt;a href=&quot;https://www.lte-anbieter.info/verfuegbarkeit/lte-karte.php&quot;&gt;Deutschland ist LTE flächendeckend verfügbar&lt;/a&gt;.
 Bei theoretischen Bandbreiten von bis zu 500 Mbit/sec spricht da kaum noch jemand über öffentliches WLAN.
 Das Thema war in den 2000ern von hoher Relevanz, als Mobilfunktarife in Deutschland noch teuer waren. Und so
@@ -2872,6 +2947,7 @@ als mit QR-Codes oder langen Passwortzetteln zu hantieren.&lt;/p&gt;
     <item>
       <title>Local development for Kubernetes done right</title>
       <link>https://denktmit.de/blog/2024-02-28-local-development-for-kubernetes-done-right/</link>
+      <author>Daniel Roth</author>
       <pubDate>2024-02-01T10:40:00Z</pubDate>
       <guid>https://denktmit.de/blog/2024-02-28-local-development-for-kubernetes-done-right/</guid>
       <description>&lt;p&gt;When operating within a company that leverages modern cloud-native technologies, it&#39;s not uncommon to encounter a
@@ -2966,6 +3042,643 @@ environments. The proposed approach encourages alignment with production setups,
 empowers your engineers. It addresses challenges like certificate handling, local DNS, and local registries, offering
 practical solutions. The suggested &lt;a href=&quot;https://github.com/DenktMit-eG/local-dev-cluster&quot;&gt;local-dev-cluster&lt;/a&gt; serves as a
 working example and foundational tool for creating an effective and enjoyable local development experience.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Werde Aufsichtsrat -- ein offener Brief an die Genoss:innen</title>
+      <link>https://denktmit.de/blog/2024-07-09-werde-aufsichtsrat/</link>
+      <author>Sven Köppel</author>
+      <pubDate>2024-07-09T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-07-09-werde-aufsichtsrat/</guid>
+      <description>&lt;p&gt;Die &lt;a href=&quot;https://denktmit.de/&quot;&gt;DenktMit eG&lt;/a&gt; ist die Genossenschaft freiberuflicher IT-Expert:innen und überwiegend Softwareentwickler:innen. Wir sind junges Unternehmen, das während Covid-19 von 10 Personen gegründet wurde und mittlerweile 20 Teilhaber:innen sowie drei direkte Vollzeit-Equivalente Angestellte umfasst. Die DenktMit ist vieles: Ein Netzwerk von erfolgreichen und erfahrenen Unternehmer:innen, die teilweise auch eigene Angestellte oder als geschäftsführende Gesellschafter Unternehmen führen. Aber auch ein Auftragsvermittler, der Kundinnen ganze Teams zur Verfügung stellen kann. Wir machen derzeit reines B2B-Geschäft im Mittelstand und Industrie. Die DenktMit kann auch als Unternehmensberatung mit Fokus auf komplexen IT-Systemen verstanden werden – bei uns sind allerdings ausschließlich „Senior-Entwickler:innen“ im Projekt. Zusammenfassend also: Klasse statt Masse, ein Edelboutique von Profis. Und: Selbstverwaltung im genossenschaftlichen Modell, welches Partizipation und Basisdemokratie verspricht.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Das zieht kreative und fähige Menschen an, die aus dem Hamsterrad des Anstellungsverhältnisses ausbrechen wollen&lt;/strong&gt;. Die Genossenschaft kann man als das beste aus einem Verein und einer Aktiengesellschaft verstehen. Sie hat mehr Organe als die typische „GmbH“. Die Genossenschaft benötigt einen Vorstand, der die Geschäftsführung ausführt und einen Aufsichtsrat, der die Gesellschafter bzw. Genoss:innen vertritt. Beides ist bei uns derzeit mit jeweils zwei Personen plus einem Vorsitzenden besetzt. Eine Aufsichtsratsposition ist in der DenktMit eG derzeit ein Ehrenamt, es gibt keine Aufwandsentschädigung.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dieses Essay richtet sich an unsere Genoss:innen und soll Lust machen auf eine Position, die ich nun zwei Jahre inne hatte und zur Vakanz stelle&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Ein Blick in den Alltag im Aufsichtsrat der DenktMit eG&lt;/h2&gt;
+&lt;p&gt;Das mediale Bild, das von Aufsichtsräten vermittelt wird, ist das von Menschen, die auf jahrzehntelange Erfahrung als „Wirtschaftsbosse“ zurückblicken. Auch Politiker und Professoren prägen das Bild, also Einfluss und Brillianz, herausragende Persönlichkeiten, Leistungsträger. Vor allem: Die klischeemäßigen „alten weißen Männer“. Mit all dem hat der Aufsichtsrat der DenktMit natürlich nicht viel zu tun – alleine deswegen, weil die DenktMit nach gängiger Definition einem KMU entspricht und nicht einer Aktiengesellschaft, über dessen Vollversammlung die Medien berichten. Aber natürlich auch, weil wir alle jung, hübsch und divers sind. Wie also sieht das Leben aus im Aufsichtsrat?&lt;/p&gt;
+&lt;p&gt;Die DenktMit eG ist ein modernes „remote-first“-Unternehmen, entsprechend funktioniert natürlich auch die Aufsichtsratsarbeit überwiegend asynchron. &lt;strong&gt;Videotelefonate machen wir im Schnitt einmal alle vier bis sechs Wochen und organisieren uns ansonsten lose in Chat-Kanälen, Tickets und Boards oder in Arbeitsdokumenten in entsprechenden Office-Clouds&lt;/strong&gt;. Schätzungsweise haben wir alle paar Tage eine schriftliche Diskussion im Chat, wobei dies stark schwankt – je nachdem, ob gerade etwas wichtiges anliegt oder nicht. &lt;strong&gt;Es kann auch mal einen Monat lang gar nichts passieren und das ist auch okay so&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Schwerwiegende Konflikte, die kurzfristig intensiveren Austausch erfordern, kommen geschätzt höchstens einmal im Jahr vor. Natürlich hängt es auch davon ab, wie sehr man sich individuell „reinhängt“, ob man also partizipiert oder nicht. Das gleiche gilt allerdings in dem DenktMit-weiten Chat in jedem Channel. Ein Grundinteresse an den Belangen der eG sollte also auf jeden Fall vorhanden sein.&lt;/p&gt;
+&lt;p&gt;Abgesehen von diesem Grundrauschen ist es natürlich wichtig, dass der Aufsichtsrat seine satzungs- bzw. genossenschaftsrechtlichen Aufgaben erfüllt. Dazu gehören seltene regelmäßige Ereignisse wie die „Prüfung“ des Jahresabschlusses oder die Berichterstattung zur Generalversammlung. Wichtig ist, zu verstehen dass der Aufsichtsrat die Interessen der Eigentümer:innen, also Genoss:innen, im Innenverhältnis gegenüber den Handlungen des Vorstandes vertritt. „Innenverhältnis“ heißt dabei, dass dieser Umstand im Tagesgeschäft mit Kunden keine Rolle spielt, dort vertritt der Vorstand die gesamte Genossenschaft. &lt;strong&gt;Unser Aufsichtsrat hat meines Erachtens sowohl eine kontrollierende als auch eine vermittelnde Funktion. Wer verschiedene Perspektiven einnehmen kann und gut mit Menschen umgehen kann, bringt damit schon einige Kompetenzen mit&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Ich war zwei Wahlperioden (d.h. zwei Jahre lang) im Aufsichtsrat der DenktMit eG. In dieser Zeit wurde der Aufsichtsrat von dem gleichen Vorsitzenden geführt, während sich ein anderer Posten änderte. Ich hab damit in Summe drei Personen in der Rolle erlebt. Ohne Namen nennen zu wollen handelt es sich bei allen um sehr angenehme Menschen, die die Eigenschaft eint, besonnen, umsichtig und kreativ mit Themen und Problemen umzugehen. Es herrschte stets eine sehr professionelle, vertrauensvolle und zielorientierte Stimmung.&lt;/p&gt;
+&lt;h2&gt;Persönliche Weiterentwicklung als Aufsichtsrat&lt;/h2&gt;
+&lt;p&gt;Manche Menschen verbinden mit einem Aufsichtsrat auch einen „Ältestenrat“. Das muss er aber gar nicht sein. &lt;strong&gt;Für Anfänger:innen ist eine Aufsichtsratsposition in der DenktMit sehr attraktiv, weil sie hier sehr viel über den Aufbau von Unternehmen lernen können, ohne selbst direkt im Tagesgeschäft mitwirken zu müssen&lt;/strong&gt;. Je nach Laune kann man sich im Aufsichtsrat in der (derzeitigen Größe des Unternehmens) als das „Korrektiv“ rein auf die beobachtende Position zurückziehen, aber auch mitgestalten, da der Austausch mit dem Vorstand offen und auf Augenhöhe stattfindet.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Der Posten des Aufsichtsrates wurde auch von einer Person bei Veranstaltungen als „Türöffner“ beschrieben&lt;/strong&gt;. Es kann sich auf der Visitenkarte oder im Lebenslauf durchaus gut lesen, eine solche Position bei einem Unternehmen mit 20 Mitarbeitern innezuhaben. Wer vor hat, seiner „Karriereleiter“ etwas gutes zu tun, hat mit der Aufsichtsratstätigkeit eine gute Möglichkeit dafür, ohne sich dabei über die Maße verpflichten.&lt;/p&gt;
+&lt;h2&gt;Keine Angst vor ersten Malen&lt;/h2&gt;
+&lt;p&gt;Viele Menschen haben Angst davor, Fehler zu machen und trauen sich daher nicht, verantwortungsvolle Positionen auszuüben. Ich kann nur dazu ermutigen, diesen ersten Schritt zu machen. &lt;strong&gt;Eigentlich kann man im Aufsichtsrat nicht wirklich etwas falsch machen&lt;/strong&gt;, da Beschlüsse ohnehin mit einfacher Mehrheit gefasst werden. Die Angst einer „Haftung“ wie sie oft mit Geschäftsführungstätigkeiten assoziiert wird, ist im Falle des Aufsichtsrates unbegründet. Ein Versagen in der Position des Aufsichtsrates würde sich vor allem darin zeigen, dass der Aufsichtsrat geschlossen Fehler des Vorstandes nicht erkannt hat. Wahrscheinlich würde sie sich im individuellen Fall aber darin zeigen, dass der Aufsichtsrat nicht die personelle Stärke hätte, die er braucht, wenn ein Mitglied sich zu wenig einbringt. Die Haftungsfrage wird durch eine D&amp;amp;O-Versicherung, eine Art „Manager-Haftpflichtversicherung“, zusätzlich reduziert. Ich halte das Risiko für sehr gering, dass man im Aufsichtsrat der DenktMit eG für etwas belangt wird – vorausgesetzt man missbraucht das Amt nicht absichtlich auf eine offensichtliche Weise, die der Genossenschaft schadet.&lt;/p&gt;
+&lt;h2&gt;Du bist nicht alleine&lt;/h2&gt;
+&lt;p&gt;Im Aufsichtsrat der DenktMit steht man keinesfalls einsam an der Spitze. Im Gegenteil, man ist – wenn man das möchte – mittendrin unter den Genossinnen und Genossen und im Alltagsgeschehen. Der kollegiale Austausch muss dabei vor Rollen keinen Halt machen: So sind &lt;strong&gt;alle ehemaligen Aufsichtsräte immer noch Genossenschaftler und stehen mit Rat und Tat zur Verfügung&lt;/strong&gt;. Natürlich ist auch der Vorstand nicht skeptisch sonder hilft vorbehaltslos, wenn es nötig ist. Keine Angst vor ersten malen! Jahresabschlüsse mit sechsstelligen Umsätzen sind für uns alle neu gewesen.&lt;/p&gt;
+&lt;p&gt;Ich gebe die Position auf, weil ich familiär stark eingespannt bin und auch die Kinderbetreuung in der letzten Wahlperiode sehr schwierig war (dank mangelhafter Personalausstattung in der Kita). So konnte ich beispielsweise die letzten Monate an den DenktMit-weiten Weeklys um 17 Uhr nicht mehr teilnehmen, weil zu der Zeit der Kindergarten stets geschlossen war. Die Aufsichtsratsmeetings haben wir in den späten Abendstunden gemacht, nachdem ich die Kinder ins Bett gebracht habe. Konzentrierte Meetings macht um 22 Uhr kaum noch jemand. Ich bin fast wöchentlich auf Geschäftsreise und hatte auch oft die Notwendigkeit, Meetings im Zug oder Auto zu machen – ebenfalls kein idealer Zustand. Aus all diesen Gründen möchte ich meine Position zur Wahl stellen und hoffe auf eine mutige Person mit Lust darauf. &lt;strong&gt;Letztes Jahr hatten wir zur Generalversammlung mindestens fünf Personen, die gerne wollten, und am Ende sogar eine Stichwahl&lt;/strong&gt;. Ich wünsche mir, dass es dieses Jahr noch mehr Kandidatinnen und Kandidaten werden.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Going further in programming with simple mental concepts</title>
+      <link>https://denktmit.de/blog/2024-07-11-reductionism-in-coding/</link>
+      <author>Sven Köppel</author>
+      <pubDate>2024-07-09T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-07-11-reductionism-in-coding/</guid>
+      <description>&lt;p&gt;I was late in the game. My Python moment was about 12 years ago when I realized the
+earnings of reduction. Python, that was suddenly no more brackets and semicolons but
+a strict &amp;quot;everything is an object&amp;quot; idiom with an expressive function argument notation.
+The large standard library, the well-usable collection of integrated data types makes
+the learning curve very flat. The language design is so reduced that it is easy to
+develop (an admittedly certain set of) domain specific languages (DSLs) ontop of it.
+Some people like &lt;a href=&quot;http://www.norvig.com/&quot;&gt;Peter Norvig&lt;/a&gt; call Python a &amp;quot;successful real world LISP&amp;quot; (not a verbatim
+quote). In 2012, my application domains for Python were a mixture of scientific python (scipy/numpy)
+and web application programming (Django, Flask and friends). It didn&#39;t took long to make Python
+my go-to language for general-purpose scripting. This way, Python took over the position
+Perl had in before in my life. Perl has a somewhat different approach to syntax, often
+badmouthed as &amp;quot;write once, read never again&amp;quot; (Side remark: At that time, it was still
+Perl5 and Python2. The Perl community failed for the Perl6 transition while the Python
+community painfully made the Python3 switch over many years).&lt;/p&gt;
+&lt;h2&gt;When Python introduced co-routines, things gone mad&lt;/h2&gt;
+&lt;p&gt;In particular, Perl did not have a strong concept of iterators and generators. This is
+something Python3 emphasized even more then Python2. Generators are this kind of functions
+which &lt;code&gt;yield&lt;/code&gt; items while producing them instead of &lt;code&gt;return&lt;/code&gt;ing a list at the end.
+Generators are also called
+&lt;em&gt;semicoroutines&lt;/em&gt;. They allow to re-enter a function multiple times. This can be helpful
+to avoid unneccessary memory allocations for intermediate values, effectively trading
+less memory demands for slighty more processing work (jumping between frames).&lt;/p&gt;
+&lt;!--
+Here is an example:
+
+```python
+def f(some_iterator):
+  for x in some_iterator:
+    yield x**2
+```
+
+Compare this over
+
+```python
+def g(some_list):
+  return [ x**2 for x in some_list ]
+```
+
+The function `g` uses list comprehension but nevertheless allocates the return list when
+being called. In contrast, the function `f` just returns item by item, which can avoid
+the array allocation if the consumer doesn&#39;t store the intermediate values. Both compute
+the element-wise square of a list of numbers. `f` is actually re-entered multiple times:
+The runtime remembers where it has been within the function, and subsequent calls of `f`
+from the same caller site result in these yields.
+--&gt;
+&lt;p&gt;The concept of semicoroutines can be generalized to &amp;quot;full&amp;quot; coroutines, where functions
+can also jump into particular frames of other functions. The go-to use case for this
+kind of programming style are intrinsically &amp;quot;slow&amp;quot; I/O applications (in particular networking).
+Coroutines provide an easy mental model of interruptable code in a single thread, allowing
+the processor/code to do something while the slow operation is handled by the operating system.&lt;/p&gt;
+&lt;p&gt;You can think of the &lt;code&gt;await&lt;/code&gt; keyword introduced around Python 3.5 as a way of slicing the
+functions simililarly to the &lt;code&gt;yield&lt;/code&gt; keyword. However, real coroutines are significantly
+more complex to implement then semicoroutines. Therefore, Python language designers
+decided to mark real coroutines with the &lt;code&gt;async&lt;/code&gt; keyword. This effectively seperates
+the whole language and its ecosystem of libraries in two parts: The synchronous and
+asynchronous one. There were a lot of renowned blog posts about this concept such as Bob Nystroms
+&lt;a href=&quot;https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/&quot;&gt;What Color is Your Function?&lt;/a&gt;
+from 2015.&lt;/p&gt;
+&lt;p&gt;Coroutines are just one of the language features which can increase the mental burden for
+a programmer a lot, when digging into a new code base. Literally every concept such as
+generators or context managers subsequentally got their async counterpart, which can make
+codes insanely complicated compared to &amp;quot;good old easy sync python&amp;quot; world. And do not
+accidentally call an async python function the wrong way -- you won&#39;t notice until the runtime
+goes mad at some point throwing arcane exceptions.&lt;/p&gt;
+&lt;p&gt;I think python can profit from carefully written async code under the hood, but this is something
+one wants to expose only in carefully crafted framework situations. When using it, it feels like
+dealing with wild pointers in C. If you haven&#39;t worked within a few weeks with that programming
+features, you may forget all the specific weird syntax notations and special cases this style of
+programming requires.&lt;/p&gt;
+&lt;h2&gt;Golang made my new Python moment&lt;/h2&gt;
+&lt;p&gt;I recently had my new Python moment. This time, it was 2024 and it was with the programming
+language Go. The syntax is intentionally reduced to a minimum, supporting not even things like
+inline ternary operators. Just coming from a Rust project, this felt a bit like switching from
+Perl to Python 10 years before! I would draw this comparison even more: Perl and Rust are both
+more expressive, more versatile and more powerful at least in terms of syntax then their counterparts
+Python and Go. However, Rust also has &amp;quot;coloured&amp;quot; co-routines as Python does. Since Rust does not
+suffer from the famous global interpreter lock which renders CPython effectively single-threaded,
+a Rust async runtime (which is not determined by the language itself) can schedule co-routines
+amongst different threads. That makes it more powerful but yet mentally challenging, not even
+taking into account things the borrow checker dictate.&lt;/p&gt;
+&lt;p&gt;Go makes writing concurrent code &lt;em&gt;incredibly&lt;/em&gt; easy. So easy that it is sometimes made fun of as
+a domain specific language for networking codes, because this is where it excels (in a similar way
+as Erlang). Instead of coroutines, which can easily
+result in a spaghetti-code program flow, Golang relies on &lt;em&gt;goroutines&lt;/em&gt; which are rather lightweight
+threads with a clear message-passing information flow over explicit communication channels. This
+reduces mental load. Together with the right set of tooling out of the box, it is possible to
+write a TCP or HTTP server doing non-trivial things like proxying within a few minutes. I am by
+no means exaggerating -- my first Go code at https://github.com/anabrid/lucigo was written within
+a few hours in the night, as the git history also proofs. Coincidentally, I tried to write the
+same logic in Rust a few hours per week over a month without success.&lt;/p&gt;
+&lt;p&gt;Go definetly has it short comings. The compiler is far less sophisticated then the Rust compiler.
+The type system is not state of the art. For me it feels like Rust allows you to write very
+clever &lt;em&gt;shared memory&lt;/em&gt; concurrent applications where the compiler ensures correctness, while
+Go makes it simple to write &lt;em&gt;message passing&lt;/em&gt; concurrent applications. In High Performance
+Computing classes, it is common knowledge that message passing scales better, despite it can
+be less performant in the small scale.&lt;/p&gt;
+&lt;p&gt;And yet I enjoy the reductionism. As in python, there is typically one way of writing a program,
+one way of formatting it. In teams, this makes it easier to agree on the programming style
+and concentrate on the buisness logic instead. If you have complicated programs to solve, the
+programming language better get out of your way. Programmers attention is a limited good and
+Go makes an excellent job to demand it as little as possible. Go makes networking programming fun
+again.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Die elektronische Rechnung</title>
+      <link>https://denktmit.de/blog/2024-07-30-erechnung/</link>
+      <author>Detlev Spierling</author>
+      <pubDate>2024-07-30T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-07-30-erechnung/</guid>
+      <description>&lt;h2&gt;Individuelle und kompetente Beratung sowie zuverlässige Umsetzung der gesetzlichen Vorgaben&lt;/h2&gt;
+&lt;p&gt;Ab dem 1. Januar 2025 entfällt der gesetzliche Vorrang von Papierrechnungen, das heißt im B2B-Geschäftsverkehr wird die elektronische Version das juristisch gültige Dokumentenformat. Dabei erfolgt die Umstellung auf die elektronische Rechnung in drei Phasen.
+In der &lt;strong&gt;ersten Phase&lt;/strong&gt; bis Januar 2027 ist es zwar weiterhin möglich, Rechnungen im PDF-Format zu versenden – aber nur unter einer Voraussetzung: das Unternehmen, das die PDF-Rechnung erhält, muss dieser Praxis auch explizit zustimmen. Die gleiche Regelung gilt auch für den Versand im &lt;a href=&quot;https://de.wikipedia.org/wiki/EDIFACT&quot; target=&quot;_blank&quot;&gt;EDIFACT-Standardformat&lt;/a&gt;. Ab &lt;strong&gt;Januar 2027&lt;/strong&gt; werden E-Rechnungen im B2B-Geschäft für Marktteilnehmer mit einem Jahresumsatz von mehr als 800.000 € jedoch verpflichtend. Auch dies betrifft ausschließlich den B2B-Bereich, Rechnungen an Privatpersonen sind davon ausgenommen. Aber spätestens in der &lt;strong&gt;dritten Phase&lt;/strong&gt;, die ein Jahr später beginnt, sind Papierrechnung im B2B-Bereich dann endgültig Geschichte. Ab &lt;strong&gt;1. Januar 2028&lt;/strong&gt; müssen Unternehmen nämlich elektronische Rechnungen im EN 16931-Format verschicken und verarbeiten können.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/e-rechnung_umsetzungsfristen.webp&quot; alt=&quot;Infografik Umsetzungsfristen&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Die Einführung der E-Rechnung geht auf &lt;a href=&quot;https://www2.deloitte.com/de/de/pages/tax/articles/vida-vat-in-the-digital-age.html&quot; target=&quot;_blank&quot;&gt;ViDA (= VAT in the Digital Age)-Initiative der EU-Kommission&lt;/a&gt; zur wirksameren Eindämmung des Umsatzsteuerbetrugs in den Mitgliedsstaaten zurück. Eine der wesentlichen Komponenten der ViDA-Initiative ist die Einführung eines verpflichtenden elektronischen Meldesystems, das auf der elektronischen Rechnungsstellung (E-Invoicing) basiert. Unternehmen, die grenzüberschreitend innerhalb der EU tätig sind, sollen Einzeltransaktionen in Echtzeit melden. Dies soll die Betrugssicherheit erhöhen und den Rechtsrahmen für nationale Transaktionen stärker harmonisieren.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/e-rechnung_gesetze.webp&quot; alt=&quot;Infografik Umsetzungsfristen&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Der medienbruchfreie Rechnungsaustausch verbessert den Cashflow&lt;/h2&gt;
+&lt;p&gt;In ihrem &#39;&lt;a href=&quot;https://www.ferd-net.de/erechnung446/was-ist-eine-elektronische-rechnung/index.html&quot; target=&quot;_blank&quot;&gt;Forum elektronische Rechnung Deutschland&lt;/a&gt;&#39; erläutert die Arbeitsgemeinschaft für wirtschaftliche Verwaltung e.V. welche Bedingungen für den medienbruchfreien Rechnungsaustausch grundsätzlich erfüllt sein müssen: „&lt;em&gt;Die Rechnung wird in einem strukturierten elektronischen Format ausgestellt, übermittelt und empfangen. Das Format ermöglicht eine automatische und elektronische Verarbeitung der Rechnung.
+Diese Definition der elektronischen Rechnung ist auf europäischer Ebene in der EU-Richtlinie 2014/55/EU über die elektronische Rechnungsstellung bei öffentlichen Aufträgen und national im Bundesgesetz zur Förderung der elektronischen Verwaltung (EGovG) und in der Verordnung über die elektronische Rechnungsstellung im öffentlichen Auftragswesen des Bundes (ERechV) verankert.&lt;/em&gt;“&lt;/p&gt;
+&lt;h2&gt;Die elektronische Rechnung bringt konkrete wirtschaftliche Vorteile&lt;/h2&gt;
+&lt;p&gt;Die automatisierte Verarbeitung elektronischer Rechnungen in entsprechenden ERP/FIBU-Systemen bringt Unternehmen konkrete wirtschaftliche Vorteile:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kosten für den manuellen Versand und Empfang sowie für die weitere Bearbeitung von Papierrechnungen entfallen fast vollständig&lt;/li&gt;
+&lt;li&gt;Hinzu kommt natürlich die Kostenersparnis für das Material (Papier, Drucker, Porto usw.).&lt;/li&gt;
+&lt;li&gt;Außerdem sind keine eigenen Räume für die Aufbewahrung von Papierrechnungen mehr notwendig, die auch nicht mehr z. B. durch Brand ganz oder teilweise verloren gehen können.&lt;/li&gt;
+&lt;li&gt;Ein weiterer entscheidender Vorteil sind kürzere Durchlaufzeiten und damit auch schnellere Bezahlprozesse.&lt;/li&gt;
+&lt;li&gt;Da eine eRechnung nach dem Versand sofort beim Empfänger ist, reduziert sich überdies das Risiko von falschen Zustellungen oder gar von Sendungsverlusten deutlich, während sich die Wahrscheinlichkeit von fristgerechten Zahlungen erheblich erhöht.&lt;/li&gt;
+&lt;li&gt;Durch den Wegfall bzw. die Automatisierung vieler manueller Prozesse wie der Eingabe von Rechnungsinformationen werden zudem Fehlerquellen deutlich reduziert.&lt;/li&gt;
+&lt;li&gt;Auch die gesetzlich vorgeschriebenen Aufbewahrungsfristen können kostengünstiger erfüllt werden, denn eRechnungen lassen sich auch einfacher digital archivieren. Mit Datenspiegelungen sowie Backups kann eine hohe Sicherheit und Verfügbarkeit gewährleistet werden.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Diese wirtschaftlichen Vorteile der elektronischen Rechnungsstellung hat das Software-Unternehmen Sage in seiner aktuellen Studie „&lt;a href=&quot;https://www.it-business.de/elektronische-rechnungsstellung-einsparungen-effizienz-fuer-unternehmen-a-529278290c7affc4dc305096b63123b7/&quot; target=&quot;_blank&quot;&gt;Elektronische Rechnungsstellung: Wegbereiter für eine vernetzte Echtzeit-Wirtschaft&lt;/a&gt;“  konkret beziffert. Hierfür lies der IT-Anbieter nach eigenen Angaben im April 2024 mehr als 9.000 Unternehmen mit 1 bis 999 Beschäftigte befragen. Die &lt;strong&gt;Ersparnisse durch die Einführung der eRechnungen&lt;/strong&gt; variieren demnach je nach Unternehmensgröße und können &lt;strong&gt;bei kleineren KMU 13.500 Euro&lt;/strong&gt; und &lt;strong&gt;bei größeren KMU bis zu knapp 50.000 Euro&lt;/strong&gt; ausmachen.
+Zwei Aspekte verdeutlichen dies: die wichtigste Ursache für Zahlungsverzögerungen war bisher häufig ein schlechter „Informationsfluss“ wie z. B. die Abfrage von Rechnungsdetails innerhalb des Unternehmens oder von Kunden bzw. Lieferanten. Dies geben laut der Studie 75 % der Unternehmen als Hauptgrund für einen verzögerten Cashflow und verspätete Zahlungen an Kunden an.
+Ein anderes, noch deutlicheres Problem für Unternehmen, die mit Kunden sowie Lieferanten manuelle interagierten, ist Betrug. Etwa ein Viertel der KMU (26 %) hat nach Studienangaben bereits unwissentlich eine betrügerische Rechnung bezahlt, und jedes zweite Unternehmen (51 %) weiß, dass es schon einmal eine betrügerische Rechnung erhalten hat.&lt;/p&gt;
+&lt;h2&gt;… und ist ein internationales Projekt, an dem mehr als 100 Länder arbeiten&lt;/h2&gt;
+&lt;p&gt;Die elektronische Rechnung wird nicht nur in Deutschland, sondern weltweit sukzessive eingeführt.
+Mehr als 100 Länder – darunter Singapur, Malaysia, Italien, Polen und Australien – haben bereits Rechtsvorschriften für die elektronische Rechnungsstellung erlassen oder Pläne für die Umstellung auf die E-Rechnungen und digitale Steuerberichterstattung aufgestellt &lt;a href=&quot;https://innovatetax.com/blog/e-invoicing-compliance/&quot; target=&quot;_blank&quot;&gt;(1)&lt;/a&gt;.
+Laut der Sage-Studie werden die Vorteile der elektronischen Rechnungsstellung in den Ländern, die sie eingeführt haben, allmählich spürbar. Italien beispielsweise war der erste Mitgliedstaat
+der Europäischen Union, der dies 2019 für digitale Steuererklärungen vorschrieb, und verzeichnete einen jährlichen Anstieg der Steuereinnahmen um rund 6 Milliarden Euro &lt;a href=&quot;https://www.pagero.com/de/guides/billentis-report/&quot; target=&quot;_blank&quot;&gt;(2)&lt;/a&gt;. Dies sei auf drei Schlüsselfaktoren zurückzuführen: Zugang zu Daten in Echtzeit, Verringerung des Verwaltungsaufwands und bessere Rückverfolgbarkeit.&lt;/p&gt;
+&lt;h2&gt;Denktmit unterstützt Sie kompetent und professionell&lt;/h2&gt;
+&lt;p&gt;Als bundesweit tätige IT-Genossenschaft beraten und helfen wir Unternehmen individuell und kompetent bei der Umsetzung der gesetzlichen Vorgaben zur Einführung der elektronischen Rechnung.
+Dabei fokussieren wir uns auf die Automatisierung des Prozesses der elektronischen Rechnungsabwicklung und auf seine Integration in das IT-System eines Unternehmens. „&lt;em&gt;Das bringt Anwendern den Vorteil, dass sie weiterhin mit ihrem gewohnten ERP- oder einem anderen IT-System arbeiten können und sich für den Einsatz der elektronischen Rechnung nicht umstellen müssen oder separate Schulungen benötigen. Mögliche Anfangsprobleme werden dadurch vermieden und außerdem eine hohe Akzeptanz der betreffenden Mitarbeiter(innen) sichergestellt&lt;/em&gt;“, erläutert Denktmit-Vorstand &lt;a href=&quot;https://denktmit.de/team/marius-schmidt/&quot;&gt;Marius Schmidt&lt;/a&gt;.
+Sprechen Sie uns an. Wir freuen uns auf den &lt;a href=&quot;https://denktmit.de/kontakt/&quot;&gt;Kontakt&lt;/a&gt; mit Ihnen!&lt;/p&gt;
+&lt;h3&gt;Glossar:&lt;/h3&gt;
+&lt;p&gt;Die drei Varianten „XRechnung“, „ZUGFeRD“ und „Peppol“ erfüllen die Vorgaben an ein strukturiertes, maschinenlesbares E-Rechnungsformat:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/e-rechnung_standards.webp&quot; alt=&quot;Infografik Umsetzungsfristen&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Peppol: Standard für internationale Transaktionen&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Peppol („Pan-European Public Procurement OnLine“) ist ein internationales Projekt der Non-Profit Organisation OpenPeppol zur Standardisierung und Vereinfachung öffentlicher Beschaffungsprozesse. Mit Hilfe der Infrastruktur des Peppol-Netzwerks können E‑Rechnungen an alle Rechnungsempfänger übermittelt werden, die an die ZRE und OZG‑RE angeschlossen sind. Peppol ermöglicht dabei eine medienbruchfreie und einfache Abwicklung ohne Systemwechsel (machine-to-machine) und damit auch den Versand einer großen Menge an E‑Rechnungen, sogenannte Massenexporte.&lt;/li&gt;
+&lt;li&gt;Weiterführende Informationen: &lt;a href=&quot;https://www.e-rechnung-bund.de/faq/peppol/&quot; target=&quot;_blank&quot;&gt;Peppol&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;XRechnung: Strukturierte Daten für Maschinen&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bei der XRechnung handelt es sich um XML-Dateien, die für sich alleine stehen können oder begleitend zu einer herkömmlichen PDF-Rechnung versendet werden. Dieses Format wird häufig im Geschäftsverkehr mit öffentlichen Auftraggebern verwendet und gewährleistet eine standardisierte elektronische Verarbeitung.&lt;/li&gt;
+&lt;li&gt;Weiterführende Informationen: &lt;a href=&quot;https://de.wikipedia.org/wiki/XRechnung&quot; target=&quot;_blank&quot;&gt;XRechnung&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;ZUGFeRD: Das hybride Rechnungsformat&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ZUGFeRD (&lt;em&gt;Zentraler User Guide Forum elektronische Rechnung Deutschland&lt;/em&gt;) kombiniert einen menschenlesbaren PDF-Teil mit einem XML-Teil. Diese hybride Struktur ermöglicht es, dass die Dateien sowohl visuell überprüfbar sind wie auch elektronisch verarbeitet werden können.&lt;/li&gt;
+&lt;li&gt;Weiterführende Informationen: &lt;a href=&quot;https://de.wikipedia.org/wiki/ZUGFeRD&quot; target=&quot;_blank&quot;&gt;ZUGFeRD&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/e-rechnung_plattformen.webp&quot; alt=&quot;Infografik Umsetzungsfristen&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Links zu weiterführenden Quellen:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Haufe Online-Redaktion: &amp;quot;&lt;a href=&quot;https://www.haufe.de/steuern/gesetzgebung-politik/elektronische-rechnung-wird-pflicht-e-rechnung-im-ueberblick_168_605558.html&quot; target=&quot;_blank&quot;&gt;Verpflichtung zur elektronischen Rechnung&lt;/a&gt;&amp;quot;&lt;/li&gt;
+&lt;li&gt;IHK München: &lt;a href=&quot;https://www.ihk-muenchen.de/de/Service/Recht-und-Steuern/Steuerrecht/Umsatzsteuer/VAT-in-the-Digital-Age-%28ViDA%29/&quot; target=&quot;_blank&quot;&gt;EU-Mehrwertsteuerreform: VAT in the Digital Age (ViDA) – Mehrwertsteuer im digitalen Zeitalter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Bundesministerium des Inneren und für Heimat: &lt;a href=&quot;https://www.e-rechnung-bund.de/&quot; target=&quot;_blank&quot;&gt;Die E-Rechnung in der Bundesverwaltung&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Bundesamt für Sicherheit in der Informationstechnik: &lt;a href=&quot;https://www.bsi.bund.de/dok/14709852&quot; target=&quot;_blank&quot;&gt;Die E-Rechnung im BSI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Verwaltungsportal Hessen: &lt;a href=&quot;https://verwaltungsportal.hessen.de/information/elektronische-rechnungen-im-land-hessen&quot; target=&quot;_blank&quot;&gt;Elektronische Rechnungen im Land Hessen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Service-Portal des Ministeriums des Inneren, für Digitalisierung und Kommunen Baden-Württemberg: &lt;a href=&quot;https://erechnungsvalidator.service-bw.de/&quot; target=&quot;_blank&quot;&gt;E-Rechnungs-Validator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fachkräfte von sinnlosen Aufgaben befreien</title>
+      <link>https://denktmit.de/blog/2024-08-06-fachkraefte-von-sinnlosen-aufgaben-befreien/</link>
+      <author>Markus Homberg</author>
+      <pubDate>2024-08-06T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-08-06-fachkraefte-von-sinnlosen-aufgaben-befreien/</guid>
+      <description>&lt;h2&gt;“Wie individuelle Software ihre Fachkräfte von sinnlosen Aufgaben befreien kann“&lt;/h2&gt;
+&lt;p&gt;In einer Zeit, in der der Fachkräftemangel zahlreiche Branchen vor immense Herausforderungen stellt, sind innovative Lösungen gefragt, um die Arbeitslast der vorhandenen Mitarbeiter zu verringern und gleichzeitig ihre Gesundheit, Motivation und Zufriedenheit zu erhalten oder besser noch, zu steigern. Arbeitgeberpräsident Steffen Kampeter betonte unlängst: &lt;a href=&quot;https://www.deutschlandfunk.de/arbeitgeber-fordern-mehr-bock-auf-arbeit-102.html&quot; target=&quot;_blank&quot;&gt;&amp;quot;&lt;em&gt;Wir brauchen mehr Bock auf Arbeit.&lt;/em&gt;&amp;quot;&lt;/a&gt; Finanzminister Christian Lindner ergänzte: &lt;a href=&quot;https://www.faz.net/aktuell/wirtschaft/fdp-chef-christian-lindner-steuervorteile-fuer-mehrarbeit-19639864.html&quot; target=&quot;_blank&quot;&gt;&amp;quot;&lt;em&gt;Wir müssen Beschäftigten Lust machen auf die Überstunde.&lt;/em&gt;&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Doch sind mangelnder Arbeitswille und zu wenig Überstunden wirklich das Problem?&lt;/h2&gt;
+&lt;p&gt;Laut &lt;a href=&quot;https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/08/PD24_N039_13.html&quot; target=&quot;_blank&quot;&gt;Statistischem Bundesamt&lt;/a&gt; leisteten 2023 knapp 4,6 Millionen Arbeitnehmer im Durchschnitt mehr Arbeit, als in ihren Arbeitsverträgen vereinbart war. Dies entsprach einem Anteil von 12 % der insgesamt 39,3 Millionen Arbeitnehmerinnen und Arbeitnehmer. 19 % der Betroffenen leisteten dabei mindestens 15 Stunden Mehrarbeit in der Woche, gerade mal 17 % der Überstunden wurden bezahlt. Besonders in der Finanz- und Versicherungsbranche sowie in der Energieversorgung sind Mehrarbeitsstunden weit verbreitet, aber auch in anderen Branchen sind Überstunden keine Seltenheit.&lt;/p&gt;
+&lt;p&gt;Die Gründe für diese hohe Anzahl an Überstunden sind vielfältig, aber ein zentraler Faktor dürfte hierbei auch der allgemeine Fachkräftemangel sein. Die wenigen verfügbaren Kräfte können den Bedarf mit ihren regulären Arbeitszeiten oft nicht decken, was zusätzliche Arbeitsstunden erforderlich macht.&lt;/p&gt;
+&lt;h2&gt;Hoher Grad arbeitsbezogener Erschöpfung - was sind die Ursachen?&lt;/h2&gt;
+&lt;p&gt;Angesichts der hohen Anzahl geleisteter Überstunden ist es nicht überraschend, dass Arbeitnehmerinnen und Arbeitnehmer über eine hohe arbeitsbezogene Erschöpfung klagen. &lt;a href=&quot;https://www.auctority.net/schluss-mit-erschoepfung/&quot; target=&quot;_blank&quot;&gt;Eine aktuelle Studie der Unternehmensberatung Auctority&lt;/a&gt; unter der fachlichen Leitung von Arbeits- und Organisationspsychologin Dr. Christina Guthier untersucht die Erschöpfung der Bevölkerung und zeigt Ursachen dafür auf. Laut der Studie, an der 5.000 Personen aus Deutschland teilgenommen haben, gaben 52,8 % der Befragten an erschöpft zu sein, weitere 11,6 % fühlten sich teilweise erschöpft und nur gerade mal 35,6 % der Befragten gaben an sich nicht erschöpft zu fühlen. Damit stieg die Zahl der erschöpften bzw. teilweise erschöpften Personen um 4,5 % gegenüber dem Vorjahr. Insbesondere Personen im arbeitsfähigen Alter fühlen sich stärker erschöpft. Der höchste Grad der Erschöpfung fand sich mit jeweils über 61 % bei den 30 bis 39-jährigen sowie den 40 bis 49-jährigen. Schaut man sich die Ursachen der Erschöpfung in den verschiedenen Altersgruppen einmal genauer an, so zeigt sich, dass die Belastung bei der Arbeit für alle zwischen 18 und 49 Jahren die Hauptursache für Erschöpfung ist und im höheren Alter (50+) durch gesundheitliche Beschwerden abgelöst wird.&lt;/p&gt;
+&lt;p&gt;Ein Grund sich die Belastung durch die Arbeit einmal etwas genauer anzuschauen. Die Studie zeigt, dass der Grad der Erschöpfung mit dem Grad der beruflichen Selbstbestimmung zu korrelieren scheint. So berichteten 64,9 % der Angestellten, jedoch nur 47,8 % der leitenden Angestellten und sogar nur 41,7 % der Selbstständigen erschöpft zu sein. 2500 Erwerbstätige wurden befragt, welche möglichen Maßnahmen ihre beruflich bedingte Erschöpfung verringern könnten (Mehrfachnennungen möglich):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;40,7 % der Befragten wünschten sich weniger sinnlose Arbeit,&lt;/li&gt;
+&lt;li&gt;34,7 % gaben an, dass ein insgesamt geringeres Arbeitspensum helfen könnten,&lt;/li&gt;
+&lt;li&gt;26,3 % hätten gerne mehr Zeit für die Bewältigung ihrer Aufgaben,&lt;/li&gt;
+&lt;li&gt;24,2 % wünschten sich mehr Anerkennung der Erschöpfung durch den Arbeitgeber,&lt;/li&gt;
+&lt;li&gt;18,1 % hätten gerne die Möglichkeit mehr Aufgaben abgeben zu können,&lt;/li&gt;
+&lt;li&gt;14,7 % wünschten sich mehr Entscheidungsfreiheit,&lt;/li&gt;
+&lt;li&gt;12,2 % mehr bzw. längere Pausen und&lt;/li&gt;
+&lt;li&gt;10,5 % hätten gerne mehr Unterstützung von den Kolleginnen und Kollegen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Der Blick auf die genannten Ursachen der arbeitsbezogenen erschöpften zeichnet ein recht eindeutiges Bild. Der Workload der Arbeitnehmerinnen und Arbeitnehmer scheint zu hoch. Betrachtet man dies vor dem Hintergrund der bereits jetzt schon geleisteten Überstunden infolge des allgemeinen Fachkräftemangels, kann die Antwort nicht „mehr Bock auf Arbeit“ oder gar „mehr Lust auf Überstunden“ sein.&lt;/p&gt;
+&lt;h2&gt;Neue Fachkräfte fallen nicht vom Himmel und die vorhandenen Fachkräften sind am Limit. Was kann man also tun?&lt;/h2&gt;
+&lt;p&gt;Hier setzt die Überlegung an: Könnte man erschöpfte Fachkräfte von sinnlosen Aufgaben befreien und dadurch das Arbeitspensum reduzieren, ohne dass die Produktivität darunter leidet, wäre dies nicht nur der Arbeitszufriedenheit und der körperlichen sowie seelischen Gesundheit der Arbeitnehmerinnen und Arbeitnehmer zuträglich. Es könnte auch dazu beitragen, den Fachkräftemangel etwas abzumildern.&lt;/p&gt;
+&lt;p&gt;Eine vielversprechende Lösung für dieses Problem bieten &lt;a href=&quot;https://denktmit.de/individuelle_softwareentwicklung/&quot;&gt;individuelle Softwarelösungen&lt;/a&gt;. Diese ermöglichen es Unternehmen, Prozesse zu optimieren und zu automatisieren, insbesondere jene, die von den Mitarbeitenden als sinnlose Aufgaben empfunden werden. Durch den Einsatz solcher Software können repetitive und monotone Tätigkeiten reduziert oder sogar vollständig eliminiert werden, was den Angestellten mehr Zeit und Energie für sinnstiftende Aufgaben oder die dringend benötigte Erholung gibt.&lt;/p&gt;
+&lt;p&gt;Sie können nicht nur dabei helfen, sinnlose Aufgaben zu eliminieren, sondern tragen damit letztendlich auch zur Verbesserung der Arbeitszufriedenheit und der Gesundheit der Mitarbeitenden bei. Letztlich kann dies auch ein wichtiger Schritt sein, um dem Fachkräftemangel entgegenzuwirken und die Attraktivität des Arbeitsplatzes zu erhöhen.
+In einer Zeit, in der jede zusätzliche Stunde Arbeit wertvoll ist und die Motivation der Mitarbeitenden von entscheidender Bedeutung ist, bieten &lt;a href=&quot;https://denktmit.de/individuelle_softwareentwicklung/&quot;&gt;individuelle Softwarelösungen&lt;/a&gt; eine innovative und effektive Möglichkeit, die Arbeitswelt nachhaltiger und menschlicher zu gestalten.&lt;/p&gt;
+&lt;h2&gt;Sie möchten Ihre Angestellten entlasten? - Wir helfen gerne!&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://denktmit.de/kontakt/&quot;&gt;Kontaktieren Sie uns&lt;/a&gt; gerne und wir schauen gemeinsam, wie wir Ihnen und Ihrem Unternehmen durch die Entwicklung individuell maßgeschneiderter Softwarelösungen dabei helfen können Ihre Prozesse zu optimieren und Ihre Mitarbeitenden zu entlasten und langfristig glücklich zu machen.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mit Individualsoftware aus der IT-Abhängigkeitsfalle</title>
+      <link>https://denktmit.de/blog/2024-09-03-mit-individualsoftware-aus-der-it-abhaengigkeitsfalle/</link>
+      <author>Detlev Spierling</author>
+      <pubDate>2024-09-03T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-09-03-mit-individualsoftware-aus-der-it-abhaengigkeitsfalle/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Die massiven IT-Ausfälle durch das fehlerhafte Software-Update des Cybersecurity-Giganten ‚&lt;em&gt;CrowdStrike&lt;/em&gt;‘ Ende Juli 2024 verdeutlichte wieder einmal drastisch die Nachteile einer (zu) hohen Abhängigkeit von Standard-Software vor allem aus dem Haus Microsoft. Ein Ausweg aus dieser Abhängigkeit lautet Individualsoftware, mit deren Hilfe Unternehmen nicht nur vielfach ihre Produktivität erhöhen, sondern auch ihre digitale Souveränität stärken können.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Am &lt;strong&gt;19. Juli 2024&lt;/strong&gt; fielen plötzlich verschiedene medizinische Geräte in Krankenhäusern, Supermarktkassen oder auch Online-Ticketing-Systeme stundenlang aus. Dieser massive IT-Ausfall, der sich über den gesamten Globus ausbreitete, wurde durch das fehlerhafte ‚&lt;em&gt;CrowdStrike&lt;/em&gt;‘-Update für Microsoft-Systeme ausgelöst. Nach Angaben des Software-Anbieters waren davon weltweit etwa 8,5 Millionen Windows-Geräte und -Systeme betroffen. Die Störung hatte weitreichende Auswirkungen und führte unter anderem zur Annullierung von über 2000 Flügen in den USA sowie zahlreichen weiteren in Europa, einschließlich Deutschland. Die betroffenen Geräte „stürzten ab“ oder blieben offline und zeigten den gefürchteten Bluescreen-Fehler (BSOD) an.
+„&lt;em&gt;Dieser Vorfall ist ein Weckruf für die Cybersicherheits-Community und verdeutlicht die Wichtigkeit eines umfassenden Asset-Managements, automatisierter Abhilfemaßnahmen und kontinuierlicher Überwachung, um ähnliche Vorfälle in Zukunft zu vermeiden. In einer zunehmend digitalen Welt sind die Stabilität und Sicherheit unserer IT-Infrastruktur wichtiger denn je&lt;/em&gt;“ heißt es treffend in einem Kommentar vom &lt;strong&gt;26. Juli. 2024&lt;/strong&gt; auf dem Online-Portal ‚&lt;em&gt;it-daily.net&lt;/em&gt;‘.
+Knapp zwei Wochen später legte ein DDoS-Angriff Cloud-Dienste von Microsoft vorübergehend lahm und nur knapp vier Wochen nach ‚&lt;em&gt;CrowdStrike&lt;/em&gt;‘ gaben IT-Sicherheitsforscher die &lt;strong&gt;Entdeckung des neuen Windows-Backdoors BITSLOTH&lt;/strong&gt; bekannt, mit dem der &lt;strong&gt;Background Intelligent Transfer Service (BITS)&lt;/strong&gt; zur verdeckten Kommunikation mit Command &amp;amp; Control-Servern und zur Datenexfiltration missbraucht werden kann.
+Dass immer wieder gerade IT-Lösungen und das Betriebssystem von Microsoft derart massiv von Ausfällen betroffen sind, überrascht kritische IT-Experten wenig, die schon lange vor den negativen Konsequenzen einer zu hohen Abhängigkeit gerade von diesem Software-Giganten warnen.&lt;/p&gt;
+&lt;h3&gt;Die 10 ausgewählten Beispiele über Sicherheitsrisiken aus den letzten vier Jahren verdeutlichen das Risiko einer solchen Abhängigkeit anschaulich:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;12.08.2024&lt;/strong&gt; &lt;a href=&quot;https://www.security-insider.de/bitsloth-windows-backdoor-verdeckte-kommunikation-a-6e59c1c46a96bc2ff8b8b94855bf3119&quot; target=&quot;_blank&quot;&gt;„Neue Windows-Backdoor BITSLOTH entdeckt“&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;01.08.2024&lt;/strong&gt; &lt;a href=&quot;https://www.it-daily.net/shortnews/ddos-angriff-legte-microsoft-clouddienste-lahm&quot; target=&quot;_blank&quot;&gt;„Störungen bei Azure und Microsoft 365 – DDoS-Angriff legte Microsoft-Clouddienste lahm“&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;22.04.2024&lt;/strong&gt; &lt;a href=&quot;https://www.it-daily.net/it-sicherheit/cloud-security/vasa-1-microsofts-neue-ki-ist-ein-deepfake-horrorszenario&quot; target=&quot;_blank&quot;&gt;„VASA-1: Microsofts neue KI ist ein Deepfake-Horrorszenario“&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;17.04.2024&lt;/strong&gt; &lt;a href=&quot;https://www.handelsblatt.com/politik/international/microsoft-finnische-firma-entdeckt-aus-russland-gesteuerte-schadsoftware-fuer-windows/100033056.html&quot; target=&quot;_blank&quot;&gt;Finnische Firma entdeckt aus Russland gesteuerte Schadsoftware für Windows&lt;/a&gt;.
+Mit einer Hintertür für Microsofts Textprogramm Word konnten sich Angreifer Zugang zu Rechnern verschaffen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;04.04.2024&lt;/strong&gt; &lt;a href=&quot;https://www.it-daily.net/shortnews/tschuess-microsoft-bundesland-will-30-000-pcs-umruesten&quot; target=&quot;_blank&quot;&gt;„Tschüss Microsoft: Bundesland will 30.000 PCs umrüsten“&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;26.03.2024&lt;/strong&gt; &lt;a href=&quot;https://www.it-daily.net/shortnews/bsi-warnt-17-000-microsoft-exchange-server-gefaehrdet&quot; target=&quot;_blank&quot;&gt;„BSI warnt: 17.000 Microsoft Exchange-Server gefährdet“&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;25.08.2023&lt;/strong&gt; &lt;a href=&quot;https://www.security-insider.de/hackerangriffe-auf-microsoft-teams-a-41095ff746cd55e1523bce5de20e7604/&quot; target=&quot;_blank&quot;&gt;„Microsoft warnt vor massiven Social-Engineering-Angriffen – Hackerangriffe auf Microsoft Teams“&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;04.10.2021&lt;/strong&gt; &lt;a href=&quot;https://www.faz.net/-gqe-agkjh&quot; target=&quot;_blank&quot;&gt;„Bundescloud“ wegen Microsoft-Beteiligung in der Kritik&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;19.03.2021&lt;/strong&gt; &lt;a href=&quot;https://www.infopoint-security.de/studie-von-vectra-ai-zeigt-sicherheitsniveau-von-office365/a27001/&quot; target=&quot;_blank&quot;&gt;„Studie von Vectra AI zeigt Sicherheitsniveau von Office365“&lt;/a&gt;
+Eine Studie aus dem Jahr 2021 besagt, dass 71 Prozent der Microsoft Office 365-Implementierungen im Jahr 2020 nicht nur einmal, sondern im Durchschnitt sieben Mal von einem Account Takeover, also der unerlaubten Kontoübernahme eines legitimen Benutzerkontos, betroffen waren. International an der Spitze liegt Deutschland mit durchschnittlich sogar neun unerlaubten Account-Übernahmen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;23.10.2020&lt;/strong&gt; &lt;a href=&quot;https://www.heise.de/news/Datenschutzbehoerden-erklaeren-den-Einsatz-von-Microsoft-365-fuer-rechtswidrig-4931745.html&quot; target=&quot;_blank&quot;&gt;„Datenschutzbehörden erklären den Einsatz von Microsoft 365 für rechtswidrig“&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Individualsoftware bringt Wettbewerbsvorteile und schützt vor ‚Vendor Lock-in‘&lt;/h2&gt;
+&lt;p&gt;Angesichts dieser zahlreich dokumentierten Vorfälle mit Microsoft-Lösungen und den aufgedeckten Software-Schwachstellen in deren Produkten denken Unternehmen zunehmend darüber nach, wie sie ihre generelle Abhängigkeit von großen IT-Anbietern reduzieren können.
+Bei diesen Überlegungen spielt für viele Anwender die eigene digitale Souveränität eine wichtige Rolle und in diesem Zusammenhang auch die berechtigte Befürchtung vor der drohenden &lt;strong&gt;Vendor Lock-in-Gefahr&lt;/strong&gt; (was so viel bedeutet wie „bei einem Verkäufer eingesperrt“ zu sein) – und wie diese reduziert werden kann.
+Entsprechend nimmt das Interesse an Individualsoftware als Alternative zu Standardlösungen zu. Dass Individualsoftware ein treibender Faktor für den Unternehmenserfolg ist, bestätigt auch die am 24.06.2021 veröffentlichte  Studie „&lt;strong&gt;Status quo – Einsatz von Individualsoftware in deutschen Unternehmen&lt;/strong&gt;“, für die das IT-Analystenhaus &lt;em&gt;Techconsult&lt;/em&gt; im Auftrag des Beratungsunternehmens &lt;em&gt;Dr. Eckhardt + Partner GmbH&lt;/em&gt; 201 IT- und Software-Entscheider aus deutschen Unternehmen befragt hat. Demnach sehen 74 Prozent der befragten Unternehmen, die individuelle Softwarelösungen einsetzen, den Einsatz von Individualsoftware als Grund für ihren Erfolg. Individuelle Lösungen bieten dabei nicht nur Innovationssprünge, sondern auch Wettbewerbsvorteile gegenüber den Mitbewerbern.&lt;/p&gt;
+&lt;h2&gt;Allgemein lassen sich die Vorteile individueller Softwarelösungen in sechs Punkten zusammenfassen:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Maßgeschneiderte Funktionalität&lt;/strong&gt;: umfassende Personalisierungs-/Customization-Möglichkeiten – zugeschnitten auf sehr spezifische Anforderungen und Unternehmensprozesse.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wettbewerbsvorteil durch Differenzierung:&lt;/strong&gt; Individualsoftware ermöglicht es, sich von der Konkurrenz abzuheben, die nicht dieselbe Lösung nutzt (Alleinstellungsmerkmal).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flexibilität und Anpassungsfähigkeit&lt;/strong&gt;: Maßgeschneiderte Lösungen lassen sich jederzeit flexibler und leichter an sich ändernde Geschäftsanforderungen anpassen. Dies ist vor allem für KMUs besonders wichtig, die sich auf ganz bestimmte Marktsegmente oder Nischenmärkte spezialisiert haben, die sich in einem ständigen Wandel befinden, weshalb die eingesetzte Software auch relativ häufig an neue Bedürfnisse angepasst werden muss.&lt;/li&gt;
+&lt;li&gt;Eigene Softwarelösungen ermöglicht eine optimale &lt;strong&gt;Anpassung an individuelle Arbeitsabläufe&lt;/strong&gt; und &lt;strong&gt;steigern die Effizienz&lt;/strong&gt;, da nur die tatsächlich benötigten Funktionen entwickelt und implementiert werden.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bessere Integration&lt;/strong&gt;: Individualsoftware lässt sich unabhängig vom Betriebssystem entwickeln  und dadurch auch besser in die bestehende IT-Infrastruktur integrieren sowie mit anderen Systemen verknüpfen, was zu einer effizienteren und performanteren Gesamtlösung führt.&lt;/li&gt;
+&lt;li&gt;*&lt;em&gt;Autonomie und Unabhängigkeit&lt;/em&gt; von überraschenden Produktänderungen großer Software-Anbieter, mit denen Anwender konfrontiert werden ohne dass sie Einfluss darauf nehmen können. Aktuelles Beispiel: Am 15.08.2024 wurde bekannt, dass sich auch Unternehmen bald auf eine neue Outlook-Version einstellen müssen: „Microsoft ersetzt Windows Mail und das klassische Outlook“.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Die &lt;strong&gt;Denktmit eG&lt;/strong&gt; hat sich auf die &lt;strong&gt;Entwicklung individueller Softwarelösungen&lt;/strong&gt; vor allem für mittelständische Unternehmen spezialisiert. Genossenschaftsvorstand &lt;a href=&quot;https://denktmit.de/team/marius-schmidt/&quot;&gt;Marius Schmidt&lt;/a&gt; weist auf zwei entscheidende Vorteile von Individualsoftware hin:
+„&lt;em&gt;Obwohl die initiale Investition hierfür höher sein kann, zahlt sich Individualsoftware auf lange Sicht aus. Denn es werden nur die benötigten Funktionen implementiert, wodurch unnötige Ausgaben für überflüssige Features vermieden werden. Durch die Implementierung einer maßgeschneiderten Lösung können KMUs außerdem ihre begrenzten IT-Ressourcen entlasten und sich stärker auf ihr Kerngeschäft konzentrieren. Zudem entfallen oft Lizenzkosten für mehrere Standardsoftwarelösungen, da eine maßgeschneiderte Lösung häufig mehrere Funktionen in sich vereint&lt;/em&gt;“ Ein weitere ganz wichtiger Aspekt sei die volle Eigentümerschaft und Kontrolle. „&lt;em&gt;Im Gegensatz zu Standardsoftware, bei der oft Nutzungsbeschränkungen durch Lizenzverträge bestehen, gehört eine individuell entwickelte Software dem Unternehmen vollständig. Dies gewährleistet volle Kontrolle über die Software und ermöglicht es, sie nach Belieben anzupassen, zu erweitern oder zu skalieren&lt;/em&gt;“, erläutert IT-Experte Schmidt.&lt;/p&gt;
+&lt;h2&gt;Glossar:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Vendor Lock-in-Effekt&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Der sogenannte Vendor Lock-in-Effekt tritt auf, wenn Unternehmen (Software)-Produkte oder Services anbieten, die innerhalb des firmeneigenen Ökosystems gut funktionieren und in Verbindung mit anderen Produkten des gleichen Herstellers weitere Vorteile bieten, jedoch beim Wechsel auf andere Produkte Probleme bereiten. Dadurch wird der Kunde quasi beim Anbieter „eingesperrt“, da ein Wechsel des Herstellers oder des Produkts zu so hohen Kosten führen würde, dass er häufig unwirtschaftlich wäre.&lt;/p&gt;
+&lt;p&gt;Quellen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.heise.de/tipps-tricks/Vendor-Lock-in-was-ist-das-6166269.html&quot; target=&quot;_blank&quot;&gt;Heise - Vendor Lock-in, was ist das?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.it-business.de/was-ist-vendor-lock-in-a-879691&quot; target=&quot;_blank&quot;&gt;IT-Business - Was ist Vendor Lock-in?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Links zu weiterführenden Quellen:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://osb-alliance.de/publikationen/veroeffentlichungen/manifest-fuer-digitale-souveraenitaet&quot; target=&quot;_blank&quot;&gt;Manifest für digitale Souveränität (Veröffentlichung: 9. Dezember 2021)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Event Storming - Eine Brücke zwischen Entwicklungsteam und Usern</title>
+      <link>https://denktmit.de/blog/2024-09-16-event-storming-eine_bruecke-zwischen-entwicklungsteam-und-usern/</link>
+      <author>Markus Homberg</author>
+      <pubDate>2024-09-16T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-09-16-event-storming-eine_bruecke-zwischen-entwicklungsteam-und-usern/</guid>
+      <description>&lt;h2&gt;Sprachbarrieren überwinden dank Event Storming&lt;/h2&gt;
+&lt;p&gt;In der modernen Softwareentwicklung ist die Zusammenarbeit zwischen Personen mit unterschiedlicher IT-Fachexpertise unerlässlich, um Lösungen zu schaffen, die den tatsächlichen Bedürfnissen entsprechen. Doch gerade diese Zusammenarbeit stellt oft eine Herausforderung dar, da das Entwicklungsteam und Anwendende nicht immer die gleiche Sprache sprechen. Während das Entwicklungsteam in technischen Begriffen und Algorithmen denken, haben Anwendende einen klaren Fokus auf ihre Geschäftsprozesse und Herausforderungen. Eine Methode, die diese sprachliche Barriere überwinden kann, ist das &lt;strong&gt;Event Storming&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Was ist Event Storming?&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.eventstorming.com/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Event Storming&lt;/strong&gt;&lt;/a&gt; ist eine kollaborative Modellierungstechnik, die erstmals von &lt;strong&gt;Alberto Brandolini&lt;/strong&gt; entwickelt wurde. Sie zielt darauf ab, komplexe Geschäftsprozesse durch die Ermittlung und Visualisierung von „Events“ – also bedeutenden Ereignissen im System – verständlich zu machen. Dabei steht nicht die technische Implementierung im Vordergrund, sondern das gemeinsame Verständnis des Geschäftsprozesses.&lt;/p&gt;
+&lt;h2&gt;Wie funktioniert Event Storming?&lt;/h2&gt;
+&lt;p&gt;Der Kern von Event Storming ist einfach und dennoch wirkungsvoll. Alle Beteiligten – ob Entwickelnde, Anwendende oder andere Stakeholderinnen und Stakeholder – kommen zusammen und arbeiten an einer großen, leeren Wand oder einem digitalen Whiteboard. Dort notieren sie alle relevanten Events auf farbigen Post-its, wobei jedes Event ein bedeutendes Ereignis im Geschäftsprozess repräsentiert. Diese Events werden dann in chronologischer Reihenfolge angeordnet.&lt;/p&gt;
+&lt;p&gt;Zusätzlich zu den Events können weitere Elemente wie bspw. „User“, „Commands“ (Befehle, die Events auslösen), „Aggregates“ (Kernobjekte des Systems) und „External Systems“ (Schnittstellen zu externer Software und Prozessen) hinzugefügt werden. Diese Elemente helfen dabei, ein vollständiges Bild des Systems zu entwickeln.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/event_storming_infografik.webp&quot; alt=&quot;Infografik Event Storming&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Die Überwindung sprachlicher Barrieren&lt;/h2&gt;
+&lt;p&gt;Event Storming hat sich als besonders effektiv erwiesen, um sprachliche Barrieren zwischen Personen mit unterschiedlicher IT-Fachexpertise abzubauen. Dies liegt an mehreren Faktoren:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Visuelle Darstellung:&lt;/strong&gt; Durch die Verwendung von Post-its und einer klaren, visuellen Struktur wird der Prozess für alle teilnehmenden greifbarer. Anwendende müssen sich nicht durch technische Dokumentationen arbeiten, sondern sehen direkt, wie ihre Geschäftsprozesse abgebildet werden.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Gemeinsame Sprache:&lt;/strong&gt; Anstatt in technischen Fachbegriffen zu sprechen, konzentriert sich Event Storming auf die Ereignisse, die für den Geschäftsprozess wichtig sind. Diese Sprache ist für alle verständlich und erfordert keine IT-Kenntnisse.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inklusiver Ansatz:&lt;/strong&gt; Jeder Teilnehmende wird ermutigt, seine Sichtweise einzubringen. Dies führt zu einem umfassenden Verständnis des gesamten Systems und stellt sicher, dass keine wichtigen Aspekte übersehen werden.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Schnelles Feedback:&lt;/strong&gt; Da Event Storming in Echtzeit durchgeführt wird, können Missverständnisse sofort erkannt und korrigiert werden. Dies verhindert, dass sich Fehler in der Kommunikation über den gesamten Entwicklungsprozess hinweg fortsetzen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Vorteile für Unternehmen&lt;/h2&gt;
+&lt;p&gt;Die Anwendung von Event Storming in der Softwareentwicklung bietet zahlreiche Vorteile für Unternehmen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Effizientere Kommunikation:&lt;/strong&gt;  Entwickelnde und Anwendende können effizienter zusammenarbeiten, da sie eine gemeinsame Basis für ihre Diskussionen haben.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reduzierung von Missverständnissen:&lt;/strong&gt; Durch das gemeinsame Verständnis der Geschäftsprozesse werden Missverständnisse frühzeitig erkannt und behoben.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bessere Ergebnisse:&lt;/strong&gt; Die enge Zusammenarbeit führt zu einer Software, die besser auf die tatsächlichen Bedürfnisse der Anwendenden zugeschnitten ist.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Zeit- und Kostenersparnis:&lt;/strong&gt; Durch die frühzeitige Identifikation von Problemen und die bessere Zusammenarbeit werden Zeit und Kosten im Entwicklungsprozess reduziert.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Fazit&lt;/h2&gt;
+&lt;p&gt;Event Storming ist mehr als nur eine Modellierungstechnik – es ist eine Methode, die die Zusammenarbeit zwischen Entwickelnden und Anwendenden revolutioniert. Indem es eine gemeinsame Sprache schafft und auf visuelle Hilfsmittel setzt, überwindet es die sprachlichen Barrieren, die in vielen IT-Projekten zu Problemen führen. Für Unternehmen bedeutet dies effizientere Entwicklungsprozesse, bessere Ergebnisse und letztlich zufriedenere Anwendende.&lt;/p&gt;
+&lt;p&gt;Wenn auch Sie die Zusammenarbeit in Ihren Projekten verbessern möchten, sollten Sie Event Storming in Betracht ziehen. Es ist eine einfache, aber äußerst effektive Methode, um sicherzustellen, dass alle Beteiligten an einem Strang ziehen – und das in einer Sprache, die jeder versteht.&lt;/p&gt;
+&lt;h2&gt;Sollten wir Ihr Interesse am Event Storming geweckt haben&lt;/h2&gt;
+&lt;p&gt;Wir beraten Sie gerne zu diesem, oder auch anderen IT-Themen und freuen uns auf Ihre &lt;a href=&quot;https://denktmit.de/kontakt/&quot;&gt;Kontaktaufnahme&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Die Bedeutung der MINT-Förderung für Kinder und Jugendliche</title>
+      <link>https://denktmit.de/blog/2024-10-08-mint-nachwuchsfoerderung/</link>
+      <author>Markus Homberg</author>
+      <pubDate>2024-10-10T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-10-08-mint-nachwuchsfoerderung/</guid>
+      <description>&lt;h2&gt;Fit für die Zukunft in einer technologisierten Welt&lt;/h2&gt;
+&lt;p&gt;In einer zunehmend technologisierten Welt, in der künstliche Intelligenz, Automatisierung und digitale Vernetzung eine immer größere Rolle spielen, ist es unerlässlich, Kinder und Jugendliche frühzeitig auf die Anforderungen der Zukunft vorzubereiten. &lt;strong&gt;MINT&lt;/strong&gt; (Mathematik, Informatik, Naturwissenschaften und Technik) bietet dabei den Schlüssel, um das nötige Wissen und die Fähigkeiten zu erwerben, die in Zukunft für viele Berufe, aber auch für das Verständnis unserer zunehmend digitalisierten Welt entscheidend sein werden.&lt;/p&gt;
+&lt;h2&gt;MINT-Kompetenzen: Schlüsselqualifikationen für die Zukunft&lt;/h2&gt;
+&lt;p&gt;Unsere Gesellschaft ist von einer rasant fortschreitenden technologischen Entwicklung geprägt. Künstliche Intelligenz, Robotik, Big Data und erneuerbare Energien sind nur einige Beispiele für Zukunftstechnologien, die bereits heute unser Leben beeinflussen und in den kommenden Jahrzehnten noch wichtiger werden. Damit verbunden sind neue berufliche Möglichkeiten und Herausforderungen. Viele Berufe, die heute als zukunftsträchtig gelten, existierten vor wenigen Jahren noch gar nicht – und der Trend setzt sich fort.&lt;/p&gt;
+&lt;p&gt;Kinder und Jugendliche, die in MINT-Fächern gefördert werden, entwickeln nicht nur wichtige fachliche Kompetenzen, sondern auch Problemlösungsfähigkeiten, kritisches Denken und Kreativität. Sie lernen, komplexe Zusammenhänge zu verstehen, analytisch zu denken und innovative Lösungen zu entwickeln – Fähigkeiten, die in nahezu jedem Berufsfeld zunehmend gefragt sind.&lt;/p&gt;
+&lt;p&gt;Eine fundierte MINT-Bildung ermöglicht es jungen Menschen, die Chancen der digitalen Transformation zu nutzen und aktiv an der Gestaltung unserer Zukunft mitzuwirken, sei es als Ingenieure, Wissenschaftler oder IT-Experten. Zudem werden MINT-Kompetenzen immer häufiger in Berufen außerhalb der klassischen naturwissenschaftlich-technischen Disziplinen verlangt, etwa in der Wirtschaft oder im Design.&lt;/p&gt;
+&lt;h2&gt;Spielerisches Lernen mit Robotern und visuellen Programmiersprachen&lt;/h2&gt;
+&lt;p&gt;Kinder sind von Natur aus neugierig und haben eine hohe Affinität zu Technologie. Diese intrinsische Neugier lässt sich hervorragend nutzen, um sie spielerisch an MINT-Themen heranzuführen – und das bereits im Grundschulalter. Hier kommen programmierbare Lernroboter wie der &lt;strong&gt;mBot2&lt;/strong&gt; und grafische Programmiersprachen wie &lt;strong&gt;Scratch&lt;/strong&gt; oder &lt;strong&gt;Blockly&lt;/strong&gt; ins Spiel.
+&lt;img src=&quot;https://denktmit.de/mint-tag1.webp&quot; alt=&quot;iPad auf dem gerade ein mBot2 mittels Blockly programmiert wird&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Programmieren mit Scratch und Blockly: Der spielerische Einstieg in die Informatik&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Scratch&lt;/strong&gt; und &lt;strong&gt;Blockly&lt;/strong&gt; sind visuelle Programmiersprachen, die es Kindern ermöglichen, durch einfaches Drag-and-Drop von farbigen Befehlsblöcken, ähnlich wie Puzzleteile, eigene Programme zu erstellen. Diese Blöcke können so kombiniert werden, dass kleine Spiele, Animationen oder interaktive Geschichten entstehen. Der große Vorteil dieser Sprachen ist ihre intuitive Bedienung: Ohne die komplexe Syntax traditioneller Programmiersprachen zu kennen, können Kinder schnell erste Erfolgserlebnisse erzielen und so ihre Begeisterung für das Programmieren entdecken.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/blockly_beispiel.webp&quot; alt=&quot;mBlock IDE mit einem Beispiel für einen Blockly Algorithmus&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Durch den spielerischen Ansatz wird die Begeisterung für Technik und Informatik geweckt und gefördert. Dabei lernen die Kinder aber nicht nur die Grundlagen der Informatik, sondern auch wichtige Fähigkeiten wie logisches Denken, Strukturierung von Aufgaben und das Lösen von Problemen. Gleichzeitig fördert diese Art des Lernens die Kreativität, da die Kinder ihre eigenen Ideen umsetzen können und sehen, wie ihre Konzepte in der digitalen Welt Gestalt annehmen.&lt;/p&gt;
+&lt;h3&gt;Programmierbare Lernroboter als Einstieg in die Technik&lt;/h3&gt;
+&lt;p&gt;Lernroboter wie der &lt;strong&gt;Bee-Bot&lt;/strong&gt;, &lt;strong&gt;Thymio&lt;/strong&gt; oder &lt;strong&gt;mBot&lt;/strong&gt; sind speziell dafür entwickelt, um jungen Kindern spielerisch die Grundlagen der Robotik und Programmierung beizubringen. Mit diesen Geräten lernen Kinder, einfache Aufgaben durch logisches Denken und das Programmieren von Bewegungsabläufen und die Verwendung von Sensoren zu lösen. Die Roboter Bewegen sich dabei und führen Aktionen gemäß der eingegebenen Programmierung aus. Dabei lernen die Kinder die Grundprinzipien der Algorithmen, ohne sich in komplexen Codes zu verlieren.
+&lt;img src=&quot;https://denktmit.de/mint-tag3.webp&quot; alt=&quot;Zwei mBot2 Lernrobotern auf einem Parcours&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Die unmittelbare Rückmeldung durch den Roboter – sei es ein korrektes Verhalten oder eine „Fehlermeldung“ in Form einer unerwarteten Bewegung – schafft eine Lernumgebung, in der Kinder durch Versuch und Irrtum lernen können. Dieses explorative Lernen fördert die intrinsische Neugier und hilft, technologische Affinität schon früh zu entwickeln.&lt;/p&gt;
+&lt;h2&gt;Fazit: MINT ist die Zukunft&lt;/h2&gt;
+&lt;p&gt;Die Förderung von MINT-Kompetenzen bei Kindern und Jugendlichen ist eine Investition in die Zukunft – nicht nur in die ihrer eigenen beruflichen Perspektiven, sondern auch in die Zukunft unserer Gesellschaft als Ganzes. Technologien entwickeln sich rasant weiter, und nur wer versteht, wie sie funktionieren und sie kreativ nutzen kann, wird aktiv an der Gestaltung der Zukunft teilhaben können.&lt;/p&gt;
+&lt;p&gt;Mit spielerischen Ansätzen wie programmierbaren Lernrobotern und visuellen Programmiersprachen können wir bereits im Grundschulalter beginnen, Kinder auf diese Reise mitzunehmen. Sie lernen dabei nicht nur technische Fertigkeiten, sondern entwickeln auch Problemlösungsstrategien, die in einer komplexen Welt unerlässlich sind. Lassen wir uns von der Begeisterung unserer Kinder für Technik anstecken!&lt;/p&gt;
+&lt;h2&gt;Roboter programmieren für Kids in Oberursel (Taunus)&lt;/h2&gt;
+&lt;p&gt;Ganz im Sinne dieses Blogbeitrags unterstützen wir von der DenktMit eG, in Kooperation mit der Stadtbücherei Oberursel, die MINT-Nachwuchsförderung im Rahmen eines regelmäßigen Programmierevents für Kids ab 8 Jahren.
+Am 20. April 2024 fand das Event zum ersten Mal statt. In den Räumen der Stadtbücherei Oberursel kamen 12 wissbegierige, junge Forscherinnen und Forscher zwischen 8 und 12 Jahren zusammen und lernten mit etwas Unterstützung, den &lt;strong&gt;mBot2&lt;/strong&gt;, einen Lernroboter von &lt;a href=&quot;https://www.makeblock.com/&quot; target=&quot;_blank&quot;&gt;Makeblock&lt;/a&gt; zu programmieren. Auf dem Plan stand zunächst  das Kennenlernen des Roboters und seiner grundlegenden Funktionen (Vorwärts- und Rückwärtsbewegung, Drehen, verschiedene Geschwindigkeiten etc.). Nachdem die Basics klar waren ging es direkt los mit der ersten Herausforderung: Die Kids mussten jeweils in Zweierteams einem Blockly-Algorithmus programmieren, um ihren Roboter durch eine Reihe zunehmend komplizierter werdender Labyrinthe manövrieren.
+&lt;img src=&quot;https://denktmit.de/mint-tag2.webp&quot; alt=&quot;Kinder, die mittels Programmierung auf iPads ihre mBot2 durch ein Labyrinth steuern&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Der Spaß am Lernen und Herausfinden stand hierbei im Fokus. Schnell war die Neugier und der Erfindungsreichtum der Kinder getriggert und sie überlegten sich selbst zusätzliche Herausforderungen, wie bspw. die Weg-Zeit-Optimierung oder den Einsatz der LEDs des Roboters, als Fahrtrichtungsanzeiger.
+Die Begeisterung der Kinder war regelrecht ansteckend und die angesetzten 3 Stunden vergingen wie im Flug. Für die erfolgreiche Teilnahme erhielten die Jungforscherinnen und -forscher, wie es sich für derartige Events gehört, ein ordentliches Zertifikat, dass sie als &lt;em&gt;Junior Robotics Genius&lt;/em&gt; ausweist. Alle Beteiligten waren sich darüber einig, dass das Event zukünftig regelmäßig wiederholt werden soll.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Software as a Service (SaaS) vs. On-Premise</title>
+      <link>https://denktmit.de/blog/2024-10-25-saas-vs-on-premise/</link>
+      <author>Markus Homberg</author>
+      <pubDate>2024-10-25T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-10-25-saas-vs-on-premise/</guid>
+      <description>&lt;h2&gt;SaaS oder On-Premise: Welche Lösung ist die richtige für Ihr Unternehmen?&lt;/h2&gt;
+&lt;p&gt;Die Geschäftsführung und das Management kleiner oder mittelständischer Unternehmen (KMU) stehen immer wieder vor der Frage, welche Technologien und Tools für Ihr Unternehmen sinnvoll sind. Eine der wichtigsten Entscheidungen betrifft die Wahl der richtigen Softwarelösung: Setzen sie auf eine gemietete, meist cloudbasierte &lt;strong&gt;Software as a Service (SaaS)&lt;/strong&gt; oder entscheiden sie sich für eine &lt;strong&gt;On-Premise-Lösung&lt;/strong&gt;, also Software, die sie käuflich erwerben und die auf ihren eigenen Servern läuft? Beide Ansätze bieten Vor- und Nachteile, die sich je nach ihren individuellen Anforderungen und Ressourcen unterschiedlich auswirken können. In diesem Artikel erläutern wir die wesentlichen Unterschiede und helfen ihnen, die beste Lösung für ihr Unternehmen zu finden.&lt;/p&gt;
+&lt;h3&gt;Was ist Software as a Service (SaaS)?&lt;/h3&gt;
+&lt;p&gt;SaaS bezeichnet eine Softwarelösung, die meist über das Internet bereitgestellt wird. Anstatt eine Software zu kaufen und auf eigenen Servern oder Computern zu installieren, mieten sie die Software von einem externen Anbieter. Sie greifen über einen Webbrowser oder eine spezielle App auf die Software zu, wobei die Wartung, Updates und Sicherheit durch den Anbieter erfolgen.&lt;/p&gt;
+&lt;h3&gt;Was ist On-Premise-Software?&lt;/h3&gt;
+&lt;p&gt;Bei einer On-Premise-Lösung erwerben sie eine Softwarelizenz und installieren die Software auf ihren eigenen Servern. Dies gibt ihnen die vollständige Kontrolle über die Software, aber es erfordert auch, dass sie sich selbst um die Verwaltung, Wartung und Sicherheit kümmern.&lt;/p&gt;
+&lt;h2&gt;Vergleich: SaaS vs. On-Premise&lt;/h2&gt;
+&lt;h3&gt;&lt;strong&gt;1. Kosten&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;SaaS&lt;/strong&gt;: SaaS-Modelle arbeiten in der Regel mit monatlichen oder jährlichen Abonnements. Dies bedeutet niedrigere Anfangsinvestitionen, da keine teure Hardware oder Lizenzen angeschafft werden müssen. Jedoch fallen die Mietkosten kontinuierlich und in Abhängigkeit von benötigen Ressourcen bzw. Accounts an, sodass sich langfristig eine höhere Summe ergeben kann.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On-Premise&lt;/strong&gt;: Die Anfangsinvestition bei On-Premise-Software ist höher, da sie die Lizenzen, Hardware und IT-Ressourcen bezahlen müssen. Langfristig könnten die Kosten jedoch stabiler sein, da sie keine laufenden Mietgebühren zahlen. Allerdings kommen Wartungskosten hinzu, die oft schwer kalkulierbar sind.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fazit&lt;/strong&gt;: Wenn sie ein begrenztes Startbudget haben, ist SaaS meist die kostengünstigere Lösung. Wenn sie jedoch langfristig planen und die Infrastruktur bereits vorhanden ist, kann On-Premise auf Dauer günstiger sein.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;2. Wartung und Support&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;SaaS&lt;/strong&gt;: Der SaaS-Anbieter ist für die Wartung, Updates und die IT-Infrastruktur verantwortlich. Sie müssen sich keine Sorgen um Sicherheitsupdates oder Serverwartung machen. Der Nachteil ist jedoch, dass sie wenig Einfluss auf die Update-Zeitpunkte oder den Support haben.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On-Premise&lt;/strong&gt;: Hier liegt die volle Verantwortung bei ihnen. Sie müssen sicherstellen, dass die Software aktuell und sicher ist. Dafür haben sie die volle Kontrolle über Updates und können diese nach ihren eigenen Zeitplänen durchführen. Jedoch benötigen sie dafür eigenes IT-Personal oder externe Dienstleister.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fazit&lt;/strong&gt;: Wenn sie keine internen IT-Ressourcen haben, kann SaaS eine erhebliche Entlastung sein. Unternehmen mit einer eigenen IT-Abteilung oder spezifischen Anforderungen könnten bei On-Premise flexibler sein.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;3. Sicherheit und Datenschutz&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;SaaS&lt;/strong&gt;: SaaS-Anbieter verwenden in der Regel modernste Sicherheitsvorkehrungen, um Daten zu schützen, und sind verpflichtet, strenge Datenschutzbestimmungen einzuhalten. Überprüfen lässt sich dies jedoch in den wenigsten Fällen. Ein gewisses Grundvertrauen ist also unerlässlich. Hinzu kommt, dass es möglicherweise Bedenken hinsichtlich der Kontrolle und der Datenspeicherung in verschiedenen Ländern gibt, da die Daten in der Cloud gespeichert werden.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On-Premise&lt;/strong&gt;: Bei einer On-Premise-Lösung haben sie die volle Kontrolle über ihre Daten und können selbst entscheiden, wie und wo diese gespeichert und gesichert werden. Dies kann besonders wichtig sein, wenn sie mit hochsensiblen Daten arbeiten oder bestimmten rechtlichen Vorschriften unterliegen. Allerdings bedeutet das auch, dass sie für die Sicherheitsinfrastruktur selbst verantwortlich sind.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fazit&lt;/strong&gt;: Unternehmen, die sehr strikte Datenschutzrichtlinien befolgen müssen, können von On-Premise-Lösungen profitieren. SaaS-Lösungen bieten jedoch oft ein hohes Maß an Sicherheit und erfüllen die gängigen Datenschutzstandards, was für viele KMUs ausreichend ist.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;4. Anpassbarkeit&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;SaaS&lt;/strong&gt;: SaaS-Lösungen bieten oft weniger Möglichkeiten zur individuellen Anpassung, da sie für eine breite Nutzerbasis entwickelt werden. Je nach Anbieter sind zwar bestimmte Modifikationen möglich, aber wenn sie eine stark individualisierte Lösung benötigen, kann SaaS einschränkend sein.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On-Premise&lt;/strong&gt;: Eine On-Premise-Lösung ist in der Regel deutlich anpassbarer. Da die Software in ihrer eigenen Umgebung läuft, können sie sie an ihre spezifischen Geschäftsprozesse anpassen. Das bedeutet allerdings auch, dass Anpassungen zusätzliche Kosten und Ressourcen erfordern können.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fazit&lt;/strong&gt;: Wenn ihr Unternehmen spezielle Prozesse oder Anforderungen hat, die nicht von einer Standardlösung abgedeckt werden, könnte On-Premise die bessere Wahl sein.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;5. Skalierbarkeit&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;SaaS&lt;/strong&gt;: SaaS-Lösungen sind in der Regel sehr leicht skalierbar. Sie können schnell und einfach neue Benutzer oder Funktionen hinzufügen, da alles über den Anbieter läuft. Die Infrastruktur passt sich automatisch an Ihre Anforderungen an, ohne dass sie in zusätzliche Hardware investieren müssen. Dabei ist zu beachten, dass die Kosten in Abhängigkeit der benötigen Ressourcen, User-Accounts oder der Anzahl, der mit der Software, zu verwaltenden Personen steigen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;On-Premise&lt;/strong&gt;: Die Skalierbarkeit ist hier begrenzter, da sie möglicherweise zusätzliche Hardware anschaffen und ihre Infrastruktur erweitern müssen, um mehr Nutzer oder zusätzliche Funktionen zu unterstützen. Das kann teuer und zeitaufwändig sein.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fazit&lt;/strong&gt;: Wenn ihr Unternehmen schnell wächst oder schwankt, bietet SaaS die nötige Flexibilität. On-Premise eignet sich eher für Unternehmen mit stabileren Anforderungen.&lt;/p&gt;
+&lt;h2&gt;Welche Lösung ist die richtige für ihr Unternehmen?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/two-buttons-meme.webp&quot; alt=&quot;Two Buttons Meme - Die Buttons sind mit On-Premise und SaaS beschriftet&quot; /&gt;
+Die Wahl zwischen SaaS und On-Premise hängt von verschiedenen Faktoren ab, die sich von Unternehmen zu Unternehmen unterscheiden. Hier eine kurze Zusammenfassung:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SaaS&lt;/strong&gt; ist ideal, wenn sie:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Schnelle Implementierung und geringe Anfangsinvestitionen benötigen&lt;/li&gt;
+&lt;li&gt;Keine internen IT-Ressourcen für Wartung und Verwaltung haben&lt;/li&gt;
+&lt;li&gt;Flexibilität und einfache Skalierbarkeit schätzen&lt;/li&gt;
+&lt;li&gt;Standardisierte Geschäftsprozesse haben, die keine umfassenden Anpassungen erfordern&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;On-Premise&lt;/strong&gt; ist ideal, wenn sie:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Volle Kontrolle über ihre Daten und Infrastruktur benötigen&lt;/li&gt;
+&lt;li&gt;Hochgradig angepasste Softwarelösungen für spezielle Geschäftsanforderungen benötigen&lt;/li&gt;
+&lt;li&gt;Bereits über eine starke IT-Abteilung und eigene Server-Infrastruktur verfügen&lt;/li&gt;
+&lt;li&gt;Langfristig stabile Softwarekosten anstreben&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In vielen Fällen kann eine &lt;strong&gt;&lt;a href=&quot;https://denktmit.de/blog/2024-11-01-hybride-cloud-loesungen/&quot;&gt;hybride Lösung – eine Kombination aus SaaS und On-Premise – ebenfalls eine Option sein&lt;/a&gt;&lt;/strong&gt;, um das Beste aus beiden Welten zu nutzen.
+Eine durchdachte Wahl der Softwarelösung kann nicht nur die Effizienz ihres Unternehmens steigern, sondern auch langfristig Wettbewerbsvorteile sichern.&lt;/p&gt;
+&lt;h3&gt;Sie haben noch Fragen?&lt;/h3&gt;
+&lt;p&gt;Lassen sie sich bei der Entscheidung gerne von unseren IT-Expertinnen und Experten beraten. &lt;a href=&quot;https://denktmit.de/kontakt/&quot;&gt;Vereinbaren sie jetzt einen unverbindlichen Termin&lt;/a&gt; und wir schauen uns, gemeinsam mit ihnen, ihre spezifische Situation und ihre Geschäftsziele an, um ihnen die für sie passende Lösung zu empfehlen.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hybride Cloud-Lösungen für KMU: Edge Cloud, IaaS &amp; PaaS erklärt!</title>
+      <link>https://denktmit.de/blog/2024-11-01-hybride-cloud-loesungen/</link>
+      <author>Markus Homberg</author>
+      <pubDate>2024-11-01T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-11-01-hybride-cloud-loesungen/</guid>
+      <description>&lt;p&gt;Nach unserem &lt;strong&gt;&lt;a href=&quot;https://denktmit.de/blog/2024-10-25-saas-vs-on-premise/&quot;&gt;Beitrag über die Wahl zwischen SaaS- und On-Premise-Lösungen&lt;/a&gt;&lt;/strong&gt; wollen wir uns heute mit einem Thema befassen, das für viele Unternehmen, insbesondere für KMUs, immer relevanter wird: &lt;strong&gt;hybride Cloud-Modelle&lt;/strong&gt;. Diese vereinen die Vorteile von On-Premise- und Software as a Service (SaaS)-Lösungen und bieten eine flexible IT-Infrastruktur, die optimal an die spezifischen Anforderungen kleiner und mittlerer Unternehmen angepasst werden kann. Wir werfen dabei einen genaueren Blick auf drei vielversprechende Ansätze: &lt;strong&gt;Edge Cloud, Infrastructure as a Service (IaaS)&lt;/strong&gt; und &lt;strong&gt;Platform as a Service (PaaS)&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Hybride Lösungen: Die Vorteile von SaaS und On-Premise vereinen&lt;/h2&gt;
+&lt;p&gt;Hybride Cloud-Lösungen bieten Unternehmen die Möglichkeit, die &lt;strong&gt;Flexibilität&lt;/strong&gt; und &lt;strong&gt;Skalierbarkeit&lt;/strong&gt; von Cloud-Diensten mit der &lt;strong&gt;Datensicherheit&lt;/strong&gt; und &lt;strong&gt;Kontrolle&lt;/strong&gt; von On-Premise-Systemen zu kombinieren. Während sich SaaS gut für viele Standardanwendungen eignet und On-Premise für strikte Datenanforderungen ideal ist, erlauben hybride Modelle, bestimmte Daten und Prozesse lokal zu verarbeiten und andere flexibel in der Cloud zu lagern. So können Unternehmen die bestmögliche Balance zwischen Effizienz und Sicherheit finden.&lt;/p&gt;
+&lt;h3&gt;1. Edge Cloud: Rechenleistung direkt vor Ort für Echtzeitanwendungen&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Was ist Edge Cloud?&lt;/strong&gt; Edge Cloud bezeichnet ein Netzwerkmodell, bei dem Rechenleistung direkt in der Nähe der Datenquelle – also „am Rand“ des Netzwerks – bereitgestellt wird. Statt Daten für die Verarbeitung in ein zentrales Rechenzentrum zu schicken, werden sie lokal bearbeitet, was die Latenzzeiten drastisch reduziert und Echtzeitanwendungen ermöglicht.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vorteile für KMUs:&lt;/strong&gt; Für Unternehmen, die auf schnelle und unmittelbare Datenverarbeitung angewiesen sind, ist Edge Cloud besonders attraktiv. Beispielsweise können Produktionsprozesse durch die lokale Analyse von Sensordaten in Echtzeit optimiert werden. Auch für IoT-Anwendungen (Internet of Things) und Industrie-4.0-Ansätze bietet Edge Cloud eine effektive Lösung, da Geräte und Sensoren über verschiedene Standorte hinweg in Echtzeit kommunizieren können.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Beispielszenarien für Edge Cloud:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Echtzeit-Überwachung in der Produktion:&lt;/strong&gt; Unternehmen können Fehler oder Anomalien sofort erkennen und Produktionsprozesse verbessern.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Betrieb und Wartung von Hochgeschwindigkeitszügen:&lt;/strong&gt; Echtzeitüberwachung durch eine umfangreiche Sensorik (bspw. Temperatur, Lage, Beschleunigung, Erschütterung, etc.) ermöglicht den sicheren Betrieb trotz hoher Geschwindigkeiten. Die umfangreichen Datenmengen werden für den Betrieb zunächst lokal verarbeitet und später (bspw. an Bahnhöfen mit einer stabilen Internetverbindung) an das zentrale Rechenzentrum, für die Planung von predictive und preventive Maintenance Maßnahmen weitergeleitet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Herausforderungen und Kosten:&lt;/strong&gt; Einige Nachteile der Edge Cloud liegen in den Kosten und im Wartungsaufwand. Edge-Infrastrukturen müssen in der Regel physisch vor Ort installiert und regelmäßig gewartet werden. Dennoch kann diese Lösung durch die Einsparung von Latenzzeiten und die Verbesserung der Effizienz die Investition wert sein.&lt;/p&gt;
+&lt;h3&gt;2. Infrastructure as a Service (IaaS): Skalierbare Ressourcen für jede Unternehmensgröße&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Was ist IaaS?&lt;/strong&gt; Infrastructure as a Service ist ein Cloud-Modell, bei dem Unternehmen IT-Ressourcen wie Server, Speicherplatz und Netzwerke in der Cloud nutzen können, ohne diese selbst verwalten oder besitzen zu müssen. Diese Ressourcen sind skalierbar und können bedarfsorientiert bereitgestellt werden.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vorteile für KMUs:&lt;/strong&gt; KMUs können dank IaaS von den Vorteilen einer flexiblen und anpassbaren IT-Infrastruktur profitieren, ohne große Investitionen in Hardware zu tätigen. Diese Flexibilität ermöglicht Unternehmen, bei Bedarf Ressourcen zuzuschalten, z. B. für Entwicklungs- und Testumgebungen oder in Wachstumsphasen. Außerdem ist IaaS mit Pay-per-Use-Modellen oft kostengünstig. Zudem verfügt IaaS typischerweise über technische Schnittstellen, die eine leichte Automatisierbarkeit der Einrichtung, Aktualisierung und Migration von Entwicklungsumgebungen, mittels Infrastructure as Code (IaC), ermöglichen. Hierdurch ergibt sich ein weiterer großer Vorteil: IaaS beschleunigt Bereitstellungsprozesse stark und ermöglicht die Standardisierung von Test- und Produktivumgebungen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Typische Einsatzbereiche von IaaS:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Test- und Entwicklungsumgebungen:&lt;/strong&gt; Für die Entwicklung und das Testen neuer Anwendungen sind schnell einzurichtende, standardisierbare, flexible und temporär skalierbare IT-Ressourcen ideal.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Saisonale oder geschäftsabhängige Skalierung:&lt;/strong&gt; Unternehmen, die saisonal bedingt Spitzenkapazitäten benötigen, können ihre Ressourcen einfach erweitern oder reduzieren.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Herausforderungen:&lt;/strong&gt; Mit der Flexibilität gehen auch Herausforderungen einher: IaaS erfordert eine gute Integration in die bestehende Infrastruktur und Expertise im Bereich Sicherheit und Compliance, um Datenschutz und Betriebsstabilität sicherzustellen.&lt;/p&gt;
+&lt;h3&gt;3. Platform as a Service (PaaS): Entwicklungsplattformen für maßgeschneiderte Anwendungen&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Was ist PaaS?&lt;/strong&gt; Platform as a Service stellt Unternehmen eine komplette Entwicklungs- und Betriebsumgebung in der Cloud zur Verfügung. Dabei übernimmt der Anbieter die Verwaltung der zugrunde liegenden Infrastruktur (Server, Speicher, Netzwerke) und stellt zusätzlich Entwicklungswerkzeuge, Datenbanken und Middleware bereit. Entwickler können sich so voll und ganz auf die Programmierung konzentrieren, ohne sich um die Infrastrukturpflege kümmern zu müssen. Im Gegensatz zu IaaS, wo Unternehmen die Infrastruktur selbst verwalten, bietet PaaS eine fertig konfigurierte Plattform. Während Software as a Service (SaaS) den Endnutzern eine fertige Software bereitstellt, erlaubt PaaS den Unternehmen, maßgeschneiderte Software auf einer vorgefertigten Plattform zu entwickeln und zu verwalten.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vorteile für KMUs:&lt;/strong&gt; PaaS bietet Unternehmen die Möglichkeit, maßgeschneiderte Anwendungen zu entwickeln und bereitzustellen, ohne in teure Hardware oder Software investieren zu müssen. Für KMUs bedeutet dies eine erhebliche Zeit- und Kostenersparnis, da die gesamte Entwicklungs- und Testumgebung bereits bereitsteht und skalierbar ist. Zudem ermöglichen PaaS-Lösungen eine schnelle Markteinführung neuer Anwendungen und erleichtern die Zusammenarbeit, da Teams aus verschiedenen Standorten problemlos auf dieselbe Plattform zugreifen können.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Typische Einsatzbereiche für PaaS:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Entwicklung und Bereitstellung maßgeschneiderter Software:&lt;/strong&gt; PaaS ist ideal für KMUs, die eigene Anwendungen entwickeln wollen, z. B. für spezielle Branchenanforderungen oder Kundenlösungen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Schnelle Prototypen-Entwicklung:&lt;/strong&gt; Gerade bei der Entwicklung von Prototypen oder MVPs (Minimum Viable Products) ist PaaS eine schnelle und kostengünstige Lösung.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integration und Erweiterung bestehender Systeme:&lt;/strong&gt; Viele PaaS-Anbieter bieten APIs und Schnittstellen an, um bestehende Anwendungen nahtlos zu integrieren oder zu erweitern.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Herausforderungen und Sicherheitsaspekte:&lt;/strong&gt; PaaS-Umgebungen sind in der Regel weniger flexibel, was die Anpassung der zugrunde liegenden Infrastruktur betrifft. Unternehmen müssen sich hier auf die technische Ausgestaltung des Anbieters verlassen und genau prüfen, ob Sicherheitsstandards und Compliance-Anforderungen erfüllt werden.&lt;/p&gt;
+&lt;h2&gt;Vergleich: Edge Cloud, IaaS und PaaS für KMUs&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Wann ist welche Lösung sinnvoll?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Edge Cloud&lt;/strong&gt; ist optimal für Echtzeitanwendungen, bei denen niedrige Latenzen notwendig sind. Wenn schnelle Reaktionszeiten im Vordergrund stehen, etwa in der Produktion oder bei IoT-Anwendungen, kann Edge Cloud die passende Wahl sein.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Infrastructure as a Service (IaaS)&lt;/strong&gt; bietet sich für Unternehmen an, die eine flexible und skalierbare Infrastruktur benötigen, ohne die Hardware und Wartung selbst zu übernehmen. Hier sind Testumgebungen und saisonale Kapazitätserweiterungen ideale Anwendungsfälle.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Platform as a Service (PaaS)&lt;/strong&gt; ist optimal für Unternehmen, die ihre eigenen Softwarelösungen entwickeln und bereitstellen möchten. KMUs können hier maßgeschneiderte Anwendungen entwickeln, ohne in eigene Infrastruktur zu investieren. PaaS eignet sich besonders für schnelle Prototypenentwicklung und kollaborative Softwareprojekte.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Kombination von Modellen:&lt;/strong&gt;
+Für viele KMUs ist eine Kombination dieser Modelle sinnvoll. Unternehmen können beispielsweise eine stabile Basisinfrastruktur durch IaaS aufbauen und mit Edge Cloud ergänzen, um Echtzeitanwendungen zu unterstützen, während PaaS für spezifische Softwareentwicklungsprojekte genutzt werden kann.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kosten- und Ressourcenoptimierung:&lt;/strong&gt;
+Durch die richtige Wahl und Kombination von Edge Cloud, IaaS, und PaaS lassen sich die Betriebskosten optimieren und IT-Ressourcen effizienter einsetzen. Hybride Cloud-Lösungen erlauben es Unternehmen, flexibel zu bleiben und nur dort in Infrastruktur zu investieren, wo es unbedingt erforderlich ist, während Entwicklungs- und Echtzeitanforderungen gleichzeitig bestmöglich erfüllt werden.&lt;/p&gt;
+&lt;h2&gt;Fazit: Hybride Cloud-Modelle als zukunftssichere Wahl für KMUs&lt;/h2&gt;
+&lt;p&gt;Hybride Cloud-Lösungen bieten KMUs eine flexible, kostengünstige und skalierbare Infrastruktur, die spezifische Geschäftsanforderungen berücksichtigt und gleichzeitig Betriebskosten senkt. Sie verbinden die Effizienz der Cloud mit der Kontrolle und Sicherheit lokaler Lösungen und sind damit eine zukunftssichere Wahl für KMUs, die ihre Wettbewerbsfähigkeit in einer digitalisierten Welt erhalten möchten.&lt;/p&gt;
+&lt;h3&gt;Sie haben Fragen rund um das Thema oder möchten herausfinden, welche Lösung für ihr Unternehmen die richtige ist?&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://denktmit.de/kontakt/&quot;&gt;Kontaktieren sie uns gerne&lt;/a&gt; für ein unverbindliches Beratungsgespräch.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title> Individuelle Softwareentwicklung vs. Standardsoftware</title>
+      <link>https://denktmit.de/blog/2024-11-13-individuelle-softwareentwicklung-vs-standardsoftware/</link>
+      <author>Markus Homberg</author>
+      <pubDate>2024-11-13T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2024-11-13-individuelle-softwareentwicklung-vs-standardsoftware/</guid>
+      <description>&lt;h2&gt;Individuelle Softwareentwicklung vs. Standardsoftware: Welche Lösung passt zu Ihrem Unternehmen?&lt;/h2&gt;
+&lt;p&gt;In der heutigen, zunehmend digitalisierten Geschäftswelt müssen Unternehmen softwaretechnisch auf dem neuesten Stand bleiben, um wettbewerbsfähig zu sein. Vor allem KMUs stehen dabei oft vor einer grundlegenden Entscheidung: Sollen sie in eine individuelle Softwareentwicklung investieren, die maßgeschneiderte Lösungen bietet, oder reicht eine Standardsoftware aus, um die Bedürfnisse des Unternehmens zu decken? Beide Ansätze haben Vor- und Nachteile. In diesem Artikel zeigen wir auf, welche Faktoren bei der Wahl entscheidend sind und wann eine maßgeschneiderte Softwareentwicklung sinnvoller ist.&lt;/p&gt;
+&lt;h3&gt;Was ist individuelle Softwareentwicklung?&lt;/h3&gt;
+&lt;p&gt;Bei der individuellen Softwareentwicklung wird eine Lösung speziell nach den Anforderungen eines Unternehmens entwickelt. Hier arbeiten erfahrene Softwareentwicklerinnen und -entwickler eng mit dem Unternehmen zusammen, um Funktionen, Schnittstellen und Benutzeroberflächen exakt auf die Bedürfnisse abzustimmen. Dabei ist es für den Erfolg der Softwareentwicklung unerlässlich, dass das Entwicklungsteam ihr Unternehmen und ihre Geschäftsprozesse kennen- und verstehen lernt. Nur so entstehen passgenaue, hochoptimierte Tools, die Prozesse vereinfachen und die Effizienz steigern.&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;https://denktmit.de/individuelle_softwareentwicklung/&quot;&gt;Lesen sie hier mehr darüber, wie wir von der DenktMit eG individuelle Software entwickeln, die ihr Unternehmen voran bringt&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Was ist Standardsoftware?&lt;/h3&gt;
+&lt;p&gt;Standardsoftware ist eine fertige, „von der Stange“ entwickelte Lösung, die für eine Vielzahl von Unternehmen und Anwendungsbereichen geeignet ist. Sie kann schnell implementiert werden, ist oft kostengünstiger und deckt grundlegende Anforderungen ab. Beispiele für Standardsoftware sind bekannte Programme zur Buchhaltung, CRM oder Office-Anwendungen.&lt;/p&gt;
+&lt;h3&gt;Vergleich: Individuelle Softwareentwicklung vs. Standardsoftware&lt;/h3&gt;
+&lt;p&gt;Im Folgenden finden sie die wichtigsten Vor- und Nachteile der beiden Ansätze in einer übersichtlichen Tabelle:&lt;/p&gt;
+&lt;table style=&quot;width:75%&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr valign=&quot;bottom&quot;&gt;
+            &lt;th&gt;&lt;h4&gt;Kriterium&lt;/h4&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;h4&gt;Individuelle Softwareentwicklung&lt;/h4&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;h4&gt;Standardsoftware&lt;/h4&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Anpassungsfähigkeit&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Sehr hoch:&lt;/b&gt; Die Software wird speziell auf die Anforderungen des Unternehmens angepasst.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Gering bis mittel:&lt;/b&gt; Nur begrenzte Anpassungsmöglichkeiten, oft mit Zusatzkosten verbunden.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Implementierungszeit&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Langfristig:&lt;/b&gt; Entwicklung kann mehrere Monate dauern, abhängig von Komplexität und Umfang.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Kurzfristig:&lt;/b&gt; In der Regel sofort einsatzbereit und schnell implementierbar.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Kosten&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Kurzfristig höher:&lt;/b&gt; Einmalige, initiale Investition für maßgeschneiderte Entwicklung erforderlich.&lt;br /&gt;
+                Die Investitionen kann ich aber mittel- bis langfristig auszahlen, da bei individuell entwickelter Software, im Gegensatz zu Software as a Service (SaaS), keine nutzungsabhängigen Betriebskosten anfallen.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Kurzfristig niedriger:&lt;/b&gt; Oft günstiger, da Entwicklungskosten auf mehrere Kunden verteilt werden.&lt;br /&gt;
+                 Wird die Standardsoftware jedoch als Software as a Service (SaaS) betrieben, können die nutzungsabhängigen Betriebskosten mittel- bis langfristig oft die Entwicklungskosten einer maßgeschneiderten Softwarelösung übersteigen.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Flexibilität&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Sehr flexibel:&lt;/b&gt; Kann jederzeit an neue Anforderungen angepasst werden.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Eingeschränkt:&lt;/b&gt; Anpassungen oft nur im Rahmen der Möglichkeiten des Herstellers.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Eigentum und Kontrolle&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Hohe Kontrolle:&lt;/b&gt; Das Unternehmen besitzt oft den Quellcode und kann selbst entscheiden, wie es die Software weiterentwickeln möchte.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Hohe Abhängigkeit:&lt;/b&gt; Kontrolle über Updates und Änderungen liegt beim Hersteller.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Skalierbarkeit&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Hoch:&lt;/b&gt; Ideal für wachstumsorientierte Unternehmen, die langfristig planen.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Mittel bis gering:&lt;/b&gt; Skalierungsmöglichkeiten variieren je nach Anbieter und Softwaretyp.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Benutzerfreundlichkeit&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Optimiert:&lt;/b&gt; Benutzeroberfläche und Funktionen werden speziell für die Nutzer des Unternehmens gestaltet.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Variabel:&lt;/b&gt; Oft generisch, damit sie zu vielen Unternehmen passen, was die Nutzung für spezifische Fälle erschweren kann.Variabel: Oft allgemeingültig gehalten, wodurch sie nicht immer intuitiv bedienbar ist.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Datensicherheit&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Anpassbar:&lt;/b&gt; Individuelle Anforderungen können berücksichtigt und entsprechender Sicherheitsmaßnahmen integriert werden.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Standardisiert:&lt;/b&gt; Abhängig von den Sicherheitsrichtlinien des Herstellers.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Integration in bestehende Systeme&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Optimal:&lt;/b&gt; Software lässt besser in bestehende IT-Systeme integrieren.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Eingeschränkt:&lt;/b&gt; Integration kann kompliziert sein, abhängig von verfügbaren Schnittstellen.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Updates und Wartung&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Flexibel:&lt;/b&gt; Updates und Anpassungen können nach Bedarf durchgeführt werden.&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Herstellerabhängig:&lt;/b&gt; Updates erfolgen nach Zeitplan des Herstellers und nicht immer bedarfsorientiert.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Wann ist individuelle Softwareentwicklung die richtige Wahl?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Die Entscheidung für eine individuelle Softwareentwicklung ist sinnvoll, wenn:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Das Unternehmen spezielle Anforderungen hat, die durch branchenspezifische- oder Standardsoftware nicht erfüllt werden.&lt;/li&gt;
+&lt;li&gt;Eine hohe Skalierbarkeit und Anpassungsfähigkeit wichtig sind, etwa bei wachstumsorientierten Unternehmen.&lt;/li&gt;
+&lt;li&gt;Ein hohes Maß an Kontrolle und Sicherheit erforderlich ist, um sensiblen Datenanforderungen zu entsprechen.&lt;/li&gt;
+&lt;li&gt;Schnittstellen zu spezifischen Unternehmenssystemen erforderlich sind, die in Standardsoftware nicht oder nur schwer umsetzbar sind.&lt;/li&gt;
+&lt;li&gt;Das Unternehmen sich nicht von Softwareanbietern abhängig machen und so einen möglichen &lt;a href=&quot;https://www.heise.de/tipps-tricks/Vendor-Lock-in-was-ist-das-6166269.html&quot; target=&quot;_blank&quot;&gt;Vendor-Lock-in&lt;/a&gt; vermeiden möchte.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Wann bietet sich Standardsoftware an?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Eine Standardsoftware ist eine gute Wahl, wenn:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Die Anforderungen des Unternehmens eher allgemein und branchenunabhängig sind oder es geeignete Branchensoftware gibt.&lt;/li&gt;
+&lt;li&gt;Ein kleines Budget oder begrenzte Ressourcen zur Verfügung stehen, um Softwareentwicklungskosten zu decken.&lt;/li&gt;
+&lt;li&gt;Eine schnelle Implementierung gewünscht ist, die ohne aufwendigen Entwicklungsprozess auskommt.&lt;/li&gt;
+&lt;li&gt;Eine maßgeschneiderte Anpassung keinen signifikanten Mehrwert bietet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fazit: Individuelle Softwareentwicklung als nachhaltige Investition und Wettbewerbsvorteil&lt;/h3&gt;
+&lt;p&gt;Für KMUs, die langfristig planen und spezifische Anforderungen haben, ist die individuelle Softwareentwicklung oft die bessere Wahl. Eine maßgeschneiderte Software bietet nicht nur eine Lösung, die optimal mit dem Unternehmen wächst, sondern schafft auch entscheidende Wettbewerbsvorteile. Durch die genaue Ausrichtung auf ihre individuellen Geschäftsprozesse können Effizienz und Produktivität signifikant gesteigert werden, was die interne Zusammenarbeit und die Kundenbindung verbessert. Maßgeschneiderte Software ermöglicht es Unternehmen zudem, schneller auf Marktveränderungen und Kundenanforderungen zu reagieren, wodurch sie agiler und innovationsfähiger bleiben.&lt;/p&gt;
+&lt;p&gt;Darüber hinaus fördert eine passgenaue Softwarelösung die Automatisierung wiederkehrender Aufgaben. Dadurch werden Fehlerquellen minimiert und wertvolle &lt;strong&gt;&lt;a href=&quot;https://denktmit.de/blog/2024-08-06-fachkraefte-von-sinnlosen-aufgaben-befreien/&quot;&gt;Fachkräfte von sinnlosen Aufgaben befreit&lt;/a&gt;&lt;/strong&gt;, was den Workflow optimiert und langfristig Kosten spart. Da Unternehmen mit individueller Software nicht von einem Standardanbieter abhängig sind, haben sie die Freiheit, Funktionalitäten flexibel anzupassen und damit schnell auf neue Marktanforderungen einzugehen – ein entscheidender Wettbewerbsvorteil in einem sich stetig verändernden Umfeld.&lt;/p&gt;
+&lt;p&gt;Falls sie unsicher sind, welche Lösung die richtige für ihr Unternehmen ist, unterstützen wir sie gerne dabei, eine fundierte Entscheidung zu treffen. Unsere Expertinnen und Experten für Softwareentwicklung beraten sie umfassend und zeigen ihnen die besten Optionen für ihr Unternehmen auf.
+&lt;strong&gt;&lt;a href=&quot;https://denktmit.de/kontakt/&quot;&gt;Kontaktieren sie uns gerne für ein unverbindliches Beratungsgespräch.&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Die Genossenvorstellung: Dr. Sven Köppel</title>
+      <link>https://denktmit.de/blog/2025-01-31-die-genossenvorstellung-dr-sven-koeppel/</link>
+      <author>Jonas Krüger</author>
+      <pubDate>2025-01-31T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2025-01-31-die-genossenvorstellung-dr-sven-koeppel/</guid>
+      <description>&lt;h2&gt;Die vielen Interpretationen der Genossenschaft&lt;/h2&gt;
+&lt;p&gt;Irgendwo zwischen „Beratungsbude“ und „Vermittlernetzwerk.“ Da liegt für &lt;a href=&quot;https://denktmit.de/team/dr-sven-koeppel/&quot;&gt;Dr. Sven Köppel&lt;/a&gt;, Gründungsgenosse und zweifachen Aufsichtsrat der &lt;em&gt;DenktMit eG&lt;/em&gt; das Konzept der Genossenschaft. Klar ist für ihn aber auch: „&lt;em&gt;man kann die Genossenschaft interpretieren.&lt;/em&gt;“ Für den einen ist die Genossenschaft ein Projektvermittler, durch welchen man leichter an Aufträge kommt, ein anderer schätzt wiederum die Freiheit, die die Teilhabe an einer Genossenschaft bietet.&lt;/p&gt;
+&lt;p&gt;Diese Freiheit, dieser „&lt;em&gt;alles kann, nichts muss&lt;/em&gt;“-Grundgedanke der Genossenschaft, also eigens gewählten IT-Projekten beitreten zu können, ohne eine feste Verpflichtung gegenüber der Genossenschaft zu besitzen, begeistert den promovierten Physiker seit jeher. Bis 2019 ist er noch am Institute for Advanced Studies der Goethe-Universität Frankfurt tätig, wo er &lt;a href=&quot;https://denktmit.de/team/marius-schmidt/&quot;&gt;Marius Schmidt&lt;/a&gt;, den heutigen Vorstand, kennenlernt, der für die selbe Idee brennt. Daher entschließen sich die beiden mit acht anderen Entwicklern, die &lt;em&gt;DenktMit eG&lt;/em&gt; zu Gründen. Und das obwohl Sven zu diesem Zeitpunkt bereits beide Hände voll zu tun hat mit seinem eigenen StartUp, der &lt;a href=&quot;https://anabrid.com/&quot; target=&quot;_blank&quot;&gt;&lt;em&gt;Anabrid GmbH&lt;/em&gt;&lt;/a&gt;. Aber was muss das muss: Die Idee einer Genossenschaft für IT-Selbstständige erscheint Sven zu sinnvoll, als das er nicht ihre Gründung mitgestalten möchte.&lt;/p&gt;
+&lt;p&gt;Die Anfangsphase prägt Sven dann vor allem in seiner Funktion als Aufsichtsrat. Heute existierende Strukturen und Prozesse erarbeitet er mit, dabei ist er immer in der moderierenden Funktion zwischen Genossen und Vorstand unterwegs; „&lt;em&gt;ein Stückweit ist es immer auch Good-Cop/Bad-Cop&lt;/em&gt;“, fasst Sven seine Tätigkeit im Aufsichtsrat zusammen.&lt;/p&gt;
+&lt;h2&gt;Die Genossenschaft – Ein Rückhalt für das eigene Start-Up&lt;/h2&gt;
+&lt;p&gt;Sven schätzt die Abwechslung in der Genossenschaft, nur Aufsichtsrat zu sein wäre ja auch langweilig. So mag er es ebenso, manchmal „&lt;em&gt;nur&lt;/em&gt;“ „&lt;em&gt;Code Monkey&lt;/em&gt;“ sein zu müssen, analysiert beispielsweise mit Marius Datensätze für eine Wirtschaftsprüfung zwischen den Jahren. „&lt;em&gt;Die eG hats total einfach gemacht, sowas umzusetzen&lt;/em&gt;“, erklärt Sven. Denn die Einstiegshürde, als Solo-Selbstständiger sich erst mühsam einen Kundenstamm aufbauen zu müssen, um erfolgreich wirtschaften zu können, falle durch die Genossenschaft weg.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/the_analog_thing.webp&quot; alt=&quot;The Analog Thing, ein Analogcomputer der Anabrid GmbH&quot; /&gt;
+&lt;em&gt;The Analog Thing (THAT), Analogcomputer der Anabrid GmbH&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Auch der Zeitpunkt ist ein äußerst günstiger für Sven, denn seinem Start-Up bricht in dieser Zeit die Anfangsfinanzierung weg: rote Zahlen. Die beiden Aufträge, die Sven mit der &lt;em&gt;DenktMit&lt;/em&gt; erledigt sind dementsprechend ein gerngesehenes Nebeneinkommen. Auch das kann die Genossenschaft also sein: ein Rückhalt für das eigene Start-Up in schwierigen Zeiten. Eine Rechnung die sich heute, gut zwei Jahre später, vollkommen ausgezahlt hat.&lt;/p&gt;
+&lt;p&gt;Die &lt;em&gt;Anabrid&lt;/em&gt; wurde 2024 mit dem &lt;em&gt;Red Dot-Award&lt;/em&gt;, einem Preis für exzellente Produktgestaltung, geehrt. Preisträger, neben den mittlerweile rund 20 Mitarbeitern ist &lt;a href=&quot;https://the-analog-thing.org/&quot; target=&quot;_blank&quot;&gt;&lt;em&gt;The Analog Thing (THAT)&lt;/em&gt;, ein moderner Analogcomputer, die Spezialität der &lt;em&gt;Anabrid&lt;/em&gt;&lt;/a&gt;. Denn die &lt;em&gt;Anabrid&lt;/em&gt; miniaturisiert analoge Computertechnik aus dem 20. Jahrhundert und will sie auf moderne Mikrochips übertragen. Mit einem digitalen Interface kann dieser angesteuert werden, komplexe mathematische Differentialgleichung lassen sich damit 1000 Mal schneller und 10.000 mal energieeffizienter lösen, als es mit den digitalen „&lt;em&gt;Cousins&lt;/em&gt;“ möglich wäre.&lt;/p&gt;
+&lt;h2&gt;Sven und analoge Rechner – Seine Begeisterung hat „Geschichte“&lt;/h2&gt;
+&lt;p&gt;Wer Technik aus dem 20. Jahrhundert in die Jetztzeit holen will muss sich mit ihr auch gut auskennen. Und genau das tut Sven, zum Beispiel in seiner Freizeit, als Mitglied des 2018 geerbten Computermuseums &lt;a href=&quot;https://www.technikum29.de/&quot; target=&quot;_blank&quot;&gt;technikum29&lt;/a&gt;. Bei Rechnern aus den 1960ern, die sich durch ihre „&lt;em&gt;schlafzimmer-kleiderschrank-große Röhren&lt;/em&gt;“ und „&lt;em&gt;altertümliche Rechenelemente&lt;/em&gt;“ auszeichnen gerät Sven immer wieder ins Schwärmen: „&lt;em&gt;das Verrückte ist halt, das war damals Hightech […] die Menschheit ist zum Mond geflogen dank Analogrechnern.&lt;/em&gt;“&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/technikum29.webp&quot; alt=&quot;Alte Großrechner mit Magnetbandlaufwerken im Technikmuseum, Technikum29&quot; /&gt;
+&lt;em&gt;Computermuseum technikum29 in Kelkheim (Taunus)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Die Technik lebendig zu halten und Wissen weiterzugeben ist dabei ein besonderes Anliegen von Sven, alle Rechner sind funktionsfähig: „&lt;em&gt;du kannst bei uns hingehen und Lochkarten stanzen.&lt;/em&gt;“ Das Wissen über die mitentwickelten Analogrechner, existierende und kommende, der &lt;em&gt;Anabrid&lt;/em&gt; an die Genossenschaft weiterzugeben ist dann aber doch noch Zukunftsmusik.&lt;/p&gt;
 </description>
     </item>
     
