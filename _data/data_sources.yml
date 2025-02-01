@@ -6,6 +6,7 @@ data_sources:
     icon: /assets/icons/anabrid.png
     data_url: https://anabrid.com/news/feed.xml
     local_file: anabrid-news-feed.xml
+    skipped_download: True # because target is currently offline!
   denktmit-blog:
     title: DenktMit Blog
     human_url: https://denktmit.de/outreach.html
