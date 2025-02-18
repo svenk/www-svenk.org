@@ -51,6 +51,19 @@ talks:
   languge: de
   link: https://open.spotify.com/episode/0quGnOPsayGulkyLMQXHv0
   title: "Beendet k\xFCnstliche Intelligenz die \xBBDiktatur\xAB der Programmierenden?"
+- author:
+  - Thomas Ramge
+  - "Sven K\xF6ppel"
+  date: 2024-11-18
+  event: "Sprin-D Deep Tech Podcast von Thomas Ramge mit Gast Sven K\xF6ppel"
+  key: podcast_sprind
+  keywords:
+  - podcast
+  - analog
+  - sprind
+  languge: de
+  link: https://sprind.org/magazin/podcasts/90-sven-koeppel
+  title: 'SprinD Podcast: Analog Computer'
 - author: "Sven K\xF6ppel"
   date: 2022-05-21
   event: Gulaschprogrammiernacht 2022 (GPN20)
