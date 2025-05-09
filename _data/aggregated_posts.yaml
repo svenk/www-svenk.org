@@ -170,14 +170,14 @@ aggregated_posts:
   link: /posts/2021-09-23-welcome-to-jekyll/
   origin: svenk-local-blog
   title: Welcome to Jekyll!
-- date: '2013-02-18'
+- date: '2013-05-07'
   origin: scientific_publications
   title: POKAL, Kollaboratives Mathematik-E-Learning neu erfunden
-- date: '2012-02-18'
+- date: '2012-05-07'
   origin: scientific_publications
   title: 'BioKemika und MetaSearch: Biochemische Datenbanken und Online-Tools verstehen
     und anwenden'
-- date: '2014-12-18'
+- date: '2014-12-07'
   link: https://github.com/svenk/publications/blob/master/Thesis/Sven-Koeppel-master-thesis-Ultraviolet-improved-black-holes.pdf
   origin: scientific_publications
   title: Ultraviolet improved black holes
@@ -190,7 +190,7 @@ aggregated_posts:
   link: https://arxiv.org/abs/1703.05222
   origin: scientific_publications
   title: Generalized uncertainty principle and extra dimensions
-- date: '2019-08-18'
+- date: '2019-08-07'
   link: https://arxiv.org/abs/1905.03233
   origin: scientific_publications
   title: Generalized Uncertainty Principle and Black Holes in Higher Dimensional Self-Complete
@@ -204,47 +204,52 @@ aggregated_posts:
   link: https://arxiv.org/abs/1711.08221
   origin: scientific_publications
   title: Towards an exascale code for GRMHD on dynamical spacetimes
-- date: '2017-12-18'
+- date: '2017-12-07'
   link: https://arxiv.org/abs/1801.02839
   origin: scientific_publications
   title: ADER discontinuous Galerkin schemes for the general relativistic magnetohydrodynamics
     equations
-- date: '2019-02-18'
+- date: '2019-02-07'
   link: https://arxiv.org/abs/1901.09977
   origin: scientific_publications
   title: A General-relativistic Determination of the Threshold Mass to Prompt Collapse
     in Binary Neutron Star Mergers
-- date: '2020-05-18'
+- date: '2020-05-07'
   link: https://arxiv.org/abs/1905.07987
   origin: scientific_publications
   title: 'ExaHyPE: An Engine for Parallel Dynamically Adaptive Simulations of Wave
     Problems'
-- date: '2019-06-18'
+- date: '2019-06-07'
   link: https://github.com/svenk/publications/blob/master/Thesis/phdthesis-Sven-Koeppel.pdf
   origin: scientific_publications
   title: High-order methods in fully general-relativistic hydrodynamics & magnetohydrodynamics
-- date: '2021-02-18'
+- date: '2021-02-07'
   link: https://arxiv.org/abs/2102.07268
   origin: scientific_publications
   title: About using analog computers in today's largest computational challenges
-- date: '2021-07-18'
+- date: '2021-07-07'
   link: https://arxiv.org/abs/2107.06283
   origin: scientific_publications
   title: Analog Computing for Molecular Dynamics
-- date: '2021-09-18'
+- date: '2021-09-07'
   link: https://dx.doi.org/10.23919/IEEECONF54431.2021.9598447
   origin: scientific_publications
   title: Open Hardware Analog Computer for Education &mdash; Design and Application
-- date: '2023-09-18'
+- date: '2023-09-07'
   link: https://arxiv.org/abs/2309.05598
   origin: scientific_publications
   title: Solving Partial Differential Equations with Monte Carlo / Random Walk on
     an Analog-Digital Hybrid Computer
-- date: '2023-12-18'
+- date: '2023-12-07'
   link: https://dx.doi.org/10.5194/ars-21-89-2023
   origin: scientific_publications
   title: "Hybrid integrators with predictive overload estimation for analog computers\
     \ and continuous-time \u0394\u03A3 modulators"
+- date: '2025-04-25'
+  link: https://becomingctosecrets.buzzsprout.com/2402174/episodes/17041716-50-jahre-denkfehler-was-wir-uber-rechenleistung-vollig-falsch-verstanden-haben-mit-sven-koppel
+  origin: talks
+  title: "50 Jahre Denkfehler? Was wir \xFCber Rechenleistung v\xF6llig falsch verstanden\
+    \ haben (Podcast-Reihe Becoming CTO Secrets by Philip Deutscher)"
 - date: '2022-01-31'
   link: https://open.spotify.com/episode/0ekHBRXddwZCLE0LF4LkI9
   origin: talks
@@ -270,6 +275,11 @@ aggregated_posts:
   origin: talks
   title: "SprinD Podcast: Analog Computer (Sprin-D Deep Tech Podcast von Thomas Ramge\
     \ mit Gast Sven K\xF6ppel)"
+- date: '2025-04-25'
+  link: https://www.c-radar.de/
+  origin: talks
+  title: 'Radiobeitrag zum Analogienrechnen (Radio Darmstadt: Sendung C-RadaR des
+    CCC Darmstadt)'
 - date: '2022-05-21'
   link: https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/2022-05-21-GPN20-Karlsruhe.pdf
   origin: talks
