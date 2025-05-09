@@ -1,5 +1,19 @@
 talks:
 - author:
+  - Philipp Deutscher
+  - "Sven K\xF6ppel"
+  date: 2025-04-25
+  event: Podcast-Reihe Becoming CTO Secrets by Philip Deutscher
+  key: podcast
+  keywords:
+  - podcast
+  - analog
+  - outreach
+  languge: de
+  link: https://becomingctosecrets.buzzsprout.com/2402174/episodes/17041716-50-jahre-denkfehler-was-wir-uber-rechenleistung-vollig-falsch-verstanden-haben-mit-sven-koppel
+  title: "50 Jahre Denkfehler? Was wir \xFCber Rechenleistung v\xF6llig falsch verstanden\
+    \ haben"
+- author:
   - Luca Moczko
   - "Sven K\xF6ppel"
   date: 2022-01-31
@@ -64,6 +78,21 @@ talks:
   languge: de
   link: https://sprind.org/magazin/podcasts/90-sven-koeppel
   title: 'SprinD Podcast: Analog Computer'
+- author:
+  - Benjamin Hagemann
+  - dj-spock
+  - "Sven K\xF6ppel"
+  date: 2025-04-25
+  event: 'Radio Darmstadt: Sendung C-RadaR des CCC Darmstadt'
+  key: podcast
+  keywords:
+  - podcast
+  - analog
+  - Radio
+  - outreach
+  languge: de
+  link: https://www.c-radar.de/
+  title: Radiobeitrag zum Analogienrechnen
 - author: "Sven K\xF6ppel"
   date: 2022-05-21
   event: Gulaschprogrammiernacht 2022 (GPN20)
