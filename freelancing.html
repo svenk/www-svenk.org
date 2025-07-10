@@ -1,0 +1,158 @@
+---
+title: Freelancing
+permalink: /freelancing/
+layout: default
+
+technologies:
+- title: Data science and AI
+  technologies: [
+    Wolfram Mathematica, SageMath, Sage Cell, Reduce, Octave,
+    Julia, Symbolics.jl, ModelingToolkit.jl,
+    JupterHub/JupyterLab, Scipy, scikit-learn, Pandas, Sympy, Anaconda, Bokeh, Altair, Seaborn,
+    R, ggplot,
+    Matlab, Labview,
+    Modelica, Wolfram SystemModeler, Scilab,
+    TensorFlow, PyTorch, 
+  ]
+  highlight: Engineered world's first open source collaborative notebook interface
+    with the SageMath Notebook in 2012.
+  experience: 15 years
+- title: Web Programming
+  technologies: [ HTML5, XML, XSLT, SVG, CSS/SCSS, PHP, Perl/CGI.pm/mod_perl,
+    Python, Twisted, Tornado, Django, Flask, Sanic,
+    JS/Typescript, Web Assembly, Websocketing, Web periphery, Figma,
+    d3js, Three.js,
+    Vue, Svelte, Sveltekit, React, node.js, deno,
+    Bundlers and Compilers,
+    LAMP, Apache, nginx,
+    SSGs
+    ]
+  highlight: Fullstack frontend and backend before Web 2.0 times
+  experience: +20 years
+- title: Embedded Systems
+  technologies: [ "Real time, networking and data processing applications in
+    C++", ARM Assembler, Arduino/ETL/ESP-ISP/nRF Connect SDKs ]
+  experience: 10-20 years
+- title: System Programming and Desktop
+  technologies: [ Linux/POSIX, DOS, C/C++, libc, Shell Scripting,
+    Qt, GTK+, wxWidgets, X11/Xlib, SDL, Java AWT/Swing, DBus/COBRA/gRPC,
+    Message Brokers, RabbitMQ, Kafka, MQTT, Cap'n Proto
+  ]
+  highlight: Developed linux kernel modules and userspace tooling
+  experience: +20 years
+- title: High Performance Computing
+  technologies: [ MPI, OpenMP, OpenCL, SLURM, PBS, Fortran Co-Arrays, domain-specific frameworks,
+    Remote GPUs, VTK, PyVista, Blender/bpy,
+    HDF5,
+    Ceph, BeeGFS, HPSS, RHEL, Cray ]
+  highlight: Developed Exascale codes running on 300,000 processor cores
+  experience: 5-10 years
+- title: Data Bases and Data Warehousing
+  technologies: [ Dask, Vaex, Apache Arrow, Apache Spark, Apache Airflow,
+    Pentaho, PowerShell, 
+    Neo4j, Redis, MongoDB, HBase, InfluxDB, RDF stores,
+    Gephi, Grafana ]
+  experience: +5 years
+- title: DocOps and TeamOps
+  technologies:  [ MediaWiki, DokuWiki, Outline, Trac, Redmine, OTRS, Zammad,
+    Sphinx, MkDocs, Docsify, Latex,
+    Forges,
+    Gitlab, Github, Gitea, Gogs, SourceHut, Forgejo, Codeberg, Launchpad, Savannah,
+    Atlassian ]
+  highlight: MediaWiki extension and skin developer. Uses Latex in production.
+  experience: 10 years
+- title: Container and Cloud
+  technologies: [ Docker, Docker Copose,
+    Kubernetes, Observation,
+    Jaeger, OpenStack,
+    Vercel, Hetzner/OVH, Golang ]
+  experience: 5-10 years
+---
+  <h1>Freelancing</h1>
+
+  <p class="lead">
+    I am an experienced software engineer for all architectures
+    and platforms, from hardware-affine embedded to frontend.
+    I frequently ake on roles at senior or team lead level.
+    In projects and ventures,
+    I am often refered to as the "universal weapon for any kind of task".
+  </p>
+  
+  <p>My primary areas of work are big data, platform architectures and working
+  on problems that have been impossible to solve with computers until now. My
+  expertise is a <a href="/research">PhD in computational physics</a> and more then
+  20 years of professional experience in sofware engineering.
+  
+  Over the years, I have taken on various roles, including
+     developer,
+     team lead,
+     architect,
+     analyst,
+     product owner,
+     buisness advisor,
+     <a href="/companies">founder</a>,
+     chief information officer,
+     supervisory board member and
+     managing director.
+    
+  
+  <h2>Technologies</h2>
+  <p>Handy-on experience in programming ecosystems and environments, sorted by
+     descending preference:
+    
+  {% for tech in page.technologies %}
+  <p><strong>{{ tech.title }}</strong> <em>({{ tech.experience }})</em>
+  <p>{% for keyword in tech.technologies %}{{ keyword }}{% if forloop.last == false %}&nbsp;‧ {% endif %}{%endfor%}
+  {% if tech.highlight %}
+  <em> ‧ Highlight: {{ tech.highlight }}</em>
+  {% endif %}
+  {% endfor %}
+  
+  <h2>A few Principles</h2>
+  
+  <ul>
+    <li>I always aim to speak the language of my audience. This principle shapes everything
+        I create — from presentations and documentation to code.
+
+    <li>I view tooling as a social contract. While tools like Kubernetes, NPM, or Golang
+        may not be perfect on their own, their widespread adoption fosters shared context.
+        Effective collaboration often depends on speaking a common technical language.
+
+    <li>I'm a strong advocate for Open Source, including in industrial contexts. My daily
+        tools are primarily open source: LibreOffice, LaTeX, and Linux desktops, among
+        others. I choose them for their portability, accessibility, and scriptability —
+        all of which contribute to efficiency. Still, I'm pragmatic and use closed-source
+        tools when they make sense.
+
+    <li>I value transparency and documentation. My written materials are thorough and
+        complement — rather than duplicate — the available machine-readable formats.
+
+    <li>I don't adopt trends blindly. For instance, my git commits <a
+        href="https://www.conventionalcommits.org">are not always machine-readable</a>,
+        but they leave a meaningful trail for human readers. Similarly, I believe <a
+        href="https://semver.org/">Semantic Versioning</a> often introduces unnecessary
+        complexity by embedding meaning into version numbers.
+
+    <li>The less code, the better. The fewer dependencies, the better. For technical
+        audiences, software can be elegant and expressive. For industry, it often serves
+        as a necessary layer for formalizing collaboration.
+
+    <li>AI has its place in enhancing my effectiveness without compromising data
+        security. I clearly declare when I use it — and yes, even this list was improved
+        with the help of ChatGPT and similar tools through prompts like "improve the
+        formulation"
+  </ul>
+
+  <h2>Roles and clients</h2>
+
+  <p>
+    I successfully leads heterogenous teams of hardware and software
+    engineers since many years. I also has half a decade of experience in company
+    building and management. My clients range from financial auditing over tech
+    companies to research institutes.
+  
+  <p>
+    I frequently organize my work via the <a href="https://denktmit.de/team/dr-sven-koeppel/">DenktMit eG</a>
+    but I am also available as self-employed independent freelancer.
+    My <em>Freelancing CV</em> contains a listing of selected projects in various domains
+    and is available on request.

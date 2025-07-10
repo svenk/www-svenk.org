@@ -5,12 +5,12 @@ main:
     url: /blog/
   - title: Research
     url: /research/
+  - title: Freelancing
+    url: /freelancing/
   - title: Startups
     url: /companies/
 #  - title: Media
 #    url: /social/
-  - title: Freelancing
-    url: /freelancing/
   - title: Fun
     url: /misc/
   - title: Contact
