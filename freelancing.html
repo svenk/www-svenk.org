@@ -6,7 +6,7 @@ layout: default
 technologies:
 - title: Data science and AI
   technologies: [
-    Wolfram Mathematica, SageMath, Sage Cell, Reduce, Octave,
+    Wolfram Mathematica, CAS/LISP, SageMath, Sage Cell, Reduce, Octave,
     Julia, Symbolics.jl, ModelingToolkit.jl,
     JupterHub/JupyterLab, Scipy, scikit-learn, Pandas, Sympy, Anaconda, Bokeh, Altair, Seaborn,
     R, ggplot,
@@ -30,16 +30,30 @@ technologies:
   highlight: Fullstack frontend and backend before Web 2.0 times
   experience: +20 years
 - title: Embedded Systems
-  technologies: [ "Real time, networking and data processing applications in
-    C++", ARM Assembler, Arduino/ETL/ESP-ISP/nRF Connect SDKs ]
+  technologies: [ 
+    Analog frontends,
+    ARM Cortex, Nordic, STM32, AtMega,
+    Arduino, PlatformIO, ETL, ESP-ISP, nRF Connect SDK,
+    FreeRTOS, Zephyr,
+    PIO/FlexIO,
+    C/C++, ARMv6 Assembler, LLVM, GDB, JTAG,
+    lwIP, MQTT, Node Red ]
   experience: 10-20 years
+  highlight: Real time, networking and data streaming applications in C++
 - title: System Programming and Desktop
   technologies: [ Linux/POSIX, DOS, C/C++, libc, Shell Scripting,
-    Qt, GTK+, wxWidgets, X11/Xlib, SDL, Java AWT/Swing, DBus/COBRA/gRPC,
-    Message Brokers, RabbitMQ, Kafka, MQTT, Cap'n Proto
+    Qt, GTK+, wxWidgets, X11/Xlib, SDL, Java AWT/Swing, DBus/COBRA, systemd
   ]
   highlight: Developed linux kernel modules and userspace tooling
-  experience: +20 years
+  experience: 20 years
+- title: IP Networking
+  technologies: [ Linux Routing and Firewalls, Cisco, Mikrotik RouterOS,
+    OpenWrt, 
+    (x)inetd,
+    IPv6, VLANs, Wireguard,
+    Message Brokers, Protobuf, gRPC, ZMQ, RabbitMQ, Kafka
+  ]
+  experience: 20 years
 - title: High Performance Computing
   technologies: [ MPI, OpenMP, OpenCL, SLURM, PBS, Fortran Co-Arrays, domain-specific frameworks,
     Remote GPUs, VTK, PyVista, Blender/bpy,
@@ -71,9 +85,10 @@ technologies:
   <h1>Freelancing</h1>
 
   <p class="lead">
-    I am an experienced software engineer for all architectures
-    and platforms, from hardware-affine embedded to frontend.
-    I frequently ake on roles at senior or team lead level.
+    I am an experienced software engineer for <a href="#tech">all architectures
+    and platforms</a>, from hardware-affine embedded to frontend.
+    I frequently work on <a href="#roles">roles at senior or team lead level</a>.
+    I also give <a href="#teach">trainings and workshops</a>.
     In projects and ventures,
     I am often refered to as the "universal weapon for any kind of task".
   </p>
@@ -96,7 +111,7 @@ technologies:
      managing director.
     
   
-  <h2>Technologies</h2>
+  <h2 id="tech">Technologies</h2>
   <p>Handy-on experience in programming ecosystems and environments, sorted by
      descending preference:
     
@@ -107,6 +122,20 @@ technologies:
   <em> ‧ Highlight: {{ tech.highlight }}</em>
   {% endif %}
   {% endfor %}
+  
+  <h2 id="teach">Training and Workshops</h2>
+  
+  <p>I love teaching and passing knowledge in a dense and useful form. I used to work
+  in university didactics / higher education paedagogy for 10 years at Goethe University,
+  Frankfurt at stations such as the 
+  <a href="https://www.goethe-university-frankfurt.de/131356377/">Interdisciplinary Center
+  for university teaching and learning</a>, <a href="https://www.studiumdigitale.uni-frankfurt.de/">Studiumdigitale</a>
+  and my own institution for medialisation and outreach of natural sciences, called
+  <em>PhysikOnline</em>. At Between 2009 and 2019, I raised more then 500kEUR for
+  running teams dedicated to creating content, videos and digital tools. We had several offices
+  and operated own student computer center. Here's a bit of
+  <a href="https://svenk.org/~koeppel/elearning/">project description</a>.</p>
+  
   
   <h2>A few Principles</h2>
   
@@ -143,7 +172,7 @@ technologies:
         formulation"
   </ul>
 
-  <h2>Roles and clients</h2>
+  <h2 id="roles">Roles and clients</h2>
 
   <p>
     I successfully leads heterogenous teams of hardware and software

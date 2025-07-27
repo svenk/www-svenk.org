@@ -34,7 +34,8 @@
                 <ul class="nav-list">
                     {% for item in site.data.nav.main %}
                         <li class="nav-item {% if item.url == page.url %}active{% endif %}">
-                            <a class="pure-button"  href="{{ item.url }}">{{ item.title }}</a>
+                            <a class="pure-button"  href="{{ item.url }}"
+                               style="view-transition-name: {{ item.title | slugify}};">{{ item.title }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -43,7 +44,7 @@
     </div><!--/sidebar -->
 
     
-    <div class="content pure-u-1 pure-u-md-3-4">
+    <div class="content pure-u-1 pure-u-md-3-4 main-view-transition">
         <div class="content-wrapper">
             {{ content }}
         </div>

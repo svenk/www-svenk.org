@@ -7,11 +7,11 @@ main:
     url: /research/
   - title: Freelancing
     url: /freelancing/
-  - title: Startups
+  - title: Companies #Startups
     url: /companies/
 #  - title: Media
 #    url: /social/
-  - title: Fun
+  - title: Misc
     url: /misc/
   - title: Contact
     url: /contact/
