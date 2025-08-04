@@ -7,7 +7,7 @@ body_class: landing
 
 <div id="teaser" class="main-view-transition">
 <img src="assets/svenk-blue-mini.jpg" class="mini">
-<h1>Sven Köppel</h1>
+<h1 tabindex="0" data-letters="ȯǫɵоӧӛøóôõòŏōő" data-replace="ö" data-fps="3.5">Sven Köppel</h1>
 
 <p>
   German-based
@@ -54,3 +54,28 @@ body_class: landing
   
 </p>
 </div>
+
+<!-- little gimmick with the name -->
+<script defer>
+window.addEventListener("load", () => {
+  document.querySelectorAll("[data-letters][data-replace][data-fps]").forEach(e => {
+    const l = e.dataset.letters, r = e.dataset.replace, o = e.innerHTML, f = parseFloat(e.dataset.fps);
+    let i = 0, t;
+    const start = () => {
+      if (t) return;
+      t = setInterval(() => {
+        e.innerHTML = o.replace(r, l[i++ % l.length]);
+      }, 1000 / f);
+    };
+    const stop = () => {
+      clearInterval(t);
+      t = null;
+      e.innerHTML = o;
+    };
+    e.addEventListener("mouseenter", start);
+    e.addEventListener("focus", start);
+    e.addEventListener("mouseleave", stop);
+    e.addEventListener("blur", stop);
+  });
+});
+</script>
