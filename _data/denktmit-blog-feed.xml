@@ -5,7 +5,7 @@
     <link>https://denktmit.de</link>
     <description></description>
     <language>en-us</language>
-    <lastBuildDate>2025-05-07T08:49:15Z</lastBuildDate>
+    <lastBuildDate>2025-07-27T13:28:11Z</lastBuildDate>
     <atom:link href="https://denktmit.de/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -3744,8 +3744,431 @@ In jedem Falle: Der Überblick und die Hoheit über die eigenen HR Daten sind mi
 &lt;p&gt;Unser Beispiel zeigt, dass es nicht viel braucht, um die eigenen Daten auf Vordermann zu bringen. Eine klare Analyse der unterschiedlichen Datensätze reicht fürs Erste, um Dopplungen oder Überflüssiges auszusortieren.
 Das Datenformat JSON bietet dabei eine Möglichkeit, die Daten gleichermaßen für Mensch, wie Maschine lesbar darzustellen. Auftragsdetails oder Personenbezogenes lässt sich mit JSON nicht nur darstellen. Mit dem Schema JSON Resume wird im selben Schritt dafür gesorgt, dass die Daten regeltreu erfasst sind und dadurch auf Dauer lesbar und verständlich für das eigene Geschäftsszenario bleiben.
 Wer bereits den Schritt wagt, die eigenen Daten im gleichen Format zu normieren, dem bieten sich (mit etwas Programmierarbeit) ganz neue Synergien: Etwa der Vergleich von verschiedenen Datensätzen und ein blitzschnelles Erkennen, zum Beispiel der größtmöglichen Überschneidungen von Mitarbeiter-Fähigkeiten und Voraussetzungen für die Arbeit an einem Projekt.
-&lt;img src=&quot;https://denktmit.de/json_02.webp&quot; alt=&quot;Mann vor einem riesigen Buecherregal&quot; /&gt;
-Wenn man dann erst einmal den eigenen Daten Herr geworden ist, stellt sich auch das gute Gefühl ein, dass wir vom Frühjahrsputz kennen: Die Freude über frische und klare Strukturen, sowie eine verbesserte Organisation.&lt;/p&gt;
+Wenn man dann erst einmal den eigenen Daten Herr geworden ist, stellt sich auch das gute Gefühl ein, dass wir vom Frühjahrsputz kennen: Die Freude über frische und klare Strukturen, sowie eine verbesserte Organisation.
+&lt;img src=&quot;https://denktmit.de/json_02.webp&quot; alt=&quot;Mann vor einem riesigen Buecherregal&quot; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Die Genossenvorstellung: Christian Keller</title>
+      <link>https://denktmit.de/blog/2025-05-27-die-genossenvorstellung-christian-keller/</link>
+      <author>Jonas Krüger</author>
+      <pubDate>2025-05-27T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2025-05-27-die-genossenvorstellung-christian-keller/</guid>
+      <description>&lt;h2&gt;Lernen durchs Arbeiten&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://denktmit.de/team/christian-keller/&quot;&gt;Christian Keller&lt;/a&gt; lebt nach dem Motto „&lt;em&gt;kenne die Arbeit, über die du entscheidest.&lt;/em&gt;“ Und das nicht erst seit er die &lt;strong&gt;DenktMit eG&lt;/strong&gt; mitbegründet hat und ihr Gründungsvorstand war. Bereits im Studium will Christian nah an den Problemen der Branche sein und das auch abseits vom vorgegebenen Studienplan. Sein abgeschlossenes Studium an der Fachhochschule in Darmstadt absolviert er deshalb in Teilzeit; knüpft währenddessen Kontakte in die Berufswelt, arbeitet und entwickelt sich weiter, fernab der starreren universitären Titel.&lt;/p&gt;
+&lt;p&gt;Christian kann nach dem Studium schnell in verschiedenen Softwarehäusern Fuß fassen. Seine Stange an Berufserfahrung, nicht zuletzt seine Begabung zu Kommunikation wie Kooperation, helfen ihm dabei. Denn die Fähigkeit, verschiedenste Persönlichkeiten zusammenzubringen und zu einer Arbeitseinheit zu formen, kurz: der Teamaufbau, ist dabei sein zweites großes Steckenpferd, neben der Software-Architektur. Das Händchen für den Teamaufbau zahlt sich immer wieder aus. Etwa als er bei der Deutschen Bahn ein Site-Reliability-Enigneering-Team leitete, welches sich um den reibungslosen Betrieb von verschiedensten Softwares kümmerte. Zu sehen, wie das Team immer eingespielter wurde und man effektiver erst eines schlussendlich sechs verschiedene Software-Produkte managen konnte, sind Erlebnisse, die Christian bis heute antreiben. Sein Beruf lebt für ihn gerade vom Zusammenkommen verschiedener Perspektiven und konstruktiven Diskussionen. All das „&lt;em&gt;bringt einen sehr viel weiter denn als Einzelkämpfer.&lt;/em&gt;“&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/keller02.webp&quot; alt=&quot;Geschreinertes Hoftor&quot; /&gt;
+&lt;em&gt;Neue (selbsterbaute) Tore öffnen sich für Christian mit dem Schritt in die Selbstständigkeit: HomeOffice, Hof und die Möglichkeit zum Schreinern und Renovieren dessen.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Der lange Weg in die Selbstständigkeit&lt;/h2&gt;
+&lt;p&gt;Ab 2017 geht Christian die ersten Schritte Richtung Selbstständigkeit und arbeitet neben seiner Festanstellung an eigens gewählten Projekten. Die Idee, sich genossenschaftlich zu organisieren trägt er schon länger mit sich herum und findet einen Gleichgesinnten in &lt;a href=&quot;https://denktmit.de/team/marius-schmidt/&quot;&gt;Marius Schmidt&lt;/a&gt;, den er zu dieser Zeit kennenlernt. Mit ihm und einigen anderen wird Christian später an der Gründung der &lt;strong&gt;DenktMit&lt;/strong&gt; beteiligt sein.&lt;/p&gt;
+&lt;p&gt;Die Argumente für die völlige unternehmerische Selbstständigkeit liegen dabei auf der Hand – oder vielmehr im Arm. Denn um besser für seine zwei Kinder da sein zu können sind flexible Arbeitszeiten und die Möglichkeit auf Home Office wichtige Voraussetzungen. Solche, die in der Festanstellung damals nicht möglich waren.&lt;/p&gt;
+&lt;p&gt;Nachdem die Entscheidung für die Genossenschaft gefallen ist, geht es für Christian in die Grundlagenarbeit. Es geht um die Markenentwicklung oder praktische Herausforderungen, etwa mit der seltenen Geschäftsform der Genossenschaft ein Konto eingerichtet zu bekommen. Auch das Erstellen von Vertragswerk fällt in seinen Aufgabenbereich. Für andere ermüdende Kleinarbeit, für Christian Teil der Eigenverantwortlichkeit, die er als Unternehmer so schätzt: „&lt;em&gt;Es ist dann halt dein Bier, dich als Selbstständiger darum zu kümmern.&lt;/em&gt;“&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/keller03.webp&quot; alt=&quot;Holzbrett in einer Schreinerwerkstatt&quot; /&gt;
+&lt;em&gt;So manche Maßproduktion entsteht in Christians Werkstatt.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Wo gehobelt wird, da fällt Wissen ab&lt;/h2&gt;
+&lt;p&gt;Trotz seines Vierteljahrhunderts an Berufserfahrung hat Christian sich seine Neugierde nicht exklusiv für die IT vorbehalten. Denn seit 2020 ist Christian stolzer Besitzer eines kleinen Fachwerkhofes samt Scheune. Den Hof restauriert er dabei nicht nur, so gut es geht, in Eigenregie, auch eine kleine Schreinerwerkstatt hat dort ihren Platz gefunden. Ohne Meistertitel kann und darf Christian dabei nicht mit Gewinnabsicht produzieren. Er stellt lediglich seine Werkstatt und seine Hilfe zu Verfügung, denn „&lt;em&gt;Wissen weitergeben ist das, was ich gerne mache.&lt;/em&gt;“ Die Ergebnisse des ‚&lt;em&gt;Schreiner-Co-Wokings&lt;/em&gt;‘ reichen mal von maßgefertigten Schränken oder Regalen hin zu aufgemöbelten alten Truhen oder Tischen.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/keller01.webp&quot; alt=&quot;Innenansicht einer professionellen Schreinerwerstatt&quot; /&gt;
+&lt;em&gt;Aufgestellt wie die Profis, arbeiten ProBono. In seiner Schreinerwerkstatt unterstützt Christian seine Mitmenschen gerne bei eigenen Schreinerprojekten.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Sei es bei der Restauration von Möbelstücken, der eigenen Scheune aber auch bei der Arbeit: Christian verbindet gerne das Neue mit dem Alten. Er will die Geschichte einer Sache verstehen und achten, „&lt;em&gt;die Leute vor 20 Jahren haben nicht alles falsch gemacht.&lt;/em&gt;“ Anstelle blind Trends hinterherzurennen versteht sich Christian lieber als ruhiger Transformator, der mit Bedacht an Altes anknüpft und darauf aufbauend Neues schafft.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SuperGAU Datenklau: Identitätsdiebstahl bei Firmen</title>
+      <link>https://denktmit.de/blog/2025-06-27-supergau-datenklau/</link>
+      <author>Jonas Krüger</author>
+      <pubDate>2025-06-27T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2025-06-27-supergau-datenklau/</guid>
+      <description>&lt;h2&gt;Identitätsdiebstahl und Cybercrime – So fern und doch so nah&lt;/h2&gt;
+&lt;p&gt;Es geht schnell. Ein falscher Klick auf einen E-Mail-Anhang, das Lieblingspasswort (&lt;em&gt;123456&lt;/em&gt;) einige Male zu oft verwendet und alsbald merkt man, dass man nicht mehr Herr der eigenen Daten ist; entdeckt falsche Profile mit den eigenen Daten im Netz oder bemerkt schlimmstenfalls Zahlungsabgänge vom eigenen Konto, die man nicht autorisierte. Digitaler Identitätsdiebstahl ist ein vielfältiges Themengebiet, bei welchem oft die Vogel-Strauß-Methode zum Einsatz kommt: Den Kopf in den Sand stecken, sich nicht absichern und hoffen, dass es einen selber schon nicht treffen wird.&lt;/p&gt;
+&lt;p&gt;Dabei sind nicht nur Privatpersonen sondern im besonderen Maße auch Unternehmen betroffen, sitzen diese doch oft auf einer Vielzahl von Daten, die für Cyberkriminelle interessant sein können. &lt;a href=&quot;https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/Lagebilder/Cybercrime/2024/CC_2024.html&quot; target=&quot;_blank&quot;&gt;So richteten sich laut dem neuen &lt;em&gt;Bundeslagebild Cybercrime des Bundeskriminalamtes&lt;/em&gt; (BKA) rund 80% aller &lt;em&gt;Ransomwaren&lt;/em&gt; &lt;sub&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/sub&gt;-Angriffe in Deutschland 2024 gegen kleine und mittelständische Unternehmen (KMU).&lt;/a&gt; Nicht zuletzt arbeiten Cyberkriminelle mittels &lt;em&gt;Cybercrime-as-a-Service-Tools&lt;/em&gt; (quasi der „böse Zwilling“ von &lt;a href=&quot;https://denktmit.de/blog/2024-10-25-saas-vs-on-premise/&quot;&gt;&lt;em&gt;Software-as-a-Service&lt;/em&gt;&lt;/a&gt;) oder K.I. immer professioneller. Sie machen es schwieriger, &lt;em&gt;Cyberangriffe&lt;/em&gt; oder &lt;em&gt;Phishing&lt;/em&gt; mittels &lt;em&gt;Social Engineering&lt;/em&gt; &lt;sub&gt;&lt;strong&gt;2&lt;/strong&gt;&lt;/sub&gt; zu erkennen. Mit &lt;em&gt;Large Language Models&lt;/em&gt; können heute außerdem Fake Shops erstellt werden, die nicht nur die deutsche Sprache, sondern auch branchenspezifischen Jargon täuschend echt imitieren können.&lt;/p&gt;
+&lt;h3&gt;Meine Daten sind weg?! – Und jetzt?&lt;/h3&gt;
+&lt;p&gt;Wird ein Identitätsdiebstahl beim eigenen Unternehmen festgestellt kommt es vor allem auf zwei Dinge an: Ruhe bewahren und schnell handeln – womit nicht nur das Ändern der Firmenpasswörter gemeint ist. Denn in manchen, seltenen Fällen kann versucht werden, den Diebstahl aufzuhalten. Etwa wenn ein sogenannter &lt;em&gt;CEO-Fraud&lt;/em&gt; stattfindet, bei welchem sich Betrüger per Mail oder Brief als Chef ausgeben und den Transfer von Geldsummen auf ausländische Konten fordern. Rechtzeitig entdeckt und mit informierter Polizei könnte die Überweisung noch aufgehalten werden. Ansonsten hilft für die Zukunft hier nur die konsequente Anwendung des &lt;em&gt;Vier-Augen-Prinzips&lt;/em&gt;, welches die alleinige Freigabe der Geldsummen verhindert. Auch wenn das &lt;em&gt;Vier-Augen-Prinzip&lt;/em&gt; für KMUs schwieriger umzusetzen sein mag, weil qua Unternehmensgröße mehrere Ämter in Personalunion ausgeführt werden: Durch das &lt;em&gt;Vier-Augen-Prinzip&lt;/em&gt; sind Arbeitsprozesse weniger anfällig für &lt;em&gt;CEO-Fraud&lt;/em&gt;. Gleichzeitig verteilt das &lt;em&gt;Vier-Augen-Prinzip&lt;/em&gt; das gleiche Wissen auf mehrere Personen, sorgt so auch abseits des Datenschutz-Aspektes für ein resilienteres Unternehmen und reduziert ganz allgemein die Fehlerquote durch menschliches Versagen.
+&lt;img src=&quot;https://denktmit.de/datenklau_3.webp&quot; alt=&quot;Ein Mann und eine Frau, die gemeinsame einen Kassenzettel und Daten auf einem Tablet prüfen&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Die potenzielle Verhinderbarkeit des &lt;em&gt;CEO-Fraud&lt;/em&gt; bildet die große Ausnahme beim Thema &lt;em&gt;Identitätsdiebstahl&lt;/em&gt;. In den allermeisten Fällen ist der Diebstahl bereits geschehen, wenn man ihn bemerkt. Dann hilft nur noch der Gang zur Polizei, jedoch nicht zur örtlichen Polizeistelle, sondern ruhig direkt zur &lt;em&gt;Zentralen Ansprechstelle für Cybercrime in der Wirtschaft&lt;/em&gt; (ZAC) der Hessischen Polizei. Diese ist spezialisiert auf Betrugsfälle im Netz. Mit dem hessischen &lt;em&gt;Cyber Competence Centre&lt;/em&gt; (CCC) haben hessische Unternehmen eine zweite Anlaufstelle, welche sich ausschließlich auf Krisenmanagement, Beratung sowie die Vermittlung von Experten, nicht jedoch auf Ermittlung fokussiert hat.
+&lt;img src=&quot;https://hessen3c.de/sites/hessen3c.hessen.de/files/styles/crop_image_style_16_9_lg/public/2022-02/hessen3c.png?itok=8bkoNMJc&quot; alt=&quot;Bild des Cyber Competence Centre&quot; /&gt;
+&lt;sub&gt;&lt;em&gt;Das Cyber Competence Centre ist eine von zwei Ansprechstellen für betroffene hessische Unternehmen.&lt;/em&gt;&lt;/sub&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Schätzungen des &lt;em&gt;Bundeslagebilds Cybercrime&lt;/em&gt; zufolge werden nur 10% aller festgestellten Delikte tatsächlich zur Anzeige gebracht – insbesondere der Verlust schützenswerter Kundendaten ist stark mit der Angst vor dem Reputationsverlust verknüpft. Dabei ist das Stellen einer Strafanzeige nicht nur wichtig, um zu versuchen den Fall aufzuklären, sondern auch relevant im Sinne der unternehmerischen Sorgfalt. Eine Strafanzeige belegt den eigenen Fall gegenüber der Versicherung oder den Kunden und verhindert im besten Fall ein Ausufern des Betruges. Die Strafanzeige setzt die Polizei in Kenntnis und verhindert, vorschnelle Verdächtigungen, wenn mit den eigenen Daten Schindluder getrieben werden sollte. Einige Provider geben wichtige Analyse-Daten des Angriffes sogar nur mit einem Beschluss der Staatsanwaltschaft heraus. Die Aufklärungsrate für Identitätsdiebstahl im Netz mag mit 32% niedrig klingen, ist im Vergleich zu anderen Diebstählen, etwa dem in den eigenen vier Wänden, aber immer noch doppelt so hoch &lt;a href=&quot;https://www.bmi.bund.de/SharedDocs/downloads/DE/publikationen/themen/sicherheit/BMI25028_pks-2024.pdf?__blob=publicationFile&amp;v=8&quot;&gt;(Bundesministerium des Inneren und für Heimat: Polizeiliche Kriminalstatistik 2024. Ausgewählte Zahlen im Überblick - S.25).&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Den Kopf aus dem digitalen Sand nehmen – Prävention von Identitätsdiebstahl, die eigenen Daten sicher im Blick behalten&lt;/h3&gt;
+&lt;p&gt;Das Risiko zur Zielscheibe von Identitätsdiebstahl zu werden lässt sich nur schwer reduzieren, denn: Bestimmte Daten der eigenen Firma müssen öffentlich im Netz zugänglich sein. Um korrekt wirtschaften zu können, muss eine Vielzahl von Daten öffentlich im Handelsregister einsehbar sein, die schon genügen, dass eigene Unternehmen zu imitieren. Und um das eigene Unternehmen sichtbar zu machen werden freiwillig allerlei Daten auf Sozialen Medien wie LinkedIn geteilt. Schnell sind mit diesen Informationen schädliche Mails verfasst, falsche Internetseiten erstellt.
+Zumindest für letztere gibt es mit dem Domain-Monitoring eine wirksame Sicherheitsmaßnahme. Hierbei überwacht man Internetseiten mit einer ähnlichen Domain oder sichert sich sogar jene aus dem europäischen Ausland. So können Fakeshops wenn auch nicht vorgebeugt, so doch durch den Zwang eines Fakeshops zur außereuropäische Domain offensichtlicher gemacht  oder frühzeitig gemeldet werden.
+Ein bewusster Umgang mit dem, was man von sich als Unternehmen im Netz preisgibt kann nicht schaden. Genauso sollte aber auch ein bewussterer Umgang mit den eigenen Daten und einem Bewusstsein für deren Fragilität geschaffen werden. So nervig das tägliche Eingeben eines komplexeren Passwortes sein mag, es schützt am wirksamsten vor potenziellen Angriffen. Die Passworthygiene kann dabei auch niedrigschwellig für die eigenen Mitarbeitenden gestaltet werden: Mit einer &lt;em&gt;Authenticator App&lt;/em&gt; oder einem biometrischen Scan des Fingerabdruckes kann eine zweite Authentifizierungs-Stufe eingeführt werden. Mit dem Passwort allein kommen Cyberkriminelle dann fürs Erste nicht mehr weiter.
+&lt;img src=&quot;https://denktmit.de/datenklau_2.webp&quot; alt=&quot;Antropomorpher Vogel-Strauss an einem Computer&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h3&gt;„Wach sein, wach sein, man ist nicht allein“ –  Ein Appell&lt;/h3&gt;
+&lt;p&gt;Am Ende des Tages ist vor allem eine Maßnahme gegen Identitätsdiebstahl im Netz am effektivsten: Wachsamkeit. Wachsamkeit gegenüber den eigenen Daten als auch gegenüber ungewöhnlichen Mails, Links oder Anhängen.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;hr /&gt;&lt;br /&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/sub&gt;: &lt;em&gt;Von engl. ransom, das Lösegeld. Schadsoftware, die die eigenen Daten verschlüsselt und für ihre Freigabe ein Lösegeld fordert.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt;&lt;strong&gt;2&lt;/strong&gt;&lt;/sub&gt;: &lt;em&gt;Social Engineering kann man sich als digitalen „Enkeltrick“ vorstellen. Er bezeichnet konkreter den Vorgang, sich mittels öffentlich verfügbarer Informationen als jemand anders ausgeben, um im Kontakt mit einer anderen Person, an sensible Daten zu gelangen.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Einer für alle, alle für einen – Eine Ode an die Genossenschaft und ihren Ehrentag</title>
+      <link>https://denktmit.de/blog/2025-07-04-ode-auf-die-genossenschaft/</link>
+      <author>Jonas Krüger</author>
+      <pubDate>2025-07-04T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2025-07-04-ode-auf-die-genossenschaft/</guid>
+      <description>&lt;p&gt;Der 5. Juli dürfte für die meisten von uns traditionell für Sommerferien, Hitzewellen oder Freibad stehen – nicht für solidarische Arbeitsgemeinschaften. Dabei ist der erste Samstag im Juli auch seit über 100 Jahren der internationale Genossenschaftstag, der dieses Jahr besonders im Fokus steht, erklärten die United Nations (UN) das Jahr 2025 doch zum Jahr der Genossenschaften.&lt;/p&gt;
+&lt;p&gt;Doch was macht das Genossenschaftsmodell so besonders und was können Genossenschaften wie die DenktMit im Digitalen verändern?&lt;/p&gt;
+&lt;h2&gt;Warum Genossenschaften wichtig waren/sind/werden&lt;/h2&gt;
+&lt;p&gt;England im Jahr 1799. Die Industrialisierung läuft hier bereits auf Hochtouren und das vor allem auf Kosten der damaligen Arbeiterschaft. Diese muss ohne Rechte oder Sicherheiten in quasi-Knechtschaft arbeiten. Genau in jener Umbruchszeit wagt der Unternehmer Robert Owen für die damalige Zeit unerhörte Experimente: Verbot der Kinderarbeit, eine tägliche Arbeitshöchstzeit von 10,5 Stunden und die Einrichtung eines gemeinschaftlichen Einkaufsladens um bezahlbare Nahrungsmittel zu gewährleisten. Aus den Arbeitern werden zumindest in diesem Laden auch Teilhaber; die die Warenqualität mitbestimmen und die Preise für sich und ihre Kollegen bezahlbar halten können. Sie sind damit Genossen der ersten Stunde. Von Großbritannien aus startet das Modell seinen Siegeszug um die Welt und ist auch wenige Jahrzehnte später in Deutschland durch die bis heute präsenten Raiffeisen-Genossenschaften enorm populär. &lt;a href=&quot;https://2025.coop/de/mediakit/&quot; target=&quot;_blank&quot;&gt;1,2 Milliarden Menschen &lt;sub&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/sub&gt; sind heute Mitglied einer Genossenschaft, auf den Raum der Europäischen Union entfallen alleine 250.000 genossenschaftliche Betriebe.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/fw_raiffeisen.webp&quot; alt=&quot;Porträt von Friedrich Wilhelm Raiffeisen&quot; /&gt;
+&lt;em&gt;„Was einer alleine nicht schafft, das schaffen viele“&lt;/em&gt;&lt;br /&gt;
+&lt;sub&gt;– Friedrich Wilhelm Raiffeisen, Begründer der ersten deutschen Genossenschaften.&lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;Das (Erfolgs-)Rezept der Genossenschaft hat sich in seinen Grundprinzipien dabei seit 200 Jahren nicht verändert. In einem genossenschaftlich organisierten Betrieb sind alle Mitglieder gleichberechtigte Genossen, mit ihren finanziellen Einlagen wird gewirtschaftet. Die Genossen treffen sich ein- oder mehrmals im Jahr zur Generalversammlung, wählen hier Vorstände, Aufsichtsräte – und schaffen so einen der demokratischsten und partizipativsten Arbeitsräume, die es heutzutage gibt.&lt;/p&gt;
+&lt;p&gt;Im Englischen heißen Genossenschaften cooperatives, denn die Genossen kooperieren miteinander, sie sind zwar selbstverantwortlich aber gleichermaßen solidarisch. Darin unterscheiden sich Genossenschaften auch von AGs oder GmbHs, die im Zweifelsfall die Gewinnmaximierung über die eigenen Mitarbeiter priorisieren. Diese Abwendung von einem ‚höher, schneller, weiter‘ führt zu einem umsichtigen und nachhaltigen Umgang, mit materiellen wie personellen Ressourcen. Das macht die Genossenschaften deshalb auch zu solch einer wegweisenden Betriebsform für eine Zukunft, die globale Herausforderungen wie etwa den Klimawandel gemeinschaftlich bewältigen will und muss. Unter anderem deshalb ist die UN im Genossenschaftsjahr zu dem Schluss gekommen: „Cooperatives build a better World.“&lt;/p&gt;
+&lt;h2&gt;Genossenschaften im IT-Bereich – Ein bewährtes Konzept  in neuen Sphären&lt;/h2&gt;
+&lt;p&gt;Das Genossenschaftsmodell ist nicht nur wegen der oben benannten Vorteile so populär, sondern auch weil es so universell anwendbar ist. In fast jeder Branche in unser aller Alltag lassen sich Genossenschaften finden; seien dies Banken, Wohnungen, landwirtschaftliche Betriebe und im 21. Jahrhundert eben auch IT-Unternehmen.&lt;/p&gt;
+&lt;p&gt;Wie bei den ersten Genossenschaften ist auch bei uns jeder Genosse gleichberechtigt, aber gleichzeitig auch selbstverantwortlicher Unternehmer. Unsere Software-Produkte entwickeln wir nicht für den maximalen Profit, sondern für einen nachhaltigen Nutzen bei unseren Kunden – die Konzepte vendor-lock-in &lt;sub&gt;&lt;strong&gt;2&lt;/strong&gt;&lt;/sub&gt; und Genossenschaft könnten sich ferner nicht sein.&lt;/p&gt;
+&lt;p&gt;Wir empfinden uns dem Erbe der Genossenschaften verbunden und leben dieses in einem digitalen Zeitalter fort. Dementsprechend fühlen wir als DenktMit eG uns geehrt, dass Genossenschaften weltweit dank des Genossenschaftstages zu mehr Sichtbarkeit gelangen.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;hr /&gt;&lt;br /&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/sub&gt;: &lt;em&gt;Das ist immerhin ein Achtel der Weltbevölkerung.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt;&lt;strong&gt;2&lt;/strong&gt;&lt;/sub&gt;: &lt;em&gt;Vendor-lock-in beschreibt die klassische Falle, in welcher ein Kunde von seinem Software-Hersteller abhängig gemacht und ein Wechsel auf Alternativen erschwert wird.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Warum Social Engineering die größte Schwachstelle in deiner Cyber-Abwehr ist...</title>
+      <link>https://denktmit.de/blog/2025-07-21-psychologie-des-social-engineerings/</link>
+      <author>Markus Homberg</author>
+      <pubDate>2025-07-21T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2025-07-21-psychologie-des-social-engineerings/</guid>
+      <description>&lt;h2&gt;... und wie du dich psychologisch dagegen wappnest.&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;„Kein Virus, kein Code – nur ein Anruf“: Die Psychologie hinter Social Engineering.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;„Das schwächste Glied in der Sicherheitskette ist das menschliche Element.“&lt;/em&gt;&lt;br /&gt;
+– &lt;a href=&quot;https://en.wikipedia.org/wiki/Kevin_Mitnick&quot; target=&quot;_blank&quot;&gt;Kevin Mitnick&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In einer zunehmend digitalisierten Arbeitswelt werden Firewalls, Passwörter und Verschlüsselung immer besser – doch ein entscheidendes Einfallstor bleibt meist ungeschützt: &lt;strong&gt;der Mensch&lt;/strong&gt;. Social Engineering zielt genau darauf ab.&lt;/p&gt;
+&lt;p&gt;In diesem Artikel erfährst du:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Was Social Engineering ist&lt;/strong&gt; und warum es so gefährlich ist.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Welche psychologischen Mechanismen&lt;/strong&gt; gezielt ausgenutzt werden.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wie du die häufigsten Manipulationstaktiken erkennst.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Und vor allem: &lt;strong&gt;Wie du dich und dein Unternehmen effektiv davor schützt.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Denn: Wer versteht, wie Angreifer denken – kann sie leichter durchschauen.&lt;/p&gt;
+&lt;h3&gt;Was ist Social Engineering?&lt;/h3&gt;
+&lt;p&gt;Social Engineering ist keine neue Erfindung – aber in der digitalen Arbeitswelt wird es zu einem wachsenden Problem:
+&lt;a href=&quot;https://www.bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Cyber-Sicherheitslage/Methoden-der-Cyber-Kriminalitaet/Social-Engineering/social-engineering_node.html&quot; target=&quot;_blank&quot;&gt;&lt;em&gt;„Beim Social Engineering nutzen Angreifer den „Faktor Mensch&amp;quot; als vermeintlich schwächstes Glied der Sicherheitskette aus, um ihre kriminellen Absichten zu verwirklichen.“&lt;/em&gt;&lt;/a&gt; (Bundesamt für Sicherheit in der Informationstechnik)&lt;/p&gt;
+&lt;p&gt;Social Engineering ist also Hacking ohne Code – es nutzt keine Sicherheitslücken in der Software, sondern in der Psychologie von Menschen. Angreifer manipulieren Menschen, um sie dazu zu bringen, sicherheitsrelevante Informationen preiszugeben oder Handlungen auszuführen, die sie im Normalfall unterlassen würden. Social Engineers, täuschen, spielen Vertrauen vor – und bekommen so, was sie wollen: Zugang zu Systemen, Daten, Passwörtern.&lt;/p&gt;
+&lt;p&gt;Wichtig: &lt;strong&gt;Die Technik ist oft nebensächlich.&lt;/strong&gt; Der Angriff erfolgt über Vertrauen, Stress, Sympathie – also über &lt;strong&gt;menschliche Schwächen und Denkfehler.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Mit diesen Methoden können Cyberkriminelle versuchen, an deine Daten zu gelangen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Phishing:&lt;/strong&gt; „Bitte klicken Sie auf diesen Link, um Ihre Mailbox zu entsperren.“&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vishing (Voice Phishing):&lt;/strong&gt; Anruf von einer „vertrauenswürdigen Stelle“ mit dringender Bitte.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pretexting:&lt;/strong&gt; Der Angreifer gibt sich als jemand aus, den man kennt oder der wichtig erscheint (z.B. HR, IT, Chef).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tailgating:&lt;/strong&gt; Unbefugte schleichen sich physisch hinter echten Mitarbeitern ins Gebäude.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Warum kann selbst der klügste IT-Profi darauf reinfallen?&lt;/h3&gt;
+&lt;p&gt;Weil Social Engineers sich nicht auf technische Exploits, sondern auf menschliche automatismen, kognitive Verzerrungen, sozialpsychologische Effekte und emotionale Reaktionen verlassen. Darauf hereinzufallen hat nichts mit mangelnder Intelligenz oder fehlendem Technikverständnis zu tun, sondern es liegt in unserer menschlichen Natur.
+&lt;strong&gt;Und das Beste (für den Angreifer):&lt;/strong&gt; &lt;a href=&quot;https://denktmit.de/blog/2025-06-27-supergau-datenklau/&quot;&gt;Je digitaler wir arbeiten, desto schwieriger wird es, Fälschung von Echtheit zu unterscheiden&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Hier sind die häufigsten Wirkmechanismen – psychologisch erklärt:&lt;/h3&gt;
+&lt;h4&gt;1.Autoritätseffekt - &amp;quot;Ich rufe von der Geschäftsführung an ...&amp;quot;&lt;/h4&gt;
+&lt;table style=&quot;width:75%&quot;&gt;
+    &lt;tbody&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Psychologisches Prinzip:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Menschen neigen dazu, Anweisungen von Autoritätspersonen zu folgen – selbst gegen ihr eigenes Urteil (&lt;a href=&quot;https://de.wikipedia.org/wiki/Milgram-Experiment&quot; target=&quot;_blank&quot;&gt;&quot;Milgram-Experiment&lt;/a&gt; lässt grüßen).&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Beispiel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Ein Anrufer gibt sich als CTO oder externer IT-Dienstleister aus. Die Stimme klingt überzeugt, der Ton ist bestimmt. &lt;i&gt;„Bitte senden Sie mir die Zugangsdaten für das Admin-Panel, wir müssen sofort ein Patch einspielen.“&lt;/i&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Warum es wirkt:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Wir wurden sozialisiert, Autoritäten zu gehorchen. Im beruflichen Kontext bedeutet Autoritätsverstoß oft Risiko – für den Job, für den Status, für das Team.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Gegenmittel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;Kenne deine offiziellen Kommunikationswege.&lt;/li&gt;
+                  &lt;li&gt;Traue niemandem blind – Autorität kann simuliert werden.&lt;/li&gt;
+	              &lt;li&gt;Immer rückverifizieren: &lt;i&gt;„Ich kläre das kurz mit unserer internen IT.“&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+               &lt;ul&gt;
+        &lt;/ul&gt;&lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+&lt;h4&gt;2. Verknappung und Zeitdruck – „Sofort handeln oder alles geht offline!“&lt;/h4&gt;
+&lt;table style=&quot;width:75%&quot;&gt;
+    &lt;tbody&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Psychologisches Prinzip:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Zeitdruck reduziert kritisches Denken. Entscheidungen werden impulsiver – wir greifen auf Routinen statt auf Reflexion zurück.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Beispiel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;i&gt;„Ein Sicherheitsvorfall ist aufgetreten! Bitte melden Sie sich in den nächsten 5 Minuten auf diesem Portal an, um den Zugang zu sichern!“&lt;/i&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Warum es wirkt:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Unter Stress steigt der Cortisolspiegel, die Amygdala (emotionales Zentrum) übernimmt – das logische Denken wird unterdrückt.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Gegenmittel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;Keine Entscheidung unter Zeitdruck treffen, insbesondere wenn es um Sicherheit geht.&lt;/li&gt;
+                  &lt;li&gt;Warnung: Echte IT-Teams erzeugen &lt;b&gt;nie&lt;/b&gt; &lt;i&gt;künstlichen&lt;/i&gt; Stress.&lt;/li&gt;
+	              &lt;li&gt;Ruhe bewahren, auch wenn es &lt;i&gt;„dringend“&lt;/i&gt; klingt.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+               &lt;ul&gt;
+        &lt;/ul&gt;&lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+&lt;h4&gt;3. Reziprozität und Hilfsbereitschaft – „Danke, dass Sie mir helfen!“&lt;/h4&gt;
+&lt;table style=&quot;width:75%&quot;&gt;
+    &lt;tbody&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Psychologisches Prinzip:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Wenn uns jemand bittet, besonders freundlich ist oder Dankbarkeit zeigt, wollen wir ihm helfen – um das Gleichgewicht wiederherzustellen.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Beispiel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;i&gt;„Ich bin neu in der Abteilung, Sie sind die einzige Person, die mir helfen kann – könnten Sie mir bitte den Zugang freischalten?“&lt;/i&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Warum es wirkt:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Wir wollen als hilfsbereit, kollegial, loyal wahrgenommen werden – insbesondere in der Teamkultur vieler IT-Abteilungen.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Gegenmittel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;
+               &lt;ul&gt;
+                    &lt;li&gt;Hilfe ja – aber keine sicherheitsrelevanten Informationen teilen.&lt;/li&gt;
+                    &lt;li&gt;Niemals Passwörter oder Freigaben ohne offizielle Ticketanfrage.&lt;/li&gt;
+				    &lt;li&gt;Eine gesunde Portion Misstrauen ≠ Unfreundlichkeit.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+               &lt;ul&gt;
+        &lt;/ul&gt;&lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+&lt;h4&gt;4. Sympathie und Ähnlichkeit – „Wir kennen uns doch von …“&lt;/h4&gt;
+&lt;table style=&quot;width:75%&quot;&gt;
+    &lt;tbody&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Psychologisches Prinzip:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Wir vertrauen Menschen mehr, die uns ähnlich sind oder sympathisch erscheinen.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Beispiel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;i&gt;„Du warst doch auch auf dem Tech-Workshop letzte Woche! Ich arbeite gerade an einem ähnlichen Projekt – könntest du mir mal den SharePoint-Zugang schicken?“&lt;/i&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Warum es wirkt:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Vertrautheit erzeugt Nähe. Und Nähe senkt den Sicherheitsfilter – eine uralte Überlebensstrategie, heute ein digitaler Risikofaktor.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Gegenmittel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;
+               &lt;ul&gt;
+                    &lt;li&gt;Vertraue auf Prozesse, nicht auf Gesichter.
+                    &lt;/li&gt;&lt;li&gt;Kontakt prüfen – taucht die Person im Adressverzeichnis auf?&lt;/li&gt;
+	                &lt;li&gt;Lieber skeptisch als betrogen.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+               &lt;ul&gt;
+        &lt;/ul&gt;&lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+&lt;h4&gt;5. Social Proof / Gruppendruck – „Alle machen’s so!“&lt;/h4&gt;
+&lt;table style=&quot;width:75%&quot;&gt;
+    &lt;tbody&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Psychologisches Prinzip:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Wenn andere sich scheinbar konform verhalten, passen wir uns an.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Beispiel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;i&gt;„Die ganze Abteilung hat den neuen Remote-Zugang schon aktiviert – Sie fehlen nur noch.“&lt;/i&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Warum es wirkt:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;Niemand will der &lt;i&gt;„Verweigerer“&lt;/i&gt; sein – vor allem nicht in hierarchischen oder teamgetriebenen Umfeldern.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr valign=&quot;top&quot;&gt;
+            &lt;td&gt;&lt;b&gt;Gegenmittel:&lt;/b&gt;&lt;/td&gt;
+            &lt;td&gt;
+               &lt;ul&gt;
+                    &lt;li&gt;Entscheidungen niemals nur auf Gruppendruck basieren.&lt;/li&gt;
+				    &lt;li&gt;Verifikation mit eigenen Regeln: Ist das Verfahren offiziell freigegeben?&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+               &lt;ul&gt;
+        &lt;/ul&gt;&lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+&lt;h3&gt;So schützt du dich aktiv – Praktische Tipps&lt;/h3&gt;
+&lt;p&gt;Die oben genannten Wirkmechanismen sind nur ein paar Beispiele für die gebräuchlichsten Social Engineering Methoden. Die Liste könnte man noch lange weiterführen, sie erhebt keinen Anspruch auf Vollständigkeit und soll vor allem für das Problem und die damit verbundenen Gefahren sensibilisieren.&lt;/p&gt;
+&lt;p&gt;Hier einige allgemeine und psychologisch fundierte Handlungsempfehlungen:&lt;/p&gt;
+&lt;h4&gt;Denke in Prozessen, nicht in Personen&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Frag dich bei jeder Anfrage: Würde das auch über den offiziellen Prozess gehen? Wenn nicht: misstrauisch werden.&lt;/li&gt;
+&lt;li&gt;Im Zweifel: Meldung an IT-Sicherheit oder Datenschutzbeauftragte – lieber einmal zu viel als zu spät.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Schaffe Sicherheitsroutinen&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Z.B. bei Mails mit Links: erst prüfen, dann klicken.&lt;/li&gt;
+&lt;li&gt;Nie Passwörter oder Zugangsdaten weitergeben – egal, wie echt die Anfrage klingt.&lt;/li&gt;
+&lt;li&gt;Nutze Passwort-Manager, um eine möglichst hohe Passwortsicherheit zu gewährleisten.&lt;/li&gt;
+&lt;li&gt;Zwei-Faktor-Authentifizierung aktivieren – sie schützt auch dann, wenn Daten gestohlen wurden.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Sprich über Vorfälle, nicht über Schuld&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Wenn dir ein Verdachtsfall auffällt: Melden, nicht vertuschen!&lt;/li&gt;
+&lt;li&gt;Sicherheit lebt von Offenheit, nicht von Scham.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Trainiere deine Intuition&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Phishing-Tests und Awareness-Trainings ernst nehmen – sind sind kein lästiges Pflichtprogramm – sie sind „Impfungen“ gegen psychologische Manipulation.&lt;/li&gt;
+&lt;li&gt;Misstrauen ist gesund: Eine freundliche Nachfrage (&lt;em&gt;„Kann ich Ihre Nummer zurückrufen?“&lt;/em&gt;) kann den Angreifer enttarnen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Fazit: Du bist Teil der Cyberabwehr und der gefährlichste Trojaner kommt im menschlichen Gewand.&lt;/h3&gt;
+&lt;p&gt;Sicherheitslücken gibt es nicht nur in Firewalls, sondern vor allem &lt;strong&gt;zwischen Tastatur und Stuhl.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dein Wissen, deine Achtsamkeit und dein kritisches Hinterfragen sind die stärkste Verteidigung gegen Social Engineering.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Also: Beim nächsten Mal, wenn jemand anruft und „nur kurz“ dein Passwort will – frag dich lieber zweimal, ob diese Anfrage gerechtfertigt erscheint oder möglicherweise ein ein Social Engineering Versuch ist.
+Sei kein leichtes Ziel. Sei eine menschliche Firewall.&lt;/p&gt;
+&lt;h3&gt;Teilen. Nachdenken. Aufklären.&lt;/h3&gt;
+&lt;p&gt;Wenn dir dieser Beitrag geholfen hat, teile ihn gerne auf LinkedIn oder mit deinem Team.
+Je mehr wir über Social Engineering wissen, desto weniger erfolgreich ist es.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Technologische Trends: Der semantische Wandel in der IT</title>
+      <link>https://denktmit.de/blog/2025-07-27-bedeutungswandel-ki-quantencomputing/</link>
+      <author>Sven Köppel</author>
+      <pubDate>2025-07-27T00:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2025-07-27-bedeutungswandel-ki-quantencomputing/</guid>
+      <description>&lt;p&gt;Außerhalb des Fachpublikums, also im Alltag und vor allem Buisness-Jargon,
+werden die Bedeutungen technologische Trend-Begriffen häufig überdehnt
+oder sogar gänzlich verschoben. In diesem Artikel soll ein kleiner Überblick
+über solche Begriffe gegeben werden.&lt;/p&gt;
+&lt;h2&gt;Es fängt an bei Analog vs. Digital&lt;/h2&gt;
+&lt;p&gt;Der Begriff „Digitalisierung“ wird in Poltik- und Wirtschaft mittlerweile
+durchgängig als ERsatz für den ehemals etablierten und nunmehr altmodisch
+wirkenden Begriff der &lt;em&gt;elektronische Datenverarbeitung&lt;/em&gt; (EDV) verwendet.
+In der Tat gibt es die EDV nicht nur in digitalelektronischer Weise, sondern
+auch analogelektronisch, beispielsweise in eingebetteten Industriesensoren und
+-Aktuatoren. Allerdings hat das Adjektiv „analog“ einen Bedeutungswandel
+hingelegt: Bisherige Bedeutungen &lt;a href=&quot;https://de.wiktionary.org/wiki/analog&quot;&gt;gemäß Wörterbuch&lt;/a&gt;
+sind:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;modellhaft/übertragbar/ähnlich/gleichartig, im Beispiel:
+&amp;quot;Die wirtschaftliche Entwicklung in Spanien verlief analog zur Situation in Portugal.&amp;quot;&lt;/li&gt;
+&lt;li&gt;stufenlos/kontinuierlich: &amp;quot;Ein analoges Thermometer zeigt die Temperatur als
+Zeigerposition auf einer Skala an.&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In der Berliner Zeitung beschrieb Mathias Senoner in seinem Artikel
+&lt;a href=&quot;https://www.berliner-zeitung.de/open-source/vieles-was-als-analog-bezeichnet-wird-ist-es-gar-nicht-li.2303594&quot;&gt;Nicht alles, was nicht digital ist, ist zwangsläufig analog!&lt;/a&gt; nun einen Bedeutungswandel:
+Er zitiert Robert Habeck mit „den analogen Infrastrukturen, also Bahnen und Brücken“
+oder die Musikzeitschrift Rolling Stone mit einem Konzert als „analoge[m] Event“.
+Insbesondere in den Politikkreisen, so schreibt Senoner, sei der Gegensatz
+„Analog vs. Digital“ gleichwertig zu „Alt vs. Neu“. Und so konstatiert er also
+eine neue, dritte Lesart des Wortes „analog“:&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;physisch statt virtuell, im Beispiel: &amp;quot;Ich schreibe meine Termine noch ganz analog
+in einen Papierkalender.&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Wissenschaftler:innen und Techniker:innen schlagen sich über solcher falschen
+Verwendung von Worten die Hände über dem Kopf zusammen. Aber es ist ein Beispiel
+dafür, dass Sprache lebt und dass sich Umgangssprache Fachbegriffe nimmt, ausleiht,
+deht und quetscht bis sie möglicherweise völlig entkoppelt von dem sind, was sie
+eigentlich einmal gemeint haben. Das hat eine gesellschaftliche Dimension, die sich
+nicht aufhalten lässt, egal wie sehr einem das misfallen mag. Der Autor dieses
+Textes etwa hat ein Startup gegründet im Bereich &lt;em&gt;unkonventionelle Rechnertechnologien&lt;/em&gt;
+welches seit vielen Jahren gegen die Vorurteile ankämpfen muss, welche Menschen
+mit dem Wort „analog“ gerade in der Hochtechnologie verbinden. In diesem Rahmen
+schrieb ich über &lt;a href=&quot;https://web.archive.org/web/20250420062648/https://the-analog-thing.org/wiki/User:Sven/Positive_Framing_for_Analog&quot;&gt;positives Framing für den Begriff &amp;quot;analog&amp;quot;&lt;/a&gt;, übrigens auf englischer
+Sprache, denn diese Bedeutungsverschiebung ist ein internationales Phänomen welches
+keine Länder- und Sprachgrenzen kennt.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://scomics.de/images/webstuhl.png&quot; alt=&quot;Webstuhl-Comic&quot; /&gt;
+&lt;em&gt;Illustrativer Comic: Begriffswandel im Laufe der Zeit - der Webstuhl.
+Comic von &lt;a href=&quot;https://scomics.de/080.html&quot;&gt;Simons Comicseite&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Bedeutungswandel in der Quantenphysik&lt;/h2&gt;
+&lt;p&gt;Im gleichen Atemzug umgibt die „Quantenphysik“ im Alltag die Aura
+des mystischen, viele Menschen glauben (möglicherweise wegen schlechter
+Erfahrungen im Schulunterricht), dass sie diese Technologie auch mit großem
+Bemühen nicht verstehen können. Unter dem Schlagwort &lt;em&gt;Quantencomputing&lt;/em&gt; werden zuweilen
+&lt;em&gt;sämtliche&lt;/em&gt; technologische Neuentwicklungen die aus der Grundlagenforschung
+kommen einsortiert, etwa ein neuartiger Halbleiter, der aber keineswegs
+quantenmechanische Informationen verarbeitet oder speichert, oder klassische
+Algorithmen, die inspiriert von quantenmechanischen Wellennetzwerken Probleme
+lösen. Das Marketing der Quantencomputing-Branche nutzt das physikalische Unverständnis
+geschickt aus, um das Wort mit Allmächtigkeit und Heilsbringung
+zu assoziieren und so über jeden Zweifel erhaben zu sein. Die Augenwischerei
+wird damit zur Strategie: Der Autor dieses Textes hat es nur zu oft auf Eventes
+der Quantenbranche erlebt, dass Moderator:innen auf der Bühne mit ihrem
+Unwissen kokettierten, vielleicht um Sympatiepunkte mit dem vermeintlich
+unwissenden Publikum zu sammeln: „Wir wissen alle nicht, worum es hier geht“.
+Für die Branche ist das ein Armutszeugnis, statt Aufklärung zu schaffen folgt
+das Geld der Nebelkerze.&lt;/p&gt;
+&lt;p&gt;Zuweilen wird auch konventionelles &lt;em&gt;Supercomputing&lt;/em&gt; fälschlicherweise
+als Quantencomputing verstanden, dabei handelt es sich bei einem &lt;a href=&quot;https://de.wikipedia.org/wiki/Supercomputer&quot;&gt;Supercomputer&lt;/a&gt;
+nach Lexikon-Definition um &amp;quot;für ihre Zeit besonders schnelle Computer&amp;quot;. Das
+ist völlig unabhängig von der Bauform und hat mit Quantenphysik erst einmal
+gar nichts zu tun.&lt;/p&gt;
+&lt;h2&gt;Die vielen Hüte der künstlichen Intelligenz&lt;/h2&gt;
+&lt;p&gt;Da Künstliche Intelligenz (KI) außerhalb der Fachwelt bislang noch deutlich
+präsenter ist als Quantencomputing, wird die Beschleunigung von KI-Berechnungen gerne
+als Anwendungszweck für Quantenocmputing genannt, wenngleich künstliche
+Intelligenz lediglich ein kleines Anwendungsfeld in der Computerei ist.
+Auch KI ist vor der Bedeutungsverschiebung nicht
+gefeit: Außerhalb der Fachwelt wird KI zuweilen mit der gewöhnlichen,
+automatisierten Verarbeitung mithilfe eines Computerprogrammes verwechselt,
+die reine Anwesenheit eines Prozessors in einem System reicht vermeintlich
+für das Etikett „KI“. Häufig wird KI auch zur Projektionsfläche
+für politische Programme, zB ein schlanker Staat mit wenig Beamten. Der
+programmierte Staat bleibt aber vermutlich ohne „General AI“ (GAI)
+eine Utopie. Sobald diese erreicht ist, sprechen AI-Forscher:innen von der
+&lt;em&gt;Singularität&lt;/em&gt;, über die hinaus sich keine vernünftigen Prognosen machen
+lassen, sodass einigen Heilsversprechen der „Technolgie-Evangelisten“
+mit Skepsis begegnet werden sollte.&lt;/p&gt;
+&lt;p&gt;Der „Etikettenschwindel KI“ ist mittlerweile derart verbreitet, dass selbst
+Laien lachend im Laden stehen, wenn Billigware aus China angeblich
+„KI-verbessert“ sein soll. Rein rhetorisch steht das Wort damit wohl auf
+dem Gipfel der überzogenen Erwartungen
+des &lt;a href=&quot;https://de.wikipedia.org/wiki/Hype-Zyklus&quot;&gt;Hype-Zyklus&lt;/a&gt;:&lt;/p&gt;
+&lt;!-- ![Gartner Hype-Zyklu](https://upload.wikimedia.org/wikipedia/commons/c/c6/Gartner_Hype_Zyklus.svg) --&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c6/Gartner_Hype_Zyklus.svg&quot; alt=&quot;Gartner Hype-Zyklus&quot; style=&quot;max-width:100%; width: 700px;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Abbildung: Der Hype-Zyklus nach Gartner; Lizensiert nach CC,
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Datei:Gartner_Hype_Zyklus.svg&quot;&gt;Quelle&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Die Blockchain wird es richten&lt;/h2&gt;
+&lt;p&gt;Im Sommer 2025 hingegen hat die „Blockchain“ möglicherweise schon das Tal der
+Enttäschungen erreicht. Vor ein paar Jahren war der Begriff noch in aller
+Munde und wurde mit der Notwendigkeit einer
+(potentiell redundanten, dezentralen oder besonders abgesicherten) Datenbank
+identifiziert. Während die Dezentralität gerade Abhängigkeiten von einer
+zentralen Macht verhindern sollte, haben sich ironischerweise gerade
+Staatsbanken in die Irre führen lassen bei der Einführung von
+blockchain-basierter Technologie. An der Stelle seien die Talks von
+Felix von Leitner zum Thema
+&lt;a href=&quot;https://ptrace.fefe.de/hype/&quot;&gt;Hypetech&lt;/a&gt; und
+&lt;a href=&quot;https://ptrace.fefe.de/Blockchain&quot;&gt;Blockchain&lt;/a&gt; erwähnt. Die verlinkten
+Slides lassen sich mit den Pfeiltasten durchklicken.&lt;/p&gt;
+&lt;h2&gt;Zusammenfassung: Begriffswandel erzeugt Ineffizienz&lt;/h2&gt;
+&lt;p&gt;Die semantische Verschiebung hat eine Verschleierung der Möglichkeiten
+und Risiken von Technologien zur Folge. Es leidet u.a. die effiziente Nutzung von
+Steuergeldern. Es muss das Ziel von Wissenschaftskommunikation und einer
+informierten/interessierten Öffentlichkeit sein, die  Interessen privater
+Akteuren einzufangen. Gesellschaftliche Ziele wie Digitalisierung und
+Entbürokratisierung benötigen im Kern weder KI, noch Blockchain oder
+Quantencomputing. Viele Probleme in der Gesellschaft sind soziale und
+zwischenmenschliche Probleme, die sich
+nicht durch atmosphärisch-unscharfe Zukunftsvisionen von allmächtigen
+Computern ersetzen lassen, vor allem lässt sich das „lästige“ Lernen
+beim Umgang mit Computern nicht vollständig vom Menschen auf den Computer
+abwälzen.&lt;/p&gt;
+&lt;p&gt;Demokratien profitieren von wissenschaftlicher Inklusion, Open
+Knowledge, Open Data, Open Hardware -– ganz unabhängig von der konkreten
+Technologie. Ein Erfolgsbeispiel dafür ist die offene
+&lt;a href=&quot;https://de.wikipedia.org/wiki/RISC-V&quot;&gt;RISC-V&lt;/a&gt;-Prozessorarchitektur
+für deren Weiterentwicklung es auch in der öffentlichen
+Forschungslandschaft in Europa Gelder gibt. Von einer klaren Bezeichnung
+solcher Zusammenhänge profitieren am Ende alle, präzise Sprache ist
+und bleibt der Schlüssel zu echtem Verständnis.&lt;/p&gt;
 </description>
     </item>
     

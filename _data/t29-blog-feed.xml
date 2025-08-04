@@ -9,7 +9,7 @@
 	<description>A blog about news from the technikum29 computer museum</description>
 	<language>de</language>
 	<copyright>&#x2117; &amp; &#xA9; 2003-2025 Sven K&#245;ppel and the technikum29 team</copyright>
-	<pubDate>Wed, 07 May 2025 11:38:05 +0200</pubDate>
+	<pubDate>Mon, 04 Aug 2025 22:00:00 +0200</pubDate>
 	<image>
 		<url>https://www.technikum29.de/shared/img-v6/banner.de.png</url>
 		<title>technikum29 Computermuseum</title>
@@ -21,6 +21,13 @@
 	<atom:link href="https://www.technikum29.de/blog/rss" rel="self" type="application/rss+xml" />	
 	
 				<item>
+				<title>20 Jahre technikum29</title>
+				<author>Roland</author>
+				<link>https://technikum29.de/blog/2025-07-08-20_Jahre_technikum29</link>
+				<guid idPermaLink="true">https://technikum29.de/blog/2025-07-08-20_Jahre_technikum29</guid>
+				<pubDate>2025-07-08</pubDate>
+			</item>
+						<item>
 				<title>technikum29 wünscht Frohe Weihnacht und feiert 2025 20sten Geburtstag !</title>
 				<author>Roland</author>
 				<link>https://technikum29.de/blog/2024-12-23-Frohe_Weihnacht</link>
