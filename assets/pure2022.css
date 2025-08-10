@@ -404,6 +404,12 @@ ul.blog, ul.blog li {
     }
 }
 
+@media screen and (max-width: 923px) and (min-width: 768px) {
+    .header .brand-title .suffix {
+        display: none;
+    }
+}
+
 @media screen and (min-width: 768px) {
     ul.blog li {
         display: grid;
