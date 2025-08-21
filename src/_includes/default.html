@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>{{ page.title }}</title>
+	<title>{{ title }}</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="generator" content="Jekyll/3">
-	<meta name="date" content="{{ site.time  }}">
+	<meta name="generator" content="{{ eleventy.generator }}">
+	<meta name="date" content="{{ page.date|date:"%c" }}">
 
 	<!--<link href="/assets/content2021.css" rel="stylesheet" type="text/css">-->
 	
@@ -18,11 +18,11 @@
 	<link rel="stylesheet" href="/assets/pure2022.css" text="text/css">
     <link rel="me" href="https://chaos.social/@svenk">
     
-    <meta property="og:title" content="Sven Köppel: {{ page.title }}" />
-    <meta property="og:description" content="{{ page.description }}" />
-    <meta property="og:image" content="https://svenk.org/assets/svenk-blue-1920.jpg" />
+    {% for kv in open_graph -%}
+    <meta property="og:{{kv[0]}}" content="{{kv[1]}}" />
+    {% endfor -%}
 </head>
-<body class="{{ page.body_class }}">
+<body class="{{ body_class }}">
 
 <div id="layout" class="pure-g">
     <div class="sidebar pure-u-1 pure-u-md-1-4">
@@ -32,7 +32,7 @@
 
             <nav class="nav">
                 <ul class="nav-list">
-                    {% for item in site.data.nav.main %}
+                    {% for item in nav.main %}
                         <li class="nav-item {% if item.url == page.url %}active{% endif %}">
                             <a class="pure-button"  href="{{ item.url }}"
                                style="view-transition-name: {{ item.title | slugify}};">{{ item.title }}</a>
@@ -54,12 +54,11 @@
         <div class="footer-wrapper">
             <!--&copy;-->
             Last update:
-            <a href="https://github.com/svenk/www-svenk.org/blob/main/{{page.path}}">
-                {{ site.time|date: "%Y-%m-%d" }}
+            <a href="https://github.com/svenk/www-svenk.org/blob/main/{{page.inputPath}}">
+                {{ page.date|date: "%Y-%m-%d" }}</a>.
                 <!--<img src="https://cdn.onlinewebfonts.com/svg/img_44605.png" class="icon"> Edit on Github-->
-            </a>.
             Found a typo? Please
-            <a href="https://github.com/svenk/www-svenk.org/edit/main/{{page.path}}">fix here</a>.
+            <a href="https://github.com/svenk/www-svenk.org/edit/main/{{page.inputPath}}">fix here</a>.
         </div>
     </div><!--/Footer-->
 </div><!--/layout -->

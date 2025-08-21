@@ -1,18 +1,16 @@
-# Personal Website https://svenk.org as static Jekyll site
+# Personal Website https://svenk.org with 11ty Static Site Generator
 
 This repository hosts the primary code for my personal website
 https://svenk.org. It used to be static HTML and now works using
-Jekyll 3 instead.
+~~Jekyll 3~~ [11ty](https://www.11ty.dev/) instead.
 
 ## How to setup, run/build/serve
 
-Since we don't have a `Gemfile` in the repo, don't use `bundle`.
-Instead, install jekyll system-wide, with your package manager or 
-`gem install jekyll`. Sole dependency is `jekyll-feed`, which also
-needs to be installed. You probably have to make sure the gem directory
-is part of your `$PATH`.
-
-Usage is then `jekyll serve -l` to get a development server spin up.
+```
+git clone ... && cd <repo>
+npm install
+npx @11ty/eleventy --serve
+```
 
 ## Hosting
 

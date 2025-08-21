@@ -6,8 +6,8 @@ layout: default
 
 <h1>Blog</h1>
 
-{% assign sources = site.data.data_sources.data_sources %}
-{% assign collection = site.data.aggregated_posts.aggregated_posts | sort: 'date' | reverse %}
+{% assign sources = data_sources.data_sources %}
+{% assign collection = aggregated_posts.aggregated_posts | sort: 'date' | reverse %}
 <ul class="blog">
 {% for item in collection  %}
     <li>

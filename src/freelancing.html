@@ -115,7 +115,7 @@ technologies:
   <p>Handy-on experience in programming ecosystems and environments, sorted by
      descending preference:
     
-  {% for tech in page.technologies %}
+  {% for tech in technologies %}
   <p><strong>{{ tech.title }}</strong> <em>({{ tech.experience }})</em>
   <p>{% for keyword in tech.technologies %}{{ keyword }}{% if forloop.last == false %}&nbsp;‧ {% endif %}{%endfor%}
   {% if tech.highlight %}

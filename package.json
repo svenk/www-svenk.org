@@ -1,0 +1,31 @@
+{
+  "name": "www-svenk.org",
+  "version": "2.0.0",
+  "description": "Little svenk.org website, now on 11ty instead of jekyll",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svenk/www-svenk.org.git"
+  },
+  "keywords": [],
+  "author": "SvenK",
+  "license": "GPL",
+  "type": "module",
+  "imports": {
+    "#data/*": "./_data/*.js"
+  },
+  "bugs": {
+    "url": "https://github.com/svenk/www-svenk.org/issues"
+  },
+  "homepage": "https://svenk.org",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.1",
+    "@11ty/eleventy-navigation": "^1.0.4",
+    "eleventy-hast-jsx": "^0.3.5",
+    "hast-util-format": "^1.1.0"
+  }
+}

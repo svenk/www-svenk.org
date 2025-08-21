@@ -34,9 +34,9 @@ layout: default
   <p>Here are a few recent publications in the context of analog computing:
   
   <div class="hide-labels">
-  {% assign analog_papers = site.data.scientific_publications.scientific_publications |
+  {% assign analog_papers = scientific_publications.scientific_publications |
      where_exp:"item", "item.labels contains 'analog'" | sort: 'date_machine_readable'  %}
-  {% include listing-snippet-publications.html papers=analog_papers %}
+  {% include 'listing-snippet-publications', papers: analog_papers %}
   </div>
 
   <!-- Old list:
@@ -82,9 +82,9 @@ layout: default
      <a href="https://exahype.eu/">ExaHyPE</a>, I studied numerical methods for solving 
      hyperbolic partial differential equations on future exascale architectures.
 
-  {% assign analog_papers = site.data.scientific_publications.scientific_publications |
+  {% assign analog_papers = scientific_publications.scientific_publications |
      where_exp:"item", "item.labels contains 'hep'" | sort: 'date'  %}
-  {% include listing-snippet-publications.html papers=analog_papers %}
+  {% include 'listing-snippet-publications', papers: analog_papers %}
 
   <!-- Moved to -> freelancing/ 
   <h2>Physics Education Research</h2>
