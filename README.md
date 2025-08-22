@@ -12,6 +12,18 @@ npm install
 npx @11ty/eleventy --serve
 ```
 
+## Data aggregation
+
+Data aggregation does *not* happen at 11ty runtime but is a real seperate
+process which uses a git-tracked clean files. This way, we have full control
+of which entries appear when.
+
+
+Idea:
+
+* Run once per day a script which reagreggates and also commits and pushes.
+
+
 ## Hosting
 
 The primary repository is located at https://github.com/svenk/www-svenk.org

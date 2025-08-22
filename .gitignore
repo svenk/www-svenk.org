@@ -1,4 +1,5 @@
 _site
+.cache
 node_modules
 vendor
 # is a seperate git repo

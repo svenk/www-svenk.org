@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-jekyll build
+npx @11ty/eleventy
 cd _site
-rm -f upload.sh # we don't need ourself ;-)
+rm -f README.md upload.sh # cleanup
 rsync -vr . svenk.org:~/www/svenk.org/
