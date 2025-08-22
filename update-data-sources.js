@@ -1,8 +1,17 @@
+/**
+ * This standalone nodejs script prepares data sources for the SSG 11ty.
+ * It is supposed to run before 11ty or regularly.
+ * Alternatively, 11ty's Fetch plugin could be used, but it is more about
+ * hiding the fact that remote stuff was downloaded while this script
+ * makes this very official, also by putting stuff dedicatedly to the git
+ * stage.
+ **/
 
-import Fetch from "@11ty/eleventy-fetch"
+import { stat, cp } from "node:fs";
+import { writeFile } from "node:fs/promises";
 
 // Cache shall be git-tracked
-const remote_data_dir = "src/_data/remote/"
+const data_dir = "src/_data/"
 
 // for non-enumerable object members
 const load = Symbol()
@@ -10,14 +19,23 @@ const load = Symbol()
 // idea: Have XML as suffix enlisted in 11ty as RSS loader.
 //       apply filter then only afterwards.
 
-function skip_download(reason) { this.skip_download = reason; }
+const isdir = (dirname) => { try { return statSync(dirname).isDirectory(); } catch { return false; } }
+
+const skip_download = reason => function() { this.skip_download = reason; };
+
+function assert_publications() {
+    if(!isdir("publications")) {
+        //await execAsync("git clone https://example.com/your/repo.git publications");
+        console.warn("Missing publications");
+    }
+}
 
 function download() {
-    const fetchConf = { duration: "1d", verbose: true, directory: remote_data_dir }
-    const that = this;
-    if(!this.data_url) throw Exception("Need data source URL");
-    if(this.local_file) fetchConf.filenameFormat = () => this.local_file
-    return Fetch(url, fetchConf).then(content => { that.data = content; });
+  if(!this.data_url || !this.local_file) throw new Error("Need data source URL");
+  return fetch(this.data_url)
+    .then(res => res.arrayBuffer())
+    .then(buf => writeFile(data_dir + this.local_file, Buffer.from(buf)))
+    .catch(console.error);
 }
 
 const data_sources = {
@@ -27,7 +45,7 @@ const data_sources = {
         icon: "/assets/icons/anabrid.png",
         data_url: "https://anabrid.com/news/feed.xml",
         local_file: "anabrid-news-feed.xml",
-        [load]: skip_download("target is currently offline"),
+        [load]: skip_download("target is currently offline")
     },
     
     denktmit_blog: {
@@ -56,12 +74,9 @@ const data_sources = {
         local_file: "scientific_publications.yaml",
         
         [load]() {
-            if(!isdir("publications")) {
-                // git checkout or warn
-            }
-            cp("publications/Papers/papers-svenk.yaml", this.local_file)
-
-            this.fixed_dates = parse_date_inplace(this)
+            await assert_publications();
+            await cp("publications/Papers/papers-svenk.yaml", this.local_file)
+            // this.fixed_dates = parse_date_inplace(this)
         },
     },
     
@@ -71,8 +86,9 @@ const data_sources = {
         icon: "/assets/icons/talk.png",
         local_file: "talks.yaml",
         [load]() {
-            // crawling is done right there...
-            $$ ../publications/Talks/find-talks.py > $local_file
+            await assert_publications();
+            const { stdout } = await execAsync("publications/Talks/find-talks.py")
+            await writeFile(local_file, stdout);
         }
     },
     
@@ -82,7 +98,6 @@ const data_sources = {
         icon: "/assets/icons/museum.png",
         data_url: "https://technikum29.de/blog/rss.php",
         local_file: "t29-blog-feed.xml",
-        
         [load]: download,
     },
     
@@ -96,9 +111,12 @@ const data_sources = {
     },
 }
 
-const sync2async = func => Promise.resolve().then(() => func)
+//const sync2async = func => Promise.resolve().then(() => func)
 
-// load all data in parallel
-const loaded_data = Object.fromEntries(
-    await Promise.all(Object.entries(data_sources).map(async ([k,v]) => v[load] ?
-    [k,{...v,data:await sync2async(v[load])}] : [k,v])))
+// download all data in parallel.  TODO: Make it simpler, synced.
+await Promise.all(Object.entries(data_sources).map(([k,v]) => v[load]())
+
+// TODO: Stage all local files for git...
+
+writeFile(data_dir + "data_sources.json", JSON.stringify(data_sources, null, 2));
+
