@@ -1,0 +1,13 @@
+
+{% macro blogListing(collection) %}
+
+<ul class="blog">
+{% for item in collection  %}
+    <li><a class="selector" href="#" title="{{item.data.meta.title }}"><img src="{{ item.data.meta.icon }}"></a>
+        <a href="{{ item.page.url }}" class="{{ item.data.meta.id }}">{{ item.data.listing_title }}</a>
+        <span class="date">{{ item.data.date | dateFormat('MMM yyyy') }}</span>
+    </li>
+{% endfor %}
+</ul>
+
+{% endmacro %}

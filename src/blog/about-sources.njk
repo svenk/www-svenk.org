@@ -1,0 +1,37 @@
+---
+title: "Planet Svenk: Blog sources"
+layout: default
+--- 
+
+<h1>{{title}}</h1>
+
+<p class="lead">
+This page elaborates on the aggregation sourced used to build the <a href="/blog">svenk blog</a>.
+</p>
+
+{% from "listing-blog.njk" import blogListing %}
+
+{% for id, meta in data_sources %}
+
+<h2><img src="{{meta.icon}}" style="height: 1.2ex"> {{ meta.title }}</h2>
+
+{% if meta.description %}<p>{{ meta.description | renderContent("md") | safe }}</p>{% endif %}
+
+<details>
+  <summary>
+    Metadata for <a href="{{meta.human_url}}">{{meta.title}}</a>
+  </summary>
+  {% prettyDump meta %}
+</details>
+
+<details><!-- argument open to have it open default -->
+  <summary>{{ collections[meta.id] | length }} items in this collection</summary>
+  {{ blogListing(collections[meta.id] | sort(attribute='data.date') | reverse) }}
+</details>
+
+{% endfor %}
+
+
+
+
+

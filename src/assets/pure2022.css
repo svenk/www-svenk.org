@@ -463,3 +463,15 @@ ul.papers .label {
 
 ul.papers .links {
 }
+
+dl {
+    display: grid;
+/*    grid-template-rows: auto auto;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;*/
+   grid-template-columns: auto 1fr; /* dt auto-sized, dd takes the rest */
+   gap: 0.5rem 1rem;
+}
+
+dt, dd { margin: 0; padding: 0; }
+dt { font-weight: bold; }

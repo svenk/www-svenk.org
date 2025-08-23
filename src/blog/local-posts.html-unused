@@ -1,0 +1,17 @@
+---
+meta:
+  id: svenk-local-blog
+  title: SvenK local Blog
+  human_url: https://svenk.org/blog/
+  icon: /assets/icons/essay.png
+pagination:
+  data: collections.svenk-local-blog # the "_posts" directory in this 11ty installation
+  size: 1
+  alias: item
+  addAllPagesToCollections: true
+permalink: "/blog/{{ item.pubDate | date: '%Y-%m-%d' }}-{{ item.title | slugify }}.html"
+tags:
+- svenk-blog
+- aggregated
+layout: rss-excerpt.html
+---

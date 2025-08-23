@@ -1,0 +1,44 @@
+---
+title: "Sven Köppel: Blog"
+permalink: /blog/
+layout: default
+--- 
+
+<h1>Blog</h1>
+
+<p class="lead">
+This is an <a href="about-sources/">aggregated list</a> of blogs where I regularly publish.
+
+<!--
+View <label for="original"><input type="checkbox" id="original">&nbsp;only original posts</label>.
+Show <label for="metadata"><input type="checkbox" id="metadata">&nbsp;metadata</label>.
+-->
+
+<!--
+blogs where I regularly publish, namely
+{% for key, meta in data_sources %}
+    {{meta.title}},
+{% endfor %}
+-->
+</p>
+
+<!--
+<div class="pure-button-group" role="group" aria-label="...">
+    <button class="pure-button pure-button-active">Originally authored</button>
+    <button class="pure-button">All relevant</button>
+</div>
+-->
+
+<!--
+<p>Source:
+
+    All,
+{% for key, meta in data_sources %}
+    <img src="{{meta.icon}}" style="height:1em"> {{meta.title}}
+{% endfor %}
+-->
+
+{% from "listing-blog.njk" import blogListing %}
+{{ blogListing(collections.aggregated | sort(attribute='data.date') | reverse) }}
+
+

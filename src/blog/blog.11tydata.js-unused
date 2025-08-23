@@ -1,0 +1,7 @@
+export default {
+  eleventyComputed: {
+    date: function(data) {return this.date(data.date || data.pubDate, "%Y-%m-%d"); },
+    listing_title: data => data.item.title,
+    origin_url: data => data.link,
+  }
+}

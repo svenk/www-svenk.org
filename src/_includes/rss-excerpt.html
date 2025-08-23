@@ -1,0 +1,39 @@
+---
+layout: default.html
+# expecting "item" as it is used in the blog/*.html pagination files
+eleventyComputed:
+  date: "{{ item.pubDate | date: '%Y-%m-%d' }}"
+  listing_title: "{{ item.title }}"
+  origin_url: "{{ item.link }}"
+---
+
+<article class="post">
+  <h2>
+    <a href="{{ item.link | default: item.guid | escape }}">
+      {{ item.title | default: item.link | escape }}
+    </a>
+  </h2>
+  <p class="meta">
+    {% if item.pubDate %}{{ item.pubDate | date: "%Y-%m-%d" }}{% endif %}
+    {% if item.author %} • {{ item.author | escape }}{% elsif item.creator %} • {{ item.creator | escape }}{% endif %}
+    {% if rss.rss.channel.title %} • {{ rss.rss.channel.title | escape }}{% endif %}
+  </p>
+  
+  <p>Date: {{ date}}, PageDate: {{ page.date }}
+  
+  {% assign raw = item.description | default: item['content:encoded'] | default: item.summary | default: '' %}
+  {% assign excerpt = raw | strip_html | replace: '&nbsp;', ' ' | strip | truncatewords: 150, '…' %}
+  <div class="desc">{{ excerpt }}</div>
+  
+  <p>And show a screenshot of the actual posting...</p>
+  
+  <p><a href="{{item.link}}">Read the full blog post <em>{{item.title}}</em></a>
+     on the <a href="{{meta.human_url}}">{{ meta.title }}</a>. 
+  </p>
+
+</article>
+
+<nav class="pagination bottom">
+  {% if pagination.href.previous %}<a rel="prev" href="{{ pagination.href.previous }}">← Prev post in that blog</a>{% endif %}
+  <br>{% if pagination.href.next %}<a rel="next" href="{{ pagination.href.next }}">Next post in that blog →</a>{% endif %}
+</nav>
