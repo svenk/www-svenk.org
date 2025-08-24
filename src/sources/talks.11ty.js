@@ -12,6 +12,7 @@ export const source = {
       which collects scientific papers, scientific talks and thesis.
       This is basically a (poor) kind of successor for my old *uniordner* collection.
     `,
+    // TODO: Define download action
   },
   
   pagination: {
