@@ -13,7 +13,7 @@ This page elaborates on the aggregation sourced used to build the <a href="/blog
 
 {% for id, meta in data_sources %}
 
-<h2><img src="{{meta.icon}}" style="height: 1.2ex"> {{ meta.title }}</h2>
+<h2 id="{{meta.id}}"><img src="{{meta.icon}}" style="height: 1.2ex"> {{ meta.title }}</h2>
 
 {% if meta.description %}<p>{{ meta.description | renderContent("md") | safe }}</p>{% endif %}
 
@@ -26,7 +26,7 @@ This page elaborates on the aggregation sourced used to build the <a href="/blog
 
 <details><!-- argument open to have it open default -->
   <summary>{{ collections[meta.id] | length }} items in this collection</summary>
-  {{ blogListing(collections[meta.id] | sort(attribute='data.date') | reverse) }}
+  {{ blogListing(collections[meta.id] | sort(attribute='data.date') | reverse, "forceLocalLinks") }}
 </details>
 
 {% endfor %}

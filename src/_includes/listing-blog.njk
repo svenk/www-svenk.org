@@ -1,10 +1,16 @@
 
-{% macro blogListing(collection) %}
+{% macro blogListing(collection, force_local_links=false) %}
 
 <ul class="blog">
 {% for item in collection  %}
-    <li><a class="selector" href="#" title="{{item.data.meta.title }}"><img src="{{ item.data.meta.icon }}"></a>
-        <a href="{{ item.page.url }}" class="{{ item.data.meta.id }}">{{ item.data.listing_title }}</a>
+    {% if force_local_links %}
+        {% set link = item.page.url %}
+    {% else %}
+        {% set link = item.data.link %}
+    {% endif %}
+
+    <li><a class="selector" href="/blog/sources/#{{item.data.meta.id}}" title="{{item.data.meta.title }}"><img src="{{ item.data.meta.icon }}"></a>
+        <a href="{{ link }}" class="{{ item.data.meta.id }}">{{ item.data.title }}</a>
         <span class="date">{{ item.data.date | dateFormat('MMM yyyy') }}</span>
     </li>
 {% endfor %}

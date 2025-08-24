@@ -1,0 +1,35 @@
+---
+layout: default.html
+
+  # Idea for visual layout:
+  #    Have another background picture behind the talks pages
+---
+
+<article class="post">
+  <h2>
+      {{ item.title | escape }}
+  </h2>
+  
+  <p>Date: {{ date }}
+  <br>ItemDate: {{ item.date }}
+  <br>Formatted: {{ item.date | dateFormat }}
+  <br>Liquid: {{ item.date | date: "%Y-%m-%d" }}
+  <br>PageDate: {{ page.date }}
+
+  
+  <dl>
+     <dt>Type     <dd>Scientific publication
+     <dt>Date     <dd>{{item.date}}
+     <dt>DOI      <dd><a href="https://dx.doi.org/{{ item.DOI }}">{{ item.DOI }}</a>
+     <dt>arxiv    <dd><a href="https://arxiv.org/abs/{{ item.arxiv }}">{{ item.arxiv }} {{item.arxiv_suffix}}</a>
+     <dt>InspireHEP <dd><a href="{{item.inspire}}">{{item.inspire}}</a>
+     <dt>Authors: <dd>{% for author in item.authors %}{{author}},{% endfor %}
+     <dt>Labels   <dd>{% for label in labels %}{{ label}},{% endfor %}
+  </dl>
+  
+</article>
+
+<nav class="pagination bottom">
+  {% if pagination.href.previous %}<a rel="prev" href="{{ pagination.href.previous }}">← Prev Paper</a>{% endif %}
+  {% if pagination.href.next %}<a rel="next" href="{{ pagination.href.next }}">Next Paper →</a>{% endif %}
+</nav>

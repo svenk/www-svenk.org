@@ -1,0 +1,18 @@
+---
+layout: default.html
+---
+
+<article class="post">
+  <h2>
+      {{ item.title | escape }}
+  </h2>
+  
+  <p>Full dump:
+    {% prettyDump item %}
+</article>
+
+<nav class="pagination bottom">
+  {% if pagination.href.previous %}<a rel="prev" href="{{ pagination.href.previous }}">← Prev Paper</a>{% endif %}
+  {% if pagination.href.next %}<a rel="next" href="{{ pagination.href.next }}">Next Paper →</a>{% endif %}
+</nav>
+*/

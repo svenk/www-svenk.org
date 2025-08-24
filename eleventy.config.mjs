@@ -8,7 +8,7 @@ import { writeFile, mkdir } from 'fs/promises'
 //import { collectRedirects } from "#data/make_redirects";
 import yaml from "js-yaml"
 import { XMLParser } from "fast-xml-parser"
-import { DateTime } from "luxon"
+import { dateFormat } from './src/sources/common.js'
 
 import fs from 'fs'
 import path from 'path'
@@ -47,14 +47,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addGlobalData("layout", "default.html")
 	
 	// in liquid, just use filter | date: "%Y-%m-%d". Nunjucks needs however this:
-	eleventyConfig.addFilter("dateFormat", (value, format="yyyy-LL-dd", zone="utc") => {
-		let dt =
-			value instanceof Date ? DateTime.fromJSDate(value, { zone }) :
-			typeof value === 'number' ? DateTime.fromMillis(value, { zone }) :
-			typeof value === 'string' ? DateTime.fromISO(value, { zone }) :
-			null
-		return dt && dt.isValid ? dt.toFormat(format) : "";
-	});
+	eleventyConfig.addFilter("dateFormat", dateFormat);
 	
 	eleventyConfig.addShortcode("prettyDump", function(data){
 		const esc=s=>String(s).replace(/[&<>"']/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]))
