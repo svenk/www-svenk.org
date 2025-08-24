@@ -40,7 +40,7 @@ export const source = {
 
   tags: [ "uniordner", "aggregated" ],
   
-  layout: "resource.html",
+  layout: "item.njk",
 }
 
 export default class { data() { return source; } }

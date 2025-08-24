@@ -1,0 +1,30 @@
+---
+# This layout is a generic external data paginated item.
+layout: default.html
+---
+
+<h2>{{ item.title | escape }}</h2>
+
+{{ content | safe }}
+
+<details>
+  <summary>
+    This item is part of the collection <a href="/blog/sources/#{{meta.id}}">{{ meta.title }}</a>
+  </summary>
+  {% if meta.description %}<p>{{ meta.description | renderContent("md") | safe }}</p>{% endif %}
+</details>
+
+<details open>
+  <summary>
+    All data on this entry
+  </summary>
+  {% prettyDump item %}
+</details>
+
+{% if show_nav %}
+<nav class="pagination bottom">
+  Same kind of items:
+  {% if pagination.href.previous %}<a rel="prev" href="{{ pagination.href.previous }}">← Prev</a>{% endif %}
+  {% if pagination.href.next %}<a rel="next" href="{{ pagination.href.next }}">Next →</a>{% endif %}
+</nav>
+{% endif %}

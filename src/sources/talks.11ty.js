@@ -31,7 +31,7 @@ export const source = {
 
   eleventyComputed: {
     title: data => data.item.title
-      + (data.item.event ? `(${data.item.event})` :""),
+      + (data.item.event ? ` (${data.item.event})` :""),
     date: data => dateFormat(data.item.date),
     link: data => data.page.url,
   },

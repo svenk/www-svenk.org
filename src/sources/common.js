@@ -19,8 +19,8 @@ export function dateFormat(value, format = "yyyy-LL-dd", zone = "utc") {
 }
 
 // usage: liquidDate(this, value)
-export function liquidDate(eleventyThis, value) {
+export async function liquidDate(eleventyThis, value) {
   // liquids powerful date parser is the only one capable of parsing something like "Jun 2015".
   // luxon cannot do it.
-  return eleventyThis.renderTemplate(`{{ '${value}' | date: "%Y-%m-%d" }}`, "liquid")
+  return await eleventyThis.renderTemplate(`{{ '${value}' | date: "%Y-%m-%d" }}`, "liquid")
 }

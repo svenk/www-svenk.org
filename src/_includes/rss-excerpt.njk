@@ -1,0 +1,40 @@
+---
+# expecting "item" as it is used in the blog/*.html pagination files
+layout: item.njk
+---
+
+<p class="meta">
+  {% if item.pubDate %}
+    {{ item.pubDate | dateFormat }}
+  {% endif %}
+  {% if item.author %}
+    • {{ item.author | escape }}
+  {% elif item.creator %}
+    • {{ item.creator | escape }}
+  {% endif %}
+  {% if rss.rss.channel.title %}
+    • {{ rss.rss.channel.title | escape }}
+  {% endif %}
+</p>
+
+{% set raw = item.description 
+    or item["content:encoded"] 
+    or item.summary 
+    or '' %}
+
+{% set excerpt = raw 
+    | striptags 
+    | replace("&nbsp;", " ") 
+    | trim 
+    | truncate(150, true, "…") %}
+
+<div class="desc">{{ excerpt }}</div>
+
+<p>And show a screenshot of the actual posting...</p>
+
+<p>
+  <a href="{{ item.link }}">
+    Read the full blog post <em>{{ item.title }}</em>
+  </a>
+  on the <a href="{{ meta.human_url }}">{{ meta.title }}</a>.
+</p>

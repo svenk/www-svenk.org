@@ -1,0 +1,19 @@
+---
+layout: item.njk
+# Idea for visual layout:
+#    Have another background picture behind the talks pages
+---
+
+<p>This is a scientific publication by SvenK.
+
+<p>{{ item.meta.description }}
+  
+  <dl>
+     <dt>Type     <dd>Scientific publication
+     <dt>Date     <dd>{{item.date}}
+     <dt>DOI      <dd><a href="https://dx.doi.org/{{ item.DOI }}">{{ item.DOI }}</a>
+     <dt>arxiv    <dd><a href="https://arxiv.org/abs/{{ item.arxiv }}">{{ item.arxiv }} {{item.arxiv_suffix}}</a>
+     <dt>InspireHEP <dd><a href="{{item.inspire}}">{{item.inspire}}</a>
+     <dt>Authors: <dd>{% for author in item.authors %}{{author}},{% endfor %}
+     <dt>Labels   <dd>{% for label in labels %}{{ label}},{% endfor %}
+  </dl>

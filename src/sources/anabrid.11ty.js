@@ -32,7 +32,7 @@ export const source = {
   
   tags: [ "anabrid-news", "aggregated" ],
   
-  layout: "rss-excerpt.html",
+  layout: "rss-excerpt.njk",
   
   eleventyComputed: {
     title: data => data.item.title,

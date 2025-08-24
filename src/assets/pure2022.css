@@ -470,8 +470,14 @@ dl {
     grid-auto-columns: 1fr;
     grid-auto-flow: column;*/
    grid-template-columns: auto 1fr; /* dt auto-sized, dd takes the rest */
-   gap: 0.5rem 1rem;
+   /*gap: 0.5rem 1rem;*/
 }
 
-dt, dd { margin: 0; padding: 0; }
+dt, dd {
+    margin: 0; padding: 0;
+    border-bottom: 1px dotted #333;
+    
+    padding: .5rem;
+}
+
 dt { font-weight: bold; }

@@ -37,7 +37,7 @@ export const source = {
   
   tags: [ "denktmit-blog", "aggregated" ],
   
-  layout: "rss-excerpt.html",
+  layout: "rss-excerpt.njk",
   
   eleventyComputed: {
     title: data => data.item.title,

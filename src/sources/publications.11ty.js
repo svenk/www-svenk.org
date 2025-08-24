@@ -1,4 +1,4 @@
-import { dateFormat} from './common.js'
+import { dateFormat, liquidDate } from './common.js'
 
 
 export const source = {
@@ -25,8 +25,8 @@ export const source = {
   },
   
   // TODO: Extract the "Origin URL" which is typically short.
-  permalink: function({item,date}) {
-    return `/publications/${date}-${this.slug(item.title)}.html`
+  permalink: async function({item}) {
+    return `/publications/${await liquidDate(this,item.date) }-${this.slug(item.title)}.html`
   },
 
   tags: [ "scientific_publications", "aggregated" ],
@@ -36,12 +36,12 @@ export const source = {
 
     // liquids powerful date parser is the only one capable of parsing something like "Jun 2015".
     // luxon cannot do it.
-    date: function(data) { return this.renderTemplate(`{{ '${data.item.date}' | date: "%Y-%m-%d" }}`, "liquid") },
+    date: function(data) { return liquidDate(this,data.item.date) },
     
     link: data => data.page.url,
   },
 
-  layout: "publication.html",
+  layout: "publication.njk",
 }
 
 export default class { data() { return source; } }

@@ -49,15 +49,35 @@ export default async function(eleventyConfig) {
 	// in liquid, just use filter | date: "%Y-%m-%d". Nunjucks needs however this:
 	eleventyConfig.addFilter("dateFormat", dateFormat);
 	
-	eleventyConfig.addShortcode("prettyDump", function(data){
-		const esc=s=>String(s).replace(/[&<>"']/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]))
-		const url=/\bhttps?:\/\/[^\s<]+/g
-		const link=s=>String(s).replace(url,u=>`<a href="${esc(u)}">${esc(u)}</a>`)
-		const render=o=>`<dl>${Object.entries(o||{}).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${
-			v==null?"":Array.isArray(v)?(v.every(x=>typeof x==="string")?v.map(link).join(", "):v.map(x=>typeof x==="object"?render(x):link(x)).join(", ")):(
-			typeof v==="object"?render(v):link(v))
-		}</dd>`).join("")}</dl>`
-		return render(data)
+	eleventyConfig.addShortcode("prettyDump", function(data, explain={}){
+		const esc = s =>
+			String(s).replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
+
+		const url = /\bhttps?:\/\/[^\s<]+/g;
+		const link = s => String(s).replace(url, u => `<a href="${esc(u)}">${esc(u)}</a>`);
+		const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)
+		const getLabel = k => Object.prototype.hasOwnProperty.call(explain, k) ? explain[k] : capitalize(k);
+
+		const render = o => `<dl>${Object.entries(o || {}).map(([k, v]) => {
+			let out;
+			if (v == null) {
+				out = "";
+			} else if (v instanceof Date) {
+				// convert Date → string using your dateFormat()
+				out = esc(dateFormat(v));
+			} else if (Array.isArray(v)) {
+				out = v.every(x => typeof x === "string")
+					? v.map(link).join(", ")
+					: v.map(x => typeof x === "object" ? render(x) : (x instanceof Date ? esc(dateFormat(x)) : link(x))).join(", ");
+			} else if (typeof v === "object") {
+				out = render(v);
+			} else {
+				out = link(v);
+			}
+			return `<dt title="${esc(k)}">${esc(getLabel(k))}</dt><dd>${out}</dd>`;
+		}).join("")}</dl>`;
+
+		return render(data);
 	})
 	
 	eleventyConfig.addPlugin(RenderPlugin);

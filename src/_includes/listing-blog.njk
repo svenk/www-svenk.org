@@ -1,16 +1,23 @@
+<!-- 
+  item.page.url = URL of locally generated page
+  item.data.link = (potentially) external URL of original source, if available.
+                   Controlled by sources/*.11ty.js.
+-->
 
 {% macro blogListing(collection, force_local_links=false) %}
 
 <ul class="blog">
 {% for item in collection  %}
     {% if force_local_links %}
-        {% set link = item.page.url %}
+        {% set main_link = item.page.url %}
     {% else %}
-        {% set link = item.data.link %}
+        {% set main_link = item.data.link %}
     {% endif %}
+    
+    {% set selector_link = item.page.url %}<!-- /blog/sources/#{{item.data.meta.id}} -->
 
-    <li><a class="selector" href="/blog/sources/#{{item.data.meta.id}}" title="{{item.data.meta.title }}"><img src="{{ item.data.meta.icon }}"></a>
-        <a href="{{ link }}" class="{{ item.data.meta.id }}">{{ item.data.title }}</a>
+    <li><a class="selector" href="{{ selector_link }}" title="{{item.data.meta.title }}"><img src="{{ item.data.meta.icon }}"></a>
+        <a href="{{ main_link }}" class="{{ item.data.meta.id }}">{{ item.data.title }}</a>
         <span class="date">{{ item.data.date | dateFormat('MMM yyyy') }}</span>
     </li>
 {% endfor %}
