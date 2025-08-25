@@ -1,5 +1,29 @@
 import { dateFormat, liquidDate } from './common.js'
 
+// create normalized items with all-lowercase, because sometimes DOI and doi etc.
+const normalized_item = unnormalized_item => Object.keys(unnormalized_item).reduce((acc, key) => {
+          acc[key.toLowerCase()] = unnormalized_item[key];
+          return acc;
+      }, {});
+
+const reference_names = {
+  inspire: "Inspire High Energy Physics database",
+  arxiv: "ArXiV preprint server",
+  doi: "Digital Object Identifier (DOI)",
+  urn: "Uniform Resource Name (URN)",
+};
+
+const reference_links = unnormalized_item => {
+      const item = normalized_item(unnormalized_item)
+      
+      return{
+       ...(item.inspire && {inspire: `<a href="${item.inspire}">Inspire-HEP</a>`}),
+       ...(item.arxiv && {arxiv: `<a href="http://arxiv.org/abs/${item.arxiv}">arxiv:${item.arxiv}</a>`}),
+       ...(item.doi && {doi: `<a href="http://dx.doi.org/${item.doi }">doi:${item.doi }</a>`}),
+       ...(item.urn && {urn: `<a href="https://nbn-resolving.org/${item.urn}">URN:${item.urn}</a>`}),
+      }
+};
+
 
 export const source = {
   meta: {
@@ -28,8 +52,11 @@ export const source = {
   permalink: async function({item}) {
     return `/publications/${await liquidDate(this,item.date) }-${this.slug(item.title)}.html`
   },
-
-  tags: [ "scientific_publications", "aggregated" ],
+  
+  tags: [ "scientific_publications", "aggregated" ], // cannot be computed
+  
+  // for lookup access in templates, in combination with reference_links
+  reference_names,
 
   eleventyComputed: {
     title: data => data.item.title,
@@ -39,6 +66,10 @@ export const source = {
     date: function(data) { return liquidDate(this,data.item.date) },
     
     link: data => data.page.url,
+    
+    reference_links: data => reference_links(data.item),
+    
+    //additional_computed_tags: data => data.item.labels?.map(tag => "scientific_publication_with_label_"+tag),
   },
 
   layout: "publication.njk",

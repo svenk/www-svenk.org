@@ -5,31 +5,21 @@
 
 <ul class="papers">
 {% for paper in papers %}
-<li><span class="headline">
-        {{ paper.authors | join: ", " }}:
+<li><a href="{{paper.page.url}}">{{ paper.data.title|raw }}</a>
+    ({{ paper.data.date | dateFormat: "MMM yyyy" }})
+    by 
+
+    <!--<span class="headline">-->
+        {{ paper.data.item.authors | join: ", " }}
         
-        {% for label in paper.labels %}
+        <!--{% for label in paper.labels %}
             <span class="label label-info">{{label}}</span>
-        {% endfor %}
-        
-    </span>
-    <span class="title">{{ paper.title|raw }}</span>.
+        {% endfor %}-->
+    <!--</span>-->
+
     
     <span class="links">
-        {{ paper.date }}
-
-        {% if paper.inspire %}
-        [<a href="{{ paper.inspire }}">Inspire-HEP</a>]
-        {% endif %}	
-        {% if paper.arxiv %}
-        [<a href="http://arxiv.org/abs/{{paper.arxiv}}">ArXiV</a>]
-        {% endif %}
-        {% if paper.DOI %}
-        [<a href="http://dx.doi.org/{{ paper.DOI }}">DOI</a>]
-        {% endif %}
-        {% if paper.URN %}
-        [<a href="https://nbn-resolving.org/{{ paper.URN }}">URN</a>]
-        {% endif %}
+        {% for kv in paper.data.reference_links %}[{{ kv[1] }}] {% endfor %}
     </span>
 </li>
 {% endfor %}

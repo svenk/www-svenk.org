@@ -34,8 +34,8 @@ layout: default
   <p>Here are a few recent publications in the context of analog computing:
   
   <div class="hide-labels">
-  {% assign analog_papers = scientific_publications.scientific_publications |
-     where_exp:"item", "item.labels contains 'analog'" | sort: 'date_machine_readable'  %}
+  {% assign analog_papers = collections.scientific_publications | where_exp:"pub",
+      "pub.data.item.labels contains 'analog'" | reverse %}
   {% include 'listing-snippet-publications', papers: analog_papers %}
   </div>
 
@@ -82,8 +82,8 @@ layout: default
      <a href="https://exahype.eu/">ExaHyPE</a>, I studied numerical methods for solving 
      hyperbolic partial differential equations on future exascale architectures.
 
-  {% assign analog_papers = scientific_publications.scientific_publications |
-     where_exp:"item", "item.labels contains 'hep'" | sort: 'date'  %}
+  {% assign analog_papers = collections.scientific_publications |
+     where_exp:"pub", "pub.data.item.labels contains 'hep'" | sort: 'date' | reverse %}
   {% include 'listing-snippet-publications', papers: analog_papers %}
 
   <!-- Moved to -> freelancing/ 

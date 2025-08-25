@@ -7,13 +7,13 @@ layout: item.njk
 <p>This is a scientific publication by SvenK.
 
 <p>{{ item.meta.description }}
-  
+
+<details open>
+  <summary>Bibliographic links</summary>
+
   <dl>
-     <dt>Type     <dd>Scientific publication
-     <dt>Date     <dd>{{item.date}}
-     <dt>DOI      <dd><a href="https://dx.doi.org/{{ item.DOI }}">{{ item.DOI }}</a>
-     <dt>arxiv    <dd><a href="https://arxiv.org/abs/{{ item.arxiv }}">{{ item.arxiv }} {{item.arxiv_suffix}}</a>
-     <dt>InspireHEP <dd><a href="{{item.inspire}}">{{item.inspire}}</a>
-     <dt>Authors: <dd>{% for author in item.authors %}{{author}},{% endfor %}
-     <dt>Labels   <dd>{% for label in labels %}{{ label}},{% endfor %}
+    {% for system, link in reference_links %}
+    <dt>{{reference_names[system]}} <dd>{{link | safe}}
+    {% endfor %}
   </dl>
+</details>
