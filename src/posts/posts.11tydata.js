@@ -13,11 +13,9 @@ export default {
   },
   layout: "post",
   eleventyComputed: {
-    listing_title: data => data.title,
-    date: function(data) { return this.dateFormat(data.date || data.page.date); }
-    //original_url: data => data.page.url,
+    date: function(data) { return this.dateFormat(data.date || data.page.date); },
+    link: data => data.page.url,
     //permalink: data => data.page.url.replace("posts/", "blog/"), //function(data) {return  }//`/blog/{this.dateFormat(data.date || data.page?.date, '%Y-%m-%d')}-${this.slugify(data.title)}.html`; },
   },
   tags: [ "svenk-local-blog", "aggregated" ],
-  //layout: "rss-excerpt.html"
 }
