@@ -13,10 +13,11 @@
 	<link rel="stylesheet" href="{% cacheAsset "https://unpkg.com/purecss@2.0.6/build/pure-min.css" %}" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="{% cacheAsset "https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" %}" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{% cacheAsset "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" %}">
 	
 	<link rel="stylesheet" href="/assets/pure2022.css" text="text/css">
     <link rel="me" href="https://chaos.social/@svenk">
+    <script src="/assets/enhancements.js" defer></script>
     
     {% for kv in open_graph -%}
     <meta property="og:{{kv[0]}}" content="{{kv[1]}}" />

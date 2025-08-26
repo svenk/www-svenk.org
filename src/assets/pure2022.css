@@ -486,7 +486,13 @@ dt:last-of-type, dd:last-of-type {
 
 dt { font-weight: bold; }
 
-summary { cursor: zoom-in; }
+details > summary { cursor: zoom-in; /* JS will mess with this */ }
+
+details > summary:hover {
+  background-color: #94dce066;
+  border-radius: .5em;
+  transition: background-color 0.3s ease;
+}
 
 dd ul { padding-left: 0; }
 dd ul li { list-style-position: inside; }
