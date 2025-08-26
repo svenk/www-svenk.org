@@ -4,9 +4,8 @@ layout: item.njk
 #    Have another background picture behind the talks pages
 ---
 
-<p>This is a scientific publication by SvenK.
-
-<p>{{ item.meta.description }}
+<p>This is a scientific publication authored by 
+{{ item.author | default(item.authors) | join(", ")  }}.
 
 <details open>
   <summary>Bibliographic links</summary>

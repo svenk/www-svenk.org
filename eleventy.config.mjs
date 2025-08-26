@@ -49,7 +49,7 @@ export default async function(eleventyConfig) {
 	// in liquid, just use filter | date: "%Y-%m-%d". Nunjucks needs however this:
 	eleventyConfig.addFilter("dateFormat", dateFormat);
 	
-	eleventyConfig.addShortcode("prettyDump", function(data, explain={}){
+	/*eleventyConfig.addShortcode("prettyDump", function(data, explain={}){
 		const esc = s =>
 			String(s).replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 
@@ -78,7 +78,22 @@ export default async function(eleventyConfig) {
 		}).join("")}</dl>`;
 
 		return render(data);
-	})
+	})*/
+	
+	// used for prettyDump macro
+	const url = /^https?:\/\//; // /\bhttps?:\/\/[^\s<]+/g;
+	eleventyConfig.addFilter("linkify", s => String(s ?? "").match(url) ? `<a href="${s}">${s}</a>` : s);
+	eleventyConfig.addFilter("isArray", Array.isArray);
+	eleventyConfig.addFilter("isPlainObject", v => Object.prototype.toString.call(v) === "[object Object]");
+	eleventyConfig.addFilter("isDate", v => v instanceof Date);
+	eleventyConfig.addFilter("isFunction", val => typeof val === "function");
+	
+	eleventyConfig.addFilter("join", (ary, val) => ary?.join(val));
+	
+	
+	// {% for k,v in o | sortByKeyLength %}
+	eleventyConfig.addNunjucksFilter("sortByKeyLength", obj =>
+		Object.entries(obj).sort((a, b) => a[0].length - b[0].length))
 	
 	eleventyConfig.addPlugin(RenderPlugin);
 	

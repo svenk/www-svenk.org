@@ -1,5 +1,10 @@
 import { dateFormat, liquidDate } from './common.js'
 
+import { publications_dir, assert_publications } from './talks.11ty.js'
+import { cp } from "node:fs/promises";
+import { join } from "node:path";
+
+
 // create normalized items with all-lowercase, because sometimes DOI and doi etc.
 const normalized_item = unnormalized_item => Object.keys(unnormalized_item).reduce((acc, key) => {
           acc[key.toLowerCase()] = unnormalized_item[key];
@@ -20,7 +25,7 @@ const reference_links = unnormalized_item => {
        ...(item.inspire && {inspire: `<a href="${item.inspire}">Inspire-HEP</a>`}),
        ...(item.arxiv && {arxiv: `<a href="http://arxiv.org/abs/${item.arxiv}">arxiv:${item.arxiv}</a>`}),
        ...(item.doi && {doi: `<a href="http://dx.doi.org/${item.doi }">doi:${item.doi }</a>`}),
-       ...(item.urn && {urn: `<a href="https://nbn-resolving.org/${item.urn}">URN:${item.urn}</a>`}),
+       ...(item.urn && {urn: `<a href="https://nbn-resolving.org/${item.urn}">${item.urn}</a>`}),
       }
 };
 
@@ -39,6 +44,11 @@ export const source = {
       which collects scientific papers, scientific talks and thesis.
       This is basically a (poor) kind of successor for my old *uniordner* collection.
     `,
+    async download() {
+      if(!await assert_publications()) return false;
+      //console.log(join(publications_dir, "Papers/papers-svenk.yaml"), join("src/_data/", this.local_file))
+      return cp(join(publications_dir, "Papers/papers-svenk.yaml"), join("src/_data/", this.local_file))
+    }
   },
   
   pagination: {

@@ -1,5 +1,22 @@
 import { dateFormat } from './common.js'
 
+import { stat } from "node:fs/promises";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const isdir = (dirname) => { try { return stat(dirname).isDirectory(); } catch { return false; } }
+const __dirname = dirname(fileURLToPath(import.meta.url));
+export const publications_dir = join(__dirname, "../../publications")
+
+export async function assert_publications() {
+  /*if(!isdir(publications_dir)) {
+      //await execAsync("git clone https://github.com/svenk/publications");
+      console.warn("Missing publications directory!");
+      return false
+  }*/
+  return true
+}
+
 export const source = {
   meta: {
     id: "talks",
@@ -12,7 +29,11 @@ export const source = {
       which collects scientific papers, scientific talks and thesis.
       This is basically a (poor) kind of successor for my old *uniordner* collection.
     `,
-    // TODO: Define download action
+    async download() {
+      if(!await assert_publications()) return false;
+      const { dump_talks } = await import(join(publications_dir, "Talks", "find-talks.js"))
+      dump_talks(join("src/_data/", this.local_file))
+    }
   },
   
   pagination: {
@@ -38,7 +59,7 @@ export const source = {
   
   tags: [ "talks", "aggregated" ],
 
-  layout: "talk.html",
+  layout: "talk.njk",
 }
 
 export default class { data() { return source; } }

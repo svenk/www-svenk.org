@@ -7,15 +7,14 @@
 {% for paper in papers %}
 <li><a href="{{paper.page.url}}">{{ paper.data.title|raw }}</a>
     ({{ paper.data.date | dateFormat: "MMM yyyy" }})
+    {%- if paper.data.item.note %}, {{ paper.data.item.note }}{% endif %}
     by 
 
-    <!--<span class="headline">-->
         {{ paper.data.item.authors | join: ", " }}
         
         <!--{% for label in paper.labels %}
             <span class="label label-info">{{label}}</span>
         {% endfor %}-->
-    <!--</span>-->
 
     
     <span class="links">

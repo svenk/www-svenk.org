@@ -1,0 +1,34 @@
+{% macro prettyDump(o) %}
+<dl>
+{% for k, v in o | sortByKeyLength %}
+  {% set label = explain[k] or (k | capitalize) %}
+  <dt title="{{ k | escape }}">{{ label | escape }}</dt>
+  <dd>
+  {% if v is none %}
+  {% elif v | isDate %}
+    {{ v | dateFormat | escape }}
+  {% elif v | isArray %}
+    <ul>
+    {%- for x in v -%}
+      <li>
+      <!--{%- if not loop.first %}, {% endif -%}-->
+      {%- if x | isFunction -%}
+        {# skip js function code, currently does not work #}
+      {%- elif x | isPlainObject -%}
+        {{ prettyDump(x) | safe }}
+      {%- elif x | isDate -%}
+        {{ x | dateFormat | escape }}
+      {%- else -%}
+        {{ x | linkify | safe }}
+      {%- endif -%}
+    {%- endfor -%}
+    </ul>
+  {% elif v | isPlainObject %}
+    {{ prettyDump(v) | safe }}
+  {% else %}
+    {{ v | linkify | safe }}
+  {% endif %}
+  </dd>
+{% endfor %}
+</dl>
+{% endmacro %}

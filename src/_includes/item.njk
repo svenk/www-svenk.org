@@ -7,6 +7,8 @@ layout: default.html
 
 {{ content | safe }}
 
+{% from "prettyDump.njk" import prettyDump %}
+
 <details>
   <summary>
     This item is part of the collection <a href="/blog/sources/#{{meta.id}}">{{ meta.title }}</a>
@@ -18,7 +20,7 @@ layout: default.html
   <summary>
     All data on this entry
   </summary>
-  {% prettyDump item %}
+  {{ prettyDump(item) }}
 </details>
 
 {% if show_nav %}

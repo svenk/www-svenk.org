@@ -10,6 +10,8 @@ This page elaborates on the aggregation sourced used to build the <a href="/blog
 </p>
 
 {% from "listing-blog.njk" import blogListing %}
+{% from "prettyDump.njk" import prettyDump %}
+
 
 {% for id, meta in data_sources %}
 
@@ -21,7 +23,7 @@ This page elaborates on the aggregation sourced used to build the <a href="/blog
   <summary>
     Metadata for <a href="{{meta.human_url}}">{{meta.title}}</a>
   </summary>
-  {% prettyDump meta %}
+  {{ prettyDump(meta) }}
 </details>
 
 <details><!-- argument open to have it open default -->

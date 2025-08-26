@@ -1,157 +1,238 @@
 talks:
-- author:
-  - Philipp Deutscher
-  - "Sven K\xF6ppel"
-  date: 2025-04-25
-  event: Podcast-Reihe Becoming CTO Secrets by Philip Deutscher
-  key: podcast
-  keywords:
-  - podcast
-  - analog
-  - outreach
-  languge: de
-  link: https://becomingctosecrets.buzzsprout.com/2402174/episodes/17041716-50-jahre-denkfehler-was-wir-uber-rechenleistung-vollig-falsch-verstanden-haben-mit-sven-koppel
-  title: "50 Jahre Denkfehler? Was wir \xFCber Rechenleistung v\xF6llig falsch verstanden\
-    \ haben"
-- author:
-  - Luca Moczko
-  - "Sven K\xF6ppel"
-  date: 2022-01-31
-  event: "Podcast \"Computing Machines\" von Luca Moczko mit Gast Sven K\xF6ppel"
-  key: podcast_qc_computing_machines
-  keywords:
-  - podcast
-  - analog
-  - spotify
-  languge: de
-  link: https://open.spotify.com/episode/0ekHBRXddwZCLE0LF4LkI9
-  title: Was sind Quantencomputer?
-- author:
-  - Luca Moczko
-  - "Sven K\xF6ppel"
-  date: 2022-04-10
-  event: "Podcast \"Computing Machines\" von Luca Moczko mit Gast Sven K\xF6ppel"
-  key: podcast2_qc_computing_machines
-  keywords:
-  - podcast
-  - analog
-  - spotify
-  languge: de
-  link: https://open.spotify.com/episode/1M3SHJ8qDZyhlZnOEWxjzM
-  title: Die Rolle der Computersimulationen in der Wissenschaft
-- author:
-  - Luca Moczko
-  - "Sven K\xF6ppel"
-  date: 2022-05-29
-  event: "Podcast \"Computing Machines\" von Luca Moczko mit Gast Sven K\xF6ppel"
-  key: podcast3_qc_computing_machines
-  keywords:
-  - podcast
-  - analog
-  - spotify
-  languge: de
-  link: https://open.spotify.com/episode/0OI9qnJ4mbWWmDt4zGd8zW
-  title: Software Antipatterns
-- author:
-  - Luca Moczko
-  - "Sven K\xF6ppel"
-  date: 2022-06-28
-  event: "Podcast \"Computing Machines\" von Luca Moczko mit Gast Sven K\xF6ppel"
-  key: podcast4_qc_computing_machines
-  keywords:
-  - podcast
-  - analog
-  - spotify
-  languge: de
-  link: https://open.spotify.com/episode/0quGnOPsayGulkyLMQXHv0
-  title: "Beendet k\xFCnstliche Intelligenz die \xBBDiktatur\xAB der Programmierenden?"
-- author:
-  - Thomas Ramge
-  - "Sven K\xF6ppel"
-  date: 2024-11-18
-  event: "Sprin-D Deep Tech Podcast von Thomas Ramge mit Gast Sven K\xF6ppel"
-  key: podcast_sprind
-  keywords:
-  - podcast
-  - analog
-  - sprind
-  languge: de
-  link: https://sprind.org/magazin/podcasts/90-sven-koeppel
-  title: 'SprinD Podcast: Analog Computer'
-- author:
-  - Benjamin Hagemann
-  - dj-spock
-  - "Sven K\xF6ppel"
-  date: 2025-04-25
-  event: 'Radio Darmstadt: Sendung C-RadaR des CCC Darmstadt'
-  key: podcast
-  keywords:
-  - podcast
-  - analog
-  - Radio
-  - outreach
-  languge: de
-  link: https://www.c-radar.de/
-  title: Radiobeitrag zum Analogienrechnen
-- author: "Sven K\xF6ppel"
-  date: 2022-05-21
-  event: Gulaschprogrammiernacht 2022 (GPN20)
-  event_website: https://entropia.de/GPN20
-  key: gpn20
-  keywords:
-  - karlsruhe
-  - ccc
-  - gulaschprogrammiernacht
-  - analog
-  material:
-    infoletter: https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/GPN
-      THAT Infozettel.odt
-    voc3c: https://media.ccc.de/v/gpn20-50-wie-hackt-man-einen-analogrechner
-  place: "Staatliche Hochschule f\xFCr Gestaltung (GPN20)"
-  slides: https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/2022-05-21-GPN20-Karlsruhe.pdf
-  sources: https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/2022-05-21-GPN20-Karlsruhe.odp
-  title: "Wie hackt man einen Analogrechner \u2013 Alles \xFCber die zuk\xFCnftigen\
-    \ kontinuierlichen Computer"
-  video: https://www.youtube.com/watch?v=2TMBMA2FLXw
-- author: "Sven K\xF6ppel"
-  date: 2021-06-18
-  event: Night Of Science, Frankfurt
-  event_website: https://www.nightofscience.de/
-  key: nos21
-  keywords:
-  - goethe-uni
-  - night of science
-  - analog
-  place: "Goethe-Universit\xE4t Frankfurt"
-  slides: https://github.com/svenk/publications/tree/master/Talks/2021-06-18-NOS-Frankfurt/NOS2021-Anabrid.pdf
-  sources: https://github.com/svenk/publications/tree/master/Talks/2021-06-18-NOS-Frankfurt/NOS2021-Anabrid.odp
-  title: "Die Zukunft ist Analog \u2013 wenn Digitalcomputern die Luft ausgeht"
-- author: "Sven K\xF6ppel"
-  date: 2021-10-13
-  event: "Kolloquium Fachbereich ETI, FH M\xFCnster"
-  event_website: https://www.fh-muenster.de/hochschule/aktuelles/news/index.php?newsId=2501
-  key: kolloqfhms
-  keywords:
-  - "m\xFCnster"
-  - kolloquium
-  - analog
-  place: "M\xFCnster University of Applied Sciences"
-  slides: "https://github.com/svenk/publications/tree/master/Talks/2021-10-13-Kolloq-FH-M\xFC\
-    nster/2021-10-Kolloq-FH-M\xFCnster.pdf"
-  title: "Die Zukunft ist Analog \u2013 Neue Rechnergenerationen \u201EBeyond Moore\u201C"
-- author: "Sven K\xF6ppel"
-  date: 2021-09-18
-  event: "TEDx M\xFCnster"
-  event_website: https://www.tedxmuenster.de/
-  key: tedxms21
-  keywords:
-  - ted
-  - "m\xFCnster"
-  - analog
-  material:
-    transcript: "https://github.com/svenk/publications/tree/master/Talks/2021-09-18-TEDx-M\xFC\
-      nster/Textentwurf TEDx v4.pdf"
-  place: "Lichtenberghaus, M\xFCnster"
-  title: "More Computing Power and Less CO2 Damage \u2013 a Plea for Analogue Computers"
-  video: https://www.youtube.com/watch?v=gg2YpIIlQpM
-
+  - author:
+      - Philipp Deutscher
+      - Sven Köppel
+    date: '2025-04-25'
+    event: Podcast-Reihe Becoming CTO Secrets by Philip Deutscher
+    link: >-
+      https://becomingctosecrets.buzzsprout.com/2402174/episodes/17041716-50-jahre-denkfehler-was-wir-uber-rechenleistung-vollig-falsch-verstanden-haben-mit-sven-koppel
+    languge: de
+    keywords:
+      - podcast
+      - analog
+      - outreach
+    title: >-
+      50 Jahre Denkfehler? Was wir über Rechenleistung völlig falsch verstanden
+      haben
+    key: podcast
+  - author:
+      - Benjamin Hagemann
+      - dj-spock
+      - Sven Köppel
+    date: '2025-04-25'
+    event: 'Radio Darmstadt: Sendung C-RadaR des CCC Darmstadt'
+    link: https://www.c-radar.de/
+    languge: de
+    keywords:
+      - podcast
+      - analog
+      - Radio
+      - outreach
+    title: Radiobeitrag zum Analogienrechnen
+    key: podcast
+  - author:
+      - Thomas Ramge
+      - Sven Köppel
+    date: '2024-11-18'
+    event: Sprin-D Deep Tech Podcast von Thomas Ramge mit Gast Sven Köppel
+    link: https://sprind.org/magazin/podcasts/90-sven-koeppel
+    languge: de
+    keywords:
+      - podcast
+      - analog
+      - sprind
+    title: 'SprinD Podcast: Analog Computer'
+    key: podcast_sprind
+  - author:
+      - Luca Moczko
+      - Sven Köppel
+    date: '2022-01-31'
+    event: Podcast "Computing Machines" von Luca Moczko mit Gast Sven Köppel
+    link: https://open.spotify.com/episode/0ekHBRXddwZCLE0LF4LkI9
+    languge: de
+    keywords:
+      - podcast
+      - analog
+      - spotify
+    title: Was sind Quantencomputer?
+    key: podcast_qc_computing_machines
+  - author:
+      - Luca Moczko
+      - Sven Köppel
+    date: '2022-04-10'
+    event: Podcast "Computing Machines" von Luca Moczko mit Gast Sven Köppel
+    link: https://open.spotify.com/episode/1M3SHJ8qDZyhlZnOEWxjzM
+    languge: de
+    keywords:
+      - podcast
+      - analog
+      - spotify
+    title: Die Rolle der Computersimulationen in der Wissenschaft
+    key: podcast2_qc_computing_machines
+  - author:
+      - Luca Moczko
+      - Sven Köppel
+    date: '2022-05-29'
+    event: Podcast "Computing Machines" von Luca Moczko mit Gast Sven Köppel
+    link: https://open.spotify.com/episode/0OI9qnJ4mbWWmDt4zGd8zW
+    languge: de
+    keywords:
+      - podcast
+      - analog
+      - spotify
+    title: Software Antipatterns
+    key: podcast3_qc_computing_machines
+  - author:
+      - Luca Moczko
+      - Sven Köppel
+    date: '2022-06-28'
+    event: Podcast "Computing Machines" von Luca Moczko mit Gast Sven Köppel
+    link: https://open.spotify.com/episode/0quGnOPsayGulkyLMQXHv0
+    languge: de
+    keywords:
+      - podcast
+      - analog
+      - spotify
+    title: Beendet künstliche Intelligenz die »Diktatur« der Programmierenden?
+    key: podcast4_qc_computing_machines
+  - author: Sven Köppel
+    date: '2025-07-14'
+    event: PC2 Seminar
+    event_website: https://pc2.uni-paderborn.de/
+    keywords:
+      - analog
+      - supercomputing
+      - quantum computing
+      - seminar
+    place: Paderborn
+    sources: >-
+      https://github.com/svenk/publications/tree/master/Talks/2025-07-14 FPGA
+      Paderborn/2025-07-14 Analog FPGA Paderborn SK.odp
+    slides: >-
+      https://github.com/svenk/publications/tree/master/Talks/2025-07-14 FPGA
+      Paderborn/2025-07-14 Analog FPGA Paderborn SK.pdf
+    title: Analog architectures on FPGAs and ASICs
+    key: p2c25
+  - author: Sven Köppel
+    date: '2025-05-10'
+    event: International Supercomputing Conference 2025 (ISC HPC)
+    event_website: https://isc-hpc.com/
+    keywords:
+      - analog
+      - supercomputing
+      - quantum computing
+      - conference
+    place: Hamburg
+    sources: >-
+      https://github.com/svenk/publications/tree/master/Talks/2025-06-10 ISC25
+      BoF/2024-06-10 ISC BoF Anabrid Koeppel.odp
+    slides: >-
+      https://github.com/svenk/publications/tree/master/Talks/2025-06-10 ISC25
+      BoF/2024-06-10 ISC BoF Anabrid Koeppel.pdf
+    title: Platforms and Architectures for Analog Computing
+    key: isc25
+  - authors:
+      - Lucas Wetzel
+      - Sven Köppel
+      - Shrish Roy
+    date: '2024-04-18'
+    event: International Workshop on Ising Machines
+    event_website: https://www.petaspin.com/isingmachines2024/
+    keywords:
+      - analog
+      - ising
+      - quantum computing
+      - conference
+    place: Messina, Italy
+    slides: >-
+      https://github.com/svenk/publications/tree/master/Talks/2024-04-18 ISM24
+      Ising Conference Talk/2024-04-18-ISM24 Anabrid Joined.pdf
+    title: Simple Ising machines for educational and research purposes
+    key: ism24
+  - author: Sven Köppel
+    date: '2023-11-28'
+    event: Future of Computing Conference (Innovation Network for Advanced Materials)
+    event_website: https://www.inam.berlin/gallery/future-of-computing-2023
+    keywords:
+      - analog
+      - outreach
+      - quantum computing
+    place: Berlin
+    sources: >-
+      https://github.com/svenk/publications/tree/master/Talks/2023-11-28 Future
+      of Computing Sustainability/2023-11-28 Future-of-Computing Sustainability
+      Session contribution Sven Koeppel.odp
+    slides: >-
+      https://github.com/svenk/publications/tree/master/Talks/2023-11-28 Future
+      of Computing Sustainability/2023-11-28 Future-of-Computing Sustainability
+      Session contribution Sven Koeppel.pdf
+    title: Computing & Sustainability - a scientific perspective
+    key: p2c25
+  - author: Sven Köppel
+    date: '2022-05-21'
+    event: Gulaschprogrammiernacht 2022 (GPN20)
+    event_website: https://entropia.de/GPN20
+    keywords:
+      - karlsruhe
+      - ccc
+      - gulaschprogrammiernacht
+      - analog
+    place: Staatliche Hochschule für Gestaltung (GPN20)
+    material:
+      infoletter: >-
+        https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/GPN
+        THAT Infozettel.odt
+      voc3c: https://media.ccc.de/v/gpn20-50-wie-hackt-man-einen-analogrechner
+    video: https://www.youtube.com/watch?v=2TMBMA2FLXw
+    slides: >-
+      https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/2022-05-21-GPN20-Karlsruhe.pdf
+    sources: >-
+      https://github.com/svenk/publications/tree/master/Talks/2022-05-21-GPN20-Karlsruhe/2022-05-21-GPN20-Karlsruhe.odp
+    title: >-
+      Wie hackt man einen Analogrechner – Alles über die zukünftigen
+      kontinuierlichen Computer
+    key: gpn20
+  - author: Sven Köppel
+    date: '2021-10-13'
+    event: Kolloquium Fachbereich ETI, FH Münster
+    event_website: https://www.fh-muenster.de/hochschule/aktuelles/news/index.php?newsId=2501
+    keywords:
+      - münster
+      - kolloquium
+      - analog
+    place: Münster University of Applied Sciences
+    slides: >-
+      https://github.com/svenk/publications/tree/master/Talks/2021-10-13-Kolloq-FH-Münster/2021-10-Kolloq-FH-Münster.pdf
+    title: Die Zukunft ist Analog – Neue Rechnergenerationen „Beyond Moore“
+    key: kolloqfhms
+  - author: Sven Köppel
+    date: '2021-09-18'
+    event: TEDx Münster
+    event_website: https://www.tedxmuenster.de/
+    keywords:
+      - ted
+      - münster
+      - analog
+    place: Lichtenberghaus, Münster
+    material:
+      transcript: >-
+        https://github.com/svenk/publications/tree/master/Talks/2021-09-18-TEDx-Münster/Textentwurf
+        TEDx v4.pdf
+    video: https://www.youtube.com/watch?v=gg2YpIIlQpM
+    title: More Computing Power and Less CO2 Damage – a Plea for Analogue Computers
+    key: tedxms21
+  - author: Sven Köppel
+    date: '2021-06-18'
+    event: Night Of Science, Frankfurt
+    event_website: https://www.nightofscience.de/
+    keywords:
+      - goethe-uni
+      - night of science
+      - analog
+    place: Goethe-Universität Frankfurt
+    slides: >-
+      https://github.com/svenk/publications/tree/master/Talks/2021-06-18-NOS-Frankfurt/NOS2021-Anabrid.pdf
+    sources: >-
+      https://github.com/svenk/publications/tree/master/Talks/2021-06-18-NOS-Frankfurt/NOS2021-Anabrid.odp
+    title: Die Zukunft ist Analog – wenn Digitalcomputern die Luft ausgeht
+    key: nos21

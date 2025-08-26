@@ -1,0 +1,33 @@
+---
+layout: item.njk
+# Idea for visual layout:
+#    Have another background picture behind the talks pages
+---
+
+<p>This is a talk given by <a href="/">Sven Köppel</a>.
+
+<!-- Could make a map out of 
+  <dl>
+     <dt>Place    <dd>{{ item.place }} 
+  </dl>
+  -->
+
+  <!-- 
+  could rewrite the github URLs with
+  
+  
+const rawUrl = url.replace(
+  /^https:\/\/github\.com\/([^/]+)\/([^/]+)\/tree\/([^/]+)\/(.+)$/,
+  "https://raw.githubusercontent.com/$1/$2/refs/heads/$3/$4.pdf"
+);
+
+ in order to get "previewable" PDFs
+  
+  <p>Slides: {{ item.slides }}
+  <p>Slide source files: {{ item.sources }}
+-->
+  
+  <!-- Should embed this, if possible
+  <p>Video recording: {{ item.video }}
+  -->
+  

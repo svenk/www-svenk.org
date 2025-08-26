@@ -475,9 +475,18 @@ dl {
 
 dt, dd {
     margin: 0; padding: 0;
-    border-bottom: 1px dotted #333;
-    
     padding: .5rem;
+    
+    border-bottom: 1px dotted #333;
+}
+
+dt:last-of-type, dd:last-of-type {
+    border-bottom: none;
 }
 
 dt { font-weight: bold; }
+
+summary { cursor: zoom-in; }
+
+dd ul { padding-left: 0; }
+dd ul li { list-style-position: inside; }
