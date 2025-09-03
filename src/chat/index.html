@@ -1,0 +1,37 @@
+---
+title: "Sven Köppel: Chat with me"
+permalink: /chat/
+layout: default
+hide_footer: true # because it is distracting
+additional_headers: |
+  <script src="/chat/client.js" defer></script>
+---
+
+  <h1>Chat</h1>
+  
+  <noscript>
+    <p>The following snippet requires JavaScript. It is essentially a little Matrix
+    client. Open your favourite matrix client and write me to
+    <a href="https://matrix.to/#/@svek:matrix.org">@svek:matrix.org</a> if you don't want
+    or can't use javascript.</p>
+  </noscript>
+  
+  <section class="chat">
+    <ul class="output">
+      <template>
+        <li data-class="cls">
+          <div class="nickname" data-content="nickname"></div>
+          <div class="time" data-content="time"></div>
+          <div data-content="msg"></div>
+        </li>
+      </template>
+    </ul>
+    <form class="pure-form">
+      <textarea class="pure-input-1" placeholder="Type a message…" name="msg"></textarea>
+      <br><input class="pure-input-2-3" placeholder="Your name" name="nickname" autocomplete="on">
+      <button class="pure-input-1-3 pure-button pure-button-primary" type="submit">Send</button>
+    </form>
+  </section>
+
+  
+  

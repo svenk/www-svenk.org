@@ -17,7 +17,10 @@
 	
 	<link rel="stylesheet" href="/assets/pure2022.css" text="text/css">
     <link rel="me" href="https://chaos.social/@svenk">
+
     <script src="/assets/enhancements.js" defer></script>
+    
+    {{ additional_headers | raw -}}
     
     {% for kv in open_graph -%}
     <meta property="og:{{kv[0]}}" content="{{kv[1]}}" />
@@ -34,7 +37,7 @@
             <nav class="nav">
                 <ul class="nav-list">
                     {% for item in nav.main %}
-                        <li class="nav-item {% if item.url == page.url %}active{% endif %}">
+                        <li class="nav-item {% if item.url == page.url %}active{% endif %} {{ item.class }}">
                             <a class="pure-button"  href="{{ item.url }}"
                                style="view-transition-name: {{ item.title | slugify}};">{{ item.title }}</a>
                         </li>
@@ -51,6 +54,7 @@
         </div>
     </div>
     
+    {% if not hide_footer %}
     <div class="footer pure-u-1 pure-u-md-3-4">
         <div class="footer-wrapper">
             <!--&copy;-->
@@ -62,6 +66,7 @@
             <a href="https://github.com/svenk/www-svenk.org/edit/main/{{page.inputPath}}">fix here</a>.
         </div>
     </div><!--/Footer-->
+    {% endif %}
 </div><!--/layout -->
 </body>
 </html>

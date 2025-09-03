@@ -15,3 +15,6 @@ main:
     url: /misc/
   - title: Contact
     url: /contact/
+  - title: Chat
+    url: /chat/
+#   class: if-chat-available

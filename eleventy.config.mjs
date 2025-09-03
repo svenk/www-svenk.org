@@ -15,6 +15,7 @@ import path from 'path'
 
 export default async function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/assets")
+	eleventyConfig.addPassthroughCopy("src/chat/*.js")
 	// emulate passthrought copy during --serve usage, to make development faster
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough")
 	

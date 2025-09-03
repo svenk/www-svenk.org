@@ -2,10 +2,17 @@
 title: "Sven Köppel: Get in contact"
 permalink: /contact/
 layout: default
+additional_headers: |
+  <script src="/chat/client.js" defer></script>
 ---
 
   <h1>Contact</h1>
-  <p class="lead">I'm most happy if you drop me a plain old E-Mail at <a href="mailto:svenk@svenk.org">svenk@svenk.org</a>.
+  <p class="lead">
+    I'm most happy if you drop me a plain old E-Mail at <a href="mailto:svenk@svenk.org">svenk@svenk.org</a>.
+    <span class="if-chat-available">
+      Or what if <a href="/chat">we chat right now?</a>
+    </span>
+  </p>
   
   <!--<h2>Social networks and accounts</h2>-->
   <p>
@@ -15,15 +22,14 @@ layout: default
     have accounts with this handle but with some affiliation instead.-->
 
   <ul>
-    <li><a href="https://github.com/svenk">github.com/svenk</a>:
-        Open Source codes.
-    <li><a rel="me" href="https://chaos.social/@svenk">chaos.social/@svenk</a>:
-        Micromessaging (Masteodon)
-    <li><a href="https://www.linkedin.com/in/sven-k%C3%B6ppelstein/">LinkedIn</a>:
-        Buisness network.
+    <li><a href="https://github.com/svenk">github.com/svenk</a>: Open Source codes.
+    <li><a rel="me" href="https://chaos.social/@svenk">chaos.social/@svenk</a>: Masteodon (Micromessaging)
+    <li><a href="https://matrix.to/#/@svek:matrix.org">@svek:matrix.org</a>: Matrix (federated chat/VoIP)
+    <li><a href="https://www.linkedin.com/in/sven-k%C3%B6ppelstein/">LinkedIn</a>: Buisness network.
   </ul>
   
-  <p>These accounts are no longer active:
+  <details>
+  <summary>These accounts are no longer active.</summary>
   
   <ul>
     <li><a href="http://bitbucket.org/svek/">bitbucket.org/svek</a>: Open Source codes
@@ -32,7 +38,8 @@ layout: default
         <a href="https://twitter.com/technikum29">twitter.com/technikum29</a> and
         <a href="https://twitter.com/denktmit">twitter.com/denktmit</a>.
   </ul>
-        
+  </details>
+
   <details>
   <summary>
     Use <a href="https://github.com/svenk.keys">my public SSH keys</a> to send me an encrypted message. 

@@ -496,3 +496,54 @@ details > summary:hover {
 
 dd ul { padding-left: 0; }
 dd ul li { list-style-position: inside; }
+
+/* BEGIN of Chat system */
+
+.if-chat-available,
+.if-chat-available.disabled {
+  display: none; /* Progressive enhancement, do not show by default */
+}
+
+.if-chat-available.available {
+  display: inherit;
+}
+
+section.chat ul.output {
+  padding: 0;
+}
+
+section.chat ul.output li { 
+  list-style: none;
+  border-radius: 1em;
+  padding: 1em;
+  background-color: #eee;
+  margin: .2em 0;
+}
+
+section.chat ul.output {
+    .nickname {
+        display: inline-block;
+        font-weight: bold;
+        opacity: .6;
+    }
+    
+    .nickname, .time {
+        font-size: 90%;
+    }
+    
+    .time {
+        float: right;
+        opacity: .6;
+    }
+    
+    .recv, .agent {
+        margin-right: 30%;
+    }
+    
+    .sent {
+        margin-left: 30%;
+        
+        background-color: #0078e7;
+        color: white;
+    }
+}
