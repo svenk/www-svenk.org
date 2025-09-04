@@ -91,6 +91,17 @@ export default async function(eleventyConfig) {
 	
 	eleventyConfig.addFilter("join", (ary, val) => ary?.join(val));
 	
+	// very simple
+	eleventyConfig.addFilter("absUrl", (val, base) => {
+		if(!base) base = "https://svenk.org"
+		return val.startsWith("/") ? base + val : val
+	});
+	
+	
+	eleventyConfig.addFilter("json", (value, spacing = 0) =>
+		JSON.stringify(value, null, spacing)
+	);
+	
 	
 	// {% for k,v in o | sortByKeyLength %}
 	eleventyConfig.addNunjucksFilter("sortByKeyLength", obj =>

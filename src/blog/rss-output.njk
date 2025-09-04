@@ -1,0 +1,44 @@
+---
+permalink: /blog/feed.xml
+eleventyExcludeFromCollections: true
+layout: "" # do not inherit _includes/default.html
+metadata:
+  title: "SvenK blog"
+  description: "The aggregated list of postings from Sven Köppel."
+  language: en
+  base: "https://svenk.org/"
+  author:
+    name: "Sven Köppel"
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:svenk="https://svenk.org/2025/structured-blog"
+    xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ metadata.title }}</title>
+    <link>{{ metadata.base  }}</link>
+    <atom:link href="{{ permalink | absUrl }}" rel="self" type="application/rss+xml" />
+    <description>{{ metadata.description }}</description>
+    <language>{{ metadata.language or page.lang }}</language>
+    
+    {%- set postings = collections.aggregated | sort(attribute='data.date') | reverse -%}
+    {%- for post in postings %}
+    {%- set url = post.data.link | absUrl  %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ url }}</link>
+      {# <description>{{ post.content | renderTransforms(post.data.page, metadata.base) }}</description> #}
+      <pubDate>{{ post.data.date | dateFormat('MMM yyyy') }}</pubDate>
+      
+      <!-- this is only a guess: -->
+      <dc:creator>{% if post.data.item.author %}{{ post.data.item.author }}{% else %}{{ metadata.author.name }}{% endif %}</dc:creator>
+      <guid>{{ url }}</guid>
+      
+      <svenk:raw type="application/json"><![CDATA[
+          {{ post.data.item | json | safe }}
+      ]]></svenk:raw>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
