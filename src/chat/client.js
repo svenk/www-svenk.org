@@ -33,16 +33,28 @@ function getAwakeness(t) {
 }
 
 function curHoursCET() { ///< Current fractional hours in CET/CEST
-  const t = new Date(new Date().toLocaleString("en-GB", {timeZone:"Europe/Berlin"}));
-  const h24 = t.getHours();
-  const h24frac = h24 + t.getMinutes()/60;
-  const ampm = h24 >= 12 ? "pm" : "am";
-  const h12 = h24 % 12 || 12; 
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Berlin',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: false,
+  }).formatToParts(now);
+
+  const h24 = parseInt(parts.find(p => p.type === 'hour').value, 10);
+  const minutes = parseInt(parts.find(p => p.type === 'minute').value, 10);
+
+  const h24frac = h24 + minutes / 60;
+  const ampm = h24 >= 12 ? 'pm' : 'am';
+  const h12 = (h24 % 12) || 12;
   const h12ampm = `${h12}${ampm}`;
-  const mm = String(t.getMinutes()).padStart(2, '0');
-  const hhmm = `${h24}:${mm}`;
-  return { h24frac, h12ampm, hhmm }
+  const hh = String(h24).padStart(2, '0');
+  const mm = String(minutes).padStart(2, '0');
+  const hhmm = `${hh}:${mm}`;
+
+  return { h24frac, h12ampm, hhmm };
 }
+
 
 const formatPercent = p => (p*100).toFixed(0) + "%";
 
@@ -260,7 +272,7 @@ function setupAgent() {
       ...details // will overwrite
   })
 
-  const unreachable_timeout_sec = 8
+  const unreachable_timeout_sec = 15
 
   var isFirstMessage = true, gotAnyReply = false
   chat.whenAppendMessage((data, dir) => {
@@ -272,8 +284,12 @@ function setupAgent() {
           if(!gotAnyReply) {
             console.log("Ring ring, but nobody takes up")
             agent_send(`
-              It seems that I'm not at my phone in the moment. You can leave me a message
-              or try out a more classical way of <a href="/contact">contact</a>.
+              Leider scheint derzeit niemand erreichbar zu sein. Wir haben Ihre Nachricht
+              aber empfangen, gerne können Sie auch weitere hinterlassen. Sie können
+              auch einen konventionelleren Weg wählen und uns einfach eine E-Mail
+              schreiben an <a href="mailto:hallo@denktmit.de">hallo@denktmit.de</a>.
+              Oder probieren Sie doch uns unter der <a href="tel:+4961719517990">06171 9517990</a>
+              anzurufen!
             `, { display_as_html: true })
           }
         }, unreachable_timeout_sec * 1000)
