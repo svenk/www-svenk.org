@@ -1,354 +1,2964 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss 
-   xmlns:atom="http://www.w3.org/2005/Atom"
-   xml:lang="de"
-   version="2.0">
-    <channel>
-	<title>technikum29 Blog</title>
-	<link>http://www.technikum29.de</link>
-	<description>A blog about news from the technikum29 computer museum</description>
-	<language>de</language>
-	<copyright>&#x2117; &amp; &#xA9; 2003-2025 Sven K&#245;ppel and the technikum29 team</copyright>
-	<pubDate>Sun, 28 Sep 2025 18:02:08 +0200</pubDate>
-	<image>
-		<url>https://www.technikum29.de/shared/img-v6/banner.de.png</url>
-		<title>technikum29 Computermuseum</title>
-		<link>https://www.technikum29.de/</link>
-	</image>
-	<!-- Time To Live: Cache validity time for channel until update in minutes -->
-	<!--<ttl>720</ttl>--><!-- half a day -->
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>technikum29 blog</title>
+    <link>https://technikum29.de</link>
+    <description>The blog of the technikum29 computer museum</description>
+    <language>de-DE</language>
+    <copyright>Sven Köppel and the technikum29 team</copyright>
+    <image>
+      <url>https://www.technikum29.de/shared/img-v6/banner.de.png</url>
+      <title>technikum29 Computermuseum</title>
+      <link>https://www.technikum29.de/</link>
+    </image>
+    <lastBuildDate>2025-10-05T23:22:26.147+02:00</lastBuildDate>
+    <atom:link href="https://technikum29.de/blog/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Website-Upgrade</title>
+      <link>https://technikum29.de/blog/2025-10-04-Neue-Website/</link>
+      <author>Sven</author>
+      <pubDate>2025-10-04T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2025-10-04-Neue-Website/</guid>
+      <description>&lt;p&gt;Im 20-jährigen Jubiläumsjahr des Museums releasen wir nun im Oktober ein großes technisches
+Upgrade der Website. Das besondere: Es sieht auf den ersten Blick alles genauso aus wie vorher.
+Was sich geändert hat, ist also nicht das &lt;em&gt;Frontend&lt;/em&gt;, sondern das &lt;em&gt;Backend&lt;/em&gt;. Dieser Blogpost
+erläutert bearbeitenden Personen sowie einer interessierten Leserschaft,
+warum diese Erneuerung nötig ist und was sich in Zukunft ändert. Er ist der erste Teil
+einer kleinen Serie von Blogposts rund um die Website des Museums.&lt;/p&gt;
+&lt;h3&gt;Die Ausgangssituation&lt;/h3&gt;
+&lt;p&gt;Die technikum29-Website besteht aus fast 300 Einzelseiten und mehr als 1000 Bildern
+(siehe auch &lt;a href=&quot;/de/sitemap&quot;&gt;Sitemap&lt;/a&gt;). Der Inhalt liegt zu guten Teilen in zwei Sprachen vor
+(Deutsch und Englisch). Die Website gab es schon vor der Museumseröffnung, sie ist also
+mehr als 25 Jahre lang gewachsen und hatte entsprechend schon einige größere Änderungen
+erlebt. Die letzte war 2012, als &lt;em&gt;Version 6&lt;/em&gt; erschien. Sie brachte das auch heute noch sichtbare
+Design sowie eine Struktur, die erstmals in der populären Programmiersprache &lt;a href=&quot;https://www.php.net/&quot;&gt;PHP&lt;/a&gt;
+realisiert wurde. Bemerkenswert ist, dass dies ohne Verwendung populärer Libraries und Tools
+wie etwa &lt;em&gt;Wordpress&lt;/em&gt; passierte, es handelt sich also um eine komplette Eigenentwicklung im Umfang von
+ca. 5.000 Zeilen PHP (&lt;em&gt;Backend&lt;/em&gt;) nebst 2.000 Zeilen JavaScript und 4.000 Zeilen CSS (&lt;em&gt;Frontend&lt;/em&gt;).
+Die Website ist seit 2008 mit &lt;a href=&quot;https://subversion.apache.org/&quot;&gt;Subversion&lt;/a&gt; revisioniert,
+2019 erfolgte mit der Neuausrichtung des Museums auch der Wechsel nach Github in das Repository
+&lt;a href=&quot;https://github.com/technikum29/technikum29-www&quot;&gt;technikum29/technikum29-www&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Prinzipiell ist die Technologie der Website auch heute noch in Ordnung. Die Seite lässt sich nach kurzer
+Einarbeitung sogar auf Github bearbeiten. Es gibt aber Gründe, sie technisch zu überarbeiten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Die redaktionelle Lernkurve ist steil, selbst für technisch versierte Menschen. Das liegt daran, dass
+die individuell gefertigte Seite ein echtes Unikat ist. Ihre
+&lt;a href=&quot;https://github.com/technikum29/technikum29-www/blob/06c2467c7b3b6ab447acd2dbd0053678520d86c5/de/navigation.xml&quot;&gt;Navigation als XML-File&lt;/a&gt;
+findet man so kein zweites mal. Dadurch kann jemand neues, der die Seite tiefgreifender bearbeiten will,
+sich bei einer Suchmaschine wie Google oder einer KI wie ChatGPT keine gute Hilfe holen.&lt;/li&gt;
+&lt;li&gt;Zum Bearbeiten der Seite benötigt man idealerweise einen Webserver mit PHP für die schnelle Vorschau. Mit
+dem &lt;a href=&quot;https://www.apachefriends.org/&quot;&gt;XAMPP-Webserver&lt;/a&gt; gibt es ein benutzerfreundliches Produkt, das
+aber nur als Desktop-Anwendung (Windows/Mac/Linux) zur Verfügung seht. Auf Mobilgeräten,
+etwa iOS/Android-Tablets, lässt sich die Seite daher nicht vernünftig bearbeiten, außer in Einzeldateien auf Github.&lt;/li&gt;
+&lt;li&gt;Komplett abhanden geht die Möglichkeit, eine grafische Benutzeroberfläche (GUI) zum Bearbeiten zu benutzen,
+weil ja eben kein verbreitetes Content-Managament-System (CMS) verwendet wird.&lt;/li&gt;
+&lt;li&gt;Die jetzige Seite zu bearbeiten macht keinen Spaß, weil zeitgenössische Technologien nicht eingesetzt werden
+können. Das Altsystem (&amp;quot;Legacy&amp;quot;) wird nicht weiter entwickelt, da der Aufwand zur Pflege der Indivudallösung
+unverhältnismäßig groß ist. Die Website stagniert damit.&lt;/li&gt;
+&lt;li&gt;Das Git-Repository ist mittlerweile auf fast 5GB angewachsen, dadurch kommt man an die Grenzen von Github.
+Hier ist eine bessere Lösung im Medienmanagament nötig, die weiteres Wachstum erlaubt.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Es gibt Seiteninhalte, die seit der Museumsneuausrichtung 2020 prinzipiell neu sind und deren Umsetzung im
+PHP-basierten System eher schlecht als recht funktioniert:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Blog: Dem 2020 adhoc per PHP implementierten Blogsystem fehlen essentielle Funktionen, die man von einem Blogsystem
+erwartet, etwa die Kategorisierung von Inhalten.&lt;/li&gt;
+&lt;li&gt;Englische Übersetzung: Ihre Wartung erfordert viel Aufwand, sie wurde in den letzten Jahren eher stiefmütterlich
+behandelt. Anders als vor 20 Jahren gibt es mittlerweile aber dank künstlicher Intelligenz und Large Language Models
+sehr leistungsfähige automatische Übersetzungen. Das Altsystem stellt kaum Möglichkeiten zur Verfügung,
+solche automatischen Übersetzungen einzubauen. Beispiele für bislang unübersetzte Inhalte sind etwa die
+&lt;a href=&quot;/de/team&quot;&gt;Teamdarstellung&lt;/a&gt; und der &lt;a href=&quot;/blog&quot;&gt;Blog&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Hochaufgelöste Bilder werden bislang händisch in mehreren Auflösungen erzeugt/gespeichert.
+Das lässt sich mit einem modernen Website-System automatisieren. Das spart nicht nur Zeit, sondern auch
+Speicherplatz im Repository.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Evaluation von neuen Content-Managament-Lösungen&lt;/h3&gt;
+&lt;p&gt;Seit der Neueröffnung des Museums 2018, also seit sieben Jahren, sind wir auf der Suche nach einem neuen
+System für die Website. Dabei wurden unter anderem evaluiert:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eine &lt;a href=&quot;https://de.wikipedia.org/wiki/Wiki&quot;&gt;Wiki&lt;/a&gt;: Damit sollte direkt dem Community-Gedanken rechnung
+getragen werden, also vielen Menschen ermöglicht werden, den Inhalt zu bearbeiten. Dafür habe ich 2021
+für die populäre &lt;a href=&quot;https://www.mediawiki.org&quot;&gt;MediaWiki&lt;/a&gt;-Software ein Skin angefertigt
+(Code ist online &lt;a href=&quot;https://github.com/technikum29/t29v7&quot;&gt;auf Github: t29-v7&lt;/a&gt;), also die
+Altwebsite optisch übernommen und einige Inhalte testweise übertragen. Eine Testinstallation
+lief unter &lt;a href=&quot;https://v7.technikum29.de/w/index.php?title=Hauptseite&quot;&gt;v7.technikum29.de&lt;/a&gt;. Die Entwicklung
+wurde aber auf Eis gelegt, weil ich mit dem System nicht ganz zufrieden war.
+&lt;a href=&quot;https://github.com/technikum29/technikum29-www/blob/a1aa0144c9c4c88a87af69d238b3fd9d2ca33599/KONVERTIERUNG-v8.md#t29v7-der-mediawiki-ansatz&quot; class=&quot;go&quot;&gt;Mehr Informationen zu t29v7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Als Alternative wurde 2024 kurz evaluiert, das &lt;a href=&quot;https://getkirby.com&quot;&gt;Kirby-CMS&lt;/a&gt; oder das
+&lt;a href=&quot;https://www.boltcms.io/&quot;&gt;Bolt-CMS&lt;/a&gt; zu verwenden. Beide sind moderne PHP-basierte Flat File CMS, die aber
+über ein eher klassisches Backend verfügen. Die Hoffnung war hier, dass der Übergang vom textbasierten
+Altsystem t29v6 einfacher ist. Wir konnten dafür sogar von Kirby wegen unsere allgemeinnützigen
+Ausrichtung eine lebenslang kostenlose Lizenz erwerben! In die Entwicklung einer Kirby-basierten Website
+ist es aber nie gekommen.&lt;/li&gt;
+&lt;li&gt;Stattdessen habe ich im Juni 2025 einmal testweise damit angefangen, die Website in das
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Static_site_generator&quot;&gt;Static Site Generator&lt;/a&gt;-System &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;11ty&lt;/a&gt;
+zu übertragen und bin dabei in wenigen Monaten zu einem für mich zufriedenstellenden Ergebnis gekommen.
+Dieser Ansatz soll im folgenden erläutert werden.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;t29v8: Der Static Site Generator-Ansatz&lt;/h3&gt;
+&lt;p&gt;Im Sommer 2025 habe ich folgende Beobachtungen gemacht:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Das Altsystem (&lt;em&gt;t29v6&lt;/em&gt;) ist vom Aufbau sehr ähnlich zu einem Static Site Generator (SSG)-basierten System.
+Dies erlaubt die Website mit nur minimalen Änderungen umzustellen: In jeder Seite/Textdatei müssen nur die
+Metadaten in der Quelltext-Formatierung leicht verändert werden. Auf diese Weise kann ein neues System
+leicht eingeführt werden und dann nach und nach um weitere Funktionen ergänzt werden. Gleichzeitig bleibt
+die Website &amp;quot;aus einem Guss&amp;quot;, da das alte PHP-System nicht weiterbetrieben werden muss.&lt;/li&gt;
+&lt;li&gt;SSGs sind gerade bei inhaltslastigen Seiten im Bereich der technischen Dokumentation sehr verbreitet.
+Die Technologie &amp;quot;passt&amp;quot; damit prinzipiell gut. Nicht nur das technische Upgrade zu einem &amp;quot;echten SSG&amp;quot; ist
+damit ein eher kleiner Schritt, sondern auch ein potentieller Wechsel von einem SSG zu einem anderen. Auf
+diese Weise wird ein &lt;a href=&quot;https://de.wikipedia.org/wiki/Lock-in-Effekt&quot;&gt;Lock-In-Effekt&lt;/a&gt; vermieden, wie er etwa
+bei größeren datenbank-basierten Wiki-Systemen oder CMS existiert.&lt;/li&gt;
+&lt;li&gt;Viele SSGs lassen sich mit einem &lt;a href=&quot;https://en.wikipedia.org/wiki/Headless_content_management_system&quot;&gt;headless CMS&lt;/a&gt;
+erweitern. So ergibt sich in der Praxis eine Möglichkeit, die Vorteile eines SSGs mit einem CMS zu kombinieren.
+Insbesondere kann so weiterhin &lt;em&gt;git&lt;/em&gt; zur Inhaltsverwaltung verwendet werden.
+Ein Beispiel für ein solches headless CMS ist &lt;a href=&quot;https://pagescms.org/docs/&quot;&gt;PagesCMS&lt;/a&gt;, das wurde auch schon evaluiert.
+Im Ergebnis entsteht (langfristig) ein System, dass sich für den Redaktionsprozess (auch auf Mobilgeräten)
+im Browser verwenden lässt, ohne dass man dafür etwas installieren muss. Auch &lt;em&gt;Github codespaces&lt;/em&gt;
+oder &lt;a href=&quot;https://devpod.sh/&quot;&gt;DevPods&lt;/a&gt; können eine portable Entwicklungsumgebung für ein nodejs-Projekt darstellen,
+wenngleich diese Browser-IDEs sich eher an Software-Entwickelnde oder die Arbeit am Text statt an Medien richten.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Das t29v6-Altsystem hat mit einem typischen SSG folgende Gemeinsamkeiten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Individuelle Seiten sind als Textdateien abgespeichert.&lt;/li&gt;
+&lt;li&gt;Es gibt in jeder dieser Textdateien ein &lt;em&gt;Front Matter&lt;/em&gt;, in welchem Metadaten wie Seitentitel
+hinterlegt sind.&lt;/li&gt;
+&lt;li&gt;Auch Menüstrukturen werden in der Regel in Textdateien strukturiert vorgehalten oder direkt aus den Inhalten
+abgeleitet.&lt;/li&gt;
+&lt;li&gt;Seitenrelationen wie &amp;quot;Nächste Seite&amp;quot; und &amp;quot;Vorherige Seite&amp;quot; lassen sich in SSGs in der Regel gut abbilden.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Der Übersetzungsprozess ließ sich (teil-)automatisieren:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Zum Einsatz kamen Standard-Linux-Kommandozeilenwerkzeuge, die Dateinamen umgeschrieben haben. Beispielsweise
+zur Umbenennung von &lt;code&gt;.php&lt;/code&gt;-Dateien in &lt;code&gt;.htm&lt;/code&gt;-Dateien oder zum Ersetzen von PHP-Relikten wie
+&lt;code&gt;&amp;lt;?php echo $seiten_titel; ?&amp;gt;&lt;/code&gt; durch Twig/Nunjuck-Templates der Form &lt;code&gt;{{ seiten_titel }}&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Kleine Scripte wie &lt;a href=&quot;https://github.com/technikum29/technikum29-www/blob/a1aa0144c9c4c88a87af69d238b3fd9d2ca33599/v8-remove-php.py&quot;&gt;v8-remove-php.py&lt;/a&gt;
+übersetzten die Frontmatter-Metadaten in das verbreitete &lt;a href=&quot;https://yaml.org/&quot;&gt;YAML&lt;/a&gt;-Dateiformat.&lt;/li&gt;
+&lt;li&gt;Mithilfe von LLMs wie ChatGPT oder Claude wurde zum Teil in PHP geschriebene Logik in
+JavaScript-Code übersetzt, der im NodeJS-Ökosystem funktioniert.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Quirks und Standarisierung&lt;/h3&gt;
+&lt;p&gt;Mit dem komplett selbstentwickelten PHP-System sollte 2012 den unkonventionellen Ansprüchen der Webseite
+Rechnung getragen werden, etwa die ungewöhnliche Menüführung mit den &lt;em&gt;Geräteseiten&lt;/em&gt; oder interaktiven
+Elementen zB. zur Besucheranmeldung. Eine Motivation bei dem Einsatz des verbreiteten SSG-Ansatzes ist,
+die Website Schritt für Schritt ähnlicher zu anderen Websites zu machen, also die Website und ihre Teile
+zunehmend zu &amp;quot;standarisieren&amp;quot;. Das kann zB. durch die Homogenisierung des Menüs und der Verwendung von
+&lt;em&gt;Breadcrumbs&lt;/em&gt; passieren. Seiteninhalte sollen zukünftig vermehrt in der einfachen Auszeichnungssprache
+&lt;a href=&quot;https://de.wikipedia.org/wiki/Markdown&quot;&gt;Markdown&lt;/a&gt; geschrieben werden, wenn sie keine HTML-Formatierungen benötigen.&lt;/p&gt;
+&lt;p&gt;Die englische Übersetzung sollte entweder komplett abgeschafft werden oder mithilfe von DeepL o.ä.
+(teil)automatisiert. Vor allem könnte die Übersetzung feingliedriger geschehen, d.h. unterschiedliche Teile/Blöcke
+einer Seite könnten unterschiedliche Übersetzungsgrade haben. Dies sollte nicht zur SSG-Laufzeit passieren,
+sondern ein seperater Schritt sein. Es spricht daher prinzipiell einiges dafür, die &lt;code&gt;/de&lt;/code&gt; und &lt;code&gt;/en&lt;/code&gt;-Trennung
+beizubehalten. An anderen Stellen (etwa im Blog oder dem neuartigen Geräteordner) hingegen kommt Material und
+Text zusammen, sodass es dort vielleicht sinnvoller ist, die mehrsprachigen Texte nah beianander zu halten, also
+im gleichen Ordner.&lt;/p&gt;
+&lt;h3&gt;Zur Funktionsweise des Menüs&lt;/h3&gt;
+&lt;p&gt;Einer der größten Unterschiede, die SSGs untereinander haben, ist die Art, wie die Menüführung realisiert
+wird. Zwei verbreitete Wege sind:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Die Navigationsstruktur der Website wird einer (oder weniger) zentraler Datei(en) entnommen.
+In der Vergangenheit auf der technikum29-Website war das etwa &lt;code&gt;/de/navigation.xml&lt;/code&gt; und
+&lt;code&gt;/en/navigation.xml&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Die Navigationsstruktur wird aus den Inhaltsdateien entnommen. Typischerweise kommen dabei die
+lexikalische Sortierung der Dateinamen in einer Ordnerstruktur zum tragen und eine Feinsteuerung findet
+per Frontmatter statt. Alternativ findet eine Taxonomie lediglich anhand der Frontmatter-Daten statt.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ich hab mich dazu entschieden, die Navigation nicht wie in der Vergangenheit aus einer Datei auszulesen,
+sondern aus der Seitenstruktur. Ein Vorteil davon ist, dass alle nötigen Informationen zu einer einzelnen
+Seite nur dort im Frontmatter stehen und nirgendwo anders. Beispielsweise lässt sich ihre Bezeichnung im
+Menü direkt in der Datei der Seite bearbeiten. Ein Nachteil ist, dass eine größere Umstrukturierung des
+Menüs nun das Bearbeiten von mehreren Dateien erfordert.&lt;/p&gt;
+&lt;p&gt;Für weitere Informationen über das Menü und die Seitenvariablen siehe die
+&lt;a href=&quot;/de/website-guide&quot; class=&quot;go&quot;&gt;redaktionelle Anleitung zur technikum29-Website&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Ankündigung zukünftiger Funktionen&lt;/h3&gt;
+&lt;p&gt;Das neue Website-System ist die Grundlage für Weiterentwicklungen der Website, zu der etwa gehören:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eine bessere Struktur/Ausarbeitung der Informationen &lt;em&gt;über&lt;/em&gt; des Museums, also der Inhalte die
+derzeit im &amp;quot;horizontalen&amp;quot; Menü oben zu finden sind.&lt;/li&gt;
+&lt;li&gt;Automatisierung der Bilder-Verkleinerung (Thumbnails) und damit Verkleinerung des Repositories.&lt;/li&gt;
+&lt;li&gt;Überarbeitung der Suchfunktion und automatisierten englischen Übersetzungen&lt;/li&gt;
+&lt;li&gt;Verbesserung des Layouts für Mobilgeräte&lt;/li&gt;
+&lt;li&gt;Implementierung eines browser-basierten Redaktionsprozesses (Headless-CMS), um das Bearbeiten der
+Seite zu vereinfachen.&lt;/li&gt;
+&lt;li&gt;Vereinheitlichung und bessere grafische Darstellung von gleichartigen Informations-Sammlungen,
+seien es Youtube-Videos, Zeitungsartikel, Blogposts, Gerätelisten uvm.&lt;/li&gt;
+&lt;li&gt;Lösungen für das Medienhosting, also der großen Informationsmengen.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>20 Jahre technikum29</title>
+      <link>https://technikum29.de/blog/2025-07-08-20_Jahre_technikum29/</link>
+      <author>Roland</author>
+      <pubDate>2025-07-08T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2025-07-08-20_Jahre_technikum29/</guid>
+      <description>
+&lt;p&gt;&lt;b&gt;Das technikum29 feiert 20sten Geburtstag ! &lt;/b&gt;2025 eröffnete Heribert Müller (✝︎ 2018) in den Räumen
+	der ehemaligen Nassauischen Sparkasse in Kelkheim sein Technikmuseum technikum29.
+&lt;/p&gt;
+
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;img src=&quot;/shared/photos/blog/2005-11-09 HK.pdf&quot; width=&quot;600&quot;  &quot;/&gt;
+		
+		&lt;p class=&quot;bildtext&quot;&gt;Heribert Müller eröffnet sein technikum29 in 2005 &lt;br&gt;(Höchster Kreisblatt vom 9.11.2005)&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Schon viele Jahre vorher sammelte Heribert Müller alte Technik: Röhrenradios, Fernsehgeräte, Videotechik, Kommunikationstechnik 
+	und Rechenmaschinen. Erst in den neuen Räumlichkeiten hatte er genügend Platz, um auch große Computer 
+	und Datenverarbeitstechnik der 50er und 60er Jahre zu präsentieren: u.a. Lochkartentechnik und Großcomputer. 
 	
-	<atom:link href="https://www.technikum29.de/blog/rss" rel="self" type="application/rss+xml" />	
+&lt;/p&gt;
+
+
+&lt;p&gt;Weitere Zeitungsberichte aus der Zeit der Gründung des technikum29 finden sich in unserem 
+	&lt;a href=&quot;/de/impressum.php#Zeitungsecho_zum_Museum&quot;&gt;Archiv&lt;/a&gt;!
+&lt;/p&gt;
+
+&lt;br&gt;
+Roland
+&lt;br&gt;&lt;br&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 wünscht Frohe Weihnacht und feiert 2025 20sten Geburtstag !</title>
+      <link>https://technikum29.de/blog/2024-12-23-Frohe_Weihnacht/</link>
+      <author>Roland</author>
+      <pubDate>2024-12-23T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2024-12-23-Frohe_Weihnacht/</guid>
+      <description>
+&lt;p&gt;Das Jahr 2024 neigt sich dem Ende und technikum29 möchte sich bei allen Helfern, Besuchern, 
+	Unterstützern und Spendern ganz herzlich bedanken ! Mit ihrer Unterstützung bei Reparaturen, 
+	ihrem Interesse bei Besuchen, ihren Geräte- und Geldspenden haben sie unsere Arbeit nachhaltig 
+	unterstützt und es damit möglich gemacht, dass das Museum als private Initiative so erfolgreich 
+	betrieben werden kann.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Allen Unterstützern und ihren Lieben wünschen wir ein Frohes Weihnachtsfest und einen guten Rutsch 
+in das Neue Jahr !&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;Nach dem Tod des Gründers Heribert Müller in 2018 wurde das technikum29 in 2019 in seiner heutigen Form 
+	wieder eröffnet. Wir blicken nunmehr auf &lt;b&gt;5 Jahre Museumsbetrieb&lt;/b&gt; unter neuer Regie zurück. Die 
+	Ausstellung wurde neu ausgerichtet, es kamen viele neue Exponate hinzu und seit diesem Jahr haben 
+	wir auch ein neues Depot und hoffen, ab 2025 neue Ausstellungsfläche im Museum frei machen zu 
+	können.
+&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Und in 2025 steht ein weiteres Jubiläum an: Vor 20 Jahren wurde das technikum29 eröffnet !&lt;/b&gt;, hier ein 
+	Bericht des Höchster Kreisblattes vom 9. Nov. 2005:
+	&lt;/p&gt;
 	
-				<item>
-				<title>20 Jahre technikum29</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2025-07-08-20_Jahre_technikum29</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2025-07-08-20_Jahre_technikum29</guid>
-				<pubDate>2025-07-08</pubDate>
-			</item>
-						<item>
-				<title>technikum29 wünscht Frohe Weihnacht und feiert 2025 20sten Geburtstag !</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2024-12-23-Frohe_Weihnacht</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2024-12-23-Frohe_Weihnacht</guid>
-				<pubDate>2024-12-23</pubDate>
-			</item>
-						<item>
-				<title>technikum29 bezieht neues Depot !</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2024-11-26-DepotKelkheim</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2024-11-26-DepotKelkheim</guid>
-				<pubDate>2024-11-27</pubDate>
-			</item>
-						<item>
-				<title>technikum29 erhielt eine ENIGMA !</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2024-09-16-ENIGMA</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2024-09-16-ENIGMA</guid>
-				<pubDate>2024-09-16</pubDate>
-			</item>
-						<item>
-				<title>technikum29 in der Presse</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2024-08-23-technikum29_in_der_Zeitung</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2024-08-23-technikum29_in_der_Zeitung</guid>
-				<pubDate>2024-08-23</pubDate>
-			</item>
-						<item>
-				<title>Anmeldung zu Besuchen im technikum29</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2024-08-01-Besuche_im_technikum29</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2024-08-01-Besuche_im_technikum29</guid>
-				<pubDate>2024-08-01</pubDate>
-			</item>
-						<item>
-				<title>technikum29 wünscht ein Frohes Neues Jahr 2024 !</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2024-01-02-Frohes_Neues_Jahr_2024</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2024-01-02-Frohes_Neues_Jahr_2024</guid>
-				<pubDate>2024-01-02</pubDate>
-			</item>
-						<item>
-				<title>Ankunft der Stantec Zebra Mk II im technikum29</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2023-11-16-Ankunft_der_Stantec</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2023-11-16-Ankunft_der_Stantec</guid>
-				<pubDate>2023-11-16</pubDate>
-			</item>
-						<item>
-				<title>Neuzugang Hamann automatic 500</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2023-10-23-Neuzugang_Hamann_automatic_500</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2023-10-23-Neuzugang_Hamann_automatic_500</guid>
-				<pubDate>2023-10-23</pubDate>
-			</item>
-						<item>
-				<title>Vorstellung weiterer Neuzugänge in 2023</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2023-10-20-weitere_Neuzugaenge_2023</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2023-10-20-weitere_Neuzugaenge_2023</guid>
-				<pubDate>2023-10-20</pubDate>
-			</item>
-						<item>
-				<title>Vorstellung einiger Neuzugänge in 2023</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2023-06-06-Neuzugaenge_2023</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2023-06-06-Neuzugaenge_2023</guid>
-				<pubDate>2023-06-06</pubDate>
-			</item>
-						<item>
-				<title>Zwei neue Streifenschreiber in der Kommunikationsabteilung</title>
-				<author>Detlef</author>
-				<link>https://technikum29.de/blog/2023-04-22-Neue_Streifenschreiber</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2023-04-22-Neue_Streifenschreiber</guid>
-				<pubDate>2023-04-22</pubDate>
-			</item>
-						<item>
-				<title>Neuzugänge aus unseren Depots: Olympia Tischrechner RAE 4/15 und 4/30</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2023-02-13-Neuzugaenge_Olympia_RAE</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2023-02-13-Neuzugaenge_Olympia_RAE</guid>
-				<pubDate>2023-02-23</pubDate>
-			</item>
-						<item>
-				<title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2022 geschah</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2022-12-13-Jahresabschluss</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2022-12-13-Jahresabschluss</guid>
-				<pubDate>2022-12-13</pubDate>
-			</item>
-						<item>
-				<title>Neuer Fernschreiber Siemens T100S im technikum29</title>
-				<author>Detlef</author>
-				<link>https://technikum29.de/blog/2022-11-05-Neuer Fernschreiber Siemens T100S im technikum29</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2022-11-05-Neuer Fernschreiber Siemens T100S im technikum29</guid>
-				<pubDate>2022-11-05</pubDate>
-			</item>
-						<item>
-				<title>Virtueller Museumsrundgang</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2022-10-03-Virtueller_Rundgang</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2022-10-03-Virtueller_Rundgang</guid>
-				<pubDate>2022-10-03</pubDate>
-			</item>
-						<item>
-				<title>UPDATE Wir überarbeiten unsere Webseite</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2022-09-26-Wir_ueberarbeiten_unsere_Webseite</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2022-09-26-Wir_ueberarbeiten_unsere_Webseite</guid>
-				<pubDate>2022-09-26</pubDate>
-			</item>
-						<item>
-				<title>technikum29 in der Presse</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2022-06-08-technikum29_in_der_Presse</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2022-06-08-technikum29_in_der_Presse</guid>
-				<pubDate>2022-06-08</pubDate>
-			</item>
-						<item>
-				<title>Fünf neue Exponate im technikum29 eingetroffen</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2022-06-06-Neuzugaenge-Kassel-2022</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2022-06-06-Neuzugaenge-Kassel-2022</guid>
-				<pubDate>2022-06-06</pubDate>
-			</item>
-						<item>
-				<title>Wir erwarten neue Exponate</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2022-04-27-Neuzugaenge</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2022-04-27-Neuzugaenge</guid>
-				<pubDate>2022-04-27</pubDate>
-			</item>
-						<item>
-				<title>Neues im Technikum29 - Wir räumen um !</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2022-04-26-Wir_raeumen_um</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2022-04-26-Wir_raeumen_um</guid>
-				<pubDate>2022-04-26</pubDate>
-			</item>
-						<item>
-				<title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2021 geschah</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2021-12-26-Jahresabschluss</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2021-12-26-Jahresabschluss</guid>
-				<pubDate>2021-12-26</pubDate>
-			</item>
-						<item>
-				<title>Unsere IBM5100 funktioniert wieder !</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2021-09-07-Unsere-IBM5100-funktioniert-wieder</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2021-09-07-Unsere-IBM5100-funktioniert-wieder</guid>
-				<pubDate>2021-09-08</pubDate>
-			</item>
-						<item>
-				<title>Neu im technikum29: BTX</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2021-07-27-BTX_im_technikum</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2021-07-27-BTX_im_technikum</guid>
-				<pubDate>2021-07-27</pubDate>
-			</item>
-						<item>
-				<title>Ein neuer Lochkartenstanzer im technikum29</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2021-07-05_weiterer_Neuzugang</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2021-07-05_weiterer_Neuzugang</guid>
-				<pubDate>2021-07-05</pubDate>
-			</item>
-						<item>
-				<title>UPDATE IBM5320: neue Software</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2021-07-05_UPDATE_IBM5320</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2021-07-05_UPDATE_IBM5320</guid>
-				<pubDate>2021-07-05</pubDate>
-			</item>
-						<item>
-				<title>Unsere MADAS VII eTA rechnet wieder !</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2021-05-19-MADAS</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2021-05-19-MADAS</guid>
-				<pubDate>2021-05-19</pubDate>
-			</item>
-						<item>
-				<title>Wiederinbetriebnahme IBM5320</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2021-05-15-Wiederinbetriebnahme-5320</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2021-05-15-Wiederinbetriebnahme-5320</guid>
-				<pubDate>2021-05-15</pubDate>
-			</item>
-						<item>
-				<title>Neuzugänge</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2021-05-01-Neuzugaenge</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2021-05-01-Neuzugaenge</guid>
-				<pubDate>2021-05-01</pubDate>
-			</item>
-						<item>
-				<title>UPDATE: Wer knackt den Banktresor?</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2021-04-30-Update-Safe</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2021-04-30-Update-Safe</guid>
-				<pubDate>2021-04-30</pubDate>
-			</item>
-						<item>
-				<title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2020 geschah</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2020-12-10-Jahresabschluss</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2020-12-10-Jahresabschluss</guid>
-				<pubDate>2020-12-10</pubDate>
-			</item>
-						<item>
-				<title>Wir suchen Lagerflächen</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2020-09-03-Lagersuche</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2020-09-03-Lagersuche</guid>
-				<pubDate>2020-09-03</pubDate>
-			</item>
-						<item>
-				<title>Unsere Fernschreiber sind ans Telex-Netzwerk angebunden</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2020-07-27-iTelex</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2020-07-27-iTelex</guid>
-				<pubDate>2020-07-27</pubDate>
-			</item>
-						<item>
-				<title>Erfolgreicher Helfertag am 04.07.2020</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2020-07-07-Nachlese-Helfertag</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2020-07-07-Nachlese-Helfertag</guid>
-				<pubDate>2020-07-07</pubDate>
-			</item>
-						<item>
-				<title>Erfolgreiches Treffen der Unterstützer des technikum29 am 28.02.2020</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2020-03-03-Nachlese-Arbeitswochenende</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2020-03-03-Nachlese-Arbeitswochenende</guid>
-				<pubDate>2020-03-03</pubDate>
-			</item>
-						<item>
-				<title>Wer knackt den Banktresor?</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2020-02-05-Safetuer</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2020-02-05-Safetuer</guid>
-				<pubDate>2020-02-05</pubDate>
-			</item>
-						<item>
-				<title>Ankündigung des nächsten Samstages zum gemeinsamen Arbeiten</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2020-01-04-Ankuendigung-Arbeitstag</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2020-01-04-Ankuendigung-Arbeitstag</guid>
-				<pubDate>2020-01-04</pubDate>
-			</item>
-						<item>
-				<title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2019 geschah.</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2019-12-21-Jahresabschluss</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-12-21-Jahresabschluss</guid>
-				<pubDate>2019-12-21</pubDate>
-			</item>
-						<item>
-				<title>Neuzugang im Museum: CPT 8800 Textverarbeitungssystem</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2019-12-05-cpt-8800</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-12-05-cpt-8800</guid>
-				<pubDate>2019-12-05</pubDate>
-			</item>
-						<item>
-				<title>Erstes Arbeitswochenende der Unterstützer des technikum29 erfolgreich beendet</title>
-				<author>Roland</author>
-				<link>https://technikum29.de/blog/2019-11-25-Nachlese-Arbeitswochenende</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-11-25-Nachlese-Arbeitswochenende</guid>
-				<pubDate>2019-11-25</pubDate>
-			</item>
-						<item>
-				<title>Ankündigung: Arbeitswochenende am 23. November im Museum</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2019-11-06-Ankuendigung-Arbeitswochenende</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-11-06-Ankuendigung-Arbeitswochenende</guid>
-				<pubDate>2019-11-06</pubDate>
-			</item>
-						<item>
-				<title>Das Auftakttreffen im technikum29 fand statt</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2019-10-31-Auftakttreffen</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-10-31-Auftakttreffen</guid>
-				<pubDate>2019-10-31</pubDate>
-			</item>
-						<item>
-				<title>Wir waren auf dem Vintage Computing Festival Berlin (mit Video)</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2019-10-14-VCFB-Nachlese</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-10-14-VCFB-Nachlese</guid>
-				<pubDate>2019-09-14</pubDate>
-			</item>
-						<item>
-				<title>Ankündigung: Auftakttreffen im technikum29</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2019-09-20-Ankuendigung-Kickoff</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-09-20-Ankuendigung-Kickoff</guid>
-				<pubDate>2019-09-20</pubDate>
-			</item>
-						<item>
-				<title>Ankündigung: technikum29 auf dem Vintage Computing Festival Berlin</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2019-08-15-Ankuendigung-VCFB</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-08-15-Ankuendigung-VCFB</guid>
-				<pubDate>2019-08-15</pubDate>
-			</item>
-						<item>
-				<title>Organisationsformen</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2019-02-21-Organisationsformen</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-02-21-Organisationsformen</guid>
-				<pubDate>2019-02-21</pubDate>
-			</item>
-						<item>
-				<title>The Heritage</title>
-				<author>Sven</author>
-				<link>https://technikum29.de/blog/2019-02-04-the-heritage</link>
-				<guid idPermaLink="true">https://technikum29.de/blog/2019-02-04-the-heritage</guid>
-				<pubDate>2019-02-04</pubDate>
-			</item>
-			
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;img src=&quot;/shared/photos/blog/2005-11-09 HK.pdf&quot; width=&quot;700&quot;  &quot;/&gt;
+		
+		&lt;p class=&quot;bildtext&quot;&gt;Heribert Müller eröffnet sein technikum29 in 2005&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Wir werden das Jubiläum im Herbst 2025 angemessen feiern, wie und wo geben wir noch rechtzeitig bekannt !!
+&lt;/p&gt;
+
+&lt;br&gt;
+Roland
+&lt;br&gt;&lt;br&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 bezieht neues Depot !</title>
+      <link>https://technikum29.de/blog/2024-11-26-DepotKelkheim/</link>
+      <author>Roland</author>
+      <pubDate>2024-11-27T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2024-11-26-DepotKelkheim/</guid>
+      <description>
+&lt;p&gt;In den letzten Jahren waren unsere Außendepots verstreut über Kelkheim und darüber hinaus. Wir hatten 
+	sie nach und nach entrümpelt und ihre Anzahl reduziert. Die verbliebenen Lagerräume waren provisorisch 
+	und nur vorübergehend zu nutzen. &lt;b&gt;Das hat nun ein Ende !&lt;/b&gt; Nachdem wir vor kurzem mit einem Artikel im
+	 &lt;a href=&quot;/blog/2024-08-23-technikum29_in_der_Zeitung.php&quot;&gt;Höchster Kreisblatt&lt;/a&gt; präsent 
+	waren, meldete sich ein Kelkheimer auf unsere Suche nach Depoträumen. Schnell war man sich einig 
+	und der LKW mit der ersten Fuhre war gepackt:&lt;/p&gt;
+	
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/shared/photos/blog/DepotKelkheim1.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/shared/photos/blog/DepotKelkheim1kl.jpeg&quot; width=&quot;400&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		
+		&lt;p class=&quot;bildtext&quot;&gt;Die erste Fuhre ist verladen (zum Vergrößern bitte das Bild anklicken !)&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Das Ziel der Fahrt: eine ehemalige Backstube, sauber, trocken, ideal geeignet, um unsere im Museum 
+	nicht benötigten Stücke zu beherbergen.&lt;/p&gt;
+
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/shared/photos/blog/DepotKelkheim2.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/shared/photos/blog/DepotKelkheim2kl.jpeg&quot; width=&quot;400&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		&lt;p class=&quot;bildtext&quot;&gt;Die ersten Geräte im neuen Depot: UNIVAC 9200 mit Kartenlocher 1710 und zwei 
+		Diskstationen 8425 sowie ein Kartenleser/-stanzer 1442 (für die IBM 1130)&lt;/p&gt;
+	&lt;/div&gt;
+
+	
+&lt;p&gt;In den Räumlichkeiten ist noch reichlich Platz, so dass wir in den nächsten Wochen noch andere Gerätschaften 
+	hier lagern werden. Damit sind dann alle Außendepots in diesem &quot;Zentraldepot&quot; zusammengefasst.&lt;/p&gt;
+	
+
+&lt;br&gt;
+Roland
+&lt;br&gt;&lt;br&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 erhielt eine ENIGMA !</title>
+      <link>https://technikum29.de/blog/2024-09-16-ENIGMA/</link>
+      <author>Roland</author>
+      <pubDate>2024-09-16T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2024-09-16-ENIGMA/</guid>
+      <description>
+&lt;p&gt;&lt;b&gt;Neu im technikum29: eine ENIGMA !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Am 9.9.2024 verzeichnete das technikum29 einen besonderen Neuzugang: eine funktionstüchtige &lt;b&gt;ENIGMA Rotor 
+	Chiffriermaschine&lt;/b&gt;. Genauer gesagt: eine sehr detailgetreue Replika des Modells ENIGMA I.&lt;/p&gt;
+	
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/de/geraete/Enigma_Replika/Enigma_Replika_Bilder/Enigma_Replika_Gehaeuse_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Enigma_Replika/Enigma_Replika_Bilder/Enigma_Replika_Gehaeuse_kl.jpeg&quot; width=&quot;300&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		&lt;a  href=&quot;/de/geraete/Enigma_Replika/Enigma_Replika_Bilder/Enigma_Replika_offen_Uebersicht_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Enigma_Replika/Enigma_Replika_Bilder/Enigma_Replika_offen_Uebersicht_kl.jpeg&quot; width=&quot;155&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		&lt;a  href=&quot;/de/geraete/Enigma_Replika/Enigma_Replika_Bilder/Enigma_Replika_Ansicht_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Enigma_Replika/Enigma_Replika_Bilder/Enigma_Replika_Ansicht_kl.jpeg&quot; width=&quot;250&quot;  &quot;/&gt;
+	&lt;/a&gt;		
+		&lt;p class=&quot;bildtext&quot;&gt;Zum Vergrößern bitte das Bild anklicken !&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;In einem schönen Holzgehäuse (Bild links) befindet sich der sehr detailgetreue Nachbau einer ENIGMA I (Bild mitte und rechts). 
+	Entworfen und gebaut wurde sie von Gunther Tünnermann (Kelkheim). Wir erhielten dieses schöne Stück Technikgeschichte 
+	von seiner Witwe als Spende an das Museum.&lt;/p&gt;
+	
+&lt;p&gt;Chiffriermaschinen wie die ENIGMA wurden zur Ver- und Entschlüsselung von Nachrichten genutzt. Über eine Tastatur 
+	wird der Text eingegeben. Über einen mehrstufigen Prozess wird der eingegebene Buchstabe mehrfach (7 - 10 mal) durch 
+	alphabetische Substitution &quot;verwürfelt&quot; und über ein Glühlampenfeld ausgegeben. Diese mehrfache Substitution ist bei der 
+	ENIGMA konstruktionsbedings symmetrisch. Das bedeutet, dass die Entschlüsselung in gleicher Weise erfolgt: man gibt den 
+	chiffrierten Text Buchstaben für Buchstaben ein und liest die Nachricht am Glühlampenfeld ab.&lt;/p&gt;
+	
+	
+&lt;p&gt;Wir werden in Kürze detailliert über dieses schöne Stück &lt;a href=&quot;/de/rechnertechnik/sonstiges.php#enigma&quot;&gt;hier&lt;/a&gt;  
+	berichten !&lt;/p&gt;
+
+
+&lt;br&gt;
+Roland
+&lt;br&gt;&lt;br&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 in der Presse</title>
+      <link>https://technikum29.de/blog/2024-08-23-technikum29_in_der_Zeitung/</link>
+      <author>Roland</author>
+      <pubDate>2024-08-23T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2024-08-23-technikum29_in_der_Zeitung/</guid>
+      <description>
+&lt;p&gt;&lt;b&gt;technikum29 war mal wieder in der Zeitung !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Am 21.8.2024 erschien ein schöner Artikel über unser Museum in der &lt;b&gt;Frankfurter Neue Presse
+	/Höchster Kreisblatt:&lt;/b&gt;&lt;/p&gt;
+	
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/shared/photos/blog/Presse_20240821_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/shared/photos/blog/Presse_20240821_kl.jpeg&quot; width=&quot;500&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		
+		&lt;p class=&quot;bildtext&quot;&gt;Zum Vergrößern bitte das Bild anklicken !&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Die im Artikel angegebene Telefonnummer ist leider nicht korrekt. Wer mit dem Museum Kontakt aufnehmen möchte 
+	schaue bitte &lt;a href=&quot;/de/impressum.php#&quot;&gt;hier&lt;/a&gt;  nach !&lt;/p&gt;
+
+
+&lt;br&gt;
+Roland
+&lt;br&gt;&lt;br&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>Anmeldung zu Besuchen im technikum29</title>
+      <link>https://technikum29.de/blog/2024-08-01-Besuche_im_technikum29/</link>
+      <author>Roland</author>
+      <pubDate>2024-08-01T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2024-08-01-Besuche_im_technikum29/</guid>
+      <description>
+&lt;p&gt;&lt;b&gt;Besuchsanmeldungen technikum29&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Technikum29 ist ein etwas anderes Museum: unsere Ausstellungsstücke stehen nicht in Vitrinen hinter Glas, sondern können 
+	angefasst werden, man kann sie öffnen und inspizieren und viele Geräte sind auf betriebsbereit. Wegen der räumlichen Enge und 
+	besonderen Sicherheitsmaßnahmen bedeutet das auch, dass Besuche bei uns nicht wie üblich in einem Museum ablaufen. &quot;Eintrittskarte kaufen 
+	und im Museum herumschlendern&quot; geht leider nicht.&lt;/p&gt;
+	
+&lt;p&gt;Wir führen auf Anfrage &lt;b&gt;Einzelpersonen&lt;/b&gt; und &lt;b&gt;kleine Gruppen&lt;/b&gt; von 4 - max 7 Personen. Alle Details zur Anmeldung finden sie &lt;a href=&quot;/de/termine.php#&quot;&gt;hier&lt;/a&gt;.
+&lt;/p&gt;
+&lt;br&gt;
+Roland
+&lt;br&gt;&lt;br&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 wünscht ein Frohes Neues Jahr 2024 !</title>
+      <link>https://technikum29.de/blog/2024-01-02-Frohes_Neues_Jahr_2024/</link>
+      <author>Roland</author>
+      <pubDate>2024-01-02T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2024-01-02-Frohes_Neues_Jahr_2024/</guid>
+      <description>
+&lt;p&gt;&lt;b&gt;technikum29 wünscht allen Freunden und Förderern ein frohes Neues Jahr 2024 ! &lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Im vergangenen Jahr waren wir sehr aktiv: &lt;/p&gt;
+&lt;p&gt;an &lt;b&gt;17 Helfertagen &lt;/b&gt;haben wir gemeinsam mit Helfern repariert und restauriert - vielen Dank an alle Teilnehmer !&lt;/p&gt;
+&lt;p&gt;Helfer waren auch zusätzlich aktiv beim Transport von neuen Exponaten und beim Aufräumen und allgemeinen Aufgaben 
+	rund um das Gebäude und Grundstück - auch hier &quot;vielen Dank&quot;.&lt;/p&gt;
+&lt;p&gt;In &lt;b&gt;19 Führungen &lt;/b&gt;wurde interessiertem Publikum die Computerhistorie der 1920 - 1970er Jahre vorgestellt. Hinzu 
+	kamen eine Reihe von Führungen für Freunde und Familie.&lt;/p&gt;
+&lt;p&gt;Ein besonderes Highlight 2023: ein &lt;b&gt;Filmdreh &lt;/b&gt;an unserer Pianola.&lt;/p&gt;
+&lt;p&gt;Und zu guter letzt: unser &lt;b&gt;Sommerfest 2023&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Über die vielen &lt;b&gt;Neuzugänge in die Sammlung&lt;/b&gt; haben wir hier in diesem Blog berichtet. Ein besonderes Highlight in 2023 
+	war die Übergabe einer &lt;b&gt;&lt;a href=&quot;/de/rechnertechnik/stantec.php#&quot;&gt;Stantec ZEBRA Mk.II&lt;/a&gt;&lt;/b&gt; (Baujahr 1962), eines von nur 3 noch existierenden Exemplaren dieses sehr 
+	seltenen niederländisch/englischen Computers.&lt;/p&gt;&lt;br&gt;
+	
+&lt;p&gt;Über eure aktive Mitarbeit und Spenden freuen sich auch in 2024&lt;/p&gt;
+&lt;br&gt;
+Roland und Sven
+
+&lt;br&gt;&lt;br&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>Ankunft der Stantec Zebra Mk II im technikum29</title>
+      <link>https://technikum29.de/blog/2023-11-16-Ankunft_der_Stantec/</link>
+      <author>Roland</author>
+      <pubDate>2023-11-16T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2023-11-16-Ankunft_der_Stantec/</guid>
+      <description>
+&lt;p&gt;Am 14.11.2023 war es soweit: die &lt;a href=&quot;/blog/2023-10-20-weitere_Neuzugaenge_2023.php&quot;&gt;angekündigte&lt;/a&gt; &lt;b&gt;Stantec Zebra Mk. II &lt;/b&gt; traf im technikum29 ein ! 
+	Wie berichtet erhielten wir diesen extrem seltenen Computer Baujahr 1962 von der ehem. SPAR-Zentrale Oberpfalz 
+	durch Herrn Josef Röger als Dauerleihgabe. Wir haben der Stantec Zebra bereits einen vorläufigen Eintrag auf unserer  
+	&lt;a href=&quot;/de/rechnertechnik/stantec.php#&quot;&gt;Webseite&lt;/a&gt; gewidmet.
+	&lt;/p&gt;
+	
+	
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/de/geraete/Stantec/Stantec_Bilder/Stantec_im_LKW_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Stantec/Stantec_Bilder/Stantec_im_LKW_kl.jpeg&quot; width=&quot;200&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		&lt;a  href=&quot;/de/geraete/Stantec/Stantec_Bilder/Konsole_im_T29_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Stantec/Stantec_Bilder/Konsole_im_T29_kl.jpeg&quot; width=&quot;355&quot; &quot;/&gt;
+	&lt;/a&gt;
+		&lt;a  href=&quot;/de/geraete/Stantec/Stantec_Bilder/Stantec_im_T29_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Stantec/Stantec_Bilder/Stantec_im_T29_kl.jpeg&quot; width=&quot;200&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		&lt;p class=&quot;bildtext&quot;&gt;&lt;b&gt;Stantec Zebra Mk. II&lt;/b&gt; im technikum29 angekommen: li Ankunft vor dem Museum, mi die Konsole und re die Zentraleinheit. 
+		Zum Vergrößern bitte das Bild anklicken !&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Vorläufig stehen alle Komponenten noch auf Paletten im Museum. Nach einer Durchsicht und Reinigung werden sie 
+	auf Rollwägen an die für sie freigeräumte Position in der Ausstellung gerückt. &lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Wir bedanken uns nochmals bei Herrn Röger für die großzügige Überlassung dieses Exponates und werden  
+&lt;a href=&quot;/de/geraete/Stantec/Stantec-details.php&quot;&gt;hier&lt;/a&gt; über den Fortgang der Restaurierung berichten&lt;/b&gt;&lt;/p&gt;
+&lt;br&gt;
+Roland
+
+&lt;br&gt;&lt;br&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>Neuzugang Hamann automatic 500</title>
+      <link>https://technikum29.de/blog/2023-10-23-Neuzugang_Hamann_automatic_500/</link>
+      <author>Roland</author>
+      <pubDate>2023-10-23T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2023-10-23-Neuzugang_Hamann_automatic_500/</guid>
+      <description>
+&lt;p&gt;Ein weiterer Neuzugang: eine elektro-mechanische Rechenmaschine &lt;b&gt;Hamann Automatic 500&lt;/b&gt;. Sie wurde uns von Rainer Schmitt (Wiesbaden) gespendet.
+	&lt;/p&gt;
+	
+	
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/de/geraete/Hamann500/Hamann500_Bilder/Hamann500_automatic_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Hamann500/Hamann500_Bilder/Hamann500_automatic_kl.jpeg&quot; width=&quot;380&quot;  &quot;/&gt;
+	&lt;/a&gt;
+	&lt;a  href=&quot;/de/geraete/Hamann500/Hamann500_Bilder/Hamann500_offen_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Hamann500/Hamann500_Bilder/Hamann500_offen_kl.jpeg&quot; width=&quot;380&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		
+		&lt;p class=&quot;bildtext&quot;&gt;&lt;b&gt;Hamann Automatic 500&lt;/b&gt; geschlossen (li) und geöffnet (re)&lt;br&gt;
+		für ein großes Bild bitte Bild anklicken !&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Die Hamann Automatic 500 wurde 1959 erstmalig vorgestellt und bis 1962 produziert. Sie ist eine Vier-Spezies-Maschine  mit 9 * 8 * 16 Stellen, automatischer (verkürzter) 
+	Multiplikation und Division sowie Rückübertragung. Sie ist eine Simplexmaschine nach dem System Sperrklinke und hat eine &quot;moderne&quot; Zehnertastatur 
+	ähnlich unserer heutiger Taschenrechner. Mit 17 kg ist sie nicht gerade ein Leichtgewicht. Sie ist sehr gut gekapselt und sehr leise im Betrieb.&lt;br&gt;&lt;br&gt;
+	Das Baujahr unserer Maschine ist wohl 1959: sie hat eine frühe Seriennummer (150.198) und ist die 198ste Maschine von ca 9600 produzierten Einheiten.&lt;br&gt;&lt;br&gt;Unsere Hamann war in sehr gutem Erhaltungszustand. Nach der 
+	üblichen Reinigung von verharztem Öl und Fett, dem Austausch zweier defekter Kondensatoren und der Gängigmachung verklebter Mechanik läuft sie wieder problemlos.&lt;br&gt;
+	&lt;/p&gt;
+
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/de/geraete/Hamann500/Hamann500_Bilder/Hamann500_Cover_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Hamann500/Hamann500_Bilder/Hamann500_Cover_kl.jpeg&quot; width=&quot;183&quot;  &quot;/&gt;
+	&lt;/a&gt;
+	&lt;a  href=&quot;/de/geraete/Hamann500/Hamann500_Bilder/Hamann500_Anleitung_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Hamann500/Hamann500_Bilder/Hamann500_Anleitung_kl.jpeg&quot; width=&quot;550&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		
+		&lt;p class=&quot;bildtext&quot;&gt;&lt;b&gt;Hamann Automatic 500&lt;/b&gt; Anleitung Cover (li) und technische Details (re)&lt;/p&gt;
+	&lt;/div&gt;
+	
+&lt;b&gt;Wir bedanken uns bei Dr. Rainer Schmitt (Wiesbaden) für diese tolle Ergänzung unserer Sammlung !&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+Roland
+
+
+
+
+  
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Vorstellung weiterer Neuzugänge in 2023</title>
+      <link>https://technikum29.de/blog/2023-10-20-weitere_Neuzugaenge_2023/</link>
+      <author>Roland</author>
+      <pubDate>2023-10-20T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2023-10-20-weitere_Neuzugaenge_2023/</guid>
+      <description>
+&lt;p&gt;Den sensationellsten Neuzugang erwarten wir noch im November von J. Röger aus Weiden (Oberpfalz): eine &lt;b&gt;Stantec Zebra Mk. II &lt;/b&gt; ! 
+	Ein sehr früher Rechner der 2. Generation mit Ge-Transistoren und einer Magnettrommel als Speichermedium. Der Rechner wurde
+	von 1962 - 1972 zur Lagerverwaltung im Lebensmittel-Großhandel eingesetzt. Er ist in seine Komponenten zerlegt worden und soweit 
+	ersichtlich komplett. Wir haben ihm bereits einen vorläufigen Eintrag auf unserer  &lt;a href=&quot;/de/rechnertechnik/stantec.php#&quot;&gt;Webseite&lt;/a&gt; 
+	gewidmet.
+	&lt;/p&gt;
+	
+	
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/de/geraete/Stantec/Stantec_Bilder/Stantec_Konsole_Fundort_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Stantec/Stantec_Bilder/Stantec_Konsole_Fundort_kl.jpeg&quot; width=&quot;500&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		&lt;a  href=&quot;/de/geraete/Stantec/Stantec_Bilder/Stantec_Trommel_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Stantec/Stantec_Bilder/Stantec_Trommel_kl.jpeg&quot; width=&quot;208&quot; &quot;/&gt;
+	&lt;/a&gt;
+		&lt;p class=&quot;bildtext&quot;&gt;&lt;b&gt;Stantec Zebra Mk. II&lt;/b&gt; Rechner: li die Konsole (ohne Abdeckung), re die Magnettrommel&lt;br&gt;
+		Zum Vergrößern bitte das Bild anklicken !&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Schon im Oktober erreichte uns von J. Hermann (Nauheim) eine &lt;b&gt;Pr1me 300&lt;/b&gt;, ein Minicomputer von 1974. Mit 384 KB RAM kann dieser Computer bis zu 
+	16 Terminals gleichzeitig bedienen. Er wurde in einer Berufsschule zu Ausbildungszwecken eingesetzt. Auch ihm widmen wir einen 
+	Platz auf unserer &lt;a href=&quot;/de/rechnertechnik/wissenschaftliche-rechner.php#Pr1me&quot;&gt;Museumsseite&lt;/a&gt;:
+	&lt;/p&gt;
+
+
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/de/geraete/Pr1me300/Pr1me300_Bilder/Pr1me300_Keller_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Pr1me300/Pr1me300_Bilder/Pr1me300_Keller_kl.jpeg&quot; width=&quot;166&quot;  /&gt;
+	&lt;/a&gt;
+		  &lt;a  href=&quot;/de/geraete/Pr1me300/Pr1me300_Bilder/Pr1me300_Anlieferung_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Pr1me300/Pr1me300_Bilder/Pr1me300_Anlieferung_kl.jpeg&quot; width=&quot;550&quot; /&gt;
+	&lt;/a&gt;
+		&lt;p class=&quot;bildtext&quot;&gt;&lt;b&gt;Prime 300 &lt;/b&gt;li: noch beim Spender im Keller, &lt;br&gt;re: bei der Ankunft im technikum29 neben unserem Anelex-Drucker&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Als letzte Neuzugänge stellen wir zwei interessante mechanische Rechenmaschinen vor:&lt;br&gt;&lt;br&gt;
+	Eine &lt;b&gt;Alpina Universal Rechenmaschine&lt;/b&gt; der Alpina Werke (Kaufbeuren). Sie wurde 1961 als Konkurrenz zur kompakten Curta I vorgestellt. Wegen 
+	beträchtlicher Qualitätsprobleme wurde sie im gleichen Jahr wieder vom Markt genommen und erhielt 1969 eine Neuauflage.&lt;br&gt;
+	Unser Exponat erhielten wir von N. Rösch vom Geodetic Institute (KIT), es wurde 1970 hergestellt und funktioniert reibungslos.&lt;br&gt;&lt;br&gt;
+	Ebenfalls vom Geodetic Institute (KIT) erhielten wir eine mechanische Doppel-Rechenmaschine &lt;b&gt;Thales geo (Var.1)&lt;/b&gt;. Bei dieser 
+	Doppel-Rechenmaschine kann jedes Rechenwerk mit jeder Maschine gekoppelt werden. Solche Maschinen wurden im Vermessungs- und Finanzwesen 
+	oder für wissenschaftliche Berechnungen eingesetzt.
+	&lt;/p&gt;
+	
+
+&lt;div class=&quot;box center&quot;&gt; 
+		 &lt;a  href=&quot;/de/geraete/Alpina/Alpina_Bilder/Alpina_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Alpina/Alpina_Bilder/Alpina_kl.jpeg&quot; width=&quot;420&quot;  /&gt;
+	&lt;/a&gt;
+		 &lt;a  href=&quot;/de/geraete/Thales_geo/Thales_geo_Bilder/Thales_geo_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Thales_geo/Thales_geo_Bilder/Thales_geo_kl.jpeg&quot; width=&quot;340&quot;  /&gt;
+	&lt;/a&gt;
+		&lt;p class=&quot;bildtext&quot;&gt;links die &lt;b&gt;Alpina Universal Rechenmaschine &lt;/b&gt;mit separatem Standfuß&lt;br&gt;
+		rechts die Doppelrechenmaschine &lt;b&gt;Thales geo (Var 1.)&lt;/b&gt;
+	&lt;/div&gt;
+
+&lt;b&gt;Wir bedanken uns bei allen Spendern für diese interessanten Geräte !&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+Roland
+
+
+
+
+  
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Vorstellung einiger Neuzugänge in 2023</title>
+      <link>https://technikum29.de/blog/2023-06-06-Neuzugaenge_2023/</link>
+      <author>Roland</author>
+      <pubDate>2023-06-06T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2023-06-06-Neuzugaenge_2023/</guid>
+      <description>
+&lt;p&gt;In den letzten Monaten erreichten uns einige Neuzugänge im technikum29, die wir hier kurz vorstellen möchten. &lt;br&gt;&lt;br&gt;
+	Von Firma Hammann (Hassloch, Pfalz) erhielten wir neben Ersatzteilen und viel Dokumentation zu alten BULL-Lochkartengeräten einen Rechner &lt;a href=&quot;/de/rechnertechnik/personalcomputer.php#Tektronix4052&quot;&gt;Tektronix 4052&lt;/a&gt;  (der Link 
+	führt zu Gerätedetails auf unserer Webseite) zusammen mit einer zugehörigen Hardcopy-Einheit Typ 4631:
+	&lt;/p&gt;
+	
+	
+&lt;div class=&quot;box center&quot;&gt; 
+		&lt;a  href=&quot;/de/geraete/Tektronix_4052/Tektronix_4052_Bilder/Tektronix_4052_4631_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Tektronix_4052/Tektronix_4052_Bilder/Tektronix_4052_4631_kl.jpeg&quot; width=&quot;300&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		&lt;a  href=&quot;/de/geraete/Tektronix_4052/Tektronix_4052_Bilder/Tektronix_4052_vorne_gross.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Tektronix_4052/Tektronix_4052_Bilder/Tektronix_4052_vorne_mi.jpeg&quot; width=&quot;160&quot; &quot;/&gt;
+	&lt;/a&gt;
+		&lt;a  href=&quot;/de/geraete/Tektronix_4052/Tektronix_4052_Bilder/Tektronix_4052_Zubehoer_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Tektronix_4052/Tektronix_4052_Bilder/Tektronix_4052_Zubehoer_kl.jpeg&quot; width=&quot;230&quot;  &quot;/&gt;
+	&lt;/a&gt;
+		&lt;p class=&quot;bildtext&quot;&gt;&lt;b&gt;4052&lt;/b&gt; Rechner mit Hardcopy-Einheit 4631 (li), Front 4052 (mi), Zubehör und Dokumentation (re)&lt;br&gt;Zum Vergrößern bitte das Bild anklicken !&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Über den Verein FITG eV erhielten wir einen funktionstüchtigen Tischrechner  &lt;a href=&quot;/de/rechnertechnik/ic-technik.php#wang450&quot;&gt;WANG 450-1&lt;/a&gt;:
+
+
+&lt;div class=&quot;box center&quot;&gt; 
+		  &lt;a  href=&quot;/de/geraete/WANG_450/WANG_450_Bilder/WANG_450_front_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/WANG_450/WANG_450_Bilder/WANG_450_front_kl.jpeg&quot; width=&quot;230&quot; /&gt;
+	&lt;/a&gt;
+	&lt;a  href=&quot;/de/geraete/WANG_450/WANG_450_Bilder/WANG_450_komplett_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/WANG_450/WANG_450_Bilder/WANG_450_komplett.jpeg&quot; width=&quot;290&quot;  /&gt;
+	&lt;/a&gt;
+	 	
+		
+		&lt;p class=&quot;bildtext&quot;&gt;&lt;b&gt;WANG 450 &lt;/b&gt;Frontansicht (li), Rechner mit Zubehör (re)&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Als letzten Neuzugang (Leihgabe) erhielten wir eine Speichererweiterung Hewlett Packard &lt;a href=&quot;/de/rechnertechnik/programmierbare.php#Hewlett_Packard_HP_9100&quot;&gt;hp9101A&lt;/a&gt;.
+	Diese Speicherweiterung vergrößert den Speicher der Tischrechner hp9100A um mehr als das 15fache ! Wir stellen dieses seltene Gerät ausführlich 
+	&lt;a href=&quot;/de/geraete/hp9101/hp9101_Details.php&quot;&gt;hier&lt;/a&gt; vor.
+	&lt;/p&gt;
+	
+
+&lt;div class=&quot;box center&quot;&gt; 
+		 &lt;a  href=&quot;/de/geraete/hp9101/hp9101_Bilder/hp9101_front_total_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/hp9101/hp9101_Bilder/hp9101_front_total.jpeg&quot; width=&quot;230&quot;  /&gt;
+	&lt;/a&gt;
+		 &lt;a  href=&quot;/de/geraete/hp9101/hp9101_Bilder/hp9101_front_gr.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/hp9101/hp9101_Bilder/hp9101_front.jpeg&quot; width=&quot;230&quot;  /&gt;
+	&lt;/a&gt;
+		&lt;p class=&quot;bildtext&quot;&gt;&lt;b&gt;hp9101&lt;/b&gt; Gesamtansicht (li), Front (re)&lt;/p&gt;
+	&lt;/div&gt;
+
+Wir bedanken uns bei allen Spendern/Leihgebern für diese interessanten Geräte !&lt;br&gt;&lt;br&gt;
+
+Roland
+
+
+
+
+  
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Zwei neue Streifenschreiber in der Kommunikationsabteilung</title>
+      <link>https://technikum29.de/blog/2023-04-22-Neue_Streifenschreiber/</link>
+      <author>Detlef</author>
+      <pubDate>2023-04-22T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2023-04-22-Neue_Streifenschreiber/</guid>
+      <description>
+&lt;p&gt;Am Helfertag am 22.04.22 konnten zwei neue Fernschreiber in Betrieb genommen und an unser i-Telex-System angeschlossen werden.
+Ein sehr seltener Siemens Streifenschreiber T32 aus der Zeit von 1932 bis 1934, der zuvor im Depot lag. Und ein Lorenz Streifenschreiber T36Lo, den Detlef vor etwa einem Jahr bei dem Youtuber &quot;Meister Jambo&quot; abgeholt hatte.
+Beide Geräte wurden von Jochen instand gesetzt. Zu dem Lorenz Streifenschreiber fehlt jetzt noch ein passendes Fernschaltgerät.&lt;/p&gt;
+
+&lt;div class=&quot;box center auto-bildbreite&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2023-04-22_Neue_Streifenschreiber.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2023-04-22_Neue_Streifenschreiber.jpg&quot; width=&quot;470&quot;/&gt;
+   &lt;/a&gt;
+   &lt;p class=&quot;bildtext&quot;&gt;
+     Das Bild zeigt unser Streifenschreiberregal mit dem neuen Siemens T32 in der Mitte, dem Lorenz T36Lo unten und dem &quot;modernen&quot; Siemens T68d von 1957 oben.
+     Der Lorenz Handloch rechts oben gehört thematisch nicht dazu.
+   &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Neuzugänge aus unseren Depots: Olympia Tischrechner RAE 4/15 und 4/30</title>
+      <link>https://technikum29.de/blog/2023-02-13-Neuzugaenge_Olympia_RAE/</link>
+      <author>Roland</author>
+      <pubDate>2023-02-23T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2023-02-13-Neuzugaenge_Olympia_RAE/</guid>
+      <description>
+
+&lt;p&gt;
+In unseren Depots befinden sich einige Tischrechner Olympia RAE 4/15 und 4/30, sie wurden bislang auf unserer Webseite nur kurz 
+&lt;a href=&quot;/de/rechnertechnik/transistoren.php#Olympia_RAE_4/30-3_und_Wanderer_Conti&quot;&gt;vorgestellt&lt;/a&gt;. Hier eine kleine Galerie
+mit den verschiedenen Maschinen im technikum29:&lt;/p&gt;
+
+
+&lt;div class=&quot;box center&quot;&gt; 
+		 &lt;a  href=&quot;/de/geraete/Olympia_rae/Bilder_RAE/RAE_4_15_2_front.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Olympia_rae/Bilder_RAE/RAE_4_15_2_front_kl.jpeg&quot; width=&quot;200&quot;  height=&quot;166&quot;/&gt;
+	&lt;/a&gt;
+		 &lt;a  href=&quot;/de/geraete/Olympia_rae/Bilder_RAE/RAE_4_30_1_front.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Olympia_rae/Bilder_RAE/RAE_4_30_1_front_kl.jpeg&quot; width=&quot;200&quot;  height=&quot;166&quot;/&gt;
+	&lt;/a&gt;
+			 &lt;a  href=&quot;/de/geraete/Olympia_rae/Bilder_RAE/RAE_4_30_2_front.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Olympia_rae/Bilder_RAE/RAE_4_30_2_front_kl.jpeg&quot; width=&quot;200&quot;  height=&quot;166&quot;/&gt;
+	&lt;/a&gt;
+		 &lt;a  href=&quot;/de/geraete/Olympia_rae/Bilder_RAE/RAE_4_30_3_front.jpeg&quot; class=&quot;popup&quot;&gt;
+		&lt;img src=&quot;/de/geraete/Olympia_rae/Bilder_RAE/RAE_4_30_3_front_kl.jpeg&quot; width=&quot;200&quot;  height=&quot;166&quot;/&gt;
+	&lt;/a&gt;
+	
+	
+	
+		&lt;p class=&quot;bildtext&quot;&gt;Verschiedene &lt;b&gt;Olympia RAE 4&lt;/b&gt; in einer Reihe: RAE 4/15-2, 4/30-1, 4/30-2 und 4/30-3.&lt;br&gt;
+		Für eine vergrößerte Ansicht bitte auf die Bilder klicken !&lt;/p&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;In der Ausstellung haben wir bislang noch keine Olympia RAE, leider ist keine der Maschinen zur Zeit funktionsfähig. Das soll sich ändern: 
+mittlerweile haben wir mit der Reparatur der Maschinen begonnen, in unserem &lt;a href=&quot;/de/geraete/Olympia_rae/RAE_4-details.php&quot;&gt;Reparatur-Blog&lt;/a&gt; 
+ berichten wir über die Fortschritte bei der Arbeit !&lt;/p&gt;
+
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2022 geschah</title>
+      <link>https://technikum29.de/blog/2022-12-13-Jahresabschluss/</link>
+      <author>Sven</author>
+      <pubDate>2022-12-13T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2022-12-13-Jahresabschluss/</guid>
+      <description>
+
+&lt;p&gt;
+Liebe Helfer, Freunde und Unterstützer des technikum29,
+
+&lt;p&gt;
+2022 war ein spannendes Jahr für technikum29: wir haben die &lt;strong&gt;Neuordnung aller Neben-Depots&lt;/strong&gt; erfolgreich abgeschlossen und die Ausstellung im technikum29 neu geordnet. &lt;strong&gt;Technikum29 konzentriert sich nun in seiner Ausstellung ausschließlich auf Rechen- und Computertechnik der 1920er bis hin zum Ende der 70er Jahre.&lt;/strong&gt; Von der Rundfunk-, Tonband- und Videotechnik haben wir uns (leider) trennen müssen. Ein 
+&lt;a href=&quot;/de/virtueller_Rundgang.php&quot;&gt;virtueller Museumsrundgang&lt;/a&gt; wurde in unsere Webseite eingebaut und 
+zeigt sehr schön unsere neue Ausstellung.
+
+&lt;p&gt;
+2022 haben wir auch genutzt, &lt;a href=&quot;/&quot;&gt;unsere Webseite&lt;/a&gt;zu überarbeiten. Viele &lt;strong&gt;Neuzugänge&lt;/strong&gt; wurden neu eingepflegt (ein Dank an alle Spender!), Hintergrundinformationen zu einzelnen Geräten angelegt und die Rubrik „Neues“ wurde regelmäßig aufgefrischt, so dass man 
+&lt;a href=&quot;/de/blog.php&quot;&gt;in unserem Blog&lt;/a&gt; einen guten Überblick über die Aktivitäten des Jahres erhält.
+
+&lt;p&gt;
+Mit der Entschärfung der Corona-Lage haben wir auch wieder kleinere Führungen veranstaltet.
+
+&lt;p&gt;
+Nachdem die Auf- und Umräumarbeiten beendet sind, werden wir uns im Jahr 2023 voll und ganz der &lt;strong&gt;Pflege und Präsentation der Sammlung&lt;/strong&gt; widmen: wir werden wieder vermehrt Führungen anbieten und uns an regelmäßigen Helfertagen der Überholung und Dokumentation unserer Geräte widmen. 
+
+&lt;p&gt;
+Der Betrieb des technikum29 als private Sammlung ist vorläufig gesichert, wenngleich uns Gas- und Strompreiserhöhungen für 2023 ganz schön zu schaffen machen. In dem Zusammenhang sei auf unseren &lt;a href=&quot;https://technikum29.de/de/unterstuetzen.php&quot;&gt;Spenden-Button&lt;/a&gt;
+hingewiesen ;-)
+
+&lt;p&gt;
+An dieser Stelle möchten wir uns bei euch allen für eure Unterstützung in 2022 bedanken! Wir wünschen euch ruhige Festtage, etwas Erholung im Kreis eurer Lieben und einen guten Start ins Neue Jahr! 
+
+&lt;p&gt;
+Wir hoffen, möglichst viele von euch z.B. bei Helfertagen oder Führungen wieder im technikum29 zu gemeinsamer Aktivität zu treffen! Termine werden in Kürze auf der Webseite bekannt gegeben.
+
+&lt;p&gt;
+&lt;a href=&quot;/de/team.php#roland&quot;&gt;Roland&lt;/a&gt; &amp;amp; &lt;a href=&quot;/de/team.php#sven&quot;&gt;Sven&lt;/a&gt;
+
+
+&lt;?php //print_author_info();
+?&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Neuer Fernschreiber Siemens T100S im technikum29</title>
+      <link>https://technikum29.de/blog/2022-11-05-Neuer Fernschreiber Siemens T100S im technikum29/</link>
+      <author>Detlef</author>
+      <pubDate>2022-11-05T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2022-11-05-Neuer Fernschreiber Siemens T100S im technikum29/</guid>
+      <description>
+
+&lt;div class=&quot;box left&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-11-05-Siemens-T100S/Siemens_T100S.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-11-05-Siemens-T100S/Siemens_T100S.jpg&quot; width=&quot;470&quot;/&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Bereits im Frühjahr 2022 holte Detlef einen Fernschreiber Siemens T100S bei einem 
+ehemaligen Post- und Telekom-Techniker in Nordhessen ab. Nach der Instandsetzung 
+(hauptsächlich Reinigung und Schönheitsreparaturen) wurde der Fernschreiber nun von 
+Franz und Detlef im Kommunikationsraum aufgestellt und als vierter Fernschreiber an 
+das i-Telex-Netzwerk angeschlossen. 
+&lt;/p&gt;
+&lt;p&gt;Nachdem nach längerer Fehlersuche alle Brücken 
+in der Ado8-Anschlussdose richtig gesetzt waren (manchmal liegt es nur an Kleinigkeiten, 
+Danke an Kai für die Hilfe bei der Fehlersuche), funktionierte dann auch alles ordnungsgemäß. 
+Bei der Gelegenheit wurde auch eine weitere Schnittstellenkarte in die i-Telex-Vermittlung 
+eingestetzt, so dass jetzt bis zu sechs Fernschreiber mit TW39-Schnittstelle angeschlossen 
+werden können.
+&lt;/p&gt;
+
+
+
+&lt;p&gt;Der T100S gehört zur letzten Generation der mechanischen Fernschreiber. Er wurde ab 
+1965 gebaut und war bis in die achziger Jahre in Betrieben und Behörden im Einsatz. 
+Er besitzt eine automatische Umschaltung zwischen Buchstaben und Zeichen und einen 
+mechanischen 20-Zeichen-Puffer für Schnellschreiber (schneller als 400 Anschläge pro 
+Minute).
+&lt;/p&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>Virtueller Museumsrundgang</title>
+      <link>https://technikum29.de/blog/2022-10-03-Virtueller_Rundgang/</link>
+      <author>Roland</author>
+      <pubDate>2022-10-03T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2022-10-03-Virtueller_Rundgang/</guid>
+      <description>
+
+
+&lt;p&gt;Auf der deutschen Startseite wurde ein Link zu einem  &lt;a href=&quot;/de/virtueller_Rundgang.php&quot;&gt;virtuellen Museumsrundgang&lt;/a&gt; eingefügt. 
+  Nach unseren Auf- und Umräumaktionen der letzten Monate präsentieren wir in 17 Bildern hier das Ergebnis&lt;/p
+
+&lt;p&gt;Viel Spass beim Durchklicken durch die Bilder !! &lt;/p&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>UPDATE Wir überarbeiten unsere Webseite</title>
+      <link>https://technikum29.de/blog/2022-09-26-Wir_ueberarbeiten_unsere_Webseite/</link>
+      <author>Roland</author>
+      <pubDate>2022-09-26T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2022-09-26-Wir_ueberarbeiten_unsere_Webseite/</guid>
+      <description>
+
+
+&lt;p&gt;Unsere Webseite ist über viele Jahre entstanden. Nach dem Tod des Museumsgründers Heribert Müller in 2018 haben wir die Seite nur 
+	ganz behutsam an wenigen Stellen geändert. &lt;/p&gt;
+
+&lt;p&gt;Wir haben die letzten Jahre genutzt, dem technikum29 einen &lt;b&gt;neuen Sammlungsschwerpunkt&lt;/b&gt; zu geben: wir werden uns ausschließlich auf 
+	Rechen- und Rechnertechnik bis ca 1980 konzentrieren. Dazu kommt die Telegrafie, die Fernschreib- und FAXtechnik sowie das BTX: 
+	alles Techniken, die in einem direkten Bezug zur Entwicklung der Computertechnik stehen. Nicht mehr im Fokus stehen die Rundfunk- 
+	Magnetton- und Fernsehtechnik. Aus Platzgründen mussten sie aus der Ausstellung weichen.&lt;/p&gt;
+
+&lt;p&gt;Um diese Veränderungen auch auf der Webseite zu dokumentieren, haben wir begonnen, diese sukzessive anzupassen. Obwohl von manchem 
+	Seitenbesucher gedrängt, doch auf eine ganz neue Webpräsenz mit modernster Technik zu setzen, haben wir beschlossen, das jetzige 
+	Seitenformat und die zugrundeliegende Technik beizubehalten - auch als Hommage an die Grundlagen, die Heribert mit dem Seitenkonzept 
+	gelegt hat.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Was hat sich geändert bzw. wird sich ändern ?&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Seiten, die nicht mehr zur Ausstellung gehören, wandern in die Rubrik &lt;a href=&quot;/de/archiv/rundfunk.php&quot;&gt;Archiv&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Die aktuellen Neuzugänge wurden in die bestehende Seitenstruktur eingepflegt wie zB &lt;a href=&quot;/de/rechnertechnik/personalcomputer.php#ibm5100&quot;&gt;unsere IBM5100&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Viele Exponate bekamen in der Vorstellung einen weiterführenden Link wie zB. 
+ &lt;a href=&quot;/de/geraete/Q1_lite/Q1_lite_Details.php&quot;&gt;unsere Q1&lt;/a&gt; oder &lt;a href=&quot;/de/geraete/Nixdorf820/Nixdorf820_Details.php&quot;&gt;die Nixdorf 820&lt;/a&gt;. 
+	Diese Detailseiten zu den Geräten zeigen Bilder, berichten über die Instandsetzung und enthalten einen Downloadbereich für Scans von 
+	Unterlagen aus dem Museum. Neben den o.g. Maschinen ist das bereits auch bei der  &lt;a href=&quot;/de/geraete/MAEL4000/MAEL4000Details.php&quot;&gt;MAEL4000&lt;/a&gt;, der 
+	 &lt;a href=&quot;/de/geraete/Addelektra_SR22/Addelektra_SR22_Details.php&quot;&gt;Addelektra SR22&lt;/a&gt; und der  &lt;a href=&quot;/de/geraete/TA1000/TA1000_Details.php&quot;&gt;TA1000&lt;/a&gt; 
+	angelegt ! &lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;UPDATE 1.10.2022&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Neu hinzu gekommen sind jetzt noch die Seiten für die  &lt;a href=&quot;/de/geraete/IBM5320/IBM5320_Details.php&quot;&gt;IBM 5320&lt;/a&gt;, die
+	 &lt;a href=&quot;/de/geraete/CPT8800/CPT8800_Details.php&quot;&gt;CPT 8800&lt;/a&gt;, die  &lt;a href=&quot;/de/geraete/Olivetti_P652/p652-details.php&quot;&gt;Olivetti P652&lt;/a&gt; und
+	die  &lt;a href=&quot;/de/geraete/Siemens_6610/siemens_6610_Details.php&quot;&gt;Siemens 6610&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;Viele Bilder auf den Webseiten lassen sich durch Anklicken vergrößern, sofern wir die Bilder mit hoher Auflösung haben.&lt;/p&gt;
+
+&lt;p&gt;Nach und nach fügen wir kleine Videos zu unseren Geräten ein, begonnen haben wir mit &lt;a href=&quot;/de/geraete/JUKI/JUKI_Video.php&quot;&gt; dem JUKI-Stanzer&lt;/a&gt; 
+	und dem &lt;a href=&quot;/de/geraete/IBM083/IBM083_video.php&quot;&gt;IBM 083 Lochkartensortierer&lt;/a&gt;
+
+&lt;p&gt;Viel Spass beim Stöbern !! &lt;/p&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 in der Presse</title>
+      <link>https://technikum29.de/blog/2022-06-08-technikum29_in_der_Presse/</link>
+      <author>Roland</author>
+      <pubDate>2022-06-08T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2022-06-08-technikum29_in_der_Presse/</guid>
+      <description>&lt;p&gt;Heute erschien ein schöner Bericht über unsere Aktivitäten im Höchster Kreisblatt:
+
+&lt;p&gt;
+  
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kasselp2.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kasselp2.jpeg&quot; width=&quot;800&quot;&gt;
+   &lt;/a&gt;
+   
+&lt;/div&gt;
+&lt;p&gt;	
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>Fünf neue Exponate im technikum29 eingetroffen</title>
+      <link>https://technikum29.de/blog/2022-06-06-Neuzugaenge-Kassel-2022/</link>
+      <author>Roland</author>
+      <pubDate>2022-06-06T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2022-06-06-Neuzugaenge-Kassel-2022/</guid>
+      <description>&lt;p&gt;Wir hatten &lt;a href=&quot;https://technikum29.de/blog/2022-04-27-Neuzugaenge.php&quot;&gt; im April &lt;/a&gt;
+	angekündigt, dass wir fünf neue Geräte für unsere Ausstellung erwarten. Das 
+	&lt;a href=&quot;https://museum-kassel.de/de/museen-schloesser-parks/staatspark-karlsaue/astronomisch-physikalisches-kabinett&quot;&gt; Astronomisch-Physikalische Kabinett  &lt;/a&gt; in Kassel 
+überließ uns die seltenen Stücke als Schenkung. Am 2.6.2022 machte sich Sven mit Kollege und Helfer Nick mit einem geliehenen Sprinter mit Ladebordwand auf nach Kassel, um die Geräte abzuholen. 
+	Vor Ort wurden sie vom Sammlungsleiter, Herrn Dr. Gaulke und Mitarbeitern der &lt;a href=&quot;https://museum-kassel.de/&quot;&gt;Museumslandschaft Hessen Kassel&lt;/a&gt; beim Verladen unterstützt.
+
+&lt;p&gt;&lt;strong&gt;Foto links:&lt;/strong&gt; Teile der TA1000 auf der Hebebühne in Kassel...
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel1.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel1.jpeg&quot; width=&quot;500&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel2.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel2.jpeg&quot; width=&quot;300&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;	
+&lt;p&gt;&lt;strong&gt;Foto rechts:&lt;/strong&gt; Einige Stunden später und nach 200 km Fahrt: Sven ist zufrieden, alles ist wohlbehalten in Kelkheim angekommen !
+&lt;p&gt;
+&lt;p&gt;Mit vereinten Kräften wurden die Teile recht zügig in den Ausstellungsraum gebracht.
+&lt;p&gt;
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel3.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel3.jpeg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel4.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel4.jpeg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;strong&gt;links:&lt;/strong&gt; Roland, Sven und Bernhard (v. li. n re) verladen die MAEL4000
+&lt;p&gt;&lt;strong&gt;rechts:&lt;/strong&gt; ganz zum Schluß ist die TA1000 dran. Vier kräftige Helfer (Bernhard, Roland, Thomas und Sven)
+heben sie vorsichtig von der Hebebühne auf Rollwagen.
+&lt;p&gt;
+&lt;p&gt;
+&lt;p&gt;
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel5.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel5.jpeg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel6.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel6.jpeg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;
+&lt;p&gt;&lt;strong&gt;links:&lt;/strong&gt; Die MAEL4000 wird an ihrer Position in der Ausstellung abgeladen. Im Hintergrund die TA1000
+&lt;p&gt;&lt;strong&gt;rechts:&lt;/strong&gt; nach ein wenig Saubermachen und Aufräumen präsentieren sich TA1000 (mitte li.) und MAEL4000 (mitte re.) zentral in der Ausstellung. Ganz li. hinten unsere IBM 1130, hinter den neuen Exponaten unsere UNIVAC 9300.
+
+&lt;p&gt;Damit waren die großen Brocken erfolgreich an ihren Plätzen. Der Rest war schnell getan:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel7.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel7.jpeg&quot; width=&quot;220&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel8.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel8.jpeg&quot; width=&quot;360&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel9.jpeg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-06-06-Neuzugaenge-Kassel/Kassel9.jpeg&quot; width=&quot;220&quot;&gt;
+   &lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;links:&lt;/strong&gt; der neue Buchungsautomat Addelektra (im Bild unten) zusammen mit Rechenmaschine XxX von Seidel&amp;Naumann (mi.) und Madas VIIeTA (oben)
+&lt;p&gt;&lt;strong&gt;mitte:&lt;/strong&gt; der neue Lochkartenstanzer UNIVAC 1710 (ganz li.) neben &quot;unserer&quot; 1710: die &quot;Neue&quot; ist mit ihrem Tisch im Originalzustand, &quot;Unsere&quot; funktioniert -
+	mal sehen, in welcher Kombination wir den Kartenlocher zukünftig präsentieren
+&lt;p&gt;&lt;strong&gt;rechts:&lt;/strong&gt; vielversprechend: Der Tischrechner Q1 mit Drucker begrüßt uns schon mal mal mit &quot;Q1/Lite at Your Service&quot;
+
+&lt;p&gt;&lt;strong&gt;Wir werden die Neuerungen in den nächsten Wochen sorgfältig durchsehen und über die Wiederinbetriebnahme der Geräte berichten!&lt;/strong&gt;
+
+
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>Wir erwarten neue Exponate</title>
+      <link>https://technikum29.de/blog/2022-04-27-Neuzugaenge/</link>
+      <author>Roland</author>
+      <pubDate>2022-04-27T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2022-04-27-Neuzugaenge/</guid>
+      <description>
+&lt;p&gt;Das &lt;a href=&quot;https://museum-kassel.de/de/museen-schloesser-parks/staatspark-karlsaue/astronomisch-physikalisches-kabinett&quot;&gt; 
+  Astronomisch-Physikalische Kabinett &lt;/a&gt;in Kassel muß einige seiner Depoträume räumen und bot an, uns einige seltene Exponate 
+  zu überlassen. Die Wahl fiel auf das technikum29, weil unser Konzept, historische Computertechnik möglich betriebsbereit und 
+  &quot;zum Anfassen&quot; zu präsentieren, ganz im Sinne des Kasseler Museums ist. Wir besprechen im Augenblick noch Details des 
+  Überlassungsvertrages und des Transports, möchten aber schon einmal die guten Stücke zeigen, wie sie im Kasseler Depot auf 
+  den Transfer warten:
+
+&lt;p&gt;Hier eine &lt;strong&gt;MAEL 4000&lt;/strong&gt; und eine &lt;strong&gt;Triumpf Adler TA1000&lt;/strong&gt;:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/MAEL4000.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/MAEL4000.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/TA1000.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/TA1000.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ferner ein &lt;strong&gt;UNIVAC 1710-Stanzer&lt;/strong&gt; und ein elektromechanischer Buchungsautomat &lt;strong&gt;Mercedes Addelektra&lt;/strong&gt;:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/UNIVAC1710.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/UNIVAC1710.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/Addelektra.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/Addelektra.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Zuguterletzt ein für uns recht neuer Computer: ein &lt;strong&gt;Q1-lite&lt;/strong&gt; der Firma Q1 Inc:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/Q1.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-27-Neuzugaenge/Q1.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+  
+&lt;/div&gt;
+
+&lt;p&gt;Technische Details und Art und Umfang der begleitenden Dokumentation kennen wir noch
+  nicht. Wenn alles klappt sind die Teile im Mai oder Juni im technikum29. Natürlich werden 
+  die Geräte dann ausführlich dokumentiert und wir werden versuchen, sie wieder vorführbereit 
+  zu bekommen. Wir werden die neuen Exponate dann hier auch ausführlich vorstellen.
+
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Neues im Technikum29 - Wir räumen um !</title>
+      <link>https://technikum29.de/blog/2022-04-26-Wir_raeumen_um/</link>
+      <author>Roland</author>
+      <pubDate>2022-04-26T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2022-04-26-Wir_raeumen_um/</guid>
+      <description>
+&lt;p&gt;Bereits letztes Jahr haben wir mit der Hilfe einiger Freunde des technikum29 begonnen, unsere
+Depots zu räumen und die Ausstellung im technikum29 neu zu organisieren. Wir werden uns im 
+technikum29 auf Rechner- und Computertechnik bis ca der 70er Jahre des letzten Jhds. konzentrieren.
+Radios, Tonband- und Videotechnik sowie Fernsehgeräte, einst der Beginn von Heribert Müllers
+Sammlung, wurden eingelagert bzw. an interessierte Sammler weitergegeben.
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-26-Neues/Ausstellung_1.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-26-Neues/Ausstellung_1.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-26-Neues/Ausstellung_2.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-26-Neues/Ausstellung_2.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+Der Blick in die &lt;strong&gt; Ausstellung &lt;/strong&gt; zeigt es: nun ist Platz für unsere LGP21 und einige Lücken zeigen
+an, dass wir sogar noch Platz für Neuzugänge haben. Von einem hessischen Museum erwarten wir ca.
+im Mai/Juni einige schöne Exponate als Dauerleihgaben - wir werden berichten !
+
+
+&lt;p&gt;Auch im &lt;strong&gt; Keller &lt;/strong&gt; hat sich einiges getan:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-26-Neues/FS-Raum_2.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-26-Neues/FS-Raum_2.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-26-Neues/FS-Raum_1.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-26-Neues/FS-Raum_1.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+
+Der &lt;strong&gt; Fernschreibraum &lt;/strong&gt; wurde aufgeräumt und Platz geschaffen für unsere neugestaltete Telegraphie-Abteilung 
+(Danke an die fleissigen Helfer !). Im Hintergrund einige Regale mit Exponaten, die
+es (noch) nicht in die Ausstellung geschafft haben.
+
+&lt;p&gt;Um Platz für wertvolle Stücke aus den Depots zu schaffen, haben wir den &lt;strong&gt; Tresorraum &lt;/strong&gt;&quot;verdichtet&quot;:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-26-Neues/Tresor_2.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-26-Neues/Tresor_2.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2022-04-26-Neues/Tresor_1.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2022-04-26-Neues/Tresor_1.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+Auf Schwerlastregalen stehen Tischrechner und Computer, die noch auf die Wiederinbetriebnahme
+warten oder als Ersatzteilspender dienen können.
+
+&lt;p&gt;Wir hoffen, bis Ende Juni die Umräumaktionen abgeschlossen zu haben. Dann werden wir uns wieder verstärkt der Pflege der Sammlung und öffentlichen Führungen widmen können.
+
+
+
+
+  
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2021 geschah</title>
+      <link>https://technikum29.de/blog/2021-12-26-Jahresabschluss/</link>
+      <author>Sven</author>
+      <pubDate>2021-12-26T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2021-12-26-Jahresabschluss/</guid>
+      <description>
+&lt;p&gt;
+Liebe Unterstützer, Helfer und Freunde des technikum29,
+
+&lt;p&gt;
+das Jahr 2021 neigt sich dem Ende, und wir möchten euch allen herzlichst für eure Unterstützuzng in diesem schwierigen Jahr danken. Für Weihnachtsgrüße sind wir ein wenig spät dran :-), deshalb an dieser Stelle unsere allerbesten Wünsche für das Neue Jahr  für euch und eure Lieben!
+
+&lt;p&gt;Trotz Corona gab es eine Menge Aktivitäten im technikum29, wir können sie hier nur summarisch nennen, manches Detail findet sich auf unserer Webseite unter &quot;Neues&quot; (&lt;a href=&quot;https://technikum29.de/de/blog&quot;&gt;https://technikum29.de/de/blog&lt;/a&gt;).
+
+&lt;p&gt;&lt;strong&gt;Neuzugänge:&lt;/strong&gt; Corona sorgte wohl dafür, daß mancher Keller aufgeräumt wurde. Das technikum erhielt eine Vielzahl von Gerätespendenangebote, nur wenige konnten wir aus Platzgründen annehmen:
+
+&lt;ul&gt;
+&lt;li&gt;Staffelwalzen Rechenmaschine XxX Seidel und Neumann
+&lt;li&gt;IBM5320 /32
+&lt;li&gt;PDP 8/E
+&lt;li&gt;Tischrechenmaschine Olympia CD401
+&lt;li&gt;Elektronischer Zähler hp5325B
+&lt;li&gt;DEC Writer LA36
+&lt;li&gt;Lochkartenstanzer NCR (Typ JUKI)
+&lt;/ul&gt;
+
+&lt;p&gt;Allen Spendern sei hier nochmals gedankt !
+
+&lt;p&gt;An &lt;strong&gt;Reparaturen und Wiederinbetriebnahmen&lt;/strong&gt; können wir vermelden:
+
+&lt;ul&gt;
+&lt;li&gt;Vollautomatische Rechenmaschine MADAS VII eTA wieder gangbar gemacht und in Originalzustand mit Motor versetzt.
+&lt;li&gt;IBM5320 /32: Netzteil repariert, Spieleprogramme aus dem web bereitgestellt
+&lt;li&gt;IBM 814: Reparatur begonnen, noch einzelne Stanzfehler.
+&lt;li&gt;BULL Tabelliermaschine vorführbereit gemacht: historisches Wurzelprogramm läuft wieder
+&lt;li&gt;IBM5100 und Drucker 5103 nach intensiver Instandsetzung wieder vorführbereit
+&lt;li&gt;beide WANG 2200er wieder funktionstüchtig
+&lt;li&gt;Fernschreiber-Netz im Museum komplettiert, div. Fernschreiber und andere Telegrafiegeräte gewartet und funktionstüchtig gemacht
+&lt;li&gt;Siemens 6620 aus den Depots ins Museum verbracht, in Gang gesetzt
+&lt;li&gt;BTX-Terminals Siemens T3210 und  Multitel 2, verbunden mit dem experimentellen BTX-Server über Postmodem DBT03 bzw. über einen Modem-Emulator auf RasPi-Basis.
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Führungen:&lt;/strong&gt;
+Bedingt durch die Einschränkungen in Coronazeiten konnten nur wenige Kleinstgruppen und EInzelpersonen unter Wahrung aller Sicherheitsmaßnahmen geführt werden. Die Liste an Anfragen zu Führungen in &quot;besseren Zeiten&quot; wächst...
+
+&lt;p&gt;&lt;strong&gt;Aufräumaktion:&lt;/strong&gt;
+Die letzten Monate waren bestimmt durch umfangreiche Um- und Aufräumarbeiten: Zwei Kellerräume und eine Garage, die uns nur auf Zeit zugestanden waren, mussten geräumt werden. Hier ein spezieller Dank an alle tatkräftigen Helfer, die insbesondere am 07.12. mit schwerem Gerät einige Großanlagen in das neue Domizil verbracht haben.
+&lt;br&gt;
+Im Zuge der Aufräumarbeiten haben wir eine Anzahl Geräte identifiziert, die nicht ins Museumkonzept passen, aber auch zu schade zum Verschrotten waren: wir haben sie über Sammlerforen an Interessierte weitergegeben. Im Zuge der zahlreichen Abholaktionen haben wir sehr nette Menschen kennengelernt und viele neue Kontakte geknüpft.
+&lt;br&gt;
+Die Konsolidierung unserer Depots wird auch in 2022 weitergehen, der größte Zeitdruck ist jetzt aber erstmal raus.
+
+&lt;p&gt;&lt;strong&gt;Hausmeisterliches:&lt;/strong&gt;
+Rund um das Museumsgebäude war manche Aktivität angesagt: Grünschnitt, Reparatur des Eingangstores, erste-Hilfe bei einem Wassereinbruch und vieles mehr. Großer Dank an Ralf Kircher!
+
+&lt;p&gt;&lt;strong&gt;Ausblick auf 2022:&lt;/strong&gt;
+Das Team technikum29 freut sich darauf, sich im kommenden Jahr wieder mehr den Exponaten, der Gestaltung der Ausstellung und baldiger Führungen widmen zu können. Allen Helfern, Spendern und Unterstützern sind wir zu großem Dank verpflichtet!
+
+&lt;p&gt;
+&lt;a href=&quot;/de/team.php#roland&quot;&gt;Roland&lt;/a&gt; &amp;amp; &lt;a href=&quot;/de/team.php#sven&quot;&gt;Sven&lt;/a&gt;
+
+
+&lt;?php //print_author_info();
+?&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Unsere IBM5100 funktioniert wieder !</title>
+      <link>https://technikum29.de/blog/2021-09-07-Unsere-IBM5100-funktioniert-wieder/</link>
+      <author>Roland</author>
+      <pubDate>2021-09-08T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2021-09-07-Unsere-IBM5100-funktioniert-wieder/</guid>
+      <description>
+&lt;p&gt;
+In unserem Depot fand sich ein Tischcomputer IBM 5100 mit Drucker 5103, leider ohne Funktion. Nach einer Reinigung machten 
+	die Geräte schon einmal einen sehr gut erhaltenen Eindruck und wir setzten alles daran, sie wieder zum Leben zu erwecken:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/5100vorne.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/5100vorne.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/5103.JPG&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/5103.JPG&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;
+Die IBM5100 ist ein technisch hoch interessantes Gerät. 1975 von IBM als &quot;erster tragbarer Computer&quot; vorgestellt ist dieses Gerät der 
+	Vor-Vorläufer des IBM PC (IBM 5150) von 1981. Wobei &quot;tragbar&quot; relativ ist: mit einem Gewicht von 28 kg ist das Tragen nicht 
+	jedermanns Sache und auch der Preis von seinerzeit bis zu 20.000 USD war nur für wenige erschwinglich.
+
+&lt;p&gt;
+Der 5100 basiert auf einer diskret aufgebauten CPU (PALM). PALM ist eine 16-Bit CPU mit 1,9 MHz Taktfrequenz. Sie emuliert per Mikrocode 
+	(im ROM, bei IBM ROS genannt) eine IBM/360 (resp. eine IBM/3), um darauf ein /360 APL auszuführen (resp. ein /3 BASIC). Das 
+	Betriebssystem wird per Schalter eingestellt, der Arbeitsspeicher beträgt bei unserer Maschine 48 kB (max 64 kB möglich), ein 
+	5&quot;-sw-Monitor, eine Tastatur und ein Bandlaufwerk runden die Ausstattung ab.
+
+	
+&lt;p&gt;
+Der Drucker IBM5103 ist ein Nadeldrucker (8 Nadeln) mit 80 Zeichen/s Druckgeschwindigkeit und einem bidirektionalen Traktor 
+	für Endlospapier.
+
+&lt;p&gt;
+Unsere Maschine hatte eine Reihe von Fehlern: das Schaltnetzteil war defekt und hatte noch einige Platinen mit in den Tod gerissen. 
+	Bei der Reparatur half uns das IBM-Museum Böblingen, hier sei Horst Ruffner besonderer Dank gewidmet. Einige Fehler konnten 
+	repariert werden, einige Platinen wurden vom IBM-Museum getauscht, andere wurden von uns über eBay in USA aufgetrieben. 
+
+&lt;p&gt;
+Hier hängt unsere IBM 5100 in den Labors des IBM-Museums nach dem Auswechseln einiger Boards noch an einem Spendernetzteil. Sie zeigt 
+	immerhin schon einmal eine Fehlermeldung der eingebauten Selbsttestroutine (Defektes ROS-Controller Board).
+
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/ImLabor.JPG&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/ImLabor.JPG&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/Fehlermeldung.JPG&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/Fehlermeldung.JPG&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Am Drucker musste der Farbbandtransport repariert werden. Ferner wurde das Farbband  ersetzt (es ist ein spezielles Endlos-Farbband). 
+	
+&lt;p&gt;
+&lt;strong&gt;Nach über 1 ½ Jahren laufen der Rechner und Drucker nun wieder !&lt;/strong&gt;
+
+
+&lt;p&gt;
+Hier ein Blick in das Innere des Computers:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/OffenOben.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/OffenOben.jpg&quot; width=&quot;300&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/offenBreit.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/offenBreit.jpg&quot; width=&quot;500&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Der Computer ist sehr solide und sehr wartungsfreundlich in Modulen aufgebaut.
+
+
+&lt;p&gt;
+&lt;div class=&quot;box center&quot;&gt;
+    &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/Module.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/Module.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;&lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/RAM.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/RAM.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Oben rechts ein Blick auf eines der 16kB RAM-Boards (Halbleiterspeicher).
+
+
+
+&lt;p&gt;
+Der Bildschirm zeigt ein kleines BASIC-Programm. Dank eines Ausgangs für einen externen Monitor kann der interne Bildschirm zB für Vorführungen auf einem zweiten Monitor gespiegelt werden (bei uns nicht ganz stilecht ein alter Apple sw-Monitor):
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/BASIC.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/BASIC.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/extMonitor.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/extMonitor.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;p&gt;
+Die IBM 5100 hat eine hilfreiche Einrichtung zum Debuggen: per Schalter können die ersten 512 Bytes des Speichers hexadezimal ausgegeben werden. In diesem Bereich liegen u.a. die Prozessorregister der div. Interruptebenen. Man kann so dem Computer bei der Arbeit zuschauen !
+
+&lt;p&gt; 
+Daneben ein Screenshot eines kleinen Spieleprogramms &quot;StarWars&quot;, das wir auf den vielen Bändern, die wir zu dem Computer bekamen, fanden:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/Debugging.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/Debugging.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5100/IBM5100_Bilder/Starwars.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5100/IBM5100_Bilder/Starwars.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+	Mit der IBM5100 haben wir neben der IBM5320 und der IBM1130 jetzt 3 vorführbereite IBM-Computer der 60er/70er Jahre im technikum29 !
+
+
+
+  
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Neu im technikum29: BTX</title>
+      <link>https://technikum29.de/blog/2021-07-27-BTX_im_technikum/</link>
+      <author>Roland</author>
+      <pubDate>2021-07-27T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2021-07-27-BTX_im_technikum/</guid>
+      <description>
+&lt;p&gt;
+Vor einiger Zeit berichteten wir, dass Unterstützer unsere Fernschreiber 
+ über eine Vermittlungsstelle miteinander verbunden hatten und dass damit sogar eine 
+Einwahl in das &lt;a href=&quot;/blog/2020-07-27-iTelex.php&quot;&gt; weltweite i-telex-Netz &lt;/a&gt; möglich ist. Damit können unsere Fernschreiber 
+wieder in ihrer ursprünglichen Bestimmung vorgeführt werden.
+
+&lt;p&gt;
+	Thematisch dazu passt das Thema &lt;strong&gt;Bildschirmtext (BTX)&lt;/strong&gt;: Im Depot fand sich eines der ersten postzugelassenen BTX-Terminals: ein Siemens T3210. 
+Damit konnte man 1983 zum Start des neuen BTX-Services der Post an diesem Angebot teilnehmen und zum 
+Beispiel erstmals Dienste wie &quot;Online-Banking&quot;, die elektronische Fahrplanauskunft, einen Mitteilungsdienst (Vorläufer des e-Mail) und 
+	vieles andere mehr nutzen. Und das zu einer Zeit, in der das Internet noch in seinen Anfängen steckte und nicht allgemein verfügbar war. 
+
+&lt;p&gt;
+Als Anschluß zur großen weiten BTX-Welt diente ein Post-Modem DBT03 (die Deutsche Bundespost erlaubte in ihrer Hoheit über das Telefonnetz 
+	keine anderen Anschlüsse) und mit 75 bd hin / 1200 bd zurück war die Datenübertragung ein Geduldsspiel. Die Hochzeit des BTX waren 
+	die 1990er-Jahre, danach flaute das Interesse merklich ab. Der Dienst war einfach zu unflexibel und zu teuer und wurde um die 
+	Jahrtausendwende vom Internet eingeholt.
+
+
+&lt;p&gt;
+Heute &lt;a href=&quot;https://www.heise.de/newsticker/meldung/36C3-Congress-wie-1984-mit-BTX-und-Originalarchiven-4624507.html&quot;&gt; betreiben Liebhaber &lt;/a&gt; 
+	des alten BTX einen Server und halten den Dienst mit einigen der alten Angebote wieder bereit. Und man kann sich sogar über Telefonmodem, 
+	aber auch ganz fortschrittlich über das Internet in den Dienst einwählen. Von einem unserer Unterstützer, Christian aus Bayreuth, bekamen 
+	wir einen &lt;a href=&quot;https://btx-museum.de/2020/02/29/der-neue-dbt-03-emulator/&quot;&gt; DBT03-Emulator &lt;/a&gt;
+ geschenkt, mit dem man sich bequem via Internet auf den neuen BTX-Server einwählen kann. So können wir mit einem 2. Terminal den BTX-Dienst 
+	etwas flotter auf einem Farb-BTX-Terminal der Post von 1997 (Multitel 2) nutzen. 
+&lt;p&gt;
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-07-27-BTX%20im%20technikum29.jpg.JPG&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-07-27-BTX%20im%20technikum29.jpg.JPG&quot; width=&quot;600&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+ 
+
+&lt;p&gt;
+	&lt;strong&gt;Abb.:&lt;/strong&gt; unsere beiden BTX-Terminals im Betrieb: links das Siemens T3210 von 1983, verbunden wie früher über Modem DBT03 (kleiner Kasten zwischen den 
+	Terminals), rechts das Post Multitel 2 von 1987, angeschlossen über den DBT03-Emulator (nicht sichtbar).
+
+&lt;p&gt;
+&lt;p&gt;
+		
+	Und eine &lt;strong&gt;eigene BTX-Adresse&lt;/strong&gt; hat das technikum29 jetzt auch: unter 8092529 erreichen uns Mitteilungen !
+
+</description>
+    </item>
+    
+    <item>
+      <title>Ein neuer Lochkartenstanzer im technikum29</title>
+      <link>https://technikum29.de/blog/2021-07-05_weiterer_Neuzugang/</link>
+      <author>Roland</author>
+      <pubDate>2021-07-05T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2021-07-05_weiterer_Neuzugang/</guid>
+      <description>
+&lt;p&gt;
+Seit Juni 2021 ist unsere &lt;a href=&quot;https://technikum29.de/de/rechnertechnik/lochkarten-edv.php&quot;&gt;Sammlung von Lochkarten-Stanzer &lt;/a&gt;um ein Exponat reicher: 
+	ein schöner hellroter Stanzer der Marke NCR Corporation hat als Spende den Weg in unser Museum gefunden. Am 17. Juni nahmen wir das Gerät, gespendet 
+	von der Firma Wälzholz GmbH &amp; Co KG (Hagen), in Empfang und brachten es wohlbehalten ins Museum:
+
+&lt;p&gt;
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/NCR-Stanzer.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/NCR-Stanzer.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+An dieser Stelle ein herzliches Dankeschön an die Fa. Wälzholz und an Frau Leifert, die die reibungslose Übergabe organisiert hat !
+	
+&lt;p&gt;
+Bei genauem Hinsehen wird klar, dass NCR hier einen JUKI-Stanzer vermarktet hat, der wiederum ein Lizenznachbau des IBM 029 ist. Deshalb präsentieren wir 
+	den Neuzugang auch im Ensemble:
+
+&lt;p&gt;
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/Stanzer-Ensemble.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/Stanzer-Ensemble.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Im Bild links der IBM 029, mittig der NCR und rechts der JUKI-Stanzer
+	
+&lt;p&gt;
+In nächster Zeit wird der NCR-Stanzer sorgfältig durchgesehen und einer Wartung unterzogen. Wir hoffen, ihn bald funktionsbereit vorführen zu können.
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>UPDATE IBM5320: neue Software</title>
+      <link>https://technikum29.de/blog/2021-07-05_UPDATE_IBM5320/</link>
+      <author>Roland</author>
+      <pubDate>2021-07-05T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2021-07-05_UPDATE_IBM5320/</guid>
+      <description>
+&lt;p&gt;
+Über die Instandsetzung der neuen IBM5320 hatten wir &lt;a href=&quot;https://technikum29.de/blog/2021-05-15-Wiederinbetriebnahme-5320.php&quot;&gt;hier &lt;/a&gt;bereits berichtet. 
+  Jetzt fehlte nur noch Software, damit wir die 5320 auch vorführen können. Bei &lt;a href=&quot;http://bitsavers.org/bits/IBM/System_32/SCP_V09/&quot;&gt;bitsavers.org &lt;/a&gt;wurden 
+  wir fündig. Dort ist das Diskettenimage einer &quot;GAME&quot;-Diskette hinterlegt. Doch wie kann der Software-Schatz aus dem Internet in die IBM5320 geladen werden ?
+
+&lt;p&gt;
+Ein alter IBM-kompatibler PC, ein Shugart SA800 8&quot;-Floppylaufwerk, etwas Bastelarbeit für Anschlußkabel und Stromversorgung sowie ein 
+  &lt;a href=&quot;http://dunfield.classiccmp.org/img/index.htm&quot;&gt;spezielles Kopierprogramm &lt;/a&gt; brachten die Lösung. Das Image konnte erfolgreich auf eine 8&quot; Floppy 
+  geschrieben werden und wurde von der IBM5320 problemlos gelesen:
+
+&lt;p&gt;
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/IBM5320%20liesst%20Floppy.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/IBM5320%20liesst%20Floppy.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Die Diskette enthält ein Würfelspiel, ein simples Ratespiel sowie die Möglichkeit, Jahreskalender mit diversen Motiven zu erstellen, hier druckt unsere IBM5320 
+  gerade einen für 2021 mit Snoopy:
+
+&lt;p&gt;
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/IBM5320%20druckt%20Snoopy.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/IBM5320%20druckt%20Snoopy.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+An der Druckqualität arbeiten wir noch, zur Zeit haben wir nur ein nachgefärbtes Originalband im Drucker, das hie und da &quot;hängt&quot;.
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Unsere MADAS VII eTA rechnet wieder !</title>
+      <link>https://technikum29.de/blog/2021-05-19-MADAS/</link>
+      <author>Roland</author>
+      <pubDate>2021-05-19T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2021-05-19-MADAS/</guid>
+      <description>
+&lt;p&gt;
+Wer in den letzten Jahren das technikum29 besucht hat, kennt unsere mechanische Rechenmaschine
+	&lt;a href=&quot;/de/rechnertechnik/elektro-mechanik.php&quot;&gt; MADAS VII eTA&lt;/a&gt;. So wie auf unserer
+	Webseite war sie nicht im Museum zu sehen. Die Maschine muss vor langer Zeit defekt geworden 
+	sein, sie blockierte, deshalb war sie auf einem Gestell montiert. So diente sie als Schaustück 
+	für den Stand der mechanischen Rechentechnik der 30er Jahre des letzten Jahrhunderts: 
+	ein Vollautomat, der die 4 Grundrechenarten eigenständig durchführen konnte. 
+
+	
+	
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-19-MADAS/MADAS_oben.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-19-MADAS/MADAS_oben.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-19-MADAS/MADAS_unten.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-19-MADAS/MADAS_unten.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+ 
+&lt;p&gt;
+	&lt;strong&gt;Abb: &lt;/strong&gt;unsere MADAS in Draufsicht und ein Blick von unten in die Mechanik
+&lt;p&gt;	
+&lt;p&gt;
+Mittlerweile haben wir in unseren Depots das Gehäuse mit Motor wiedergefunden. Deshalb lag es nahe,
+	die Maschine wieder instand zu setzen. Sie läuft jetzt wieder, nur bei der Multiplikation
+	&quot;hakt&quot; es noch etwas, aber das bekommen wir auch noch hin. 
+	
+&lt;p&gt;
+	Hier in dem kleinen Filmchen sieht man, wie sie die Rechnung &quot;1 geteilt 
+	durch 7&quot; vollautomatisch auf Knopfdruck abarbeitet und am Schluß ein Glöckchen läutet und 
+	das Ergebnis auf 6 Stellen anzeigt: 0,142857 !
+
+&lt;p&gt;
+&lt;video width=&quot;1280&quot; height=&quot;720&quot; controls style=&quot;width:100%;height:auto;&quot;&gt;
+  &lt;source src=&quot;/shared/photos/blog/2021-05-19-MADAS/MADAS_rechnet.m4v&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;source src=&quot;/shared/photos/blog/2021-05-19-MADAS/MADAS_rechnet.mkv&quot; type=&quot;video/x-matroska&quot;&gt;
+  &lt;source src=&quot;/shared/photos/blog/2021-05-19-MADAS/MADAS_rechnet.mov&quot; type=&quot;video/quicktime&quot;&gt;
+  Leider unterstützt Ihr Browser keines der angebotenen Videoformate.
+  Probieren Sie doch einmal &lt;a href=&quot;/shared/photos/blog/2021-05-19-MADAS/&quot;&gt;den Download der Videofiles&lt;/a&gt;.
+&lt;/video&gt;
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Wiederinbetriebnahme IBM5320</title>
+      <link>https://technikum29.de/blog/2021-05-15-Wiederinbetriebnahme-5320/</link>
+      <author>Roland</author>
+      <pubDate>2021-05-15T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2021-05-15-Wiederinbetriebnahme-5320/</guid>
+      <description>
+&lt;p&gt;
+Anfang des Jahres erhielt das technikum29 eine komplette &lt;a href=&quot;/blog/2021-05-01-Neuzugaenge.php&quot;&gt;IBM5320 System/32 
+	als Geschenk&lt;/a&gt;. Der Vorbesitzer hatte sie vor vielen Jahren von einem IBM-Mitarbeiter geschenkt bekommen. 
+	Er hatte sie hie und da angeschaltet, bis dann vor kurzem die Gerätesicherung durchbrannte, in dem Zustand 
+	übergab er sie uns.
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Im-Museum-angekommen.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Im-Museum-angekommen.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Detail.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Detail.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Bei der IBM5320 handelt es sich um einen für die damalige Zeit kleinen Einzelplatzrechner für den Einsatz in 
+	kleineren Betrieben. Vorgestellt wurde die IBM5320 1975 und wurde bis 1984 vertrieben, zumeist vermietet. 
+	Vorrangig wurden solche Maschinen in der Buchhaltung u.ä. eingesetzt. Die 5320 hat eine 16Bit-CPU, unser 
+	Modell ist mit 24 kByte Speicher in Halbleitertechnik, einer 8Zoll Floppy-Disk-Station (singe sided, 
+	single density), einem Matrixdrucker mit 120 cps und einer 9 MByte großen Festplatte ausgestattet. 
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Festplatte.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Festplatte.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Inneres.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Inneres.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+&lt;strong&gt;Abb: &lt;/strong&gt;Die Festplatte ist senkrecht in den Gehäuserahmen eingebaut
+
+
+&lt;p&gt;
+Als Anzeige dient ein Bildschirm mit 6 Zeilen zu 40 Zeichen, der über eine Spiegeloptik in einer Art Guckkasten 
+	(links vom Drucker) betrachtet wird
+
+
+
+
+
+&lt;p&gt; 
+Im Museum wurde die Maschine erstmal sorgfältig inspiziert und von dem Staub der Jahre befreit. Der Zustand war erstaunlich 
+	gut, es waren keine offenkundigen Fehler zu erkennen. In der Tat war eine kleinere von 2 Sicherungen durchgebrannt. 
+	Sie wurde erstmal sorgfältig ersetzt und die Maschine eingeschaltet. Es passierte - nichts. Aber die Sicherung blieb 
+	immerhin intakt.
+
+&lt;p&gt;
+Dank der umfangreichen Dokumentation mit allen technischen Unterlagen und Schaltplänen konnte der Fehler schnell eingekreist 
+	werden: eines der vier (!) Netzteile der Maschine war defekt. Seine Aufgabe besteht einzig darin, eine Logikplatine 
+	zu versorgen, die  die Spannungen der drei anderen Netzteile zu überwachen und diese in geordneter Reihenfolge ein- 
+	und auszuschalten hatte.
+
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Netzteile-vorne.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Netzteile-vorne.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Netzteile-offen.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Netzteile-offen.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+&lt;strong&gt;Abb: &lt;/strong&gt;Blick auf die Netzteile von vorne und hinten (ohne Abdeckungen)
+
+&lt;p&gt;
+&lt;p&gt;
+Eine Reparatur dieses Netzteils ist nahezu ausgeschlossen, es werden zu viele IBM-spezifische Bauteile verwendet. Wir schlossen 
+	probeweise eine Reihe von Labornetzteilen an, um zu sehen, ob noch weitere Fehler vorliegen: Mit Hilfe dieser 
+	&quot;Notstromversorgung&quot; konnte der Rechner gestartet werden und auf dem Bildschirm erschien eine Fehlermeldung: 
+	Anzeige, Tastatur und CPU waren also schon einmal in Ordnung !
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Notstromversorgung.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Notstromversorgung.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Ersatznetzteil.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Ersatznetzteil.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+&lt;strong&gt;Abb: &lt;/strong&gt;Versuchsaufbau zur Notversorgung und Ersatznetzteile fertig zum Einbau
+
+
+&lt;p&gt;
+&lt;p&gt;
+Aus div. modernen Schaltnetzteilen wurde ein Ersatz geschaffen, um die fünf verschiedenen Hilfsspannungen zu erzeugen und das Provisorium wurde in der Maschine untergebracht. Jetzt ließ sich die Anlage wie vorgesehen ein- und ausschalten. Nach Beseitigung eines Fehlers in der Freigabelogik zur Festplatte konnte dann zum ersten Mal das System von der Platte hochgefahren werden - IBM nannte das IMPL (initial micro program loading). Der Bildschirm zeigte, dass dies das erste ordentliche Booten seit dem 26.9.1989 war - ein voller Erfolg !!
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/erstes-IMPL.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/erstes-IMPL.jpg&quot; width=&quot;600&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;
+&lt;strong&gt;Abb: &lt;/strong&gt;Erfolgreiches Booten (IMPL) von Platte !
+&lt;p&gt;
+&lt;p&gt;
+Jetzt blieb nur noch die Inbetriebnahme des Matrixdruckers übrig: nach gründlicher Reinigung und sorgfältigem Ölen und Fetten war er wieder soweit betriebsbereit. Eine Schwachstelle blieb noch zu beseitigen: die Transportrollen der Farbbandführung hatten sich in eine klebrige Masse zersetzt. Ersatz brachten 6 Gummidichtungen aus einem Reparatursatz für Wasserhähne. Das alte Farbband, ein endlos-Band, wurde mit Stempelfarbe aufgefrischt, jetzt ist auch eine Druckausgabe wieder möglich.
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Farbbandcassette.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Farbbandcassette.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/kaputte-Farbband-Transportrollen.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/kaputte-Farbband-Transportrollen.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;
+&lt;strong&gt;Abb: &lt;/strong&gt;Blick in die Farbbandcassette, links Detail der defekten Transportrollen
+&lt;p&gt;
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Ersatzrolle.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Ersatzrolle.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Ersatzrolle-2.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/Ersatzrolle-2.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;
+&lt;strong&gt;Abb: &lt;/strong&gt;Details der Reparatur, rechts die überholten Transportrollen
+&lt;p&gt;
+
+&lt;p&gt;
+Unsere Maschine ist mit einem Plattenbetriebssystem ausgestattet sowie einer Reihe von Hilfsprogrammen (heute würde man Editor und File-Utilities dazu sagen). Als Programmiersprache wird RPGII eingesetzt. Einige Hilfs- und Diagnoseprogramme auf Diskette liegen auch vor.
+
+&lt;p&gt;&lt;strong&gt;
+Als Aufgabe bleibt, ein typisches Anwendungsprogramm für die Maschine in RPG für Vorführungen zu schreiben - wer Kenntnisse und Lust darauf hat möge sich bitte melden !
+&lt;/strong&gt;
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Neuzugänge</title>
+      <link>https://technikum29.de/blog/2021-05-01-Neuzugaenge/</link>
+      <author>Roland</author>
+      <pubDate>2021-05-01T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2021-05-01-Neuzugaenge/</guid>
+      <description>
+&lt;p&gt;
+In den letzten Monaten erreichten das technikum29 eine Vielzahl von interessanten neuen Exponaten, 
+die wir hier kurz vorstellen möchten:
+
+&lt;p&gt;
+Das älteste Exponat übereignete uns freundlicherweise Frau Sigrun Schuster aus Kronberg: eine Staffelwalzen-
+Rechenmaschine Typ &lt;strong&gt; „XxX“ von Seidel und Naumann&lt;/strong&gt; (Dresden). Dieses Modell wurde von 1906 bis 1927 hergestellt, 
+eine genauere Zuordnung des Herstelljahrs zu unserer Maschine ist uns im Augenblick nicht möglich.
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/XxX-Neuzugang.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/XxX-Neuzugang.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/XxX-Detail.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/XxX-Detail.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+ 
+&lt;p&gt;
+Nach oberflächlicher Reinigung und etwas Ölen funktionierte die Maschine auf Anhieb in ihren Grundfunktionen. 
+Einige Details sind noch im Zuge einer späteren Komplettüberholung zu erledigen. Einige fehlende Tastenkappen 
+wurden uns freundlicherweise von Florian Ehmann per 3-D-Druck ersetzt (im Bild auf der linken Seite der Volltastatur 
+zu sehen, Gravur fehlt noch).
+  
+&lt;p&gt;
+Die Maschine wird wegen ihrer guten Zugänglichkeit bei Führungen zu mechanischen Rechenmaschinen vorgeführt werden.
+
+&lt;p&gt;
+Mit Sicherheit das schwerste der Neuzugänge ist eine komplette &lt;strong&gt;IBM5320 System/32&lt;/strong&gt;. Sie wurde uns von Edwin Miller 
+(Rammingen) gespendet. Die 5320 ist ein 16-Bit-Einzelplatzcomputer, der von 1975-1984 von IBM vertrieben (bzw. 
+vermietet) wurde.
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/IBM5320-Herkunft.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/IBM5320-Herkunft.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/de/geraete/IBM5320/IBM5320_Bilder/IBM5320-Abtransport.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/IBM5320/IBM5320_Bilder/IBM5320-Abtransport.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;strong&gt;Abb:&lt;/strong&gt; Die IBM5320 noch beim Spender (li), Abtransport durch das Fenster (re)
+
+
+&lt;p&gt;
+Das Gerät ist nicht zerlegbar und mußte mit seinen 290 kg durch das Zimmerfenster im ersten Stock mit Hilfe eines 
+Hubwagens abtransportiert werden. Fleißige Helfer halfen dann in Kelkheim, das gute Stück in das Museum zu bringen. 
+Zu dem Gerät erhielten wir mehrere Kisten voller technischer Dokumentation und Software, so dass wir zuversichtlich 
+sind, die IBM/32 bald wieder in Betrieb nehmen zu können - wir werden berichten. Soviel sei verraten: sie funktioniert
+wie am ersten Tag !
+
+&lt;p&gt;
+Beim Transport der IBM/32 führte der Weg unseres Museumstransporters noch in Neckargemünd vorbei, wo wir eine Schenkung 
+von Günter Ruschitzka entgegennehmen konnten: einen &lt;strong&gt;DEC-Writer LA36&lt;/strong&gt; in betriebsbereitem Zustand. Er wird unsere 
+Präsentation von DEC-Rechnern ergänzen (im Bild vorne rechts)!
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/DEC-LA36.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/DEC-LA36.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/PDP8E-Neuzugang.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/PDP8E-Neuzugang.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;strong&gt;Abb:&lt;/strong&gt; links der DEC-Writer II im Museum, rechts die neue PDP8E
+
+&lt;p&gt;
+Herr Simon Gleissner (Bad Homburg) vermittelte uns als Vermächtnis eine &lt;strong&gt;DEC PDP8E&lt;/strong&gt;, die wir im Raum Hannover abholen 
+	durften. Das technikum29 zeigt zwar &lt;a href=&quot;/de/rechnertechnik/fruehe-computer.php#pdp8&quot;&gt;eine Reihe von PDP-8-Rechnern&lt;/a&gt;, eine vorzeigbare 8E fehlt uns aber noch. Zunächst 
+war der Schreck groß: die Maschine wurde lange Zeit kopfüber in einem feuten Keller gelagert, eine erste Inspektion 
+zeigte aber, dass dies wohl nur kosmetische Spuren auf dem Gehäusedeckel hinterlassen hat. Die Elektronik ist komplett 
+und optisch in gutem Zustand - mehr wird eine vorsichtige Inbetriebnahme zeigen.
+
+
+&lt;p&gt;
+Anläßlich eines Besuchs im Museum überließ uns Bernd Nagel (Frankfurt) zwei wunderschöne Exponate mit den herrlichen 
+Nixie-Röhrenanzeigen: einen 20 MHz-Universalzähler der Firma Hewlett Packard Typ &lt;strong&gt;hp5325B&lt;/strong&gt; von 1969 und einen wunderschönen 
+Tischrechner &lt;strong&gt;Olympia CD401&lt;/strong&gt; von 1972 - dafür nochmals vielen Dank !
+  
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/hp5325B-Neuzugang.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/hp5325B-Neuzugang.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/CD401-Neuzugang.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2021-05-01-Neuzugaenge/CD401-Neuzugang.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+&lt;strong&gt;Abb: &lt;/strong&gt;links der neue hp5325B-Zähler mit leuchtender Nixie-Anzeige, rechts die Olympia CD401
+
+&lt;p&gt;
+Und schließlich erhielten wir aus einem größeren Platinenfundus &lt;strong&gt;4 Ersatzplatinen&lt;/strong&gt; für unsere 
+	&lt;strong&gt;BULL Gamma 10&lt;/strong&gt; 
+  
+
+</description>
+    </item>
+    
+    <item>
+      <title>UPDATE: Wer knackt den Banktresor?</title>
+      <link>https://technikum29.de/blog/2021-04-30-Update-Safe/</link>
+      <author>Roland</author>
+      <pubDate>2021-04-30T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2021-04-30-Update-Safe/</guid>
+      <description>
+&lt;p&gt;
+Wir hatten über das &lt;a href=&quot;/blog/2020-02-05-Safetuer.php&quot;&gt; Problem der verschlossenen Revisionstür&lt;/a&gt; 
+unseres Tresors im Museum berichtet. 
+Leider hatten die Corona-Einschränkungen verhindert, dass Helfer zu uns ins Museum kommen konnten,
+um die Tür zu öffnen.
+
+&lt;p&gt;
+Zufälligerweise fanden wir eines Tages beim Aufräumen die Schlüssel für die Revisionstür ! Die 
+Schlösser liessen sich öffnen, doch die Revisionstür ging nur ca 1 cm weit auf. Irgend etwas verhinderte
+das Aufschwenken. Letztlich fanden wir den entscheidenden Trick: Der Tresor muss mit der richtigen
+Kombination geöffnet sein und auf halben Weg zwischen &quot;Riegel zu&quot; und &quot;Riegel auf&quot; wird die 
+Revisionstür freigegeben ! Damit hat sich unsere Anfrage erledigt, hier der Blick auf die Rückseite
+der Tresortür mit geöffneter Revisionstür:.
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2020-02-05-Safe/bank-safe-tuer-geoeffnet.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2020-02-05-Safe/bank-safe-tuer-geoeffnet.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2020 geschah</title>
+      <link>https://technikum29.de/blog/2020-12-10-Jahresabschluss/</link>
+      <author>Sven</author>
+      <pubDate>2020-12-10T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2020-12-10-Jahresabschluss/</guid>
+      <description>
+&lt;p&gt;Liebe Freunde und Unterstützer des technikum29,
+
+&lt;p&gt;
+ein herausforderndes Jahr neigt sich dem Ende zu und wir möchten es nicht versäumen, allen Unterstützern und Helfern für ihre Arbeit und Unterstützung in 2020 zu danken. Wir wünschen euch, euren Familien und Lieben gesunde, ruhige Festtage und ein erfolgreiches Neues Jahr!
+
+&lt;h3&gt;Was geschah 2020?&lt;/h3&gt;
+
+&lt;h4&gt;Führungen&lt;/h4&gt;
+&lt;p&gt;Das Jahr 2020 war geprägt durch Covid-19 und den damit einhergehenden Einschränkungen. Zu Beginn des Jahres konnten wir noch über &lt;strong&gt;10 Führungen&lt;/strong&gt; mit über 150 Teilnehmern absolvieren. Unsere Gäste waren durchweg begeistert und füllten das Gästebuch mit Kommentaren und unser Sparschwein mit dem einen oder anderen Schein. Aber im März zeichnete sich ab, dass wir keine Führungen zu Corona-Bedingungen anbieten können: das Abstandsgebot und stundenlanges Maskentragen lassen sich nicht durchhalten. Von daher ruht der Führungsbetrieb seit März bis auf weiteres auch ins Jahr 2021 hinein - leider !
+
+&lt;h4&gt;Organisatorisches&lt;/h4&gt;
+&lt;p&gt;Eine mögliche &lt;strong&gt;Vereinsgründung&lt;/strong&gt; ist zunächst aufgeschoben, einerseits wegen der Beschränkungen durch Corona, andererseit wg. Diskussionen um die geeignete rechtliche Form für das Museum. Technikum29 ist also nach wie vor eine private Sammlung, was dem Schwung der Helfer und auch der einen oder anderen Spende keinen Abbruch getan hat.
+
+&lt;p&gt;
+Trotz aller Beschränkungen konnten wir doch einige Erfolge erzielen: wir konnten Anfang des Jahres noch 2 Helfertage abhalten, bei dem bis zu 20 Helfer Maschinen reparierten. Nach den Corona-Beschränkungen kamen einzelne Helfer ins Museum, und mit großem Abstand wurde das eine oder andere Gerät weiter instand gesetzt bzw. erstmalig wieder in Betrieb genommen. &lt;strong&gt;Wir danken den betreffenden Helfern hier summarisch&lt;/strong&gt;, um in der Einzelaufzählung niemenden zu vergessen.
+
+&lt;h4&gt;Depots&lt;/h4&gt;
+&lt;p&gt;
+In den &lt;strong&gt;Depots&lt;/strong&gt; wurde kontinuierlich aufgeräumt, hin- und hertransportiert und
+Platz geschaffen. Aber es ist eine Sisyphusarbeit!
+Die Fortschritte sind noch gering, und Überschwemmungen im Folge eines Gewitters
+im Sommer haben die Lage nicht verbessert. &lt;a href=&quot;/blog/2020-09-03-Lagersuche.php&quot;&gt;Wir suchen dringend bezahlbaren
+Lagerraum auf Zeit, um das Sortieren der vielen Geräte(fragmente) voranzutreiben.&lt;/a&gt;
+Wer immer etwas weiss - bitte melden!
+
+&lt;h3&gt;Was geschah technisch in 2020 (alphabetisch gereiht)?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;die &lt;a href=&quot;/de/rechnertechnik/tabelliermaschine.php&quot;&gt;BULL Tabelliermaschine&lt;/a&gt; läuft wieder, führt Konten und auch das berühmte „Wurzelprogramm“ (siehe unsere Webseite) ist wieder vorführbereit
+&lt;li&gt;die Wiederinbetriebnahme der &lt;a href=&quot;/de/rechnertechnik/gamma55.php&quot;&gt;BULL GE55&lt;/a&gt; wurden aufgenommen, Defekte im Netzteil beseitigt
+&lt;li&gt;zu unserer &lt;a href=&quot;/blog/2019-12-05-cpt-8800.php&quot;&gt;CPT8800&lt;/a&gt; erhielten wir umfangreiche Ersatzteile, Broschüren und Handbücher sowie Originaldisketten - sie ist damit komplett und vorführbereit
+&lt;li&gt;Drei &lt;a href=&quot;/de/kommunikationstechnik/faxtechnik.php#Fernschreibtechnik&quot;&gt;Fernschreiber&lt;/a&gt; wurden überholt und mit einer modernen Vermittlungsstelle versehen. Somit kann der frühere Wählbetrieb vorgeführt werden. Sogar &lt;a href=&quot;/blog/2020-07-27-iTelex.php&quot;&gt;über das Internet&lt;/a&gt; kann man unsere Fernschreiber erreichen.
+&lt;li&gt;unser &lt;strong&gt;Garten&lt;/strong&gt; wird von Ralf beispielhaft in Schuß gehalten, er war auch zur Stelle, als wir Anfang des Jahres einen Wassereinbruch im Keller wg einer defekten Pumpe hatten und ist auch sonst als Hausmeister unentbehrlich!
+&lt;li&gt;der Drucker der &lt;a href=&quot;/de/rechnertechnik/ibm1130.php&quot;&gt;IBM1130&lt;/a&gt; wurde gereinigt, Probleme im Memory wurden beseitigt und sie ist wieder vorführbereit.
+&lt;li&gt;unsere &lt;em&gt;IBM5100&lt;/em&gt; konnte mit großer Unterstützung des IBM-Museums (Stuttgart Böblingen) wieder in Gang gesetzt werden, zur Zeit wird der Drucker &lt;em&gt;IBM5103&lt;/em&gt; repariert.
+&lt;li&gt;das technikum29 &lt;a href=&quot;https://twitter.com/technikum29/status/1228333243818237953&quot;&gt;hat jetzt Internetanschluß und WLAN&lt;/a&gt; und vieles mehr.
+&lt;li&gt;die &lt;em&gt;Inventarisierung&lt;/em&gt; vor allem von Ersatzteilen, Broschüren, Software und Schaltplänen wurde deutlich vorangetrieben, 
+&lt;li&gt;die Restaurierung der &lt;a href=&quot;/de/rechnertechnik/lgp30.php&quot;&gt;LGP30&lt;/a&gt; ging weiter: die &lt;em&gt;Trommelreplika&lt;/em&gt; konnte erfolgreich an der Maschine der Freunde vom Computermuseum der Informatik Uni Stuttgart getestet werden - weitere Arbeiten bei uns blieben ruhten wg. Corona und werden die Wochen wieder aufgenommen
+&lt;li&gt;zu unseren zwei &lt;em&gt;LGP21&lt;/em&gt; wurde mit einer Bestandsaufnahme zwecks Restaurierung begonnen (hier unterstütze uns schon 2019 das ISER in Erlangen). Wir begannen, die große Sammlung an Originalprogrammen der Maschine elektronisch zu sichern.
+&lt;li&gt;eine weitere &lt;a href=&quot;/de/rechnertechnik/kommerzielle.php#olivetti-p203&quot;&gt;Olivetti P101&lt;/a&gt; läuft wieder
+&lt;li&gt;die &lt;a href=&quot;/de/rechnertechnik/fruehe-computer.php#pdp8i&quot;&gt;PDP-8i&lt;/a&gt; und die &lt;a href=&quot;/de/rechnertechnik/fruehe-computer.php#pdp12&quot;&gt;PDP-12&lt;/a&gt; sind wieder vorführbereit
+&lt;li&gt;für unsere &lt;a href=&quot;/de/geraete/pianola-funktionserklaerung/&quot;&gt;Pianola&lt;/a&gt; konnte ein Musiker gefunden werden, mit dem wir spezielle Musikvorführungen planen, sobald Corona es wieder erlaubt
+&lt;li&gt;die Reparatur der &lt;a href=&quot;/de/rechnertechnik/personalcomputer.php&quot;&gt;WANG&lt;/a&gt;-Computer ging voran - auch hier Stopp wg. der Coronasituation
+&lt;/ul&gt;
+
+
+
+&lt;p&gt;
+Soweit der Stand zum technikum29 und unser Dank!
+&lt;p&gt;
+&lt;a href=&quot;/de/team.php#roland&quot;&gt;Roland&lt;/a&gt; &amp;amp; &lt;a href=&quot;/de/team.php#sven&quot;&gt;Sven&lt;/a&gt;
+
+
+&lt;?php //print_author_info();
+?&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Wir suchen Lagerflächen</title>
+      <link>https://technikum29.de/blog/2020-09-03-Lagersuche/</link>
+      <author>Sven</author>
+      <pubDate>2020-09-03T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2020-09-03-Lagersuche/</guid>
+      <description>
+&lt;p&gt;Es ist Corona-Zeit und wir haben immer noch größtenteils geschlossen. Um die Zeit
+nicht nutzlos verstreichen zu lassen, möchten wir endlich unsere Depots räumen und
+neu sortieren. Dafür brauchen wir &lt;b&gt;Platz zum Lagern und Rangieren&lt;/b&gt;.
+
+&lt;p&gt;Unser Bedarf ist:
+
+&lt;ul&gt;
+ &lt;li&gt;Mietzeit bis zu einem Jahr
+ &lt;li&gt;200-300 Quadratmeter
+ &lt;li&gt;Trocken, fester Boden, abschließbar
+ &lt;li&gt;Möglichst ebenerdig oder mit Aufzug bzw. mit dem Auto anfahrbar
+&lt;/ul&gt;
+
+&lt;p&gt;Wir sind ein nicht gewinnorientiertes Computermuseum im Main-Taunus-Kreis, eine
+Raummiete müssen wir durch Spenden aufbringen. Daher sind wir an möglichst günstigen
+Räumlichkeiten interessiert. Wir könnten dabei eine monatliche Warmmiete von
+etwa 1-2 Euro/Quadratmeter bezahlen.
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Unsere Fernschreiber sind ans Telex-Netzwerk angebunden</title>
+      <link>https://technikum29.de/blog/2020-07-27-iTelex/</link>
+      <author>Sven</author>
+      <pubDate>2020-07-27T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2020-07-27-iTelex/</guid>
+      <description>
+&lt;!-- Todo: Use blog system for authorship... --&gt;
+&lt;p&gt;&lt;em&gt;Folgender Gastbeitrag wurde von Detlef G. verfasst:&lt;/em&gt;
+
+&lt;p&gt;
+Am 25.07. traf sich mal wieder die Fernschreib-Gruppe (Franz, Jochen und Detlef) im
+technikum29, um die Instandsetzung des Siemens T37, des Lorenz Lo15 und der zugehörigen
+Fernschaltgeräte (Wahleinrichtungen) abzuschließen.
+
+&lt;p&gt;
+Damit waren nun diese beiden Fernschreiber, die bisher über eine improvisierte Standleitung
+verbunden waren, bereit für den Anschluss an das
+&lt;a href=&quot;https://www.i-telex.net/&quot; class=&quot;go&quot;&gt;i-Telex-System&lt;/a&gt;. Das i-Telex funktioniert
+wie eine Telefonanlage für Fernschreiber und simuliert eine Fernschreibvermittlungsstelle.
+Die Bedienung und die Anwahl mit Wählscheibe funktionieren genau so, wie es lange Zeit in
+den richtigen Fernschreibnetzen Standard war. Über das Internet sind viele TeilnehmerInnen
+mit ihren Fernschreibern angebunden, es gibt ein
+&lt;a href=&quot;http://tlnserv3.teleprinter.net/&quot;&gt;Telefonbuch&lt;/a&gt; in dem nun auch zwei der
+technikum29-Fernschreibern mit den Telex-Nummern &lt;em&gt;622936&lt;/em&gt; und
+&lt;em&gt;4188848&lt;/em&gt; aufgelistet sind (Unsere Fernschreiber sind aber nicht immer erreichbar,
+sondern nur wenn wir sie anmachen).
+
+&lt;p&gt;
+Da es mit dem i-Telex möglich ist, mehr als zwei Fernschreiber anzuschließen, wurde das
+lokale Fernschreibnetz gleich noch um einen bereits zuvor instand gesetzten Siemens T68
+Streifenschreiber ergänzt.
+
+&lt;p&gt;
+Zusätzlich zu den Wählverbindungen zwischen den lokalen Fernschreibern ermöglicht das i-
+Telex über das Internet die Anwahl von Fernschreibern des i-Telex-Netzwerkes, an das
+bereits weltweit über 100 Fernschreib-Enthusiasten mit mehr als 300 Geräten angeschlossen
+sind.
+&lt;br&gt;
+Während zukünftiger Führungen werden die Fernschreiber des technikum29 auch von außen
+über das i-Telex-Netzwerk erreichbar sein.
+&lt;br&gt;
+Für die kommenden Termine ist geplant, nach und nach weitere Kommunikationsgeräte, wie
+die Hell-Schreiber und Hell-Faxgeräte und die automatischen Morsesender und -empfänger in
+Betrieb zunehmen. Und der eine oder andere seltene Fernschreiber steht ebenfalls auf der
+Todo-Liste. 
+
+&lt;div class=&quot;box center auto-bildbreite&quot;&gt;
+   &lt;a href=&quot;/shared/photos/blog/2020-07-27-iTelex.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2020-07-27-iTelex.jpg&quot; width=&quot;500&quot;&gt;
+   &lt;/a&gt;
+   &lt;p class=&quot;bildtext&quot;&gt;
+     Der Vermittlungskasten im i-Telex-System hat nur noch die Größe eines Schuhkartons.
+     Hierin befinden sich auf Baugruppenträger (Frontpanels im 3D-Druck hergestellt)
+     von links nach rechts der Internet-Uplink sowie bis zu vier Anschlüsse für
+     Fernschreiber sowie die Spannungsversorgung, die auch die 80 Volt
+     Linienspannung erzeugt.
+   &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Erfolgreicher Helfertag am 04.07.2020</title>
+      <link>https://technikum29.de/blog/2020-07-07-Nachlese-Helfertag/</link>
+      <author>Sven</author>
+      <pubDate>2020-07-07T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2020-07-07-Nachlese-Helfertag/</guid>
+      <description>
+&lt;div class=&quot;box desc-right auto-bildbreite&quot;&gt;
+   &lt;a href=&quot;/shared/photos/blog/2020-07-04-Helfertag/Corona-Covid-Eingang-technikum29.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2020-07-04-Helfertag/Corona-Covid-Eingang-technikum29.jpg&quot; width=&quot;420&quot;&gt;
+   &lt;/a&gt;
+   &lt;p class=&quot;bildtext&quot;&gt;
+     Besucherliste und Handdesinfektion am Eingang, Verpflegung unter freiem Himmel im Museumsgarten:
+     So öffneten wir am Morgen des ersten Helfertages seit der Corona-Pandemie unsere Türen.
+     Das Bild erschien &lt;a href=&quot;https://twitter.com/technikum29/status/1279338714196516864&quot;&gt;life bei Twitter&lt;/a&gt;.
+   &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In Zeiten der Corona-Pandemie blieben die letzten Monate auch die Pforten unseres Museums
+für die Öffentlichkeit geschlossen. Eine Versuchsführung mit einer kleinen Gruppe vor einigen
+Wochen (seit &lt;a
+href=&quot;https://www.hessen.de/fuer-buerger/corona-hessen/interviews-reden-und-mehr/corona-massnahmen-der-landesregierung&quot;
+&gt;Ende März&lt;/a&gt; in Hessen wieder erlaubt) hat uns keinen großen Spaß gemacht — mit Schutzmaske
+und Sicherheitsabstand ist lebendige Computertechnik nur schwer vorzuführen. Zumal unser Konzept
+auch auf dem Benutzen von Exponaten beruht, was Museen seinerzeit noch landesweit behördlich
+untersagt war.
+
+&lt;p&gt;Mittlerweile ist der &lt;em&gt;Lockdown&lt;/em&gt; aber an vielen Stellen weiter zurückgerückt. Geschäfte
+des täglichen Bedarfs mit Atemmaske zu betreten gehört mittlerweile zum Alltag, genauso wie
+corona-bedingte Besucherlisten in Cafes und die obligatorischen Handdesinfektions-Pumpen.
+Mit dieser Grundausstattung haben wir am vergangenen Samstag also auch bei uns geöffnet
+(siehe rechts).
+
+&lt;p&gt;Im Laufe des Tages kamen knapp 10-15 angemeldete Helfer, um sich um diverse Geräte zu kümmern.
+Sie verteilten sich bei den &lt;a href=&quot;/de/rechnertechnik/personalcomputer.php&quot;&gt;WANG-Rechnern&lt;/a&gt;,
+aber auch bei unseren
+&lt;a href=&quot;/de/kommunikationstechnik/faxtechnik.php#Fernschreibtechnik&quot;&gt;Fernschreibern&lt;/a&gt;. Auch
+unsere am besten laufenden Rechner, wie die &lt;a class=&quot;go&quot;
+href=&quot;https://twitter.com/technikum29/status/1279440406888034306&quot;&gt;DEC PDPs&lt;/a&gt; und die 
+&lt;a class=&quot;go&quot; href=&quot;https://twitter.com/technikum29/status/1279421502564126720&quot;&gt;Univac 9200er&lt;/a&gt;
+liefen.
+
+
+&lt;div class=&quot;box auto-bildbreite center&quot;&gt;
+  &lt;a href=&quot;/shared/photos/blog/2020-07-04-Helfertag/Kathodenstrahlroehre-Test.jpg&quot; class=&quot;popup&quot;&gt;
+    &lt;img src=&quot;/shared/photos/blog/2020-07-04-Helfertag/Kathodenstrahlroehre-Test.jpg&quot; width=&quot;700&quot;&gt;
+  &lt;/a&gt;
+  &lt;p class=&quot;bildtext&quot;&gt;
+  Reinhard M. nahm sich mit seinem Sohn unserer exotischen
+  &lt;a href=&quot;/de/kommunikationstechnik/messtechnik.php&quot;&gt;Experimentaltechnik-Sammlung&lt;/a&gt; an. Unter
+  anderem brachte er die abgebildete Kathodenstrahlroehre zum Leuchten.
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Bemerkenswert ist, dass sich sogar Helfer einfanden, um unseren kleinen Museumsgarten
+zurückzuschneiden. Der hat zur Zerstreuung und zum Gewinnen von Abstand gute Dienste geleistet.
+Besonderer Dank gilt hier Ralf K., Markus S. und Sylvia K..
+Von Besuchern geschossene Fotos finden sich
+dazu auch auf der von Facebook geführten
+&lt;a href=&quot;https://www.facebook.com/pages/Technikum29/2065486283675504&quot;&gt;Seite über
+das technikum29&lt;/a&gt;.
+
+&lt;h3&gt;Wie geht es während Corona weiter im technikum29?&lt;/h3&gt;
+
+&lt;p&gt;Wir halten unsere &lt;a class=&quot;go&quot; href=&quot;/de/termine.php&quot;&gt;Terminseite&lt;/a&gt; stetig aktuell und
+informieren dort, sobald wir wieder regelmäßiger die Tore öffnen können. Für September ist
+eine reguläre Führung geplant, sodenn es keinen erneuten Lockdown gibt.
+
+&lt;p&gt;Wir planen auch vorher weitere Helfertage in kleineren Kreisen, die auf einzelne Themen
+spezialisiert sind. Dazu gehören etwa ein Tag, der der unserer größten Anlage, der
+&lt;a href=&quot;/de/rechnertechnik/univac9400.php&quot;&gt;Univac 9400&lt;/a&gt;, gewidmet ist, sowie ein Tag,
+an dem das erste mal dediziert Erfahrungen mit Videoaufnahmen gemacht werden sollen.
+
+&lt;p&gt;Die nächsten Helfertage kündigen wir in erster Linie über unseren kleinen E-Mail-Verteiler
+an. Wer auf der Liste eingetragen werden möchte, kann sich formlos
+&lt;a href=&quot;/de/impressum.php&quot;&gt;bei uns melden&lt;/a&gt;.
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Erfolgreiches Treffen der Unterstützer des technikum29 am 28.02.2020</title>
+      <link>https://technikum29.de/blog/2020-03-03-Nachlese-Arbeitswochenende/</link>
+      <author>Roland</author>
+      <pubDate>2020-03-03T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2020-03-03-Nachlese-Arbeitswochenende/</guid>
+      <description>
+&lt;p&gt;Sehr reges Treiben herrschte im technikum29 am letzten Samstag: mehr als 15 Unterstützer des
+technikum29 trafen sich im Museum, um verschiedensten Aktivitäten zum Erhalt der Sammlung
+fortzuführen, zu diskutieren bzw. zu starten:
+
+&lt;ul&gt;
+&lt;li&gt;Die Reparaturarbeiten an den &lt;a href=&quot;/de/rechnertechnik/personalcomputer.php&quot;&gt;WANG 2200&lt;/a&gt;-Systemen (Christian, Georg, Martin und Michael) und der &lt;a href=&quot;/de/rechnertechnik/lgp30.php&quot;&gt;LGP30&lt;/a&gt; (Jürgen M) gingen weiter! Die WANGs zeigen wieder ein Lebenszeichen, die LGP30 widersetzt sich unseren Reparaturversuchen weiterhin hartnäckig.
+
+&lt;li&gt;Unsere &lt;a href=&quot;/de/rechnertechnik/ibm1130.php&quot;&gt;IBM1130&lt;/a&gt; druckt wieder und ist damit wieder für Vorführungen einsatzbereit (Roland, Reinhard&amp;nbsp;F)!
+
+&lt;li&gt;Zwei neue Mitstreiter (Detlef, Thorsten) kümmerten sich um unsere &lt;a href=&quot;/de/kommunikationstechnik/faxtechnik.php#Fernschreibtechnik&quot;&gt;Fernschreiber&lt;/a&gt; und werden diese in Kürze mit dem &lt;a href=&quot;https://www.i-telex.net/&quot;&gt;weltweiten Fernschreibnetz i-Telex&lt;/a&gt;, das Enthusiasten im Internet betreiben, verbinden. Das wird ein neues Highlight für Führungen werden.
+
+&lt;li&gt;Eine &lt;a href=&quot;/de/rechnertechnik/programmierbare.php#101&quot;&gt;Olivetti Programma P101&lt;/a&gt; wurde erfolgreich repariert, die Arbeiten an unserer großen &lt;a href=&quot;/de/rechnertechnik/kommerzielle.php#olivetti-p203&quot;&gt;Programma P201&lt;/a&gt; gehen voran (Jürgen S).
+
+&lt;li&gt;Mit unseren langjährigen UNIVAC-Unterstützern wurde die Wiederinstandsetzung des &lt;a href=&quot;/de/rechnertechnik/univac9400.php&quot;&gt;Univac 9400-Rechenzentrums&lt;/a&gt; nach langer Pause besprochen (Hrn. Barnowski &amp;amp; Schale).
+
+&lt;li&gt;Zwei junge Unterstützer (David, Alexander) möchten sich um ein Inventarisierungssystem kümmern und ggf Patenschaften für einige Computer übernehmen.
+
+&lt;li&gt;Reinhard M will sich um unser großes TMZ-Bandlaufwerk (IBM 1130) kümmern
+
+&lt;li&gt;Unsere Infrastruktur wurde verbessert: wir haben jetzt im Museum einen Internetanschluß und einen WLAN-Hotspot (Sven, Thilo).
+
+&lt;li&gt;Ralf hatte sich schon vor einiger Zeit angeboten, sich um die Haustechnik zu kümmern. Aktuell wird die Klimasituation im Museum erfasst, um Feuchteschäden durch die unregelmäßige Heizsituation zu vermeiden.
+
+&lt;li&gt;Christan kümmert sich mit Sven um ein Whitepaper, um die Diskussion zur Zukunft des Museums voranzubringen.
+
+&lt;li&gt;Roland hat mittlerweile ungefähr &lt;a href=&quot;/de/termine.php&quot;&gt;zehn Führungen&lt;/a&gt; erfolgreich durchgeführt, unser Gästebuch füllt sich mit vielen begeisterten Kommentaren unserer Besucher.
+
+&lt;li&gt;Reges Treiben herrschte auch in den Depots: Dutzende Kisten mit Ersatzteilen und viele Geräte wurden ins technikum29 transferiert (Sven und Helfer)
+
+&lt;/ul&gt;
+
+&lt;p&gt;Wir waren überrascht von der Resonanz auf unsere Einladung und werden in Kürze möglichst
+in engerer Folge weitere  Möglichkeiten zu gemeinsamen Arbeiten im Museum anbieten.
+Aktuelle Termine werden auf unserer Webseite unter &lt;a href=&quot;/de/termine.php&quot; class=&quot;go&quot;&gt;Termine&lt;/a&gt; bekannt gegeben.
+
+&lt;p&gt;Wir möchten an der Stelle auch auf &lt;a href=&quot;https://twitter.com/technikum29&quot;&gt;unseren neuen Twitter-Account @technikum29&lt;/a&gt;
+hinweisen, der es einfacher macht, den Aktivitäten und Ankündigungen des Museums zu folgen.
+
+&lt;p&gt;Allen Helfern ein &lt;strong&gt;Riesen-Dankeschön&lt;/strong&gt; für ihren Einsatz!
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2020-03-03-Arbeitstreffen/univac9400-konsole.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2020-03-03-Arbeitstreffen/univac9400-konsole.jpg&quot; width=&quot;420&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2020-03-03-Arbeitstreffen/personen-an-der-ibm1130.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2020-03-03-Arbeitstreffen/personen-an-der-ibm1130.jpg&quot; width=&quot;420&quot;&gt;
+   &lt;/a&gt;
+   &lt;p class=&quot;bildtext small&quot;&gt;
+     &lt;em&gt;Links:&lt;/em&gt; Die Farbrolle des Univac9400-Terminals wurde mit einer selbst angerührten Farbmischung bestückt
+     und ist total vertrocknet. Ohne Terminal lässt sich der Rechner nicht steuern, daher wollen wir hier
+     baldmöglichst einen Ersatz anschließen.
+     &lt;em&gt;Rechts:&lt;/em&gt; Die IBM-1130 wird repariert, während die nächste Generation an die Architektur des
+     Rechners herangeführt wird.
+   &lt;/p&gt;
+&lt;/div&gt;
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Wer knackt den Banktresor?</title>
+      <link>https://technikum29.de/blog/2020-02-05-Safetuer/</link>
+      <author>Sven</author>
+      <pubDate>2020-02-05T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2020-02-05-Safetuer/</guid>
+      <description>
+&lt;p&gt;
+Ein Kuriosum unseres Museumsgebäudes ist, dass es sich um eine ehemalige Filiale der
+&lt;a href=&quot;http://naspa.de&quot;&gt;Nassauischen Sparkasse&lt;/a&gt; handelt. Dazu gehört natürlich auch
+ein waschechter Banktresor, in dem früher wohl Schränke voller Geld dicht an dicht standen
+(heute beherbergt er lediglich unsere &lt;a href=&quot;/de/kommunikationstechnik/fernsehen.php&quot;&gt;Fernseh-&lt;/a&gt;
+und &lt;a href=&quot;/de/kommunikationstechnik/tontechnik.php&quot;&gt;Tontechnik&lt;/a&gt;).
+Es handelt sich um einen 30 Quadratmeter großen Kleintresorraum, der ringsherum mit
+60 Zentimeter dickem Stahlbeton umschlossen ist und nur durch eine tonnenschwere
+Panzer-Tresortür betreten werden kann. Für die 1971 gelieferte Tresortür aus dem Hause
+&lt;a href=&quot;https://www.garny.de/&quot;&gt;Franz Garny&lt;/a&gt; (Frankfurt/Niederrad) liegt uns sogar ein
+historisches Werksattest vor.
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2020-02-05-Safe/bank-safe-tuer.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2020-02-05-Safe/bank-safe-tuer.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2020-02-05-Safe/bank-safe-tuer-von-innen.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2020-02-05-Safe/bank-safe-tuer-von-innen.jpg&quot; width=&quot;337&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!--
+&lt;p&gt;Die Tür ist dauerhaft geöffnet, lässt sich derzeit also nicht verschließen. Wir würden sie
+aber gerne restaurieren: Einerseits würden wir den Schließmechanismus gerne in Aktion sehen,
+andererseits das Innenleben erblicken.
+--&gt;
+
+&lt;p&gt;Wir würden den Schließmechanismus gerne offenlegen und dafür die &lt;em&gt;Futtertür&lt;/em&gt; öffnen.
+Dabei handelt es sich um die abgebilderte unlackierte silberne Abschlussplatte aus ca. einem halben
+Zentimeter dicken Stahl, der den Abschluss der Tresortür ins Tresorinnere bildet.
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2020-02-05-Safe/bank-safe-tuerblatt-schloss.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2020-02-05-Safe/bank-safe-tuerblatt-schloss.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Diese Futtertür ist mit zwei kleinen einfachen Zylinderschlössern abgeschlossen, bei denen
+es sich womöglich einfach nur um Hebelschlösser handelt, wie sie auch bei Briefkästen vorkommen.
+Leider fehlen uns dafür die Schlüssel. Die Nahaufnahme zeigt ein solches Schloss, im 
+Größenvergleich ein handelsüblicher Schlüsselanhänger mit einer Breite von zwei Zentimetern.
+
+&lt;p&gt;Mit einem Lockpicking-Werkzeug sind wir noch nicht weitergekommen. Wer hat mehr Erfahrung?
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Ankündigung des nächsten Samstages zum gemeinsamen Arbeiten</title>
+      <link>https://technikum29.de/blog/2020-01-04-Ankuendigung-Arbeitstag/</link>
+      <author>Roland</author>
+      <pubDate>2020-01-04T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2020-01-04-Ankuendigung-Arbeitstag/</guid>
+      <description>
+&lt;p&gt;
+Im neuen Jahr 2020 möchten wir für Interessierte wieder Termine für &lt;strong&gt;gemeinsame Arbeit an Geräten im Museum&lt;/strong&gt; anbieten: 
+
+&lt;!--
+&lt;p&gt;
+Der nächste Termin könnte Samstag, der 8. oder Samstag, der 29. Februar sein. Entscheidend ist, welcher Termin in unserer
+Doodle-Teamumfrage auf größere Resonanz stößt. &lt;em&gt;Das Ergebnis wird dann hier bekanntgegeben&lt;/em&gt;.
+
+&lt;p&gt;
+Das Museum ist an dem gewählten Tag &lt;strong&gt;von 9:00 bis 18:00&lt;/strong&gt; offen
+--&gt;
+
+&lt;p&gt;Am &lt;strong&gt;Samstag, dem 29. Februar 2020&lt;/strong&gt; werden wir mit knapp 10 Mitarbeitern im Museum sein. Das Museum
+ist an dem Tag &lt;strong&gt;von 9:00 bis 18:00&lt;/strong&gt; offen, für Speis und Trank werden wir uns kümmern.
+Wichtig: An dem Tag findet &lt;strong&gt;keine Führung&lt;/strong&gt; statt. Einzelpersonen, die aber mal bei den Restaurationsarbeiten
+zuschauen möchten oder selbst Hand anlegen möchten, können sich gerne &lt;a href=&quot;/de/impressum.php&quot;&gt;per Mail an uns wenden&lt;/a&gt;.
+
+&lt;h3&gt;Was steht an?&lt;/h3&gt;
+&lt;p&gt;
+Zu tun gibt es genug, die wichtigsten Baustellen mit einem knappem Status und unseren Unterstützungsbedarf sind
+&lt;strong&gt;zum einen organisatorisch&lt;/strong&gt;:
+
+&lt;ul&gt;
+&lt;li&gt;    Wir brauchen starke Arme zum Um-/Aufräumen in den &lt;strong&gt;Depots&lt;/strong&gt;
+&lt;li&gt;    Wir können über erste Erfahrungen mit den wieder aufgenommenen &lt;strong&gt;Führungen&lt;/strong&gt; berichten
+&lt;li&gt;    Die &lt;strong&gt;Vereinsgründung&lt;/strong&gt; wurde verschoben, hier können wir zu Gründen und den Stand berichten
+&lt;li&gt;    Planung eines Tages der offenen Tür im Mai/Juni 2020
+&lt;/ul&gt;
+
+&lt;p&gt;sowie &lt;strong&gt;technisch/inhaltlich&lt;/strong&gt;:
+
+&lt;ul&gt;
+&lt;li&gt; Unsere beiden &lt;strong&gt;WANG&lt;/strong&gt;-Rechner 2200 A und B laufen leider noch/wieder nicht, die PCS II ist als „Ruine“ bereits in pflegerischen Händen
+&lt;li&gt; Die beiden neu gefundenen &lt;strong&gt;WANG&lt;/strong&gt; VT bedürfen der ersten Inspektion
+&lt;li&gt; Bzgl. der &lt;strong&gt;Olivetti P201en&lt;/strong&gt; haben wir Spendermaschinen zum Teiletausch bereitgestellt
+&lt;li&gt; Von unseren vier &lt;strong&gt;DEC PDP&lt;/strong&gt;en läuft nur eine, weitere Maschinen sollten sich - PDP-Erfahrung vorausgesetzt - wieder ins Leben zurückrufen. Wahrscheinlich liegen hier einfach Bedienfehler vor (hoffentlich …)
+&lt;li&gt;Die &lt;strong&gt;UNIVAC9400&lt;/strong&gt; bedarf der fachkundigen Wiederinbetriebnahme
+&lt;li&gt;Die &lt;strong&gt;LGP30&lt;/strong&gt;-Reparatur kam deutlich voran, aber neue Fehler müssen beseitigt werden
+&lt;li&gt;Bei der &lt;strong&gt;LGP21&lt;/strong&gt; steht mittlerweile Equipment zur Verfügung, um die große, einmalige Softwaresammlung von Papertape zu lesen uns zu konservieren
+&lt;li&gt;Unsere &lt;strong&gt;IBM1130&lt;/strong&gt; zeigt Parity-Error und verweigert die Arbeit, notwendige Hardware-Prüfprogramme und Anleitungen wurden besorgt und warten auf ihren EInsatz zur Fehlereingrenzung
+&lt;li&gt;An &lt;strong&gt;CBM8096&lt;/strong&gt; und &lt;strong&gt;CPT8800&lt;/strong&gt; wären die vorhanden Drucker anzuschließen, zu prüfen und auszuprobieren
+&lt;li&gt;und, und, und …
+&lt;/ul&gt;
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>technikum29 wünscht schöne Feiertage — wir fassen zusammen, was 2019 geschah.</title>
+      <link>https://technikum29.de/blog/2019-12-21-Jahresabschluss/</link>
+      <author>Roland</author>
+      <pubDate>2019-12-21T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-12-21-Jahresabschluss/</guid>
+      <description>
+Liebe Freunde und Unterstützer des technikum29,
+
+&lt;p&gt;
+das Museumsteam wünscht allen Freunden und Unterstützern frohe Weihnachten, einige ruhige und besinnliche Tage „zwischen den Jahren“ sowie einen guten Rutsch ins neue Jahr 2020!
+
+&lt;p&gt;
+Ihr habt in 2019 mitgeholfen, das Museum wieder zu beleben, dafür nochmals ausdrücklich unseren &lt;strong&gt;herzlichen Dank&lt;/strong&gt;! 
+
+&lt;p&gt;
+Einen kleinen Überblick, was in den letzten Monaten alles geschah und was für 2020 schon geplant ist findet ihr weiter unten.
+
+&lt;p&gt;
+für das Museumsteam,
+&lt;br&gt;
+Roland und Sven
+
+&lt;h3&gt;Was bisher geschah&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sven und ich hatten am 12.10.2019 einen erfolgreichen Auftritt auf dem &lt;a href=&quot;/blog/2019-10-14-VCFB-Nachlese.php&quot;&gt;Vintage Computer Festival 2019&lt;/a&gt; in Berlin.
+&lt;li&gt;wir hatten am 27.10.2019 ein sehr gut besuchtes &lt;a href=&quot;/blog/2019-10-31-Auftakttreffen.php&quot;&gt;Auftakttreffen der Unterstützer&lt;/a&gt;. &lt;!--siehe auch Presseartikel im Anhang)--&gt;
+&lt;li&gt;am 23/24.11.2019 &lt;a href=&quot;/blog/2019-11-25-Nachlese-Arbeitswochenende.php&quot;&gt;trafen sich ein Teil unserer Unterstützer&lt;/a&gt; zum ersten Mal und begannen mit div. Reparaturen an den Geräten.
+&lt;li&gt;Es gab mehrere &lt;strong&gt;Aufräumaktionen in den Depots&lt;/strong&gt;, es wurde schon deutlich Platz geschaffen und der Überblick über die größeren Geräte ist nahezu komplett.
+&lt;li&gt;Die &lt;strong&gt;Exponate&lt;/strong&gt; im Museum sind nun alle auf Funktion geprüft, beschildert und geordnet.
+
+&lt;li&gt;Aktuell liefen bzw. laufen &lt;strong&gt;Reparaturen&lt;/strong&gt; an folgenden Geräten
+  &lt;ul&gt;
+    &lt;li&gt;CPT 8800 (Dank an Florian für die Floppys und die guten Tips)
+    &lt;li&gt;LGP 30 (Dank an Jürgen M. und Stefan)
+    &lt;li&gt;Olivetti P201 (Dank an Jürgen S.)
+    &lt;li&gt;WANG 2200 A &amp; B sowie PCS II (hier gilt der Dank einem ganzen Team: Christian, Eilert, Georg, Martin und Michael)
+    &lt;li&gt;IBM 1130 (Dank an Reinhard)
+    &lt;li&gt;IBM 5100 (Dank an Horst R.)
+    &lt;li&gt;Telefunken RAT700 (Dank an Bernd)
+  &lt;/ul&gt;
+
+&lt;li&gt;Bei div. &lt;strong&gt;Sammlungen und Museen&lt;/strong&gt; bedanken wir uns für deren &lt;strong&gt;Unterstützung&lt;/strong&gt; im Jahr 2019:
+  &lt;ul&gt;
+     &lt;li&gt;&lt;a href=&quot;https://www.iser.fau.de/ISER&quot;&gt;Informatik Sammlung Erlangen&lt;/a&gt;: Überlassung von Dokumenten zur LGP21 und LGP30 &lt;!--(Dank an Frau Grabmann-Maier und Herrn Aures)--&gt;
+     &lt;li&gt;&lt;a href=&quot;https://www.zdnet.de/41542391/das-ibm-museum-in-sindelfingen-120-jahre-datenverarbeitung/&quot;&gt;IBM Museum Böblingen&lt;/a&gt;: Repartur an IBM 5100 und Tips zur IBM 1130 &lt;!--(Dank an Herrn Ruffner und Herrn Gust)--&gt;
+     &lt;li&gt;&lt;a href=&quot;http://computermuseum.informatik.uni-stuttgart.de/&quot;&gt;Computermuseum Uni Stuttgart&lt;/a&gt;: Hilfen rund um die LGP30 (danke Klemens!)
+     &lt;li&gt;&lt;a href=&quot;https://www.cbm-museum-wuppertal.com/&quot;&gt;CBM Museum Wuppertal&lt;/a&gt;: Vermittlung einer CPT 8800 aus einer Sammlungsauflösung (Dank an Patrick!)
+     &lt;li&gt;&lt;a href=&quot;https://www.fitg.de/&quot;&gt;FITG&lt;/a&gt;: Vermittlung von Ansprechpartnern zu div. Fragen
+  &lt;/ul&gt;
+  Sollten wir jemanden oder eine Aktion in der Auflistung vergessen haben, bitten wir schon einmal vorsorglich um Entschuldigung!
+&lt;/ul&gt;
+
+&lt;h3&gt;Was steht für 2020 an?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Die &lt;strong&gt;Vereinsgründung&lt;/strong&gt; wurde vorläufig verschoben: angesichts der doch sehr begrenzten (um nicht zu sagen &quot;nicht vorhandenen&quot;) Förderaussichten durch öffentliche Stellen überdenken wir die passende Organisationsform nochmal. &lt;strong&gt;Aufwand und Nutzen müssen sich die Waage halten&lt;/strong&gt;, das sehen wir bei einem Verein derzeit nicht als gegeben an. Wir werden Anfang 2020 weitere  Privatsammlungen und Museen besuchen und uns über deren Erfahrungen zu Organisationsformen austauschen - dann werden wir entscheiden.
+  &lt;li&gt;Ab 18.1.2020 &lt;a href=&quot;/de/termine.php&quot;&gt;bieten wir wieder Führungen&lt;/a&gt; an, die ersten Termine sind bereits ausgebucht. Leider ist der Anspruch des Museums, dass alle Exponate vorführbereit sind, noch nicht erfüllbar. Wir denken aber, ein attraktives Angebot zu haben und möchten die Sichtbarkeit des Museum erhöhen.
+  &lt;li&gt;Wir planen ca Mai 2020 einen &lt;strong&gt;Tag der offenen Tür&lt;/strong&gt;, an dem u.a.alle Gerätepaten und Unterstützer „ihre“ Geräte fachkundig präsentieren
+  &lt;li&gt;… und wir planen wieder Auftritte auf dem &lt;a href=&quot;https://www.vcfe.org/D/&quot;&gt;VCFe München&lt;/a&gt; und &lt;a href=&quot;https://vcfb.de/&quot;&gt;VCF Berlin&lt;/a&gt; im Jahr 2020.
+&lt;/ul&gt;
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Neuzugang im Museum: CPT 8800 Textverarbeitungssystem</title>
+      <link>https://technikum29.de/blog/2019-12-05-cpt-8800/</link>
+      <author>Roland</author>
+      <pubDate>2019-12-05T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-12-05-cpt-8800/</guid>
+      <description>
+&lt;p&gt;
+Die Firma CPT Corporation, bekannt für professionelle Textsysteme, stellte 1976 ihr Textsystem
+CPT der 8000er Serie vor. Die Systeme basierten auf dem 1974 vorgestellten Mikroprozessor Intel
+8080, dem ersten vollwertigen Mikroprozessor der Welt. Es hat die für seine Zeit sehr große
+Speicherausstattung von 64 kByte und einen hochformatigen Bildschirm, der eine ganze A4-Seite
+komplett mit schwarzen Zeichen auf weißem Grund flimmerfrei darstellen konnte. Preis seinerzeit
+um die 15000 USD.
+
+&lt;p&gt;
+Durch die Vermittlung des &lt;a href=&quot;https://www.cbm-museum-wuppertal.com&quot;&gt;CBM Museums Wuppertal&lt;/a&gt;
+(unser besonderer Dank gilt Patrick Brough) wurde uns ein CPT8800 zusammen mit einem
+maßgeschneiderten Arbeitstisch und dem zugehörigen Drucker aus einer Sammlungsauflösung
+angeboten. Wir waren zunächst etwas reserviert, da das angebotene System von 1981 ist und
+damit zeitlich am Rande unseres Sammlungsfokus liegt. Aber die Verwendung eines 8080 als
+Prozessor, zusammen mit der Tatsache, ein komplettes Ensemble zu bekommen, weckte dann
+doch unser Interesse. Leider war keinerlei Software dabei.
+
+&lt;p&gt;
+Eine Recherche im Netz ergab, dass &lt;a href=&quot;http://www.funkenzupfer.de&quot;&gt;Florian Stassen&lt;/a&gt; vor kurzem eine
+CPT8000 restaurierte und sie erfolgreich zum Laufen brachte. Er sagte uns zu, bei der Software
+zu helfen.
+
+&lt;p&gt;
+Am 6.11.2019 fuhr ich mit meinem Polo nach Wuppertal, um die Teile abzuholen. Unter den
+skeptischen Augen von Patrick („das passt niemals alles in den Polo“) wurden mit Florians Hilfe
+die CPT und der Tisch komplett zerlegt, um alles in den Polo zu packen. Wenige Stunden später
+stand das gute Stück in Teilen im technikum29.
+
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/CPT8800/CPT8800_Bilder/CPT8800-Auseinandergebaut.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/CPT8800/CPT8800_Bilder/CPT8800-Auseinandergebaut.jpg&quot; width=&quot;860&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Alle Teile wurden gereinigt und auf oﬀensichtliche Fehler inspiziert. Das Netzteil wurde getrennt
+vom Rechner in Betrieb genommen: kein Rauch, alle Spannungen da - soweit OK. Nach dem
+Zusammenbau des Gerätes ein erstes Einschalten, und siehe da, mit Piepsen verlangt das
+System nach einer Diskette! Die CPU und der Bildschirm laufen schon einmal!
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/CPT8800/CPT8800_Bilder/CPT8800-Broken-Disk.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/CPT8800/CPT8800_Bilder/CPT8800-Broken-Disk.jpg&quot; width=&quot;400&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Nach ein paar Tagen kamen die Kopien der Programmdiskette auf 8“-Disketten von Florian an.
+Leider wollten unsere Floppys diese noch nicht erkennen. Der Fehler war mit Florians Hilfe schnell
+behoben. Nach Beseitigung einer unnötigerweise eingesteckten Terminierung auf der 2.
+Floppyplatine der Durchbruch: nach wenigen Sekunden (12 s sagt das Handbuch) ist das
+Textsystem geladen und eine stark an eine mechanische Schreibmaschine angelehnten
+Bedieneroberfläche begrüßt den Nutzer:
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/de/geraete/CPT8800/CPT8800_Bilder/CPT8800-laeuft.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/de/geraete/CPT8800/CPT8800_Bilder/CPT8800-laeuft.jpg&quot; width=&quot;860&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Das Textprogramm ist CPT-Videotyper 8800 Rev F4. Es besticht durch sehr umfangreiche
+Textverarbeitungsfunktionen, kombiniert mit einer rudimentären Datenbank und der Möglichkeit,
+innerhalb des Textes auch Berechnungen durchzuführen, was z.B. die Erstellung umfangreicher
+Angebote an Kunden erleichtert.
+Normalerweise wird die Maschine ausschließlich im Textverarbeitungsmodus genutzt, etwas
+anderes „kann“ sie nicht. Wer möchte, kann aber auch mit Hilfe einer „Interface-“ Diskette und
+einer CP/M Bootdiskette eine Version des CP/M Betriebssystems laden und z.B. Programme in
+CBASIC schreiben
+Bleibt, in nächster Zeit den Drucker mechanisch etwas zu überholen und in Betrieb zu nehmen.
+Wir sind zuversichtlich, das Ensemble bald komplett vorführen zu können !
+
+
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Erstes Arbeitswochenende der Unterstützer des technikum29 erfolgreich beendet</title>
+      <link>https://technikum29.de/blog/2019-11-25-Nachlese-Arbeitswochenende/</link>
+      <author>Roland</author>
+      <pubDate>2019-11-25T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-11-25-Nachlese-Arbeitswochenende/</guid>
+      <description>
+&lt;p&gt;
+Insgesamt 
+13 Unterstützer des technikum29 trafen sich am 23. und 24.11.2019 in den Räumen des Museums, um diverse
+Geräte instand zu setzen. Mit ihrer Hilfe gelang es, u.a. zwei WANG-Computer wieder vorführbereit zu
+machen, sowie an unserer LGP30 und unserer Olivetti P203 deutliche Fortschritte bei der Restaurierung
+zu machen. Ein neues Projekt, die Digitalisierung des unschätzbaren und seltenen Programmbestands unserer
+LGP21, wurde gestartet. Damit werden wir einen Beitrag zum Erhalt der Programme dieser sehr interessanten
+Maschine leisten.
+
+&lt;p&gt;
+Einige Helfer nahmen sich sogar noch „Arbeit“ mit nachhause, um in ihrer Werkstatt mit besserer Ausrüstung
+weitere Reparaturen durchzuführen.
+
+&lt;div class=&quot;box center&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2019-11-25-Arbeitstreffen/menschen-in-werkstatt.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2019-11-25-Arbeitstreffen/menschen-in-werkstatt.jpg&quot; width=&quot;420&quot;&gt;
+   &lt;/a&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2019-11-25-Arbeitstreffen/menschen-am-ibm-rechner.jpg&quot; class=&quot;popup&quot;&gt;
+      &lt;img src=&quot;/shared/photos/blog/2019-11-25-Arbeitstreffen/menschen-am-ibm-rechner.jpg&quot; width=&quot;420&quot;&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Vor lauter Arbeit vergaßen wir, am Samstag zu fotografieren, aber einige Schnappschüsse vom
+Sonntagstreff der verbliebenen Restmannschaft sind erhalten
+(hier einmal in der Werkstatt und einmal am Rechner IBM 1130, mit PC-basierter Lochstreifen-Lesestation
+und Notebook ausgestattet).
+
+&lt;p&gt;Allen Beteiligten ein Riesen-Dankeschön!
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Ankündigung: Arbeitswochenende am 23. November im Museum</title>
+      <link>https://technikum29.de/blog/2019-11-06-Ankuendigung-Arbeitswochenende/</link>
+      <author>Sven</author>
+      <pubDate>2019-11-06T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-11-06-Ankuendigung-Arbeitswochenende/</guid>
+      <description>
+&lt;p&gt;Kurze Ankündigung: Am Wochenende vom 23/24. November 2019 werden wir in den
+Museumsräumen ein Arbeitswochenende veranstalten, bei dem an verschiedenen Anlagen
+gearbeitet wird. Interessenten, die mitmachen möchten, melden sich bitte
+&lt;a href=&quot;/de/impressum.php&quot;&gt;per E-Mail an&lt;/a&gt;. Es findet an dem
+Wochenende keine öffentliche Veranstaltung und keine Führung statt.
+
+
+&lt;div class=&quot;box center auto-bildbreite&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2019-11-06-Ankuendigung-Reperaturwochenende.jpg&quot; class=&quot;popup&quot;&gt;
+   &lt;img src=&quot;/shared/photos/blog/2019-11-06-Ankuendigung-Reperaturwochenende.jpg&quot;
+       width=&quot;860&quot;&gt;
+   &lt;/a&gt;
+   &lt;div class=&quot;bildtext&quot; style=&quot;text-align:center&quot;&gt;
+     Symbolbild: Trommelsimulator an der LPG30 (an einem vergangenen Arbeitswochenende).
+   &lt;/div&gt;
+&lt;/div&gt;
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Das Auftakttreffen im technikum29 fand statt</title>
+      <link>https://technikum29.de/blog/2019-10-31-Auftakttreffen/</link>
+      <author>Sven</author>
+      <pubDate>2019-10-31T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-10-31-Auftakttreffen/</guid>
+      <description>
+&lt;p&gt;Wie wir &lt;a href=&quot;/blog/2019-09-20-Ankuendigung-Kickoff.php&quot;&gt;ankündigten&lt;/a&gt;, haben
+&lt;a href=&quot;/de/team.php#roland&quot;&gt;Roland&lt;/a&gt; und &lt;a href=&quot;/de/team.php#sven&quot;&gt;Sven&lt;/a&gt; am
+vergangenen Sonntag, dem 27.10.2019 in den Räumen des technikums in Kelkheim-Hornau
+zu einem Auftakttreffen (oder &quot;Kickoff-Treffen&quot;) eingeladen. Über die Einladung selber
+&lt;a href=&quot;/auftakt/Kelkheimer-Zeitung.pdf&quot;&gt;berichtete auch die Lokalpresse&lt;/a&gt;.
+
+&lt;h3&gt;Großes Interesse an der Museumszukunft&lt;/h3&gt;
+&lt;p&gt;Unsere Teilnehmerliste füllten wir anfangs, in dem wir unsere Liste an
+Interessenten der Museumszukunft, die wir seit dem Tod Heriberts führten, sowie
+Interessenten an einer Führung, sowie Kulturschaffende und Technikexperten aus
+dem Rhein-Main-Gebiet einladeten. Aus unseren 33 Anmeldungen wurden zu unserer großen
+Überraschung fast 50 Teilnehmer, sodass weder unsere Bestuhlung noch Verpflegung
+ausreichend war: So voll war das Museum noch nie!
+
+&lt;div class=&quot;box center auto-bildbreite&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2019-10-31-kickoff/Kick-Off-Treffen-technikum2019.jpg&quot; class=&quot;popup&quot;&gt;
+   &lt;img src=&quot;/shared/photos/blog/2019-10-31-kickoff/Kick-Off-Treffen-technikum2019.jpg&quot;
+       width=&quot;860&quot;&gt;
+   &lt;/a&gt;
+   &lt;div class=&quot;bildtext&quot; style=&quot;text-align:center&quot;&gt;
+     &lt;a href=&quot;/de/team.php#sven&quot;&gt;Sven&lt;/a&gt; präsentiert das bisherige Museumskonzept
+     im Besucherbereich neben den Radios.
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Zu den Gästen zählten unter anderem eine Vertretung des
+&lt;a href=&quot;https://www.mfk-frankfurt.de/&quot;&gt;Museums für Kommunikation Frankfurt&lt;/a&gt;, des
+&lt;a href=&quot;https://www.fitg.de/&quot;&gt;Förderkreis Industrie und Technikgeschichte&lt;/a&gt;, der
+&lt;a href=&quot;https://www.buergerstiftung-kelkheim.de/&quot;&gt;Bürgerstiftung Kelkheim&lt;/a&gt;, des
+&lt;a href=&quot;https://www.kelkheim.de/&quot;&gt;Kulturreferats Kelkheim&lt;/a&gt; sowie viele Personen,
+die andere Sammlungen vertraten, unter anderem das
+&lt;a href=&quot;http://www.analogmuseum.org/&quot;&gt;Analogmuseum&lt;/a&gt; oder die
+&lt;a href=&quot;https://www.zdv.uni-mainz.de/computersammlung-zugaenglich/&quot;&gt;Computersammlung
+Mainz&lt;/a&gt; und viele mehr. Einige unserer Gäste kamen aus der gleichen Straße, andere
+sind weit gereist: Vier WANG-Experten nahmen 150-250km Weg auf sich. Manch ein Gast
+kam aus Hamburg oder Münster in Westfalen zum Auftakttreffen.
+
+&lt;h3&gt;Zwei Stunden im technikum&lt;/h3&gt;
+&lt;p&gt;Der Nachmittag wurde von Sven geleitet, der zunächst die Ehre hatte, auch die anderen
+anwesenden Erben vorzustellen und die Erbengemeinschaft zu repräsentieren. Im
+Rahmen &lt;a href=&quot;/auftakt/Präsentation Auftakt 2019.pdf&quot;&gt;einer Präsentation&lt;/a&gt; stellte
+er zunächst die Person &lt;a href=&quot;/heribert-mueller/&quot;&gt;Heribert Müller&lt;/a&gt;, seine
+Techniksammlung und die Gründung des technikum29 im November 2005 vor. Außerdem erzählte
+er, was seitdem alles passiert ist: Von den Vortragsreihen, den
+Elektronik-Entwicklungen, LEGO-Roboter-Workshops, Kunst und Kultur im Museum,
+der Öffentlichkeitswahrnehmung in den Medien und vielem mehr.
+
+&lt;p&gt;Anschließend ging es, dem Besucheransturm geschuldet, in zwei Gruppen durch die
+Sammlung. Hierbei setzten Roland und Sven jeweils Akzente, berichteten über erfolgte
+Restaurationen oder den allgemeinen Zustand sowie der Zukunft einzelner Themenbereiche.
+
+&lt;p&gt;Den dritten Teil des Treffens bildete erneut eine Präsentation
+(&lt;a href=&quot;/auftakt/Präsentation Auftakt 2019.pdf#page=32&quot;&gt;ab Slide 32&lt;/a&gt;), in der die
+erfolgte Aufarbeitung seit Sommer 2018 vorgestellt wurde. Wichtig war es den
+Veranstaltern auch, den virtuellen Blick in die Lagerräume zu ermöglichen. Sven hat
+dann betont, worum es ihm bei der Museumszukunft vor allem geht, und welche
+organisatorischen Vorarbeiten geleistet wurden. Die Präsentation mündete in einer
+Diskussion, in der zahlreiche Besucher weitere Aspekte beitrugen.
+
+&lt;h3&gt;Was wir vom Treffen mitnehmen&lt;/h3&gt;
+&lt;p&gt;Wir haben nicht nur zwei Plakate mit Anregungen und Expertisen unserer Teilnehmer
+ausfüllen lassen, sondern viele Tipps und Ideen erhalten, die wir uns vor einer
+Vereinsgründung noch einmal durch den Kopf gehen lassen.
+
+&lt;p&gt;Mit den Interessenten bleiben wir per E-Mail, über unseren Blog sowie möglicherweise
+per Forum in Berührung. Wir probieren&#39;s auch als
+&lt;a href=&quot;https://twitter.com/technikum29&quot;&gt;@technikum29&lt;/a&gt; auf Twitter.
+
+&lt;p&gt;Die nächsten Schritte für uns sind derzeit: Rechtliche und steuerliche Klärung
+der Vereinsmodalitäten.
+
+
+
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Ankündigung: Auftakttreffen im technikum29</title>
+      <link>https://technikum29.de/blog/2019-09-20-Ankuendigung-Kickoff/</link>
+      <author>Sven</author>
+      <pubDate>2019-09-20T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-09-20-Ankuendigung-Kickoff/</guid>
+      <description>
+&lt;p&gt;
+Es ist so weit, nach über einem Jahr seit dem
+&lt;a href=&quot;/heribert-mueller/&quot;&gt;Tod von Museumsgründer Heribert Müller&lt;/a&gt; öffnen wir wieder
+unsere Pforten, und zwar für ein Auftakttreffen. Das könnte man auch
+&quot;Kick-Off-Treffen&quot; oder &quot;Tag der offenen Tür&quot; nennen, wenngleich wir aus organisatorischen
+Gründen dringend um eine &lt;a href=&quot;/de/impressum.php&quot;&gt;Anmeldung per E-Mail&lt;/a&gt; bitten.
+
+&lt;p&gt;Weitere Dokumente:
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a rel=&quot;nofollow&quot; href=&quot;http://www.technikum29.de/auftakt/Einladung Auftakttreffen.pdf&quot;&gt;Einladungsschreiben&lt;/a&gt;
+&lt;/ul&gt;
+
+&lt;!--
+&lt;p&gt;Wir laden für
+&lt;strong&gt;Sonntag, dem 27. Oktober 2019 um 15 Uhr&lt;/strong&gt; in das technikum29 in
+Kelkheim ein, um die Fortschritte seit dem Tod von Heribert Müller zu präsentieren,
+sowie unsere Zukunftspläne zu diskutieren. Ziel ist es, Akteure und Interes-senten im Museum
+zu versammeln, um auch gemeinsam über die Zukunft zu sprechen.
+
+&lt;p&gt;
+Wir wünschen uns, dass ihr eure Ideen mitbringt oder vorab per E-Mail mitteilt, wie esauch schon
+so viel passiert es. Ihr könnt euch wiederum vorab alle unsere Dokumente unter
+&lt;a href=&quot;http://www.technikum29.de/auftakt&quot; rel=&quot;nofollow&quot;&gt;www.technikum29.de/auftakt&lt;/a&gt;
+anschauen.
+
+&lt;h3&gt;Administratives und Strategisches in Kurzform&lt;/h3&gt;
+&lt;p&gt;
+Das Einzigartigkeits-Attribut der Computersammlung von Heribert Müller ist, dass „alle
+Exponate funktionsfähig sind”, so war auf der Website des Museums bislang zu lesen.
+Eine Bestandsaufnahme zeigte zwar, dass auch von den Highlights einiges defekt ist und
+der Reparatur bedarf. Dennoch gibt dieses Attribut der Ausstellung eine deutschlandweite
+Einmaligkeit, das am ehesten etwa mit dem „Living Computer”-Museum in Seattle vergleichbar ist.
+
+&lt;p&gt;
+Wie schon oft mit einigen von euch besprochen, ist es den drei Kindern (Erben) unmöglich, die
+von Heribert im Alleingang instand gehaltene/unterhaltene Sammlung zu betreiben. Ein Fortbestand
+„auf den Schultern von vielen” ist jedoch einen Versuch wert, undgenau dafür möchten wir nun den
+Grundstein legen.
+
+&lt;p&gt;
+Hierfür existieren viele Ideen, und eure sind willkommen: Etwa die Schaffung eines „Hackerspace“-Umfeldes
+oder Übernahme von Patenschaften für einzelne Geräte.Sicherlich muss das Museum auch
+sichtbarer werden im Rhein-Main-Gebiet und darüberhinaus. Einer inhaltlichen Refokussierung
+steht nichts im Wege, auch die umfangreichenDepots können genutzt werden (mit bereits über 800
+inventarisierten Geräten).
+
+&lt;p&gt;
+Die Rettung des privaten Technikmuseums ist die Eigentumsimmobilie Am Flachsland 29 in Kelkheim,
+in der es auf 250m² untergebracht ist. Ziel ist die Gründung einer gemeinnüt-zigen Organisation,
+wobei hier der eingetragene Verein am sinnvollsten erscheint. Diese Organisation soll Eigentümer
+der Techniksammlung werden, die sich derzeit noch in denHänden der Erben von Heribert Müller
+befindet. Außerdem soll sie Mieter in der Immobiliewerden, um mit einer minimalen Miete die
+Rentabilität des Gebäudes sicherzustellen.
+
+&lt;p&gt;
+Für einen Verein brauchen wir mindestens sieben Gründungsmitglieder. Ein finanzieller Rahmen
+soll durch den Verkauf von Geräten entstehen. Zur Deckung grundlegender Unkosten (etwa
+Materialien und Miete) ist er auch auf Spenden und Mitgliedsbeiträgeangewiesen.
+
+&lt;h3&gt;Eine Agenda für das Treffen&lt;/h3&gt;
+
+&lt;p&gt;Wir treffen uns im Musem, wo uns Kaffee, Sitzplätze und natürlich auch die Ausstellung
+selber begrüßen. Bislang planen wir:
+
+&lt;ul&gt;
+  &lt;li&gt;Eine Vorstellungsrunde „Who is Who“, [15min]
+  &lt;li&gt;Ein geführter Gang durch die lauffähigen Exponate, [50min]
+  &lt;li&gt;eine kurze Präsentation über den Status Quo bzw. unsere Vorarbeiten: Laufende
+      Restaurationsprojekte, Aufbau eines Arbeitsplatzes, Überblick über die Depots,
+      Inventarisierung, Website, Blog,  [20min]
+  &lt;li&gt;Termin für die Gründung eines Vereins [10min]
+&lt;/ul&gt;
+
+&lt;p&gt;
+Wir freuen uns über Vorschläge, welche Punkte auf dieser Tagesordnung fehlen. Insgesamt rechnen
+wir damit, dass wir innerhalb von zwei Stunden fertig sind. Wir können unsauch ein „Open End“
+vorstellen (bei gutem Wetter z.B. im Garten).
+
+&lt;p&gt;
+Bitte bestätigt eure Teilnahme mit einer kurzen Mail an kontakt@technikum29.de, damit
+wir eine Vorstellung bekommen, wie viele Teilnehmer uns erwarten.
+
+&lt;p&gt;Wir freuen uns auf euch!
+
+&lt;p&gt;Viele Grüße, &lt;a href=&quot;/de/team&quot;&gt;Sven und Roland&lt;/a&gt;
+&lt;/blockquote&gt;
+--&gt;
+
+
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Wir waren auf dem Vintage Computing Festival Berlin (mit Video)</title>
+      <link>https://technikum29.de/blog/2019-10-14-VCFB-Nachlese/</link>
+      <author>Sven</author>
+      <pubDate>2019-09-14T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-10-14-VCFB-Nachlese/</guid>
+      <description>
+&lt;p&gt;Wie wir &lt;a href=&quot;/blog/2019-08-15-Ankuendigung-VCFB.php&quot;&gt;ankündigten&lt;/a&gt;, besuchten 
+&lt;a href=&quot;/de/team.php#roland&quot;&gt;Roland&lt;/a&gt; und &lt;a href=&quot;/de/team.php#sven&quot;&gt;Sven&lt;/a&gt; am
+Wochenende des 12./13. Oktober 2019 das &lt;a href=&quot;https://www.vcfb.de/2019/&quot;&gt;Vintage
+Computing Festival Berlin 2019 (VCFB)&lt;/a&gt;.
+
+&lt;!--&lt;h3&gt;Das Festival&lt;/h3&gt;--&gt;
+&lt;p&gt;Das Festival selber war vor allem als zweitätige Sonderausstellung in einem Seitengebäude
+(historische Ladestraße) auf dem riesigen Campus des 
+&lt;a href=&quot;https://sdtb.de/technikmuseum/startseite/&quot;&gt;Deutschen Technikmuseum Berlins&lt;/a&gt;
+konzipiert. An diesem Tag hatten (zumindest die Festivalbesucher) auch freien Eintritt zu
+diesem Bereich, der in direkter Nachbarschaft die Dauerausstellung
+&lt;a href=&quot;https://sdtb.de/technikmuseum/ausstellungen/2474/&quot;&gt;Das Netz: Menschen,
+Kabel, Datenströme&lt;/a&gt; beherbergt. Das Festival bestand vor allem aus zwei großen Räumen,
+die zum einen Retro-Computerspiele präsentierten und zum anderen auf vielen laufenden
+Tischmetern ein Sammelsurium Exponate, die Teilnehmer mitgebracht haben: Von dem
+&lt;a href=&quot;/de/rechnertechnik/fruehe-computer.php#Minicomputer&quot;&gt;DEC PDP&lt;/a&gt;-Simulator über
+einen Analogrechner bis hin zu der Vielfalt an 80er-Jahre-PCs. Stark präsent war aber auch
+die Hacker/Maker-Kultur allgemein mit technischen Installationen und Basteleien. Insgesamt
+haben sich bei den Ständen vor allem kleine Museen im deutschsprachigen Raum vorgestellt,
+von denen in Größe und Organisationsform viele an das erinnern, war wir mit dem technikum29
+vorhaben. In dieser Hinsicht haben wir das richtige Publikum gefunden; interessanterweise
+war auch einigen Teilnehmern mit denen ich sprach unser Museum ein Begriff.
+
+&lt;!--&lt;h3&gt;Unser Vortrag&lt;/h3&gt;--&gt;
+&lt;p&gt;Beim VCFB waren wir nicht nur Gäste, sondern stellten im Rahmen eines Vortrages auch
+unser Konzept für die Zukunft des technikum29 vor. Sprecher in Berlin war in erster
+Linie &lt;a href=&quot;/de/team.php#roland&quot;&gt;Roland&lt;/a&gt;. Wir haben zunächst die
+Entstehung des technikum29 skizziert, dann relativ lang unsere Sammlung dargestellt (wie
+sie auf der Homepage auch beschrieben wird) und anschließend die Situation seit dem Tod
+des Gründers geschildert. In einer fünfminütigen Fragerunde am Ende gab es verschiedene
+Wortmeldungen zu dem Themengebiet Wissens- uns Sammlungsverlust
+durch Ableben von Museenbetreibern.
+
+&lt;p&gt;Den Vortrag gibt es &lt;a
+href=&quot;https://media.ccc.de/v/vcfb19_-_107_-_de_-_201910121215_-_technikum29_-_roland_langfeld_-_sven_koeppel&quot;&gt;als
+45-Minütigen Video-Mittschnitt&lt;/a&gt; anzuschauen:&lt;/p&gt;
+
+&lt;iframe 
+  style=&quot;max-width:100%;&quot;
+  width=&quot;1024&quot; height=&quot;576&quot;
+  src=&quot;https://media.ccc.de/v/vcfb19_-_107_-_de_-_201910121215_-_technikum29_-_roland_langfeld_-_sven_koeppel/oembed&quot;
+  frameborder=&quot;0&quot; allowfullscreen
+&gt;&lt;/iframe&gt;
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Ankündigung: technikum29 auf dem Vintage Computing Festival Berlin</title>
+      <link>https://technikum29.de/blog/2019-08-15-Ankuendigung-VCFB/</link>
+      <author>Sven</author>
+      <pubDate>2019-08-15T02:00:00.000+02:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-08-15-Ankuendigung-VCFB/</guid>
+      <description>
+Vortragsankündigung: Wir werden den aktuellen Stand der Neuorganisation des Museums
+am 12. und 13. Oktober 2019 im Deutschen Technikmuseum in Berlin vorstellen, und
+zwar auf dem &lt;a href=&quot;https://www.vcfb.de/2019/&quot;&gt;Vintage Computing Festival
+Berlin 2019 (VCFB)&lt;/a&gt;. Geplant ist ein 45-Minütiger Vortrag, siehe 
+&lt;a href=&quot;https://www.vcfb.de/2019/vortraege_workshops.html&quot;&gt;Ankündigung&lt;/a&gt;
+auf der Konferenzwebsite:
+
+&lt;blockquote style=&quot;margin: 1.5em 0 1.5em 2em&quot;&gt;
+&lt;strong&gt;technikum29: Zukunftspläne eines privaten Computermuseums&lt;/strong&gt;
+
+&lt;p&gt;Das technikum29 ist ein privates Technikmuseum im Rhein-Main-Gebiet mit Schwerpunkt auf der Computergeschichte zwischen den 1920er- und 1980er-Jahren. Diese Zeitspanne umfasst den Übergang zwischen mechanischen Rechenmaschinen, über Lochkarten-EDV, bis hin zu Rechnern mit integrierten Schaltkreisen (ICs). Darüber hinaus umfasst die Sammlung einige andere Themen, etwa die Entwicklung von Radios und Fernsehern dieser Zeit. Nahezu alle Exponate auf den 250 Quadratmetern der Ausstellung sind funktionsfähig und werden während der Führungen vorgeführt. Im Jahr 2018 verstarb Heribert Müller, der Gründer des Museums. Zur Zeit versuchen seine Erben zusammen mit einem kleinen Kreis Technikbegeisterter, das Museum mit neuem Konzept fortzuführen. Im Vortrag möchten wir die Sammlung vorstellen und über die Zukunftspläne des technikum29 berichten.
+
+&lt;p&gt;Sprecher: Roland Langfeld und Sven Köppel
+&lt;/blockquote&gt;
+
+&lt;p&gt;Die Vorträge werden gestreamt und später auf
+&lt;a href=&quot;https://media.ccc.de/b/conferences/vcfb/&quot;&gt;media.ccc.de&lt;/a&gt; veröffentlicht.
+Geplant ist womöglich auch ein Poster.
+
+&lt;p&gt;&lt;em&gt;Nachtrag: Wir waren dort und haben
+&lt;a href=&quot;2019-10-14-VCFB-Nachlese.php&quot;&gt;eine Nachlese&lt;/a&gt; geschrieben.&lt;/em&gt;
+
+
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Organisationsformen</title>
+      <link>https://technikum29.de/blog/2019-02-21-Organisationsformen/</link>
+      <author>Sven</author>
+      <pubDate>2019-02-21T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-02-21-Organisationsformen/</guid>
+      <description>Wie in unserem letzten Blogbeitrag 
+&lt;a href=&quot;2019-02-04-the-heritage.php&quot; class=&quot;go&quot;&gt;The Heritage&lt;/a&gt; erläutert, steht
+das Museum vor einer oragnisatorischen Herausforderung. Hier listen wir kurz auf,
+welche Aspekte dabei zum Tragen kommen. Diese öffentliche Darstellung ist eine
+Kurzform von Vorbereitungen, wie wir sie uns intern überlegen.
+
+&lt;h3&gt;Anforderungen an eine Organisation&lt;/h3&gt;
+&lt;p&gt;Eine zu gründende Organisationsform (im Sinne von &quot;juristischer Person&quot; o.ä.)
+müsste wahrscheinlich folgene Eigenschaften aufweisen:
+
+&lt;ul&gt;
+  &lt;li&gt;Eigentümerschaft an den Geräten und damit einhergehend Kuration der Ausstellung
+    und Gestaltung des Depots &amp;ndash; dazu gehört das Abstoßen (idealerweise
+    in Form eines Verkaufes) von Geräten sowie die Neueinwerbung (in der Regel durch
+    Schenkung).
+  &lt;li&gt;Symbolischer Mieter der Räumlichkeiten, dadurch langfristige Sicherheit für ein
+    grundsätzliches Bestehen. Andernfalls besteht keinerlei Gewissheit, dass die
+    Sammlung am nächsten Tag ein Dach über dem Kopf hat.
+  &lt;li&gt;Gemeinnützigkeit: Dazu gehört das grundsätzliche Interesse, das Museumsthema ohne
+    Profitinteresse für die Öffentlichkeit aufzuarbeiten und die Bereitschaft,
+    Interessenten an der Museumsarbeit mitmachen zu lassen.
+  &lt;li&gt;Gemeinsames Treffen von Entscheidungen. Das Zusammentragen des Wissens von Vielen
+    soll Relevanz und richtige Entscheidungen sicherstellen. Demokratische Strukturen
+    sind essentiell, um die Bereitschaft zum Mitmachen hochzuhalten.
+&lt;/ul&gt;
+
+&lt;h3&gt;Finanzieller Rahmen&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Es gibt leider keine finanzielle Basis. Dennoch können geringfügige Ausgaben 
+    durch Mitgliederbeiträge oder Spenden gedeckt werden.
+  &lt;li&gt;Die Räumlichkeiten werden hoffentlich auch weiterhin gestellt, sodass
+    deren Unterhalt (etwa Strom-, Wasser-, Heiz-, Instandhaltungskosten) nicht bezahlt
+    werden muss. Konkret ist die Erbengemeinschaft im Begriff, eine Absichtserklärung
+    zu formulieren und zumindest für einige Jahre den Status Quo beizubehalten.
+&lt;/ul&gt;
+
+&lt;h3&gt;Mögliche Organisationsformen&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gemeinnützige Stiftung. Hat den Vorteil, dass sie eine juristische Person ist
+    und ohne Weiteres Inhaber der Sammlung sein kann. Das Wort &quot;Stiftung&quot; kann auch
+    allgemein als Prädikat in der Museen- und Mäzenenlandschaft gelten und hilfreich
+    bei Bewerbungen auf staatliche Förderungen sein. Organe der Stiftung sind etwa der
+    Vorstand (Aktivie) und das Kuratorium. Stiftungen können auch mit geringem
+    Kapital gegründet werden, so werden etwa 
+    &lt;a href=&quot;https://de.wikipedia.org/wiki/B%C3%BCrgerstiftung&quot;&gt;Bürgerstiftungen&lt;/a&gt;
+    auch mit wenigen Zehntausend Euro Mindestkapital gegründet.
+  &lt;li&gt;Gemeinnütziger Verein. Hat den Vorteil, dass hierin organisiert eine Gruppe von Menschen
+    das &quot;Tagesgeschäft&quot; machen kann, also Führungen, Reperaturen, Katalogisierung,
+    Website, An-/Verkäufe, Fundraising, usw. Ist aber leider keine juristische Person
+    und genießt meines Erachtens nicht das Ansehen einer Stiftung. Hier gibt es als
+    Organe etwa den Vorstand und die Mitgliederversammlung.
+  &lt;li&gt;Gemeinnütziger Förderverein, der z.B. eine gemeinnützige Stiftung unterstützt.
+      Eine Ausgestaltungsmöglichkeit ist hier ein frei wählbarer regelmäßiger Mitgliedsbeitrag,
+      der eine Mindestsumme nicht unterschreiten soll, z.B. 500€ pro Jahr. Zum &quot;Freikaufen&quot;
+      könnte es dann die Möglichkeit geben, als Ersatz eine gewisse Anzahl an Stunden
+      Dienstleistungen für den Verein zu erbringen (z.B. 25 Stunden pro Jahr).
+&lt;/ul&gt;
+
+&lt;p&gt;Derzeit ist am wahrscheinlichsten, dass ein gemeinnütziger Verein gegrünet wird.
+
+
+
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>The Heritage</title>
+      <link>https://technikum29.de/blog/2019-02-04-the-heritage/</link>
+      <author>Sven</author>
+      <pubDate>2019-02-04T01:00:00.000+01:00</pubDate>
+      <guid isPermaLink="true">https://technikum29.de/blog/2019-02-04-the-heritage/</guid>
+      <description>
+&lt;div class=&quot;desc-right auto-bildbreite borderless&quot; style=&quot;padding-right:0&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2019-02-04-the-heritage/heribert-mueller-img-8204.jpg&quot; class=&quot;popup&quot;&gt;
+   &lt;img src=&quot;/shared/photos/blog/2019-02-04-the-heritage/heribert-mueller-img-8204.jpg&quot;
+       style=&quot;width: 300px&quot;&gt;
+   &lt;/a&gt;
+   &lt;div class=&quot;bildtext&quot;&gt;
+     Heribert Müller in 2016, presenting his
+     &lt;a href=&quot;/robotik/&quot;&gt;robots workshops for kids&lt;/a&gt; in the
+     museum.
+     Picture by courtesy of &lt;a href=&quot;http://stephaniekreuzer.de/&quot;&gt;Stephanie Kreuzer&lt;/a&gt;
+     (&lt;a href=&quot;https://www.fnp.de/&quot;&gt;FNP&lt;/a&gt;)
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here we go &amp;mdash; &lt;a href=&quot;/heribert-mueller/&quot;&gt;Heribert Müller&lt;/a&gt;, our father,
+is dead and leaves behind the &lt;a href=&quot;/&quot;&gt;technikum29 computer museum&lt;/a&gt;. We, that&#39;s
+his three children, grown-ups with their own occupations, lifes, partly their
+own families. The museum was largely a “one-man-show”, with Heribert Müller as
+the single head. He had a passion for reparing a broad range of devices, from the
+old &lt;a href=&quot;en/communication/broadcasting.php&quot;&gt;tube radio&lt;/a&gt;
+to the &lt;a href=&quot;/en/computer/univac9400.php&quot;&gt;data center&lt;/a&gt;. Despite having a
+broad network of friends, there is only a handful of real supporters, an “inner
+circle” consisting of other museums such as the nearby
+&lt;a href=&quot;http://www.analogmuseum.org/&quot;&gt;Analog Computer Museum&lt;/a&gt; or the
+&lt;a href=&quot;http://computermuseum.informatik.uni-stuttgart.de/index.en.html&quot;&gt;
+U&amp;nbsp;Stuttgart Computer Museum&lt;/a&gt; as well as some remarkable private persons.
+Noteworthy, nobody of the three of us has a sufficient understanding about
+neither the technology nor substantial details of the extend of the collection.
+We are all standing in front of a huge amount of work even to comprehend the
+current situation of the museum and to work out a decision on its future.
+
+
+
+&lt;h3&gt;Estate, Inventory and Monetary Value&lt;/h3&gt;
+
+&lt;div class=&quot;desc-left auto-bildbreite borderless&quot; style=&quot;padding-left:0&quot;&gt;
+   &lt;a  href=&quot;/shared/photos/blog/2019-02-04-the-heritage/inventory-marks.jpg&quot; class=&quot;popup&quot;&gt;
+   &lt;img src=&quot;/shared/photos/blog/2019-02-04-the-heritage/inventory-marks.jpg&quot;
+       style=&quot;width: 300px&quot;&gt;
+   &lt;/a&gt;
+   &lt;div class=&quot;bildtext&quot;&gt;
+     Printed inventory marks before their use.
+   &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;One of the blessings of the museum is Heribert Müllers lifelong urge for
+independence. One of the consequences is the fact that the whole collection is
+located in private property and there is no need to rush. In fact, already almost
+one year passed since his sudden decease and still (unfortunately) little happened.
+We are in the comfortable situation of not having a need to clear the floors and to
+close the collection as fast as possible. There is no rent which has to be paid,
+instead current expenses can be covered by rental incomes of the mixed use of
+the museum building.
+
+&lt;p&gt;What I did in a couple of days in the Summer 2018 was a first approximation
+of the collection by walking off all storage rooms as well as the exhibition
+and doing a first &amp;mdash; very coarse &amp;mdash; inventory. Having printed 900 fine inventory cards
+(their &lt;a href=&quot;https://github.com/technikum29/t29-inventory-cards&quot;&gt;code is
+open sourced on github&lt;/a&gt;), I used up almost all of them! In this first inventory,
+which resulted in a decent table/database which is supposed to be released in
+the web soon, there are only big units listed (say bigger then a typical
+notebook). Inventorying even smaller devices, loose parts, not even to mention
+cables, boxes with stuff or sparse components will require ten times as much
+effort. Given the overall shape of the collection (both the exhibition and the
+warehouse), it is partly more a huge unsorted collection of something.
+
+&lt;p&gt;What&#39;s the monetary worth of the collection? Without doubt, the
+one-of-a-kind display items which are in a well-restored shape are part of the
+exhibition and especially part of &lt;a href=&quot;/&quot;&gt;this very website&lt;/a&gt;. It is
+an open secret that some of the display items are very rare and wanted on the
+collectors marketplaces and in fact worth thousands of Euros.
+Regardless of wether there is a future for the museum or not, we want to avoid
+paying a large amount of inheritance taxes on the collection. Therefore, we
+need to continue to get an overview of what is actually part of the legacy,
+but also come up with price tags. Here, it is quite obvious that selling the
+collection is a large amount of work where every single device requires
+attention and technical knowledge to archive a good price on the highly
+specialized and small marketplaces.
+We would have to pay experts to do so, which of course reduces
+the overall gain. For some large blocks, such as our
+&lt;a href=&quot;/de/rechnertechnik/gamma10.php&quot;&gt;Bull&#39;s&lt;/a&gt; or
+&lt;a href=&quot;/de/rechnertechnik/univac9200.php&quot;&gt;Univac&#39;s&lt;/a&gt;, there will be hardly
+any interests and we would have to pay a disposal company to come with a truck.
+In total, we estimated the weight of these cabinets as around 20-30
+metric tonnes. The disposal of so much metal would cost hundreds of Euros.
+
+&lt;h3&gt;Future: A Living Computer History Museum for Germany?&lt;/h3&gt;
+
+&lt;p&gt;In fact, there is common understanding in the (legally still lasting) community
+of heirs to preserve the museum and to strive for a future. In the last year,
+I worked a lot on the organizational and ideational fundamentals of such a future
+museum. The museum must leave the private sector and go for the public benefit.
+There is also a need for content realignment (mainly due to the lack of ressources),
+in order to focus on the unique selling point: An exhibition of fully working
+computers. Worldwide, there is no other collection with such a claim.
+
+&lt;p&gt;In the next blog post, I will go into detail about what ideas I have worked out
+during the last year.
+
+
+
+
+
+</description>
+    </item>
+    
   </channel>
-</rss> 
+</rss>

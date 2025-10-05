@@ -4,7 +4,7 @@ export const source = {
     title: "technikum29 Blog",
     human_url: "https://technikum29.de/blog/",
     icon: "/assets/icons/museum.png",
-    data_url: "https://technikum29.de/blog/rss.php",
+    data_url: "https://technikum29.de/blog/feed.xml",
     local_file: "t29-blog-feed.xml",
     description: `
       The [technikum29 blog](https://technikum29.de/blog) is the news feed of
