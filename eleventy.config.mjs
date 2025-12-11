@@ -45,7 +45,7 @@ export default async function(eleventyConfig) {
 	}).parse(xml))
 	
 	// add global default layout, https://github.com/11ty/eleventy/issues/380
-	eleventyConfig.addGlobalData("layout", "default.html")
+	eleventyConfig.addGlobalData("layout", "default")
 	
 	// in liquid, just use filter | date: "%Y-%m-%d". Nunjucks needs however this:
 	eleventyConfig.addFilter("dateFormat", dateFormat);

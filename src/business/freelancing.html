@@ -1,7 +1,14 @@
 ---
 title: Freelancing
 permalink: /freelancing/
-layout: default
+layout: lead
+lead: >
+  I am an experienced software engineer for <a href="#tech">all architectures
+  and platforms</a>, from hardware-affine embedded to frontend.
+  I frequently work on <a href="#roles">roles at senior or team lead level</a>.
+  I run <a href="/workshops/">workshops and trainings</a>.
+  I consider myself a <a href="https://merki.ca/blog/what-is-a-wildcard-person">wildcard person</a>.
+  <!--I am often refered to as the "universal weapon for any kind of task".-->
 
 technologies:
 - title: Data science and AI
@@ -80,16 +87,6 @@ technologies:
     Ansible, Rancher, Gardener, ArgoCD, Keycloak, Grafana/Prometheus, Golang ]
   experience: 5-10 years
 ---
-  <h1>Freelancing</h1>
-
-  <p class="lead">
-    I am an experienced software engineer for <a href="#tech">all architectures
-    and platforms</a>, from hardware-affine embedded to frontend.
-    I frequently work on <a href="#roles">roles at senior or team lead level</a>.
-    I run <a href="#teach">workshops and trainings</a>.
-    I consider myself a <a href="https://merki.ca/blog/what-is-a-wildcard-person">wildcard person</a>.
-    <!--I am often refered to as the "universal weapon for any kind of task".-->
-  </p>
   
   <p>My primary areas of work are big data, platform architectures and working
   on problems that have been impossible to solve with computers until now. My
@@ -112,7 +109,7 @@ technologies:
   <h2 id="tech">Technologies</h2>
   <p>Handy-on experience in programming ecosystems and environments, sorted by
      descending preference:
-    
+   
   {% for tech in technologies %}
   <p><strong>{{ tech.title }}</strong> <em>({{ tech.experience }})</em>
   <p>{% for keyword in tech.technologies %}{{ keyword }}{% if forloop.last == false %}&nbsp;‧ {% endif %}{%endfor%}
@@ -120,19 +117,6 @@ technologies:
   <em> ‧ Highlight: {{ tech.highlight }}</em>
   {% endif %}
   {% endfor %}
-  
-  <h2 id="teach">Training and Workshops</h2>
-  
-  <p>I love teaching and passing knowledge in a dense and useful form. I used to work
-  in university didactics / higher education paedagogy for 10 years at Goethe University,
-  Frankfurt at stations such as the 
-  <a href="https://www.goethe-university-frankfurt.de/131356377/">Interdisciplinary Center
-  for university teaching and learning</a>, <a href="https://www.studiumdigitale.uni-frankfurt.de/">Studiumdigitale</a>
-  and my own institution for medialisation and outreach of natural sciences, called
-  <em>PhysikOnline</em>. At Between 2009 and 2019, I raised more then 500kEUR for
-  running teams dedicated to creating content, videos and digital tools. We had several offices
-  and operated own student computer center. Here's a bit of
-  <a href="https://svenk.org/~koeppel/elearning/">project description</a>.</p>
   
   
   <!--

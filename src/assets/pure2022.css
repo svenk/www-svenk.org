@@ -157,12 +157,22 @@ h3 {
 .header {
     text-align: center;
     top: auto;
-    margin: 3em auto;
+    /*margin: 3em auto;*/
+}
+
+.brand-title {
+    margin-top: 0; /* 3vh; */
+    margin-bottom: 1vh;
 }
 
 .sidebar {
     /*background: rgb(61, 79, 93);*/
     background: rgba(255, 255, 255, 0.2);
+    color: #333;
+}
+
+.footer {
+    background: rgba(255, 255, 255, 0.76);
     color: #333;
 }
 
@@ -176,7 +186,7 @@ body.landing .footer {
 
 .brand-title,
 .brand-tagline {
-    margin: 0;
+    /*margin: 0;*/
 }
 .brand-title {
     /*text-transform: uppercase;*/
@@ -211,7 +221,7 @@ body.landing .footer {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     font-size: 85%;
-    margin-right: -1em; /* to compensate the padding and right-align the text */
+    margin-left: -1em; /* to compensate the padding and right-align the text */
 }
 .nav-item a:hover,
 .nav-item a:focus {
@@ -223,8 +233,16 @@ body.landing .footer {
     border-color: #000;
 }
 
-.nav-item.active a {
+.nav-item.active > a {
     color: black;
+}
+
+.nav-list .nav-list {
+    margin-left: .5em;
+}
+
+nav.sub {
+    background-color: #FFFFFFaa;
 }
 
 .content-subhead {
@@ -241,7 +259,7 @@ body.landing .content {
     background-color: transparent;
 }
 
-.content, .footer {
+.content /*, .footer*/ {
     background-color: rgba(255, 255, 255, .95);
     min-height: 100vh;
 }
@@ -263,6 +281,23 @@ body.landing .content {
     position: relative;
     text-align: center;
     opacity: .8;
+}
+
+.footer .nav {
+    margin: 2em 0;
+}
+
+.footer .nav-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer .nav-item,
+.footer .nav-list .nav-list,
+.footer .nav-item a {
+    display: block;
+    margin-left: 0;
+    text-align: left;
 }
 
 /* looks nice, but is too much */
@@ -351,10 +386,13 @@ body.landing .content {
 
     .header {
         margin: 20vh 2em 0;
-        text-align: right;
+        text-align: left;
     }
 
     .sidebar {
+        /* todo: This should also query @media min-height
+         *       or have scroll
+         */
         position: fixed;
         top: 0;
         bottom: 0;
@@ -402,6 +440,10 @@ ul.blog, ul.blog li {
     ul.blog li {
         margin-bottom: 1.2em;
     }
+    
+    .nav-list .nav-list { /* display nav.sub instead */
+        display: none;
+    }
 }
 
 @media screen and (max-width: 923px) and (min-width: 768px) {
@@ -411,6 +453,15 @@ ul.blog, ul.blog li {
 }
 
 @media screen and (min-width: 768px) {
+    .header, .brand-title {
+        display: inline-block;
+    }
+    
+    .sidebar {
+        display: flex;
+        justify-content: end;
+    }
+    
     ul.blog li {
         display: grid;
         grid-template-columns: 1rem auto 6rem;
@@ -419,6 +470,10 @@ ul.blog, ul.blog li {
     
     ul.blog .date {
         text-align: right;
+    }
+    
+    nav.sub { /* display .nav-list .nav-list instead */
+        display: none;
     }
 }
 
@@ -546,4 +601,10 @@ section.chat ul.output {
         background-color: #0078e7;
         color: white;
     }
+}
+
+img.icon {
+  height: 1em;
+  vertical-align: -10%;
+  opacity: .8;
 }

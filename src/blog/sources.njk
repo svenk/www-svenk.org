@@ -31,7 +31,7 @@ You can also subscribe to the <a href="/blog/feed.xml">svenk blog RSS feed</a>.
   {{ prettyDump(meta) }}
 </details>
 
-<details><!-- argument open to have it open default -->
+<details open><!-- argument open to have it open default -->
   <summary>{{ collections[meta.id] | length }} items in this collection</summary>
   {{ blogListing(collections[meta.id] | sort(attribute='data.date') | reverse, "forceLocalLinks") }}
 </details>

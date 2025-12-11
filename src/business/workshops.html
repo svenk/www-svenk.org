@@ -1,0 +1,98 @@
+---
+title: Workshops and Training
+permalink: /workshops/
+layout: lead
+lead: > 
+  I offer workshops and training eventy for companies and individuals where I
+  share my knowledge and experience in various fields.
+redirect_from:
+- /training
+- /trainings
+
+trainings:
+- title: Cloud architecture and Cloud engineering
+  desc: >
+    Whether you come from a traditional IT administration background or were born in the cloud:
+    The many facets of modern tooling can become challenging the moment the environment
+    evolves. In this course, we will explore the core principles behind transformative technologies
+    such as Kubernetes clusters and reveal their full elegance and power.
+  topics: 
+    - Kubernetes in theory and practice
+    - PaaS such as Cloud Foundry
+    - Declarative configuration with Terraform, Ansible and friends
+    - Linux basics and Containerization with Docker
+    - "Down the rabbit hole: From cloud computing towards hardware virtualization"
+    - Self-determined cloud considerations and decision-making frameworks
+- title: Data Science and AI Masterclass
+  desc: >
+    Data science is challenging because it combines mastering data, extracting insights through
+    statistical methods, and presenting results in a way that is convincing yet not misleading.
+    All of this requires confident handling of modern tooling. AI techniques such as machine
+    learning are just one part of a much larger toolbox.
+  topics: 
+    - Python and SciPy
+    - Notebook based engineering
+    - Getting confident in plotting 
+    - Data managament and organization
+    - Statistics 101
+    - AI learning and inference
+    - How to develop a minimal viable product (MVP); from concept to release
+- title: The Open Source Learning Managament System ILIAS for lecturers
+  desc: >
+    In many institutions, eLearning is still treated as little more than a way to distribute PDFs.
+    Yet the tools are designed to transform how traditional learning environments operate.
+    We will explore how ILIAS can support didactic approaches such as the flipped classroom,
+    collaborative knowledge building, or self-regulated learning.
+  link: https://www.ilias.de/
+  topics: [ Concepts of the ILIAS software, ILIAS as CMS, 
+    ILIAS Objects, Bookkeeping and User Managament,
+    Using and developing SCURM content, Best Practices,
+    Advanced eLearning and blended Learning,
+    "Assessments, examinations and feedback",
+    Developing plugins for ILIAS ]
+
+---
+ 
+  <p>
+  I create <em>no-bullshit</em> courses on novel technologies. Together we focus on the
+  essentials of emerging tools without getting distracted by buzzwords, hype and
+  marketing noise. We seperate the omnipresent ceremondy, plumbing and scaffolding in IT
+  from engineering the actual goals. To do so, we use low-level tooling and do not fear
+  to get "hands dirty". I strongly beliefe in you need to understand the basics and concepts
+  in order to make use of tools.
+  
+  <p>
+  My workshops are aimed at practitioners who are open to working with code
+  and people who believe that a better understanding of patterns and principles
+  will improve the quality of their work. I usually do on-site one-day workshops
+  in classroom settings. I emphasize on interactivity and group exchange
+  instead of traditional frontal teaching. In my courses, attendees combine basic
+  theory with practical applications in hands-on ercercises. Open-minded
+  discussions allow for gaining confidence to apply what you have learned in your
+  daily work.
+  
+  I always try to make all learning materials publicly available on github
+  and to share any slides, notes, etc. as widely as possible.
+  
+  <p>My background in teaching is 10 years in university didactics / higher education
+  paedagogy at Goethe University, Frankfurt at stations such as the 
+  <a href="https://www.goethe-university-frankfurt.de/131356377/">Interdisciplinary Center
+  for university teaching and learning</a>, <a href="https://www.studiumdigitale.uni-frankfurt.de/">Studiumdigitale</a>
+  and my own institution for medialisation and outreach of natural sciences, called
+  <em>PhysikOnline</em>.<!-- At Between 2009 and 2019, I raised more then 500kEUR for
+  running teams dedicated to creating content, videos and digital tools. We had several offices
+  and operated own student computer center. Here's a bit of
+  <a href="https://svenk.org/~koeppel/elearning/">project description</a>.</p>-->
+
+  <p>In the following, you will find a few of my current, pre-written workshops. If you need an
+  individual training package to suit your needs or want me to conduct a
+  workshop at your company or event, please get in touch.
+ 
+  {% for course in trainings %}
+  <h2>{{ course.title }}</h2>
+  <p>{{ course.desc }}
+  <h3>What you will learn:</h3>
+  <ul>{% for keyword in course.topics %}<li>{{ keyword }}{%endfor%}</ul>
+  {% endfor %}
+  
+  

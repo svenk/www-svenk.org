@@ -1,20 +1,38 @@
 main:
-  - title: About
-    url: /
+  #- title: About
+  #  url: /
   - title: Blog
     url: /blog/
   - title: Research
     url: /research/
-  - title: Freelancing
-    url: /freelancing/
-  - title: Companies #Startups
-    url: /companies/
+    sub:
+    - title: Computing
+      url: "/research/#analog"
+    - title: Physics
+      url: "/research/#physics"
+  - title: Business
+    url: /business/
+    tag: business
+    sub:
+    - title: Companies #Startups
+      url: /companies/
+    - title: Freelancing
+      url: /freelancing/
+    - title: Workshops
+      url: /workshops/
 #  - title: Media
 #    url: /social/
-  - title: Misc
+  - title: Personal
     url: /misc/
+    sub:
+    - title: Museum
+      url: "/misc/#technikum29"
+    - title: Voluntary
+      url: "/misc/#voluntary"
   - title: Contact
     url: /contact/
-  - title: Chat
-    url: /chat/
+    tag: contact
+    sub:
+    - title: Chat
+      url: /chat/
 #   class: if-chat-available

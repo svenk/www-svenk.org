@@ -1,0 +1,118 @@
+---js
+const eleventyComputed = {
+  topnav_active_url: data => data.nav.main.find(item => 
+    item.url == data.page.url || data.tags?.includes(item.tag))?.url,
+  subnav: data => data.nav.main.find(item => item.url == data.topnav_active_url)?.sub,
+}
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<title>{{ title }}</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="generator" content="{{ eleventy.generator }}">
+	<meta name="date" content="{{ page.date|dateFormat }}">
+
+	<!--<link href="/assets/content2021.css" rel="stylesheet" type="text/css">-->
+	<!-- Pure CSS -->
+	<link rel="stylesheet" href="{% cacheAsset "https://unpkg.com/purecss@2.0.6/build/pure-min.css" %}" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% cacheAsset "https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" %}" />
+    
+    <link rel="stylesheet" href="{% cacheAsset "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" %}">
+	
+	<link rel="stylesheet" href="/assets/pure2022.css" text="text/css">
+    <link rel="me" href="https://chaos.social/@svenk">
+    <link rel="alternate" type="application/rss+xml" title="The SvenK blog" href="/blog/feed.xml" />
+
+    <script src="/assets/enhancements.js" defer></script>
+    
+    {{ additional_headers | safe }}
+    
+    {% for kv in open_graph %}
+    <meta property="og:{{kv[0]}}" content="{{kv[1]}}" />
+    {% endfor %}
+</head>
+<body class="{{ body_class }}">
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+            <h1 class="brand-title"><a href="/">svenk<span class="suffix">.org</span></a></h1>
+            <!--<h2 class="brand-tagline">Sven Köppel</h2>-->
+
+            {% macro showNav(items, foldOut=false) %}
+            <ul class="nav-list">
+                {% for item in items %}
+                {% set isActive = (item.url == page.url) or (item.url == topnav_active_url) %}
+                
+                <li class="nav-item {% if isActive %}active{% endif %} {{ item.class }}">
+                    <a class="pure-button"
+                    href="{{ item.url }}"
+                    style="view-transition-name: {{ item.title | slugify }}">
+                    {{ item.title }}
+                    </a>
+                    
+                    {% if item.sub and (isActive or foldOut) %}
+                    <ul class="nav-list">
+                        {{ showNav(item.sub) }}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endmacro %}
+
+            <nav class="nav">          
+              {{ showNav(nav.main) }}
+            </nav>
+            
+            {% if subnav %}
+            <!-- This instance of the submenu is only for small screens -->
+            <nav class="sub" aria-hidden="true">
+               {{ showNav(subnav) }}
+            </nav>
+            {% endif %}
+        </div>
+    </div><!--/sidebar -->
+
+    
+    <div class="content pure-u-1 pure-u-md-3-4 main-view-transition">
+        <div class="content-wrapper">
+            {#
+            <p>TOP: {{ topnav_active_url }}</p>
+            <p>Meine Tags: {% for x in tags %}{{ x }}, {% endfor %}</p>
+            #}
+        
+            {{ content | safe }}
+        </div>
+    </div>
+    
+    {% if not hide_footer %}
+    <div class="footer pure-u-1 pure-u-md-3-4">
+        <div class="footer-wrapper">
+            <!--&copy;-->
+            <p>
+            This page last update:
+            <a href="https://github.com/svenk/www-svenk.org/blob/main/{{page.inputPath}}">
+                {{ page.date|dateFormat }}</a>.
+                <!--<img src="https://cdn.onlinewebfonts.com/svg/img_44605.png" class="icon"> Edit on Github-->
+            Found a typo? Please
+            <a href="https://github.com/svenk/www-svenk.org/edit/main/{{page.inputPath}}">fix here</a>.
+            <br>
+            If not stated otherwise, content is <img class="icon" src="https://www.svgrepo.com/show/447208/creative-commons-cc.svg" alt="&copy;">
+            svenk and freely licensed as
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a>
+            <br>
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Glider.svg" alt="Glider">
+        </div>
+        <div class="nav mobile-only">
+            <!-- Footer menu -->
+            {{ showNav(nav.main, foldOut = true) }}
+        </div>
+    </div><!--/Footer-->
+    {% endif %}
+</div><!--/layout -->
+</body>
+</html>

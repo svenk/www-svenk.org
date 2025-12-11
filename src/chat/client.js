@@ -272,7 +272,7 @@ function setupAgent() {
       ...details // will overwrite
   })
 
-  const unreachable_timeout_sec = 15
+  const unreachable_timeout_sec = 18
 
   var isFirstMessage = true, gotAnyReply = false
   chat.whenAppendMessage((data, dir) => {
@@ -284,12 +284,9 @@ function setupAgent() {
           if(!gotAnyReply) {
             console.log("Ring ring, but nobody takes up")
             agent_send(`
-              Leider scheint derzeit niemand erreichbar zu sein. Wir haben Ihre Nachricht
-              aber empfangen, gerne können Sie auch weitere hinterlassen. Sie können
-              auch einen konventionelleren Weg wählen und uns einfach eine E-Mail
-              schreiben an <a href="mailto:hallo@denktmit.de">hallo@denktmit.de</a>.
-              Oder probieren Sie doch uns unter der <a href="tel:+4961719517990">06171 9517990</a>
-              anzurufen!
+               It seems that I'm not at my phone in the moment. You can leave me a message
+               and I will read later. Or you try out a more classical way such as an E-mail.
+               <a href="/contact">See my contact details here</a>.
             `, { display_as_html: true })
           }
         }, unreachable_timeout_sec * 1000)
