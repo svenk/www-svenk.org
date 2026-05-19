@@ -5,7 +5,7 @@
     <link>https://denktmit.de</link>
     <description></description>
     <language>en-us</language>
-    <lastBuildDate>2025-10-02T14:40:02Z</lastBuildDate>
+    <lastBuildDate>2026-05-13T12:36:28Z</lastBuildDate>
     <atom:link href="https://denktmit.de/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -137,7 +137,7 @@ story points, because in the end, we want to obtain a more accurate forecast.&lt
     <item>
       <title>Gendern im Markup und in Programmiersprachen</title>
       <link>https://denktmit.de/blog/2021-06-07-gendern-in-markup/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2021-06-07T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-06-07-gendern-in-markup/</guid>
       <description>&lt;p&gt;&lt;a href=&quot;https://de.wikipedia.org/wiki/Geschlechtergerechte_Sprache&quot;&gt;Geschlechtergerechte Sprache&lt;/a&gt;
@@ -410,7 +410,7 @@ Debattenkultur gut tun.&lt;/p&gt;
     <item>
       <title>Plaintext ist Trumpf</title>
       <link>https://denktmit.de/blog/2021-06-08-plaintext/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2021-06-08T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-06-08-plaintext/</guid>
       <description>&lt;p&gt;In der Softwarearchitektur gibt es einige Weisheiten die zeitlos sind. Dazu gehört
@@ -553,7 +553,7 @@ der offenen und menschenlesbaren Austauschformate!&lt;/p&gt;
     <item>
       <title>Der Blick über den Tellerrand, Volume 1: Stackbasierte Programmiersprachen</title>
       <link>https://denktmit.de/blog/2021-06-29-tellerrand-stackbasierte-programmiersprachen/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2021-06-29T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-06-29-tellerrand-stackbasierte-programmiersprachen/</guid>
       <description>&lt;p&gt;Dieser Artikel ist Teil einer neuen Serie von Blogartikeln, die ich über
@@ -737,7 +737,7 @@ mit der ich hier schließen möchte:
     <item>
       <title>Die IDE-Wars</title>
       <link>https://denktmit.de/blog/2021-07-02-repl-cli-ide-wars/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2021-07-02T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-07-02-repl-cli-ide-wars/</guid>
       <description>&lt;p&gt;Heute möchte ich einmal über ein Thema schreiben, welches in der Genossenschaft sehr
@@ -931,7 +931,7 @@ nicht vor lauter Essen, Trainieren und Wiederholen das Schlafen! :-)&lt;/p&gt;
     <item>
       <title>Martialische Redewendungen im beruflichen Alltag</title>
       <link>https://denktmit.de/blog/2021-08-25-kriegs-sport-sprache/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2021-08-25T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-08-25-kriegs-sport-sprache/</guid>
       <description>&lt;p&gt;Das Thema &lt;em&gt;Sprache&lt;/em&gt; ist öfters Gegenstand dieses Blogs: Sowohl natürliche
@@ -1063,7 +1063,7 @@ ganz inklusiv.&lt;/li&gt;
     <item>
       <title>Show your Workspace! Der Auftakt</title>
       <link>https://denktmit.de/blog/2021-08-26-show-your-workspace/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2021-08-26T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2021-08-26-show-your-workspace/</guid>
       <description>&lt;p&gt;In einer neuen Reihe innerhalb dieses Blogs stellen die Mitglieder und Mitarbeiter von DenktMit
@@ -1537,7 +1537,7 @@ I hope you enjoyed it. Have fun building and releasing your own test containers.
     <item>
       <title>Ein Essay zur Digitalisierung und Gründergeist in Rhein-Main</title>
       <link>https://denktmit.de/blog/2022-01-20-rhein-main-denken/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2022-01-20T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-01-20-rhein-main-denken/</guid>
       <description>&lt;p&gt;Vor einer Woche schrieb Marius Schmidt &lt;a href=&quot;https://denktmit.de/blog/&quot;&gt;an dieser Stelle&lt;/a&gt; ein brennendes
@@ -1775,7 +1775,7 @@ auf.&lt;/li&gt;
     <item>
       <title>Big Data Accounting with Python and other tools: An experience report</title>
       <link>https://denktmit.de/blog/2022-02-03-accounting-auditing-big-data-python-data-warehousing/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2022-02-03T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-02-03-accounting-auditing-big-data-python-data-warehousing/</guid>
       <description>&lt;p&gt;This post is an experience report of a project carried out by two persons at &lt;a href=&quot;https://denktmit.de/&quot;&gt;DenktMit eG&lt;/a&gt;
@@ -2052,7 +2052,7 @@ sanatization and representation.&lt;/p&gt;
     <item>
       <title>The Importance of Expressive Domain Models</title>
       <link>https://denktmit.de/blog/2022-03-15-express-your-domain-model-with-asciidoctor-and-plantuml/</link>
-      <author>Sascha Bleidner</author>
+      <author>sascha-bleidner</author>
       <pubDate>2022-03-15T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-03-15-express-your-domain-model-with-asciidoctor-and-plantuml/</guid>
       <description>&lt;h2&gt;The Importance of Expressive Domain Models&lt;/h2&gt;
@@ -2174,7 +2174,7 @@ static website, e.g. using GitHub or Gitlab Pages.&lt;/p&gt;
     <item>
       <title>Python ist das BASIC des 21. Jahrhunderts</title>
       <link>https://denktmit.de/blog/2022-04-06-python-the-modern-basic-lingua-franca/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2022-04-06T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-04-06-python-the-modern-basic-lingua-franca/</guid>
       <description>&lt;p&gt;Viele Menschen lästern gerne. Gerade im Berufsleben ist das eine willkommene Ablenkung,
@@ -2259,7 +2259,7 @@ nötige Lektüre zu finden, eine Domäne mithilfe von Python zu meistern.&lt;/p&
     <item>
       <title>Finding Love For Nerds: A Guide</title>
       <link>https://denktmit.de/blog/2022-05-13-finding-love-for-nerds/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2022-05-13T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-05-13-finding-love-for-nerds/</guid>
       <description>&lt;p&gt;On this day, it&#39;s been 10 years when I have found my love, the partner of my life.
@@ -2399,7 +2399,7 @@ and being able to say all this about loving nerds.&lt;/p&gt;
     <item>
       <title>Zur Rolle der Programmierer und Entwickler bei künstlicher Intelligenz</title>
       <link>https://denktmit.de/blog/2022-06-27-ki-programmierer-diktatur/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2022-06-27T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-06-27-ki-programmierer-diktatur/</guid>
       <description>&lt;p&gt;Kaum ein Thema eignet sich in der modernen »Business-Welt« so sehr, die Gemüter
@@ -2512,7 +2512,7 @@ Berufsgruppen liegen.&lt;/p&gt;
     <item>
       <title>Ein Jahr DenktMit eG – die Generalversammlung tagt</title>
       <link>https://denktmit.de/blog/2022-06-30-generalversammlung/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2022-06-30T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-06-30-generalversammlung/</guid>
       <description>&lt;p&gt;Die Genossenschaft feiert Jubiläum: Am 07. Mai 2021 wurde sie gegründet, das Rumpfgeschäftsjahr ist
@@ -2557,7 +2557,7 @@ Gemeinschaft dabei nach Kräften unterstützt. Bislang hat ihn noch niemand bere
     <item>
       <title>Was ist Bootstrapping und warum ist es so wichtig?</title>
       <link>https://denktmit.de/blog/2022-08-20-bootstrapping-programming-languages/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2022-08-20T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-08-20-bootstrapping-programming-languages/</guid>
       <description>&lt;p&gt;Das laufende Jahrzehnt fängt großartig an: Wir haben Smartphones und das Internet,
@@ -2621,7 +2621,7 @@ Ausgabe des Magazins im Alleingang.&lt;/p&gt;
     <item>
       <title>How to get started with technical writing</title>
       <link>https://denktmit.de/blog/2022-08-30-tipps-for-technical-writing/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2022-08-30T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-08-30-tipps-for-technical-writing/</guid>
       <description>&lt;p&gt;This blog post is about an important topic in engineering jobs. It is about
@@ -2713,7 +2713,7 @@ stage fright: I just start talking, without much preparation, and evventually co
     <item>
       <title>Zum Programmierpraktikum in der Entwickler-Agentur: Ein Bericht aus Betreuerperspektive</title>
       <link>https://denktmit.de/blog/2022-09-13-bericht-programmier-praktikum-internship/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2022-09-13T00:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2022-09-13-bericht-programmier-praktikum-internship/</guid>
       <description>&lt;p&gt;Ein Unternehmen aufzubauen bedeutet immer auch, Nachwuchskräfte zu gewinnen. In der
@@ -2860,7 +2860,7 @@ in der &amp;quot;nächsten&amp;quot; Woche mit einem weiteren Genossen und Folge
     <item>
       <title>Öffentliches WLAN im eigenen Betrieb</title>
       <link>https://denktmit.de/blog/2023-08-07-public-wifi-eduroam-freifunk/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2023-08-06T10:40:00Z</pubDate>
       <guid>https://denktmit.de/blog/2023-08-07-public-wifi-eduroam-freifunk/</guid>
       <description>&lt;p&gt;Es ist 2023 und in &lt;a href=&quot;https://www.lte-anbieter.info/verfuegbarkeit/lte-karte.php&quot;&gt;Deutschland ist LTE flächendeckend verfügbar&lt;/a&gt;.
@@ -3048,7 +3048,7 @@ working example and foundational tool for creating an effective and enjoyable lo
     <item>
       <title>Werde Aufsichtsrat -- ein offener Brief an die Genoss:innen</title>
       <link>https://denktmit.de/blog/2024-07-09-werde-aufsichtsrat/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2024-07-09T11:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2024-07-09-werde-aufsichtsrat/</guid>
       <description>&lt;p&gt;Die &lt;a href=&quot;https://denktmit.de/&quot;&gt;DenktMit eG&lt;/a&gt; ist die Genossenschaft freiberuflicher IT-Expert:innen und überwiegend Softwareentwickler:innen. Wir sind junges Unternehmen, das während Covid-19 von 10 Personen gegründet wurde und mittlerweile 20 Teilhaber:innen sowie drei direkte Vollzeit-Equivalente Angestellte umfasst. Die DenktMit ist vieles: Ein Netzwerk von erfolgreichen und erfahrenen Unternehmer:innen, die teilweise auch eigene Angestellte oder als geschäftsführende Gesellschafter Unternehmen führen. Aber auch ein Auftragsvermittler, der Kundinnen ganze Teams zur Verfügung stellen kann. Wir machen derzeit reines B2B-Geschäft im Mittelstand und Industrie. Die DenktMit kann auch als Unternehmensberatung mit Fokus auf komplexen IT-Systemen verstanden werden – bei uns sind allerdings ausschließlich „Senior-Entwickler:innen“ im Projekt. Zusammenfassend also: Klasse statt Masse, ein Edelboutique von Profis. Und: Selbstverwaltung im genossenschaftlichen Modell, welches Partizipation und Basisdemokratie verspricht.&lt;/p&gt;
@@ -3074,7 +3074,7 @@ working example and foundational tool for creating an effective and enjoyable lo
     <item>
       <title>Going further in programming with simple mental concepts</title>
       <link>https://denktmit.de/blog/2024-07-11-reductionism-in-coding/</link>
-      <author>Sven Köppel</author>
+      <author>Dr. Sven Köppel</author>
       <pubDate>2024-07-09T11:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2024-07-11-reductionism-in-coding/</guid>
       <description>&lt;p&gt;I was late in the game. My Python moment was about 12 years ago when I realized the
@@ -3278,9 +3278,9 @@ Sprechen Sie uns an. Wir freuen uns auf den &lt;a href=&quot;https://denktmit.de
 &lt;p&gt;Der Blick auf die genannten Ursachen der arbeitsbezogenen erschöpften zeichnet ein recht eindeutiges Bild. Der Workload der Arbeitnehmerinnen und Arbeitnehmer scheint zu hoch. Betrachtet man dies vor dem Hintergrund der bereits jetzt schon geleisteten Überstunden infolge des allgemeinen Fachkräftemangels, kann die Antwort nicht „mehr Bock auf Arbeit“ oder gar „mehr Lust auf Überstunden“ sein.&lt;/p&gt;
 &lt;h2&gt;Neue Fachkräfte fallen nicht vom Himmel und die vorhandenen Fachkräften sind am Limit. Was kann man also tun?&lt;/h2&gt;
 &lt;p&gt;Hier setzt die Überlegung an: Könnte man erschöpfte Fachkräfte von sinnlosen Aufgaben befreien und dadurch das Arbeitspensum reduzieren, ohne dass die Produktivität darunter leidet, wäre dies nicht nur der Arbeitszufriedenheit und der körperlichen sowie seelischen Gesundheit der Arbeitnehmerinnen und Arbeitnehmer zuträglich. Es könnte auch dazu beitragen, den Fachkräftemangel etwas abzumildern.&lt;/p&gt;
-&lt;p&gt;Eine vielversprechende Lösung für dieses Problem bieten &lt;a href=&quot;https://denktmit.de/individuelle_softwareentwicklung/&quot;&gt;individuelle Softwarelösungen&lt;/a&gt;. Diese ermöglichen es Unternehmen, Prozesse zu optimieren und zu automatisieren, insbesondere jene, die von den Mitarbeitenden als sinnlose Aufgaben empfunden werden. Durch den Einsatz solcher Software können repetitive und monotone Tätigkeiten reduziert oder sogar vollständig eliminiert werden, was den Angestellten mehr Zeit und Energie für sinnstiftende Aufgaben oder die dringend benötigte Erholung gibt.&lt;/p&gt;
+&lt;p&gt;Eine vielversprechende Lösung für dieses Problem bieten &lt;a href=&quot;https://denktmit.de/digitale_l%C3%B6sungen/&quot;&gt;individuelle Softwarelösungen&lt;/a&gt;. Diese ermöglichen es Unternehmen, Prozesse zu optimieren und zu automatisieren, insbesondere jene, die von den Mitarbeitenden als sinnlose Aufgaben empfunden werden. Durch den Einsatz solcher Software können repetitive und monotone Tätigkeiten reduziert oder sogar vollständig eliminiert werden, was den Angestellten mehr Zeit und Energie für sinnstiftende Aufgaben oder die dringend benötigte Erholung gibt.&lt;/p&gt;
 &lt;p&gt;Sie können nicht nur dabei helfen, sinnlose Aufgaben zu eliminieren, sondern tragen damit letztendlich auch zur Verbesserung der Arbeitszufriedenheit und der Gesundheit der Mitarbeitenden bei. Letztlich kann dies auch ein wichtiger Schritt sein, um dem Fachkräftemangel entgegenzuwirken und die Attraktivität des Arbeitsplatzes zu erhöhen.
-In einer Zeit, in der jede zusätzliche Stunde Arbeit wertvoll ist und die Motivation der Mitarbeitenden von entscheidender Bedeutung ist, bieten &lt;a href=&quot;https://denktmit.de/individuelle_softwareentwicklung/&quot;&gt;individuelle Softwarelösungen&lt;/a&gt; eine innovative und effektive Möglichkeit, die Arbeitswelt nachhaltiger und menschlicher zu gestalten.&lt;/p&gt;
+In einer Zeit, in der jede zusätzliche Stunde Arbeit wertvoll ist und die Motivation der Mitarbeitenden von entscheidender Bedeutung ist, bieten &lt;a href=&quot;https://denktmit.de/digitale_l%C3%B6sungen/&quot;&gt;individuelle Softwarelösungen&lt;/a&gt; eine innovative und effektive Möglichkeit, die Arbeitswelt nachhaltiger und menschlicher zu gestalten.&lt;/p&gt;
 &lt;h2&gt;Sie möchten Ihre Angestellten entlasten? - Wir helfen gerne!&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://denktmit.de/kontakt/&quot;&gt;Kontaktieren Sie uns&lt;/a&gt; gerne und wir schauen gemeinsam, wie wir Ihnen und Ihrem Unternehmen durch die Entwicklung individuell maßgeschneiderter Softwarelösungen dabei helfen können Ihre Prozesse zu optimieren und Ihre Mitarbeitenden zu entlasten und langfristig glücklich zu machen.&lt;/p&gt;
 </description>
@@ -3565,7 +3565,7 @@ Durch die richtige Wahl und Kombination von Edge Cloud, IaaS, und PaaS lassen si
 &lt;p&gt;In der heutigen, zunehmend digitalisierten Geschäftswelt müssen Unternehmen softwaretechnisch auf dem neuesten Stand bleiben, um wettbewerbsfähig zu sein. Vor allem KMUs stehen dabei oft vor einer grundlegenden Entscheidung: Sollen sie in eine individuelle Softwareentwicklung investieren, die maßgeschneiderte Lösungen bietet, oder reicht eine Standardsoftware aus, um die Bedürfnisse des Unternehmens zu decken? Beide Ansätze haben Vor- und Nachteile. In diesem Artikel zeigen wir auf, welche Faktoren bei der Wahl entscheidend sind und wann eine maßgeschneiderte Softwareentwicklung sinnvoller ist.&lt;/p&gt;
 &lt;h3&gt;Was ist individuelle Softwareentwicklung?&lt;/h3&gt;
 &lt;p&gt;Bei der individuellen Softwareentwicklung wird eine Lösung speziell nach den Anforderungen eines Unternehmens entwickelt. Hier arbeiten erfahrene Softwareentwicklerinnen und -entwickler eng mit dem Unternehmen zusammen, um Funktionen, Schnittstellen und Benutzeroberflächen exakt auf die Bedürfnisse abzustimmen. Dabei ist es für den Erfolg der Softwareentwicklung unerlässlich, dass das Entwicklungsteam ihr Unternehmen und ihre Geschäftsprozesse kennen- und verstehen lernt. Nur so entstehen passgenaue, hochoptimierte Tools, die Prozesse vereinfachen und die Effizienz steigern.&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;https://denktmit.de/individuelle_softwareentwicklung/&quot;&gt;Lesen sie hier mehr darüber, wie wir von der DenktMit eG individuelle Software entwickeln, die ihr Unternehmen voran bringt&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;strong&gt;&lt;a href=&quot;https://denktmit.de/digitale_l%C3%B6sungen/&quot;&gt;Lesen sie hier mehr darüber, wie wir von der DenktMit eG individuelle Software entwickeln, die ihr Unternehmen voran bringt&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;Was ist Standardsoftware?&lt;/h3&gt;
 &lt;p&gt;Standardsoftware ist eine fertige, „von der Stange“ entwickelte Lösung, die für eine Vielzahl von Unternehmen und Anwendungsbereichen geeignet ist. Sie kann schnell implementiert werden, ist oft kostengünstiger und deckt grundlegende Anforderungen ab. Beispiele für Standardsoftware sind bekannte Programme zur Buchhaltung, CRM oder Office-Anwendungen.&lt;/p&gt;
 &lt;h3&gt;Vergleich: Individuelle Softwareentwicklung vs. Standardsoftware&lt;/h3&gt;
@@ -3661,7 +3661,7 @@ Durch die richtige Wahl und Kombination von Edge Cloud, IaaS, und PaaS lassen si
     <item>
       <title>Die Genossenvorstellung: Dr. Sven Köppel</title>
       <link>https://denktmit.de/blog/2025-01-31-die-genossenvorstellung-dr-sven-koeppel/</link>
-      <author>Jonas Krüger</author>
+      <author>Jonas Krüger, Dr. Sven Köppel</author>
       <pubDate>2025-01-31T11:00:00Z</pubDate>
       <guid>https://denktmit.de/blog/2025-01-31-die-genossenvorstellung-dr-sven-koeppel/</guid>
       <description>&lt;h2&gt;Die vielen Interpretationen der Genossenschaft&lt;/h2&gt;
@@ -4236,6 +4236,367 @@ Kinder sind für sie eine unkontrollierbare Gefahr: nicht nur ein Haftungsrisiko
 Und dabei haben sie recht, aber es offenbart doch, wie weit es mit dem Kuschelkurs der zukunftsgewandten Unternehmerschaft steht: Familienfreundlichkeit ist oft ein Lippenbekenntnis, sobald auch nur minimale Aufwände entstehen.&lt;/p&gt;
 &lt;p&gt;Familie und Karriere klappt in manchen Teilen von Deutschland nur, wenn man das doppelte Sicherheitsnetz von williger und fähiger Verwandtschaft im Umkreis hat oder das Geld für private Kinderbetreuung aufbringen kann oder will. Erst kürzlich bin ich von Münster/Westfalen nach Frankfurt am Main gezogen und bin geschockt, wie katastrophal die Personalsituation in Kindergärten und Horten im Einzugsgebiet ist. Die Konsequenzen dieser Unterfinanzierung tragen zunächst all die jungen Familien, in denen die Karrieren nicht stattfinden und später die Gesellschaft, weil die elterliche Arbeitskraft nicht erbracht wurde und die Kinder schlecht ausgebildet sind.&lt;/p&gt;
 &lt;p&gt;Als Konsequenz der Mangelwirtschaft erlebe ich die Rückbesinnung in das Private, Muster und Lösungen des letzten Jahrhunderts, eine Indivudalisierung des Betreuungsproblems: Einzelkämpfertum allenortens. Zynisch ist, wie sich gerade Menschen das Leben gegenseitig schwermachen, die entweder junge Eltern sind oder sein könnten. Empathie gibt es eben nur solange sie nicht zur Last wird. Statt Zusammenrücken bedeutet Krise für viele, Abstand zu gewinnen von den Mitmenschen. Das ist für das Invidium bequem aber für die Gesellschaft ein alamierendes Zeichen.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Gewohnheiten von Softwareentwickelnden</title>
+      <link>https://denktmit.de/blog/2025-12-18-habits/</link>
+      <author>Dr. Sven Köppel</author>
+      <pubDate>2025-12-19T00:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2025-12-18-habits/</guid>
+      <description>&lt;p&gt;Ich habe die letzten Wochen vermehrt mit Anfängern in der IT-Branche zu tun gehabt, die
+im Rahmen von Studium oder Ausbildung versuchen, im Tätigkeitsfeld von Softwareentwickler:innen
+Fuß zu fassen (darunter fasse ich insbesondere die Rolle von Programmierer:innen). Insbesondere
+bin ich froh, 2026 meinen ersten Auszubildenden in diesem Bereich zu unterstützen.&lt;/p&gt;
+&lt;p&gt;Das Ziel dieses Blogartikels ist es, die typischen Angewohnheiten (Habits) von Personen in diesem
+Berufsfeld zu beleuchten, also vor allem die erfolgreichen Verhaltensmuster. Das hat einmal zum
+Zweck, dass Interessenten eine bessere Vorstellung davon bekommen, ob ihnen diese Art der Arbeit
+prinzipiell Spaß macht und beabsichtigt darüberhinaus, den &amp;quot;Berufseinstieg&amp;quot; zu vereinfachen.&lt;/p&gt;
+&lt;p&gt;Als Disclaimer kommt zu Beginn aber ein Thema, das viele IT-Berufsanfänger
+und -Interessierte derzeit herumtreibt, und zwar die Künstliche Intelligenz.&lt;/p&gt;
+&lt;h2&gt;AI und Junior-Devs&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.theregister.com/2025/08/21/aws_ceo_entry_level_jobs_opinion/&quot;&gt;AI to replace junior staff&lt;/a&gt;
+ist eine Erzählung (Folklore) der aktuellen AI-Bubble. Meiner Meinung nach handelt es sich
+dabei um ein bewusst überspitzt eingesetztes rethorisches Stilmittel, mit dem Tech-CEOs Aufmerksamkeit
+und Schlagzeilen erzeugen wollen. Gleichzeitig eignet sich diese Erzählung gut als Ablenkung von
+zurückhaltenden Neueinstellungen oder Personalabbau in Zeiten von Unternehmens- oder Wirtschaftskrisen.&lt;/p&gt;
+&lt;p&gt;Programmieranfänger:innen können LLMs gezielt verwenden um besser zu lernen. Dazu sollte man Prompts
+schreiben, die der KI exakt das klar machen. Hier sind zwei Beispiele, wie der Prompt &amp;quot;ich habe folgende
+Ǘbungsaufgabe gestellt bekommen, löse sie für mich in Python&amp;quot; verbessert werden kann:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Entweder zusätzlich: &amp;quot;Schreibe die Lösung, aber erkläre Syntax und Semantik jeder Zeile, jeden Funktionsaufruf,
+jedes Sprachkonstrukt. Erkläre warum du deine Lösung so geschrieben hast und welche Alternativen
+zur Verfügung ständen, welche Vor- und Nachteile sie hätten, welche Varianten es gibt&amp;quot;&lt;/li&gt;
+&lt;li&gt;Statt &amp;quot;löse diese Übungsaufgabe&amp;quot; schreibe doch: &amp;quot;das ist meine Übung, aber ich weiß nicht wo ich
+anfangen soll. Nimm die Rolle meines Lehrers ein und gebe mir Stück für Stück Tipps und
+Hilfestellungen, wie ich diese Aufgabe alleine bewältigen kann&amp;quot;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Prompt Engineering ist eine Tätigkeit, die fast etwas von Programmieren hat: Mithilfe von guten Prompts
+kann man statt KI-Einheitsbrühe auch Werkzeuge erstellen, die einem nicht um den Lernerfolg berauben
+sondern einen darauf hinführen.&lt;/p&gt;
+&lt;p&gt;Nun aber meine Takes bzgl. positiven Verhaltensweisen, sie sind unsortiert, die Reihenfolge
+spielt keine Rolle.&lt;/p&gt;
+&lt;h2&gt;(A) Lernen&lt;/h2&gt;
+&lt;p&gt;Die alte Mär von der schnelllebigen Informatik gilt in manchen Anwendungsbereichen (Branchen)
+mehr als in anderen.
+Soll heißen: Es gibt den Bereich etablierter Banken und Versicherungen, wo man es sich mit
+Legacy-Werkzeugen jahrzehntelang bequem machen kann, wohngegen das Tooling in der Webentwicklung
+seit jeher rasanten Änderungen unterlegen ist. &amp;quot;Lernen&amp;quot; bedeutet hier nicht &amp;quot;büffeln&amp;quot; wie vor
+einer großen Prüfung, sondern ist eher die &lt;em&gt;Bemühung für&lt;/em&gt; und die &lt;em&gt;Empfänglichkeit von&lt;/em&gt; Hintergrundbeschallung,
+etwa in dem man regelmäßig Fachmagazine, -Websiten/Blogs oder Büchern. Esi ist auch das
+intrinsische &lt;em&gt;Interesse&lt;/em&gt; und möglicherweise die &lt;em&gt;Neugierde&lt;/em&gt; daran, auf dem Stand der Dinge
+zu bleiben.&lt;/p&gt;
+&lt;p&gt;Dies passiert meiner Wahrnehmung nach zu großen Teilen auch &lt;em&gt;in der Freizeit&lt;/em&gt;: Vom Arbeitgeber
+bezahlte berufliche Weiterbildungen und Fortbildungen ergänzen hier lediglich. Die
+Möglichkeiten, wie man sich auf dem Laufenden hält sind vielfältig. Aber wer sich so etwas
+prinzipiell nicht vorstellen kann, ist in dem Beruf falsch aufgehoben.&lt;/p&gt;
+&lt;p&gt;Die Lerngegenstände sind vielfältig: Von bislang unbekannten Modellierungen/Abstraktionen
+über Konzepte aus der theoretischen Informatik, die nun in der Praxis ankommen bis hin zu
+neuen Softwareversionen, Sicherheitslücken, dem Stand der Technik oder Methoden, die in einer
+anderen Branche Verwendung finden.&lt;/p&gt;
+&lt;p&gt;Eine anstrengende, aber fruchtbare Möglichkeit zu Lernen ist das Studium von Open Source-Codes.
+Das ist eine der schwierigsten Übungen, die aber zu vielen Aha-Momenten führen kann. Am Anfang
+steht in der Regel das Verstehen der Verzeichnisstrukturen und Build-Systeme, der Organisation
+des Codes, seiner Abhängigkeiten (Libraries) und der Architektur der Komponenten. Zweifelsohne
+eignen sich manche Codes hier besser als andere. Es ist nicht falsch, das Studium eines
+schlecht dokumentierten Codes abzubrechen um eine bessere Wissensquelle zu finden.&lt;/p&gt;
+&lt;p&gt;Letztlich steht hinter dem &amp;quot;lebenslangen Lernen&amp;quot; auch der Anspruch der stetigen Verbesserung.
+Viele Entwickler:innen sind ständig auf der Suche nach besseren Lösungen. Auch wenn man nicht
+die Branche wechseln möchte, kann es trotzdem hilfreich sein, andere Programmiersprachen,
+Software-Ökosysteme, Patterns und Frameworks kennenzulernen.&lt;/p&gt;
+&lt;h2&gt;(B) Side Projects&lt;/h2&gt;
+&lt;p&gt;Softwareentwickelnde sind Bastler:innen, und bei solchen Menschen verschwimmen Beruf und
+Hobby. Entsprechend haben sie häufig private &amp;quot;Nebenprojekte&amp;quot; (side projects) die als
+&lt;em&gt;Motivationsbooster&lt;/em&gt; dienen. Oft braucht man einen Anwendungsfall, um eine neue
+Technologie auszuprobieren, und da eignet sich der private Bereich manchmal eher als der
+berufliche. Ein verbreitetes Beispiel ist ein heimischer Raspberry Pi-Cluster
+&amp;quot;zum Selbstzweck&amp;quot;, einfach nur um daran zu lernen. Auch die intensive Benutzung des
+Linux-Desktops zumindest &amp;quot;probeweise&amp;quot; zählt dazu. Im Übrigen verwenden fast alle guten
+Softwareentwickelnden die ich kenne Linux oder zumindest Mac als primäres Betriebssystem
+auf ihren Desktops/Laptops.&lt;/p&gt;
+&lt;p&gt;Manche Personen betreiben ihre jahrelangen Nebenprojekte auf einem derart
+hohen qualitativen Niveau, welches
+jeder Beschreibung trotzt. Ihren Stolz darauf bringen sie gelegentlich durch die
+Veröffentlichung der Tätigkeit oder eines Arbeitsergebnisses auf privaten Websiten oder auf
+Github zum Ausdruck. Ein solches Aushängeschild, das Taten sprechen lässt, kann mehr Wert sein
+als eine Qualifikation auf dem Lebenslauf. Ich denke, dass viele Softwareentwickler:innen
+genießen, Dinge zu &lt;em&gt;erschaffen&lt;/em&gt; und zu &lt;em&gt;erzeugen&lt;/em&gt; und das auch gerne zeigen. Digitales ist
+manchmal intrinsisch zeitlos, sodass manche Entwickler:innen einen Ewigkeitsanspruch für
+ihre Software und Daten entwickeln, der sich in der Realität in der Regel nicht bewahrheitet.&lt;/p&gt;
+&lt;p&gt;Bei manchen Personen nehmen Nebenprojekte auch einen signifikanten Teil der Freizeit ein und
+tragen wesentlich zur Selbstidentifikation bei. (Nicht nur) bei Softwareentwickelnden gibt es
+das Klischee oder Ideal des &lt;a href=&quot;https://de.wikipedia.org/wiki/Flow_(Psychologie)&quot;&gt;Flows&lt;/a&gt;, also
+einer Art &amp;quot;mentalem Schaffensrausch&amp;quot;. Im Klischee entstehen die besten Codes in der Nacht,
+bei Trance-Musik, in Dunkelheit vor drei Bildschirmen. Die Realität sieht wahrscheinlich bei
+den wenigsten so aus.&lt;/p&gt;
+&lt;p&gt;Programmierer:innen können regelmäßig selbst beeinflussen, ob sie sich in ihren Fähigkeiten und
+den nötigen Anforderungen unterfordert, überfordert oder flow-förderlich genau richtig fordert,
+wie die nachfolgende Illusration verbildlicht. Damit ist Programmieren eine Tätigkeit, die
+den &amp;quot;Flow&amp;quot; gut hervorrufen kann.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flow.svg/1280px-Flow.svg.png&quot; alt=&quot;Bedingung für den Flow&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Man kann wunderbar eine Karriere in der IT-Welt machen, ohne jemals in &amp;quot;den Flow&amp;quot; zu kommen,
+als 9-to-5-Job, ohne IT-affine Hobbies. Wahrscheinlich könnendie Personen, die die Aspekte von
+Praxiserfahrung und Weiterbildung nebenbei auch im Privaten machen, allerdings erfüllter
+und inhaltlich besser ihrem Berufsleben nachgehen.&lt;/p&gt;
+&lt;h2&gt;(C) Kommunikation&lt;/h2&gt;
+&lt;p&gt;Eine faszinierende Eigenschaft der IT-Welt sind die vielfältigen Perspektiven, die sich
+einnehmen lassen. Nicht wenige reduzieren Informatik auf &lt;em&gt;Kommunikation&lt;/em&gt; und deuten Quellcode
+als eine Art und Weise, unter Menschen über Computer und Algorithmen zu sprechen, ähnlich
+der Sprache der Mathematik. Eine drastische Art ist auch, Informatik-Tätigkeiten als wertlos
+zu bezeichnen, wenn sie nicht einer Anwender:in bzw. fachfremden Person einfach erklärt
+werden können. In anderen Worten: Was nützt das beste Programm, wenn es keiner bedienen kann?&lt;/p&gt;
+&lt;p&gt;Ich kenne einige gute &amp;quot;Senior Devs&amp;quot;, die miserable Mitmenschen abgeben. Sie sind dissozial und
+werden nur in einem Team IT-Schaffender erfolgreich, wo sie ihre Inselbegabung ausleben können
+ohne Schaden an Mitmenschen oder Firmenwerten anzurichten. Die wirklich richtig guten Entwickler
+die ich kenne eint aber allesamt eine überragende Kommunikationsfähigkeit, etwa in Form einer
+reichhaltigen Wortbegabung, einem feinen Gespür für Mitmenschen und einem hohen
+Einfühlungsvermögen (passende Begriffe sind vielleicht &amp;quot;emotionale Intelligenz&amp;quot; und &amp;quot;Empathie&amp;quot;).
+Ich bin der Überzeugung, dass eine Kernkompetenz erfolgreicher fortgeschrittener Personen in
+dem IT-Umfeld ist, für komplexe Systeme menschliche und formale Sprache zu finden.&lt;/p&gt;
+&lt;p&gt;Eine Berufskrankheit von Ingeneur:innen, Techniker:innen, Mathematiker:innen oder auch
+Naturwissenschaftler:innen ist es, den Dingen nicht nur ganz genau auf den Grund zu gehen sondern
+sie auch sehr präzise und exakt aufzuschreiben und zu kommunizieren. Was innerhalb der Branche und im
+Kollegialgespräch eine essentielle Fähigkeit ist, kann sehr abschreckend sein wenn man mit
+Nicht-ITlern spricht. Ich finde einen gesunden Pragmatismus wichtig, &amp;quot;know your audience&amp;quot;.
+Eine Unexaktheit ist angebracht, wenn sie zur vereinfachten Kommunikation eines Sachverhaltes
+sachdienlich ist.&lt;/p&gt;
+&lt;p&gt;Folgende Grafik ist entstammt eigentlich einem &lt;a href=&quot;https://diataxis.fr/&quot;&gt;Dokumentationsmodell&lt;/a&gt;
+(auch schön &lt;a href=&quot;https://docs.divio.com/documentation-system/&quot;&gt;hier&lt;/a&gt; erläutert),
+ich finde sie aber auch praktikabel für die persönliche Einordnung hinsichtlich Vorlieben von
+Dokumentation und Zugang zu IT-Systemen:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://diataxis.fr/_images/diataxis.png&quot; alt=&quot;Diataxis Documentation System&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Das Diagramm hat zwei Achsen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Horizontal &amp;quot;lernen vs. anwenden&amp;quot;: Steht im Vordergrund eher das Lernen oder das Arbeiten?&lt;/li&gt;
+&lt;li&gt;Vertikal &amp;quot;tätig vs. kognitiv&amp;quot;: Steht im Vordergrund eher die praktische Tätigkeit oder
+der begreifend-theoretische Aspekt?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Entsprechend findet sich&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;oben links der &amp;quot;Praktische Lerner&amp;quot;, eine Person die am besten mit Tutorials arbeitet.&lt;/li&gt;
+&lt;li&gt;unten links findet sich hingegen der &amp;quot;Verständnis-orientierte Lerner&amp;quot;, eine Person die
+Erklärungen lesen möchte wie in einem Sachbuch, mit Hintergrundwissen.&lt;/li&gt;
+&lt;li&gt;Oben rechts ist der &lt;em&gt;zielorientierte/problemorientierte Lerner&lt;/em&gt;, welcher mit Howto-Guides
+glücklich ist. Während sich ein Tutorial an Anfänger richtet,
+ist eine Howto-Anleitung eher mit einem Kochrezept vergleichbar: Klarer Fokus auf Schritte und
+Ergebnisse, keine Erklärung von Konzepten.&lt;/li&gt;
+&lt;li&gt;Unten rechts ist schließlich der &amp;quot;informationsorientierte Lerner*, welche mit Referenzen
+glücklich ist. Eine Referenz ist eine akurate technische Beschreibung der Maschine wie in
+einer Enzyklopädie.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ich zähle mich übrigens ganz klar zu den unteren beiden Kategorien, ich bin mit einer
+theoretischen Information oft schon ganz glücklich. Dadurch habe ich aber beim Schreiben von
+Dokumentationen immer einen Hang dazu (Bias), etwas zu theoretisch die Grundlagen und Hintergründe
+zu erklären, statt die &amp;quot;hands on&amp;quot;-Erfahrung, die vielen praktischer veranlagten Personen wichtig
+ist.&lt;/p&gt;
+&lt;h2&gt;(D) Autodidaktik&lt;/h2&gt;
+&lt;p&gt;Ich habe noch nie einen Programmierkurs gesehen, bei dem die Teilnehmenden vorher nicht und
+nachher schon programmieren konnten. Meiner Meinung nach ist diese Tätigkeit nur im Selbststudium
+&amp;quot;autodidaktisch&amp;quot; wirklich erlernbar. Mir fallen zum Programmieren viele Metaphern ein, etwa
+das Fahrradfahren, das Handwerk, Sport, Musik und Kunst.&lt;/p&gt;
+&lt;p&gt;Am eingängigsten ist vielleicht das Fahrradfahren: Es zu Lernen ist schwer, weil die Kinder
+sich das dynamische Gleichgewicht nicht vorstellen können und nur durch viele Wiederholung
+&amp;quot;den Dreh rauskriegen&amp;quot;. Einmal gelernt lautet das Sprichwort: &amp;quot;Fahrradfahren verlernt man nicht mehr&amp;quot;.
+Auch beim Erlernen einer kreativen Tätigkeit wie der Beherrschung eines Musikinstrumentes,
+einer angewandten oder darstellenden künstlerischen Tätigkeit, der Beherrschung einer
+Sportart oder der bloßen körperlichen Ertüchtigung als solchen wird eine Lernkurve absolviert
+die nicht zwangsläufig einen hohen kognitiven Anspruch voraussetzt, sondern als &lt;em&gt;Fertigkeit&lt;/em&gt;
+in &amp;quot;Fleisch und Blut&amp;quot; übergeht. Ich bin kein Freund vom Konzept der &amp;quot;Begabung&amp;quot; und denke dass
+insbesondere im Bereich der Softwareentwicklung jeder Mensch die Fähigkeit dazu hat, digitale
+Erzeugnisse zu schaffen. Häufig kommt der Weg zum Programmieren so durch das Hintertürchen,
+etwa das Scripten von Routineaufgaben in Medienbearbeitungsprogrammen (etwa Videoschnitt,
+3D-Skulpturen, usw).&lt;/p&gt;
+&lt;p&gt;Bezeichnend für Programmiertätigkeiten ist der prinzipiell geringe Materialeinsatz: Ein Laptop
+genügt. So ist die Softwareentwicklung ein &amp;quot;Geistessport&amp;quot;, in dem natürlich viele Menschen
+einen Vorsprung haben die ihn schon lange betreiben oder ihn unter vorteilshaften Bedingungen
+ausführen können. Ich finde die Egalität von Software(entwicklung) faszinierend, weil sie
+Menschen auf der ganzen Welt eint. Es gibt das Klischee, dass es über jedes IT-Thema ein
+Youtube-Video von einem Inder gibt. Ist es nicht fabelhaft, dass es in unserer Zeit möglich
+ist, quer über alle Kontinente, Kulturen, Hautfarben, Altersklassen, Ausbildungswege usw.
+Wissen zu vermitteln und gemeinsam zu lernen?&lt;/p&gt;
+&lt;p&gt;Ich bin der Überzeugung, dass sich Softwareentwicklung am besten im eigenen Tempo autodidaktisch
+lernen lässt: Idealerweise bremst einen nichts außer die eigene Disziplin und das eigene
+Durchhaltevermögen. Hier ist wichtig, sich selbst die richtigen Anreize zu setzen, etwa
+thematisch durch geeignete (Neben-)projekte, siehe Abschnitt (B).&lt;/p&gt;
+&lt;h2&gt;(E) Methodik&lt;/h2&gt;
+&lt;p&gt;Als IT-Entwickler:in zu arbeiten bedeutet, einen eigenen Umgang mit den Herausforderungen des
+IT-Alltags zu entwickeln. Es ist ein Trugschluss, dass man diese Herausforderungen
+(komplett) an eine KI
+auslagern kann. Wer aus Faulheit wichtige Fähigkeiten auslagert, entwickelt sich nicht weiter.
+Ein technisches Beispiel sind etwa Fehlermeldungen (zB. Stack traces, Logzeilen, etc), man
+muss lernen sie zu verstehen und darauffolgend ein Set von Lösungsstrategien zu entwickeln. Je
+nach Ökosystem kann das der Umgang mit einem Debugger sein. Wer das Debugging an die KI
+auslagert, degradiert sich selber zum &amp;quot;Operator&amp;quot; des Systems.&lt;/p&gt;
+&lt;p&gt;Zu Methoden gehören nicht nur die Selbstorganisation, sondern auch die Arbeit in Gruppen von
+Menschen (Teams) sowie etwa die Projektorganisation. Als Solo-Selbstständige:r Freelancer:in
+ist man Universalist und muss die peripheren Bereiche, die im Kern gar nichts mehr mit
+Softwareentwicklung zu tun haben, auch abdecken. In Teams hingegen kann man Kompetenzen
+aufteilen, wenn die Atmosphäre dazu gegeben ist. Ich kenne zB. gute Senior Developers,
+die leider miserable technische Writers abgeben. Wenn sie nun die Code-Dokumentation
+KI-generieren lassen, dann fehlt ihnen die Fähigkeit die Qualität der KI-Ausgabe zu bewerten.
+Statt die eigenen Schwächen im Team zu offenbaren, werden KI-Lösungen zum Kaschieren verwendet.
+Das schadet am Ende allen.&lt;/p&gt;
+&lt;h2&gt;Zum Weiterlesen&lt;/h2&gt;
+&lt;p&gt;Das Thema ist sehr erschöpfend. Im folgenden sind ein paar leicht verdauliche Weblinks
+angegeben um sich weiter mit der praktischen Tätigkeit als Softwareentwickler:in zu befassen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eric Raymond, 2007: &lt;a href=&quot;https://www.catb.org/~esr/faqs/hacker-howto.html&quot;&gt;How To Become A Hacker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MIT Press Reader, 2019: &lt;a href=&quot;https://thereader.mitpress.mit.edu/habits-of-expert-software-designers/&quot;&gt;Eight Habits of Expert Sofware Designers: An Illustrated Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2019: &lt;a href=&quot;https://news.ycombinator.com/item?id=20124018&quot;&gt;HackerNews on 7 Absolute Truths I Unlearned as Junior Developer&lt;/a&gt; sowie 2018: &lt;a href=&quot;https://news.ycombinator.com/item?id=18128477&quot;&gt;Ask HN: What is your best advice for a junior software developer?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Typische Fehlerquellen bei der Daten-Migration – Aus den Aufzeichnungen eines Daten-Detektivs</title>
+      <link>https://denktmit.de/blog/2026-01-12-datenmigration/</link>
+      <author>Jonas Krüger</author>
+      <pubDate>2026-01-12T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2026-01-12-datenmigration/</guid>
+      <description>&lt;p&gt;Der Daten-Umzug der Firma KMU &amp;amp; Nachfahren AG sollte eigentlich ein Routineprojekt für uns werden. Doch dann passierte etwas Schockierendes: Der Mitarbeiter Data Governance wurde vermisst gemeldet und im Keller der Firma KMU &amp;amp; Nachfahren entdeckten wir zahlreiche Datenleichen. Wir merkten: Diese Daten-Migration absolvieren auch wir nicht ohne Hilfe weiter, hier braucht es einen abgebrühten Spürhund. So riefen wir den bekannten Daten-Detektiv D. Mit um Hilfe, dessen Fallbericht wir an dieser Stelle augenzwinkernd teilen möchten.&lt;/p&gt;
+&lt;h3&gt;Die Tat: Datenleichen im Keller – Data Governance? Vermisst&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Heute zu KMU &amp;amp; Nachfahren gerufen worden, da ist denen doch tatsächlich die Data Governance abhandengekommen. Dabei ist die doch so wichtig für einen Daten-Umzug wie die heißen Himbeeren fürs Vanille-Eis. Schließlich betrachtet Data Governance die Daten der Firma als wichtigen Unternehmenswert. Mit Data Governance werden die Verwaltung leichter, Risiken für Datenlecks minimiert und im besten Fall auch noch Kosten eingespart.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Die Ermittlung: Ernennung von Data Ownern und Erstellen von Datenglossaren&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Als erstes habe ich einige Data Owner ernannt, die sind jetzt sozusagen die “Bosse” für die Daten. Die Data Owner dürfen sich jetzt erstmal die Hände schmutzig machen, die Daten sichten und kategorisieren – morgen sollen die mir mal ein ordentliches Daten-Glossar liefern. Da stehen dann die Definitionen der verschiedenen Daten drin und wir haben hoffentlich mehr Durchblick in diesem Daten-Dschungel. Data Owner ist ein verdammt wichtiger Job, aber ich beneide die Kerls nicht, sich jede der Datenleichen und Sonderfälle anschauen zu müssen. Aber gerade die müssen kategorisiert werden, damit der Daten-Umzug gelingt und wir Data Governance wiederfinden.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Der Data Owner testet immer zweimal&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Den Tag mit schwarzem Kaffee und digitalen Glimmstängeln begonnen, auf denen die Daten-Glossare der Data Owner gespeichert wurden. Jetzt gehts ans Eingemachte. Wir haben mit einer Test-Migration begonnen. Die Data Owner transferieren nun also probeweise einige der geordneten &lt;a href=&quot;https://denktmit.de/blog/2025-04-30-json-resume&quot;&gt;Daten&lt;/a&gt; in deren neue (Daten)Bank. Das heißt aber nicht, dass sie jetzt nachlässig werden dürfen, Crosschecking ist angesagt. Die Prüfsummen im alten und im neuen, transferierten Datensatz werden verglichen, dazu dessen Ist- und dessen Soll-Zustand. Zum Glück ist das so einfach, dass kriegt sogar mein Kater mit verbundenen Augen hin.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/datenmigration2.webp&quot; alt=&quot;Zwei Männer mit Trenchcoat und Fedora in einem Noir-Style Detektivbüro betrachtet Daten auf einem Bildschirm&quot; /&gt;
+&lt;em&gt;Die neuen Data Owner bei der Arbeit.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Der große Umzug&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Nachdem die Test-Migration so erfolgreich lief, ist der richtige Umzug für die Chefetage beschlossene Sache. Ich bin währenddessen immer noch Data Governance auf der Spur, als mir meine Data Owner berichten, dass eine kleine Ecke des alten Datensatzes wohl übersehen wurde. Und was finden wir, als wir im alten Lagerhaus ankommen? Eine Excel 98-Tabelle, die noch einige Sonderfälle enthält und obendrein Data Governance als Geisel. Da sieht man mal wieder: Wenn man nicht gründlich ist, klappt der ganze Daten-Umzug nicht. Die Flitzpiepe von Excel-Tabelle war eine harte Nuss, hat aber schlussendlich alle Daten und Data Governance freigelassen, als ich den firmenweiten Wechsel zu Linux androhte.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Mein Auftrag hier ist beendet, die Firma KMU &amp;amp; Nachfahren hat nun wieder die Hoheit über alle ihre Daten, auch in der neuen Umgebung. Mit den Data Ownern hat sie neue Ansprechpartner für ihre Daten-Themen und -Entscheidungen. Obendrein hat die Firma mit dem Glossar klaren Überblick welche Begrifflichkeiten und Regeln für welche Daten gelten. Die Sonderfälle und Datenleichen zu normieren und kategorisieren ist kein Ponyhof, aber wenn man dranbleibt, wachsam ist und immer schön testet, ist es ein verdammt belohnender Broterwerb.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Der übersehene Baustein - Weshalb Passwortsicherheit wichtiger denn je ist</title>
+      <link>https://denktmit.de/blog/2026-02-10-passwort-sicherheit/</link>
+      <author>Jonas Krüger</author>
+      <pubDate>2026-02-10T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2026-02-10-passwort-sicherheit/</guid>
+      <description>&lt;h2&gt;Warum die Passwortsicherheit eine unterschätzte Gefahr für KMUs darstellt&lt;/h2&gt;
+&lt;p&gt;Ganz gleich ob es sich um Privatpersonen, Kleine- und Mittelständische Unternehmen (KMU) oder &amp;quot;global player&amp;quot; handelt, die Cyberabwehr eines jeden kann man sich wie eine Burg vorstellen. Viele kleine Bausteine ergeben ein stabiles Ganzes. Passwörter mögen dabei nicht so prächtig wie die Firewall sein, oder so weitblickend wie der Virenscanner, doch sind auch sie Teil des Ganzen. Ist ein einzelnes Passwort zu schwach, bedeutet dies eine Schwachstelle, aufgrund derer doch die ganzen &amp;quot;Burgmauer&amp;quot; einstürzen kann.&lt;br /&gt;
+Passwörter, etwa von Mitarbeitenden, als kleiner Stein in der Mauer der Cyber-Abwehr werden gerne und leicht übersehen. Hinzu kommt die schier stetig zunehmende Anzahl an Passwörtern für immer mehr Konten. Ermüdung setzt ein, die zu leichten Passwörtern verleitet, welche leicht zu knacken sind. Gerade deshalb sind Passwörter ein beliebter Angriffsvektor für Cyberkriminelle. Der Schaden für die Opfer bleibt der gleiche: Verlust von Daten, finanzielle Einbußen, Reputationsschaden und im schlimmsten Falle: &lt;a href=&quot;https://denktmit.de/blog/2025-06-27-supergau-datenklau/&quot;&gt;Identitätsdiebstahl&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ein Cyberangriff kann immer und überall stattfinden, schließlich sind unsere Daten-Burgen im digitalen Raum quasi permanent unter Belagerung. Sogenannte Brute-Force-Angriffe probieren mittels eines Algorithmus so lange eine Passwort-Kombination nach der anderen, bis sie an die Daten eines Accounts gelangen. Zusätzlich ist Cyberkriminalität in Deutschland ganz allgemein auf dem Vormarsch, wie der &lt;a href=&quot;https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/Lagebilder/Cybercrime/2024/CC_2024.html&quot; target=&quot;_blank&quot;&gt;Lagebericht des &lt;em&gt;Bundeskriminalamtes&lt;/em&gt; (BKA)&lt;/a&gt; belegt. Häufig trifft es dabei KMUs.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/passwortsicherheit1.webp&quot; alt=&quot;Zettel mit der Aufschrift qwert und 1234 mit einer Hand die beides durchstreicht&quot; /&gt;
+&lt;em&gt;Schlechte Passwörter sind etwa &amp;quot;qwert&amp;quot; oder &amp;quot;1234!&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Welche Fehler du bei der Passwort-Wahl vermeiden solltest&lt;/h2&gt;
+&lt;p&gt;Geburtsdaten, Namen oder gängige Worte - sprich&#39; alles, woran man sich leicht erinnern kann, sind echte No-Gos, wenn es um die eigene Passwortsicherheit geht. Besonders gewarnt sei außerdem vor allgemein beliebten Kombinationen, die schnell eingetippt sind, wie &amp;quot;qwert&amp;quot; oder &amp;quot;1234&amp;quot;. Selbst wenn man diese Passwörter oft wechseln würde, &lt;a href=&quot;https://www.heise.de/news/Aendere-dein-Passwort-Tag-Nutzloser-Wiedergaenger-11159667.html&quot; target=&quot;_blank&quot;&gt;was nicht zu empfehlen ist&lt;/a&gt;, bieten sie keinerlei Schutz vor Cyber-Angriff-en und sind binnen Millisekunden geknackt.&lt;/p&gt;
+&lt;p&gt;Ebenso ist es gefährlich, ein Passwort für mehrere Konten zu verwenden. Es bietet die Steilvorlage für &lt;em&gt;Credential Stuffing&lt;/em&gt;. Hierbei geben Cyberkriminelle bei verschiedenen deiner Konten ein ihnen bereits bekanntes Passwort ein. Ihre Hoffnung ist dabei, dass das selbe Passwort auch bei anderen Konten Verwendung fand. So kann ein schlechtes oder geleaktes Passwort reichen, um mehrere Konten gleichzeitig preiszugeben.&lt;/p&gt;
+&lt;p&gt;Apropos Preisgeben: Passwörter sollte man nie veröffentlichen und auch mit dem Teilen harmloser Informationen im Netz, etwa der Name des ersten Haustieres oder der Geburtsname der Mutter sollte vorsichtig umgegangen werden. Oftmals steckt &lt;a href=&quot;https://denktmit.de/blog/2025-07-21-psychologie-des-social-engineerings/&quot;&gt;&lt;em&gt;Social Engineering&lt;/em&gt;&lt;/a&gt; dahinter. Denn es sind genau diese Informationen, mit denen Cyberkriminelle deine Sicherheitsfragen beantworten könnten, um damit Zugang zu deinen Konten zu erhalten und dich von ihnen auszusperren.&lt;/p&gt;
+&lt;h2&gt;Was macht ein sicheres Passwort aus?&lt;/h2&gt;
+&lt;p&gt;Zwei Dinge sind für ein sicheres Passwort entscheidend: Seine Länge und seine Komplexität. Wenn sich Groß- und Kleinbuchstaben, ganze Wörter, Symbole und Zahlen im Passwort abwechseln, müssen Brute-Force-Angreifer deutlich mehr Kombinationen durchgehen. Ein abwechslungsreicher Zeichen-Salat hilft auch gleich, dass Passwort zu verlängern. Denn mehr Zeichen bedeuten eine zusätzliche Komplexität. Die &amp;quot;Burgmauer&amp;quot; der Passwortsicherheit bekommt zusätzliche Lagen und schützt so besser vor Angriffen. Der Nachteil eines langen und komplexen Passwortes liegt auf der Hand. Wir merken es uns schlechter.&lt;/p&gt;
+&lt;p&gt;Ein sogenannter &lt;em&gt;Single-Sign-On&lt;/em&gt; (SSO) kann den Merkaufwand fürs Passwort wieder reduzieren. Man meldet sich nicht mehr auf jeder Plattform separat an, sondern hat nur noch den Login beim Provider des SSO, denn dieser verfügt über alle Einzel-Zugangsdaten. Das spart Zeit, zugleich macht man den Zugang zu den eigenen Konten von einem externen Anbieter abhängig. Die Vereinfachung auf ein einzelnes Passwort bedingt weiterhin, dass die eigene &amp;quot;Burg&amp;quot; des Datenschutzes wieder angreifbarer wird.&lt;/p&gt;
+&lt;p&gt;Deshalb werden SSOs gerne mit der &lt;em&gt;2-Faktor-Authentifizierung&lt;/em&gt; (2FA) kombiniert. Zur Anmeldung benötigt man nun einen weiteren Anmeldebaustein, der auch physisch sein kann, etwa in Form einer Chipkarte oder eines weiteren Gerätes wie einem Smartphone. So genügt das Wissen um ein Passwort allein Cyberkriminellen nicht mehr, um Zugang zu den wertvollen Konten zu erlangen.&lt;/p&gt;
+&lt;p&gt;Die komfortabelste und sicherste Möglichkeit, die eigenen Konten zu schützen, ist jedoch eine dritte Option: Ein selbst gehosteter Passwortmanager.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/passwortsicherheit2.webp&quot; alt=&quot;Mysteriöse Box mit leuchtendem Schloss und eine Hand mit einem alten Schlüssel, die sie aufschliesst&quot; /&gt;
+&lt;em&gt;Der goldene Pfad: Ein selbst-gehosteter Passwortmanager&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Wie Passwortmanager der Schlüssel zu mehr Sicherheit und mehr Komfort sein können&lt;/h2&gt;
+&lt;p&gt;Passwortmanager sind wie die Schatzkammer der Datenschutz-Burg. Denn in den Managern landen alle Anmeldedaten, von den Benutzernamen bis hin zu den Passwörtern; ein digitaler Tresor eben. Damit ein Passwortmanager wirklich zur sichersten Option wird, ist es nötig, ihn selbst zu hosten. Dies ist im Besonderen für Unternehmen relevant, die die vollständige Hoheit über ihre Daten wünschen. Denn bei cloud- oder browser-basierten Diensten landen diese wie beim SSO bei externen Stellen.&lt;/p&gt;
+&lt;p&gt;Um Zugang zum Passwortmanager zu erhalten, benötigt es auch hier ein Master-Passwort. Statt vieler einzelner Passwörter, braucht man sich nun nur noch an eines zu erinnern. Dafür wird dieses eine aber zum buchstäblichen &amp;quot;Heiligen Gral&amp;quot;, der besonders gehütet und geschützt werden muss. Denn ohne das Masterpasswort, muss der Zugang zu allen Konten in mühseliger Kleinarbeit wiederhergestellt werden. Im Gegensatz zum SSO meldet einen ein Passwortmanager aber nicht bei allen Diensten auf einmal an. Stattdessen bleibt die Vielfalt der Passwörter erhalten, die der Passwortmanager bei Bedarf herausgibt.&lt;/p&gt;
+&lt;p&gt;Das Masterpasswort ist jedoch nicht der einzige Schutzfaktor, den der Passwortmanager bietet. Die Manager verschlüsseln oft auch Passwörter und Anmeldenamen, oder generieren auf Wunsch besonders sichere Passwörter für neu hinzugefügte Konten. Darüber hinaus verfügen viele der gängigen Passwortmanager über zusätzliche Sicherungsoptionen wie die 2FA.&lt;/p&gt;
+&lt;p&gt;Entscheidet man sich dennoch für einen cloud- oder browserbasierten Passwortmanager gilt es vor allem auf zweierlei zu achten: Wo werden die Daten zum einen gespeichert und ob und wie sind sie zum anderen verschlüsselt. Nutzt der Passwortmanager beispielsweise eine Zero Knowledge Architecture, haben weder der Anbieter Zugriff auf die Daten, noch direkt Cyberkriminelle im Falle eines erfolgreichen Angriffs auf den Anbieter.&lt;/p&gt;
+&lt;p&gt;Eine ausführliche Liste der gängigsten Programme haben das &lt;em&gt;Bundesamt für Sicherheit in der Informationstechnik&lt;/em&gt; sowie die &lt;a href=&quot;https://www.verbraucherzentrale.nrw/wissen/digitale-welt/apps-und-software/10-passwortmanager-im-vergleich-113439&quot;&gt;&lt;em&gt;Verbraucherzentrale NRW&lt;/em&gt;&lt;/a&gt; zusammengetragen und jene zugleich auf Herz und Nieren geprüft.&lt;/p&gt;
+&lt;h2&gt;Fazit: Mehr Sicherheit mit weniger Aufwand&lt;/h2&gt;
+&lt;p&gt;Die Frage nach der richtigen Passwortsicherheit bleibt ein ewiges Wiegespiel und Austarieren. Eine einfache und komfortable Nutzung im Alltag steht die Komplexität des Passworts als notwendiger Schutz vor Cyberangriffen gegenüber. Jeder Schritt, der die Passwort-Frage wieder &lt;a href=&quot;https://denktmit.de/blog/2025-09-18-videoident/&quot;&gt;vereinfacht&lt;/a&gt; , eröffnet zugleich neue Angriffsvektoren.&lt;/p&gt;
+&lt;p&gt;Sichere Passwörter sind keine einfachen Passwörter, doch das heißt nicht, dass man es sich schwerer als nötig machen solle. Die Verwendung eine sicheres Programms, etwa eines selbst-gehosteten Passwortmanagers, sowie die Einführung zusätzlicher Sicherungsschritte wie die 2FA, kann helfen, die Verteidigung der eigenen Daten-Burg effizienter und sicherer zu gestalten.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Softwareentwicklung: Einzelentwickler oder eingespielte Teams – Was passt besser zu meinem Softwareprojekt?</title>
+      <link>https://denktmit.de/blog/2026-03-11-eaas-vs-taas/</link>
+      <author>Jonas Krüger</author>
+      <pubDate>2026-03-11T11:00:00Z</pubDate>
+      <guid>https://denktmit.de/blog/2026-03-11-eaas-vs-taas/</guid>
+      <description>&lt;p&gt;Softwareentwicklung ist das Herzstück der Digitalisierung. Jedes Unternehmen, das Prozesse automatisieren oder innovative digitale Produkte entwickeln möchte, steht irgendwann vor der Frage: Welche Ressourcen benötigen wir für unser Projekt? Sollten wir einen oder mehrere Einzelentwickler engagieren, oder ist ein eingespieltes Team die bessere Wahl?&lt;/p&gt;
+&lt;p&gt;Die Antwort darauf hängt von den individuellen Anforderungen des Projekts ab. Beide Optionen haben ihre Vor- und Nachteile. In diesem Artikel beleuchten wir, welche Faktoren bei der Entscheidung berücksichtigen werden sollten und wie die passende Wahl neue Potenziale für das eigene Softwareentwicklungsprojekt freisetzt.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/taas1.webp&quot; alt=&quot;Softwareentwickler mit Laptop arbeitet mit KI-Roboter zusammen – Visualisierung von KI-gestützter Softwareentwicklung und Experts as a Service.&quot; /&gt;
+&lt;em&gt;Mithilfe der K.I. werden auch Einzelentwickler zu interdiszipllinären Mini-Teams&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Einzelentwickler: Flexibilität sowie Expertise für spezifische Aufgaben und der Faktor K.I.&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Das Hinzuziehen einzelner Softwareentwickler, auch &lt;em&gt;Experts as a Service&lt;/em&gt; (EaaS) genannt, eignet sich besonders, wenn gezielt spezifisches Know-how oder zusätzliche Kapazitäten für ein bestehendes Team benötigt werden. Einzelentwickler können schnell integriert werden und sind oft eine kosteneffiziente Lösung für kleinere oder spezialisierte Aufgaben.&lt;/p&gt;
+&lt;p&gt;Hinzu kommt die neue Realität in der Softwareentwicklung, in der kaum ein Entwickler wirklich alleine ist, sondern oftmals von K.I.-Agenten unterstützt wird. Diese übernehmen etwa die Automatisierung von Routineaufgaben, sind ein „Sparringpartner“ beim Brainstorming oder formulieren einen ersten Code-Entwurf, der erst kombiniert mit menschlicher Erfahrung zur Vollendung gebracht wird. Aus einem einzelnen Entwickler wird so ein interdisziplinäres Team im Mikro-Format. Das neue Maß an Interdisziplinarität bringt aber auch neue Faktoren mit sich, die bedacht werden wollen, vor allem in puncto Datenschutz.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Vorteile:&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Flexibilität:&lt;/strong&gt; Einzelentwickler können leicht in bestehende Teams integriert werden.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kosteneffizienz:&lt;/strong&gt; Ideal für kleinere Projekte oder spezifische Aufgaben.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Expertise:&lt;/strong&gt; Spezialisten mit tiefem Wissen in spezifischen Technologien oder Programmiersprachen, oftmals kombiniert mit interdisziplinärer K.I.-Unterstützung&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;&lt;strong&gt;Nachteile:&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Längere Einarbeitungszeit:&lt;/strong&gt; Werden einzelne Softwareentwickler in ein bestehendes Team integriert, benötigen sie Zeit, um Abläufe und Projekte zu verstehen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Abhängigkeit:&lt;/strong&gt; Der Ausfall eines Entwicklers kann den Fortschritt verzögern.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Projektmanagement:&lt;/strong&gt; Die Verantwortung für Planung und Organisation bleibt in der eigenen Hand.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;https://denktmit.de/taas2.webp&quot; alt=&quot;Futuristische Ritter sitzen an einem runden Tisch mit Laptops und programmieren Code – Symbol für Team as a Service&quot; /&gt;
+&lt;em&gt;Entwicklerteams können so eingespielt sein wie die Ritter der Tafelrunde&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Eingespielte Entwicklerteams: Produktivität und Effizienz auf höchstem Niveau&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Ein eingespieltes Team, bestehend aus Entwicklern, einem &lt;a href=&quot;https://denktmit.de/blog/2025-08-29-die-genossenvorstellung-julia-gleim/&quot;&gt;&lt;em&gt;Product Owner&lt;/em&gt;&lt;/a&gt; und eventuell einem &lt;em&gt;Scrum Master&lt;/em&gt;, bringt eine hohe Effizienz und Geschwindigkeit in das eigene Projekt. Diese &lt;em&gt;Teams as a Service&lt;/em&gt; (TaaS) sind eingearbeitet und haben bereits Erfahrungen in der Zusammenarbeit gesammelt, was den Entwicklungsprozess erheblich beschleunigen kann.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Vorteile:&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Hohe Produktivität:&lt;/strong&gt; Teams arbeiten effizienter durch erprobte Abläufe.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Minimierter Managementaufwand:&lt;/strong&gt; Ein &lt;em&gt;Scrum Master&lt;/em&gt; übernimmt die Koordination.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Schnelle Ergebnisse:&lt;/strong&gt; Eingespielte Teams liefern durch optimierte Zusammenarbeit schneller Ergebnisse.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skalierbarkeit:&lt;/strong&gt; Teams können je nach Bedarf flexibel erweitert oder angepasst werden.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;&lt;strong&gt;Nachteile:&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Kostenintensiver:&lt;/strong&gt; Der Einsatz eines ganzen Teams kann höhere Kosten verursachen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Projektkomplexität:&lt;/strong&gt; Für kleinere Projekte ist ein komplettes Team möglicherweise nicht notwendig.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anpassung:&lt;/strong&gt; Das Team muss sich an die eigenen Unternehmensprozesse sowie die eigene Unternehmenskultur anpassen.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;&lt;strong&gt;Direkter Vergleich: &lt;em&gt;Experts as a Service&lt;/em&gt; vs. &lt;em&gt;Teams as a Service&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Kriterium&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;EaaS&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;TaaS&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Flexibilität&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Hoch&lt;/strong&gt; – Schnell ins Team integrierbar&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mittel&lt;/strong&gt; – Anpassung an Unternehmensprozesse notwendig&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Kosten&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Geringer&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Höher&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Produktivität&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mittel&lt;/strong&gt; – Abhängig von der Integration&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Hoch&lt;/strong&gt; – Optimierte Zusammenarbeit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Managementaufwand&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Hoch&lt;/strong&gt; – Liegt beim Kunden&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Gering&lt;/strong&gt; – Scrum Master übernimmt Koordination&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Skalierbarkeit&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Eingeschränkt&lt;/strong&gt; – Zusätzliche Entwickler notwendig&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Hoch&lt;/strong&gt; – Team kann flexibel erweitert werden&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Projektkomplexität&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Ideal für &lt;strong&gt;einfache&lt;/strong&gt; oder spezialisierte &lt;strong&gt;Projekte&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Geeignet für &lt;strong&gt;komplexe&lt;/strong&gt; und umfassende &lt;strong&gt;Projekte&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;strong&gt;Fazit: Die passende Lösung für die eigene Softwareentwicklung&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Die Wahl zwischen einem Einzelentwickler und einem eingespielten Entwicklerteam hängt maßgeblich von den eigenen Projektanforderungen ab.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Experts as a Service&lt;/strong&gt; ist die richtige Wahl, wenn punktuelle Unterstützung oder spezifisches Know-how benötigt wird, ein funktionierendes Team aber bereits vorhanden ist.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Teams as a Service&lt;/strong&gt; bietet sich an, wenn komplexe Projekte angegangen werden, die eine hohe Koordination und schnelle Ergebnisse erfordern.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;strong&gt;Warum die DenktMit die ideale Wahl für EaaS als auch für TaaS ist&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;DenktMit bietet genau das Maß an Flexibilität, das ein Projekt von uns verlangt. Alle Mitglieder unserer Genossenschaft sind hochqualifizierte Einzelentwickler, die auch auf einen verantwortungsbewussten Umgang mit K.I. achten. Viele unserer Genossen blicken außerdem auf gemeinsame Software-Projekte zurück, wodurch sie schnell als skalierbares Entwicklungsteam eingesetzt werden können. Dadurch stellen wir genau die Ressourcen bereit, die der spezifische Auftrag von uns erfordert. Unsere spezialisierte Expertise in individueller Softwareentwicklung für Kleine und Mittelständische Unternehmen (KMU) ermöglicht es uns,  Anforderungen genau zu verstehen und passgenaue Lösungen anzubieten.&lt;/p&gt;
 </description>
     </item>
     

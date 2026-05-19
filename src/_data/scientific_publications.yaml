@@ -242,9 +242,23 @@ scientific_publications:
        - quantum
        - taxtech
        - legal
+       - analog
        - peer-reviewed
     authors:
        - Sven Köppel
     links:
        - https://research.owlit.de/document/bb1e7550-7739-351d-83ef-1f9916d1d3b9
        - https://d-nb.info/1189456648
+  - title: "Complexity in machines and minds: A perspective from systems engineering and neuroscience"
+    note: Submitted to Johanna Quandt Young Academy, Series Interdisciplinary Perspectives.
+    date: May 2025
+    labels:
+       - neuroscience
+       - analog
+       - book-chapter
+       - peer-reviewed
+    authors:
+       - Antje Peters
+       - Sven Köppel
+    #links: [not,yet]
+
